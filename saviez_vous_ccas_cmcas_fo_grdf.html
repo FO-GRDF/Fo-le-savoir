@@ -1,0 +1,2795 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Saviez-Vous — [TITRE DU SUJET] · FO GRDF</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --bleu: #019cda;
+    --bleu-clair: #019cda;
+    --or: #f7dd5c;
+    --or-clair: #fde8ea;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --texte: #1A1A2E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+
+  /* HEADER */
+  .header {
+    position: relative;
+    background: linear-gradient(135deg, #019cda 0%, #028bc2 100%);
+    border-radius: 20px;
+    padding: 44px 48px 36px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .header::before { display: none; }
+  .header::after { display: none; }
+
+  .badge {
+    display: inline-block;
+    background: var(--or);
+    color: var(--bleu);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 40px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--blanc);
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+  }
+  .header h1 em { color: var(--or); font-style: italic; }
+  .header .subtitle {
+    margin-top: 14px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.72);
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+  }
+  .header .update {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    position: relative;
+    z-index: 1;
+  }
+  .dot { width: 7px; height: 7px; background: #4ADE80; border-radius: 50%; display: inline-block; }
+
+  /* INTRO */
+  .intro {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    border-left: 5px solid var(--bleu-clair);
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #2a2a2a;
+  }
+  .intro strong { color: var(--bleu); }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon {
+    width: 36px; height: 36px;
+    background: var(--or-clair);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  /* CARDS GRID */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,59,111,0.1); }
+  .card .card-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+  .card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .card p { font-size: 13.5px; color: var(--gris); line-height: 1.65; }
+  .card.highlight { background: var(--bleu); color: white; }
+  .card.highlight h3 { color: var(--or); }
+  .card.highlight p { color: rgba(255,255,255,0.78); }
+
+  /* ALERT BOX */
+  .alert {
+    background: var(--or-clair);
+    border: 1.5px solid var(--or);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .alert .alert-icon { font-size: 24px; flex-shrink: 0; }
+  .alert p { font-size: 14px; line-height: 1.7; color: #5a4000; }
+  .alert strong { color: #3a2800; }
+  .alert.green { background: var(--vert-clair); border-color: var(--vert); }
+  .alert.green p { color: #0e3d22; }
+  .alert.green strong { color: #0a2e19; }
+
+  /* BIG STAT BOX */
+  .stat-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 20px;
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .stat-box .stat-main { flex-shrink: 0; text-align: center; }
+  .stat-box .stat-val { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 900; color: var(--or); line-height: 1; }
+  .stat-box .stat-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+  .stat-box .stat-desc { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.7; }
+  .stat-box .stat-desc strong { color: white; }
+
+  /* PLACEMENT CARDS */
+  .placement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .place-card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 18px;
+    border-top: 4px solid var(--bleu-clair);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .place-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,59,111,0.1); }
+  .place-card.default { border-top-color: var(--gris); }
+  .place-card .place-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+  .place-card h3 { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .place-card p { font-size: 12.5px; color: var(--gris); line-height: 1.6; }
+  .place-card .tag { display: inline-block; margin-top: 10px; font-size: 11px; padding: 3px 10px; border-radius: 20px; background: var(--or-clair); color: #7a5200; font-weight: 500; }
+  .place-card .tag.blue { background: #e6f5fb; color: #017fb1; }
+  .place-card .tag.grey { background: #f0f0f0; color: #555; }
+
+  /* BRUT/NET TABLE SECTION */
+  .fiscal-section { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+  .fiscal-flow { display: flex; flex-direction: column; gap: 0; margin: 20px 0; }
+  .fiscal-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    background: var(--fond);
+    margin-bottom: 4px;
+  }
+  .fiscal-row.start { background: #e6f5fb; }
+  .fiscal-row.deduct { background: var(--rouge-clair); }
+  .fiscal-row.net { background: var(--vert-clair); }
+  .fiscal-row.taxable { background: #FFF3D6; }
+  .fiscal-row .f-icon { font-size: 22px; flex-shrink: 0; width: 36px; text-align:center; }
+  .fiscal-row .f-label { flex: 1; font-size: 13.5px; line-height: 1.5; }
+  .fiscal-row .f-label strong { font-size: 14.5px; display:block; margin-bottom:2px; }
+  .fiscal-row .f-amount { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; text-align: right; flex-shrink: 0; min-width: 100px; }
+  .fiscal-row.start .f-amount { color: var(--bleu); }
+  .fiscal-row.deduct .f-amount { color: var(--rouge); }
+  .fiscal-row.net .f-amount { color: var(--vert); }
+  .fiscal-row.taxable .f-amount { color: #a36200; }
+  .arrow-down { text-align: center; font-size: 18px; color: var(--gris); margin: 2px 0; opacity: 0.5; }
+  .fiscal-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+  .fc-col { border-radius: 14px; padding: 20px; border-top: 4px solid; }
+  .fc-col.placement { background: var(--vert-clair); border-top-color: var(--vert); }
+  .fc-col.paiement { background: #FFF3D6; border-top-color: var(--or); }
+  .fc-col h4 { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 10px; }
+  .fc-col ul { list-style: none; padding: 0; }
+  .fc-col ul li { font-size: 12.5px; color: #333; line-height: 1.65; padding-left: 18px; position: relative; margin-bottom: 6px; }
+  .fc-col ul li::before { content: '✓'; position: absolute; left: 0; color: var(--vert); font-weight: 700; }
+  .fc-col.paiement ul li::before { color: #a36200; }
+  .fc-col .fc-highlight { margin-top: 12px; background: rgba(255,255,255,0.7); border-radius: 8px; padding: 8px 12px; font-size: 12px; line-height: 1.5; }
+
+  /* LINK SECTION */
+  .link-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .link-box::after { content: 'LINK 2026'; position: absolute; right: -20px; top: -10px; font-family: 'Fraunces', serif; font-size: 90px; font-weight: 900; color: rgba(255,255,255,0.05); pointer-events: none; }
+  .link-box h3 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--or); margin-bottom: 12px; }
+  .link-box p { font-size: 13.5px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 16px; }
+  .link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .link-item { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 16px; }
+  .link-item .li-label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+  .link-item .li-val { font-family: 'Fraunces', serif; font-size: 18px; color: var(--or); margin-top: 2px; }
+  .link-item .li-sub { font-size: 11.5px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+  /* CALENDAR */
+  .calendar-section { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--bleu-clair), var(--or)); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -22px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bleu-clair); border: 2px solid white; box-shadow: 0 0 0 2px var(--bleu-clair); }
+  .tl-item.active::before { background: var(--or); box-shadow: 0 0 0 2px var(--or); }
+  .tl-date { font-size: 11px; font-weight: 500; color: var(--bleu-clair); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .tl-item.active .tl-date { color: var(--or); }
+  .tl-title { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 3px; }
+  .tl-desc { font-size: 13px; color: var(--gris); line-height: 1.55; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead tr { background: var(--bleu); color: white; }
+  thead th { padding: 12px 14px; text-align: left; font-weight: 500; font-size: 12px; letter-spacing: 0.5px; }
+  tbody tr:nth-child(even) { background: var(--fond); }
+  tbody td { padding: 11px 14px; border-bottom: 1px solid #eee; color: #2a2a2a; }
+
+  /* FOOTER */
+  .footer { text-align: center; font-size: 12px; color: var(--gris); padding-top: 24px; border-top: 1px solid #ddd; }
+
+  @media (max-width: 600px) {
+    .cards, .placement-grid, .fiscal-compare, .link-grid { grid-template-columns: 1fr; }
+    .stat-box { flex-direction: column; text-align: center; }
+    .header h1 { font-size: 30px; }
+    .header { padding: 32px 24px; }
+    .page { padding: 24px 16px 48px; }
+  }
+
+  /* ═══════════════════════════════════════════════
+     BOUTON LECTURE UNIVERSELLE + MODE A11Y
+     Palette gris chauds — confort maximal
+  ═══════════════════════════════════════════════ */
+
+  /* Variables palette mode lecture */
+  body.a11y-mode {
+    --a11y-bg:        #FAFAF7;
+    --a11y-surface:   #FFFFFF;
+    --a11y-surface2:  #F4F3EF;
+    --a11y-border:    #E2E0DA;
+    --a11y-border2:   #CCCAC4;
+    --a11y-txt1:      #2C2C29;
+    --a11y-txt2:      #4A4A46;
+    --a11y-txt3:      #6E6D69;
+    --a11y-txt4:      #6F6E68;
+    --a11y-dark:      #525250;
+    --a11y-dark-txt:  #F8F7F4;
+    --a11y-txt4-dark:  #C8C6C0;
+  }
+
+  /* Bouton de bascule */
+  
+
+
+  /* ═══════════════════════════════════════════════
+     MODE LECTURE UNIVERSELLE — BLOC UNIQUE AUTORITAIRE
+     Palette douce gris chauds, différenciation sans couleur
+  ═══════════════════════════════════════════════ */
+
+  /* Variables */
+  body.a11y-mode {
+    --a11y-bg:        #FAFAF7;
+    --a11y-surface:   #FFFFFF;
+    --a11y-surface2:  #F4F3EF;
+    --a11y-border:    #E2E0DA;
+    --a11y-border2:   #CCCAC4;
+    --a11y-txt1:      #2C2C29;
+    --a11y-txt2:      #4A4A46;
+    --a11y-txt3:      #6E6D69;
+    --a11y-txt4:      #6F6E68;
+    --a11y-dark:      #525250;
+    --a11y-dark-txt:  #F8F7F4;
+    --a11y-txt4-dark: #C8C6C0;
+  }
+
+  /* Body & page */
+  body.a11y-mode {
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 16px; line-height: 1.85;
+    background: var(--a11y-bg) !important;
+    color: var(--a11y-txt2);
+  }
+  body.a11y-mode .page { background: var(--a11y-bg) !important; }
+
+  /* Toggle button active state */
+  body.a11y-mode .a11y-btn {
+    background: var(--a11y-dark); border-color: var(--a11y-dark);
+    color: var(--a11y-dark-txt); font-weight: 700;
+  }
+  body.a11y-mode .a11y-btn .a11y-label-on  { display: inline; }
+  body.a11y-mode .a11y-btn .a11y-label-off { display: none; }
+
+  /* Header */
+  body.a11y-mode .header { background: var(--a11y-dark) !important; border-radius: 16px; }
+  body.a11y-mode .header h1 {
+    color: var(--a11y-dark-txt) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 34px; letter-spacing: 0.01em;
+  }
+  body.a11y-mode .header h1 em {
+    color: var(--a11y-dark-txt) !important; font-style: normal;
+    text-decoration: underline; text-underline-offset: 4px;
+  }
+  body.a11y-mode .header .subtitle { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .badge {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .header .update {
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.2) !important;
+    color: var(--a11y-txt4-dark) !important;
+  }
+  body.a11y-mode .dot { background: var(--a11y-dark-txt) !important; }
+
+  /* Typography */
+  body.a11y-mode p, body.a11y-mode li, body.a11y-mode td,
+  body.a11y-mode .card p, body.a11y-mode .place-card p,
+  body.a11y-mode .tl-desc, body.a11y-mode .intro,
+  body.a11y-mode .f-row .fi-label {
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 15px !important; line-height: 1.85 !important;
+    color: var(--a11y-txt3) !important;
+  }
+  body.a11y-mode .section-title { font-size: 21px !important; color: var(--a11y-txt1) !important; }
+  body.a11y-mode .section-title .icon {
+    background: var(--a11y-surface2) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+    border-radius: 8px !important;
+  }
+  body.a11y-mode .card h3, body.a11y-mode .place-card h3,
+  body.a11y-mode .col-card h4, body.a11y-mode .fo-contact-card h3 {
+    font-size: 16px !important; color: var(--a11y-txt1) !important;
+  }
+
+  /* Intro */
+  body.a11y-mode .intro {
+    background: var(--a11y-surface) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    color: var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .intro strong { color: var(--a11y-txt1) !important; }
+
+  /* Cards */
+  body.a11y-mode .card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important; box-shadow: none !important;
+  }
+  body.a11y-mode .card h3 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .card p  { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .card.highlight {
+    background: var(--a11y-dark) !important;
+    border: 1px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .card.highlight h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .card.highlight p  { color: var(--a11y-txt4-dark) !important; }
+
+  /* Stat-box */
+  body.a11y-mode .stat-box {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .stat-box .stat-val    { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .stat-box .stat-label  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box .stat-desc   { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box .stat-desc strong { color: var(--a11y-dark-txt) !important; }
+
+  /* Schema section */
+  body.a11y-mode .schema-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .schema-section p { color: var(--a11y-txt3) !important; }
+
+  /* SVG schema grayscale */
+  body.a11y-mode #svg-standard svg, body.a11y-mode #svg-a11y svg {
+    filter: grayscale(1) contrast(1.05) !important;
+  }
+
+  /* Alerts — plain */
+  body.a11y-mode div.alert {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode div.alert p,
+  body.a11y-mode div.alert > p   { color: var(--a11y-txt2) !important; font-size: 14.5px !important; }
+  body.a11y-mode div.alert strong { color: var(--a11y-txt1) !important; }
+
+  /* Alerts — green */
+  body.a11y-mode .alert.green, body.a11y-mode div.alert.green {
+    background: var(--a11y-surface2) !important;
+    border: 1px dashed var(--a11y-border2) !important;
+    border-left: 5px dashed var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .alert.green p, body.a11y-mode div.alert.green p      { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .alert.green strong, body.a11y-mode div.alert.green strong { color: var(--a11y-txt1) !important; }
+
+  /* Alerts — blue */
+  body.a11y-mode .alert.blue, body.a11y-mode div.alert.blue {
+    background: var(--a11y-surface) !important;
+    border: 1px dotted var(--a11y-border2) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .alert.blue p, body.a11y-mode div.alert.blue p,
+  body.a11y-mode div.alert.blue > p     { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .alert.blue strong, body.a11y-mode div.alert.blue strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .alert-icon { font-size: 26px !important; }
+
+  /* Place-cards */
+  body.a11y-mode .place-card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-top: 4px solid var(--a11y-txt2) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .place-card h3 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .place-card p  { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .place-card .tag,
+  body.a11y-mode .place-card .tag.blue,
+  body.a11y-mode .place-card .tag.green,
+  body.a11y-mode .place-card .tag.grey {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .tag-fo-link {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1px solid var(--a11y-border2) !important;
+  }
+
+  /* Gradient-box (CCAS) */
+  body.a11y-mode .gradient-box {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .gradient-box::after  { display: none !important; }
+  body.a11y-mode .gradient-box h3      { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .gradient-box p       { color: var(--a11y-txt4-dark) !important; }
+
+  /* Gradient-box-vert (CMCAS) */
+  body.a11y-mode .gradient-box-vert {
+    background: var(--a11y-dark) !important;
+    border: 2px dashed var(--a11y-border2) !important;
+  }
+  body.a11y-mode .gradient-box-vert::after { display: none !important; }
+  body.a11y-mode .gradient-box-vert h3     { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .gradient-box-vert p      { color: var(--a11y-txt4-dark) !important; }
+
+  /* Gradient-items */
+  body.a11y-mode .gradient-item {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+  }
+  body.a11y-mode .gradient-item .gi-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .gradient-item .gi-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .gradient-item .gi-sub   { color: var(--a11y-txt4-dark) !important; }
+
+  /* Link-box */
+  body.a11y-mode .link-box {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .link-box::after { display: none !important; }
+  body.a11y-mode .link-box h3     { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .link-box p      { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .link-item {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    border-radius: 8px !important;
+  }
+  body.a11y-mode .link-item .li-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .link-item .li-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .link-item .li-sub   { color: var(--a11y-txt4-dark) !important; }
+
+  /* Financement-section */
+  body.a11y-mode .financement-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .f-row { background: var(--a11y-surface2) !important; }
+  body.a11y-mode .f-row.source  { border-left: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .f-row.salarie { border-left: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .f-row.total   { border-left: 4px dotted var(--a11y-txt2) !important; }
+  body.a11y-mode .f-row .fi-badge { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .f-row .fi-label { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .f-row .fi-label strong { color: var(--a11y-txt1) !important; }
+
+  /* Calendar/Timeline */
+  body.a11y-mode .calendar-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .timeline::before { background: var(--a11y-border2) !important; }
+  body.a11y-mode .tl-item::before {
+    background: var(--a11y-surface) !important;
+    border: 2.5px solid var(--a11y-txt2) !important; box-shadow: none !important;
+  }
+  body.a11y-mode .tl-item.active::before {
+    background: var(--a11y-txt1) !important;
+    border: 2.5px solid var(--a11y-txt1) !important;
+    box-shadow: 0 0 0 3px var(--a11y-surface), 0 0 0 5px var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .tl-title { color: var(--a11y-txt1) !important; font-size: 15px !important; }
+  body.a11y-mode .tl-date  { color: var(--a11y-txt3) !important; font-weight: 600 !important; }
+  body.a11y-mode .tl-item.active .tl-date { color: var(--a11y-txt1) !important; font-weight: 700 !important; }
+  body.a11y-mode .tl-item.active .tl-date::after {
+    content: ' — EN COURS'; font-size: 9px; font-weight: 700;
+    letter-spacing: .08em; color: var(--a11y-txt3); vertical-align: middle;
+  }
+
+  /* Two-cols (CCAS/CMCAS résumé) */
+  body.a11y-mode .col-card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-top: 4px solid var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .col-card.ccas  { border-top: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card.cmcas { border-top: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .col-card h4 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card ul li { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .col-card ul li::before { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card a { color: var(--a11y-txt2) !important; }
+
+  /* Versus-table */
+  body.a11y-mode .versus-table { box-shadow: none !important; border: 1px solid var(--a11y-border) !important; }
+  body.a11y-mode .vt-ieg { background: var(--a11y-surface) !important; border-left: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .vt-cse { background: var(--a11y-surface2) !important; border-right: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .vt-ieg-head {
+    background: var(--a11y-dark) !important;
+    border-left: 4px solid var(--a11y-txt1) !important; border-bottom: none !important;
+  }
+  body.a11y-mode .vt-cse-head {
+    background: var(--a11y-surface2) !important;
+    border-right: 4px dashed var(--a11y-txt2) !important; border-bottom: none !important;
+  }
+  body.a11y-mode .vt-vs { background: var(--a11y-txt2) !important; }
+  body.a11y-mode .vt-label { background: var(--a11y-surface2) !important; border-color: var(--a11y-border) !important; }
+  body.a11y-mode .vt-cell { color: var(--a11y-txt2) !important; border-bottom-color: var(--a11y-border) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .vt-ieg strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .vt-cse strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .versus-badge { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .vt-cse-head .versus-badge { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .versus-sub { color: rgba(255,255,255,0.65) !important; }
+  body.a11y-mode .vt-cse-head .versus-sub { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .vs-circle { background: var(--a11y-surface) !important; color: var(--a11y-txt1) !important; }
+
+  /* fo-contact-card */
+  body.a11y-mode .fo-contact-card {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .fo-contact-card h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .fo-contact-card p  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .fo-mailto-btn {
+    background: var(--a11y-surface) !important;
+    color: var(--a11y-txt1) !important;
+    border: 2px solid var(--a11y-border2) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .fo-mailto-btn:hover {
+    background: var(--a11y-surface2) !important;
+    transform: none !important;
+  }
+
+  /* Tags */
+  body.a11y-mode .tag {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1px solid var(--a11y-border2) !important;
+  }
+
+  /* Table */
+  body.a11y-mode table thead tr { background: var(--a11y-dark) !important; }
+  body.a11y-mode table thead th { color: var(--a11y-dark-txt) !important; font-size: 13px !important; }
+  body.a11y-mode table tbody td { color: var(--a11y-txt2) !important; font-size: 14px !important; border-bottom-color: var(--a11y-border) !important; }
+  body.a11y-mode table tbody tr:nth-child(even) { background: var(--a11y-surface2) !important; }
+
+  /* Footer */
+  body.a11y-mode .footer { color: var(--a11y-txt3) !important; border-top-color: var(--a11y-border) !important; }
+  body.a11y-mode .footer a { color: var(--a11y-txt2) !important; text-decoration: underline; }
+
+  /* Focus */
+  body.a11y-mode *:focus {
+    outline: 3px solid var(--a11y-txt1) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 5px rgba(44,44,41,0.15) !important;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    body.a11y-mode .cards, body.a11y-mode .placement-grid,
+    body.a11y-mode .two-cols, body.a11y-mode .gradient-grid { grid-template-columns: 1fr; }
+    body.a11y-mode .stat-box { flex-direction: column; }
+    body.a11y-mode .page { padding: 16px; }
+  }
+
+  /* Icônes SVG a11y — affichage */
+  .a11y-ico { display: none; width: 1.1em; height: 1.1em; vertical-align: -0.18em; flex-shrink: 0; color: currentColor; }
+  body.a11y-mode .a11y-ico { display: inline; }
+  body.a11y-mode .a11y-emoji { font-size: 0 !important; line-height: 0 !important; width: 0 !important; display: inline-block; }
+
+  body.a11y-mode .card-icon .a11y-ico, body.a11y-mode .place-icon .a11y-ico,
+  body.a11y-mode .gi-icon .a11y-ico, body.a11y-mode .fi-icon .a11y-ico,
+  body.a11y-mode .vs-icon .a11y-ico, body.a11y-mode .vt-label .a11y-ico,
+  body.a11y-mode .f-icon .a11y-ico, body.a11y-mode .icon .a11y-ico {
+    width: 1.4em !important; height: 1.4em !important;
+  }
+  body.a11y-mode .gi-icon .a11y-emoji, body.a11y-mode .fi-icon .a11y-emoji,
+  body.a11y-mode .vs-icon .a11y-emoji, body.a11y-mode .vt-label .a11y-emoji {
+    font-size: 0 !important; line-height: 0 !important; width: 0 !important; display: inline-block !important;
+  }
+  body.a11y-mode .gradient-box h3 .a11y-ico,
+  body.a11y-mode .gradient-box-vert h3 .a11y-ico,
+  body.a11y-mode .col-card h4 .a11y-ico,
+  body.a11y-mode .tag-fo-link .a11y-ico {
+    display: inline !important; width: 1em; height: 1em; vertical-align: -0.15em; color: currentColor !important;
+  }
+  body.a11y-mode .gradient-box h3 .a11y-emoji,
+  body.a11y-mode .gradient-box-vert h3 .a11y-emoji,
+  body.a11y-mode .col-card h4 .a11y-emoji,
+  body.a11y-mode .tag-fo-link .a11y-emoji {
+    font-size: 0 !important; width: 0 !important; display: inline-block !important;
+  }
+  body.a11y-mode .btn-icon .a11y-ico, body.a11y-mode .a11y-icon .a11y-ico {
+    width: 1em; height: 1em;
+  }
+
+/* ═══════════════════════════════════════════════
+     SKIP LINK
+  ═══════════════════════════════════════════════ */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: #ffbf00;
+    color: #2C2C29;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 16px; }
+
+  /* ═══════════════════════════════════════════════
+     LOGO CLIQUABLE + INFO-BULLE (TOOLTIP)
+  ═══════════════════════════════════════════════ */
+  .logo-link-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .logo-link-wrap .logo-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0,0,0,0.82);
+    color: #FFFFFF;
+    font-size: 11.5px;
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
+    padding: 6px 12px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    right: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, visibility 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .logo-link-wrap .logo-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 14px;
+    border: 6px solid transparent;
+    border-top-color: rgba(0,0,0,0.82);
+  }
+  .logo-link-wrap:hover .logo-tooltip,
+  .logo-link-wrap:focus-within .logo-tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  .logo-link-wrap img {
+    transition: transform 0.25s, filter 0.25s;
+    cursor: pointer;
+    filter: drop-shadow(0 2px 8px rgba(247,221,92,0.2));
+  }
+  .logo-link-wrap:hover img {
+    transform: scale(1.06);
+    filter: drop-shadow(0 4px 14px rgba(247,221,92,0.5));
+  }
+
+  /* ═══════════════════════════════════════════════
+     CARTE CONTACT FO (bandeau avant footer)
+  ═══════════════════════════════════════════════ */
+  .fo-contact-card {
+    background: linear-gradient(135deg, #c0303a 0%, #9e1a28 60%, #7a0e1c 100%);
+    border-radius: 16px;
+    padding: 18px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fo-contact-card::before {
+    content: '✉';
+    position: absolute;
+    right: -8px; top: -16px;
+    font-size: 100px;
+    color: rgba(255,255,255,0.08);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .fo-contact-card .fo-logo-wrap { flex-shrink: 0; }
+  .fo-contact-card .fo-logo-wrap img {
+    height: 44px;
+    object-fit: contain;
+    transition: transform 0.25s;
+    cursor: pointer;
+    display: block;
+    background: white;
+    border-radius: 8px;
+    padding: 5px 8px;
+  }
+  .fo-contact-card .fo-logo-wrap img:hover { transform: scale(1.07); }
+  .fo-contact-card .fo-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .fo-contact-card .fo-text { flex: 1; min-width: 180px; }
+  .fo-contact-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+  }
+  .fo-contact-card p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .fo-mailto-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #525250;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 9px 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  }
+  .fo-mailto-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    background: #F4F3EF;
+  }
+  .fo-mailto-btn .btn-icon { font-size: 15px; }
+
+  /* a11y mode — contact card */
+  body.a11y-mode .fo-contact-card {
+    background: #525250;
+    border: 3px solid #6F6E68;
+  }
+  body.a11y-mode .fo-contact-card h3 { color: #FFFFFF !important; }
+  body.a11y-mode .fo-contact-card p  { color: #C8C6C0 !important; }
+  body.a11y-mode .fo-mailto-btn {
+    background: #FFFFFF;
+    color: #2C2C29 !important;
+    border: 2px solid #2C2C29;
+  }
+
+  /* ═══════════════════════════════════════════════
+     MODE PAYSAGE FORCÉ SUR MOBILE (portrait → rotation 90°)
+  ═══════════════════════════════════════════════ */
+
+  /* Bandeau d'invite rotation — visible uniquement sur mobile portrait */
+  .rotate-banner {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(135deg, #019cda, #028bc2);
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 9998;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.15);
+  }
+  .rotate-banner .rb-icon {
+    font-size: 20px;
+    animation: rb-spin 2s ease-in-out infinite;
+    display: inline-block;
+  }
+  @keyframes rb-spin {
+    0%   { transform: rotate(0deg); }
+    40%  { transform: rotate(90deg); }
+    60%  { transform: rotate(90deg); }
+    100% { transform: rotate(0deg); }
+  }
+  .rotate-banner .rb-close {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .rotate-banner .rb-close:hover { background: rgba(255,255,255,0.35); }
+
+  /* Sur mobile en portrait : afficher le bandeau */
+  @media (max-width: 768px) and (orientation: portrait) {
+    .rotate-banner { display: flex; }
+    /* Ajouter du padding en bas pour ne pas cacher le contenu */
+    body { padding-bottom: 52px; }
+  }
+
+  /* Sur mobile en paysage : masquer le bandeau, optimiser la mise en page */
+  @media (max-width: 900px) and (orientation: landscape) {
+    .rotate-banner { display: none !important; }
+    body { padding-bottom: 0; }
+    .page { padding: 16px 24px 32px; max-width: 100%; }
+    .header { padding: 20px 28px 16px; border-radius: 12px; margin-bottom: 20px; }
+    .header h1 { font-size: 26px; }
+    .header .subtitle { font-size: 13px; }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .placement-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .fiscal-compare { grid-template-columns: 1fr 1fr; }
+    .link-grid { grid-template-columns: 1fr 1fr; }
+    .stat-box { padding: 18px 24px; gap: 16px; }
+    .stat-box .stat-val { font-size: 36px; }
+    .fiscal-section,
+    .calendar-section { padding: 18px 22px; }
+    .fo-contact-card { padding: 12px 16px; }
+    .a11y-toggle-bar { margin: -12px 0 20px; }
+  }
+
+
+  /* ═══════════════════════════════════════════════
+     ICÔNES SVG MODE LECTURE UNIVERSELLE
+  ═══════════════════════════════════════════════ */
+  .a11y-ico {
+    display: none;
+    width: 1.1em;
+    height: 1.1em;
+    vertical-align: -0.18em;
+    flex-shrink: 0;
+    color: currentColor;
+  }
+  body.a11y-mode .a11y-ico {
+    display: inline;
+  }
+  /* Masquer l'emoji et afficher le SVG en mode a11y */
+  body.a11y-mode .a11y-emoji {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    width: 0 !important;
+    display: inline-block;
+  }
+  /* Taille icône dans les card-icon / place-icon / f-icon / section icon */
+  body.a11y-mode .card-icon .a11y-ico,
+  body.a11y-mode .place-icon .a11y-ico,
+  body.a11y-mode .f-icon .a11y-ico,
+  body.a11y-mode .icon .a11y-ico {
+    width: 1.4em;
+    height: 1.4em;
+  }
+  /* Icône dans tl-date (timeline) */
+  body.a11y-mode .tl-date .a11y-ico {
+    width: 0.95em;
+    height: 0.95em;
+    vertical-align: -0.1em;
+  }
+  /* Icône dans les boutons/liens */
+  body.a11y-mode .btn-icon .a11y-ico,
+  body.a11y-mode .a11y-icon .a11y-ico {
+    width: 1em;
+    height: 1em;
+  }
+
+
+  /* ═══════════════════════════════════════════════
+     TIMELINE — MODE LECTURE UNIVERSELLE
+     Différenciation par forme, pas par couleur
+  ═══════════════════════════════════════════════ */
+
+  /* Ligne verticale : couleur neutre */
+  body.a11y-mode .timeline::before {
+    background: var(--a11y-border2) !important;
+    border-radius: 0 !important;
+    width: 2px !important;
+  }
+
+  /* Point standard : cercle CREUX (fond blanc, contour gris foncé) */
+  body.a11y-mode .tl-item::before {
+    background: var(--a11y-surface) !important;
+    border: 2.5px solid var(--a11y-txt2) !important;
+    box-shadow: none !important;
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* Point actif : cercle PLEIN (fond foncé) + plus grand */
+  body.a11y-mode .tl-item.active::before {
+    background: var(--a11y-txt1) !important;
+    border: 2.5px solid var(--a11y-txt1) !important;
+    box-shadow: 0 0 0 3px var(--a11y-surface), 0 0 0 5px var(--a11y-txt2) !important;
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* Date standard : couleur texte neutre */
+  body.a11y-mode .tl-date {
+    color: var(--a11y-txt3) !important;
+    font-weight: 600 !important;
+  }
+
+  /* Date active : texte foncé + badge "En cours" */
+  body.a11y-mode .tl-item.active .tl-date {
+    color: var(--a11y-txt1) !important;
+    font-weight: 700 !important;
+  }
+
+  /* Badge "En cours" injecté via ::after sur les items actifs */
+  body.a11y-mode .tl-item.active .tl-date::after {
+    content: ' — EN COURS';
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--a11y-txt3);
+    vertical-align: middle;
+  }
+
+
+  /* ═══════════════════════════════════════════════
+     FC-COL + FC-HIGHLIGHT — MODE LECTURE UNIVERSELLE
+     Différenciation par forme, pas par couleur
+  ═══════════════════════════════════════════════ */
+
+  /* Colonne "placement" : bordure PLEINE → neutre */
+  body.a11y-mode .fc-col.placement {
+    background: var(--a11y-surface) !important;
+    border: 1.5px solid var(--a11y-border) !important;
+    border-top: 5px solid var(--a11y-txt1) !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+
+  /* Colonne "paiement" : bordure EN TIRETS → différenciée sans couleur */
+  body.a11y-mode .fc-col.paiement {
+    background: var(--a11y-surface2) !important;
+    border: 1.5px dashed var(--a11y-txt2) !important;
+    border-top: 5px dashed var(--a11y-txt2) !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+
+  /* Titres des colonnes */
+  body.a11y-mode .fc-col.placement h4::before { content: '▬ '; font-size: 10px; }
+  body.a11y-mode .fc-col.paiement  h4::before { content: '╌╌ '; font-size: 10px; letter-spacing: -1px; }
+
+  /* Puces ✓ : neutres dans les deux colonnes */
+  body.a11y-mode .fc-col ul li::before {
+    content: '›' !important;
+    color: var(--a11y-txt2) !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+  }
+
+  /* Encadré fc-highlight 💡 (fond vert → neutre) */
+  body.a11y-mode .fc-col.placement .fc-highlight {
+    background: var(--a11y-surface2) !important;
+    border-left: 4px solid var(--a11y-txt1) !important;
+    border-radius: 0 6px 6px 0 !important;
+  }
+
+  /* Encadré fc-highlight ⚠️ (fond jaune → neutre + bordure tirets) */
+  body.a11y-mode .fc-col.paiement .fc-highlight {
+    background: var(--a11y-surface2) !important;
+    border-left: 4px dashed var(--a11y-txt2) !important;
+    border-radius: 0 6px 6px 0 !important;
+  }
+
+  /* Texte dans les encadrés */
+  body.a11y-mode .fc-highlight {
+    color: var(--a11y-txt2) !important;
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
+  body.a11y-mode .fc-highlight strong {
+    color: var(--a11y-txt1) !important;
+  }
+
+  .alert.blue { background: #e6f5fb; border-color: var(--bleu); }
+  .alert.blue p { color: #014c6e; }
+  .alert.blue strong { color: #012f44; }
+
+  /* BIG STAT BOX */
+  .stat-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 20px;
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .stat-box .stat-main { flex-shrink: 0; text-align: center; }
+  .stat-box .stat-val { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 900; color: var(--or); line-height: 1; }
+  .stat-box .stat-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+  .stat-box .stat-desc { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.7; }
+  .stat-box .stat-desc strong { color: white; }
+
+  /* SCHEMA SECTION */
+  .schema-section {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+  }
+
+  /* ORGANISATION SCHEMA */
+  .org-schema-wrap { width: 100%; overflow-x: auto; }
+  .org-schema-wrap svg { display: block; margin: 0 auto; max-width: 100%; }
+  .org-child {
+    background: var(--fond);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: var(--texte);
+    line-height: 1.5;
+    border-left: 3px solid var(--bleu-clair);
+    margin-bottom: 8px;
+  }
+  .org-child.vert { border-left-color: var(--vert); }
+  .org-child strong { color: var(--bleu); display: block; margin-bottom: 2px; }
+  .org-child.vert strong { color: var(--vert); }
+  .org-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .org-col-ccas, .org-col-cmcas { display: flex; flex-direction: column; }
+
+  /* PLACEMENT CARDS */
+  .placement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .place-card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 18px;
+    border-top: 4px solid var(--bleu-clair);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .place-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,59,111,0.1); }
+  .place-card.vert { border-top-color: var(--vert); }
+  .place-card .place-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+  .place-card h3 { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .place-card.vert h3 { color: var(--vert); }
+  .place-card p { font-size: 12.5px; color: var(--gris); line-height: 1.6; }
+  .place-card .tag { display: inline-block; margin-top: 10px; font-size: 11px; padding: 3px 10px; border-radius: 20px; background: var(--or-clair); color: #7a5200; font-weight: 500; }
+  .place-card .tag.blue { background: #e6f5fb; color: #017fb1; }
+  .place-card .tag.green { background: var(--vert-clair); color: #0a6e52; }
+
+  /* FINANCEMENT TABLE */
+  .financement-section { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+  .financement-flow { display: flex; flex-direction: column; gap: 0; margin: 20px 0; }
+  .f-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    background: var(--fond);
+    margin-bottom: 4px;
+  }
+  .f-row.source { background: #e6f5fb; }
+  .f-row.salarie { background: var(--vert-clair); }
+  .f-row.total { background: linear-gradient(90deg, #e6f5fb, var(--vert-clair)); }
+  .f-row .fi-icon { font-size: 22px; flex-shrink: 0; width: 36px; text-align:center; }
+  .f-row .fi-label { flex: 1; font-size: 13.5px; line-height: 1.5; }
+  .f-row .fi-label strong { font-size: 14.5px; display:block; margin-bottom:2px; }
+  .f-row .fi-badge { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; text-align: right; flex-shrink: 0; min-width: 120px; }
+  .f-row.source .fi-badge { color: var(--bleu); }
+  .f-row.salarie .fi-badge { color: var(--vert); }
+  .f-row.total .fi-badge { color: var(--bleu); }
+  .arrow-down { text-align: center; font-size: 18px; color: var(--gris); margin: 2px 0; opacity: 0.5; }
+
+  /* GRADIENT BOX (CCAS section) */
+  .gradient-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .gradient-box::after { content: 'CCAS'; position: absolute; right: -10px; top: -10px; font-family: 'Fraunces', serif; font-size: 90px; font-weight: 900; color: rgba(255,255,255,0.05); pointer-events: none; }
+  .gradient-box h3 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--or); margin-bottom: 12px; }
+  .gradient-box p { font-size: 13.5px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 16px; }
+  .gradient-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .gradient-item { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 14px 16px; }
+  .gradient-item .gi-icon { font-size: 22px; margin-bottom: 6px; }
+  .gradient-item .gi-label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+  .gradient-item .gi-val { font-family: 'Fraunces', serif; font-size: 15px; color: var(--or); margin-top: 2px; line-height: 1.4; }
+  .gradient-item .gi-sub { font-size: 11.5px; color: rgba(255,255,255,0.75); margin-top: 3px; }
+
+  /* GRADIENT BOX CMCAS */
+  .gradient-box-vert {
+    background: linear-gradient(135deg, #28b193 0%, #1e8a70 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .gradient-box-vert::after { content: 'CMCAS'; position: absolute; right: -10px; top: -10px; font-family: 'Fraunces', serif; font-size: 90px; font-weight: 900; color: rgba(255,255,255,0.05); pointer-events: none; }
+  .gradient-box-vert h3 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--or); margin-bottom: 12px; }
+  .gradient-box-vert p { font-size: 13.5px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 16px; }
+
+  /* CALENDAR */
+  .calendar-section { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--bleu-clair), var(--or)); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -22px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bleu-clair); border: 2px solid white; box-shadow: 0 0 0 2px var(--bleu-clair); }
+  .tl-item.active::before { background: var(--or); box-shadow: 0 0 0 2px var(--or); }
+  .tl-date { font-size: 11px; font-weight: 500; color: var(--bleu-clair); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .tl-item.active .tl-date { color: #b08000; }
+  .tl-title { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 3px; }
+  .tl-desc { font-size: 13px; color: var(--gris); line-height: 1.55; }
+
+  /* TWO COLS */
+  .two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .col-card {
+    border-radius: 14px;
+    padding: 20px;
+    border-top: 4px solid;
+  }
+  .col-card.ccas { background: #e6f5fb; border-top-color: var(--bleu); }
+  .col-card.cmcas { background: var(--vert-clair); border-top-color: var(--vert); }
+  .col-card h4 { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 10px; }
+  .col-card.cmcas h4 { color: var(--vert); }
+  .col-card ul { list-style: none; padding: 0; }
+  .col-card ul li { font-size: 12.5px; color: #4A4A46; line-height: 1.65; padding-left: 18px; position: relative; margin-bottom: 6px; }
+  .col-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--bleu); font-weight: 700; }
+  .col-card.cmcas ul li::before { color: var(--vert); }
+
+  /* CONTACT FO CARD */
+  .fo-contact-card {
+    background: linear-gradient(135deg, #c0303a 0%, #9e1a28 60%, #7a0e1c 100%);
+    border-radius: 16px;
+    padding: 18px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fo-contact-card::before {
+    content: '✉';
+    position: absolute;
+    right: -8px; top: -16px;
+    font-size: 100px;
+    color: rgba(255,255,255,0.08);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .fo-contact-card .fo-logo-wrap {
+    flex-shrink: 0;
+  }
+  .fo-contact-card .fo-logo-wrap img {
+    height: 44px;
+    object-fit: contain;
+    transition: transform 0.25s;
+    cursor: pointer;
+    display: block;
+    background: white;
+    border-radius: 8px;
+    padding: 5px 8px;
+  }
+  .fo-contact-card .fo-logo-wrap img:hover {
+    transform: scale(1.07);
+  }
+  .fo-contact-card .fo-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .fo-contact-card .fo-text {
+    flex: 1;
+    min-width: 180px;
+  }
+  .fo-contact-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+  }
+  .fo-contact-card p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .fo-mailto-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #525250;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 9px 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  }
+  .fo-mailto-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    background: #F4F3EF;
+  }
+  .fo-mailto-btn .btn-icon { font-size: 15px; }
+
+  /* FOOTER */
+  .footer { text-align: center; font-size: 12px; color: var(--gris); padding-top: 24px; border-top: 1px solid #ddd; }
+  .footer a { color: var(--bleu); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .cards, .placement-grid, .two-cols, .gradient-grid { grid-template-columns: 1fr; }
+    .stat-box { flex-direction: column; text-align: center; }
+    .header h1 { font-size: 30px; }
+    .header { padding: 32px 24px; }
+    .page { padding: 24px 16px 48px; }
+    .org-branch { flex-direction: column; align-items: center; }
+    .org-branch::before, .org-branch::after { display: none; }
+  }
+  /* ═══════════════════════════════════════════════
+     MODE LECTURE UNIVERSELLE
+     Couvre : basse vision · daltonisme · dyslexie
+              motricité réduite · fatigue visuelle
+  ═══════════════════════════════════════════════ */
+
+  /* Bouton de bascule */
+  .a11y-toggle-bar {
+    display: flex;
+    justify-content: center;
+    margin: -20px 0 28px;
+    position: relative;
+    z-index: 10;
+  }
+  .a11y-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 40px;
+    padding: 8px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #6E6D69;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .a11y-btn:hover { border-color: #019cda; color: #019cda; box-shadow: 0 4px 14px rgba(1,156,218,0.15); }
+  .a11y-btn:focus { outline: 4px solid #019cda; outline-offset: 3px; }
+  .a11y-btn .a11y-icon { font-size: 16px; }
+  .a11y-btn .a11y-label-on  { display: none; }
+  .a11y-btn .a11y-label-off { display: inline; }
+
+  /* ── Mode actif : bouton ── */
+  body.a11y-mode .a11y-btn {
+    background: #525250;
+    border-color: #525250;
+    color: white;
+    font-weight: 700;
+  }
+  body.a11y-mode .a11y-btn .a11y-label-on  { display: inline; }
+  body.a11y-mode .a11y-btn .a11y-label-off { display: none; }
+
+  /* ── Header en mode universel ── */
+  body.a11y-mode .header {
+    background: #525250;
+    border: 3px solid #2C2C29;
+    border-radius: 16px;
+  }
+  body.a11y-mode .header h1 {
+    color: #FFFFFF !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 34px;
+    letter-spacing: 0.02em;
+  }
+  body.a11y-mode .header h1 em {
+    color: #FFFFFF !important;
+    text-decoration: underline;
+    font-style: normal;
+  }
+  body.a11y-mode .header .subtitle {
+    color: #C8C6C0 !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 15px;
+  }
+  body.a11y-mode .badge {
+    background: #FFFFFF;
+    color: #2C2C29;
+    border: 2px solid #2C2C29;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+  body.a11y-mode .header .update {
+    background: rgba(255,255,255,0.15);
+    border: 1.5px solid rgba(255,255,255,0.5);
+    color: #FFFFFF;
+  }
+  body.a11y-mode .dot {
+    background: #FFFFFF;
+  }
+     Atkinson Hyperlegible : conçue pour la basse vision,
+     confusion de caractères réduite (b/d, p/q, I/l/1…)  */
+  body.a11y-mode {
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 17px;
+    line-height: 1.9;
+    letter-spacing: 0.025em;
+    word-spacing: 0.1em;
+    background: #FFFFFF;
+    color: #2C2C29;
+  }
+  body.a11y-mode p,
+  body.a11y-mode li,
+  body.a11y-mode td,
+  body.a11y-mode .card p,
+  body.a11y-mode .place-card p,
+  body.a11y-mode .tl-desc,
+  body.a11y-mode .intro,
+  body.a11y-mode .f-row .fi-label {
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 15px;
+    line-height: 1.9;
+    letter-spacing: 0.025em;
+  }
+
+  /* ── Titres : contraste AAA (7:1) ── */
+  body.a11y-mode .header h1  { font-size: 34px; }
+  body.a11y-mode .section-title { font-size: 22px; color: #2C2C29 !important; }
+  body.a11y-mode .card h3,
+  body.a11y-mode .place-card h3,
+  body.a11y-mode .col-card h4,
+  body.a11y-mode .fo-contact-card h3 { font-size: 17px; color: #2C2C29 !important; }
+
+  /* ── Palette sans dépendance couleur ──
+     Chaque zone a une FORME + MOTIF + ÉTIQUETTE en plus de la couleur
+     → compréhensible même en niveaux de gris total             */
+
+  body.a11y-mode .page { background: #FFFFFF; }
+
+  /* Intro : fond légèrement teinté + bordure épaisse */
+  body.a11y-mode .intro {
+    background: #FAFAF7;
+    border-left: 6px solid #2C2C29;
+    color: #2C2C29;
+  }
+  body.a11y-mode .intro strong { color: #2C2C29; text-decoration: underline; }
+
+  /* Cards : fond neutre + bordure pleine épaisse + pas de couleur seule */
+  body.a11y-mode .card {
+    background: #F4F3EF;
+    border: 2px solid #2C2C29;
+    box-shadow: none;
+  }
+  body.a11y-mode .card p { color: #2C2C29 !important; }
+  body.a11y-mode .card.highlight {
+    background: #525250;
+    border: 2px solid #2C2C29;
+  }
+  body.a11y-mode .card.highlight h3 { color: #FFFFFF !important; }
+  body.a11y-mode .card.highlight p  { color: #C8C6C0 !important; }
+
+  /* Schema section */
+  body.a11y-mode .schema-section {
+    background: #F4F3EF;
+    border: 2px solid #2C2C29;
+  }
+
+  /* Place cards : bordure haute épaisse + fond neutre */
+  body.a11y-mode .place-card {
+    background: #F4F3EF;
+    border: 2px solid #4A4A46;
+    border-top: 6px solid #2C2C29;
+  }
+  body.a11y-mode .place-card p { color: #2C2C29 !important; }
+
+  /* Financement et calendrier */
+  body.a11y-mode .financement-section,
+  body.a11y-mode .calendar-section {
+    background: #F4F3EF;
+    border: 2px solid #2C2C29;
+  }
+  body.a11y-mode .f-row {
+    border: 2px solid #6F6E68;
+  }
+  body.a11y-mode .f-row.source  { background: #E2E0DA; border-left: 6px solid #2C2C29; }
+  body.a11y-mode .f-row.salarie { background: #F4F3EF; border-left: 6px dashed #2C2C29; }
+  body.a11y-mode .f-row.total   { background: #E2E0DA; border-left: 6px dotted #2C2C29; }
+  body.a11y-mode .f-row .fi-badge { color: #2C2C29 !important; }
+
+  /* Col cards CCAS / CMCAS : différenciés par motif de bordure, pas couleur */
+  body.a11y-mode .col-card {
+    background: #F4F3EF;
+  }
+  body.a11y-mode .col-card.ccas {
+    border: 2px solid #2C2C29;
+    border-top: 6px solid #2C2C29; /* plein = CCAS */
+  }
+  body.a11y-mode .col-card.ccas h4 { color: #2C2C29 !important; }
+  body.a11y-mode .col-card.ccas::before {
+    content: '🏢 National —';
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #2C2C29;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  body.a11y-mode .col-card.cmcas {
+    border: 2px dashed #2C2C29;
+    border-top: 6px dashed #2C2C29; /* pointillés = CMCAS */
+  }
+  body.a11y-mode .col-card.cmcas h4 { color: #2C2C29 !important; }
+  body.a11y-mode .col-card.cmcas::before {
+    content: '📍 Local —';
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #2C2C29;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  body.a11y-mode .col-card ul li::before { color: #2C2C29 !important; }
+
+  /* Alertes universelles — spécificité maximale, tout forcé */
+  body.a11y-mode .alert,
+  body.a11y-mode div.alert {
+    background: #FFFFFF !important;
+    border: 3px solid #2C2C29 !important;
+    border-left: 8px solid #2C2C29 !important;
+    border-radius: 12px !important;
+  }
+  body.a11y-mode .alert p,
+  body.a11y-mode div.alert p          { color: #2C2C29 !important; font-size: 15px !important; line-height: 1.8 !important; }
+  body.a11y-mode .alert strong,
+  body.a11y-mode div.alert strong     { color: #2C2C29 !important; }
+  body.a11y-mode .alert .alert-icon,
+  body.a11y-mode div.alert .alert-icon { font-size: 26px !important; }
+
+  body.a11y-mode .alert.green,
+  body.a11y-mode div.alert.green {
+    background: #F4F3EF !important;
+    border: 3px dashed #2C2C29 !important;
+    border-left: 8px dashed #2C2C29 !important;
+  }
+  body.a11y-mode .alert.green p,
+  body.a11y-mode div.alert.green p      { color: #2C2C29 !important; }
+  body.a11y-mode .alert.green strong,
+  body.a11y-mode div.alert.green strong { color: #2C2C29 !important; }
+
+  body.a11y-mode .alert.blue,
+  body.a11y-mode div.alert.blue {
+    background: #FFFFFF !important;
+    border: 3px dotted #2C2C29 !important;
+    border-left: 8px solid #2C2C29 !important;
+  }
+  body.a11y-mode .alert.blue p,
+  body.a11y-mode div.alert.blue p      { color: #2C2C29 !important; }
+  body.a11y-mode .alert.blue strong,
+  body.a11y-mode div.alert.blue strong { color: #2C2C29 !important; }
+
+  /* Stat box / gradient boxes : fond sombre mais sans dépendance couleur */
+  body.a11y-mode .stat-box {
+    background: #525250;
+    border: 3px solid #2C2C29;
+  }
+  body.a11y-mode .stat-box .stat-val { color: #FFFFFF !important; }
+  body.a11y-mode .stat-box .stat-label { color: #C8C6C0 !important; }
+  body.a11y-mode .stat-box .stat-desc { color: #C8C6C0 !important; }
+  body.a11y-mode .stat-box .stat-desc strong { color: #FFFFFF !important; }
+
+  body.a11y-mode .gradient-box {
+    background: #525250;
+    border: 3px solid #2C2C29;
+  }
+  body.a11y-mode .gradient-box h3 { color: #FFFFFF !important; }
+  body.a11y-mode .gradient-box p  { color: #C8C6C0 !important; }
+  body.a11y-mode .gradient-item {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  body.a11y-mode .gradient-item .gi-val { color: #FFFFFF !important; }
+  body.a11y-mode .gradient-item .gi-sub { color: #C8C6C0 !important; }
+
+  body.a11y-mode .gradient-box-vert {
+    background: #525250;
+    border: 3px dashed #6E6D69;
+  }
+  body.a11y-mode .gradient-box-vert h3 { color: #FFFFFF !important; }
+  body.a11y-mode .gradient-box-vert p  { color: #C8C6C0 !important; }
+
+  /* Contact FO */
+  body.a11y-mode .fo-contact-card {
+    background: #525250;
+    border: 3px solid #6F6E68;
+  }
+  body.a11y-mode .fo-contact-card h3 { color: #FFFFFF !important; }
+  body.a11y-mode .fo-contact-card p  { color: #C8C6C0 !important; }
+  body.a11y-mode .fo-mailto-btn {
+    background: #FFFFFF;
+    color: #2C2C29 !important;
+    border: 2px solid #2C2C29;
+  }
+
+  /* Timeline */
+  body.a11y-mode .tl-title { color: #2C2C29 !important; }
+  body.a11y-mode .tl-date  { color: #4A4A46 !important; font-weight: 700; }
+  body.a11y-mode .tl-desc  { color: #525250 !important; }
+
+  /* Tags */
+  body.a11y-mode .tag {
+    background: #E2E0DA !important;
+    color: #2C2C29 !important;
+    border: 1px solid #6F6E68 !important;
+  }
+
+  /* Textes gris → noir */
+  body.a11y-mode .footer { color: #2C2C29 !important; }
+  body.a11y-mode .footer a { color: #2C2C29 !important; text-decoration: underline; }
+
+  /* ── Focus ultra-visible (motricité réduite) ── */
+
+  /* ── Skip link ── */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: #ffbf00;
+    color: #2C2C29;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 16px; }
+
+  /* ── Zoom 200% sans dépassement ── */
+  @media (max-width: 600px) {
+    body.a11y-mode .cards,
+    body.a11y-mode .placement-grid,
+    body.a11y-mode .two-cols,
+    body.a11y-mode .gradient-grid { grid-template-columns: 1fr; }
+    body.a11y-mode .stat-box { flex-direction: column; }
+    body.a11y-mode .page { padding: 16px; }
+  }
+
+  /* ── Contraste système élevé (Windows/macOS) ── */
+  @media (prefers-contrast: more) {
+    .card, .place-card, .intro, .alert { border: 3px solid #2C2C29 !important; }
+    * { color: #2C2C29 !important; background: #FFFFFF !important; }
+    a { color: #2C2C29 !important; text-decoration: underline !important; }
+  }
+
+  /* ── Réduction de mouvement (épilepsie, troubles vestibulaires) ── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+
+  /* ═══ OVERRIDE FINAL ALERTES MODE UNIVERSEL ═══
+     Placé en dernier pour gagner la cascade sans exception */
+  body.a11y-mode div.alert {
+    background-color: #FFFFFF !important;
+    border: 3px solid #2C2C29 !important;
+    border-left: 8px solid #2C2C29 !important;
+    border-radius: 12px !important;
+  }
+  body.a11y-mode div.alert > p { color: #2C2C29 !important; font-size: 15px !important; }
+  body.a11y-mode div.alert > p strong { color: #2C2C29 !important; }
+
+  body.a11y-mode div.alert.green {
+    background-color: #F4F3EF !important;
+    border: 3px dashed #2C2C29 !important;
+    border-left: 8px dashed #2C2C29 !important;
+  }
+  body.a11y-mode div.alert.green > p { color: #2C2C29 !important; }
+  body.a11y-mode div.alert.green > p strong { color: #2C2C29 !important; }
+
+  body.a11y-mode div.alert.blue {
+    background-color: #FFFFFF !important;
+    border: 3px dotted #2C2C29 !important;
+    border-left: 8px solid #2C2C29 !important;
+  }
+  body.a11y-mode div.alert.blue > p { color: #2C2C29 !important; }
+  body.a11y-mode div.alert.blue > p strong { color: #2C2C29 !important; }
+
+  /* ═══ OVERRIDE FINAL ICÔNES MODE UNIVERSEL ═══ */
+
+  /* .icon des titres de section : fond neutre + bordure */
+  body.a11y-mode .section-title .icon {
+    background: #E2E0DA !important;
+    border: 2px solid #2C2C29 !important;
+    border-radius: 6px !important;
+  }
+
+  /* .dot dans le header : blanc uni */
+  body.a11y-mode .dot {
+    background: #FFFFFF !important;
+    width: 9px !important;
+    height: 9px !important;
+    border: 1px solid rgba(255,255,255,0.6) !important;
+  }
+
+  /* card-icon : taille augmentée */
+  body.a11y-mode .card-icon {
+    font-size: 32px !important;
+  }
+
+  /* place-icon : taille augmentée */
+  body.a11y-mode .place-icon {
+    font-size: 32px !important;
+  }
+
+  /* alert-icon : taille augmentée */
+  body.a11y-mode .alert-icon,
+  body.a11y-mode div.alert-icon {
+    font-size: 28px !important;
+  }
+
+  /* gi-icon dans les gradient boxes */
+  body.a11y-mode .gi-icon {
+    font-size: 26px !important;
+  }
+
+  /* section-title : icône texte plus grand */
+  body.a11y-mode .section-title {
+    font-size: 22px !important;
+    gap: 12px !important;
+  }
+
+  /* ═══ TABLE COMPARAISON MODE UNIVERSEL ═══ */
+  body.a11y-mode table thead tr { background: #525250 !important; }
+  body.a11y-mode table thead th { color: #FFFFFF !important; font-size: 14px !important; border: 2px solid #2C2C29 !important; }
+  body.a11y-mode table tbody td { color: #2C2C29 !important; font-size: 14px !important; line-height: 1.7 !important; border: 1px solid #6F6E68 !important; }
+  body.a11y-mode table tbody td strong { color: #2C2C29 !important; }
+  body.a11y-mode table tbody tr:nth-child(even) { background: #F4F3EF !important; }
+  body.a11y-mode table tbody td[style*="background:#e6f5fb"] { background: #F4F3EF !important; border-left: 5px solid #2C2C29 !important; }
+
+  /* ══════════════════════════════════
+     SECTION VERSUS IEG / CSE
+  ══════════════════════════════════ */
+  /* ══ VERSUS TABLE : grille partagée — alignement ligne par ligne ══ */
+  .versus-table {
+    display: grid;
+    grid-template-columns: 1fr 36px 1fr;
+    margin-bottom: 32px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+
+  /* Chaque .vt-row est display:contents → ses enfants rejoignent la grille parente */
+  .vt-row { display: contents; }
+
+  /* Cellule générique */
+  .vt-cell {
+    padding: 14px 18px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid #ececec;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #4A4A46;
+  }
+  .vt-row:last-child .vt-cell { border-bottom: none; }
+
+  /* Colonne IEG */
+  .vt-ieg { background: #FFFFFF; }
+  .vt-ieg:hover { background: #f0faff; }
+  .vt-ieg strong { color: var(--bleu); display: block; margin-bottom: 2px; font-size: 13.5px; }
+
+  /* Colonne CSE */
+  .vt-cse { background: #fafafa; }
+  .vt-cse:hover { background: #f4f4f4; }
+  .vt-cse strong { color: #6E6D69; display: block; margin-bottom: 2px; font-size: 13.5px; }
+
+  /* Colonne centrale : icône séparateur */
+  .vt-label {
+    background: #F4F3EF;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 14px;
+    border-bottom: 1px solid #E2E0DA;
+    border-left: 1px solid #E2E0DA;
+    border-right: 1px solid #E2E0DA;
+  }
+  .vt-row:last-child .vt-label { border-bottom: none; }
+
+  /* En-têtes */
+  .vt-ieg-head {
+    background: linear-gradient(135deg, #019cda, #028bc2);
+    padding: 18px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    border-bottom: none;
+  }
+  .vt-cse-head {
+    background: linear-gradient(135deg, #6F6E68, #4A4A46);
+    padding: 18px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    border-bottom: none;
+  }
+  .vt-vs {
+    background: var(--texte);
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .versus-badge { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 700; color: #FFFFFF; }
+  .versus-sub { font-size: 11px; color: rgba(255,255,255,0.65); letter-spacing: 1px; text-transform: uppercase; }
+  .vs-circle { width: 36px; height: 36px; border-radius: 50%; background: white; color: var(--texte); font-family: 'Fraunces', serif; font-size: 11px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+  .vs-icon { font-size: 18px; flex-shrink: 0; width: 26px; text-align: center; }
+
+  @media (max-width: 600px) {
+    .versus-table { grid-template-columns: 1fr; box-shadow: none; }
+    .vt-row { display: grid; grid-template-columns: 1fr; margin-bottom: 4px; border-radius: 12px; overflow: hidden; }
+    .vt-label, .vt-vs { display: none; }
+    .vt-ieg-head, .vt-cse-head { border-radius: 12px 12px 0 0; }
+    .vt-row:last-child .vt-cell { border-bottom: 1px solid #ececec; }
+  }
+
+  /* Mode universel — versus table */
+  body.a11y-mode .versus-table { box-shadow: none !important; border: 2px solid #2C2C29 !important; }
+  body.a11y-mode .vt-ieg { background: #FFFFFF !important; border-left: 6px solid #2C2C29 !important; }
+  body.a11y-mode .vt-cse { background: #F4F3EF !important; border-right: 6px dashed #2C2C29 !important; }
+  body.a11y-mode .vt-ieg-head { background: #525250 !important; border-left: 6px solid #2C2C29 !important; }
+  body.a11y-mode .vt-cse-head { background: #4A4A46 !important; border-right: 6px dashed #2C2C29 !important; }
+  body.a11y-mode .vt-label, body.a11y-mode .vt-vs { background: #6F6E68 !important; }
+  body.a11y-mode .vt-cell { color: #2C2C29 !important; font-size: 14px !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; border-bottom-color: #6E6D69 !important; }
+  body.a11y-mode .vt-ieg strong { color: #2C2C29 !important; }
+  body.a11y-mode .vt-cse strong { color: #2C2C29 !important; }
+  body.a11y-mode .vs-circle { background: #FFFFFF !important; color: #2C2C29 !important; }
+
+
+  /* ══ FORCER PAYSAGE SUR MOBILE ══ */
+  .rotate-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #019cda;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    text-align: center;
+  }
+  .rotate-icon {
+    font-size: 64px;
+    animation: rotate-hint 1.8s ease-in-out infinite;
+  }
+  @keyframes rotate-hint {
+    0%   { transform: rotate(0deg); }
+    30%  { transform: rotate(-90deg); }
+    60%  { transform: rotate(-90deg); }
+    100% { transform: rotate(0deg); }
+  }
+  .rotate-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.2;
+  }
+  .rotate-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+    max-width: 280px;
+  }
+  /* Afficher l'overlay uniquement en portrait sur petit écran */
+  @media (max-width: 768px) and (orientation: portrait) {
+    .rotate-overlay { display: flex; }
+    body { overflow: hidden; }
+  }
+  /* Cacher en paysage */
+  @media (orientation: landscape) {
+    .rotate-overlay { display: none !important; }
+    body { overflow: auto; }
+  }
+
+
+  /* ═══ MODE LECTURE UNIVERSELLE — CORRECTIONS COMPLÈTES ═══ */
+
+  /* SVG schemas (schéma org, schéma a11y) — niveaux de gris */
+  body.a11y-mode #svg-standard svg,
+  body.a11y-mode #svg-a11y svg {
+    filter: grayscale(1) contrast(1.1) !important;
+  }
+
+  /* Gradient-box CCAS — fond neutre palette a11y */
+  body.a11y-mode .gradient-box {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .gradient-box h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .gradient-box p  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .gradient-box::after { display: none !important; }
+
+  /* Gradient-box CMCAS */
+  body.a11y-mode .gradient-box-vert {
+    background: var(--a11y-dark) !important;
+    border: 2px dashed var(--a11y-border2) !important;
+  }
+  body.a11y-mode .gradient-box-vert h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .gradient-box-vert p  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .gradient-box-vert::after { display: none !important; }
+
+  /* gradient-item tiles */
+  body.a11y-mode .gradient-item {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+  }
+  body.a11y-mode .gradient-item .gi-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .gradient-item .gi-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .gradient-item .gi-sub   { color: var(--a11y-txt4-dark) !important; }
+
+  /* gi-icon / fi-icon / vs-icon : masquer l'emoji, afficher le SVG */
+  body.a11y-mode .gi-icon .a11y-ico,
+  body.a11y-mode .fi-icon .a11y-ico,
+  body.a11y-mode .vs-icon .a11y-ico,
+  body.a11y-mode .vt-label .a11y-ico {
+    display: inline !important;
+    width: 1.2em !important;
+    height: 1.2em !important;
+    vertical-align: -0.2em !important;
+  }
+  body.a11y-mode .gi-icon .a11y-emoji,
+  body.a11y-mode .fi-icon .a11y-emoji,
+  body.a11y-mode .vs-icon .a11y-emoji,
+  body.a11y-mode .vt-label .a11y-emoji {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    width: 0 !important;
+    display: inline-block !important;
+  }
+
+  /* alert.blue — soft palette */
+  body.a11y-mode .alert.blue,
+  body.a11y-mode div.alert.blue {
+    background: var(--a11y-surface) !important;
+    border: 1px dotted var(--a11y-border2) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .alert.blue p,
+  body.a11y-mode div.alert.blue p,
+  body.a11y-mode div.alert.blue > p   { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .alert.blue strong,
+  body.a11y-mode div.alert.blue strong { color: var(--a11y-txt1) !important; }
+
+  /* h3 / h4 avec emoji (gradient-box, two-cols) */
+  body.a11y-mode .gradient-box h3 .a11y-ico,
+  body.a11y-mode .gradient-box-vert h3 .a11y-ico,
+  body.a11y-mode .col-card h4 .a11y-ico {
+    display: inline !important;
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    color: currentColor !important;
+  }
+  body.a11y-mode .gradient-box h3 .a11y-emoji,
+  body.a11y-mode .gradient-box-vert h3 .a11y-emoji,
+  body.a11y-mode .col-card h4 .a11y-emoji {
+    font-size: 0 !important;
+    width: 0 !important;
+    display: inline-block !important;
+  }
+
+  /* stat-box */
+  body.a11y-mode .stat-box {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .stat-box .stat-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .stat-box .stat-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box .stat-desc  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box .stat-desc strong { color: var(--a11y-dark-txt) !important; }
+
+  /* versus-table headers */
+  body.a11y-mode .vt-ieg-head {
+    background: var(--a11y-dark) !important;
+    border-left: 4px solid var(--a11y-txt1) !important;
+    border-bottom: none !important;
+  }
+  body.a11y-mode .vt-cse-head {
+    background: var(--a11y-surface2) !important;
+    border-right: 4px dashed var(--a11y-txt2) !important;
+    border-bottom: none !important;
+  }
+  body.a11y-mode .versus-badge { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .vt-cse-head .versus-badge { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .versus-sub { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .vt-cse-head .versus-sub { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .vt-vs { background: var(--a11y-txt2) !important; }
+
+  /* financement section */
+  body.a11y-mode .financement-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .f-row { background: var(--a11y-surface2) !important; }
+  body.a11y-mode .f-row.source  { border-left: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .f-row.salarie { border-left: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .f-row.total   { border-left: 4px dotted var(--a11y-txt2) !important; }
+  body.a11y-mode .f-row .fi-badge { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .f-row .fi-label { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .f-row .fi-label strong { color: var(--a11y-txt1) !important; }
+
+  /* place-card.vert */
+  body.a11y-mode .place-card.vert {
+    border-top: 4px solid var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .place-card.vert h3 { color: var(--a11y-txt1) !important; }
+
+  /* col-card two-cols */
+  body.a11y-mode .col-card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-top: 4px solid var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .col-card.ccas { border-top: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card.cmcas { border-top: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .col-card h4 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card ul li { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .col-card ul li::before { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card a { color: var(--a11y-txt2) !important; }
+
+  /* schema section wrapper */
+  body.a11y-mode .schema-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+
+
+  /* ── versus-badge icon in a11y mode ── */
+  body.a11y-mode .versus-badge .a11y-ico {
+    display: inline !important;
+    width: 0.9em; height: 0.9em;
+    vertical-align: -0.1em;
+  }
+  body.a11y-mode .versus-badge .a11y-emoji {
+    font-size: 0 !important; width: 0 !important; display: inline-block !important;
+  }
+  /* ── 📌 in gradient-box-vert footer text ── */
+  body.a11y-mode .gradient-box-vert p .a11y-ico,
+  body.a11y-mode .gradient-box-vert .a11y-ico {
+    display: inline !important;
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    color: var(--a11y-txt4-dark);
+  }
+  body.a11y-mode .gradient-box-vert p .a11y-emoji {
+    font-size: 0 !important; width: 0 !important; display: inline-block !important;
+  }
+
+
+
+  /* ═══════════════════════════════════════════════════════
+     OVERRIDE FINAL — alertes mode lecture universelle
+     Force la palette douce sur TOUTES les alertes
+     (neutralise les règles héritées CCAS à fond coloré)
+  ═══════════════════════════════════════════════════════ */
+
+  /* Alert plain (🚪 retraite, etc.) */
+  body.a11y-mode .alert,
+  body.a11y-mode div.alert,
+  body.a11y-mode .alert:not(.green):not(.blue),
+  body.a11y-mode div.alert:not(.green):not(.blue) {
+    background: var(--a11y-surface) !important;
+    background-color: var(--a11y-surface) !important;
+    border-color: var(--a11y-border2) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .alert p,
+  body.a11y-mode div.alert p,
+  body.a11y-mode .alert > p,
+  body.a11y-mode div.alert > p { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .alert strong,
+  body.a11y-mode div.alert strong,
+  body.a11y-mode .alert > p strong,
+  body.a11y-mode div.alert > p strong { color: var(--a11y-txt1) !important; }
+
+  /* Alert green (💡 Bon à savoir) */
+  body.a11y-mode .alert.green,
+  body.a11y-mode div.alert.green {
+    background: var(--a11y-surface2) !important;
+    background-color: var(--a11y-surface2) !important;
+    border: 1px dashed var(--a11y-border2) !important;
+    border-left: 5px dashed var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .alert.green p,
+  body.a11y-mode div.alert.green p,
+  body.a11y-mode .alert.green > p,
+  body.a11y-mode div.alert.green > p { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .alert.green strong,
+  body.a11y-mode div.alert.green strong,
+  body.a11y-mode .alert.green > p strong,
+  body.a11y-mode div.alert.green > p strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .alert.green a { color: var(--a11y-txt2) !important; }
+
+  /* Alert blue (bloc IEG vs privé) */
+  body.a11y-mode .alert.blue,
+  body.a11y-mode div.alert.blue {
+    background: var(--a11y-surface) !important;
+    background-color: var(--a11y-surface) !important;
+    border: 1px dotted var(--a11y-border2) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .alert.blue p,
+  body.a11y-mode div.alert.blue p,
+  body.a11y-mode .alert.blue > p,
+  body.a11y-mode div.alert.blue > p { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .alert.blue strong,
+  body.a11y-mode div.alert.blue strong { color: var(--a11y-txt1) !important; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TEMPLATE "LE SAVIEZ-VOUS" — FO GRDF
+     -------------------------------------------------------
+     INSTRUCTIONS POUR L'IA :
+     Conserver TOUT le CSS et le JS sans modification.
+     Remplacer uniquement les zones marquées [COMME CECI].
+     Ne pas ajouter de nouvelles classes CSS sans vérifier
+     qu'elles existent déjà dans le <style> ci-dessus.
+     ─────────────────────────────────────────────────────────
+     COMPOSANTS DISPONIBLES (classes CSS déjà stylées) :
+     • .header                  → bandeau titre en haut
+     • .badge                   → pastille "Le Saviez-Vous ?"
+     • .intro                   → paragraphe d'introduction
+     • .stat-box                → grande boîte stat chiffrée
+     • .section-title + .icon   → titre de section avec icône
+     • .cards (.card)           → grille 2 colonnes de cartes
+     • .card.highlight          → carte mise en valeur (fond sombre)
+     • .placement-grid          → grille 3 colonnes de cartes
+     • .place-card              → carte dans la grille 3 col
+     • .alert / .alert.green    → encadré alerte jaune/vert
+     • .calendar-section        → bloc timeline / calendrier
+     • .timeline / .tl-item     → étapes (active = étape en cours)
+     • .fiscal-section          → section calcul brut/net
+     • .fiscal-row.start/.deduct/.net/.taxable → lignes calcul
+     • .fiscal-compare (.fc-col.placement / .paiement) → 2 colonnes comparaison
+     • .fc-highlight            → encadré conseil dans fc-col
+     • .link-box / .link-grid   → section fond sombre + grille 2×2
+     • .fo-contact-card         → bandeau contact FO rouge
+     • .footer                  → pied de page
+     • .a11y-toggle-bar         → bouton mode lecture universelle
+     • .rotate-banner           → bandeau rotation mobile
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- BANDEAU ROTATION MOBILE (ne pas modifier) -->
+<div class="rotate-banner" id="rotateBanner" role="status" aria-live="polite">
+  <span class="rb-icon" aria-hidden="true"><span class="a11y-emoji">📱</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/></svg></span>
+  <span>Tournez votre téléphone pour une meilleure lecture</span>
+  <button class="rb-close" onclick="dismissRotate()" aria-label="Fermer ce message"><span aria-hidden="true"><span class="a11y-emoji">✕</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></span></button>
+</div>
+
+<div class="page" role="main">
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; position:relative; z-index:1;">
+      <div class="badge" style="margin-bottom:0;" aria-label="Le Saviez-Vous ?">✦ Le Saviez-Vous ?</div>
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO Énergie GRDF — cliquez pour nous écrire" style="height:clamp(44px, 8vw, 90px); width:auto; object-fit:contain; display:block; flex-shrink:0; transition:transform 0.2s, filter 0.2s; filter:drop-shadow(0 2px 8px rgba(247,221,92,0.2));" onmouseover="this.style.transform='scale(1.06)';this.style.filter='drop-shadow(0 4px 14px rgba(247,221,92,0.5))'" onmouseout="this.style.transform='scale(1)';this.style.filter='drop-shadow(0 2px 8px rgba(247,221,92,0.2))'">
+      </a>
+    </div>
+    <h1 style="color:white;">La <em>CCAS & CMCAS</em> dans les IEG</h1>
+    <p class="subtitle">Tout comprendre sur les caisses d'action sociale des Industries Électriques et Gazières — pour les agents et leur famille</p>
+    <div class="update" role="status"><span class="dot" aria-hidden="true"></span> Votre action sociale, un droit depuis 1946</div>
+  </header>
+
+  <!-- BOUTON ACCESSIBILITÉ -->
+  <div class="a11y-toggle-bar" role="navigation" aria-label="Options d'accessibilité">
+    <button class="a11y-btn" id="a11yToggle" onclick="toggleA11y()" aria-pressed="false" title="Activer le mode lecture universelle : police adaptée, contrastes forts, différenciation sans couleur">
+      <span class="a11y-icon" aria-hidden="true">◐</span>
+      <span class="a11y-label-off">Mode lecture universelle</span>
+      <span class="a11y-label-on">✓ Mode lecture universelle actif — Revenir au mode standard</span>
+    </button>
+  </div>
+
+  <div id="contenu-principal">
+
+  <!-- INTRO -->
+  <div class="intro">
+    Dans les <strong>Industries Électriques et Gazières (IEG)</strong>, chaque agent bénéficie d'un système d'action sociale unique en France. Ce système repose sur deux caisses complémentaires : la <strong>CCAS (Caisse Centrale d'Action Sociale)</strong> et les <strong>CMCAS (Caisses Mutuelles Complémentaires et d'Action Sociale)</strong>. Nées avec le statut des IEG en <strong>1946</strong>, elles permettent d'accéder à de nombreuses prestations pour vous et votre famille, entièrement financées par vos employeurs.
+  </div>
+
+  <!-- STAT BOX -->
+  <div class="stat-box">
+    <div class="stat-main">
+      <div class="stat-val">1946</div>
+      <div class="stat-label">Année de création</div>
+    </div>
+    <div class="stat-desc">
+      <strong>Un droit conquis par les syndicats !</strong> La CCAS et les CMCAS ont été créées à la nationalisation des entreprises d'électricité et de gaz. Elles sont <strong>gérées paritairement</strong> par les représentants des salariés (organisations syndicales) et des employeurs. C'est un avantage collectif que vous partagez avec tous les agents des IEG — actifs <strong>et retraités</strong>.
+    </div>
+  </div>
+
+  <!-- QU'EST-CE QUE C'EST -->
+  <div class="section-title"><span class="icon" aria-hidden="true"><span class="a11y-emoji">🏛️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12,2 20,7 4,7"/></svg></span> CCAS et CMCAS : quelle différence ?</div>
+
+  <!-- SCHEMA ORG -->
+  <div class="schema-section">
+    <p style="font-size:13.5px; color:var(--gris); margin-bottom:20px; line-height:1.65;">Les deux caisses fonctionnent ensemble mais à des niveaux différents. La CCAS est nationale, les CMCAS sont locales. Ensemble, elles forment un réseau complet au service de tous les agents IEG.</p>
+    <!-- Schéma SVG — deux versions, bascule via JS -->
+
+    <!-- VERSION STANDARD -->
+    <div class="org-schema-wrap" id="svg-standard">
+      <svg viewBox="0 0 780 580" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="schema-title schema-desc" style="width:100%; height:auto; font-family:'DM Sans',sans-serif;">
+        <title id="schema-title">Organigramme CCAS et CMCAS dans les IEG</title>
+        <desc id="schema-desc">Les agents des IEG sont au sommet. Ils bénéficient de deux caisses complémentaires : la CCAS (nationale) à gauche, avec ses 4 missions vacances, culture, aide scolaire et sport ; et la CMCAS (locale) à droite, avec secours d'urgence, assistante sociale, activités de proximité et élections paritaires. Les deux sont financées par les employeurs et gérées paritairement.</desc>
+        <defs>
+          <linearGradient id="gradTop" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#019cda" /><stop offset="100%" style="stop-color:#028bc2" />
+          </linearGradient>
+          <linearGradient id="gradCCAS" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#019cda" /><stop offset="100%" style="stop-color:#0272a0" />
+          </linearGradient>
+          <linearGradient id="gradCMCAS" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#28b193" /><stop offset="100%" style="stop-color:#1a8a70" />
+          </linearGradient>
+          <linearGradient id="gradV" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#019cda" /><stop offset="100%" style="stop-color:#f7dd5c" />
+          </linearGradient>
+          <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+            <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#00000018"/>
+          </filter>
+        </defs>
+        <rect x="190" y="10" width="400" height="64" rx="14" fill="url(#gradTop)" filter="url(#shadow)"/>
+        <text x="390" y="36" text-anchor="middle" fill="white" font-family="Fraunces,serif" font-size="16" font-weight="700">⚡ Agents des IEG</text>
+        <text x="390" y="54" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-size="11.5">actifs et retraités · EDF · ENEDIS · GRDF · RTE…</text>
+        <line x1="390" y1="74" x2="390" y2="110" stroke="url(#gradV)" stroke-width="2.5"/>
+        <line x1="195" y1="110" x2="585" y2="110" stroke="#f7dd5c" stroke-width="2.5"/>
+        <line x1="195" y1="110" x2="195" y2="134" stroke="#f7dd5c" stroke-width="2.5"/>
+        <line x1="585" y1="110" x2="585" y2="134" stroke="#f7dd5c" stroke-width="2.5"/>
+        <rect x="60" y="134" width="270" height="72" rx="14" fill="url(#gradCCAS)" filter="url(#shadow)"/>
+        <text x="195" y="160" text-anchor="middle" fill="#f7dd5c" font-family="Fraunces,serif" font-size="15" font-weight="700">🏢 CCAS</text>
+        <text x="195" y="177" text-anchor="middle" fill="white" font-size="11.5" font-weight="600">Caisse Centrale d'Action Sociale</text>
+        <text x="195" y="194" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10.5">Niveau NATIONAL</text>
+        <line x1="195" y1="206" x2="195" y2="228" stroke="#019cda" stroke-width="2"/>
+        <line x1="60" y1="228" x2="330" y2="228" stroke="#019cda" stroke-width="2"/>
+        <line x1="60"  y1="228" x2="60"  y2="248" stroke="#019cda" stroke-width="2"/>
+        <line x1="130" y1="228" x2="130" y2="248" stroke="#019cda" stroke-width="2"/>
+        <line x1="200" y1="228" x2="200" y2="248" stroke="#019cda" stroke-width="2"/>
+        <line x1="270" y1="228" x2="270" y2="248" stroke="#019cda" stroke-width="2"/>
+        <rect x="25" y="248" width="70" height="64" rx="10" fill="#e6f5fb"/><text x="60" y="268" text-anchor="middle" font-size="18">🏖️</text><text x="60" y="286" text-anchor="middle" fill="#019cda" font-size="9.5" font-weight="700">Vacances</text><text x="60" y="299" text-anchor="middle" fill="#6B6B6B" font-size="8.5">&amp; séjours</text>
+        <rect x="95" y="248" width="70" height="64" rx="10" fill="#e6f5fb"/><text x="130" y="268" text-anchor="middle" font-size="18">🎭</text><text x="130" y="286" text-anchor="middle" fill="#019cda" font-size="9.5" font-weight="700">Culture</text><text x="130" y="299" text-anchor="middle" fill="#6B6B6B" font-size="8.5">&amp; loisirs</text>
+        <rect x="165" y="248" width="70" height="64" rx="10" fill="#e6f5fb"/><text x="200" y="268" text-anchor="middle" font-size="18">🎓</text><text x="200" y="286" text-anchor="middle" fill="#019cda" font-size="9.5" font-weight="700">Aide</text><text x="200" y="299" text-anchor="middle" fill="#6B6B6B" font-size="8.5">scolaire</text>
+        <rect x="235" y="248" width="70" height="64" rx="10" fill="#e6f5fb"/><text x="270" y="268" text-anchor="middle" font-size="18">⚽</text><text x="270" y="286" text-anchor="middle" fill="#019cda" font-size="9.5" font-weight="700">Sport</text><text x="270" y="299" text-anchor="middle" fill="#6B6B6B" font-size="8.5">&amp; clubs IEG</text>
+        <rect x="25" y="328" width="280" height="50" rx="10" fill="#f0faff" stroke="#b8e4f5" stroke-width="1"/>
+        <text x="165" y="347" text-anchor="middle" fill="#019cda" font-size="10" font-weight="600">🌐 Portail national : ccas.fr</text>
+        <text x="165" y="363" text-anchor="middle" fill="#6B6B6B" font-size="9.5">Réservations en ligne, catalogue complet,</text>
+        <text x="165" y="375" text-anchor="middle" fill="#6B6B6B" font-size="9.5">accessible avec votre identifiant IEG</text>
+        <rect x="450" y="134" width="270" height="72" rx="14" fill="url(#gradCMCAS)" filter="url(#shadow)"/>
+        <text x="585" y="160" text-anchor="middle" fill="#f7dd5c" font-family="Fraunces,serif" font-size="15" font-weight="700">📍 CMCAS</text>
+        <text x="585" y="177" text-anchor="middle" fill="white" font-size="11.5" font-weight="600">Caisses Mutuelles Complémentaires</text>
+        <text x="585" y="194" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="10.5">Niveau LOCAL / RÉGIONAL</text>
+        <line x1="585" y1="206" x2="585" y2="228" stroke="#28b193" stroke-width="2"/>
+        <line x1="450" y1="228" x2="720" y2="228" stroke="#28b193" stroke-width="2"/>
+        <line x1="450" y1="228" x2="450" y2="248" stroke="#28b193" stroke-width="2"/>
+        <line x1="520" y1="228" x2="520" y2="248" stroke="#28b193" stroke-width="2"/>
+        <line x1="590" y1="228" x2="590" y2="248" stroke="#28b193" stroke-width="2"/>
+        <line x1="660" y1="228" x2="660" y2="248" stroke="#28b193" stroke-width="2"/>
+        <rect x="415" y="248" width="70" height="64" rx="10" fill="#e8f8f4"/><text x="450" y="268" text-anchor="middle" font-size="18">🆘</text><text x="450" y="286" text-anchor="middle" fill="#28b193" font-size="9.5" font-weight="700">Secours</text><text x="450" y="299" text-anchor="middle" fill="#6B6B6B" font-size="8.5">&amp; urgence</text>
+        <rect x="485" y="248" width="70" height="64" rx="10" fill="#e8f8f4"/><text x="520" y="268" text-anchor="middle" font-size="18">👩‍💼</text><text x="520" y="286" text-anchor="middle" fill="#28b193" font-size="9.5" font-weight="700">Assistante</text><text x="520" y="299" text-anchor="middle" fill="#6B6B6B" font-size="8.5">sociale</text>
+        <rect x="555" y="248" width="70" height="64" rx="10" fill="#e8f8f4"/><text x="590" y="268" text-anchor="middle" font-size="18">🎉</text><text x="590" y="286" text-anchor="middle" fill="#28b193" font-size="9.5" font-weight="700">Activités</text><text x="590" y="299" text-anchor="middle" fill="#6B6B6B" font-size="8.5">de proximité</text>
+        <rect x="625" y="248" width="70" height="64" rx="10" fill="#e8f8f4"/><text x="660" y="268" text-anchor="middle" font-size="18">🗳️</text><text x="660" y="286" text-anchor="middle" fill="#28b193" font-size="9.5" font-weight="700">Élections</text><text x="660" y="299" text-anchor="middle" fill="#6B6B6B" font-size="8.5">paritaires</text>
+        <rect x="465" y="328" width="280" height="50" rx="10" fill="#f0fdf8" stroke="#a8e8d8" stroke-width="1"/>
+        <text x="605" y="347" text-anchor="middle" fill="#28b193" font-size="10" font-weight="600">📍 Votre CMCAS de secteur</text>
+        <text x="605" y="363" text-anchor="middle" fill="#6B6B6B" font-size="9.5">Géographiquement proche de vous,</text>
+        <text x="605" y="375" text-anchor="middle" fill="#6B6B6B" font-size="9.5">elle connaît votre situation locale</text>
+        <line x1="330" y1="170" x2="450" y2="170" stroke="#f7dd5c" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="390" y="164" text-anchor="middle" fill="#a07800" font-size="10" font-weight="600">complémentaires</text>
+        <polygon points="446,166 456,170 446,174" fill="#f7dd5c"/>
+        <polygon points="334,166 324,170 334,174" fill="#f7dd5c"/>
+        <rect x="60" y="400" width="660" height="44" rx="12" fill="#1A1A2E" opacity="0.05"/>
+        <rect x="60" y="400" width="660" height="44" rx="12" fill="none" stroke="#f7dd5c" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="390" y="418" text-anchor="middle" fill="#5a4200" font-size="11" font-weight="600">💰 Financement assuré à 100 % par les employeurs des IEG</text>
+        <text x="390" y="434" text-anchor="middle" fill="#6B6B6B" font-size="10">Cotisation obligatoire sur la masse salariale — vous ne payez rien !</text>
+        <rect x="60" y="456" width="316" height="44" rx="12" fill="#e6f5fb"/>
+        <text x="218" y="474" text-anchor="middle" fill="#019cda" font-size="11" font-weight="600">🤝 Gestion paritaire nationale</text>
+        <text x="218" y="489" text-anchor="middle" fill="#6B6B6B" font-size="10">Syndicats + Direction décident ensemble</text>
+        <rect x="404" y="456" width="316" height="44" rx="12" fill="#e8f8f4"/>
+        <text x="562" y="474" text-anchor="middle" fill="#28b193" font-size="11" font-weight="600">🗳️ Gestion paritaire locale</text>
+        <text x="562" y="489" text-anchor="middle" fill="#6B6B6B" font-size="10">Élus de votre CMCAS au plus près de vous</text>
+        <line x1="376" y1="468" x2="404" y2="468" stroke="#f7dd5c" stroke-width="2"/>
+        <line x1="195" y1="378" x2="195" y2="400" stroke="#019cda" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="218" y1="444" x2="218" y2="456" stroke="#019cda" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="585" y1="378" x2="585" y2="400" stroke="#28b193" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="562" y1="444" x2="562" y2="456" stroke="#28b193" stroke-width="1.5" stroke-dasharray="4,3"/>
+      </svg>
+    </div>
+
+    <!-- VERSION UNIVERSELLE (masquée par défaut, activée par JS) -->
+    <div class="org-schema-wrap" id="svg-a11y" style="display:none;">
+      <svg viewBox="0 0 780 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="schema-title-a11y schema-desc-a11y" style="width:100%; height:auto; font-family:'Atkinson Hyperlegible',sans-serif;">
+        <title id="schema-title-a11y">Organigramme CCAS et CMCAS dans les IEG — version lecture universelle</title>
+        <desc id="schema-desc-a11y">Les agents des IEG sont au sommet. Deux caisses complémentaires : CCAS nationale (bordure pleine, côté gauche) avec vacances, culture, aide scolaire, sport. CMCAS locale (bordure en tirets, côté droit) avec secours, assistante sociale, activités, élections. Financement 100 % employeurs, gestion paritaire.</desc>
+
+        <!-- Racine — fond noir, texte blanc, lisible en niveaux de gris -->
+        <rect x="190" y="10" width="400" height="68" rx="8" fill="#525250" stroke="#2C2C29" stroke-width="2"/>
+        <text x="390" y="36" text-anchor="middle" fill="#F8F7F4" font-size="15" font-weight="700">⚡ Agents des IEG</text>
+        <text x="390" y="56" text-anchor="middle" fill="#C8C6C0" font-size="11">actifs et retraités · EDF · ENEDIS · GRDF · RTE…</text>
+
+        <!-- Connecteurs principaux — noir épais -->
+        <line x1="390" y1="78" x2="390" y2="114" stroke="#2C2C29" stroke-width="3"/>
+        <line x1="195" y1="114" x2="585" y2="114" stroke="#2C2C29" stroke-width="3"/>
+        <line x1="195" y1="114" x2="195" y2="138" stroke="#2C2C29" stroke-width="3"/>
+        <line x1="585" y1="114" x2="585" y2="138" stroke="#2C2C29" stroke-width="3"/>
+
+        <!-- NŒUD CCAS — fond gris foncé, bordure PLEINE épaisse -->
+        <!-- La forme PLEINE distingue la CCAS (nationale) sans recourir à la couleur -->
+        <rect x="60" y="138" width="270" height="76" rx="8" fill="#4A4A46" stroke="#2C2C29" stroke-width="4"/>
+        <!-- Étiquette "NATIONAL" en haut à gauche — redondance textuelle -->
+        <rect x="62" y="140" width="68" height="16" rx="3" fill="#F8F7F4"/>
+        <text x="96" y="152" text-anchor="middle" fill="#2C2C29" font-size="9" font-weight="700">NATIONAL</text>
+        <text x="195" y="168" text-anchor="middle" fill="#F8F7F4" font-size="15" font-weight="700">🏢 CCAS</text>
+        <text x="195" y="186" text-anchor="middle" fill="#C8C6C0" font-size="11" font-weight="600">Caisse Centrale d'Action Sociale</text>
+        <text x="195" y="204" text-anchor="middle" fill="#6F6E68" font-size="10">Niveau NATIONAL — bordure pleine ▬</text>
+
+        <!-- Connecteurs enfants CCAS — traits pleins -->
+        <line x1="195" y1="214" x2="195" y2="234" stroke="#2C2C29" stroke-width="2"/>
+        <line x1="60" y1="234" x2="330" y2="234" stroke="#2C2C29" stroke-width="2"/>
+        <line x1="60"  y1="234" x2="60"  y2="254" stroke="#2C2C29" stroke-width="2"/>
+        <line x1="130" y1="234" x2="130" y2="254" stroke="#2C2C29" stroke-width="2"/>
+        <line x1="200" y1="234" x2="200" y2="254" stroke="#2C2C29" stroke-width="2"/>
+        <line x1="270" y1="234" x2="270" y2="254" stroke="#2C2C29" stroke-width="2"/>
+
+        <!-- Enfants CCAS — fond blanc, bordure pleine -->
+        <rect x="25" y="254" width="70" height="68" rx="6" fill="#F4F3EF" stroke="#2C2C29" stroke-width="2"/><text x="60" y="276" text-anchor="middle" font-size="16">🏖️</text><text x="60" y="294" text-anchor="middle" fill="#2C2C29" font-size="9.5" font-weight="700">Vacances</text><text x="60" y="308" text-anchor="middle" fill="#525250" font-size="8.5">&amp; séjours</text>
+        <rect x="95" y="254" width="70" height="68" rx="6" fill="#F4F3EF" stroke="#2C2C29" stroke-width="2"/><text x="130" y="276" text-anchor="middle" font-size="16">🎭</text><text x="130" y="294" text-anchor="middle" fill="#2C2C29" font-size="9.5" font-weight="700">Culture</text><text x="130" y="308" text-anchor="middle" fill="#525250" font-size="8.5">&amp; loisirs</text>
+        <rect x="165" y="254" width="70" height="68" rx="6" fill="#F4F3EF" stroke="#2C2C29" stroke-width="2"/><text x="200" y="276" text-anchor="middle" font-size="16">🎓</text><text x="200" y="294" text-anchor="middle" fill="#2C2C29" font-size="9.5" font-weight="700">Aide</text><text x="200" y="308" text-anchor="middle" fill="#525250" font-size="8.5">scolaire</text>
+        <rect x="235" y="254" width="70" height="68" rx="6" fill="#F4F3EF" stroke="#2C2C29" stroke-width="2"/><text x="270" y="276" text-anchor="middle" font-size="16">⚽</text><text x="270" y="294" text-anchor="middle" fill="#2C2C29" font-size="9.5" font-weight="700">Sport</text><text x="270" y="308" text-anchor="middle" fill="#525250" font-size="8.5">&amp; clubs IEG</text>
+
+        <!-- Légende CCAS -->
+        <rect x="25" y="334" width="280" height="44" rx="6" fill="#F4F3EF" stroke="#2C2C29" stroke-width="1.5"/>
+        <text x="165" y="352" text-anchor="middle" fill="#2C2C29" font-size="10" font-weight="700">🌐 Portail national : ccas.fr</text>
+        <text x="165" y="368" text-anchor="middle" fill="#525250" font-size="9">Réservations en ligne · identifiant IEG</text>
+
+        <!-- NŒUD CMCAS — fond gris moyen, bordure EN TIRETS épaisse -->
+        <!-- La forme EN TIRETS distingue la CMCAS (locale) sans recourir à la couleur -->
+        <rect x="450" y="138" width="270" height="76" rx="8" fill="#6E6D69" stroke="#2C2C29" stroke-width="4" stroke-dasharray="10,5"/>
+        <!-- Étiquette "LOCAL" -->
+        <rect x="452" y="140" width="52" height="16" rx="3" fill="#F8F7F4"/>
+        <text x="478" y="152" text-anchor="middle" fill="#2C2C29" font-size="9" font-weight="700">LOCAL</text>
+        <text x="585" y="168" text-anchor="middle" fill="#F8F7F4" font-size="15" font-weight="700">📍 CMCAS</text>
+        <text x="585" y="186" text-anchor="middle" fill="#C8C6C0" font-size="11" font-weight="600">Caisses Mutuelles Complémentaires</text>
+        <text x="585" y="204" text-anchor="middle" fill="#6F6E68" font-size="10">Niveau LOCAL — bordure tirets ╌╌╌</text>
+
+        <!-- Connecteurs enfants CMCAS — traits en tirets -->
+        <line x1="585" y1="214" x2="585" y2="234" stroke="#2C2C29" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="450" y1="234" x2="720" y2="234" stroke="#2C2C29" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="450" y1="234" x2="450" y2="254" stroke="#2C2C29" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="520" y1="234" x2="520" y2="254" stroke="#2C2C29" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="590" y1="234" x2="590" y2="254" stroke="#2C2C29" stroke-width="2" stroke-dasharray="5,3"/>
+        <line x1="660" y1="234" x2="660" y2="254" stroke="#2C2C29" stroke-width="2" stroke-dasharray="5,3"/>
+
+        <!-- Enfants CMCAS — fond blanc, bordure en tirets -->
+        <rect x="415" y="254" width="70" height="68" rx="6" fill="#F4F3EF" stroke="#2C2C29" stroke-width="2" stroke-dasharray="6,3"/><text x="450" y="276" text-anchor="middle" font-size="16">🆘</text><text x="450" y="294" text-anchor="middle" fill="#2C2C29" font-size="9.5" font-weight="700">Secours</text><text x="450" y="308" text-anchor="middle" fill="#525250" font-size="8.5">&amp; urgence</text>
+        <rect x="485" y="254" width="70" height="68" rx="6" fill="#F4F3EF" stroke="#2C2C29" stroke-width="2" stroke-dasharray="6,3"/><text x="520" y="276" text-anchor="middle" font-size="16">👩‍💼</text><text x="520" y="294" text-anchor="middle" fill="#2C2C29" font-size="9.5" font-weight="700">Assistante</text><text x="520" y="308" text-anchor="middle" fill="#525250" font-size="8.5">sociale</text>
+        <rect x="555" y="254" width="70" height="68" rx="6" fill="#F4F3EF" stroke="#2C2C29" stroke-width="2" stroke-dasharray="6,3"/><text x="590" y="276" text-anchor="middle" font-size="16">🎉</text><text x="590" y="294" text-anchor="middle" fill="#2C2C29" font-size="9.5" font-weight="700">Activités</text><text x="590" y="308" text-anchor="middle" fill="#525250" font-size="8.5">de proximité</text>
+        <rect x="625" y="254" width="70" height="68" rx="6" fill="#F4F3EF" stroke="#2C2C29" stroke-width="2" stroke-dasharray="6,3"/><text x="660" y="276" text-anchor="middle" font-size="16">🗳️</text><text x="660" y="294" text-anchor="middle" fill="#2C2C29" font-size="9.5" font-weight="700">Élections</text><text x="660" y="308" text-anchor="middle" fill="#525250" font-size="8.5">paritaires</text>
+
+        <!-- Légende CMCAS -->
+        <rect x="465" y="334" width="280" height="44" rx="6" fill="#C8C6C0" stroke="#2C2C29" stroke-width="1.5" stroke-dasharray="6,3"/>
+        <text x="605" y="352" text-anchor="middle" fill="#2C2C29" font-size="10" font-weight="700">📍 Votre CMCAS de secteur</text>
+        <text x="605" y="368" text-anchor="middle" fill="#525250" font-size="9">Proche de vous · connait votre situation</text>
+
+        <!-- Flèche complémentarité — pointillés épais + texte explicite -->
+        <line x1="330" y1="176" x2="450" y2="176" stroke="#2C2C29" stroke-width="2.5" stroke-dasharray="8,4"/>
+        <polygon points="446,172 458,176 446,180" fill="#2C2C29"/>
+        <polygon points="334,172 322,176 334,180" fill="#2C2C29"/>
+        <text x="390" y="168" text-anchor="middle" fill="#2C2C29" font-size="10" font-weight="700">↔ complémentaires</text>
+
+        <!-- Bande financement -->
+        <rect x="60" y="400" width="660" height="46" rx="8" fill="#E2E0DA" stroke="#2C2C29" stroke-width="2"/>
+        <text x="390" y="420" text-anchor="middle" fill="#2C2C29" font-size="11" font-weight="700">💰 Financement 100 % par les employeurs des IEG</text>
+        <text x="390" y="436" text-anchor="middle" fill="#525250" font-size="10">Cotisation obligatoire sur la masse salariale — vous ne payez rien</text>
+
+        <!-- Bandes gestion paritaire : pleine vs tirets pour distinguer -->
+        <rect x="60" y="458" width="316" height="46" rx="8" fill="#C8C6C0" stroke="#2C2C29" stroke-width="2.5"/>
+        <text x="218" y="478" text-anchor="middle" fill="#2C2C29" font-size="11" font-weight="700">🤝 Gestion paritaire nationale</text>
+        <text x="218" y="494" text-anchor="middle" fill="#525250" font-size="9.5">Syndicats + Direction décident ensemble</text>
+
+        <rect x="404" y="458" width="316" height="46" rx="8" fill="#C8C6C0" stroke="#2C2C29" stroke-width="2.5" stroke-dasharray="8,4"/>
+        <text x="562" y="478" text-anchor="middle" fill="#2C2C29" font-size="11" font-weight="700">🗳️ Gestion paritaire locale</text>
+        <text x="562" y="494" text-anchor="middle" fill="#525250" font-size="9.5">Élus de votre CMCAS au plus près de vous</text>
+
+        <line x1="376" y1="470" x2="404" y2="470" stroke="#2C2C29" stroke-width="2"/>
+        <line x1="195" y1="378" x2="195" y2="400" stroke="#2C2C29" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="218" y1="444" x2="218" y2="458" stroke="#2C2C29" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="585" y1="378" x2="585" y2="400" stroke="#2C2C29" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <line x1="562" y1="444" x2="562" y2="458" stroke="#2C2C29" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+        <!-- Légende des formes en bas -->
+        <rect x="60" y="516" width="660" height="30" rx="6" fill="none" stroke="#CCCAC4" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="390" y="535" text-anchor="middle" fill="#6F6E68" font-size="9.5">Légende : bordure pleine ▬ = CCAS nationale · bordure en tirets ╌╌ = CMCAS locale</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- QUI BÉNÉFICIE -->
+  <div class="section-title"><span class="icon" aria-hidden="true"><span class="a11y-emoji">👥</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span> Qui peut en bénéficier ?</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-icon" aria-hidden="true"><span class="a11y-emoji">👷</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20v-1a8 8 0 0 1 16 0v1"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></span>
+      <h3>Les agents actifs</h3>
+      <p>Tout salarié sous <strong>statut IEG</strong> (contrat de travail dans une entreprise des IEG : EDF, ENEDIS, GRDF, RTE, etc.) bénéficie automatiquement des prestations CCAS/CMCAS dès son embauche.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon" aria-hidden="true"><span class="a11y-emoji">🧓</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/><line x1="12" y1="14" x2="12" y2="18"/></svg></span>
+      <h3>Les retraités IEG</h3>
+      <p>Même après la vie active, vous <strong>conservez vos droits</strong> à l'action sociale CCAS/CMCAS. C'est une particularité précieuse du statut des IEG : les droits ne s'arrêtent pas à la retraite.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon" aria-hidden="true"><span class="a11y-emoji">👨‍👩‍👧‍👦</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      <h3>La famille de l'agent</h3>
+      <p>Le <strong>conjoint, partenaire de PACS, concubin</strong> et les <strong>enfants à charge</strong> peuvent accéder à de nombreuses prestations. Certaines activités de loisirs sont ouvertes à toute la famille.</p>
+    </div>
+    <div class="card highlight">
+      <span class="card-icon" aria-hidden="true"><span class="a11y-emoji">ℹ️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8"/><polyline points="11,11 12,11 12,16 13,16"/></svg></span>
+      <h3>Important à savoir</h3>
+      <p>Les agents sous <strong>contrat de droit commun</strong> (non statutaires) dans certaines entreprises IEG peuvent également bénéficier des prestations selon les accords applicables dans leur entreprise.</p>
+    </div>
+  </div>
+
+  <!-- COMMENT EST FINANCÉ -->
+  <div class="section-title"><span class="icon" aria-hidden="true"><span class="a11y-emoji">💰</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v2m0 8v2m-3-7h6m-6 3h6"/></svg></span> Comment est-ce financé ?</div>
+  <div class="financement-section">
+    <p style="font-size:14px; color:var(--gris); margin-bottom:20px; line-height:1.65;">La bonne nouvelle ? <strong>Vous ne payez rien !</strong> Le financement de l'action sociale est intégralement assuré par les entreprises des IEG, sous la forme d'une cotisation obligatoire assise sur la masse salariale.</p>
+    <div class="financement-flow">
+      <div class="f-row source">
+        <div class="fi-icon" aria-hidden="true"><span class="a11y-emoji">🏭</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v4"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="8" y2="16"/><line x1="16" y1="12" x2="16" y2="16"/></svg></div>
+        <div class="fi-label"><strong>Cotisation employeurs IEG</strong>Les entreprises versent une cotisation obligatoire calculée sur la masse salariale — c'est votre salaire différé !</div>
+        <div class="fi-badge">~1 % masse salariale</div>
+      </div>
+      <div class="arrow-down">▼</div>
+      <div class="f-row salarie">
+        <div class="fi-icon" aria-hidden="true"><span class="a11y-emoji">👤</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="fi-label"><strong>Participation des agents</strong>Une cotisation complémentaire modeste peut être demandée pour certaines activités optionnelles (ex : séjours vacances)</div>
+        <div class="fi-badge">Variable / activité</div>
+      </div>
+      <div class="arrow-down">▼</div>
+      <div class="f-row total">
+        <div class="fi-icon" aria-hidden="true"><span class="a11y-emoji">✅</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></div>
+        <div class="fi-label"><strong>Budget action sociale reversé aux agents</strong>Géré paritairement — les syndicats décident avec les employeurs de l'utilisation des fonds</div>
+        <div class="fi-badge">100 % pour vous</div>
+      </div>
+    </div>
+    <div class="alert blue" style="margin-top:16px; margin-bottom:0;">
+      <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="icône"><span class="a11y-emoji">🤝</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span></div>
+      <p><strong>Gestion paritaire :</strong> les administrateurs des CCAS/CMCAS sont élus ou désignés par les organisations syndicales représentatives dans les IEG. C'est pourquoi votre syndicat joue un rôle clé dans la qualité des prestations proposées. FO Énergie est l'une des organisations qui participe à cette gestion.</p>
+    </div>
+  </div>
+
+  <!-- PRESTATIONS CCAS -->
+  <div class="gradient-box">
+    <h3><span class="a11y-emoji">🏖️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-1a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v1"/><circle cx="12" cy="7" r="4"/><path d="M2 21h20"/></svg> Les grandes prestations de la CCAS</h3>
+    <p>La CCAS propose un catalogue de prestations couvrant toute la vie de l'agent et de sa famille. En voici les principales catégories :</p>
+    <div class="gradient-grid">
+      <div class="gradient-item">
+        <div class="gi-icon" aria-hidden="true"><span class="a11y-emoji">🏕️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l9-16 9 16"/><path d="M3 20h18"/><path d="M9 20l3-5 3 5"/></svg></div>
+        <div class="gi-label">Vacances & séjours</div>
+        <div class="gi-val">Villages clubs, résidences, campings, séjours jeunes</div>
+        <div class="gi-sub">Tarifs très avantageux, partout en France et à l'étranger</div>
+      </div>
+      <div class="gradient-item">
+        <div class="gi-icon" aria-hidden="true"><span class="a11y-emoji">🎭</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12a10 10 0 0 0 10 10c3.6 0 6.8-1.9 8.6-4.8"/><path d="M2 12a10 10 0 0 1 10-10c3.6 0 6.8 1.9 8.6 4.8"/><path d="M8 14s1 1 4 1 4-1 4-1"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="gi-label">Culture & loisirs</div>
+        <div class="gi-val">Cinémas, parcs d'attractions, spectacles, musées</div>
+        <div class="gi-sub">Réductions négociées pour toute la famille</div>
+      </div>
+      <div class="gradient-item">
+        <div class="gi-icon" aria-hidden="true"><span class="a11y-emoji">⚽</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+        <div class="gi-label">Sport</div>
+        <div class="gi-val">Accès équipements, clubs sportifs IEG, stages</div>
+        <div class="gi-sub">Manifestations sportives du personnel des IEG</div>
+      </div>
+      <div class="gradient-item">
+        <div class="gi-icon" aria-hidden="true"><span class="a11y-emoji">🎓</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div class="gi-label">Aide scolaire & famille</div>
+        <div class="gi-val">Bourses, aide à la garde, soutien handicap</div>
+        <div class="gi-sub">Accompagnement tout au long de la scolarité</div>
+      </div>
+      <div class="gradient-item">
+        <div class="gi-icon" aria-hidden="true"><span class="a11y-emoji">🌐</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="gi-label">Portail en ligne</div>
+        <div class="gi-val"><a href="https://www.ccas.fr" target="_blank" rel="noopener noreferrer" style="color:inherit;">ccas.fr — catalogue complet, réservations</a></div>
+        <div class="gi-sub">Accessible avec votre identifiant IEG</div>
+      </div>
+      <div class="gradient-item">
+        <div class="gi-icon" aria-hidden="true"><span class="a11y-emoji">🏠</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+        <div class="gi-label">Aide au logement</div>
+        <div class="gi-val">Soutien à l'accession, prêts aidés</div>
+        <div class="gi-sub">Pour les agents en primo-accession ou en difficulté</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRESTATIONS CMCAS -->
+  <div class="gradient-box-vert">
+    <h3><span class="a11y-emoji">📍</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Le rôle de votre CMCAS locale</h3>
+    <p>Votre CMCAS est l'antenne de proximité. Elle adapte les actions nationales à votre territoire et propose des activités propres à votre région. C'est elle qui gère aussi les <strong>situations d'urgence sociale</strong> et assure le lien humain avec les agents en difficulté.</p>
+    <div class="gradient-grid">
+      <div class="gradient-item">
+        <div class="gi-icon" aria-hidden="true"><span class="a11y-emoji">🆘</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div class="gi-label">Secours & urgence</div>
+        <div class="gi-val">Aides financières d'urgence</div>
+        <div class="gi-sub">Pour faire face à un coup dur (maladie, accident, deuil…)</div>
+      </div>
+      <div class="gradient-item">
+        <div class="gi-icon" aria-hidden="true"><span class="a11y-emoji">👩‍💼</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/><rect x="9" y="13" width="6" height="4" rx="1"/></svg></div>
+        <div class="gi-label">Assistante sociale</div>
+        <div class="gi-val">Accompagnement personnalisé</div>
+        <div class="gi-sub">Gratuit et confidentiel, pour toutes vos démarches</div>
+      </div>
+      <div class="gradient-item">
+        <div class="gi-icon" aria-hidden="true"><span class="a11y-emoji">🎉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5.8 11.3L2 22l10.7-3.79"/><path d="M4 3h.01M22 8h.01M15 2h.01M22 20h.01"/><path d="M22 3c-3.73 3.73-6.06 7.89-6 14"/><path d="M3.34 7a10 10 0 0 1 17.32 10"/><path d="M10.5 1.5l-5 5 5-5z"/></svg></div>
+        <div class="gi-label">Activités locales</div>
+        <div class="gi-val">Sorties, soirées, voyages régionaux</div>
+        <div class="gi-sub">Organisées par les élus de votre CMCAS</div>
+      </div>
+      <div class="gradient-item">
+        <div class="gi-icon" aria-hidden="true"><span class="a11y-emoji">🗳️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="9,11 12,14 22,4"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div class="gi-label">Élections CMCAS</div>
+        <div class="gi-val">Vous votez pour vos représentants</div>
+        <div class="gi-sub">Les élus syndicaux gèrent les fonds en votre nom</div>
+      </div>
+    </div>
+    <p style="margin-top:14px; font-size:12px; color:rgba(255,255,255,0.65);"><span class="a11y-emoji">📌</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Pour trouver votre CMCAS, rendez-vous sur <a href="https://www.ccas.fr" target="_blank" rel="noopener noreferrer" aria-label="Site CCAS"><strong>ccas.fr</strong></a> ou renseignez-vous auprès de votre délégué syndical FO.</p>
+  </div>
+
+  <!-- COMMENT Y ACCÉDER -->
+  <div class="section-title"><span class="icon" aria-hidden="true"><span class="a11y-emoji">🚀</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span> Comment accéder à vos droits ?</div>
+  <div class="placement-grid">
+    <div class="place-card">
+      <span class="place-icon" aria-hidden="true"><span class="a11y-emoji">🌐</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+      <h3>Via le portail CCAS</h3>
+      <p>Connectez-vous sur <a href="https://www.ccas.fr" target="_blank" rel="noopener noreferrer" aria-label="Site CCAS"><strong>ccas.fr</strong></a> avec votre identifiant personnel. Vous y retrouvez l'ensemble du catalogue de prestations, les réservations en ligne et vos droits disponibles.</p>
+      <a href="https://www.ccas.fr" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><span class="tag blue">🌐 ccas.fr</span></a>
+    </div>
+    <div class="place-card">
+      <span class="place-icon" aria-hidden="true"><span class="a11y-emoji">📍</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+      <h3>Via votre CMCAS locale</h3>
+      <p>Contactez directement votre CMCAS de secteur pour les activités locales, les demandes de secours ou pour rencontrer l'assistante sociale de votre périmètre.</p>
+      <span class="tag green">Contact direct</span>
+    </div>
+    <div class="place-card vert">
+      <span class="place-icon" aria-hidden="true"><span class="a11y-emoji">🤝</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+      <h3>Via votre délégué FO</h3>
+      <p>Votre représentant syndical FO peut vous orienter, vous aider à faire valoir vos droits et vous accompagner dans vos démarches CCAS/CMCAS si vous rencontrez une difficulté.</p>
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" class="tag tag-fo-link"><span aria-hidden="true"><span class="a11y-emoji">✉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span> Écrire à FO GRDF</a>
+    </div>
+  </div>
+
+  <!-- IEG VS ENTREPRISES PRIVÉES -->
+  <div class="section-title"><span class="icon" aria-hidden="true"><span class="a11y-emoji">⚖️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M3 9l9-6 9 6"/><path d="M3 15l4.5-3M21 15l-4.5-3"/><path d="M3 19h6M15 19h6"/></svg></span> IEG vs entreprises privées : ce qui change</div>
+
+  <div class="intro" style="margin-bottom:24px;">
+    Dans les entreprises privées, l'action sociale est confiée au <strong>Comité Social et Économique (CSE)</strong>. Si l'objectif est le même — améliorer la vie des salariés — la comparaison tourne nettement en faveur des agents IEG sur presque tous les plans.
+  </div>
+
+  <!-- CARTES COMPARAISON -->
+  <div class="versus-table" role="table" aria-label="Comparaison IEG vs entreprises privées">
+
+    <!-- EN-TÊTES -->
+    <div class="vt-row vt-header" role="row">
+      <div class="vt-cell vt-ieg-head" role="columnheader">
+        <span class="versus-badge"><span class="a11y-emoji">⚡</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Agents IEG</span>
+        <span class="versus-sub">CCAS &amp; CMCAS</span>
+      </div>
+      <div class="vt-cell vt-vs" role="presentation" aria-hidden="true"><div class="vs-circle">VS</div></div>
+      <div class="vt-cell vt-cse-head" role="columnheader">
+        <span class="versus-badge"><span class="a11y-emoji">🏢</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="18" height="20" rx="1"/><path d="M9 22V12h6v10"/><rect x="7" y="6" width="2" height="2"/><rect x="11" y="6" width="2" height="2"/><rect x="15" y="6" width="2" height="2"/><rect x="7" y="10" width="2" height="2"/><rect x="11" y="10" width="2" height="2"/><rect x="15" y="10" width="2" height="2"/></svg> Salariés du privé</span>
+        <span class="versus-sub">CSE (ex-CE)</span>
+      </div>
+    </div>
+
+    <!-- LIGNE 1 : Financement -->
+    <div class="vt-row" role="row">
+      <div class="vt-cell vt-ieg" role="cell"><span class="vs-icon" aria-hidden="true"><span class="a11y-emoji">💰</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v2m0 8v2m-3-7h6m-6 3h6"/></svg></span><div><strong>Financement solide</strong><br>~1 % de la masse salariale, versé obligatoirement par les employeurs, indépendant des résultats de l'entreprise.</div></div>
+      <div class="vt-cell vt-label" aria-hidden="true">💸</div>
+      <div class="vt-cell vt-cse" role="cell"><span class="vs-icon" aria-hidden="true"><span class="a11y-emoji">📉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22,18 13.5,9.5 8.5,14.5 2,8"/><polyline points="16,18 22,18 22,12"/></svg></span><div><strong>Financement minimal légal</strong><br>0,2 % de la masse salariale minimum — très variable selon la taille et les résultats de l'entreprise.</div></div>
+    </div>
+
+    <!-- LIGNE 2 : Couverture -->
+    <div class="vt-row" role="row">
+      <div class="vt-cell vt-ieg" role="cell"><span class="vs-icon" aria-hidden="true"><span class="a11y-emoji">🗺️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2 1,6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span><div><strong>Couverture nationale</strong><br>Mêmes droits pour tous les agents, quelle que soit leur entreprise IEG ou leur région.</div></div>
+      <div class="vt-cell vt-label" aria-hidden="true">📍</div>
+      <div class="vt-cell vt-cse" role="cell"><span class="vs-icon" aria-hidden="true"><span class="a11y-emoji">🏭</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v4"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="8" y2="16"/><line x1="16" y1="12" x2="16" y2="16"/></svg></span><div><strong>Propre à chaque entreprise</strong><br>Les avantages varient considérablement d'un CSE à l'autre — rien de garanti d'une entreprise à l'autre.</div></div>
+    </div>
+
+    <!-- LIGNE 3 : Retraite -->
+    <div class="vt-row" role="row">
+      <div class="vt-cell vt-ieg" role="cell"><span class="vs-icon" aria-hidden="true"><span class="a11y-emoji">🧓</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/><line x1="12" y1="14" x2="12" y2="18"/></svg></span><div><strong>Droits conservés à la retraite</strong><br>L'agent retraité IEG continue de bénéficier de l'ensemble des prestations CCAS/CMCAS.</div></div>
+      <div class="vt-cell vt-label" aria-hidden="true">🚪</div>
+      <div class="vt-cell vt-cse" role="cell"><span class="vs-icon" aria-hidden="true"><span class="a11y-emoji">🚪</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10z"/><polyline points="13,4 13,10 19,10"/><line x1="9" y1="14" x2="11" y2="14"/></svg></span><div><strong>Droits perdus au départ</strong><br>Le salarié qui quitte l'entreprise perd immédiatement tous ses droits CSE.</div></div>
+    </div>
+
+    <!-- LIGNE 4 : Loisirs -->
+    <div class="vt-row" role="row">
+      <div class="vt-cell vt-ieg" role="cell"><span class="vs-icon" aria-hidden="true"><span class="a11y-emoji">🏖️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-1a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v1"/><circle cx="12" cy="7" r="4"/><path d="M2 21h20"/></svg></span><div><strong>Catalogue loisirs étendu</strong><br>Villages clubs, résidences, séjours jeunes, parcs, sport — à tarifs nationaux très avantageux.</div></div>
+      <div class="vt-cell vt-label" aria-hidden="true">🎟️</div>
+      <div class="vt-cell vt-cse" role="cell"><span class="vs-icon" aria-hidden="true"><span class="a11y-emoji">🎟️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z"/><line x1="9" y1="12" x2="15" y2="12"/></svg></span><div><strong>Catalogue souvent limité</strong><br>Chèques-cadeaux, quelques réductions — les petits CSE ont des moyens très restreints.</div></div>
+    </div>
+
+    <!-- LIGNE 5 : Action sociale -->
+    <div class="vt-row" role="row">
+      <div class="vt-cell vt-ieg" role="cell"><span class="vs-icon" aria-hidden="true"><span class="a11y-emoji">🤝</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span><div><strong>Action sociale structurée</strong><br>Assistante sociale, secours d'urgence, aide au logement, bourses scolaires — partout en France.</div></div>
+      <div class="vt-cell vt-label" aria-hidden="true">👥</div>
+      <div class="vt-cell vt-cse" role="cell"><span class="vs-icon" aria-hidden="true"><span class="a11y-emoji">❓</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span><div><strong>Action sociale incertaine</strong><br>Certains CSE ont une assistante sociale, d'autres aucun dispositif d'accompagnement.</div></div>
+    </div>
+
+    <!-- LIGNE 6 : Stabilité -->
+    <div class="vt-row" role="row">
+      <div class="vt-cell vt-ieg" role="cell"><span class="vs-icon" aria-hidden="true"><span class="a11y-emoji">🛡️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><div><strong>Stabilité garantie depuis 1946</strong><br>Inscrit dans le statut des IEG — ne dépend pas des aléas économiques d'une entreprise.</div></div>
+      <div class="vt-cell vt-label" aria-hidden="true">📊</div>
+      <div class="vt-cell vt-cse" role="cell"><span class="vs-icon" aria-hidden="true"><span class="a11y-emoji">📊</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></span><div><strong>Budget soumis aux résultats</strong><br>En cas de difficultés économiques, le budget CSE peut être réduit ou les avantages supprimés.</div></div>
+    </div>
+
+  </div>
+
+  <div class="alert blue" style="margin-bottom:32px;">
+    <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="icône"><span class="a11y-emoji">💡</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.6-1.4 4.9-3.5 6.2L15 17H9l-.5-1.8A7 7 0 0 1 12 2z"/></svg></span></div>
+    <p>Là où un salarié du privé peut bénéficier de quelques chèques-cadeaux et de réductions sur des spectacles, un agent IEG accède à un <strong>système complet, financé solidement, identique sur tout le territoire, et qui le suit jusqu'à la retraite</strong>. C'est un avantage social majeur, souvent sous-estimé, qui représente une part significative de la rémunération globale.</p>
+  </div>
+
+  <!-- SECTION RÉSUMÉ -->
+  <div class="section-title"><span class="icon" aria-hidden="true"><span class="a11y-emoji">📋</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-2"/><rect x="9" y="0" width="6" height="4" rx="1"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></span> En résumé : CCAS vs CMCAS</div>
+  <div class="two-cols" style="margin-bottom:32px;">
+    <div class="col-card ccas">
+      <h4><span aria-hidden="true"><span class="a11y-emoji">🏢</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="18" height="20" rx="1"/><path d="M9 22V12h6v10"/><rect x="7" y="6" width="2" height="2"/><rect x="11" y="6" width="2" height="2"/><rect x="15" y="6" width="2" height="2"/><rect x="7" y="10" width="2" height="2"/><rect x="11" y="10" width="2" height="2"/><rect x="15" y="10" width="2" height="2"/></svg></span> CCAS — National</h4>
+      <ul>
+        <li>Catalogue national de vacances et séjours</li>
+        <li>Réductions culturelles et loisirs négociées</li>
+        <li>Aide scolaire, bourses et garde d'enfants</li>
+        <li>Activités sportives à l'échelle nationale</li>
+        <li>Portail en ligne : <a href="https://www.ccas.fr" target="_blank" rel="noopener noreferrer" aria-label="Site CCAS"><strong>ccas.fr</strong></a></li>
+        <li>Gestion paritaire nationale</li>
+      </ul>
+    </div>
+    <div class="col-card cmcas">
+      <h4><span aria-hidden="true"><span class="a11y-emoji">📍</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span> CMCAS — Local</h4>
+      <ul>
+        <li>Déclinaison locale des prestations CCAS</li>
+        <li>Activités de proximité et sorties régionales</li>
+        <li>Secours et aides d'urgence</li>
+        <li>Assistante sociale de secteur</li>
+        <li>Élections propres avec représentants locaux</li>
+        <li>Gestion paritaire locale</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ALERTE DROITS -->
+  <div class="alert green">
+    <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="icône"><span class="a11y-emoji">💡</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.6-1.4 4.9-3.5 6.2L15 17H9l-.5-1.8A7 7 0 0 1 12 2z"/></svg></span></div>
+    <p><strong>Bon à savoir :</strong> les droits CCAS/CMCAS ne sont <strong>pas automatiquement connus de tous les agents</strong>. Beaucoup d'entre eux n'utilisent pas l'ensemble des prestations auxquelles ils ont droit, faute d'information. Parlez-en autour de vous, et consultez régulièrement <a href="https://www.ccas.fr" target="_blank" rel="noopener noreferrer" aria-label="Site CCAS"><strong>ccas.fr</strong></a> pour ne rien rater !</p>
+  </div>
+
+  <div class="alert">
+    <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="icône"><span class="a11y-emoji">🚪</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10z"/><polyline points="13,4 13,10 19,10"/><line x1="9" y1="14" x2="11" y2="14"/></svg></span></div>
+    <p><strong>Vous partez en retraite ?</strong> Vos droits CCAS/CMCAS ne disparaissent pas ! En tant que retraité IEG, vous continuez de bénéficier de l'ensemble des prestations. Veillez simplement à mettre à jour vos coordonnées auprès de votre CMCAS pour continuer à recevoir les informations.</p>
+  </div>
+
+  <!-- ═══════════ BANDEAU CONTACT FO ═══════════ -->
+  <div class="fo-contact-card">
+    <div class="fo-logo-wrap">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO Énergie GRDF">
+      </a>
+    </div>
+    <div class="fo-body">
+      <div class="fo-text">
+        <h3><span aria-hidden="true"><span class="a11y-emoji">✉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span> Une question ? Contactez FO GRDF</h3>
+        <p>Nos délégués nationaux sont là pour vous accompagner sur vos droits CCAS/CMCAS et toute situation personnelle.</p>
+      </div>
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" class="fo-mailto-btn">
+        <span class="btn-icon"><span aria-hidden="true"><span class="a11y-emoji">✉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span></span>
+        Nous écrire
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer" role="contentinfo">
+    <div style="display:flex; justify-content:center; align-items:center; gap:24px; margin-bottom:16px; flex-wrap:wrap;">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png"
+             alt="Logo FO Énergie GRDF"
+             style="height:70px; object-fit:contain; opacity:0.85; transition:opacity 0.2s;"
+             onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+      </a>
+    </div>
+    Document d'information syndicale FO Énergie · CCAS fondée en 1946 · Pour tout renseignement :
+    <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" aria-label="Envoyer un email à FO GRDF">syndicat-fo_grdf-delegations-nationales@grdf.fr</a>
+    · <a href="https://ccas.fr" target="_blank" rel="noopener noreferrer" aria-label="Site CCAS (ouvre un nouvel onglet)">ccas.fr</a>
+  </footer>
+
+</div><!-- fin .page -->
+<script>
+  function dismissRotate() {
+    const b = document.getElementById('rotateBanner');
+    if (b) b.style.display = 'none';
+    try { sessionStorage.setItem('fo-rotate-dismissed', '1'); } catch(e) {}
+  }
+  try {
+    if (sessionStorage.getItem('fo-rotate-dismissed') === '1') {
+      const b = document.getElementById('rotateBanner');
+      if (b) b.style.display = 'none';
+    }
+  } catch(e) {}
+
+  function toggleA11y() {
+    const body = document.body;
+    const btn = document.getElementById('a11yToggle');
+    const isActive = body.classList.toggle('a11y-mode');
+    if (btn) btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    try { localStorage.setItem('fo-a11y', isActive ? '1' : '0'); } catch(e) {}
+    // Swap SVG schemas if present
+    const svgStd = document.getElementById('svg-standard');
+    const svgA11y = document.getElementById('svg-a11y');
+    if (svgStd && svgA11y) {
+      svgStd.style.display = isActive ? 'none' : 'block';
+      svgA11y.style.display = isActive ? 'block' : 'none';
+    }
+  }
+  try {
+    if (localStorage.getItem('fo-a11y') === '1') {
+      document.body.classList.add('a11y-mode');
+      const btn = document.getElementById('a11yToggle');
+      if (btn) btn.setAttribute('aria-pressed', 'true');
+      const svgStd = document.getElementById('svg-standard');
+      const svgA11y = document.getElementById('svg-a11y');
+      if (svgStd && svgA11y) {
+        svgStd.style.display = 'none';
+        svgA11y.style.display = 'block';
+      }
+    }
+  } catch(e) {}
+</script>
+</html>

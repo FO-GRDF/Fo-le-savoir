@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Saviez-Vous — Participation GRDF 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu: #019cda;
+    --bleu-clair: #019cda;
+    --or: #f7dd5c;
+    --or-clair: #fde8ea;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --texte: #1A1A2E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+
+  /* HEADER */
+  .header {
+    position: relative;
+    background: linear-gradient(135deg, #019cda 0%, #028bc2 100%);
+    border-radius: 20px;
+    padding: 44px 48px 36px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .header::before { display: none; }
+  .header::after { display: none; }
+
+  .badge {
+    display: inline-block;
+    background: var(--or);
+    color: var(--bleu);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 40px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--blanc);
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+  }
+  .header h1 em { color: var(--or); font-style: italic; }
+  .header .subtitle {
+    margin-top: 14px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.72);
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+  }
+  .header .update {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    position: relative;
+    z-index: 1;
+  }
+  .dot { width: 7px; height: 7px; background: #4ADE80; border-radius: 50%; display: inline-block; }
+
+  /* INTRO */
+  .intro {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    border-left: 5px solid var(--bleu-clair);
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #2a2a2a;
+  }
+  .intro strong { color: var(--bleu); }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon {
+    width: 36px; height: 36px;
+    background: var(--or-clair);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  /* CARDS GRID */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,59,111,0.1); }
+  .card .card-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+  .card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .card p { font-size: 13.5px; color: var(--gris); line-height: 1.65; }
+  .card.highlight { background: var(--bleu); color: white; }
+  .card.highlight h3 { color: var(--or); }
+  .card.highlight p { color: rgba(255,255,255,0.78); }
+
+  /* ALERT BOX */
+  .alert {
+    background: var(--or-clair);
+    border: 1.5px solid var(--or);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .alert .alert-icon { font-size: 24px; flex-shrink: 0; }
+  .alert p { font-size: 14px; line-height: 1.7; color: #5a4000; }
+  .alert strong { color: #3a2800; }
+  .alert.green { background: var(--vert-clair); border-color: var(--vert); }
+  .alert.green p { color: #0e3d22; }
+  .alert.green strong { color: #0a2e19; }
+
+  /* BIG STAT BOX */
+  .stat-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 20px;
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .stat-box .stat-main { flex-shrink: 0; text-align: center; }
+  .stat-box .stat-val { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 900; color: var(--or); line-height: 1; }
+  .stat-box .stat-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+  .stat-box .stat-desc { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.7; }
+  .stat-box .stat-desc strong { color: white; }
+
+  /* PLACEMENT CARDS */
+  .placement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .place-card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 18px;
+    border-top: 4px solid var(--bleu-clair);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .place-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,59,111,0.1); }
+  .place-card.default { border-top-color: var(--gris); }
+  .place-card .place-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+  .place-card h3 { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .place-card p { font-size: 12.5px; color: var(--gris); line-height: 1.6; }
+  .place-card .tag { display: inline-block; margin-top: 10px; font-size: 11px; padding: 3px 10px; border-radius: 20px; background: var(--or-clair); color: #7a5200; font-weight: 500; }
+  .place-card .tag.blue { background: #e6f5fb; color: #017fb1; }
+  .place-card .tag.grey { background: #f0f0f0; color: #555; }
+
+  /* BRUT/NET TABLE SECTION */
+  .fiscal-section { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+  .fiscal-flow { display: flex; flex-direction: column; gap: 0; margin: 20px 0; }
+  .fiscal-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    background: var(--fond);
+    margin-bottom: 4px;
+  }
+  .fiscal-row.start { background: #e6f5fb; }
+  .fiscal-row.deduct { background: var(--rouge-clair); }
+  .fiscal-row.net { background: var(--vert-clair); }
+  .fiscal-row.taxable { background: #FFF3D6; }
+  .fiscal-row .f-icon { font-size: 22px; flex-shrink: 0; width: 36px; text-align:center; }
+  .fiscal-row .f-label { flex: 1; font-size: 13.5px; line-height: 1.5; }
+  .fiscal-row .f-label strong { font-size: 14.5px; display:block; margin-bottom:2px; }
+  .fiscal-row .f-amount { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; text-align: right; flex-shrink: 0; min-width: 100px; }
+  .fiscal-row.start .f-amount { color: var(--bleu); }
+  .fiscal-row.deduct .f-amount { color: var(--rouge); }
+  .fiscal-row.net .f-amount { color: var(--vert); }
+  .fiscal-row.taxable .f-amount { color: #a36200; }
+  .arrow-down { text-align: center; font-size: 18px; color: var(--gris); margin: 2px 0; opacity: 0.5; }
+  .fiscal-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+  .fc-col { border-radius: 14px; padding: 20px; border-top: 4px solid; }
+  .fc-col.placement { background: var(--vert-clair); border-top-color: var(--vert); }
+  .fc-col.paiement { background: #FFF3D6; border-top-color: var(--or); }
+  .fc-col h4 { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 10px; }
+  .fc-col ul { list-style: none; padding: 0; }
+  .fc-col ul li { font-size: 12.5px; color: #333; line-height: 1.65; padding-left: 18px; position: relative; margin-bottom: 6px; }
+  .fc-col ul li::before { content: '✓'; position: absolute; left: 0; color: var(--vert); font-weight: 700; }
+  .fc-col.paiement ul li::before { color: #a36200; }
+  .fc-col .fc-highlight { margin-top: 12px; background: rgba(255,255,255,0.7); border-radius: 8px; padding: 8px 12px; font-size: 12px; line-height: 1.5; }
+
+  /* LINK SECTION */
+  .link-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .link-box::after { content: 'LINK 2026'; position: absolute; right: -20px; top: -10px; font-family: 'Fraunces', serif; font-size: 90px; font-weight: 900; color: rgba(255,255,255,0.05); pointer-events: none; }
+  .link-box h3 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--or); margin-bottom: 12px; }
+  .link-box p { font-size: 13.5px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 16px; }
+  .link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .link-item { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 16px; }
+  .link-item .li-label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+  .link-item .li-val { font-family: 'Fraunces', serif; font-size: 18px; color: var(--or); margin-top: 2px; }
+  .link-item .li-sub { font-size: 11.5px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+  /* CALENDAR */
+  .calendar-section { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--bleu-clair), var(--or)); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -22px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bleu-clair); border: 2px solid white; box-shadow: 0 0 0 2px var(--bleu-clair); }
+  .tl-item.active::before { background: var(--or); box-shadow: 0 0 0 2px var(--or); }
+  .tl-date { font-size: 11px; font-weight: 500; color: var(--bleu-clair); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .tl-item.active .tl-date { color: var(--or); }
+  .tl-title { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 3px; }
+  .tl-desc { font-size: 13px; color: var(--gris); line-height: 1.55; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead tr { background: var(--bleu); color: white; }
+  thead th { padding: 12px 14px; text-align: left; font-weight: 500; font-size: 12px; letter-spacing: 0.5px; }
+  tbody tr:nth-child(even) { background: var(--fond); }
+  tbody td { padding: 11px 14px; border-bottom: 1px solid #eee; color: #2a2a2a; }
+
+  /* FOOTER */
+  .footer { text-align: center; font-size: 12px; color: var(--gris); padding-top: 24px; border-top: 1px solid #ddd; }
+
+  @media (max-width: 600px) {
+    .cards, .placement-grid, .fiscal-compare, .link-grid { grid-template-columns: 1fr; }
+    .stat-box { flex-direction: column; text-align: center; }
+    .header h1 { font-size: 30px; }
+    .header { padding: 32px 24px; }
+    .page { padding: 24px 16px 48px; }
+  }
+
+  /* ═══════════════════════════════════════════════
+     BOUTON LECTURE UNIVERSELLE + MODE A11Y
+     Palette gris chauds — confort maximal
+  ═══════════════════════════════════════════════ */
+
+  /* Variables palette mode lecture */
+  body.a11y-mode {
+    --a11y-bg:        #FAFAF7;
+    --a11y-surface:   #FFFFFF;
+    --a11y-surface2:  #F4F3EF;
+    --a11y-border:    #E2E0DA;
+    --a11y-border2:   #CCCAC4;
+    --a11y-txt1:      #2C2C29;
+    --a11y-txt2:      #4A4A46;
+    --a11y-txt3:      #6E6D69;
+    --a11y-txt4:      #6F6E68;
+    --a11y-dark:      #525250;
+    --a11y-dark-txt:  #F8F7F4;
+    --a11y-txt4-dark:  #C8C6C0;
+  }
+
+  /* Bouton de bascule */
+  .a11y-toggle-bar {
+    display: flex;
+    justify-content: center;
+    margin: -20px 0 28px;
+    position: relative;
+    z-index: 10;
+  }
+  .a11y-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 40px;
+    padding: 8px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .a11y-btn:hover { border-color: #019cda; color: #019cda; box-shadow: 0 4px 14px rgba(1,156,218,0.15); }
+  .a11y-btn:focus { outline: 4px solid #019cda; outline-offset: 3px; }
+  .a11y-btn .a11y-icon { font-size: 16px; }
+  .a11y-btn .a11y-label-on  { display: none; }
+  .a11y-btn .a11y-label-off { display: inline; }
+
+  body.a11y-mode .a11y-btn {
+    background: var(--a11y-dark);
+    border-color: var(--a11y-dark);
+    color: var(--a11y-dark-txt);
+    font-weight: 700;
+  }
+  body.a11y-mode .a11y-btn .a11y-label-on  { display: inline; }
+  body.a11y-mode .a11y-btn .a11y-label-off { display: none; }
+
+  /* ── BODY GLOBAL ── */
+  body.a11y-mode {
+    background: var(--a11y-bg);
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  body.a11y-mode .page { background: var(--a11y-bg); }
+
+  /* ── HEADER ── */
+  body.a11y-mode .header {
+    background: var(--a11y-dark) !important;
+    border-radius: 16px;
+    border: none;
+  }
+  body.a11y-mode .header h1 {
+    color: var(--a11y-dark-txt) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 34px;
+    letter-spacing: 0.01em;
+  }
+  body.a11y-mode .header h1 em {
+    color: var(--a11y-dark-txt) !important;
+    font-style: normal;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  body.a11y-mode .header .subtitle { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .badge {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .header .update {
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.2) !important;
+    color: var(--a11y-txt4-dark) !important;
+  }
+  body.a11y-mode .dot {
+    background: var(--a11y-txt4-dark) !important;
+  }
+
+  /* ── TYPOGRAPHIE GLOBALE ── */
+  body.a11y-mode p,
+  body.a11y-mode li,
+  body.a11y-mode td,
+  body.a11y-mode .card p,
+  body.a11y-mode .place-card p,
+  body.a11y-mode .tl-desc,
+  body.a11y-mode .fiscal-row .f-label {
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.85 !important;
+    color: var(--a11y-txt3) !important;
+  }
+  body.a11y-mode .section-title {
+    font-size: 21px !important;
+    color: var(--a11y-txt1) !important;
+  }
+  body.a11y-mode .card h3,
+  body.a11y-mode .place-card h3,
+  body.a11y-mode .fc-col h4 {
+    font-size: 16px !important;
+    color: var(--a11y-txt1) !important;
+  }
+
+  /* ── INTRO ── */
+  body.a11y-mode .intro {
+    background: var(--a11y-surface) !important;
+    border-left: 5px solid var(--a11y-dark) !important;
+    color: var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .intro strong { color: var(--a11y-txt1) !important; }
+
+  /* ── CARDS ── */
+  body.a11y-mode .card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .card p { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .card h3 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .card.highlight {
+    background: var(--a11y-dark) !important;
+    border: 1px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .card.highlight h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .card.highlight p  { color: var(--a11y-txt4-dark) !important; }
+
+  /* ── STAT BOX ── */
+  body.a11y-mode .stat-box {
+    background: var(--a11y-dark) !important;
+    border: none !important;
+  }
+  body.a11y-mode .stat-box .stat-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .stat-box .stat-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box .stat-desc  { color: #C8C7C2 !important; }
+  body.a11y-mode .stat-box .stat-desc strong { color: var(--a11y-dark-txt) !important; }
+
+  /* ── SECTION ICON ── */
+  body.a11y-mode .section-title .icon {
+    background: var(--a11y-surface2) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+    border-radius: 8px !important;
+  }
+  body.a11y-mode .card-icon  { font-size: 30px !important; }
+  body.a11y-mode .place-icon { font-size: 30px !important; }
+
+  /* ── FISCAL / FINANCEMENT ── */
+  body.a11y-mode .fiscal-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .fiscal-row {
+    color: var(--a11y-txt2) !important;
+    border-radius: 8px !important;
+  }
+  body.a11y-mode .fiscal-row.start {
+    background: var(--a11y-surface2) !important;
+    border-left: 4px solid var(--a11y-txt1) !important;
+  }
+  body.a11y-mode .fiscal-row.deduct {
+    background: var(--a11y-surface2) !important;
+    border-left: 4px dashed var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .fiscal-row.net {
+    background: var(--a11y-surface2) !important;
+    border-left: 4px dotted var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .fiscal-row.taxable {
+    background: var(--a11y-surface2) !important;
+    border-left: 4px double var(--a11y-txt3) !important;
+  }
+  body.a11y-mode .fiscal-row .f-amount { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .fiscal-row .f-label strong { color: var(--a11y-txt1) !important; }
+
+  /* ── FC-COL (placement/paiement) ── */
+  body.a11y-mode .fc-col {
+    background: var(--a11y-surface2) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-top: 4px solid var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .fc-col h4 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .fc-col ul li { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .fc-col ul li::before { color: var(--a11y-txt1) !important; }
+
+  /* ── PLACE CARDS ── */
+  body.a11y-mode .place-card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-top: 4px solid var(--a11y-txt2) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .place-card p { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .place-card h3 { color: var(--a11y-txt1) !important; }
+
+  /* ── LINK BOX ── */
+  body.a11y-mode .link-box {
+    background: var(--a11y-dark) !important;
+    border: none !important;
+  }
+  body.a11y-mode .link-box h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .link-box p  { color: #C8C7C2 !important; }
+  body.a11y-mode .link-item {
+    background: rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    border-radius: 8px !important;
+  }
+  body.a11y-mode .link-item .li-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .link-item .li-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .link-item .li-sub   { color: #C8C7C2 !important; }
+
+  /* ── ALERTES ── */
+  body.a11y-mode div.alert {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode div.alert p,
+  body.a11y-mode div.alert > p { color: var(--a11y-txt2) !important; font-size: 14.5px !important; }
+  body.a11y-mode div.alert strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode div.alert.green {
+    background: var(--a11y-surface2) !important;
+    border-left: 5px dashed var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .alert-icon { font-size: 26px !important; }
+
+  /* ── TIMELINE / CALENDRIER ── */
+  body.a11y-mode .calendar-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .tl-title { color: var(--a11y-txt1) !important; font-size: 15px !important; }
+  body.a11y-mode .tl-date  { color: var(--a11y-txt3) !important; font-weight: 600 !important; }
+  body.a11y-mode .tl-desc  { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .timeline::before {
+    background: linear-gradient(to bottom, var(--a11y-txt2), var(--a11y-border2)) !important;
+  }
+
+  /* ── TAGS ── */
+  body.a11y-mode .tag {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1px solid var(--a11y-border2) !important;
+  }
+
+  /* ── TABLE ── */
+  body.a11y-mode table thead tr { background: var(--a11y-dark) !important; }
+  body.a11y-mode table thead th { color: var(--a11y-dark-txt) !important; font-size: 13px !important; }
+  body.a11y-mode table tbody td { color: var(--a11y-txt2) !important; font-size: 14px !important; border-bottom-color: var(--a11y-border) !important; }
+  body.a11y-mode table tbody tr:nth-child(even) { background: var(--a11y-surface2) !important; }
+
+  /* ── CONTACT FO ── */
+  body.a11y-mode .fo-contact-card {
+    background: var(--a11y-dark) !important;
+    border: none !important;
+  }
+  body.a11y-mode .fo-contact-card h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .fo-contact-card p  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .fo-mailto-btn {
+    background: var(--a11y-surface) !important;
+    color: var(--a11y-txt1) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+
+  /* ── FOOTER ── */
+  body.a11y-mode .footer { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .footer a { color: var(--a11y-txt2) !important; text-decoration: underline; }
+
+  /* ── FOCUS ── */
+  body.a11y-mode *:focus {
+    outline: 3px solid var(--a11y-txt1) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 5px rgba(28,28,26,0.15) !important;
+  }
+
+  /* ── RESPONSIVE A11Y ── */
+  @media (max-width: 600px) {
+    body.a11y-mode .cards,
+    body.a11y-mode .placement-grid,
+    body.a11y-mode .fiscal-compare,
+    body.a11y-mode .link-grid { grid-template-columns: 1fr; }
+    body.a11y-mode .stat-box { flex-direction: column; }
+    body.a11y-mode .page { padding: 16px; }
+  }
+
+  @media (prefers-contrast: more) {
+    .card, .place-card, .intro, .alert { border: 2px solid #1C1C1A !important; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+
+    /* ═══════════════════════════════════════════════
+     SKIP LINK
+  ═══════════════════════════════════════════════ */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: #ffbf00;
+    color: #000;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 16px; }
+
+  /* ═══════════════════════════════════════════════
+     LOGO CLIQUABLE + INFO-BULLE (TOOLTIP)
+  ═══════════════════════════════════════════════ */
+  .logo-link-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .logo-link-wrap .logo-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0,0,0,0.82);
+    color: #fff;
+    font-size: 11.5px;
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
+    padding: 6px 12px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    right: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, visibility 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .logo-link-wrap .logo-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 14px;
+    border: 6px solid transparent;
+    border-top-color: rgba(0,0,0,0.82);
+  }
+  .logo-link-wrap:hover .logo-tooltip,
+  .logo-link-wrap:focus-within .logo-tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  .logo-link-wrap img {
+    transition: transform 0.25s, filter 0.25s;
+    cursor: pointer;
+    filter: drop-shadow(0 2px 8px rgba(247,221,92,0.2));
+  }
+  .logo-link-wrap:hover img {
+    transform: scale(1.06);
+    filter: drop-shadow(0 4px 14px rgba(247,221,92,0.5));
+  }
+
+  /* ═══════════════════════════════════════════════
+     CARTE CONTACT FO (bandeau avant footer)
+  ═══════════════════════════════════════════════ */
+  .fo-contact-card {
+    background: linear-gradient(135deg, #c0303a 0%, #9e1a28 60%, #7a0e1c 100%);
+    border-radius: 16px;
+    padding: 18px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fo-contact-card::before {
+    content: '✉';
+    position: absolute;
+    right: -8px; top: -16px;
+    font-size: 100px;
+    color: rgba(255,255,255,0.08);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .fo-contact-card .fo-logo-wrap { flex-shrink: 0; }
+  .fo-contact-card .fo-logo-wrap img {
+    height: 44px;
+    object-fit: contain;
+    transition: transform 0.25s;
+    cursor: pointer;
+    display: block;
+    background: white;
+    border-radius: 8px;
+    padding: 5px 8px;
+  }
+  .fo-contact-card .fo-logo-wrap img:hover { transform: scale(1.07); }
+  .fo-contact-card .fo-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .fo-contact-card .fo-text { flex: 1; min-width: 180px; }
+  .fo-contact-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+  .fo-contact-card p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .fo-mailto-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 9px 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  }
+  .fo-mailto-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    background: #f5f5f5;
+  }
+  .fo-mailto-btn .btn-icon { font-size: 15px; }
+
+  /* a11y mode — contact card */
+  body.a11y-mode .fo-contact-card {
+    background: #1a1a1a;
+    border: 3px solid #555;
+  }
+  body.a11y-mode .fo-contact-card h3 { color: #fff !important; }
+  body.a11y-mode .fo-contact-card p  { color: #ccc !important; }
+  body.a11y-mode .fo-mailto-btn {
+    background: #fff;
+    color: #000 !important;
+    border: 2px solid #000;
+  }
+
+  /* ═══════════════════════════════════════════════
+     MODE PAYSAGE FORCÉ SUR MOBILE (portrait → rotation 90°)
+  ═══════════════════════════════════════════════ */
+
+  /* Bandeau d'invite rotation — visible uniquement sur mobile portrait */
+  .rotate-banner {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(135deg, #019cda, #028bc2);
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 9998;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.15);
+  }
+  .rotate-banner .rb-icon {
+    font-size: 20px;
+    animation: rb-spin 2s ease-in-out infinite;
+    display: inline-block;
+  }
+  @keyframes rb-spin {
+    0%   { transform: rotate(0deg); }
+    40%  { transform: rotate(90deg); }
+    60%  { transform: rotate(90deg); }
+    100% { transform: rotate(0deg); }
+  }
+  .rotate-banner .rb-close {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .rotate-banner .rb-close:hover { background: rgba(255,255,255,0.35); }
+
+  /* Sur mobile en portrait : afficher le bandeau */
+  @media (max-width: 768px) and (orientation: portrait) {
+    .rotate-banner { display: flex; }
+    /* Ajouter du padding en bas pour ne pas cacher le contenu */
+    body { padding-bottom: 52px; }
+  }
+
+  /* Sur mobile en paysage : masquer le bandeau, optimiser la mise en page */
+  @media (max-width: 900px) and (orientation: landscape) {
+    .rotate-banner { display: none !important; }
+    body { padding-bottom: 0; }
+    .page { padding: 16px 24px 32px; max-width: 100%; }
+    .header { padding: 20px 28px 16px; border-radius: 12px; margin-bottom: 20px; }
+    .header h1 { font-size: 26px; }
+    .header .subtitle { font-size: 13px; }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .placement-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .fiscal-compare { grid-template-columns: 1fr 1fr; }
+    .link-grid { grid-template-columns: 1fr 1fr; }
+    .stat-box { padding: 18px 24px; gap: 16px; }
+    .stat-box .stat-val { font-size: 36px; }
+    .fiscal-section,
+    .calendar-section { padding: 18px 22px; }
+    .fo-contact-card { padding: 12px 16px; }
+    .a11y-toggle-bar { margin: -12px 0 20px; }
+  }
+
+
+  /* ═══════════════════════════════════════════════
+     ICÔNES SVG MODE LECTURE UNIVERSELLE
+  ═══════════════════════════════════════════════ */
+  .a11y-ico {
+    display: none;
+    width: 1.1em;
+    height: 1.1em;
+    vertical-align: -0.18em;
+    flex-shrink: 0;
+    color: currentColor;
+  }
+  body.a11y-mode .a11y-ico {
+    display: inline;
+  }
+  /* Masquer l'emoji et afficher le SVG en mode a11y */
+  body.a11y-mode .a11y-emoji {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    width: 0 !important;
+    display: inline-block;
+  }
+  /* Taille icône dans les card-icon / place-icon / f-icon / section icon */
+  body.a11y-mode .card-icon .a11y-ico,
+  body.a11y-mode .place-icon .a11y-ico,
+  body.a11y-mode .f-icon .a11y-ico,
+  body.a11y-mode .icon .a11y-ico {
+    width: 1.4em;
+    height: 1.4em;
+  }
+  /* Icône dans tl-date (timeline) */
+  body.a11y-mode .tl-date .a11y-ico {
+    width: 0.95em;
+    height: 0.95em;
+    vertical-align: -0.1em;
+  }
+  /* Icône dans les boutons/liens */
+  body.a11y-mode .btn-icon .a11y-ico,
+  body.a11y-mode .a11y-icon .a11y-ico {
+    width: 1em;
+    height: 1em;
+  }
+
+
+  /* ═══════════════════════════════════════════════
+     TIMELINE — MODE LECTURE UNIVERSELLE
+     Différenciation par forme, pas par couleur
+  ═══════════════════════════════════════════════ */
+
+  /* Ligne verticale : couleur neutre */
+  body.a11y-mode .timeline::before {
+    background: var(--a11y-border2) !important;
+    border-radius: 0 !important;
+    width: 2px !important;
+  }
+
+  /* Point standard : cercle CREUX (fond blanc, contour gris foncé) */
+  body.a11y-mode .tl-item::before {
+    background: var(--a11y-surface) !important;
+    border: 2.5px solid var(--a11y-txt2) !important;
+    box-shadow: none !important;
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* Point actif : cercle PLEIN (fond foncé) + plus grand */
+  body.a11y-mode .tl-item.active::before {
+    background: var(--a11y-txt1) !important;
+    border: 2.5px solid var(--a11y-txt1) !important;
+    box-shadow: 0 0 0 3px var(--a11y-surface), 0 0 0 5px var(--a11y-txt2) !important;
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* Date standard : couleur texte neutre */
+  body.a11y-mode .tl-date {
+    color: var(--a11y-txt3) !important;
+    font-weight: 600 !important;
+  }
+
+  /* Date active : texte foncé + badge "En cours" */
+  body.a11y-mode .tl-item.active .tl-date {
+    color: var(--a11y-txt1) !important;
+    font-weight: 700 !important;
+  }
+
+  /* Badge "En cours" injecté via ::after sur les items actifs */
+  body.a11y-mode .tl-item.active .tl-date::after {
+    content: ' — EN COURS';
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--a11y-txt3);
+    vertical-align: middle;
+  }
+
+
+  /* ═══════════════════════════════════════════════
+     FC-COL + FC-HIGHLIGHT — MODE LECTURE UNIVERSELLE
+     Différenciation par forme, pas par couleur
+  ═══════════════════════════════════════════════ */
+
+  /* Colonne "placement" : bordure PLEINE → neutre */
+  body.a11y-mode .fc-col.placement {
+    background: var(--a11y-surface) !important;
+    border: 1.5px solid var(--a11y-border) !important;
+    border-top: 5px solid var(--a11y-txt1) !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+
+  /* Colonne "paiement" : bordure EN TIRETS → différenciée sans couleur */
+  body.a11y-mode .fc-col.paiement {
+    background: var(--a11y-surface2) !important;
+    border: 1.5px dashed var(--a11y-txt2) !important;
+    border-top: 5px dashed var(--a11y-txt2) !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+
+  /* Titres des colonnes */
+  body.a11y-mode .fc-col.placement h4::before { content: '▬ '; font-size: 10px; }
+  body.a11y-mode .fc-col.paiement  h4::before { content: '╌╌ '; font-size: 10px; letter-spacing: -1px; }
+
+  /* Puces ✓ : neutres dans les deux colonnes */
+  body.a11y-mode .fc-col ul li::before {
+    content: '›' !important;
+    color: var(--a11y-txt2) !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+  }
+
+  /* Encadré fc-highlight 💡 (fond vert → neutre) */
+  body.a11y-mode .fc-col.placement .fc-highlight {
+    background: var(--a11y-surface2) !important;
+    border-left: 4px solid var(--a11y-txt1) !important;
+    border-radius: 0 6px 6px 0 !important;
+  }
+
+  /* Encadré fc-highlight ⚠️ (fond jaune → neutre + bordure tirets) */
+  body.a11y-mode .fc-col.paiement .fc-highlight {
+    background: var(--a11y-surface2) !important;
+    border-left: 4px dashed var(--a11y-txt2) !important;
+    border-radius: 0 6px 6px 0 !important;
+  }
+
+  /* Texte dans les encadrés */
+  body.a11y-mode .fc-highlight {
+    color: var(--a11y-txt2) !important;
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
+  body.a11y-mode .fc-highlight strong {
+    color: var(--a11y-txt1) !important;
+  }
+
+</style>
+</head>
+<body>
+<div class="rotate-banner" id="rotateBanner" role="status" aria-live="polite">
+  <span class="rb-icon" aria-hidden="true"><span aria-hidden="true"><span class="a11y-emoji">📱</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/></svg></span></span>
+  <span>Tournez votre téléphone pour une meilleure lecture</span>
+  <button class="rb-close" onclick="dismissRotate()" aria-label="Fermer ce message"><span aria-hidden="true"><span class="a11y-emoji">✕</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></span></button>
+</div>
+<a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+<div class="page" role="main">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; position:relative; z-index:1;">
+      <div class="badge" style="margin-bottom:0;"><span aria-hidden="true"><span class="a11y-emoji">✦</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 7.8H22l-6.6 4.8 2.5 7.6L12 17.4l-5.9 4.8 2.5-7.6L2 9.8h7.8z"/></svg></span> Le Saviez-Vous ?</div>
+      <span class="logo-link-wrap">
+        <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+          <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO Énergie GRDF — cliquez pour nous écrire" style="height:clamp(44px, 8vw, 90px); width:auto; object-fit:contain; display:block; flex-shrink:0;">
+        </a>
+        <span class="logo-tooltip"><span aria-hidden="true"><span class="a11y-emoji">✉️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span> Écrire à FO GRDF</span>
+      </span>
+    </div>
+
+    <h1 style="color:white;">Votre <em>participation 2025</em> arrive en 2026</h1>
+    <p class="subtitle">Tout ce que vous devez savoir sur votre prime, les modes de placement et leur fiscalité — GRDF 2026</p>
+    <div class="update"><span class="dot"></span> Saisie de vos choix ouverte du 23 mars au 13 avril 2026</div>
+  </div>
+
+
+  <!-- BOUTON ACCESSIBILITÉ -->
+  <div class="a11y-toggle-bar" role="navigation" aria-label="Options d'accessibilité">
+    <button class="a11y-btn" id="a11yToggle" onclick="toggleA11y()" aria-pressed="false" title="Activer le mode lecture universelle : police adaptée, contrastes forts, différenciation sans couleur">
+      <span class="a11y-icon" aria-hidden="true"><span aria-hidden="true"><span class="a11y-emoji">◐</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20A10 10 0 0 1 12 2z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"/></svg></span></span>
+      <span class="a11y-label-off">Mode lecture universelle</span>
+      <span class="a11y-label-on"><span aria-hidden="true"><span class="a11y-emoji">✓</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,12 9,18 20,6"/></svg></span> Mode lecture universelle actif — Revenir au mode standard</span>
+    </button>
+  </div>
+
+  <div id="contenu-principal">
+
+  <!-- INTRO -->
+  <div class="intro">
+    La <strong>participation est un dispositif légal obligatoire</strong> prévu par le Code du travail pour toutes les entreprises de plus de 50 salariés. Elle redistribue une part des bénéfices de l'entreprise à ses salariés. Au titre de l'exercice 2025, GRDF verse une <strong>réserve spéciale de participation (RSP) de près de 60 millions d'euros</strong>, soit environ <strong>5 184 € bruts par salarié</strong> à temps plein présent toute l'année. Cet accord a été signé le 6 février 2026 par FO, la CFDT, la CFE-CGC, la CGT et la Direction.
+  </div>
+
+  <!-- BIG STAT -->
+  <div class="stat-box">
+    <div class="stat-main">
+      <div class="stat-val">5 184 €</div>
+      <div class="stat-label">bruts / salarié</div>
+    </div>
+    <div class="stat-desc">
+      <strong>Réserve totale : ~60 millions d'euros</strong> distribués au titre des résultats 2025.<br><br>
+      La répartition est <strong>égalitaire</strong> entre tous les bénéficiaires, au <strong>prorata du temps de présence et de travail</strong> sur l'année. Les salariés en entité mixte perçoivent leur part selon la clé de répartition gaz de leur unité.
+    </div>
+  </div>
+
+  <!-- QUI BÉNÉFICIE -->
+  <div class="section-title"><span class="icon"><span aria-hidden="true"><span class="a11y-emoji">👥</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 0 1 10 0v2"/><circle cx="17" cy="7" r="3"/><path d="M22 21v-2a5 5 0 0 0-5-5"/></svg></span></span> Qui bénéficie de la participation ?</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-icon"><span aria-hidden="true"><span class="a11y-emoji">📅</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span></span>
+      <h3>Ancienneté requise</h3>
+      <p>Avoir au moins <strong>3 mois d'ancienneté</strong>, consécutifs ou non, sur la période 2024-2025 (incluant les 12 mois précédant l'exercice). L'ancienneté dans le Groupe ENGIE ou à Enedis est prise en compte.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">⏱️</span>
+      <h3>Calcul au prorata</h3>
+      <p>Temps de présence, temps de travail et clé gaz pour les entités mixtes. Congés maternité, paternité, adoption et arrêts pour accident du travail sont assimilés à du temps de présence.</p>
+    </div>
+    <div class="card highlight">
+      <span class="card-icon"><span aria-hidden="true"><span class="a11y-emoji">✋</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8l-1-1a2 2 0 0 0-3 3l3 3a6 6 0 0 0 6 0h2a6 6 0 0 0 6-6V11a2 2 0 0 0-4 0"/></svg></span></span>
+      <h3>Important cette année</h3>
+      <p>La participation élevée entraîne l'<strong>écrêtement total de l'intéressement collectif</strong>. Par ailleurs, placer votre participation sur le PEG ou le PERCOL ne génère <strong>pas d'abondement de la part de GRDF</strong> cette année.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon"><span aria-hidden="true"><span class="a11y-emoji">📬</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8"/><polyline points="2,6 12,13 22,6"/><polyline points="16,19 19,22 22,19"/><line x1="19" y1="15" x2="19" y2="22"/></svg></span></span>
+      <h3>Votre notification personnelle</h3>
+      <p>Vous recevrez votre notification individuelle directement de <strong>Natixis InterÉpargne</strong> par e-mail ou courrier à partir du <strong>23 mars 2026</strong>, avec le montant exact qui vous est attribué.</p>
+    </div>
+  </div>
+
+  <!-- BRUT / NET FISCALITÉ -->
+  <div class="fiscal-section">
+    <div class="section-title" style="margin-bottom:8px;"><span class="icon"><span role="img" aria-label="Bon à savoir"><span class="a11y-emoji">💡</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.6-1.4 4.9-3.5 6.2L15 17H9l-.5-1.8A7 7 0 0 1 12 2z"/></svg></span></span> Brut, net : ce que vous touchez vraiment</div>
+    <p style="font-size:14px; color:var(--gris); margin-bottom:20px; line-height:1.65;">Les 5 184 € sont un montant <strong>brut</strong>. Avant tout versement ou placement, des prélèvements sociaux obligatoires sont automatiquement déduits. Voici comment se déroule le calcul, sur la base du montant indicatif pour un salarié présent à temps plein sur 2025 :</p>
+    <div class="fiscal-flow">
+      <div class="fiscal-row start">
+        <div class="f-icon"><span aria-hidden="true"><span class="a11y-emoji">💰</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9a2.5 2.5 0 0 0-5 0c0 1.4 1 2 2.5 2.5s2.5 1.1 2.5 2.5a2.5 2.5 0 0 1-5 0"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg></span></div>
+        <div class="f-label"><strong>Montant brut de participation</strong>Calculé légalement à partir du bénéfice net de l'entreprise, de ses capitaux propres, de sa masse salariale et de sa valeur ajoutée</div>
+        <div class="f-amount">≈ 5 184 €</div>
+      </div>
+      <div class="arrow-down">▼</div>
+      <div class="fiscal-row deduct">
+        <div class="f-icon"><span aria-hidden="true"><span class="a11y-emoji">📉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23,18 13.5,8.5 8.5,13.5 1,6"/><polyline points="17,18 23,18 23,12"/></svg></span></div>
+        <div class="f-label"><strong>CSG + CRDS prélevées à la source</strong>Taux de 9,7 % (CSG 9,2 % + CRDS 0,5 %) — quel que soit le choix du salarié (placement OU versement direct)</div>
+        <div class="f-amount" style="color:var(--rouge);">− ≈ 503 €</div>
+      </div>
+      <div class="arrow-down">▼</div>
+      <div class="fiscal-row net">
+        <div class="f-icon"><span role="img" aria-label="Validé"><span class="a11y-emoji">✅</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="7,12 10,15 17,9"/></svg></span></div>
+        <div class="f-label"><strong>Montant net après CSG/CRDS</strong>Ce montant est placé ou versé — c'est votre point de départ réel</div>
+        <div class="f-amount">≈ 4 681 €</div>
+      </div>
+    </div>
+    <div class="fiscal-compare">
+      <div class="fc-col placement">
+        <h4><span aria-hidden="true"><span class="a11y-emoji">📦</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10H3M16 2l4 8-8 12L4 10l4-8zM12 2v20"/></svg></span> Si vous placez sur PEG / PERCOL</h4>
+        <ul>
+          <li>Seule la CSG/CRDS est prélevée (≈ 9,7 %)</li>
+          <li>Le montant net est investi et <strong>bloqué</strong> selon les règles du plan</li>
+          <li>Les gains et plus-values restent exonérés d'impôt sur le revenu à la sortie</li>
+          <li>Déblocage anticipé possible dans les cas légaux</li>
+        </ul>
+        <div class="fc-highlight" style="background:rgba(26,122,74,0.1); font-size:12px; border-radius:8px; padding:8px 12px; margin-top:10px;">
+          <span role="img" aria-label="Bon à savoir"><span class="a11y-emoji">💡</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.6-1.4 4.9-3.5 6.2L15 17H9l-.5-1.8A7 7 0 0 1 12 2z"/></svg></span> <strong>Avantage fiscal :</strong> pas d'impôt sur le revenu sur les sommes placées ni sur les gains à la sortie (hors CSG/CRDS).
+        </div>
+      </div>
+      <div class="fc-col paiement">
+        <h4><span aria-hidden="true"><span class="a11y-emoji">💳</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span> Si vous demandez le versement direct</h4>
+        <ul>
+          <li>CSG/CRDS prélevée (≈ 9,7 %), identique au placement</li>
+          <li>Le montant net est versé via la <strong>paie de mai 2026</strong></li>
+          <li>Ce montant <strong>s'intègre dans votre revenu imposable</strong> de l'année</li>
+          <li>L'impôt sur le revenu s'applique selon votre tranche marginale</li>
+        </ul>
+        <div class="fc-highlight" style="background:rgba(245,166,35,0.15); font-size:12px; border-radius:8px; padding:8px 12px; margin-top:10px;">
+          <span role="img" aria-label="Attention"><span class="a11y-emoji">⚠️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.3L1.6 19a2 2 0 0 0 1.7 3h17.4a2 2 0 0 0 1.7-3L13.7 3.3a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg></span> <strong>À savoir :</strong> un versement direct peut faire monter votre revenu fiscal de référence et déclencher une imposition plus élevée.
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--gris); margin-top:10px;">* Montants indicatifs calculés sur la base de 5 184 € bruts pour un salarié à temps plein. Votre montant net exact figure sur votre notification Natixis InterÉpargne.</p>
+  </div>
+
+  <!-- MODES DE PLACEMENT -->
+  <div class="section-title"><span class="icon"><span aria-hidden="true"><span class="a11y-emoji">🗂️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7a2 2 0 0 1 2-2h4l2 3h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/><line x1="6" y1="11" x2="6" y2="17"/><line x1="10" y1="9" x2="10" y2="17"/></svg></span></span> Vos 3 options de versement</div>
+  <div class="placement-grid">
+    <div class="place-card">
+      <span class="place-icon"><span aria-hidden="true"><span class="a11y-emoji">💳</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span></span>
+      <h3>Versement immédiat</h3>
+      <p>Vous demandez le paiement direct de tout ou partie de votre participation. Le versement a lieu <strong>via la paie de mai 2026</strong>.</p>
+      <p style="margin-top:8px; font-size:12px;">Les sommes versées sont imposables à l'impôt sur le revenu.</p>
+      <span class="tag">Disponible immédiatement</span>
+    </div>
+    <div class="place-card">
+      <span class="place-icon"><span aria-hidden="true"><span class="a11y-emoji">📈</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg></span></span>
+      <h3>PEG ENGIE</h3>
+      <p>Plan d'Épargne Groupe. Les sommes sont investies dans des FCPE (ex : <em>Égépargne Monétaire</em>) et bloquées selon les règles du plan.</p>
+      <p style="margin-top:8px; font-size:12px;">Exonération d'impôt sur le revenu. Déblocage anticipé selon les cas légaux.</p>
+      <span class="tag blue">Exonéré d'IR</span>
+    </div>
+    <div class="place-card">
+      <span class="place-icon"><span aria-hidden="true"><span class="a11y-emoji">🏖️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 8C19 5.5 18 2 15 2S10 5 12 8"/><path d="M12 8c-3-5-9-5-9 0s6 5 9 0z"/><line x1="12" y1="8" x2="7" y2="20"/><line x1="3" y1="20" x2="21" y2="20"/></svg></span></span>
+      <h3>PERCOL ENGIE</h3>
+      <p>Plan d'Épargne Retraite Collectif. Les sommes sont investies pour la retraite (ex : <em>gestion pilotée profil Équilibre</em>).</p>
+      <p style="margin-top:8px; font-size:12px;">Horizon retraite, exonération d'IR, sorties en capital ou rente.</p>
+      <span class="tag blue">Exonéré d'IR</span>
+    </div>
+  </div>
+
+  <div class="alert green">
+    <div class="alert-icon"><span role="img" aria-label="Paramètre par défaut"><span class="a11y-emoji">⚙️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span></div>
+    <p><strong>Affectation par défaut :</strong> si vous ne faites aucun choix avant le 13 avril 2026, vos sommes seront automatiquement placées à <strong>50 % sur le PEG ENGIE (FCPE Égépargne Monétaire)</strong> et à <strong>50 % sur le PERCOL ENGIE (gestion pilotée profil Équilibre)</strong>.</p>
+  </div>
+
+  <!-- LINK 2026 -->
+  <div class="link-box">
+    <h3><span aria-hidden="true"><span class="a11y-emoji">🔗</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span> Et si vous investissiez votre participation dans LINK 2026 ?</h3>
+    <p>Engie lance une opération d'actionnariat salarié réservée aux salariés du Groupe. En tant que salarié de GRDF (filiale du Groupe), vous pouvez y participer. Lors de votre saisie sur Natixis InterÉpargne, il vous sera proposé de <strong>pré-affecter tout ou partie de votre participation</strong> en vue de souscrire à LINK 2026.</p>
+    <div class="link-grid">
+      <div class="link-item">
+        <div class="li-label">1ère tranche</div>
+        <div class="li-val">300 % d'abondement</div>
+        <div class="li-sub">sur les 100 premiers € investis</div>
+      </div>
+      <div class="link-item">
+        <div class="li-label">2ème tranche</div>
+        <div class="li-val">100 % d'abondement</div>
+        <div class="li-sub">de 100 € à 300 € investis</div>
+      </div>
+      <div class="link-item">
+        <div class="li-label">Abondement maximum</div>
+        <div class="li-val">500 € offerts</div>
+        <div class="li-sub">pour 300 € investis</div>
+      </div>
+      <div class="link-item">
+        <div class="li-label">Prix de souscription</div>
+        <div class="li-val">−20 % de décote</div>
+        <div class="li-sub">sur la moyenne du cours mai–juin 2026</div>
+      </div>
+    </div>
+    <p style="margin-top:14px; font-size:12px; color:rgba(255,255,255,0.6);"><span role="img" aria-label="Attention"><span class="a11y-emoji">⚠️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.3L1.6 19a2 2 0 0 0 1.7 3h17.4a2 2 0 0 0 1.7-3L13.7 3.3a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg></span> Cette formule comporte un risque de perte en capital. Information détaillée envoyée par le Groupe à partir du 20 mai 2026. Souscription du 3 au 17 juin 2026.</p>
+  </div>
+
+  <!-- CALENDRIER -->
+  <div class="calendar-section">
+    <div class="section-title" style="margin-bottom:20px;"><span class="icon"><span aria-hidden="true"><span class="a11y-emoji">📅</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span></span> Les grandes étapes à retenir</div>
+    <div class="timeline">
+      <div class="tl-item active">
+        <div class="tl-date"><span aria-hidden="true"><span class="a11y-emoji">📬</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8"/><polyline points="2,6 12,13 22,6"/><polyline points="16,19 19,22 22,19"/><line x1="19" y1="15" x2="19" y2="22"/></svg></span> 23 mars 2026</div>
+        <div class="tl-title">Réception de votre notification personnelle</div>
+        <div class="tl-desc">Natixis InterÉpargne vous envoie par e-mail (ou courrier) votre montant individuel attribué, la déduction CSG/CRDS et les modalités de choix.</div>
+      </div>
+      <div class="tl-item active">
+        <div class="tl-date"><span aria-hidden="true"><span class="a11y-emoji">🖱️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="6"/><line x1="12" y1="6" x2="12" y2="10"/></svg></span> 23 mars → 13 avril 2026</div>
+        <div class="tl-title">Saisie de vos choix — fenêtre ouverte</div>
+        <div class="tl-desc">Connectez-vous sur <strong>natixisinterepargne.com</strong> ou l'application <em>Mon Épargne Salariale</em> pour indiquer versement, placement PEG/PERCOL ou pré-affectation LINK 2026.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date"><span aria-hidden="true"><span class="a11y-emoji">🏦</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5,10 5,21"/><polyline points="19,10 19,21"/><polyline points="9,10 9,21"/><polyline points="15,10 15,21"/><polygon points="12,2 2,10 22,10"/></svg></span> Avant le 31 mai 2026</div>
+        <div class="tl-title">Versement de la RSP par GRDF</div>
+        <div class="tl-desc">L'entreprise verse la réserve à Natixis avant le 31 mai. Au-delà, des intérêts de retard s'appliquent à compter du 1er juin.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date"><span aria-hidden="true"><span class="a11y-emoji">💳</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span> Paie de mai 2026</div>
+        <div class="tl-title">Versement direct sur votre compte</div>
+        <div class="tl-desc">Si vous avez demandé un paiement total ou partiel, celui-ci figure dans votre bulletin de paie de mai 2026.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date"><span aria-hidden="true"><span class="a11y-emoji">📢</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span> 20 mai 2026</div>
+        <div class="tl-title">Information LINK 2026 par le Groupe ENGIE</div>
+        <div class="tl-desc">Envoi d'un e-mail détaillé sur l'offre d'actionnariat, le prix de souscription et le site dédié.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date"><span aria-hidden="true"><span class="a11y-emoji">🏷️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span> 3 → 17 juin 2026</div>
+        <div class="tl-title">Période de souscription LINK 2026</div>
+        <div class="tl-desc">Vous pouvez souscrire à l'offre LINK 2026. Livraison des actions prévue le 30 juillet 2026.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALERT DROITS DÉPART -->
+  <div class="alert">
+    <div class="alert-icon"><span role="img" aria-label="Information départ"><span class="a11y-emoji">🚪</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10z"/><polyline points="13,4 13,10 19,10"/><line x1="9" y1="14" x2="11" y2="14"/></svg></span></div>
+    <p><strong>Vous quittez GRDF ?</strong> Si vous avez des droits à la participation au moment de votre départ, un état récapitulatif vous est remis. Vos avoirs restent disponibles ou bloqués selon les règles du plan, et sont conservés par l'entreprise pendant un an si vous ne pouvez être atteint, puis remis à la Caisse des Dépôts jusqu'à 20 ans.</p>
+  </div>
+
+  <!-- CARTE CONTACT FO -->
+  <div class="fo-contact-card">
+    <div class="fo-logo-wrap">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO Énergie GRDF">
+      </a>
+    </div>
+    <div class="fo-body">
+      <div class="fo-text">
+        <h3><span aria-hidden="true"><span class="a11y-emoji">✉️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span> Une question ? Contactez FO GRDF</h3>
+        <p>Nos délégués nationaux sont là pour vous accompagner sur votre participation et toute situation personnelle.</p>
+      </div>
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" class="fo-mailto-btn">
+        <span class="btn-icon"><span aria-hidden="true"><span class="a11y-emoji">✉️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span></span>
+        Nous écrire
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div style="display:flex; justify-content:center; align-items:center; gap:24px; margin-bottom:16px; flex-wrap:wrap;">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email"><img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO Énergie GRDF" style="height:70px; object-fit:contain; opacity:0.85; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'"></a>
+    </div>
+    Basé sur l'accord de participation GRDF signé le 06/02/2026 (FO, CFDT, CFE-CGC, CGT) et la note d'information 2026 · Gestionnaire : Natixis InterÉpargne · Pour tout renseignement : <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" aria-label="Envoyer un email à FO GRDF">syndicat-fo_grdf-delegations-nationales@grdf.fr</a>
+  </div>
+
+  </div><!-- fin contenu-principal -->
+
+</div><!-- fin page -->
+
+
+
+
+<script>
+  function dismissRotate() {
+    const b = document.getElementById('rotateBanner');
+    if (b) b.style.display = 'none';
+    try { sessionStorage.setItem('fo-rotate-dismissed', '1'); } catch(e) {}
+  }
+  try {
+    if (sessionStorage.getItem('fo-rotate-dismissed') === '1') {
+      const b = document.getElementById('rotateBanner');
+      if (b) b.style.display = 'none';
+    }
+  } catch(e) {}
+
+  function toggleA11y() {
+    const btn = document.getElementById('a11yToggle');
+    const isOn = document.body.classList.toggle('a11y-mode');
+    btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+    try { localStorage.setItem('fo-a11y', isOn ? '1' : '0'); } catch(e) {}
+  }
+  try {
+    if (localStorage.getItem('fo-a11y') === '1') {
+      document.body.classList.add('a11y-mode');
+      const btn = document.getElementById('a11yToggle');
+      if (btn) btn.setAttribute('aria-pressed', 'true');
+    }
+  } catch(e) {}
+</script>
+</body>
+</html>

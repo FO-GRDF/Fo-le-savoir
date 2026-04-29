@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Saviez-Vous — Projet d’évolution des grilles des salaires</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu: #019cda;
+    --bleu-clair: #019cda;
+    --or: #f7dd5c;
+    --or-clair: #fde8ea;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --texte: #1A1A2E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+
+ /* HEADER */
+.header {
+  position: relative;
+  background: linear-gradient(135deg, #019cda 0%, #028bc2 100%);
+  border-radius: 20px;
+  padding: 44px 48px 36px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.header::before {
+  display: none;
+}
+
+.header::after {
+  display: none;
+}
+  
+  .badge {
+  display: inline-block;
+  background: var(--or);
+  color: var(--bleu);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 40px;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+  }
+  .header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--blanc);
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+  }
+  .header h1 em {
+    color: var(--or);
+    font-style: italic;
+  }
+  .header .subtitle {
+    margin-top: 14px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.72);
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+  }
+  .header .update {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    position: relative;
+    z-index: 1;
+  }
+  .dot {
+    width: 7px; height: 7px;
+    background: #4ADE80;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* INTRO */
+  .intro {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    border-left: 5px solid var(--bleu-clair);
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #2a2a2a;
+  }
+  .intro strong { color: var(--bleu); }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon {
+    width: 36px; height: 36px;
+    background: var(--or-clair);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  /* CARDS GRID */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0,59,111,0.1);
+  }
+  .card .card-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 8px;
+  }
+  .card p {
+    font-size: 13.5px;
+    color: var(--gris);
+    line-height: 1.65;
+  }
+  .card.highlight {
+    background: var(--bleu);
+    color: white;
+  }
+  .card.highlight h3 { color: var(--or); }
+  .card.highlight p { color: rgba(255,255,255,0.78); }
+
+  /* ALERT BOX */
+  .alert {
+    background: var(--or-clair);
+    border: 1.5px solid var(--or);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .alert .alert-icon { font-size: 24px; flex-shrink: 0; }
+  .alert p { font-size: 14px; line-height: 1.7; color: #5a4000; }
+  .alert strong { color: #3a2800; }
+
+  .alert.green {
+    background: var(--vert-clair);
+    border-color: var(--vert);
+  }
+  .alert.green p { color: #0e3d22; }
+  .alert.green strong { color: #0a2e19; }
+
+  /* BIG STAT BOX */
+  .stat-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 20px;
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .stat-box .stat-main {
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .stat-box .stat-val {
+    font-family: 'Fraunces', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--or);
+    line-height: 1;
+  }
+  .stat-box .stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .stat-box .stat-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+  }
+  .stat-box .stat-desc strong { color: white; }
+
+  /* PLACEMENT CARDS */
+  .placement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .place-card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 18px;
+    border-top: 4px solid var(--bleu-clair);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .place-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0,59,111,0.1);
+  }
+  .place-card.default { border-top-color: var(--gris); }
+  .place-card .place-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+  .place-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 8px;
+  }
+  .place-card p {
+    font-size: 12.5px;
+    color: var(--gris);
+    line-height: 1.6;
+  }
+  .place-card .tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--or-clair);
+    color: #7a5200;
+    font-weight: 500;
+  }
+  .place-card .tag.blue {
+    background: #e6f5fb;
+    color: #017fb1;
+  }
+  .place-card .tag.grey {
+    background: #f0f0f0;
+    color: #555;
+  }
+
+  /* BRUT/NET TABLE SECTION */
+  .fiscal-section {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+  }
+  .fiscal-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 20px 0;
+  }
+  .fiscal-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    background: var(--fond);
+    margin-bottom: 4px;
+    position: relative;
+  }
+  .fiscal-row.start { background: #e6f5fb; }
+  .fiscal-row.deduct { background: var(--rouge-clair); }
+  .fiscal-row.net { background: var(--vert-clair); }
+  .fiscal-row.taxable { background: #FFF3D6; }
+  .fiscal-row .f-icon { font-size: 22px; flex-shrink: 0; width: 36px; text-align:center; }
+  .fiscal-row .f-label { flex: 1; font-size: 13.5px; line-height: 1.5; }
+  .fiscal-row .f-label strong { font-size: 14.5px; display:block; margin-bottom:2px; }
+  .fiscal-row .f-amount {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: right;
+    flex-shrink: 0;
+    min-width: 100px;
+  }
+  .fiscal-row.start .f-amount { color: var(--bleu); }
+  .fiscal-row.deduct .f-amount { color: var(--rouge); }
+  .fiscal-row.net .f-amount { color: var(--vert); }
+  .fiscal-row.taxable .f-amount { color: #a36200; }
+  .arrow-down {
+    text-align: center;
+    font-size: 18px;
+    color: var(--gris);
+    margin: 2px 0;
+    opacity: 0.5;
+  }
+  .fiscal-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 20px;
+  }
+  .fc-col {
+    border-radius: 14px;
+    padding: 20px;
+    border-top: 4px solid;
+  }
+  .fc-col.placement {
+    background: var(--vert-clair);
+    border-top-color: var(--vert);
+  }
+  .fc-col.paiement {
+    background: #FFF3D6;
+    border-top-color: var(--or);
+  }
+  .fc-col h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: var(--bleu);
+    margin-bottom: 10px;
+  }
+  .fc-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  .fc-col ul li {
+    font-size: 12.5px;
+    color: #333;
+    line-height: 1.65;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .fc-col ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--vert);
+    font-weight: 700;
+  }
+  .fc-col.paiement ul li::before { color: #a36200; }
+  .fc-col .fc-highlight {
+    margin-top: 12px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* LINK SECTION */
+  .link-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .link-box::after {
+    content: 'LINK 2026';
+    position: absolute;
+    right: -20px; top: -10px;
+    font-family: 'Fraunces', serif;
+    font-size: 90px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.05);
+    pointer-events: none;
+  }
+  .link-box h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: var(--or);
+    margin-bottom: 12px;
+  }
+  .link-box p {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .link-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .link-item {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
+  .link-item .li-label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+  .link-item .li-val { font-family: 'Fraunces', serif; font-size: 18px; color: var(--or); margin-top: 2px; }
+  .link-item .li-sub { font-size: 11.5px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+  /* CALENDAR */
+  .calendar-section {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+  }
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--bleu-clair), var(--or));
+    border-radius: 2px;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 22px;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: 5px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--bleu-clair);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--bleu-clair);
+  }
+  .tl-item.active::before { background: var(--or); box-shadow: 0 0 0 2px var(--or); }
+  .tl-date {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--bleu-clair);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+  }
+  .tl-item.active .tl-date { color: var(--or); }
+  .tl-title {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: var(--bleu);
+    margin-bottom: 3px;
+  }
+  .tl-desc { font-size: 13px; color: var(--gris); line-height: 1.55; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead tr { background: var(--bleu); color: white; }
+  thead th { padding: 12px 14px; text-align: left; font-weight: 500; font-size: 12px; letter-spacing: 0.5px; }
+  tbody tr:nth-child(even) { background: var(--fond); }
+  tbody td { padding: 11px 14px; border-bottom: 1px solid #eee; color: #2a2a2a; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gris);
+    padding-top: 24px;
+    border-top: 1px solid #ddd;
+  }
+
+  @media (max-width: 600px) {
+    .cards, .placement-grid, .fiscal-compare, .link-grid { grid-template-columns: 1fr; }
+    .stat-box { flex-direction: column; text-align: center; }
+    .header h1 { font-size: 30px; }
+    .header { padding: 32px 24px; }
+    .page { padding: 24px 16px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <div class="badge" style="margin-bottom:18px;">✦ Le Saviez-Vous ?</div>
+    <div style="position:absolute; top:20px; right:28px; width:140px; height:140px; z-index:2;">
+      <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO Énergie" style="width:100%; height:100%; object-fit:contain; display:block;">
+    </div>
+    <h1 style="color:white;">Projet d’<em>évolution des grilles</em> des salaires</h1>
+    <p class="subtitle">Comprendre simplement ce qui ne change pas, ce qui pourrait évoluer, et les points de vigilance pour les salariés de GRDF</p>
+    <div class="update"><span class="dot"></span> Point de situation à partir du document militants FO du 17 mars 2026</div>
+  </div>
+
+  <div class="intro">
+    Il ne s’agit <strong>pas d’un accord définitif</strong>, mais d’un <strong>projet encore en négociation</strong>. L’objectif de cette communication est de vous donner une lecture simple de ce qui est discuté autour de la <strong>grille des salaires dans les IEG</strong>, avec un focus utile pour les salariés de GRDF : <strong>ce qui reste inchangé</strong>, <strong>ce qui pourrait changer</strong>, et <strong>les risques identifiés</strong>.
+  </div>
+
+  <div class="stat-box">
+    <div class="stat-main">
+      <div class="stat-val">3 idées</div>
+      <div class="stat-label">à retenir</div>
+    </div>
+    <div class="stat-desc">
+      <strong>1.</strong> Le <strong>calcul du salaire de base ne change pas</strong>.<br><br>
+      <strong>2.</strong> Le projet touche surtout la <strong>structure de la grille</strong>, les <strong>embauches</strong> et l’<strong>ancienneté</strong>.<br><br>
+      <strong>3.</strong> Plusieurs mesures sont présentées comme des avancées, mais FO alerte sur des risques d’<strong>écrasement de grille</strong>, de <strong>lecture plus complexe</strong> et d’<strong>inégalités de traitement</strong>.
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">🧮</span> Ce qui ne change pas</div>
+  <div class="cards">
+    <div class="card highlight">
+      <span class="card-icon">📌</span>
+      <h3>Le calcul du salaire reste le même</h3>
+      <p>La formule de calcul du salaire est annoncée comme <strong>inchangée</strong> : salaire national de base, majoration résidentielle, coefficient hiérarchique et ancienneté restent les éléments de référence.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">📚</span>
+      <h3>Les textes de base demeurent</h3>
+      <p>Le document renvoie toujours à la <strong>convention du 31 mars 1982</strong> ainsi qu’aux accords de branche des <strong>24 février 2006</strong> et <strong>29 octobre 2008</strong>.</p>
+    </div>
+  </div>
+
+  <div class="fiscal-section">
+    <div class="section-title" style="margin-bottom:8px;"><span class="icon">🔄</span> Avant / après : les changements les plus visibles</div>
+    <p style="font-size:14px; color:var(--gris); margin-bottom:20px; line-height:1.65;">Voici la lecture la plus simple possible du projet discuté à date.</p>
+
+    <div class="fiscal-flow">
+      <div class="fiscal-row start">
+        <div class="f-icon">🏛️</div>
+        <div class="f-label"><strong>Aujourd’hui</strong>Une grille déjà tassée sur plusieurs niveaux, avec des minima d’embauche et des planchers/plafonds de collèges qui ne correspondent plus toujours aux réalités salariales ni à l’évolution du SMIC.</div>
+        <div class="f-amount">Avant</div>
+      </div>
+      <div class="arrow-down">▼</div>
+      <div class="fiscal-row taxable">
+        <div class="f-icon">🧩</div>
+        <div class="f-label"><strong>Projet employeur</strong>Rehausser certains planchers et plafonds, modifier la granularité de la grille, ajouter des échelons d’ancienneté, et revoir certaines règles d’embauche et de reconnaissance de l’expérience.</div>
+        <div class="f-amount">Projet</div>
+      </div>
+      <div class="arrow-down">▼</div>
+      <div class="fiscal-row net">
+        <div class="f-icon">⚠️</div>
+        <div class="f-label"><strong>Point d’attention FO</strong>Des évolutions existent, mais elles peuvent aussi conduire à une grille <strong>plus serrée</strong>, <strong>plus complexe</strong> et parfois <strong>moins lisible</strong> pour les salariés.</div>
+        <div class="f-amount">Vigilance</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">🏗️</span> Ce qui pourrait évoluer dans la grille</div>
+  <div class="placement-grid">
+    <div class="place-card">
+      <span class="place-icon">📉</span>
+      <h3>Salaire minimum de branche</h3>
+      <p>Le projet employeur prévoit un <strong>minimum de branche à SMIC + 2 %</strong>. FO revendique davantage et alerte : ce mécanisme peut continuer à <strong>écraser la grille</strong> quand le SMIC rattrape le bas de grille.</p>
+      <span class="tag">Sujet sensible</span>
+    </div>
+    <div class="place-card">
+      <span class="place-icon">📏</span>
+      <h3>Planchers et plafonds</h3>
+      <p>Les bornes des collèges seraient relevées. En lecture simplifiée : <strong>Exécution 50→55 / 160→180</strong>, <strong>Maîtrise 60→85 / 240→260</strong>, <strong>Cadre 160→165 / 370→390</strong>.</p>
+      <span class="tag blue">Rehaussement prévu</span>
+    </div>
+    <div class="place-card">
+      <span class="place-icon">🔬</span>
+      <h3>Grille plus fine</h3>
+      <p>Le projet introduirait une progression de <strong>0,1 % entre deux coefficients</strong>, soit une grille de près de <strong>1 500 lignes</strong>. FO considère que cela peut rendre la reconnaissance plus opaque.</p>
+      <span class="tag grey">Plus complexe</span>
+    </div>
+  </div>
+
+  <div class="alert">
+    <div class="alert-icon">⚠️</div>
+    <p><strong>Point clé pour les salariés :</strong> le document FO rappelle que si le SMIC rejoint le salaire minimum de branche, la ligne du bas de grille serait relevée au coefficient supérieur. Dit autrement, la grille bougerait, mais le <strong>phénomène d’écrasement</strong> ne disparaîtrait pas pour autant.</p>
+  </div>
+
+  <div class="calendar-section">
+    <div class="section-title" style="margin-bottom:20px;"><span class="icon">📊</span> Quelques repères simples</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Thème</th>
+          <th>Avant</th>
+          <th>Projet discuté</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Exécution</td>
+          <td>NR 50 à 160</td>
+          <td>NR 55 à 180</td>
+        </tr>
+        <tr>
+          <td>Maîtrise</td>
+          <td>NR 60 à 240</td>
+          <td>NR 85 à 260</td>
+        </tr>
+        <tr>
+          <td>Cadre</td>
+          <td>NR 160 à 370</td>
+          <td>NR 165 à 390</td>
+        </tr>
+        <tr>
+          <td>Minimum d’augmentation individuelle</td>
+          <td>Référence actuelle autour de 2,3 % en NR</td>
+          <td>Projet à 2 %</td>
+        </tr>
+        <tr>
+          <td>Astreinte</td>
+          <td>Base échelon 1</td>
+          <td>Base échelon 4</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title"><span class="icon">⏳</span> Ancienneté et déroulement de carrière</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-icon">📈</span>
+      <h3>Des échelons supplémentaires</h3>
+      <p>Le projet ajoute <strong>un échelon à 3 ans d’ancienneté</strong> et <strong>deux échelons de fin de carrière</strong> autour de 38 et 41 ans. L’idée affichée est d’améliorer la progression sur la carrière.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🧓</span>
+      <h3>Progression revue, mais limitée</h3>
+      <p>Selon le document FO, la progression salariale totale passerait d’environ <strong>22 % à 24,8 %</strong> sur une carrière. FO juge cela <strong>trop modéré</strong>, notamment pour les longues carrières.</p>
+    </div>
+    <div class="card highlight">
+      <span class="card-icon">🚨</span>
+      <h3>Minimum individuel en baisse</h3>
+      <p>Le projet retient <strong>2 % de minimum d’augmentation individuelle</strong>, là où FO défend <strong>2,5 %</strong>. C’est un vrai sujet, car ce minimum sert concrètement de repère de reconnaissance salariale.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🔧</span>
+      <h3>Astreinte : un point plutôt favorable</h3>
+      <p>La rémunération de l’astreinte serait calculée sur la base de <strong>l’échelon 4 au lieu de l’échelon 1</strong>. Sur ce point, le document indique une <strong>acceptation unanime des OS</strong>.</p>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="icon">🎓</span> Embauches : ce qui est prévu</div>
+  <div class="placement-grid">
+    <div class="place-card">
+      <span class="place-icon">🧑‍🎓</span>
+      <h3>Minima d’embauche par diplôme</h3>
+      <p>Le projet maintient plusieurs niveaux, avec quelques relèvements : <strong>Bac+2 sur titre : NR 80→85</strong>, <strong>BTS : NR 90→95</strong>, <strong>Bac+5 et plus : NR 160→165</strong>.</p>
+      <span class="tag blue">Quelques hausses</span>
+    </div>
+    <div class="place-card">
+      <span class="place-icon">🧾</span>
+      <h3>Expérience professionnelle</h3>
+      <p>Le projet prévoit une prise en compte de l’expérience <strong>par l’échelon</strong>. Exemple donné : une expérience importante dans le même métier pourrait conduire à une embauche sur un échelon plus élevé.</p>
+      <span class="tag">Référence PERS 914</span>
+    </div>
+    <div class="place-card default">
+      <span class="place-icon">❗</span>
+      <h3>La réserve de FO</h3>
+      <p>FO estime que la <strong>PERS 914 suffit déjà</strong> et alerte sur un risque de mise en œuvre <strong>peu transparente</strong>, avec des différences selon les entreprises, les régions ou l’interprétation locale.</p>
+      <span class="tag grey">Équité à surveiller</span>
+    </div>
+  </div>
+
+  <div class="link-box">
+    <h3>🛑 Un point retiré de la négociation</h3>
+    <p>Le sujet de la <strong>majoration résidentielle</strong> a finalement été <strong>retiré de la négociation</strong>. C’est un point important, car la suppression de la MR avait suscité une opposition unanime des organisations syndicales.</p>
+    <div class="link-grid">
+      <div class="link-item">
+        <div class="li-label">Ce qui était envisagé</div>
+        <div class="li-val">Suppression</div>
+        <div class="li-sub">et intégration dans les salaires</div>
+      </div>
+      <div class="link-item">
+        <div class="li-label">Position FO</div>
+        <div class="li-val">Maintien + modernisation</div>
+        <div class="li-sub">pas de renvoi aux accords d’entreprise</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="calendar-section">
+    <div class="section-title" style="margin-bottom:20px;"><span class="icon">🗓️</span> Où en est-on ?</div>
+    <div class="timeline">
+      <div class="tl-item active">
+        <div class="tl-date">2021 → 2024</div>
+        <div class="tl-title">Premières négociations puis moratoire</div>
+        <div class="tl-desc">Les discussions sur classification/rémunération n’avaient pas abouti. Le sujet a ensuite été suspendu à mi-2024.</div>
+      </div>
+      <div class="tl-item active">
+        <div class="tl-date">Automne 2025</div>
+        <div class="tl-title">Réouverture des négociations</div>
+        <div class="tl-desc">Les employeurs reviennent avec un nouveau mandat et un calendrier thématique est fixé.</div>
+      </div>
+      <div class="tl-item active">
+        <div class="tl-date">17 mars 2026</div>
+        <div class="tl-title">Première lecture du projet d’accord</div>
+        <div class="tl-desc">Le document militants FO fait le point à cette date sur les propositions employeurs et les revendications portées.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">9 avril 2026</div>
+        <div class="tl-title">Poursuite de la lecture du projet</div>
+        <div class="tl-desc">Nouvelle lecture et premiers paragraphes modifiés.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">28 avril 2026</div>
+        <div class="tl-title">Lecture en version 2</div>
+        <div class="tl-desc">Le texte doit encore évoluer. Rien n’est donc figé à ce stade.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert green">
+    <div class="alert-icon">✅</div>
+    <p><strong>Ce qu’il faut retenir concrètement :</strong> certains éléments du projet peuvent sembler aller dans le bon sens, notamment sur quelques planchers, plafonds ou sur l’astreinte. Mais à ce stade, le texte reste un <strong>projet de négociation</strong> et non une mesure acquise. Pour FO, l’enjeu est d’éviter une réforme qui donnerait l’apparence du progrès tout en laissant subsister une grille <strong>compressée, plus difficile à lire et moins protectrice</strong>.</p>
+  </div>
+
+  <div class="footer">
+    <div style="display:flex; justify-content:center; align-items:center; gap:24px; margin-bottom:16px; flex-wrap:wrap;">
+      <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO Énergie" style="height:70px; object-fit:contain; opacity:0.85;">
+    </div>
+    Synthèse réalisée pour les salariés de GRDF à partir d’un support FO de négociation branche IEG · Version visuelle adaptée au template HTML de référence
+  </div>
+
+</div>
+
+</body>
+</html>

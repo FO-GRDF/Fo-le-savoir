@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Saviez-Vous — Frais de déplacement IEG</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu: #019cda;
+    --bleu-clair: #019cda;
+    --or: #f7dd5c;
+    --or-clair: #fff7d6;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --texte: #1A1A2E;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+  }
+  .page { max-width: 860px; margin: 0 auto; padding: 48px 32px 64px; }
+  .header {
+    position: relative;
+    background: linear-gradient(135deg, #019cda 0%, #028bc2 100%);
+    border-radius: 20px;
+    padding: 44px 48px 36px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--or);
+    color: var(--bleu);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 40px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--blanc);
+    line-height: 1.08;
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+  }
+  .header h1 em { color: var(--or); font-style: italic; }
+  .header .subtitle {
+    margin-top: 14px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+  }
+  .header .update {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.9);
+    position: relative;
+    z-index: 1;
+  }
+  .dot { width: 7px; height: 7px; background: #4ADE80; border-radius: 50%; display: inline-block; }
+  .intro, .bareme-section, .calendar-section, .compare-wrap {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+  }
+  .intro {
+    border-left: 5px solid var(--bleu-clair);
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #2a2a2a;
+  }
+  .intro strong { color: var(--bleu); }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon {
+    width: 36px; height: 36px;
+    background: var(--or-clair);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .cards, .conditions, .acoss-grid, .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .conditions, .acoss-grid { grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .card, .cond-card, .compare-card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .card:hover, .cond-card:hover, .compare-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,59,111,0.1); }
+  .card-icon, .compare-icon { font-size: 30px; margin-bottom: 12px; display: block; }
+  .card h3, .compare-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 8px;
+  }
+  .card p, .compare-card p { font-size: 13.5px; color: var(--gris); line-height: 1.65; }
+  .card.highlight { background: var(--bleu); }
+  .card.highlight h3 { color: var(--or); }
+  .card.highlight p { color: rgba(255,255,255,0.82); }
+  .alert {
+    background: var(--or-clair);
+    border: 1.5px solid var(--or);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .alert.green { background: var(--vert-clair); border-color: var(--vert); }
+  .alert .alert-icon { font-size: 24px; flex-shrink: 0; }
+  .alert p { font-size: 14px; line-height: 1.7; color: #5a4000; }
+  .alert.green p { color: #0e3d22; }
+  .alert strong { color: #3a2800; }
+  .alert.green strong { color: #0a2e19; }
+  .tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .tab {
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    background: var(--fond);
+    color: var(--gris);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all .2s;
+  }
+  .tab.active { background: var(--bleu); color: white; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead tr { background: var(--bleu); color: white; }
+  thead th { padding: 12px 14px; text-align: left; font-weight: 500; font-size: 12px; letter-spacing: .5px; }
+  tbody tr:nth-child(even) { background: var(--fond); }
+  tbody td { padding: 11px 14px; border-bottom: 1px solid #eee; color: #333; }
+  tbody td:not(:first-child) { font-weight: 500; color: var(--bleu); }
+  .tag-collège { font-size: 10px; padding: 2px 8px; border-radius: 20px; font-weight: 500; display: inline-block; }
+  .tag-em { background: #e6f5fb; color: #017fb1; }
+  .tag-c { background: #fff3d6; color: #a36200; }
+  .compare-card { border-top: 4px solid var(--bleu-clair); }
+  .compare-card.alt { border-top-color: var(--or); }
+  .compare-note {
+    margin-top: 16px;
+    background: #e6f5fb;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #005a99;
+    line-height: 1.6;
+  }
+  .compare-card.alt .compare-note { background: #fff3d6; color: #7a5200; }
+  .choice-box {
+    background: var(--blanc);
+    border-radius: 14px;
+    padding: 18px 24px;
+    margin-bottom: 32px;
+    border-left: 5px solid var(--vert);
+    font-size: 14px;
+    line-height: 1.7;
+    color: #2a2a2a;
+  }
+  .cond-card {
+    text-align: center;
+    border-top: 4px solid var(--bleu-clair);
+    box-shadow: none;
+  }
+  .cond-card .num {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--bleu);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .cond-card p { font-size: 12.5px; color: var(--gris); line-height: 1.55; }
+  .acoss-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    color: white;
+  }
+  .acoss-box h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: var(--or);
+    margin-bottom: 16px;
+  }
+  .acoss-box p { font-size: 13.5px; color: rgba(255,255,255,.86); margin-bottom: 18px; line-height: 1.7; }
+  .acoss-item {
+    background: rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .acoss-item .val {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--or);
+  }
+  .acoss-item .label { font-size: 11.5px; color: rgba(255,255,255,0.78); margin-top: 4px; }
+  .fo-contact-card {
+    background: linear-gradient(135deg, #c0303a 0%, #9e1a28 60%, #7a0e1c 100%);
+    border-radius: 16px;
+    padding: 18px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fo-contact-card::before {
+    content: '✉';
+    position: absolute;
+    right: -8px; top: -16px;
+    font-size: 100px;
+    color: rgba(255,255,255,0.08);
+    line-height: 1;
+  }
+  .fo-logo-wrap img {
+    height: 44px;
+    object-fit: contain;
+    display: block;
+    background: white;
+    border-radius: 8px;
+    padding: 5px 8px;
+  }
+  .fo-body { flex: 1; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .fo-text { flex: 1; min-width: 180px; }
+  .fo-contact-card h3 { font-family: 'Fraunces', serif; font-size: 15px; color: #ffffff; margin-bottom: 4px; }
+  .fo-contact-card p { font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.55; }
+  .fo-mailto-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 9px 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  }
+  .footer { text-align: center; font-size: 12px; color: var(--gris); padding-top: 24px; border-top: 1px solid #ddd; }
+  .footer a { color: inherit; }
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: #ffbf00;
+    color: #000;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 16px; }
+  .rotate-banner {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(135deg, #019cda, #028bc2);
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 9998;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.15);
+  }
+  .rotate-banner .rb-icon { font-size: 20px; }
+  .rotate-banner .rb-close {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 8px;
+  }
+  .logo-link-wrap { position: relative; display: inline-block; }
+  .logo-link-wrap .logo-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0,0,0,0.82);
+    color: #fff;
+    font-size: 11.5px;
+    white-space: nowrap;
+    padding: 6px 12px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    right: 0;
+    pointer-events: none;
+    transition: opacity .2s, visibility .2s;
+  }
+  .logo-link-wrap:hover .logo-tooltip,
+  .logo-link-wrap:focus-within .logo-tooltip { visibility: visible; opacity: 1; }
+  .logo-link-wrap img {
+    transition: transform .25s, filter .25s;
+    cursor: pointer;
+    filter: drop-shadow(0 2px 8px rgba(247,221,92,0.2));
+  }
+  .logo-link-wrap:hover img { transform: scale(1.06); filter: drop-shadow(0 4px 14px rgba(247,221,92,0.5)); }
+  .a11y-toggle-bar { display: flex; justify-content: center; margin: -20px 0 28px; position: relative; z-index: 10; }
+  .a11y-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 40px;
+    padding: 8px 20px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #444;
+    cursor: pointer;
+    transition: all .2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .a11y-btn:focus { outline: 4px solid #019cda; outline-offset: 3px; }
+  .a11y-btn .a11y-label-on { display: none; }
+  .a11y-btn .a11y-label-off { display: inline; }
+
+  body.a11y-mode {
+    --a11y-bg:        #FAFAF7;
+    --a11y-surface:   #FFFFFF;
+    --a11y-surface2:  #F4F3EF;
+    --a11y-border:    #E2E0DA;
+    --a11y-border2:   #CCCAC4;
+    --a11y-txt1:      #2C2C29;
+    --a11y-txt2:      #4A4A46;
+    --a11y-txt3:      #6E6D69;
+    --a11y-txt4-dark: #C8C6C0;
+    --a11y-dark:      #525250;
+    --a11y-dark-txt:  #F8F7F4;
+    background: var(--a11y-bg);
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  body.a11y-mode .a11y-btn {
+    background: var(--a11y-dark);
+    border-color: var(--a11y-dark);
+    color: var(--a11y-dark-txt);
+    font-weight: 700;
+  }
+  body.a11y-mode .a11y-btn .a11y-label-on { display: inline; }
+  body.a11y-mode .a11y-btn .a11y-label-off { display: none; }
+  body.a11y-mode .header,
+  body.a11y-mode .acoss-box,
+  body.a11y-mode .fo-contact-card { background: var(--a11y-dark) !important; }
+  body.a11y-mode .header h1,
+  body.a11y-mode .acoss-box h3,
+  body.a11y-mode .fo-contact-card h3 { color: var(--a11y-dark-txt) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .header h1 em { color: var(--a11y-dark-txt) !important; font-style: normal; text-decoration: underline; text-underline-offset: 4px; }
+  body.a11y-mode .subtitle,
+  body.a11y-mode .update,
+  body.a11y-mode .acoss-box p,
+  body.a11y-mode .fo-contact-card p { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .intro,
+  body.a11y-mode .bareme-section,
+  body.a11y-mode .compare-wrap,
+  body.a11y-mode .card,
+  body.a11y-mode .cond-card,
+  body.a11y-mode .choice-box,
+  body.a11y-mode .calendar-section,
+  body.a11y-mode .compare-card {
+    background: var(--a11y-surface) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1px solid var(--a11y-border) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .card.highlight { background: var(--a11y-dark) !important; }
+  body.a11y-mode .card.highlight h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .card.highlight p { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode p,
+  body.a11y-mode li,
+  body.a11y-mode td,
+  body.a11y-mode .card p,
+  body.a11y-mode .compare-card p,
+  body.a11y-mode .cond-card p { font-family: 'Atkinson Hyperlegible', sans-serif !important; color: var(--a11y-txt2) !important; line-height: 1.85 !important; }
+  body.a11y-mode .section-title,
+  body.a11y-mode .card h3,
+  body.a11y-mode .compare-card h3 { color: var(--a11y-txt1) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .badge,
+  body.a11y-mode .tab.active,
+  body.a11y-mode thead tr { background: var(--a11y-dark) !important; color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .tab { background: var(--a11y-surface2) !important; color: var(--a11y-txt2) !important; }
+  body.a11y-mode tbody tr:nth-child(even) { background: var(--a11y-surface2) !important; }
+  body.a11y-mode tbody td { color: var(--a11y-txt2) !important; border-bottom-color: var(--a11y-border) !important; }
+  body.a11y-mode .alert { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; border-left: 5px solid var(--a11y-txt2) !important; }
+  body.a11y-mode .alert.green { background: var(--a11y-surface2) !important; border-left-style: dashed !important; }
+  body.a11y-mode .alert p, body.a11y-mode .alert strong { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .compare-note { background: var(--a11y-surface2) !important; color: var(--a11y-txt2) !important; }
+  body.a11y-mode .fo-mailto-btn { background: #fff !important; color: #000 !important; border: 1px solid #000 !important; }
+  body.a11y-mode *:focus { outline: 3px solid var(--a11y-txt1) !important; outline-offset: 3px !important; }
+  body.a11y-mode .a11y-emoji { font-size: inherit !important; line-height: inherit !important; width: auto !important; display: inline !important; }
+
+  @media (max-width: 768px) and (orientation: portrait) {
+    .rotate-banner { display: flex; }
+    body { padding-bottom: 52px; }
+  }
+  @media (max-width: 600px) {
+    .page { padding: 24px 16px 48px; }
+    .header { padding: 32px 24px; }
+    .header h1 { font-size: 30px; }
+    .cards, .conditions, .acoss-grid, .compare-grid { grid-template-columns: 1fr; }
+    .intro, .bareme-section, .calendar-section, .compare-wrap { padding: 22px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="rotate-banner" id="rotateBanner" role="status" aria-live="polite">
+  <span class="rb-icon" aria-hidden="true">📱</span>
+  <span>Tournez votre téléphone pour une meilleure lecture</span>
+  <button class="rb-close" onclick="dismissRotate()" aria-label="Fermer ce message">✕</button>
+</div>
+<a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+<div class="page" role="main">
+
+  <div class="header">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; position:relative; z-index:1; gap:20px;">
+      <div class="badge" style="margin-bottom:0;"><span class="a11y-emoji">✦</span> Le Saviez-Vous ?</div>
+      <span class="logo-link-wrap">
+        <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+          <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO Énergie GRDF — cliquez pour nous écrire" style="height:clamp(44px, 8vw, 90px); width:auto; object-fit:contain; display:block; flex-shrink:0;">
+        </a>
+        <span class="logo-tooltip">✉️ Écrire à FO GRDF</span>
+      </span>
+    </div>
+    <h1>Vos <em>frais de déplacement</em> sont pris en charge</h1>
+    <p class="subtitle">Tout ce que vous devez savoir sur vos droits au remboursement — IEG 2026</p>
+    <div class="update"><span class="dot"></span> Barèmes mis à jour au 1er janvier 2026</div>
+  </div>
+
+  <div class="a11y-toggle-bar" role="navigation" aria-label="Options d'accessibilité">
+    <button class="a11y-btn" id="a11yToggle" onclick="toggleA11y()" aria-pressed="false" title="Activer le mode lecture universelle">
+      <span class="a11y-icon" aria-hidden="true">◐</span>
+      <span class="a11y-label-off">Mode lecture universelle</span>
+      <span class="a11y-label-on">✓ Mode lecture universelle actif — Revenir au mode standard</span>
+    </button>
+  </div>
+
+  <div id="contenu-principal">
+    <div class="intro">
+      Lorsque vous vous déplacez <strong>en dehors de votre résidence habituelle d'emploi</strong> dans le cadre du service, vous avez droit au remboursement de vos frais de repas, de petit-déjeuner et d'hébergement. Ces remboursements s'effectuent sur la base de <strong>barèmes forfaitaires fixés par accord paritaire</strong> au sein des Industries Électriques et Gazières (IEG), révisés chaque année.
+    </div>
+
+    <div class="section-title"><span class="icon">🧭</span> 3 types de frais remboursés</div>
+    <div class="cards">
+      <div class="card">
+        <span class="card-icon">🍳</span>
+        <h3>Petit-déjeuner</h3>
+        <p>Remboursé si vous êtes en déplacement dès le matin. Le montant varie selon la localité visitée.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🍽️</span>
+        <h3>Repas</h3>
+        <p>Déjeuner et/ou dîner pris hors de votre lieu habituel de travail lors d'un déplacement professionnel.</p>
+      </div>
+      <div class="card highlight">
+        <span class="card-icon">🏨</span>
+        <h3>Nuit d'hôtel</h3>
+        <p>Petit-déjeuner inclus dans le forfait hôtel. Le plafond dépend de la ville et du collège d'appartenance.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📍</span>
+        <h3>Montants variables selon la localité</h3>
+        <p>Paris, Lyon, Marseille et Toulouse n'ont pas les mêmes plafonds. Le lieu du déplacement compte dans le remboursement.</p>
+      </div>
+    </div>
+
+    <div class="bareme-section">
+      <div class="section-title"><span class="icon">📊</span> Barèmes forfaitaires 2026</div>
+      <div class="tabs" role="tablist" aria-label="Choix de la localité">
+        <button class="tab active" onclick="showTab('paris', this)" role="tab" aria-selected="true">Paris</button>
+        <button class="tab" onclick="showTab('lyon', this)" role="tab" aria-selected="false">Lyon</button>
+        <button class="tab" onclick="showTab('marseille', this)" role="tab" aria-selected="false">Marseille</button>
+        <button class="tab" onclick="showTab('toulouse', this)" role="tab" aria-selected="false">Toulouse</button>
+      </div>
+
+      <div id="paris" class="tab-content active">
+        <table>
+          <thead><tr><th>Collège</th><th>Petit-déjeuner</th><th>Repas</th><th>Chambre (nuit)</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag-collège tag-em">Exécution / Maîtrise</span></td><td>12,63 €</td><td>32,63 €</td><td>122,47 €</td></tr>
+            <tr><td><span class="tag-collège tag-c">Cadre</span></td><td>12,63 €</td><td>36,29 €</td><td>122,47 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="lyon" class="tab-content">
+        <table>
+          <thead><tr><th>Collège</th><th>Petit-déjeuner</th><th>Repas</th><th>Chambre (nuit)</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag-collège tag-em">Exécution / Maîtrise</span></td><td>10,10 €</td><td>27,63 €</td><td>104,44 €</td></tr>
+            <tr><td><span class="tag-collège tag-c">Cadre</span></td><td>10,10 €</td><td>31,09 €</td><td>114,78 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="marseille" class="tab-content">
+        <table>
+          <thead><tr><th>Collège</th><th>Petit-déjeuner</th><th>Repas</th><th>Chambre (nuit)</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag-collège tag-em">Exécution / Maîtrise</span></td><td>9,15 €</td><td>32,63 €</td><td>122,47 €</td></tr>
+            <tr><td><span class="tag-collège tag-c">Cadre</span></td><td>9,15 €</td><td>36,29 €</td><td>122,47 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="toulouse" class="tab-content">
+        <table>
+          <thead><tr><th>Collège</th><th>Petit-déjeuner</th><th>Repas</th><th>Chambre (nuit)</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag-collège tag-em">Exécution / Maîtrise</span></td><td>10,10 €</td><td>31,09 €</td><td>104,44 €</td></tr>
+            <tr><td><span class="tag-collège tag-c">Cadre</span></td><td>10,10 €</td><td>34,21 €</td><td>114,78 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="alert">
+      <div class="alert-icon">📈</div>
+      <p><strong>Revalorisation au 1er janvier 2026 :</strong> suite à l'accord sur les Primes et Indemnités dans les IEG, les frais de restauration ont été revalorisés de <strong>+2,16 %</strong> et les frais d'hôtel de <strong>+4,18 %</strong> par rapport à 2025.</p>
+    </div>
+
+    <div class="compare-wrap">
+      <div class="section-title"><span class="icon">⚖️</span> Vous choisissez votre mode de remboursement</div>
+      <div class="compare-grid">
+        <div class="compare-card">
+          <span class="compare-icon">🧾</span>
+          <h3>Remboursement sur justificatifs</h3>
+          <p>Vous conservez vos <strong>factures et reçus</strong>, puis vous les transmettez pour remboursement du montant réel engagé.</p>
+          <p style="margin-top:10px;">✔ Adapté si vos dépenses réelles sont élevées<br>✔ Remboursement au plus juste</p>
+          <div class="compare-note"><strong>À noter :</strong> tout justificatif doit être original, daté et au nom du déplacement professionnel.</div>
+        </div>
+        <div class="compare-card alt">
+          <span class="compare-icon">📊</span>
+          <h3>Remboursement forfaitaire</h3>
+          <p>Vous optez pour les <strong>barèmes fixés à l'avance</strong> selon la localité visitée, sans avoir à fournir de justificatifs.</p>
+          <p style="margin-top:10px;">✔ Simple et rapide<br>✔ Montant connu à l'avance</p>
+          <div class="compare-note"><strong>À noter :</strong> les barèmes sont définis par accord paritaire IEG et révisés chaque année au 1er janvier.</div>
+        </div>
+      </div>
+      <div class="choice-box">💡 <strong>Le choix vous appartient :</strong> à chaque déplacement, c'est le salarié qui décide librement d'opter pour le remboursement sur justificatifs ou pour le forfait. Renseignez-vous auprès de votre RH sur les modalités de déclaration propres à votre entité.</div>
+    </div>
+
+    <div class="section-title"><span class="icon">✅</span> Conditions d'application</div>
+    <div class="conditions">
+      <div class="cond-card">
+        <div class="num">📍</div>
+        <p>Déplacement <strong>hors</strong> de votre résidence normale ou provisoire d'emploi</p>
+      </div>
+      <div class="cond-card">
+        <div class="num">🎯</div>
+        <p>Mission effectuée <strong>pour les besoins du service</strong>, validée par votre hiérarchie</p>
+      </div>
+      <div class="cond-card">
+        <div class="num">📋</div>
+        <p>Remboursement sur la base des <strong>barèmes forfaitaires</strong> de la localité visitée</p>
+      </div>
+    </div>
+
+    <div class="acoss-box">
+      <h3>⏱️ Et pour les déplacements longue durée ?</h3>
+      <p>Les barèmes ACOSS, qui correspondent aux plafonds légaux d'exonération fiscale, s'appliquent à partir du 4e mois de déplacement sur un même site. Les montants deviennent alors dégressifs.</p>
+      <div class="acoss-grid">
+        <div class="acoss-item">
+          <div class="val">21,40 €</div>
+          <div class="label">Repas — 3 premiers mois</div>
+        </div>
+        <div class="acoss-item">
+          <div class="val">18,20 €</div>
+          <div class="label">Repas — du 4e au 24e mois</div>
+        </div>
+        <div class="acoss-item">
+          <div class="val">15,00 €</div>
+          <div class="label">Repas — du 25e au 72e mois</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fo-contact-card">
+      <div class="fo-logo-wrap">
+        <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF">
+          <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO Énergie GRDF">
+        </a>
+      </div>
+      <div class="fo-body">
+        <div class="fo-text">
+          <h3>✉️ Une question ? Contactez FO GRDF</h3>
+          <p>Nos équipes peuvent vous aider à relire les règles de remboursement et à comprendre vos droits en déplacement.</p>
+        </div>
+        <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" class="fo-mailto-btn">✉️ Nous écrire</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div style="display:flex; justify-content:center; align-items:center; gap:24px; margin-bottom:16px; flex-wrap:wrap;">
+        <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email"><img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO Énergie GRDF" style="height:70px; object-fit:contain; opacity:0.85;"></a>
+      </div>
+      Basé sur le support « saviez-vous frais de déplacement » et intégré dans le nouveau template FO avec mode lecture universelle conservé.
+    </div>
+  </div>
+</div>
+
+<script>
+  function dismissRotate() {
+    const b = document.getElementById('rotateBanner');
+    if (b) b.style.display = 'none';
+    try { sessionStorage.setItem('fo-rotate-dismissed', '1'); } catch(e) {}
+  }
+  try {
+    if (sessionStorage.getItem('fo-rotate-dismissed') === '1') {
+      const b = document.getElementById('rotateBanner');
+      if (b) b.style.display = 'none';
+    }
+  } catch(e) {}
+
+  function toggleA11y() {
+    const btn = document.getElementById('a11yToggle');
+    const isOn = document.body.classList.toggle('a11y-mode');
+    btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+    try { localStorage.setItem('fo-a11y', isOn ? '1' : '0'); } catch(e) {}
+  }
+  try {
+    if (localStorage.getItem('fo-a11y') === '1') {
+      document.body.classList.add('a11y-mode');
+      const btn = document.getElementById('a11yToggle');
+      if (btn) btn.setAttribute('aria-pressed', 'true');
+    }
+  } catch(e) {}
+
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(el => {
+      el.classList.remove('active');
+      el.setAttribute('aria-selected', 'false');
+    });
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+  }
+</script>
+</body>
+</html>

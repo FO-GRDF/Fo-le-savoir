@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Saviez-Vous — Transparence des Rémunérations · FO GRDF</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --bleu: #019cda;
+    --bleu-clair: #019cda;
+    --or: #f7dd5c;
+    --or-clair: #fde8ea;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --texte: #1A1A2E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+
+  /* HEADER */
+  .header {
+    position: relative;
+    background: linear-gradient(135deg, #019cda 0%, #028bc2 100%);
+    border-radius: 20px;
+    padding: 44px 48px 36px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .header::before { display: none; }
+  .header::after { display: none; }
+
+  .badge {
+    display: inline-block;
+    background: var(--or);
+    color: var(--bleu);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 40px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--blanc);
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    max-width: 660px;
+  }
+  .header h1 em { color: var(--or); font-style: italic; }
+  .header .subtitle {
+    margin-top: 14px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.72);
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+  }
+  .header .update {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    position: relative;
+    z-index: 1;
+  }
+  .dot { width: 7px; height: 7px; background: #4ADE80; border-radius: 50%; display: inline-block; }
+
+  /* INTRO */
+  .intro {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    border-left: 5px solid var(--bleu-clair);
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #2a2a2a;
+  }
+  .intro strong { color: var(--bleu); }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon {
+    width: 36px; height: 36px;
+    background: var(--or-clair);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  /* CARDS GRID */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,59,111,0.1); }
+  .card .card-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+  .card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .card p { font-size: 13.5px; color: var(--gris); line-height: 1.65; }
+  .card.highlight { background: var(--bleu); color: white; }
+  .card.highlight h3 { color: var(--or); }
+  .card.highlight p { color: rgba(255,255,255,0.78); }
+
+  /* ALERT BOX */
+  .alert {
+    background: var(--or-clair);
+    border: 1.5px solid var(--or);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .alert .alert-icon { font-size: 24px; flex-shrink: 0; }
+  .alert p { font-size: 14px; line-height: 1.7; color: #5a4000; }
+  .alert strong { color: #3a2800; }
+  .alert.green { background: var(--vert-clair); border-color: var(--vert); }
+  .alert.green p { color: #0e3d22; }
+  .alert.green strong { color: #0a2e19; }
+  .alert.blue { background: #e6f5fb; border-color: var(--bleu); }
+  .alert.blue p { color: #014c6e; }
+  .alert.blue strong { color: #012f44; }
+
+  /* BIG STAT BOX */
+  .stat-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 20px;
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .stat-box .stat-main { flex-shrink: 0; text-align: center; }
+  .stat-box .stat-val { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 900; color: var(--or); line-height: 1; }
+  .stat-box .stat-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+  .stat-box .stat-desc { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.7; }
+  .stat-box .stat-desc strong { color: white; }
+
+  /* PLACEMENT CARDS */
+  .placement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .place-card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 18px;
+    border-top: 4px solid var(--bleu-clair);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .place-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,59,111,0.1); }
+  .place-card.vert { border-top-color: var(--vert); }
+  .place-card.rouge { border-top-color: var(--rouge); }
+  .place-card .place-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+  .place-card h3 { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .place-card.vert h3 { color: var(--vert); }
+  .place-card.rouge h3 { color: var(--rouge); }
+  .place-card p { font-size: 12.5px; color: var(--gris); line-height: 1.6; }
+  .place-card .tag { display: inline-block; margin-top: 10px; font-size: 11px; padding: 3px 10px; border-radius: 20px; background: var(--or-clair); color: #7a5200; font-weight: 500; }
+  .place-card .tag.blue { background: #e6f5fb; color: #017fb1; }
+  .place-card .tag.green { background: var(--vert-clair); color: #0a6e52; }
+  .place-card .tag.grey { background: #f0f0f0; color: #555; }
+
+  /* LINK SECTION */
+  .link-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .link-box::after { content: 'GRDF'; position: absolute; right: -20px; top: -10px; font-family: 'Fraunces', serif; font-size: 90px; font-weight: 900; color: rgba(255,255,255,0.05); pointer-events: none; }
+  .link-box h3 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--or); margin-bottom: 12px; }
+  .link-box p { font-size: 13.5px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 16px; }
+  .link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .link-item { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 16px; }
+  .link-item .li-label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+  .link-item .li-val { font-family: 'Fraunces', serif; font-size: 18px; color: var(--or); margin-top: 2px; }
+  .link-item .li-sub { font-size: 11.5px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+  /* CALENDAR */
+  .calendar-section { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--bleu-clair), var(--or)); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -22px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bleu-clair); border: 2px solid white; box-shadow: 0 0 0 2px var(--bleu-clair); }
+  .tl-item.active::before { background: var(--or); box-shadow: 0 0 0 2px var(--or); }
+  .tl-date { font-size: 11px; font-weight: 500; color: var(--bleu-clair); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .tl-item.active .tl-date { color: #b08000; }
+  .tl-title { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 3px; }
+  .tl-desc { font-size: 13px; color: var(--gris); line-height: 1.55; }
+
+  /* TWO COLS */
+  .two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .col-card {
+    border-radius: 14px;
+    padding: 20px;
+    border-top: 4px solid;
+  }
+  .col-card.ccas { background: #e6f5fb; border-top-color: var(--bleu); }
+  .col-card.cmcas { background: var(--vert-clair); border-top-color: var(--vert); }
+  .col-card h4 { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 10px; }
+  .col-card.cmcas h4 { color: var(--vert); }
+  .col-card ul { list-style: none; padding: 0; }
+  .col-card ul li { font-size: 12.5px; color: #4A4A46; line-height: 1.65; padding-left: 18px; position: relative; margin-bottom: 6px; }
+  .col-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--bleu); font-weight: 700; }
+  .col-card.cmcas ul li::before { color: var(--vert); }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead tr { background: var(--bleu); color: white; }
+  thead th { padding: 12px 14px; text-align: left; font-weight: 500; font-size: 12px; letter-spacing: 0.5px; }
+  tbody tr:nth-child(even) { background: var(--fond); }
+  tbody td { padding: 11px 14px; border-bottom: 1px solid #eee; color: #2a2a2a; }
+  .table-wrap { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; overflow-x: auto; }
+
+  /* FOOTER */
+  .footer { text-align: center; font-size: 12px; color: var(--gris); padding-top: 24px; border-top: 1px solid #ddd; }
+  .footer a { color: var(--bleu); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* CONTACT FO CARD */
+  .fo-contact-card {
+    background: linear-gradient(135deg, #c0303a 0%, #9e1a28 60%, #7a0e1c 100%);
+    border-radius: 16px;
+    padding: 18px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fo-contact-card::before {
+    content: '✉';
+    position: absolute;
+    right: -8px; top: -16px;
+    font-size: 100px;
+    color: rgba(255,255,255,0.08);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .fo-contact-card .fo-logo-wrap { flex-shrink: 0; }
+  .fo-contact-card .fo-logo-wrap img {
+    height: 44px; object-fit: contain; transition: transform 0.25s;
+    cursor: pointer; display: block; background: white;
+    border-radius: 8px; padding: 5px 8px;
+  }
+  .fo-contact-card .fo-logo-wrap img:hover { transform: scale(1.07); }
+  .fo-contact-card .fo-body { flex: 1; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .fo-contact-card .fo-text { flex: 1; min-width: 180px; }
+  .fo-contact-card h3 { font-family: 'Fraunces', serif; font-size: 15px; color: #FFFFFF; margin-bottom: 4px; }
+  .fo-contact-card p { font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.55; margin: 0; }
+  .fo-mailto-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white; color: #525250; font-weight: 700; font-size: 12px;
+    padding: 9px 18px; border-radius: 40px; text-decoration: none;
+    white-space: nowrap; flex-shrink: 0;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  }
+  .fo-mailto-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); background: #F4F3EF; }
+  .fo-mailto-btn .btn-icon { font-size: 15px; }
+
+  @media (max-width: 600px) {
+    .cards, .placement-grid, .two-cols, .link-grid { grid-template-columns: 1fr; }
+    .stat-box { flex-direction: column; text-align: center; }
+    .header h1 { font-size: 30px; }
+    .header { padding: 32px 24px; }
+    .page { padding: 24px 16px 48px; }
+  }
+
+  /* ═══ ROTATE BANNER ═══ */
+  .rotate-banner {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(135deg, #019cda, #028bc2);
+    color: white; text-align: center; padding: 10px 16px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    z-index: 9998; gap: 10px; align-items: center; justify-content: center;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.15);
+  }
+  .rotate-banner .rb-icon { font-size: 20px; animation: rb-spin 2s ease-in-out infinite; display: inline-block; }
+  @keyframes rb-spin { 0%{transform:rotate(0deg)} 40%{transform:rotate(90deg)} 60%{transform:rotate(90deg)} 100%{transform:rotate(0deg)} }
+  .rotate-banner .rb-close {
+    background: rgba(255,255,255,0.2); border: none; color: white; font-size: 14px;
+    padding: 4px 10px; border-radius: 20px; cursor: pointer; margin-left: 8px; font-family: 'DM Sans', sans-serif;
+  }
+  .rotate-banner .rb-close:hover { background: rgba(255,255,255,0.35); }
+  @media (max-width: 768px) and (orientation: portrait) { .rotate-banner { display: flex; } body { padding-bottom: 52px; } }
+  @media (max-width: 900px) and (orientation: landscape) {
+    .rotate-banner { display: none !important; } body { padding-bottom: 0; }
+    .page { padding: 16px 24px 32px; max-width: 100%; }
+    .header { padding: 20px 28px 16px; border-radius: 12px; margin-bottom: 20px; }
+    .header h1 { font-size: 26px; }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .placement-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .link-grid { grid-template-columns: 1fr 1fr; }
+    .stat-box { padding: 18px 24px; gap: 16px; }
+    .stat-box .stat-val { font-size: 36px; }
+    .calendar-section { padding: 18px 22px; }
+    .fo-contact-card { padding: 12px 16px; }
+    .a11y-toggle-bar { margin: -12px 0 20px; }
+  }
+
+  /* ═══ SKIP LINK ═══ */
+  .skip-link { position: absolute; top: -100px; left: 16px; background: #ffbf00; color: #2C2C29; font-weight: 700; padding: 10px 20px; border-radius: 8px; z-index: 9999; text-decoration: none; transition: top 0.2s; }
+  .skip-link:focus { top: 16px; }
+
+  /* ═══ A11Y TOGGLE BUTTON ═══ */
+  .a11y-toggle-bar { display: flex; justify-content: center; margin: -20px 0 28px; position: relative; z-index: 10; }
+  .a11y-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white; border: 2px solid #ddd; border-radius: 40px;
+    padding: 8px 20px; font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 500;
+    color: #6E6D69; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .a11y-btn:hover { border-color: #019cda; color: #019cda; box-shadow: 0 4px 14px rgba(1,156,218,0.15); }
+  .a11y-btn:focus { outline: 4px solid #019cda; outline-offset: 3px; }
+  .a11y-btn .a11y-icon { font-size: 16px; }
+  .a11y-btn .a11y-label-on  { display: none; }
+  .a11y-btn .a11y-label-off { display: inline; }
+  body.a11y-mode .a11y-btn { background: #525250; border-color: #525250; color: white; font-weight: 700; }
+  body.a11y-mode .a11y-btn .a11y-label-on  { display: inline; }
+  body.a11y-mode .a11y-btn .a11y-label-off { display: none; }
+
+  /* ═══ SVG A11Y ICONS ═══ */
+  .a11y-ico { display: none; width: 1.1em; height: 1.1em; vertical-align: -0.18em; flex-shrink: 0; color: currentColor; }
+  body.a11y-mode .a11y-ico { display: inline; }
+  body.a11y-mode .a11y-emoji { font-size: 0 !important; line-height: 0 !important; width: 0 !important; display: inline-block; }
+  body.a11y-mode .card-icon .a11y-ico, body.a11y-mode .place-icon .a11y-ico, body.a11y-mode .icon .a11y-ico { width: 1.4em !important; height: 1.4em !important; }
+  body.a11y-mode .btn-icon .a11y-ico, body.a11y-mode .a11y-icon .a11y-ico { width: 1em; height: 1em; }
+
+  /* ═══ MODE LECTURE UNIVERSELLE ═══ */
+  body.a11y-mode {
+    --a11y-bg: #FAFAF7; --a11y-surface: #FFFFFF; --a11y-surface2: #F4F3EF;
+    --a11y-border: #E2E0DA; --a11y-border2: #CCCAC4; --a11y-txt1: #2C2C29;
+    --a11y-txt2: #4A4A46; --a11y-txt3: #6E6D69; --a11y-txt4: #6F6E68;
+    --a11y-dark: #525250; --a11y-dark-txt: #F8F7F4; --a11y-txt4-dark: #C8C6C0;
+  }
+  body.a11y-mode { font-family: 'Atkinson Hyperlegible', sans-serif !important; font-size: 17px; line-height: 1.9; letter-spacing: 0.025em; word-spacing: 0.1em; background: #FFFFFF; color: #2C2C29; }
+  body.a11y-mode p, body.a11y-mode li, body.a11y-mode td, body.a11y-mode .card p, body.a11y-mode .place-card p, body.a11y-mode .tl-desc, body.a11y-mode .intro { font-family: 'Atkinson Hyperlegible', sans-serif !important; font-size: 15px; line-height: 1.9; letter-spacing: 0.025em; }
+  body.a11y-mode .header { background: #525250; border: 3px solid #2C2C29; border-radius: 16px; }
+  body.a11y-mode .header h1 { color: #FFFFFF !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; font-size: 34px; letter-spacing: 0.02em; }
+  body.a11y-mode .header h1 em { color: #FFFFFF !important; text-decoration: underline; font-style: normal; }
+  body.a11y-mode .header .subtitle { color: #C8C6C0 !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .badge { background: #FFFFFF; color: #2C2C29; border: 2px solid #2C2C29; font-weight: 700; letter-spacing: 1.5px; }
+  body.a11y-mode .header .update { background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.5); color: #FFFFFF; }
+  body.a11y-mode .dot { background: #FFFFFF !important; width: 9px !important; height: 9px !important; border: 1px solid rgba(255,255,255,0.6) !important; }
+  body.a11y-mode .page { background: #FFFFFF; }
+  body.a11y-mode .intro { background: #FAFAF7; border-left: 6px solid #2C2C29; color: #2C2C29; }
+  body.a11y-mode .intro strong { color: #2C2C29; text-decoration: underline; }
+  body.a11y-mode .section-title { font-size: 22px !important; color: #2C2C29 !important; gap: 12px !important; }
+  body.a11y-mode .section-title .icon { background: #E2E0DA !important; border: 2px solid #2C2C29 !important; border-radius: 6px !important; }
+  body.a11y-mode .card { background: #F4F3EF; border: 2px solid #2C2C29; box-shadow: none; }
+  body.a11y-mode .card h3, body.a11y-mode .place-card h3 { font-size: 17px; color: #2C2C29 !important; }
+  body.a11y-mode .card p { color: #2C2C29 !important; }
+  body.a11y-mode .card.highlight { background: #525250; border: 2px solid #2C2C29; }
+  body.a11y-mode .card.highlight h3 { color: #FFFFFF !important; }
+  body.a11y-mode .card.highlight p  { color: #C8C6C0 !important; }
+  body.a11y-mode .place-card { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; border-top: 4px solid var(--a11y-txt2) !important; box-shadow: none !important; }
+  body.a11y-mode .place-card.vert { border-top: 4px solid var(--a11y-txt2) !important; }
+  body.a11y-mode .place-card.rouge { border-top: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .tag { background: var(--a11y-surface2) !important; color: var(--a11y-txt2) !important; border: 1px solid var(--a11y-border2) !important; }
+  body.a11y-mode .stat-box { background: var(--a11y-dark) !important; border: 2px solid var(--a11y-border2) !important; }
+  body.a11y-mode .stat-box .stat-val { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .stat-box .stat-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box .stat-desc { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box .stat-desc strong { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .link-box { background: var(--a11y-dark) !important; border: 2px solid var(--a11y-border2) !important; }
+  body.a11y-mode .link-box h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .link-box p { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .link-box::after { display: none !important; }
+  body.a11y-mode .link-item { background: rgba(255,255,255,0.06) !important; border: 1px solid rgba(255,255,255,0.15) !important; border-radius: 8px !important; }
+  body.a11y-mode .link-item .li-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .link-item .li-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .link-item .li-sub   { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .calendar-section { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; }
+  body.a11y-mode .timeline::before { background: var(--a11y-border2) !important; border-radius: 0 !important; width: 2px !important; }
+  body.a11y-mode .tl-item::before { background: var(--a11y-surface) !important; border: 2.5px solid var(--a11y-txt2) !important; box-shadow: none !important; width: 13px !important; height: 13px !important; }
+  body.a11y-mode .tl-item.active::before { background: var(--a11y-txt1) !important; border: 2.5px solid var(--a11y-txt1) !important; box-shadow: 0 0 0 3px var(--a11y-surface), 0 0 0 5px var(--a11y-txt2) !important; width: 13px !important; height: 13px !important; }
+  body.a11y-mode .tl-title { color: var(--a11y-txt1) !important; font-size: 15px !important; }
+  body.a11y-mode .tl-date  { color: var(--a11y-txt3) !important; font-weight: 600 !important; }
+  body.a11y-mode .tl-item.active .tl-date { color: var(--a11y-txt1) !important; font-weight: 700 !important; }
+  body.a11y-mode .tl-item.active .tl-date::after { content: ' — EN COURS'; font-size: 9px; font-weight: 700; letter-spacing: .08em; color: var(--a11y-txt3); vertical-align: middle; }
+  body.a11y-mode .two-cols .col-card { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; border-top: 4px solid var(--a11y-txt2) !important; }
+  body.a11y-mode .col-card.ccas { border-top: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card.cmcas { border-top: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .col-card h4 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card ul li { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .col-card ul li::before { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .table-wrap { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; }
+  body.a11y-mode table thead tr { background: #525250 !important; }
+  body.a11y-mode table thead th { color: #FFFFFF !important; font-size: 13px !important; border: 2px solid #2C2C29 !important; }
+  body.a11y-mode table tbody td { color: #2C2C29 !important; font-size: 14px !important; line-height: 1.7 !important; border: 1px solid #6F6E68 !important; }
+  body.a11y-mode table tbody tr:nth-child(even) { background: #F4F3EF !important; }
+  body.a11y-mode .fo-contact-card { background: var(--a11y-dark) !important; border: 2px solid var(--a11y-border2) !important; }
+  body.a11y-mode .fo-contact-card h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .fo-contact-card p  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .fo-mailto-btn { background: var(--a11y-surface) !important; color: var(--a11y-txt1) !important; border: 2px solid var(--a11y-border2) !important; box-shadow: none !important; }
+  body.a11y-mode .fo-mailto-btn:hover { background: var(--a11y-surface2) !important; transform: none !important; }
+  body.a11y-mode .footer { color: var(--a11y-txt3) !important; border-top-color: var(--a11y-border) !important; }
+  body.a11y-mode .footer a { color: var(--a11y-txt2) !important; text-decoration: underline; }
+  body.a11y-mode *:focus { outline: 3px solid var(--a11y-txt1) !important; outline-offset: 3px !important; box-shadow: 0 0 0 5px rgba(44,44,41,0.15) !important; }
+
+
+
+  /* ═══ ENCADRÉ PORTÉE JURIDIQUE ═══ */
+  .portee-juridique {
+    background: #fff8e6;
+    border: 1.5px solid #e6c84a;
+    border-left: 5px solid #b08000;
+    border-radius: 14px;
+    padding: 22px 28px;
+    margin-bottom: 32px;
+    font-size: 13.5px;
+    line-height: 1.72;
+  }
+  .portee-juridique .pj-title {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #7a5200;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .portee-juridique p { color: #4a3800; margin-bottom: 8px; line-height: 1.72; }
+  .portee-juridique ul {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0 0;
+  }
+  .portee-juridique ul li {
+    padding-left: 16px;
+    position: relative;
+    color: #4a3800;
+    margin-bottom: 5px;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+  .portee-juridique ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #b08000;
+    font-weight: 700;
+  }
+
+  /* ═══ CLAUSE FINALE ═══ */
+  .clause-finale {
+    background: #f4f3ef;
+    border: 1.5px solid #CCCAC4;
+    border-left: 5px solid #525250;
+    border-radius: 14px;
+    padding: 22px 28px;
+    margin-bottom: 32px;
+    font-size: 13.5px;
+    line-height: 1.72;
+    color: #4A4A46;
+  }
+  .clause-finale .cf-title {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2C2C29;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .clause-finale p { color: #4A4A46; margin-bottom: 8px; line-height: 1.72; }
+  .clause-finale ul {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0 0;
+  }
+  .clause-finale ul li {
+    padding-left: 16px;
+    position: relative;
+    color: #4A4A46;
+    margin-bottom: 5px;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+  .clause-finale ul li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #525250;
+  }
+
+  body.a11y-mode .portee-juridique {
+    background: var(--a11y-surface2) !important;
+    border: 2px dashed var(--a11y-border2) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .portee-juridique .pj-title { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .portee-juridique p,
+  body.a11y-mode .portee-juridique ul li { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .portee-juridique ul li::before { color: var(--a11y-txt2) !important; }
+
+  body.a11y-mode .clause-finale {
+    background: var(--a11y-surface2) !important;
+    border: 2px dotted var(--a11y-border2) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .clause-finale .cf-title { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .clause-finale ul li { color: var(--a11y-txt2) !important; }
+
+
+  /* ═══ OVERRIDE FINAL ALERTES MODE UNIVERSEL ═══ */
+  body.a11y-mode div.alert {
+    background-color: #FFFFFF !important; border: 3px solid #2C2C29 !important;
+    border-left: 8px solid #2C2C29 !important; border-radius: 12px !important;
+  }
+  body.a11y-mode div.alert > p { color: #2C2C29 !important; font-size: 15px !important; }
+  body.a11y-mode div.alert > p strong { color: #2C2C29 !important; }
+  body.a11y-mode div.alert.green { background-color: #F4F3EF !important; border: 3px dashed #2C2C29 !important; border-left: 8px dashed #2C2C29 !important; }
+  body.a11y-mode div.alert.green > p { color: #2C2C29 !important; }
+  body.a11y-mode div.alert.green > p strong { color: #2C2C29 !important; }
+  body.a11y-mode div.alert.blue { background-color: #FFFFFF !important; border: 3px dotted #2C2C29 !important; border-left: 8px solid #2C2C29 !important; }
+  body.a11y-mode div.alert.blue > p { color: #2C2C29 !important; }
+  body.a11y-mode div.alert.blue > p strong { color: #2C2C29 !important; }
+
+</style>
+</head>
+<body>
+
+<a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+
+<!-- Bandeau rotation mobile -->
+<div class="rotate-banner" id="rotateBanner" role="alert" aria-live="polite">
+  <span class="rb-icon" aria-hidden="true">📱</span>
+  Pour une meilleure lecture, tournez votre écran en mode paysage.
+  <button class="rb-close" onclick="dismissRotate()" aria-label="Fermer ce message">✕</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; position:relative; z-index:1;">
+      <div class="badge" style="margin-bottom:0;" aria-label="Le Saviez-Vous ?">✦ Le Saviez-Vous ?</div>
+      <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#121;&#110;&#100;&#105;&#99;&#97;&#116;&#45;&#102;&#111;&#95;&#103;&#114;&#100;&#102;&#45;&#100;&#101;&#108;&#101;&#103;&#97;&#116;&#105;&#111;&#110;&#115;&#45;&#110;&#97;&#116;&#105;&#111;&#110;&#97;&#108;&#101;&#115;&#64;&#103;&#114;&#100;&#102;&#46;&#102;&#114;" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png"
+             alt="Logo FO Énergie GRDF — cliquez pour nous écrire"
+             style="height:clamp(44px, 8vw, 90px); width:auto; object-fit:contain; display:block; flex-shrink:0; transition:transform 0.2s, filter 0.2s; filter:drop-shadow(0 2px 8px rgba(247,221,92,0.2));"
+             onmouseover="this.style.transform='scale(1.06)';this.style.filter='drop-shadow(0 4px 14px rgba(247,221,92,0.5))'"
+             onmouseout="this.style.transform='scale(1)';this.style.filter='drop-shadow(0 2px 8px rgba(247,221,92,0.2))'">
+      </a>
+    </div>
+    <h1>Transparence des <em>rémunérations</em> : ce qui change pour les cadres GRDF</h1>
+    <p class="subtitle">Directive européenne 2023/970 · Vos droits, vos nouvelles obligations, les jalons à retenir</p>
+    <div class="update">
+      <span class="dot" aria-hidden="true"></span>
+      Mis à jour — Avril 2026 · Transposition prévue avant le 7 juin 2026
+    </div>
+  </header>
+
+  <!-- BOUTON MODE LECTURE -->
+  <div class="a11y-toggle-bar">
+    <button class="a11y-btn" id="a11yToggle" onclick="toggleA11y()" aria-pressed="false" aria-label="Activer le mode lecture universelle">
+      <span class="a11y-icon" aria-hidden="true">
+        <span class="a11y-emoji">👁</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      </span>
+      <span class="a11y-label-off">Mode lecture universelle</span>
+      <span class="a11y-label-on">Désactiver le mode lecture</span>
+    </button>
+  </div>
+
+  <main id="contenu-principal">
+
+    <!-- INTRO -->
+    <div class="intro" role="note">
+      Une <strong>révolution silencieuse</strong> s'apprête à transformer les pratiques RH en France. La directive européenne sur la transparence salariale, adoptée en mai 2023 et transposable d'ici juin 2026, impose de nouvelles règles du jeu pour toutes les entreprises de plus de 100 salariés. <strong>GRDF, avec ses 11 000+ salariés, est directement concernée</strong> — et ses cadres, au cœur des politiques de rémunération, seront les premiers impactés. Voici ce qu'il faut savoir.
+    </div>
+
+
+
+
+    <!-- SECTION 1 : Pourquoi cette directive ? -->
+    <div class="section-title">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">⚖️</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 9l9-6 9 6M5 12l7 4.5L19 12M3 18h18"/></svg>
+      </span>
+      Pourquoi cette directive ?
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <span class="card-icon">
+          <span class="a11y-emoji">📊</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </span>
+        <h3>Un écart persistant</h3>
+        <p>En France, l'écart de rémunération entre femmes et hommes atteint encore <strong>14,2 %</strong> dans le secteur privé. Au niveau européen, les femmes gagnent en moyenne <strong>11 %</strong> de moins à travail comparable.</p>
+        <p style="font-size:11.5px; color:#999; margin-top:6px; font-style:italic;">Sources : INSEE (secteur privé, équivalent temps plein) · Eurostat — dernières données disponibles (2024)</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">
+          <span class="a11y-emoji">🔍</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
+        <h3>Le manque de visibilité : le problème principal</h3>
+        <p>Sans informations sur les rémunérations, les salariés ne peuvent pas détecter ni contester les discriminations. La transparence est le levier pour rendre l'égalité effective.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">
+          <span class="a11y-emoji">🏛️</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h18M6 18V9M10 18V9M14 18V9M18 18V9M2 9l10-7 10 7"/></svg>
+        </span>
+        <h3>La directive UE 2023/970</h3>
+        <p>Adoptée le <strong>10 mai 2023</strong>, elle doit être transposée en droit français avant le <strong>7 juin 2026</strong>. Un avant-projet de loi circule depuis mars 2026 entre le gouvernement et les partenaires sociaux.</p>
+      </div>
+      <div class="card highlight">
+        <span class="card-icon">
+          <span class="a11y-emoji">🏭</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20v-8l-6-6V4H8v2L2 12z"/><path d="M12 20v-6h-4v6"/></svg>
+        </span>
+        <h3>GRDF : déjà bien positionnée</h3>
+        <p>GRDF a obtenu <strong>94/100</strong> à l'Index égalité professionnelle 2025 (données 2024). Mais la directive impose de nouveaux niveaux de transparence qui dépassent largement le périmètre de cet index actuel.</p>
+      </div>
+    </div>
+
+    <!-- STAT BOX -->
+    <div class="stat-box" role="img" aria-label="GRDF : 11 000 salariés concernés par la directive, catégorie des plus grandes entreprises avec reporting annuel obligatoire — Index 2025 : 94/100">
+      <div class="stat-main">
+        <div class="stat-val">+250</div>
+        <div class="stat-label">seuil salariés</div>
+      </div>
+      <div class="stat-desc">
+        GRDF, avec ses <strong>11 000+ salariés</strong>, est dans la catégorie la plus exigeante de la directive. Elle sera soumise au <strong>reporting annuel</strong> dès 2026, à la refonte complète de l'Index égalité en 2027, et à toutes les obligations de transparence dès la transposition — y compris les fourchettes de salaires dans les offres d'emploi et l'information interne des salariés sur les critères de rémunération.
+      </div>
+    </div>
+
+    <!-- SECTION 3 : Le nouvel Index égalité 2027 -->
+    <div class="section-title">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">🔄</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      </span>
+      Le nouvel Index égalité 2027 : 7 indicateurs au lieu de 5
+    </div>
+
+    <div class="two-cols">
+      <div class="col-card ccas">
+        <h4>
+          <span class="a11y-emoji">📋</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          Index actuel (jusqu'en 2026)
+        </h4>
+        <ul>
+          <li>Écart de rémunération global H/F — <strong>40 pts</strong></li>
+          <li>Écart de taux d'augmentations H/F — <strong>20 pts</strong></li>
+          <li>Écart de taux de promotions H/F — <strong>15 pts</strong></li>
+          <li>Augmentations au retour de congé maternité — <strong>15 pts</strong></li>
+          <li>Parité dans les 10 plus hautes rémunérations — <strong>10 pts</strong></li>
+        </ul>
+      </div>
+      <div class="col-card cmcas">
+        <h4>
+          <span class="a11y-emoji">🆕</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          Nouvel Index (dès 2027)
+        </h4>
+        <ul>
+          <li>Écart de rémunération H/F global</li>
+          <li>Écart sur les <strong>composantes variables</strong> (primes, bonus)</li>
+          <li>Taux d'augmentation H/F</li>
+          <li>Taux de promotion H/F</li>
+          <li>Augmentations retour congé maternité</li>
+          <li>Part de femmes dans les <strong>postes dirigeants</strong></li>
+          <li>Représentation H/F par <strong>quartile de salaire</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="alert">
+      <div class="alert-icon" aria-hidden="true">
+        <span class="a11y-emoji">💡</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+      </div>
+      <p><strong>Point d'attention sur les primes et variables :</strong> Le nouvel index intègre spécifiquement les composantes variables de la rémunération. Les primes de performance, bonus managériaux et autres éléments variables — souvent là où les écarts H/F sont les plus marqués — seront désormais scrutés séparément. Les cadres devront pouvoir justifier les critères d'attribution de ces éléments avec des critères objectifs documentés.</p>
+    </div>
+
+    <!-- SECTION 4 : GRDF aujourd'hui -->
+    <div class="section-title">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">🏭</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20v-8l-6-6V4H8v2L2 12z"/><path d="M12 20v-6h-4v6"/></svg>
+      </span>
+      GRDF aujourd'hui : forces et chantiers à venir
+    </div>
+
+    <div class="link-box">
+      <h3>
+        <span aria-hidden="true">
+          <span class="a11y-emoji">🏆</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+        </span>
+        Index égalité 2025 : 94/100 — GRDF bien avancée
+      </h3>
+      <p>GRDF affiche déjà de solides résultats sur l'index 2025 (données 2024), avec une progression constante ces dernières années. Mais la directive 2026 va au-delà et impose des transparences inédites, notamment sur les rémunérations variables et les critères fins par catégorie.</p>
+      <div class="link-grid">
+        <div class="link-item">
+          <div class="li-label">Écart rémunération H/F</div>
+          <div class="li-val">39/40</div>
+          <div class="li-sub">Quasi-parité sur le salaire de base</div>
+        </div>
+        <div class="link-item">
+          <div class="li-label">Taux augmentations</div>
+          <div class="li-val">20/20</div>
+          <div class="li-sub">Score parfait sur cet indicateur</div>
+        </div>
+        <div class="link-item">
+          <div class="li-label">Taux de promotions</div>
+          <div class="li-val">15/15</div>
+          <div class="li-sub">Score parfait sur cet indicateur</div>
+        </div>
+        <div class="link-item">
+          <div class="li-label">Top 10 rémunérations</div>
+          <div class="li-val">5/10</div>
+          <div class="li-sub">Point faible : parité aux postes les mieux rémunérés</div>
+        </div>
+      </div>
+      <p style="margin-top:14px; font-size:12px; color:rgba(255,255,255,0.6);">⚠️ Le score actuel ne préjuge pas de la conformité à la future directive. Sous réserve des dispositions retenues par le législateur français, les primes, la ventilation par catégorie fine et les critères de rémunération variable pourraient faire l'objet de nouvelles obligations spécifiques. Ces données sont issues des publications officielles de GRDF — Égalité professionnelle et inclusion — <a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#119;&#119;&#119;&#46;&#103;&#114;&#100;&#102;&#46;&#102;&#114;&#47;&#105;&#110;&#115;&#116;&#105;&#116;&#117;&#116;&#105;&#111;&#110;&#110;&#101;&#108;&#47;&#114;&#101;&#99;&#114;&#117;&#116;&#101;&#109;&#101;&#110;&#116;&#47;&#100;&#105;&#118;&#101;&#114;&#115;&#105;&#116;&#101;&#45;&#105;&#110;&#99;&#108;&#117;&#115;&#105;&#111;&#110;" target="_blank" rel="noopener noreferrer" style="font-size:11.5px; word-break:break-all; color:rgba(255,255,255,0.85); text-decoration:underline;">grdf.fr/institutionnel/recrutement/diversite-inclusion</a>, et du <a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#101;&#103;&#97;&#112;&#114;&#111;&#46;&#116;&#114;&#97;&#118;&#97;&#105;&#108;&#46;&#103;&#111;&#117;&#118;&#46;&#102;&#114;&#47;&#99;&#111;&#110;&#115;&#117;&#108;&#116;&#101;&#114;&#45;&#105;&#110;&#100;&#101;&#120;&#63;&#113;&#117;&#101;&#114;&#121;&#61;&#71;&#82;&#68;&#70;" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.75); text-decoration:underline;">portail officiel Egapro du ministère du Travail</a> (détail de chaque indicateur — rechercher GRDF).</p>
+    </div>
+
+    <!-- SECTION 2 : Ce que les cadres doivent savoir -->
+    <div class="section-title">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">👔</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </span>
+      Ce que ça change concrètement pour les cadres
+    </div>
+
+    <div class="placement-grid">
+      <div class="place-card">
+        <span class="place-icon">
+          <span class="a11y-emoji">📋</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </span>
+        <h3>Recrutement : fourchettes obligatoires</h3>
+        <p>Toute offre d'emploi devra indiquer une <strong>fourchette de rémunération</strong> ou le salaire de départ avant le premier entretien. Interdit également de demander le salaire antérieur d'un candidat. Vaut pour tous les postes, y compris les postes d'encadrement. <em>L'applicabilité effective dépendra aussi des décrets d'application, non encore publiés.</em></p>
+        <span class="tag blue">Dès transposition 2026</span>
+      </div>
+      <div class="place-card vert">
+        <span class="place-icon">
+          <span class="a11y-emoji">💬</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </span>
+        <h3>Salariés en poste : droit à l'information</h3>
+        <p>Les salariés pourront solliciter des informations relatives à leur niveau de rémunération ainsi qu'aux <strong>niveaux moyens de rémunération, ventilés par sexe</strong>, pour des postes comparables ou de valeur équivalente. L'employeur devra répondre dans un délai encadré par la loi de transposition — <strong>la directive prévoit un délai de 2 mois maximum</strong> — sauf exceptions liées à la protection des données. Les salariés devront être informés annuellement de l'existence de ce droit.</p>
+        <span class="tag green">Dès transposition 2026</span>
+      </div>
+      <div class="place-card">
+        <span class="place-icon">
+          <span class="a11y-emoji">🚫</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        </span>
+        <h3>Fin des clauses de confidentialité</h3>
+        <p>Les clauses ayant pour effet d'interdire aux salariés de divulguer des informations relatives à leur rémunération <strong>ne pourront plus faire obstacle à l'exercice des droits</strong> prévus en matière de transparence salariale. Elles demeurent applicables uniquement si elles poursuivent un objectif légitime et ne restreignent pas ces droits de façon disproportionnée.</p>
+        <span class="tag blue">Dès transposition 2026</span>
+      </div>
+      <div class="place-card vert">
+        <span class="place-icon">
+          <span class="a11y-emoji">📊</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </span>
+        <h3>Reporting annuel H/F obligatoire</h3>
+        <p>GRDF devra publier chaque année l'<strong>écart de rémunération entre femmes et hommes</strong>, les écarts sur les composantes variables (primes, bonus), les taux d'augmentation et de promotion, par catégorie.</p>
+        <span class="tag green">7 juin 2027 — 1er rapport (données 2026)</span>
+      </div>
+      <div class="place-card rouge">
+        <span class="place-icon">
+          <span class="a11y-emoji">⚠️</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </span>
+        <h3>Écart > 5 % : plan d'action obligatoire</h3>
+        <p>Lorsque des écarts de rémunération atteignent ou dépassent <strong>5 %</strong> et ne peuvent être objectivement justifiés par des critères neutres et pertinents, des mesures correctives devront être mises en œuvre. Une <strong>évaluation conjointe avec les représentants du personnel</strong> sera obligatoire dans les conditions fixées par la réglementation applicable.</p>
+        <span class="tag" style="background:#fde8ea; color:#8b0000;">Seuil critique</span>
+      </div>
+      <div class="place-card">
+        <span class="place-icon">
+          <span class="a11y-emoji">⚖️</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 9l9-6 9 6M5 12l7 4.5L19 12M3 18h18"/></svg>
+        </span>
+        <h3>Renversement de la charge de la preuve</h3>
+        <p>En cas de litige relatif à une discrimination salariale, dès lors que le salarié présente des éléments laissant supposer une inégalité, il incombera à l'employeur de démontrer que la différence de traitement repose sur des <strong>éléments objectifs, pertinents et étrangers à toute discrimination</strong>. Un changement majeur qui renforce la position des agents.</p>
+        <span class="tag blue">Changement fondamental</span>
+      </div>
+    </div>
+
+    <!-- ALERTE BLEUE -->
+    <div class="alert blue">
+      <div class="alert-icon" aria-hidden="true">
+        <span class="a11y-emoji">💡</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+      </div>
+      <p><strong>Pour les cadres managers :</strong> Sous réserve des modalités définies par la loi de transposition, vous serez en première ligne pour appliquer ces nouvelles règles. Documenter les critères de vos décisions salariales (augmentations, primes, bonus) pourrait constituer une obligation légale. Les critères devront être objectifs, traçables et communicables à vos équipes — dès aujourd'hui, il s'agit d'une bonne pratique qui limite tout risque contentieux.</p>
+    </div>
+
+    <!-- SECTION 5 : Loi Rixain - Dirigeants -->
+    <div class="section-title">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">👥</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </span>
+      Loi Rixain : les seuils de représentation pour GRDF
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Population visée</th>
+            <th>Exemples chez GRDF</th>
+            <th>Seuil mars 2026</th>
+            <th>Seuil mars 2029</th>
+            <th>Situation 2025</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Instances dirigeantes</strong><br><span style="font-size:12px; color:#888;">Comité Exécutif (Comex)</span></td>
+            <td>Membres du Comex GRDF</td>
+            <td style="color:#28b193; font-weight:700;">30 %</td>
+            <td style="color:#ef333e; font-weight:700;">40 %<br><span style="font-size:11px; font-weight:400; color:#888;">Pénalités max 1 % masse sal. dès mars 2031</span></td>
+            <td style="background:#e8f8f4;"><strong>30,5 %</strong> ✓ Seuil 30 % atteint</td>
+          </tr>
+          <tr>
+            <td><strong>Cadres dirigeants</strong><br><span style="font-size:12px; color:#888;">Autonomie, haut niveau de rémunération</span></td>
+            <td>Directeurs régionaux, Directeurs de département (DRH, DSI, DAF…)</td>
+            <td style="color:#28b193; font-weight:700;">30 %</td>
+            <td style="color:#ef333e; font-weight:700;">40 %<br><span style="font-size:11px; font-weight:400; color:#888;">Pénalités max 1 % masse sal. dès mars 2031</span></td>
+            <td style="background:#fde8ea;"><strong>30,8 %</strong> ✓ Seuil 30 % atteint</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px; color:var(--gris); margin-top:12px;">* Loi Rixain applicable aux entreprises employant au moins 1 000 salariés pour le <strong>troisième exercice consécutif</strong>. Les cadres intermédiaires, responsables de service ou managers sans autonomie complète sur leur temps de travail ne font pas partie de la population « cadres dirigeants » au sens juridique.</p>
+    </div>
+
+    <!-- CALENDRIER -->
+    <div class="calendar-section">
+      <div class="section-title" style="margin-bottom:20px;">
+        <span class="icon" aria-hidden="true">
+          <span class="a11y-emoji">📅</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </span>
+        Calendrier des échéances — Ce qui s'impose à GRDF
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item active">
+          <div class="tl-date">1er mars 2026 — En cours</div>
+          <div class="tl-title">Index égalité et Loi Rixain : publications annuelles</div>
+          <div class="tl-desc">Publication de l'Index égalité 2025 (note sur 100, 5 indicateurs). Publication des écarts de représentation H/F parmi les cadres dirigeants et membres des instances dirigeantes (Comex). Objectif intermédiaire de <strong>30 % de femmes</strong> dans chaque population à atteindre.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">7 juin 2026 — Date limite</div>
+          <div class="tl-title">Transposition de la directive UE 2023/970 en droit français</div>
+          <div class="tl-desc">L'avant-projet de loi est en concertation depuis mars 2026. Une fois la loi adoptée : <strong>fourchettes de salaires obligatoires dans les offres d'emploi</strong>, interdiction de demander le salaire antérieur, fin des clauses de confidentialité salariale, droit des salariés à l'information sur les critères et niveaux de rémunération par catégorie.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">7 juin 2027 — Premier rapport, puis annuel</div>
+          <div class="tl-title">Reporting annuel : écart de rémunération H/F (entreprises ≥ 250 salariés)</div>
+          <div class="tl-desc">GRDF devra publier <strong>au plus tard le 7 juin 2027</strong> son premier rapport sur les données de l'année civile 2026, puis chaque année. Ce rapport inclut les écarts de rémunération femmes-hommes ventilés par catégorie de travail de même valeur, les composantes variables (primes, bonus) et la répartition par quartile salarial. <strong>Attention :</strong> les systèmes de collecte de données doivent être opérationnels dès juin 2026 pour produire des données fiables sur l'ensemble de l'année. Si un écart dépasse 5 % sans justification, une évaluation conjointe avec les représentants du personnel est obligatoire dans les 6 mois.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">2027 — Sous réserve d'adoption de la loi de transposition</div>
+          <div class="tl-title">Refonte complète de l'Index égalité : passage à 7 indicateurs</div>
+          <div class="tl-desc">Le nouvel Index, prévu pour remplacer l'index actuel à 5 indicateurs, intègre les 7 indicateurs de la directive, notamment les <strong>écarts sur les variables</strong> (primes, bonus) et la représentation par quartile de salaire. Les entreprises 150–249 salariés commencent également leur reporting triennal au plus tard le 7 juin 2027. <strong>⚠ Réserve juridique :</strong> cette réforme est conditionnée à l'adoption définitive de la loi de transposition française, dont le calendrier parlementaire est encore incertain à ce jour. GRDF doit anticiper en adaptant son SIRH, sans attendre le texte final.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">1er mars 2029</div>
+          <div class="tl-title">Loi Rixain : seuil final de 40 % de femmes parmi les dirigeants</div>
+          <div class="tl-desc">L'objectif de <strong>40 % de personnes de chaque sexe</strong> doit être atteint parmi les cadres dirigeants ET au sein des instances dirigeantes. Si le seuil n'est pas atteint au 1er mars 2029, l'entreprise dispose d'un <strong>délai de deux ans pour se mettre en conformité</strong>, avec obligation de publier sous un an ses objectifs de progression et mesures correctives. <strong>Les pénalités financières (jusqu'à 1 % de la masse salariale) ne sont exigibles qu'à compter du 1er mars 2031.</strong> GRDF est à 30,8 % de femmes parmi ses cadres dirigeants — l'effort sur la durée sera significatif.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">1er mars 2031</div>
+          <div class="tl-title">Loi Rixain : entrée en vigueur des pénalités financières</div>
+          <div class="tl-desc">Si les objectifs de 40 % ne sont toujours pas atteints à l'issue du délai de mise en conformité, les <strong>pénalités financières pouvant aller jusqu'à 1 % de la masse salariale</strong> deviennent exigibles. C'est également l'échéance du premier reporting de la directive pour les entreprises de 100 à 149 salariés.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ALERTE VERTE -->
+    <div class="alert green">
+      <div class="alert-icon" aria-hidden="true">
+        <span class="a11y-emoji">✅</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <p>La transposition ne doit pas se limiter au minimum légal. FO sera vigilant pour que les critères de rémunération variable soient définis de façon transparente avec les représentants du personnel, que les informations accessibles aux salariés soient réellement utilisables, et que les mesures correctives soient effectives — et pas seulement déclaratives. La directive prévoit explicitement l'association des représentants du personnel aux évaluations conjointes en cas d'écart constaté.</p>
+    </div>
+
+    <!-- SECTION SANCTIONS -->
+    <div class="section-title">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">⚠️</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </span>
+      Sanctions en cas de non-conformité
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <span class="card-icon">
+          <span class="a11y-emoji">💰</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        <h3>Amendes financières</h3>
+        <p>Des amendes administratives proportionnelles à la <strong>masse salariale</strong> ou forfaitaires selon la gravité du manquement. Sanctions renforcées en cas de violations répétées.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">
+          <span class="a11y-emoji">🏛️</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h18M6 18V9M10 18V9M14 18V9M18 18V9M2 9l10-7 10 7"/></svg>
+        </span>
+        <h3>Restrictions marchés publics</h3>
+        <p>La directive autorise les États membres à prévoir des mesures connexes, telles que l'<strong>exclusion des marchés publics</strong> en cas de manquements graves et répétés. Ces dispositions relèveront du droit national de transposition et de leur interprétation par les juridictions compétentes.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">
+          <span class="a11y-emoji">⚖️</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 9l9-6 9 6M5 12l7 4.5L19 12M3 18h18"/></svg>
+        </span>
+        <h3>Contentieux et indemnisation intégrale</h3>
+        <p>Les salariés victimes pourront obtenir une <strong>indemnisation intégrale</strong> incluant les rappels de salaire, les opportunités manquées et le préjudice moral. Avec renversement de la charge de la preuve.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">
+          <span class="a11y-emoji">📰</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><line x1="18" y1="14" x2="12" y2="14"/><line x1="18" y1="18" x2="12" y2="18"/><polyline points="10 14 8 16 6 14"/></svg>
+        </span>
+        <h3>Loi Rixain : pénalités spécifiques</h3>
+        <p>Si GRDF n'atteint pas <strong>40 % de femmes</strong> parmi ses cadres dirigeants et instances dirigeantes en mars 2029, elle dispose d'un délai de 2 ans de mise en conformité. Les pénalités financières (jusqu'à <strong>1 % de la masse salariale</strong>) ne sont exigibles qu'à compter du <strong>1er mars 2031</strong> en cas de non-conformité persistante.</p>
+      </div>
+    </div>
+
+    <!-- ALERTE JAUNE -->
+    <div class="alert">
+      <div class="alert-icon" aria-hidden="true">
+        <span class="a11y-emoji">🚪</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10z"/><polyline points="13,4 13,10 19,10"/></svg>
+      </div>
+      <p><strong>Et si la loi n'est pas adoptée avant le 7 juin 2026 ?</strong> Le ministre du Travail a confirmé la volonté de transposer la directive en 2026, mais sans garantie formelle sur la date d'adoption. À ce jour, un avant-projet de loi a été transmis aux partenaires sociaux en mars 2026, avec un passage au Parlement envisagé avant l'été et une adoption visée pour septembre 2026. En cas de retard, la Commission européenne peut engager une procédure d'infraction contre la France. Pour les entreprises, la pression normative et jurisprudentielle s'intensifiera quoi qu'il arrive, certaines obligations de la directive pouvant être invoquées directement par les salariés devant les juridictions nationales sur le fondement du droit de l'Union. <strong>La recommandation de FO : anticiper sans attendre le texte définitif.</strong></p>
+    </div>
+
+
+    <!-- CONTACT FO -->
+    <div class="fo-contact-card">
+      <div class="fo-logo-wrap">
+        <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#121;&#110;&#100;&#105;&#99;&#97;&#116;&#45;&#102;&#111;&#95;&#103;&#114;&#100;&#102;&#45;&#100;&#101;&#108;&#101;&#103;&#97;&#116;&#105;&#111;&#110;&#115;&#45;&#110;&#97;&#116;&#105;&#111;&#110;&#97;&#108;&#101;&#115;&#64;&#103;&#114;&#100;&#102;&#46;&#102;&#114;" title="Écrire à FO GRDF">
+          <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO Énergie GRDF">
+        </a>
+      </div>
+      <div class="fo-body">
+        <div class="fo-text">
+          <h3>
+            <span aria-hidden="true">
+              <span class="a11y-emoji">✉</span>
+              <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            </span>
+            Une question ? Contactez FO GRDF
+          </h3>
+          <p>Nos délégués nationaux sont là pour vous accompagner sur la <strong>transparence des rémunérations</strong>, vos droits face à ces nouvelles obligations, et toute situation personnelle liée à l'égalité salariale.</p>
+        </div>
+        <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#121;&#110;&#100;&#105;&#99;&#97;&#116;&#45;&#102;&#111;&#95;&#103;&#114;&#100;&#102;&#45;&#100;&#101;&#108;&#101;&#103;&#97;&#116;&#105;&#111;&#110;&#115;&#45;&#110;&#97;&#116;&#105;&#111;&#110;&#97;&#108;&#101;&#115;&#64;&#103;&#114;&#100;&#102;&#46;&#102;&#114;" class="fo-mailto-btn">
+          <span class="btn-icon">
+            <span aria-hidden="true">
+              <span class="a11y-emoji">✉</span>
+              <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            </span>
+          </span>
+          Nous écrire
+        </a>
+      </div>
+    </div>
+
+    <!-- ═══ CLAUSE FINALE DE BLINDAGE ═══ -->
+    <div class="clause-finale" role="note">
+      <div class="cf-title">
+        <span aria-hidden="true">
+          <span class="a11y-emoji">🛡️</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </span>
+        Document d'information syndicale — Portée juridique et limites
+      </div>
+      <p><strong>Finalité du document.</strong> Ce document a une finalité informative et pédagogique. Il ne constitue pas un avis juridique. Il repose sur une analyse de la directive (UE) 2023/970 et des textes européens disponibles à la date de rédaction (avril 2026).</p>
+      <p style="margin-top:8px;"><strong>Directive européenne et droit applicable.</strong> La directive fixe des objectifs à atteindre par les États membres. Ses dispositions ne produisent pleinement effet qu'après leur transposition en droit national. Les règles présentées dans ce document distinguent donc :</p>
+      <ul>
+        <li>les <strong>principes déjà établis</strong> par la directive (UE) 2023/970,</li>
+        <li>et les <strong>modalités pratiques</strong>, susceptibles d'être précisées ou adaptées par le législateur et les décrets français.</li>
+      </ul>
+      <p style="margin-top:8px;"><strong>Ce document ne préjuge pas :</strong></p>
+      <ul>
+        <li>du contenu définitif de la loi française de transposition,</li>
+        <li>des décrets d'application et circulaires à venir,</li>
+        <li>de l'interprétation des juridictions compétentes,</li>
+        <li>des interprétations administratives (DREETS, ministère du Travail),</li>
+        <li>ni de la jurisprudence nationale et européenne à venir.</li>
+      </ul>
+      <p style="margin-top:10px;">Il ne saurait engager la responsabilité de FO GRDF quant à l'usage qui pourrait en être fait. Pour toute situation individuelle, nous vous invitons à prendre contact avec nos délégués nationaux.</p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+      <div style="display:flex; justify-content:center; align-items:center; gap:24px; margin-bottom:16px; flex-wrap:wrap;">
+        <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#121;&#110;&#100;&#105;&#99;&#97;&#116;&#45;&#102;&#111;&#95;&#103;&#114;&#100;&#102;&#45;&#100;&#101;&#108;&#101;&#103;&#97;&#116;&#105;&#111;&#110;&#115;&#45;&#110;&#97;&#116;&#105;&#111;&#110;&#97;&#108;&#101;&#115;&#64;&#103;&#114;&#100;&#102;&#46;&#102;&#114;" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+          <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png"
+               alt="Logo FO Énergie GRDF"
+               style="height:70px; object-fit:contain; opacity:0.85; transition:opacity 0.2s;"
+               onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+        </a>
+      </div>
+      Document d'information syndicale FO Énergie · Directive (UE) 2023/970 — Avril 2026 · Ce document a une finalité informative et ne constitue pas un avis juridique · Pour tout renseignement :
+      <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#121;&#110;&#100;&#105;&#99;&#97;&#116;&#45;&#102;&#111;&#95;&#103;&#114;&#100;&#102;&#45;&#100;&#101;&#108;&#101;&#103;&#97;&#116;&#105;&#111;&#110;&#115;&#45;&#110;&#97;&#116;&#105;&#111;&#110;&#97;&#108;&#101;&#115;&#64;&#103;&#114;&#100;&#102;&#46;&#102;&#114;" aria-label="Envoyer un email à FO GRDF">syndicat-fo_grdf-delegations-nationales@grdf.fr</a>
+    </footer>
+
+  </main>
+</div><!-- fin .page -->
+
+<script>
+  /* ── Rotation mobile ── */
+  function dismissRotate() {
+    const b = document.getElementById('rotateBanner');
+    if (b) b.style.display = 'none';
+    try { sessionStorage.setItem('fo-rotate-dismissed', '1'); } catch(e) {}
+  }
+  try {
+    if (sessionStorage.getItem('fo-rotate-dismissed') === '1') {
+      const b = document.getElementById('rotateBanner');
+      if (b) b.style.display = 'none';
+    }
+  } catch(e) {}
+
+  /* ── Mode lecture universelle ── */
+  function toggleA11y() {
+    const body = document.body;
+    const btn  = document.getElementById('a11yToggle');
+    const on   = body.classList.toggle('a11y-mode');
+    if (btn) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    try { localStorage.setItem('fo-a11y', on ? '1' : '0'); } catch(e) {}
+  }
+  try {
+    if (localStorage.getItem('fo-a11y') === '1') {
+      document.body.classList.add('a11y-mode');
+      const btn = document.getElementById('a11yToggle');
+      if (btn) btn.setAttribute('aria-pressed', 'true');
+    }
+  } catch(e) {}
+</script>
+
+</body>
+</html>
