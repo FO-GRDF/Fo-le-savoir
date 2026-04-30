@@ -361,6 +361,60 @@
     .page { padding: 24px 16px 48px; }
   }
 
+
+  /* ═══ DÉCRYPTAGE FO — STYLE COHÉRENT AVEC LA PAGE ═══ */
+  .fo-section { background: var(--blanc); border-radius: 16px; padding: 32px; margin-bottom: 32px; border-top: 4px solid #c0303a; }
+  .fo-section .section-title { color: #7a0e1c; margin-bottom: 8px; }
+  .fo-section .section-title .icon { background: #fde8ea; color: #7a0e1c; }
+  .fo-section .fo-section-sub { font-size: 14px; color: var(--gris); line-height: 1.7; margin-bottom: 24px; }
+  .fo-section .fo-section-sub strong { color: #7a0e1c; }
+
+  /* Mention FO mise en évidence — rouge gras dans tout le document FO */
+  .fo-name { color: #c0303a; font-weight: 900; letter-spacing: 0.3px; }
+
+  /* Grille 2 colonnes des points FO */
+  .fo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .fo-item { background: var(--fond); border-radius: 14px; padding: 20px 22px; border-left: 4px solid #c0303a; transition: box-shadow .2s; }
+  .fo-item:hover { box-shadow: 0 8px 24px rgba(192,48,58,0.08); }
+  .fo-item h4 { font-family: 'Fraunces', serif; font-size: 16px; color: var(--bleu); font-weight: 700; margin-bottom: 6px; line-height: 1.3; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .fo-item h4 .fo-emoji { font-size: 18px; }
+  .fo-item h4 .fo-tag { font-family: 'DM Sans', sans-serif; font-size: 9.5px; font-weight: 700; letter-spacing: 1px; background: #c0303a; color: #fff; padding: 3px 9px; border-radius: 30px; text-transform: uppercase; }
+  .fo-item > p.fo-summary { font-size: 13px; color: #4a4a46; line-height: 1.65; margin: 0 0 12px; }
+  .fo-item > p.fo-summary strong { color: var(--texte); }
+
+  /* Bloc 3-temps : Projet / FO / Pour vous */
+  .fo-three { display: flex; flex-direction: column; gap: 8px; }
+  .fo-line { display: flex; gap: 10px; align-items: flex-start; font-size: 12.5px; line-height: 1.6; padding: 10px 12px; border-radius: 10px; }
+  .fo-line .fo-pill { flex-shrink: 0; font-weight: 800; font-size: 10px; letter-spacing: 0.6px; padding: 4px 9px; border-radius: 20px; text-transform: uppercase; min-width: 92px; text-align: center; line-height: 1.3; }
+  .fo-line.line-projet { background: #eef4f8; }
+  .fo-line.line-projet .fo-pill { background: #d6e4ed; color: #1a4a6b; }
+  .fo-line.line-projet .fo-line-body { color: #2a3a48; }
+  .fo-line.line-fo { background: #fde8ea; border: 1px solid rgba(192,48,58,0.25); }
+  .fo-line.line-fo .fo-pill { background: #c0303a; color: #fff; }
+  .fo-line.line-fo .fo-line-body { color: #5a1219; }
+  .fo-line.line-fo .fo-line-body strong { color: #7a0e1c; }
+  .fo-line.line-impact { background: #fff7d6; border: 1px solid rgba(247,221,92,0.6); }
+  .fo-line.line-impact .fo-pill { background: var(--or); color: #5a4000; }
+  .fo-line.line-impact .fo-line-body { color: #5a4000; font-weight: 500; }
+  .fo-line.line-impact .fo-line-body strong { color: #3a2800; font-weight: 800; }
+
+  /* Conclusion FO en bandeau bleu */
+  .fo-conclusion { margin-top: 22px; padding: 18px 22px; background: linear-gradient(135deg, #019cda 0%, #028bc2 100%); border-radius: 12px; color: #fff; font-size: 13.5px; line-height: 1.7; }
+  .fo-conclusion strong { color: var(--or); }
+  .fo-conclusion .fo-name { color: #fff; text-decoration: underline; text-decoration-color: var(--or); text-decoration-thickness: 2px; }
+
+  /* Petits encadrés FO inline (sous une rubrique existante du document) */
+  .fo-callout { background: #fde8ea; border: 1px solid rgba(192,48,58,0.25); border-left: 4px solid #c0303a; border-radius: 10px; padding: 12px 16px; margin: 14px 0 0; display: flex; gap: 12px; align-items: flex-start; }
+  .fo-callout .fo-callout-icon { flex-shrink: 0; width: 26px; height: 26px; background: #c0303a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; font-weight: 700; }
+  .fo-callout .fo-callout-body { flex: 1; }
+  .fo-callout .fo-callout-title { font-family: 'Fraunces', serif; font-size: 13.5px; font-weight: 700; color: #7a0e1c; margin-bottom: 3px; }
+  .fo-callout p { font-size: 13px; color: #5a1219; line-height: 1.6; margin: 0; }
+  .fo-callout strong { color: #7a0e1c; }
+
+  @media (max-width: 720px) {
+    .fo-grid { grid-template-columns: 1fr; }
+  }
+
   /* MODE LECTURE UNIVERSELLE */
   body.a11y-mode {
     --a11y-bg:        #FAFAF7;
@@ -510,6 +564,30 @@
     .rotate-banner { display: flex; }
     body { padding-bottom: 52px; }
   }
+
+  /* A11y — Décryptage FO */
+  body.a11y-mode .fo-section { background: var(--a11y-surface) !important; border-top: 4px solid var(--a11y-txt1) !important; box-shadow: none !important; border: 1px solid var(--a11y-border) !important; }
+  body.a11y-mode .fo-section .section-title,
+  body.a11y-mode .fo-section .fo-section-sub strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .fo-section .section-title .icon { background: var(--a11y-surface2) !important; color: var(--a11y-txt1) !important; }
+  body.a11y-mode .fo-section .fo-section-sub { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .fo-name { color: var(--a11y-txt1) !important; text-decoration: underline; text-decoration-thickness: 2px; }
+  body.a11y-mode .fo-item { background: var(--a11y-surface2) !important; border-left: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .fo-item h4 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .fo-item h4 .fo-tag { background: var(--a11y-txt1) !important; color: var(--a11y-bg) !important; }
+  body.a11y-mode .fo-item > p.fo-summary,
+  body.a11y-mode .fo-item > p.fo-summary strong { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .fo-line { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; }
+  body.a11y-mode .fo-line .fo-pill { background: var(--a11y-txt1) !important; color: var(--a11y-bg) !important; }
+  body.a11y-mode .fo-line .fo-line-body,
+  body.a11y-mode .fo-line .fo-line-body strong { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .fo-conclusion { background: var(--a11y-dark) !important; color: var(--a11y-dark-txt) !important; border: 1px solid var(--a11y-border2) !important; }
+  body.a11y-mode .fo-conclusion strong { color: var(--a11y-dark-txt) !important; text-decoration: underline; }
+  body.a11y-mode .fo-callout { background: var(--a11y-surface2) !important; border: 2px solid var(--a11y-border2) !important; border-left: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .fo-callout .fo-callout-icon { background: var(--a11y-txt1) !important; color: var(--a11y-bg) !important; }
+  body.a11y-mode .fo-callout .fo-callout-title,
+  body.a11y-mode .fo-callout p,
+  body.a11y-mode .fo-callout strong { color: var(--a11y-txt1) !important; }
 </style>
 </head>
 <body>
@@ -837,89 +915,136 @@
   </div>
 
   <!-- DÉCRYPTAGE FO -->
-  <section class="fo-decrypt" aria-labelledby="fo-decrypt-title">
-    <span class="fo-badge">✊ Position FO Énergie</span>
-    <h2 id="fo-decrypt-title">Le décryptage FO — <em>ce qui ne va pas</em> pour les salariés</h2>
-    <p class="fo-intro">L'accord modernise la grille mais reste <strong>très en-deçà</strong> des revendications portées par FO Énergie tout au long de la négociation. Voici, point par point, les <strong>limites concrètes</strong> du projet et ce que FO continue de demander.</p>
+  <section class="fo-section" aria-labelledby="fo-section-title">
+    <div class="section-title" id="fo-section-title"><span class="icon">✊</span> Le décryptage <span class="fo-name">FO</span> — <em style="color:#c0303a;font-style:italic;">ce qui ne va pas</em> pour les salariés</div>
+    <p class="fo-section-sub">L'accord modernise la grille mais reste <strong>très en-deçà</strong> des revendications portées par <span class="fo-name">FO</span> Énergie pendant toute la négociation. Pour chaque sujet, voici ce que prévoit le projet, ce que <span class="fo-name">FO</span> demande, et <strong>ce que cela représente concrètement pour vous</strong>.</p>
 
     <div class="fo-grid">
 
       <div class="fo-item">
-        <h4>🛡️ Salaire minimum SMIC + 2 % <span class="fo-tag">limite</span></h4>
-        <p>Le mécanisme « SMIC + 2 % » <strong>ne protège pas réellement</strong> le bas de grille : quand le SMIC rattrape la ligne minimale, la ligne est <strong>supprimée</strong> et tous les salaires en dessous sont remontés au coefficient supérieur. C'est l'<strong>écrasement de la grille</strong>, qui se poursuit donc.</p>
-        <div class="fo-revend"><strong>Revendication FO :</strong> SMIC + 20 %, plancher de branche réellement protecteur.</div>
+        <h4><span class="fo-emoji">🛡️</span> Salaire minimum SMIC + 2 % <span class="fo-tag">limite</span></h4>
+        <p class="fo-summary">Le mécanisme paraît protecteur, mais quand le SMIC rattrape la ligne minimale, cette ligne est <strong>supprimée</strong> et tous les salariés concernés sont propulsés au coefficient supérieur. La grille continue de <strong>s'écraser par le bas</strong>.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Plancher = SMIC × 1,02 (≈ 1 838 € en 2025). Quand le SMIC monte, la ligne basse disparaît mécaniquement.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande <strong>SMIC + 20 %</strong> (≈ 2 162 € en 2025), c'est-à-dire un <strong>vrai écart</strong> entre le minimum de branche et le SMIC légal — c'est ce qui empêche la grille IEG de se confondre avec le salaire minimum interprofessionnel.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body"><strong>≈ 324 € de manque à gagner mensuel</strong> pour les salariés payés au plancher de branche — et un mécanisme qui ne protégera plus rien dans 5 ou 10 ans.</div></div>
+        </div>
       </div>
 
       <div class="fo-item">
-        <h4>📈 Revalorisation + 1,8 % en 3 fois <span class="fo-tag">insuffisant</span></h4>
-        <p>+ 0,6 % le 1ᵉʳ juillet 2027, 2028 et 2029. C'est la mesure d'accompagnement d'une <strong>transformation majeure</strong> de la rémunération des IEG. Le signal envoyé aux salariés et au management est <strong>très faible</strong>.</p>
-        <div class="fo-revend"><strong>Revendication FO :</strong> revalorisation forte et immédiate de la grille, en miroir de l'effort de transformation demandé.</div>
+        <h4><span class="fo-emoji">📈</span> Revalorisation + 1,8 % en 3 fois <span class="fo-tag">insuffisant</span></h4>
+        <p class="fo-summary">+ 0,6 % le 1ᵉʳ juillet 2027, 2028 et 2029. C'est l'unique mesure d'accompagnement « salaire » d'une refonte structurelle de la grille de branche.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">+ 1,8 % cumulés étalés sur 3 ans, soit l'équivalent d'<strong>une seule année d'inflation modérée</strong>.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande une revalorisation <strong>forte et immédiate</strong>, à la hauteur de l'effort demandé aux salariés et au management qui doivent s'approprier un nouveau référentiel de rémunération.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Sur un salaire de <strong>3 000 € mensuels</strong>, l'accord apporte au final <strong>+ 54 €</strong> en 2029. Une revalorisation de 5 % aurait apporté <strong>+ 150 €</strong> — soit <strong>~ + 96 € / mois supplémentaires</strong>.</div></div>
+        </div>
       </div>
 
       <div class="fo-item">
-        <h4>⬆️ Augmentation individuelle min. 2 % <span class="fo-tag">en baisse continue</span></h4>
-        <p>Le minimum d'AI passe à <strong>2 %</strong> alors qu'il était de <strong>2,3 %</strong> (et de <strong>4,6 %</strong> à l'origine de la grille de 1982). La reconnaissance individuelle <strong>n'a cessé de baisser</strong> au fil des accords.</p>
-        <div class="fo-revend"><strong>Revendication FO :</strong> minimum d'AI à 2,5 %, retour à un vrai outil de reconnaissance.</div>
+        <h4><span class="fo-emoji">⬆️</span> Augmentation individuelle min. 2 % <span class="fo-tag">en baisse continue</span></h4>
+        <p class="fo-summary">Le minimum d'AI est ramené à 2 %, alors que la grille de 1982 prévoyait + 4,6 %. Chaque accord successif a réduit l'outil de reconnaissance individuelle.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">AI = passage à un coefficient supérieur, plancher conventionnel <strong>+ 2 %</strong>. Soit ≈ 60 € sur un salaire de 3 000 €.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande un minimum d'AI à <strong>2,5 %</strong> et le retour à un <strong>vrai outil de reconnaissance</strong>. Historique : <strong>4,6 % (1982) → 2,3 % → 2 %</strong>. La reconnaissance individuelle a été divisée par <strong>plus de 2</strong> en 40 ans.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Sur une carrière de 40 ans, en moyenne <strong>10 AI</strong> à 0,5 % d'écart : <strong>≈ 5 % de salaire en moins</strong> en fin de carrière, soit <strong>~ 150 € / mois</strong> sur un salaire de 3 000 €.</div></div>
+        </div>
       </div>
 
       <div class="fo-item">
-        <h4>📊 Granularité 0,1 % / ~1 500 lignes <span class="fo-tag">illusoire</span></h4>
-        <p>La nouvelle grille promet « plus de reconnaissance, plus souvent ». Mais aucun <strong>plafond</strong> à la reconnaissance n'est prévu, aucun <strong>contrôle social</strong> sur la justification des écarts entre salariés, et la gestion d'une grille à 1 500 lignes sera un <strong>casse-tête managérial</strong>.</p>
-        <div class="fo-revend"><strong>Revendication FO :</strong> dispositif de contrôle social fort, transparent et opposable.</div>
+        <h4><span class="fo-emoji">📊</span> Granularité 0,1 % / ~1 500 lignes <span class="fo-tag">illusoire</span></h4>
+        <p class="fo-summary">La grille passerait à près de 1 500 lignes pour permettre des AI plus régulières. Dans les faits : casse-tête managérial, pas de plafond à la reconnaissance, aucun contrôle sur la justification des écarts.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Pas de 0,1 % entre coefficients. Promesse de « reconnaître plus souvent ». <strong>Aucun garde-fou.</strong></div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande un <strong>dispositif de contrôle social opposable</strong> : justification écrite des écarts, plafonnement de la masse, transparence des écarts entre salariés à mêmes responsabilités.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Risque concret : la promesse de « plus souvent » devient « <strong>au choix du manager</strong> », sans recours possible si vous n'êtes pas servi.</div></div>
+        </div>
       </div>
 
       <div class="fo-item">
-        <h4>🏢 AG d'entreprise (max 150 % du SNB) <span class="fo-tag">risque</span></h4>
-        <p>Les entreprises pourront accorder des augmentations générales jusqu'à <strong>150 % de la hausse du SNB</strong>. Effet pratique : <strong>concurrence salariale</strong> entre EDF, ENEDIS, RTE, ENGIE, GRDF, NATRAN…, affaiblissement du <strong>cadre commun de branche</strong>, aucun engagement ferme.</p>
-        <div class="fo-revend"><strong>Revendication FO :</strong> garanties chiffrées et durables au niveau de la branche.</div>
+        <h4><span class="fo-emoji">🏢</span> AG d'entreprise (max 150 % du SNB) <span class="fo-tag">risque</span></h4>
+        <p class="fo-summary">Les entreprises pourront accorder des augmentations générales jusqu'à 150 % de la hausse du SNB. Effet pratique : concurrence salariale entre EDF, ENEDIS, RTE, ENGIE, GRDF, NATRAN.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Si SNB + 0,3 %, AG d'entreprise jusqu'à + 0,45 %. Aucun engagement ferme ni en valeur, ni dans le temps.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande des <strong>garanties chiffrées et durables au niveau de la branche</strong> — pas un dispositif facultatif qui fragmente le statut commun et met les entreprises en concurrence sur la rémunération.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Selon votre entreprise, votre rémunération évoluera <strong>différemment à statut équivalent</strong>. La solidarité de branche s'effrite.</div></div>
+        </div>
       </div>
 
       <div class="fo-item">
-        <h4>⏳ Échelons : + 25 % sur la carrière <span class="fo-tag">en-deçà</span></h4>
-        <p>L'évolution maximum passe de + 22 % (sur 34 ans) à + 25 % (sur 40 ans). La progression sur la <strong>durée totale</strong> est donc à peine améliorée. <strong>7 700 salariés</strong> sont déjà au plafond d'ancienneté actuel : pour eux, <strong>aucun gain</strong> avant le nouvel échelon 11 (37 ans) ou 12 (40 ans).</p>
-        <div class="fo-revend"><strong>Revendication FO :</strong> + 30 % de progression sur la carrière, échelon 5 plus accessible, pourcentages plus forts en fin de carrière (impact retraite).</div>
+        <h4><span class="fo-emoji">⏳</span> Échelons : + 25 % sur la carrière <span class="fo-tag">en-deçà</span></h4>
+        <p class="fo-summary">L'évolution maximum passe de + 22 % (sur 34 ans) à + 25 % (sur 40 ans). Mais 7 700 salariés sont déjà au plafond actuel — pour eux, aucun gain avant les nouveaux échelons à 37 ou 40 ans.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Coefficient ancienneté max = 1,250 (à 40 ans). Soit + 25 % sur le salaire de base.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande <strong>+ 30 % sur la carrière</strong>, un <strong>échelon 5 plus accessible</strong>, et des <strong>pourcentages plus forts en fin de carrière</strong> (impact direct sur la pension de retraite, calculée sur les 25 dernières années).</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Sur un salaire d'embauche à 2 000 €, l'écart en fin de carrière est de <strong>+ 100 € / mois</strong> entre la proposition employeur (+ 25 %) et la demande <span class="fo-name">FO</span> (+ 30 %). Sur 20 ans de retraite : <strong>~ 24 000 € de pension cumulée</strong>.</div></div>
+        </div>
       </div>
 
       <div class="fo-item">
-        <h4>⬆️ Plafonds + 10 % <span class="fo-tag">peu de bénéficiaires</span></h4>
-        <p><strong>660 agents</strong> sont concernés par le relèvement des plafonds, dont <strong>94 % de cadres ou cadres supérieurs</strong>. Pour la très grande majorité des collèges Exécution et Maîtrise, l'effet est nul.</p>
-        <div class="fo-revend"><strong>Revendication FO :</strong> mesure réellement universelle, profitant d'abord aux collèges Exécution et Maîtrise.</div>
+        <h4><span class="fo-emoji">⬆️</span> Plafonds + 10 % <span class="fo-tag">peu de bénéficiaires</span></h4>
+        <p class="fo-summary">660 agents concernés par le relèvement des plafonds, dont 94 % de cadres ou cadres supérieurs. Pour Exécution et Maîtrise courante, l'effet est nul.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">NR 160 → NR 180 (Exéc.), NR 240 → NR 260 (Maît.), NR 370 → NR 390 (Cadres). Bénéficiaires effectifs : ≈ 660 cadres / cadres sup'.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande une mesure <strong>réellement universelle</strong>, profitant <strong>d'abord aux collèges Exécution et Maîtrise</strong> qui constituent l'essentiel des effectifs et qui subissent depuis 40 ans le tassement de la grille.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Si vous êtes en collège Exécution ou Maîtrise <strong>en milieu de grille</strong>, le relèvement des plafonds <strong>ne change rien</strong> pour vous.</div></div>
+        </div>
       </div>
 
       <div class="fo-item">
-        <h4>📐 Plancher Maîtrise + 10 %, Cadres + 2,4 % <span class="fo-tag">tassement non corrigé</span></h4>
-        <p>Le rehaussement des planchers atténue à peine le tassement constaté depuis des années. Les <strong>GF 3-4-5 et 7-8</strong> se retrouvent au <strong>même niveau plancher</strong> dans le nouveau dispositif.</p>
-        <div class="fo-revend"><strong>Revendication FO :</strong> écarts significatifs restaurés entre les groupes fonctionnels.</div>
+        <h4><span class="fo-emoji">📐</span> Plancher Maîtrise + 10 %, Cadres + 2,4 % <span class="fo-tag">tassement non corrigé</span></h4>
+        <p class="fo-summary">Le rehaussement des planchers atténue à peine le tassement constaté depuis des années. Conséquence directe : les <strong>GF 3-4-5 et 7-8</strong> se retrouvent au <strong>même niveau plancher</strong>.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Plancher Maîtrise + 10 %, plancher Cadres + 2,4 %. Le bond pour Cadres est minime.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande la <strong>restauration des écarts significatifs entre groupes fonctionnels</strong> : un GF 7 doit gagner sensiblement plus qu'un GF 5, sinon la promotion n'a plus de sens financier.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Promotion vers un GF supérieur = <strong>moins de gain financier</strong> qu'avant, alors que les responsabilités, elles, n'ont pas baissé.</div></div>
+        </div>
       </div>
 
       <div class="fo-item">
-        <h4>🎓 Minima d'embauche par diplôme <span class="fo-tag">à géométrie variable</span></h4>
-        <p>Les minima d'embauche sont calés sur le plancher du collège. Mais les entreprises pourront <strong>les dépasser librement</strong> : un même diplôme pourra donner <strong>des salaires différents</strong> selon l'entreprise, la région ou d'autres critères.</p>
-        <div class="fo-revend"><strong>Revendication FO :</strong> écarts garantis entre niveaux de diplôme + encadrement mini/maxi (ex : l'écart BTS / CAP est passé de 12 NR en 1995 à 7 NR aujourd'hui).</div>
+        <h4><span class="fo-emoji">🎓</span> Minima d'embauche par diplôme <span class="fo-tag">à géométrie variable</span></h4>
+        <p class="fo-summary">Les minima d'embauche sont calés sur le plancher du collège correspondant. Mais les entreprises pourront <strong>les dépasser librement</strong>.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Minima fixés (ex. Bac+5 = 452,44 = NR 165 × 1,09), mais entreprises libres de proposer plus selon « critères ». Aucun encadrement maxi.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande le <strong>retour des écarts garantis entre niveaux de diplôme</strong> et un <strong>encadrement mini/maxi</strong>. L'écart BTS / CAP est passé de <strong>12 NR en 1995 à 7 NR aujourd'hui</strong> : la valeur du diplôme s'érode.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">À <strong>diplôme égal</strong>, vous serez payé <strong>différemment selon l'entreprise et la région</strong>. Et un Bac+2 vendu plus cher pour cause de pénurie locale écrasera la valeur de votre Bac+3.</div></div>
+        </div>
       </div>
 
       <div class="fo-item">
-        <h4>🆕 Expérience pro à l'embauche <span class="fo-tag">FO seule opposée</span></h4>
-        <p>L'expérience hors IEG sera valorisée par <strong>l'échelon</strong> à l'embauche. <strong>FO est la seule organisation à s'y être opposée</strong> : aucune visibilité sur les modalités pratiques, aucune transparence garantie. Et surtout, valoriser au même niveau une expérience externe et une expérience IEG signifie que <strong>celle des IEG n'aurait pas plus de valeur</strong>.</p>
-        <div class="fo-revend"><strong>Revendication FO :</strong> la PERS 914 suffit. Si dispositif il y a : encadré, transparent, équitable.</div>
+        <h4><span class="fo-emoji">🆕</span> Expérience pro à l'embauche <span class="fo-tag"><span class="fo-name">FO</span> seule opposée</span></h4>
+        <p class="fo-summary">L'expérience hors IEG sera valorisée par l'<strong>échelon</strong> à l'embauche. <span class="fo-name">FO</span> est la <strong>seule organisation</strong> à s'y être opposée.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">13–16 ans d'expérience externe = embauche directe à l'<strong>échelon 7</strong>. Expérience « proche ou similaire », appréciée par l'employeur. <strong>Aucune transparence garantie.</strong></div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande le maintien de la <strong>PERS 914</strong> existante (qui suffit). Si dispositif il y a, qu'il soit <strong>encadré, transparent et équitable</strong>. Valoriser au même niveau une expérience externe et une expérience IEG, c'est dire que <strong>l'expérience IEG ne vaut pas plus</strong> qu'une autre.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Si vous avez <strong>fait votre carrière dans les IEG</strong>, vous pouvez vous retrouver au même échelon qu'un nouveau venu sans connaissance du métier ni du statut. Et la décision se prend sans recours.</div></div>
+        </div>
       </div>
 
       <div class="fo-item">
-        <h4>🛂 Contrôle social affaibli <span class="fo-tag">reporté en CSP</span></h4>
-        <p>Tout le suivi est renvoyé aux <strong>Commissions Secondaires du Personnel</strong>, donc « au bon vouloir des employeurs et de leurs pratiques locales ». Pour les embauches avec expérience pro : aucune garantie sur des éléments factuels. Pour les AIC : seuls le coefficient et le % de hausse seront communiqués.</p>
-        <div class="fo-revend"><strong>Revendication FO :</strong> contrôle social fort, branche, opposable, et clause de revoyure resserrée.</div>
+        <h4><span class="fo-emoji">🛂</span> Contrôle social affaibli <span class="fo-tag">reporté en CSP</span></h4>
+        <p class="fo-summary">Tout le suivi est renvoyé aux Commissions Secondaires du Personnel — donc « au bon vouloir des employeurs et de leurs pratiques locales ».</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Pour les AI : seul le coef + le % de hausse seront communiqués. Pour les embauches expérience pro : <strong>aucune garantie</strong> sur les éléments factuels.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> a revendiqué <strong>jusqu'au bout un contrôle social fort, opposable, au niveau de la branche</strong> — avec une clause de revoyure resserrée et des mécanismes correcteurs si dérive constatée.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Contestation d'une AI ou d'un échelon d'embauche = <strong>recours quasi impossible</strong>. Les écarts de pratique entre entreprises ne pourront pas être corrigés.</div></div>
+        </div>
       </div>
 
       <div class="fo-item">
-        <h4>🔁 Clause de rendez-vous triennale <span class="fo-tag">vigilance</span></h4>
-        <p>Les rendez-vous de suivi passent de 5 à 3 ans (point positif). Mais le contenu reste limité : volume des AI dans les 6 grandes entreprises (EDF SA, ENEDIS, RTE, ENGIE, GRDF, NATRAN), articulation SMIC + 2 %, minima d'embauche. <strong>Aucune mesure correctrice automatique</strong> en cas de dérive.</p>
-        <div class="fo-revend"><strong>Revendication FO :</strong> mécanisme correcteur engageant, et non simple bilan d'étape.</div>
+        <h4><span class="fo-emoji">🔁</span> Clause de rendez-vous triennale <span class="fo-tag">vigilance</span></h4>
+        <p class="fo-summary">Les RDV de suivi passent de 5 à 3 ans (avancée). Mais le contenu reste limité, et aucun mécanisme correcteur automatique n'est prévu en cas de dérive.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Suivi tous les 3 ans : volume des AI dans EDF SA / ENEDIS / RTE / ENGIE / GRDF / NATRAN, articulation SMIC + 2 %, minima d'embauche.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande un <strong>mécanisme correcteur engageant</strong> : si la dérive est constatée, l'accord prévoit automatiquement une mesure de rattrapage chiffrée. Pas un simple bilan d'étape.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Tant qu'aucun mécanisme correcteur n'est inscrit dans le marbre, <strong>une nouvelle négociation</strong> sera nécessaire pour corriger toute dérive — avec le rapport de force du moment.</div></div>
+        </div>
       </div>
 
     </div>
 
     <div class="fo-conclusion">
-      <strong>En synthèse :</strong> l'accord apporte des avancées (échelons 37 / 40 ans, transposition neutre, astreintes + 9 %), mais <strong>laisse intacts</strong> les mécanismes qui tassent la grille depuis 40 ans. FO continue de porter une grille <strong>réellement protectrice du bas, expansive en milieu et fin de carrière</strong>, avec un <strong>contrôle social effectif</strong>.
+      <strong>En synthèse :</strong> l'accord apporte des avancées (échelons 37 / 40 ans, transposition neutre, astreintes + 9 %), mais <strong>laisse intacts</strong> les mécanismes qui tassent la grille depuis 40 ans. <span class="fo-name">FO</span> Énergie continue de porter une grille <strong>réellement protectrice du bas, expansive en milieu et fin de carrière</strong>, avec un <strong>contrôle social effectif</strong>. La signature de l'accord est en cours de consultation auprès des syndicats <span class="fo-name">FO</span>.
     </div>
   </section>
 
