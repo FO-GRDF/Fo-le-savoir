@@ -588,6 +588,17 @@
   body.a11y-mode .fo-callout .fo-callout-title,
   body.a11y-mode .fo-callout p,
   body.a11y-mode .fo-callout strong { color: var(--a11y-txt1) !important; }
+
+  /* Fix : forcer la couleur des callouts FO même quand insérés dans une .card.highlight */
+  .card.highlight .fo-callout { color: #5a1219; }
+  .card.highlight .fo-callout p,
+  .card.highlight .fo-callout .fo-callout-title { color: #5a1219; }
+  .card.highlight .fo-callout p strong,
+  .card.highlight .fo-callout .fo-callout-title { color: #7a0e1c; }
+  .card.highlight .fo-callout strong { color: #7a0e1c; }
+  body.a11y-mode .card.highlight .fo-callout p,
+  body.a11y-mode .card.highlight .fo-callout .fo-callout-title,
+  body.a11y-mode .card.highlight .fo-callout strong { color: var(--a11y-txt1) !important; }
 </style>
 </head>
 <body>
@@ -816,7 +827,7 @@
       <span class="place-icon">⬆️</span>
       <h3>Augmentation individuelle</h3>
       <p>Passage à un coefficient hiérarchique supérieur, avec un <strong>plancher de + 2 %</strong>. Examen prioritaire après 4 ans sans AI.</p>
-      <div class="fo-callout" style="margin-top:10px;"><div class="fo-callout-icon">!</div><div class="fo-callout-body"><div class="fo-callout-title">FO : reconnaissance en baisse</div><p><strong>4,6 %</strong> à l'origine → <strong>2,3 %</strong> → <strong>2 %</strong>. <strong>Revendication FO : 2,5 %.</strong></p></div></div>
+      <div class="fo-callout" style="margin-top:10px;"><div class="fo-callout-icon">!</div><div class="fo-callout-body"><div class="fo-callout-title">FO : reconnaissance en baisse</div><p><strong>Ancien NR (+ 4,6 %)</strong> → <strong>demi-NR (+ 2,3 %)</strong> → <strong>+ 2 %</strong> aujourd'hui. <strong>Revendication <span class="fo-name">FO</span> : 2,5 %.</strong></p></div></div>
       <span class="tag blue">Au mérite</span>
     </div>
     <div class="place-card">
@@ -946,7 +957,7 @@
         <p class="fo-summary">Le minimum d'AI est ramené à 2 %, alors que la grille de 1982 prévoyait + 4,6 %. Chaque accord successif a réduit l'outil de reconnaissance individuelle.</p>
         <div class="fo-three">
           <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">AI = passage à un coefficient supérieur, plancher conventionnel <strong>+ 2 %</strong>. Soit ≈ 60 € sur un salaire de 3 000 €.</div></div>
-          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande un minimum d'AI à <strong>2,5 %</strong> et le retour à un <strong>vrai outil de reconnaissance</strong>. Historique : <strong>4,6 % (1982) → 2,3 % → 2 %</strong>. La reconnaissance individuelle a été divisée par <strong>plus de 2</strong> en 40 ans.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande un minimum d'AI à <strong>2,5 %</strong> et le retour à un <strong>vrai outil de reconnaissance</strong>. Historique de la dévalorisation : <strong>ancien NR (+ 4,6 %) en 1982</strong> → <strong>demi-NR (+ 2,3 %)</strong> → <strong>+ 2 % aujourd'hui</strong>. La reconnaissance individuelle a été divisée par <strong>plus de 2</strong> en 40 ans.</div></div>
           <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Sur une carrière de 40 ans, en moyenne <strong>10 AI</strong> à 0,5 % d'écart : <strong>≈ 5 % de salaire en moins</strong> en fin de carrière, soit <strong>~ 150 € / mois</strong> sur un salaire de 3 000 €.</div></div>
         </div>
       </div>
