@@ -277,19 +277,41 @@
   .calc-res .cr-detail { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 8px; line-height: 1.55; }
 
   .calc-delta {
-    background: var(--or);
-    color: var(--bleu);
-    border-radius: 12px;
-    padding: 14px 18px;
-    margin-top: 14px;
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 1.5;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f5e8 100%);
+    color: #1A1A2E;
+    border: 1px solid rgba(247,221,92,0.55);
+    border-left: 5px solid var(--or);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-top: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.65;
     position: relative;
     z-index: 1;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
   }
-  .calc-delta strong { color: #003b6f; }
+  .calc-delta strong { color: #003b6f; font-weight: 700; }
+  .calc-delta .cd-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .calc-delta .cd-icon { font-size: 22px; }
+  .calc-delta .cd-title { font-family: 'Fraunces', serif; font-weight: 900; font-size: 15.5px; color: #003b6f; flex: 1; min-width: 200px; }
+  .calc-delta .cd-pill { background: var(--bleu); color: #fff; font-weight: 700; font-size: 13px; font-family: 'Fraunces', serif; padding: 4px 12px; border-radius: 24px; letter-spacing: 0.5px; }
+  .calc-delta .cd-numbers { display: flex; align-items: center; gap: 10px; margin: 10px 0 12px; flex-wrap: wrap; }
+  .calc-delta .cd-num { flex: 1; min-width: 130px; background: #fff; border-radius: 10px; padding: 10px 14px; border: 1px solid rgba(0,0,0,0.06); display: flex; flex-direction: column; }
+  .calc-delta .cd-num-old { border-left: 3px solid rgba(0,0,0,0.18); }
+  .calc-delta .cd-num-new { border-left: 3px solid var(--or); background: #fffbef; }
+  .calc-delta .cd-num-lbl { font-size: 10.5px; color: #6b6b6b; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 3px; }
+  .calc-delta .cd-num-val { font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; color: #003b6f; line-height: 1.1; }
+  .calc-delta .cd-num-new .cd-num-val { color: #7a5200; }
+  .calc-delta .cd-arrow { font-family: 'Fraunces', serif; font-size: 22px; color: var(--or); font-weight: 900; flex-shrink: 0; }
+  .calc-delta .cd-line { font-size: 13.5px; color: #1A1A2E; margin: 4px 0; }
+  .calc-delta .cd-line strong { color: #003b6f; }
+  .calc-delta .cd-note { font-size: 12.5px; color: #4a4a46; line-height: 1.55; margin-top: 6px; padding-top: 8px; border-top: 1px dashed rgba(0,0,0,0.1); }
+  .calc-delta .cd-note strong { color: #003b6f; }
+  @media (max-width: 600px){
+    .calc-delta .cd-numbers { flex-direction: column; }
+    .calc-delta .cd-arrow { transform: rotate(90deg); }
+  }
 
   .calc-future {
     margin-top: 18px;
@@ -463,8 +485,20 @@
   body.a11y-mode .card.highlight p { color: var(--a11y-txt4-dark) !important; }
   body.a11y-mode .stat-box, body.a11y-mode .calc-box { background: var(--a11y-dark) !important; }
   body.a11y-mode .stat-box .stat-val, body.a11y-mode .calc-box h3, body.a11y-mode .calc-res .cr-amount, body.a11y-mode .calc-future .cf-row strong, body.a11y-mode .calc-future h4 { color: var(--a11y-dark-txt) !important; }
-  body.a11y-mode .calc-delta { background: var(--a11y-surface) !important; color: var(--a11y-txt1) !important; border: 2px solid var(--a11y-border2) !important; }
-  body.a11y-mode .calc-delta strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .calc-delta { background: var(--a11y-surface) !important; color: var(--a11y-txt1) !important; border: 2px solid var(--a11y-border2) !important; border-left: 5px solid var(--a11y-txt1) !important; box-shadow: none !important; }
+  body.a11y-mode .calc-delta strong,
+  body.a11y-mode .calc-delta .cd-title,
+  body.a11y-mode .calc-delta .cd-line strong,
+  body.a11y-mode .calc-delta .cd-note strong,
+  body.a11y-mode .calc-delta .cd-num-val,
+  body.a11y-mode .calc-delta .cd-num-new .cd-num-val { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .calc-delta .cd-pill { background: var(--a11y-txt1) !important; color: var(--a11y-bg) !important; }
+  body.a11y-mode .calc-delta .cd-num,
+  body.a11y-mode .calc-delta .cd-num-new { background: var(--a11y-surface2) !important; border: 1px solid var(--a11y-border) !important; border-left: 3px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .calc-delta .cd-num-lbl,
+  body.a11y-mode .calc-delta .cd-line,
+  body.a11y-mode .calc-delta .cd-note { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .calc-delta .cd-arrow { color: var(--a11y-txt1) !important; }
   body.a11y-mode .alert { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; border-left: 5px solid var(--a11y-txt2) !important; }
   body.a11y-mode .alert p { color: var(--a11y-txt2) !important; }
   body.a11y-mode .alert strong { color: var(--a11y-txt1) !important; }
@@ -1244,12 +1278,24 @@
     const diffPct = sOld>0 ? (sNew/sOld - 1) * 100 : 0;
     const deltaEl = document.getElementById('delta');
     let txt;
+    function fmtAnc(a){ return a.toLocaleString('fr-FR',{maximumFractionDigits:1}); }
     if (Math.abs(diffEur) < 0.5){
-      txt = `⚖️ <strong>Comparaison à ancienneté égale</strong> (${anc.toLocaleString('fr-FR')} ans dans les deux grilles) : le salaire est <strong>identique</strong>. La transposition est neutre par construction. La progression réelle se fera ensuite au fil des étapes (cf. tableau ci-dessous).`;
+      txt = `<div class="cd-head"><span class="cd-icon">⚖️</span><span class="cd-title">Comparaison à ancienneté égale</span></div>
+        <p class="cd-line">À <strong>${fmtAnc(ancStart)} ans</strong> dans les deux grilles, le salaire est <strong>identique</strong>.</p>
+        <p class="cd-note">La transposition est neutre par construction. La progression réelle suit les étapes de revalorisation (cf. tableau ci-dessous).</p>`;
     } else if (diffEur > 0){
-      txt = `✅ <strong>Comparaison à ancienneté égale</strong> (${anc.toLocaleString('fr-FR')} ans dans les deux grilles) : la nouvelle grille donne <strong>${fmt(sNew)}</strong> contre <strong>${fmt(sOld)}</strong> sur l'ancienne, soit <strong>+ ${fmt(diffEur)} / mois (${pct(diffPct)})</strong>. Cet écart vient de la <strong>réduction d'1 an du seuil d'échelon</strong> — vous accédez plus tôt à un échelon équivalent. Ce gain est encaissé dès le franchissement du seuil, pas à la bascule. La transposition au 1ᵉʳ janv. 2028 reste, elle, neutre (cf. tableau ci-dessous).`;
+      txt = `<div class="cd-head"><span class="cd-icon">✅</span><span class="cd-title">Comparaison à ancienneté égale</span><span class="cd-pill">+ ${pct(diffPct)}</span></div>
+        <div class="cd-numbers">
+          <div class="cd-num cd-num-old"><span class="cd-num-lbl">Ancienne grille</span><span class="cd-num-val">${fmt(sOld)}</span></div>
+          <div class="cd-arrow">→</div>
+          <div class="cd-num cd-num-new"><span class="cd-num-lbl">Nouvelle grille</span><span class="cd-num-val">${fmt(sNew)}</span></div>
+        </div>
+        <p class="cd-line"><strong>+ ${fmt(diffEur)} / mois</strong> à <strong>${fmtAnc(ancStart)} ans</strong> d'ancienneté.</p>
+        <p class="cd-note">Cet écart vient de la <strong>réduction d'1 an du seuil d'échelon</strong> : à ${fmtAnc(ancStart)} ans, vous accédez plus tôt à un échelon équivalent. Le gain est encaissé dès le franchissement du seuil — la transposition au 1ᵉʳ janv. 2028 reste, elle, neutre (cf. tableau ci-dessous).</p>`;
     } else {
-      txt = `ℹ️ <strong>Comparaison à ancienneté égale</strong> : écart ${fmt(diffEur)} (${pct(diffPct)}). L'accord garantit qu'<strong>aucun salarié ne peut voir sa rémunération diminuer du fait de la transposition</strong> — un écart négatif ici provient des arrondis pédagogiques.`;
+      txt = `<div class="cd-head"><span class="cd-icon">ℹ️</span><span class="cd-title">Comparaison à ancienneté égale</span></div>
+        <p class="cd-line">Écart : ${fmt(diffEur)} (${pct(diffPct)}) à <strong>${fmtAnc(ancStart)} ans</strong>.</p>
+        <p class="cd-note">L'accord garantit qu'<strong>aucun salarié ne peut voir sa rémunération diminuer du fait de la transposition</strong>. Un écart négatif ici provient des arrondis pédagogiques.</p>`;
     }
     deltaEl.innerHTML = txt;
 
