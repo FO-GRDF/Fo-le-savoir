@@ -687,7 +687,7 @@
   <div class="section-title"><span class="icon">🧮</span> Calculette : ma rémunération avant / après</div>
   <div class="calc-box">
     <h3>Comparez votre paie : ancienne grille vs. nouvelle grille</h3>
-    <p class="calc-sub">Renseignez votre situation pour estimer votre rémunération principale mensuelle brute (hors 13<sup>e</sup> mois et compléments). Le calcul applique la formule statutaire <strong>R = SNB × (1 + mr) × K/100 × A</strong>.</p>
+    <p class="calc-sub">Renseignez votre situation pour estimer votre rémunération principale mensuelle brute (hors 13<sup>e</sup> mois et compléments). La comparaison <em>« avant / après »</em> est faite <strong>à ancienneté égale</strong> (effet pur de la nouvelle grille). La projection dans le temps en bas tient compte, elle, de l'évolution de votre ancienneté à chaque jalon. Formule statutaire : <strong>R = SNB × (1 + mr) × K/100 × A</strong>.</p>
 
     <div class="calc-form">
       <div class="calc-field">
@@ -1245,11 +1245,11 @@
     const deltaEl = document.getElementById('delta');
     let txt;
     if (Math.abs(diffEur) < 0.5){
-      txt = `⚖️ Salaire <strong>équivalent</strong> à la transposition (${fmt(sNew - sOld)}). C'est l'objectif : la nouvelle grille préserve votre rémunération exactement, puis + 1,8 % se rajoutent en 3 étapes.`;
+      txt = `⚖️ <strong>Comparaison à ancienneté égale</strong> (${anc.toLocaleString('fr-FR')} ans dans les deux grilles) : le salaire est <strong>identique</strong>. La transposition est neutre par construction. La progression réelle se fera ensuite au fil des étapes (cf. tableau ci-dessous).`;
     } else if (diffEur > 0){
-      txt = `✅ Au moment du basculement (1ᵉʳ janvier 2028), votre rémunération principale passe de ${fmt(sOld)} à <strong>${fmt(sNew)}</strong>, soit <strong>${fmt(diffEur)} / mois</strong> (${pct(diffPct)}).`;
+      txt = `✅ <strong>Comparaison à ancienneté égale</strong> (${anc.toLocaleString('fr-FR')} ans dans les deux grilles) : la nouvelle grille donne <strong>${fmt(sNew)}</strong> contre <strong>${fmt(sOld)}</strong> sur l'ancienne, soit <strong>+ ${fmt(diffEur)} / mois (${pct(diffPct)})</strong>. Cet écart vient de la <strong>réduction d'1 an du seuil d'échelon</strong> — vous accédez plus tôt à un échelon équivalent. Ce gain est encaissé dès le franchissement du seuil, pas à la bascule. La transposition au 1ᵉʳ janv. 2028 reste, elle, neutre (cf. tableau ci-dessous).`;
     } else {
-      txt = `ℹ️ Écart constaté : ${fmt(diffEur)} (${pct(diffPct)}). L'accord garantit une rémunération <strong>au moins égale</strong> à la transposition — un écart négatif ici provient des arrondis pédagogiques.`;
+      txt = `ℹ️ <strong>Comparaison à ancienneté égale</strong> : écart ${fmt(diffEur)} (${pct(diffPct)}). L'accord garantit qu'<strong>aucun salarié ne peut voir sa rémunération diminuer du fait de la transposition</strong> — un écart négatif ici provient des arrondis pédagogiques.`;
     }
     deltaEl.innerHTML = txt;
 
