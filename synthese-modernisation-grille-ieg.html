@@ -636,11 +636,19 @@
     <div class="calc-delta" id="delta">—</div>
 
     <div class="calc-future">
-      <h4>📅 Et la revalorisation + 1,8 % en 3 étapes ?</h4>
-      <div class="cf-row" style="font-weight:700; border-bottom:1px solid rgba(255,255,255,0.25);"><div>Échéance</div><div style="text-align:right;">Salaire mensuel</div></div>
-      <div class="cf-row"><div>1ᵉʳ janvier 2028 — bascule (+ 0,6 % grille intégré)</div><div style="text-align:right;"><strong id="s28">—</strong></div></div>
-      <div class="cf-row"><div>1ᵉʳ juillet 2028 — + 0,6 % individuel</div><div style="text-align:right;"><strong id="s28b">—</strong></div></div>
-      <div class="cf-row"><div>1ᵉʳ juillet 2029 — + 0,6 % individuel (cumul + 1,8 %)</div><div style="text-align:right;"><strong id="s29">—</strong></div></div>
+      <h4>📅 Évolution de votre paie au fil des étapes</h4>
+      <p style="font-size:12px; color:rgba(255,255,255,0.65); margin-bottom:10px; line-height:1.5;">Le tableau ci-dessous projette votre salaire mensuel à chaque jalon de l'accord, en tenant compte automatiquement de votre <strong>progression d'ancienneté</strong> (passage d'échelons) et de la revalorisation grille (+ 1,8 %).</p>
+      <div class="cf-row" style="font-weight:700; border-bottom:1px solid rgba(255,255,255,0.25); grid-template-columns: 1.1fr 1fr 0.9fr 1fr;">
+        <div>Échéance</div><div>Ancienneté · Échelon</div><div style="text-align:center;">Évolution</div><div style="text-align:right;">Salaire mensuel</div>
+      </div>
+      <div class="cf-row" id="row-now" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr;"><div>Aujourd'hui</div><div id="anc-now">—</div><div style="text-align:center;" id="evo-now">référence</div><div style="text-align:right;"><strong id="s-now">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr;"><div>1ᵉʳ oct. 2026<br><span style="font-size:11px;opacity:0.7;">Planchers (Maîtrise + 10 %, Cadres + 2,4 %), SMIC + 2 %</span></div><div id="anc-26oct">—</div><div style="text-align:center;" id="evo-26oct">—</div><div style="text-align:right;"><strong id="s-26oct">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr;"><div>1ᵉʳ janv. 2027<br><span style="font-size:11px;opacity:0.7;">Astreintes + 9 %, échelons 37 / 40 ans</span></div><div id="anc-27jan">—</div><div style="text-align:center;" id="evo-27jan">—</div><div style="text-align:right;"><strong id="s-27jan">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr;"><div>1ᵉʳ juil. 2027<br><span style="font-size:11px;opacity:0.7;">+ 0,6 % grille (étape 1)</span></div><div id="anc-27jul">—</div><div style="text-align:center;" id="evo-27jul">—</div><div style="text-align:right;"><strong id="s-27jul">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr; background:rgba(247,221,92,0.08);"><div><strong>1ᵉʳ janv. 2028</strong><br><span style="font-size:11px;opacity:0.7;">Bascule sur la nouvelle grille</span></div><div id="anc-28jan">—</div><div style="text-align:center;" id="evo-28jan">—</div><div style="text-align:right;"><strong id="s-28jan">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr;"><div>1ᵉʳ juil. 2028<br><span style="font-size:11px;opacity:0.7;">+ 0,6 % individuel (étape 2)</span></div><div id="anc-28jul">—</div><div style="text-align:center;" id="evo-28jul">—</div><div style="text-align:right;"><strong id="s-28jul">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr;"><div>1ᵉʳ juil. 2029<br><span style="font-size:11px;opacity:0.7;">+ 0,6 % individuel (étape 3 · cumul + 1,8 %)</span></div><div id="anc-29jul">—</div><div style="text-align:center;" id="evo-29jul">—</div><div style="text-align:right;"><strong id="s-29jul">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr; border-bottom:none; padding-top:10px;"><div style="font-size:11.5px; opacity:0.7;">Hypothèse : SNB et MR constants. Astreintes et primes hors calcul.</div><div></div><div></div><div></div></div>
     </div>
 
     <p class="calc-note">⚠️ Estimation pédagogique sur la base des coefficients officiels en annexe de l'accord. Hors 13<sup>e</sup> mois, primes et accords d'entreprise. Une calculette officielle de branche sera mise à disposition.</p>
@@ -700,14 +708,14 @@
       <tbody>
         <tr><td>0 an (embauche)</td><td>4</td><td>1,090</td><td><strong>1</strong></td><td><strong>1,000</strong></td><td>—</td></tr>
         <tr class="highlight-new"><td>3 ans</td><td>—</td><td>—</td><td><strong>2</strong> <span class="pill green">nouveau</span></td><td><strong>1,020</strong></td><td>+ 2,0 %</td></tr>
-        <tr><td>6 ans</td><td>5</td><td>1,130</td><td>3</td><td>1,037</td><td>+ 1,6 %</td></tr>
-        <tr><td>9,5 ans</td><td>6</td><td>1,150</td><td>4</td><td>1,055</td><td>+ 1,8 %</td></tr>
-        <tr><td>13 ans</td><td>7</td><td>1,180</td><td>5</td><td>1,083</td><td>+ 2,7 %</td></tr>
-        <tr><td>17 ans</td><td>8</td><td>1,220</td><td>6</td><td>1,119</td><td>+ 3,3 %</td></tr>
-        <tr><td>21 ans</td><td>9</td><td>1,260</td><td>7</td><td>1,156</td><td>+ 3,3 %</td></tr>
+        <tr><td>6 ans</td><td>5</td><td>1,130</td><td>3</td><td>1,037</td><td>+ 1,7 %</td></tr>
+        <tr><td>9,5 ans <span class="pill or">−0,5 an</span></td><td>6</td><td>1,150</td><td>4</td><td>1,055</td><td>+ 1,7 %</td></tr>
+        <tr><td>13 ans <span class="pill or">−1 an</span></td><td>7</td><td>1,180</td><td>5</td><td>1,083</td><td>+ 2,7 %</td></tr>
+        <tr><td>17 ans <span class="pill or">−1 an</span></td><td>8</td><td>1,220</td><td>6</td><td>1,119</td><td>+ 3,3 %</td></tr>
+        <tr><td>21 ans <span class="pill or">−1 an</span></td><td>9</td><td>1,260</td><td>7</td><td>1,156</td><td>+ 3,3 %</td></tr>
         <tr><td>25 ans <span class="pill or">−1 an</span></td><td>10</td><td>1,300</td><td>8</td><td>1,193</td><td>+ 3,2 %</td></tr>
         <tr><td>29 ans <span class="pill or">−1 an</span></td><td>11</td><td>1,315</td><td>9</td><td>1,206</td><td>+ 1,1 %</td></tr>
-        <tr><td>33 ans</td><td>12</td><td>1,330</td><td>10</td><td>1,220</td><td>+ 1,2 %</td></tr>
+        <tr><td>33 ans <span class="pill or">−1 an</span></td><td>12</td><td>1,330</td><td>10</td><td>1,220</td><td>+ 1,2 %</td></tr>
         <tr class="highlight-new"><td>37 ans</td><td>—</td><td>—</td><td><strong>11</strong> <span class="pill green">nouveau</span></td><td><strong>1,235</strong></td><td>+ 1,2 %</td></tr>
         <tr class="highlight-new"><td>40 ans</td><td>—</td><td>—</td><td><strong>12</strong> <span class="pill green">nouveau</span></td><td><strong>1,250</strong></td><td>+ 1,2 %</td></tr>
       </tbody>
@@ -964,16 +972,33 @@
   });
   nrSelect.value = "140";
 
+  // Dates clés (référence : aujourd'hui = date courante du navigateur)
+  const NOW = new Date();
+  const D_26OCT = new Date(2026,9,1);   // 1 oct 2026
+  const D_27JAN = new Date(2027,0,1);
+  const D_27JUL = new Date(2027,6,1);
+  const D_28JAN = new Date(2028,0,1);   // bascule
+  const D_28JUL = new Date(2028,6,1);
+  const D_29JUL = new Date(2029,6,1);
+  function yearsBetween(d1,d2){ return (d2-d1)/(365.25*86400000); }
+
+  function lineEch(table, ancStart, dateNow, dateTarget){
+    const delta = Math.max(0, yearsBetween(dateNow, dateTarget));
+    const ancAt = ancStart + delta;
+    const e = findEch(ancAt, table);
+    return { ancAt, e };
+  }
+
   function update(){
     const nr  = nrSelect.value;
-    const anc = Math.max(0, parseFloat(document.getElementById('anc').value) || 0);
+    const ancStart = Math.max(0, parseFloat(document.getElementById('anc').value) || 0);
     const MR  = parseFloat(document.getElementById('mr').value);
     const SNB = parseFloat(document.getElementById('snb').value);
 
     const row = NR_TABLE.find(x => x.nr === nr);
     const ko = row.old, kn = row.new;
-    const eo = findEch(anc, OLD_ECH);
-    const en = findEch(anc, NEW_ECH);
+    const eo = findEch(ancStart, OLD_ECH);
+    const en = findEch(ancStart, NEW_ECH);
     const sOld = computeSalary(SNB, MR, ko, eo.A);
     const sNew = computeSalary(SNB, MR, kn, en.A);
 
@@ -995,10 +1020,72 @@
     }
     deltaEl.innerHTML = txt;
 
-    const sAtSwitch = sNew;
-    document.getElementById('s28').textContent  = fmt(sAtSwitch);
-    document.getElementById('s28b').textContent = fmt(sAtSwitch * 1.006);
-    document.getElementById('s29').textContent  = fmt(sAtSwitch * 1.012 * 1.006);
+    /* ===== Timeline : projection de paie aux dates clés ===== */
+    function ancFmt(a){ return a.toLocaleString('fr-FR',{minimumFractionDigits:1,maximumFractionDigits:1}) + ' ans'; }
+    function deltaTxt(s, ref){
+      if (!ref) return 'référence';
+      const d = s - ref;
+      if (Math.abs(d) < 0.5) return '=';
+      const p = (s/ref - 1) * 100;
+      const sign = d>=0 ? '+' : '';
+      return sign + d.toLocaleString('fr-FR',{minimumFractionDigits:0,maximumFractionDigits:0}) + ' € (' + sign + p.toLocaleString('fr-FR',{minimumFractionDigits:1,maximumFractionDigits:1}) + ' %)';
+    }
+
+    // Aujourd'hui : ancienne grille
+    const tNow  = lineEch(OLD_ECH, ancStart, NOW, NOW);
+    const sNow  = computeSalary(SNB, MR, ko, tNow.e.A);
+
+    // Avant bascule : on reste sur l'ancienne grille (échelons 4-12)
+    const t26   = lineEch(OLD_ECH, ancStart, NOW, D_26OCT);
+    const s26   = computeSalary(SNB, MR, ko, t26.e.A);
+
+    const t27a  = lineEch(OLD_ECH, ancStart, NOW, D_27JAN);
+    const s27a  = computeSalary(SNB, MR, ko, t27a.e.A);
+
+    // 1er juil 2027 : +0,6 % sur la grille (coef hiérarchique × 1,006)
+    const t27b  = lineEch(OLD_ECH, ancStart, NOW, D_27JUL);
+    const s27b  = computeSalary(SNB, MR, ko * 1.006, t27b.e.A);
+
+    // 1er janv 2028 : bascule nouvelle grille — neutre par construction
+    // K nouveau intègre déjà +9% ; à cette date, +0,6 % grille (étape 1) déjà appliqué via ko*1.006 = kn*1.006/1.09 = kn*(1.006)... on conserve K_new × 1.006/1.09 ? Non, la transposition est neutre : K_new × A_new ≈ K_old × A_old. On utilise donc K_new × 1.006 (étape 1 déjà intégrée le 1er juil 2027) pour produire le même salaire mécanique.
+    const t28a  = lineEch(NEW_ECH, ancStart, NOW, D_28JAN);
+    const s28a  = computeSalary(SNB, MR, kn * 1.006, t28a.e.A);
+
+    // 1er juil 2028 : +0,6 % individuel (étape 2)
+    const t28b  = lineEch(NEW_ECH, ancStart, NOW, D_28JUL);
+    const s28b  = computeSalary(SNB, MR, kn * 1.012, t28b.e.A);
+
+    // 1er juil 2029 : +0,6 % individuel (étape 3 · cumul +1,8 %)
+    const t29   = lineEch(NEW_ECH, ancStart, NOW, D_29JUL);
+    const s29   = computeSalary(SNB, MR, kn * 1.018, t29.e.A);
+
+    document.getElementById('anc-now').textContent  = ancFmt(tNow.ancAt) + ' · ' + tNow.e.label;
+    document.getElementById('s-now').textContent    = fmt(sNow);
+    document.getElementById('evo-now').textContent  = 'référence';
+
+    document.getElementById('anc-26oct').textContent= ancFmt(t26.ancAt) + ' · ' + t26.e.label;
+    document.getElementById('s-26oct').textContent  = fmt(s26);
+    document.getElementById('evo-26oct').textContent= deltaTxt(s26, sNow);
+
+    document.getElementById('anc-27jan').textContent= ancFmt(t27a.ancAt) + ' · ' + t27a.e.label;
+    document.getElementById('s-27jan').textContent  = fmt(s27a);
+    document.getElementById('evo-27jan').textContent= deltaTxt(s27a, sNow);
+
+    document.getElementById('anc-27jul').textContent= ancFmt(t27b.ancAt) + ' · ' + t27b.e.label;
+    document.getElementById('s-27jul').textContent  = fmt(s27b);
+    document.getElementById('evo-27jul').textContent= deltaTxt(s27b, sNow);
+
+    document.getElementById('anc-28jan').textContent= ancFmt(t28a.ancAt) + ' · ' + t28a.e.label;
+    document.getElementById('s-28jan').textContent  = fmt(s28a);
+    document.getElementById('evo-28jan').textContent= deltaTxt(s28a, sNow);
+
+    document.getElementById('anc-28jul').textContent= ancFmt(t28b.ancAt) + ' · ' + t28b.e.label;
+    document.getElementById('s-28jul').textContent  = fmt(s28b);
+    document.getElementById('evo-28jul').textContent= deltaTxt(s28b, sNow);
+
+    document.getElementById('anc-29jul').textContent= ancFmt(t29.ancAt) + ' · ' + t29.e.label;
+    document.getElementById('s-29jul').textContent  = fmt(s29);
+    document.getElementById('evo-29jul').textContent= deltaTxt(s29, sNow);
   }
   ['nr','anc','mr','snb'].forEach(id => document.getElementById(id).addEventListener('input', update));
   update();
