@@ -729,8 +729,20 @@
         <select id="nr"></select>
       </div>
       <div class="calc-field">
+        <label for="ancMode">Mon ancienneté — saisie</label>
+        <select id="ancMode">
+          <option value="years" selected>En nombre d'années</option>
+          <option value="date">Par date d'entrée IEG</option>
+        </select>
+      </div>
+      <div class="calc-field" id="ancYearsField">
         <label for="anc">Ancienneté (années)</label>
         <input id="anc" type="number" min="0" max="45" step="1" value="10">
+      </div>
+      <div class="calc-field" id="ancDateField" style="display:none;">
+        <label for="ancDate">Date d'entrée dans les IEG</label>
+        <input id="ancDate" type="date" value="2016-05-01">
+        <div id="ancDateInfo" style="font-size:11px; color:rgba(255,255,255,0.65); margin-top:6px; line-height:1.4;">—</div>
       </div>
       <div class="calc-field">
         <label for="mr">Majoration résidentielle</label>
@@ -741,7 +753,7 @@
         </select>
       </div>
       <div class="calc-field">
-        <label for="snb">SNB (€)</label>
+        <label for="snb">SNB (€) — barème FO 2026</label>
         <input id="snb" type="number" min="500" max="700" step="0.01" value="543.18">
       </div>
     </div>
@@ -834,7 +846,7 @@
       <tbody>
         <tr><td>0 an (embauche)</td><td>4</td><td>1,090</td><td><strong>1</strong></td><td><strong>1,000</strong></td><td>—</td></tr>
         <tr class="highlight-new"><td>3 ans</td><td>—</td><td>—</td><td><strong>2</strong> <span class="pill green">nouveau</span></td><td><strong>1,020</strong></td><td>+ 2,0 %</td></tr>
-        <tr><td>6 ans</td><td>5</td><td>1,130</td><td>3</td><td>1,037</td><td>+ 1,7 %</td></tr>
+        <tr><td>6 ans</td><td>5</td><td>1,120</td><td>3</td><td>1,037</td><td>+ 1,7 %</td></tr>
         <tr><td>9,5 ans <span class="pill or">−0,5 an</span></td><td>6</td><td>1,150</td><td>4</td><td>1,055</td><td>+ 1,7 %</td></tr>
         <tr><td>13 ans <span class="pill or">−1 an</span></td><td>7</td><td>1,180</td><td>5</td><td>1,083</td><td>+ 2,7 %</td></tr>
         <tr><td>17 ans <span class="pill or">−1 an</span></td><td>8</td><td>1,220</td><td>6</td><td>1,119</td><td>+ 3,3 %</td></tr>
@@ -1197,9 +1209,10 @@
   /* CALCULETTE */
   const NR_TABLE = [{"nr":"030","old":232.2,"new":272.61},{"nr":"035","old":236.5,"new":272.61},{"nr":"040","old":240.9,"new":272.61},{"nr":"045","old":245.5,"new":272.61},{"nr":"050","old":250.1,"new":272.61},{"nr":"055","old":254.7,"new":277.79},{"nr":"060","old":259.4,"new":282.88},{"nr":"065","old":264.4,"new":288.26},{"nr":"070","old":269.7,"new":294.11},{"nr":"075","old":274.6,"new":299.41},{"nr":"080","old":279.3,"new":304.58},{"nr":"085","old":285.5,"new":311.31},{"nr":"090","old":291.7,"new":317.95},{"nr":"095","old":297.9,"new":325.02},{"nr":"100","old":304.3,"new":331.88},{"nr":"105","old":311.1,"new":339.3},{"nr":"110","old":318.1,"new":346.84},{"nr":"115","old":325.7,"new":355.23},{"nr":"120","old":334.4,"new":364.58},{"nr":"125","old":342.5,"new":373.46},{"nr":"130","old":350.6,"new":382.15},{"nr":"135","old":359,"new":391.43},{"nr":"140","old":367.6,"new":400.92},{"nr":"145","old":376.5,"new":410.65},{"nr":"150","old":385.5,"new":420.61},{"nr":"155","old":394.5,"new":430.39},{"nr":"160","old":405.2,"new":441.71},{"nr":"165","old":414.7,"new":452.44},{"nr":"170","old":424.6,"new":462.97},{"nr":"175","old":434.8,"new":474.2},{"nr":"180","old":445.3,"new":485.73},{"nr":"185","old":455.9,"new":497.03},{"nr":"190","old":466.9,"new":509.11},{"nr":"195","old":478.1,"new":521.48},{"nr":"200","old":489.6,"new":534.14},{"nr":"205","old":501.5,"new":547.1},{"nr":"210","old":513.9,"new":560.37},{"nr":"215","old":526.5,"new":573.98},{"nr":"220","old":539.4,"new":588.52},{"nr":"225","old":552.9,"new":602.8},{"nr":"230","old":566.5,"new":618.05},{"nr":"235","old":580.6,"new":633.07},{"nr":"240","old":598.5,"new":652.99},{"nr":"245","old":613.2,"new":668.83},{"nr":"250","old":628.3,"new":685.08},{"nr":"255","old":643.9,"new":702.4},{"nr":"260","old":659.8,"new":719.47},{"nr":"265","old":676.2,"new":737.66},{"nr":"270","old":692.9,"new":755.57},{"nr":"275","old":709.9,"new":773.92},{"nr":"280","old":727.5,"new":793.5},{"nr":"285","old":744,"new":811.13},{"nr":"290","old":760.7,"new":829.17},{"nr":"295","old":777.6,"new":847.61},{"nr":"300","old":794.9,"new":866.44},{"nr":"305","old":812.6,"new":886.6},{"nr":"310","old":830.7,"new":906.31},{"nr":"315","old":849.3,"new":926.46},{"nr":"320","old":868.5,"new":947.06},{"nr":"325","old":887.4,"new":968.11},{"nr":"330","old":906.7,"new":988.64},{"nr":"340","old":929,"new":1012.65},{"nr":"350","old":949.6,"new":1035.16},{"nr":"355","old":971.4,"new":1059.23},{"nr":"360","old":993.8,"new":1083.85},{"nr":"365","old":1016.7,"new":1109.06},{"nr":"370","old":1040,"new":1133.72},{"nr":"CA","old":842.9,"new":919.08},{"nr":"CB","old":862.1,"new":940.45},{"nr":"DA","old":881.8,"new":961.36},{"nr":"DB","old":901.4,"new":982.73},{"nr":"EA","old":921.6,"new":1004.59},{"nr":"FA","old":951.5,"new":1037.23},{"nr":"GA","old":980.5,"new":1068.8},{"nr":"HA","old":1010.6,"new":1102.44},{"nr":"HB","old":1033.8,"new":1126.94},{"nr":"IA","old":1057.6,"new":1153.14},{"nr":"IB","old":1081.9,"new":1179.96},{"nr":"JA","old":1106.9,"new":1207.39},{"nr":"JB","old":1132.3,"new":1234.24},{"nr":"KA","old":1158.4,"new":1247.88},{"nr":"KB","old":1185,"new":1247.88}];
 
+  /* Grille des échelons d'ancienneté en vigueur (barème FO Énergie au 1er janvier 2026) */
   const OLD_ECH = [
     {min:0,  max:6,  ech:4,  A:1.090, label:"Échelon 4"},
-    {min:6,  max:10, ech:5,  A:1.130, label:"Échelon 5"},
+    {min:6,  max:10, ech:5,  A:1.120, label:"Échelon 5"},
     {min:10, max:14, ech:6,  A:1.150, label:"Échelon 6"},
     {min:14, max:18, ech:7,  A:1.180, label:"Échelon 7"},
     {min:18, max:22, ech:8,  A:1.220, label:"Échelon 8"},
@@ -1256,9 +1269,50 @@
     return { ancAt, e };
   }
 
+  /* Calcule l'ancienneté en années à partir des champs (selon le mode choisi) */
+  function getAncienneteYears(){
+    const mode = document.getElementById('ancMode').value;
+    if (mode === 'date'){
+      const d = document.getElementById('ancDate').value;
+      if (!d) return 0;
+      const entryDate = new Date(d);
+      if (isNaN(entryDate.getTime())) return 0;
+      const yrs = Math.max(0, yearsBetween(entryDate, NOW));
+      const info = document.getElementById('ancDateInfo');
+      const dispYears = Math.floor(yrs);
+      const dispMonths = Math.floor((yrs - dispYears) * 12);
+      if (info) info.textContent = `Soit ${yrs.toLocaleString('fr-FR',{maximumFractionDigits:1})} ans (${dispYears} an${dispYears>1?'s':''} et ${dispMonths} mois) au ${NOW.toLocaleDateString('fr-FR')}.`;
+      return yrs;
+    }
+    return Math.max(0, parseFloat(document.getElementById('anc').value) || 0);
+  }
+
+  /* Bascule l'affichage des champs selon le mode années / date */
+  function toggleAncMode(){
+    const mode = document.getElementById('ancMode').value;
+    document.getElementById('ancYearsField').style.display = (mode === 'years') ? '' : 'none';
+    document.getElementById('ancDateField').style.display  = (mode === 'date')  ? '' : 'none';
+    /* Synchronisation : si on bascule vers "date", on déduit la date à partir des années saisies. Si on bascule vers "années", on déduit les années à partir de la date. */
+    if (mode === 'date'){
+      const yrs = parseFloat(document.getElementById('anc').value) || 0;
+      const ms = yrs * 365.25 * 86400000;
+      const d = new Date(NOW.getTime() - ms);
+      document.getElementById('ancDate').value = d.toISOString().slice(0,10);
+    } else {
+      const dStr = document.getElementById('ancDate').value;
+      if (dStr){
+        const d = new Date(dStr);
+        if (!isNaN(d.getTime())){
+          const yrs = Math.max(0, yearsBetween(d, NOW));
+          document.getElementById('anc').value = Math.round(yrs);
+        }
+      }
+    }
+  }
+
   function update(){
     const nr  = nrSelect.value;
-    const ancStart = Math.max(0, parseFloat(document.getElementById('anc').value) || 0);
+    const ancStart = getAncienneteYears();
     const MR  = parseFloat(document.getElementById('mr').value);
     const SNB = parseFloat(document.getElementById('snb').value);
 
@@ -1366,7 +1420,16 @@
     document.getElementById('s-29jul').textContent  = fmt(s29);
     document.getElementById('evo-29jul').textContent= deltaTxt(s29, sNow);
   }
-  ['nr','anc','mr','snb'].forEach(id => document.getElementById(id).addEventListener('input', update));
+  ['nr','anc','mr','snb','ancDate'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', update);
+  });
+  document.getElementById('ancMode').addEventListener('change', () => { toggleAncMode(); update(); });
+  /* Initialisation : on calcule la date d'entrée par défaut à partir des 10 ans saisis */
+  toggleAncMode();
+  /* Re-bascule pour rester sur le mode années par défaut tout en synchronisant la date */
+  document.getElementById('ancMode').value = 'years';
+  toggleAncMode();
   update();
 </script>
 </body>
