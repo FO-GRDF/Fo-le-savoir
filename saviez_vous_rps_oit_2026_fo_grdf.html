@@ -308,10 +308,8 @@
     gap: 16px;
     margin-bottom: 32px;
   }
-  .gollac-grid { isolation: isolate; }
   .rps-card {
     position: relative;
-    z-index: 1;
     background: var(--blanc);
     border-radius: 16px;
     padding: 22px 20px 18px;
@@ -329,7 +327,7 @@
   .rps-card:hover,
   .rps-card:focus-visible,
   .rps-card:focus-within,
-  .rps-card.is-open { z-index: 100; }
+  .rps-card.is-open { z-index: 9999; }
   .rps-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,59,111,.12); }
   .rps-card:focus-visible { outline: 3px solid var(--or); outline-offset: 3px; }
   .rps-card .rps-num {
@@ -392,7 +390,7 @@
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    z-index: 200;
+    z-index: 10000;
     left: 50%;
     top: calc(100% + 12px);
     transform: translateX(-50%) translateY(-6px);
