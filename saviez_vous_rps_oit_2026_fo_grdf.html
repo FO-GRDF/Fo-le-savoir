@@ -513,6 +513,141 @@
   }
 
   /* ═══════════════════════════════════════════════
+     RÉSEAU SOUFFRANCE ET TRAVAIL — CARTE D'AIDE
+  ═══════════════════════════════════════════════ */
+  .help-network-card {
+    background: linear-gradient(135deg, #28b193 0%, #1e8a70 100%);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 32px;
+    color: #fff;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+  }
+  .help-network-card::after {
+    content: '＋';
+    position: absolute;
+    right: -18px; top: -28px;
+    font-family: 'Fraunces', serif;
+    font-size: 140px;
+    font-weight: 900;
+    color: rgba(255,255,255,.07);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .help-network-card .hnc-icon {
+    flex-shrink: 0;
+    width: 48px; height: 48px;
+    background: rgba(255,255,255,.18);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+  }
+  .help-network-card .hnc-body { flex: 1; min-width: 0; }
+  .help-network-card .hnc-tag {
+    display: inline-block;
+    background: var(--or);
+    color: #1e8a70;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+  }
+  .help-network-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .help-network-card p {
+    font-size: 13.5px;
+    color: rgba(255,255,255,.92);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .help-network-card p strong { color: var(--or); font-weight: 700; }
+  .help-network-card .hnc-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .help-network-card .hnc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,.14);
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,.32);
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+  }
+  .help-network-card .hnc-btn:hover {
+    background: rgba(255,255,255,.24);
+    transform: translateY(-2px);
+  }
+  .help-network-card .hnc-btn.primary {
+    background: var(--or);
+    color: #1e8a70;
+    border-color: var(--or);
+    font-weight: 700;
+  }
+  .help-network-card .hnc-btn.primary:hover {
+    background: #fde9a8;
+    color: #1e8a70;
+  }
+  @media (max-width: 600px) {
+    .help-network-card { flex-direction: column; padding: 20px 22px; }
+    .help-network-card .hnc-actions .hnc-btn { width: 100%; justify-content: center; }
+  }
+
+  /* a11y mode — help-network-card (palette neutre gris chauds) */
+  body.a11y-mode .help-network-card {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .help-network-card::after { display: none !important; }
+  body.a11y-mode .help-network-card .hnc-icon {
+    background: rgba(255,255,255,.08) !important;
+    border: 1px solid rgba(255,255,255,.2) !important;
+  }
+  body.a11y-mode .help-network-card .hnc-tag {
+    background: var(--a11y-surface) !important;
+    color: var(--a11y-txt1) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .help-network-card h3 {
+    color: var(--a11y-dark-txt) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .help-network-card p {
+    color: var(--a11y-txt4-dark) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .help-network-card p strong { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .help-network-card .hnc-btn {
+    background: rgba(255,255,255,.06) !important;
+    color: var(--a11y-dark-txt) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .help-network-card .hnc-btn.primary {
+    background: var(--a11y-surface) !important;
+    color: var(--a11y-txt1) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+
+  /* ═══════════════════════════════════════════════
      6 FACTEURS GOLLAC — MODE LECTURE UNIVERSELLE
   ═══════════════════════════════════════════════ */
   body.a11y-mode .rps-card {
@@ -2629,7 +2764,7 @@
     Les 6 facteurs de RPS selon Gollac
   </div>
   <p style="font-size:14px; color:var(--gris); margin: -8px 0 22px; line-height:1.65;">
-    <strong style="color:var(--bleu);">Survolez (ou touchez)</strong> chaque facteur pour découvrir des <strong>exemples concrets vécus dans le tertiaire</strong> — bureaux GRDF, services centraux, plateaux d'agence clientèle, fonctions support.
+    <strong style="color:var(--bleu);">Survolez (ou touchez)</strong> chaque facteur pour découvrir des <strong>exemples concrets vécus en fonctions centrales GRDF</strong> — sièges, directions nationales, services support, fonctions transverses.
   </p>
 
   <div class="gollac-grid" role="list" aria-label="Les 6 facteurs de risques psychosociaux selon Gollac">
@@ -2643,9 +2778,10 @@
       <p>Surcharge, délais intenables, interruptions permanentes, débordements sur la vie personnelle.</p>
       <span class="rps-hint">Voir des exemples</span>
       <div class="rps-tooltip" id="rps-tip-1" role="tooltip">
-        <h4>Exemples — Tertiaire</h4>
+        <h4>Exemples — Fonctions centrales GRDF</h4>
         <ul>
-          <li>Réunions enchaînées de 9h à 18h sans pause pour traiter les mails</li>
+          <li><strong>Cadres au forfait jours</strong> qui enchaînent des journées de 10 à 12 h, week-ends compris, sans décompte effectif du temps réellement travaillé</li>
+          <li>Réunions enchaînées de 9 h à 18 h sans pause pour traiter mails et dossiers de fond</li>
           <li>Objectifs annuels révisés à la hausse en cours d'année sans moyens supplémentaires</li>
           <li>Reporting hebdomadaire qui empiète systématiquement sur le week-end</li>
           <li>Multiples demandes urgentes simultanées de plusieurs N+1 / clients internes</li>
@@ -2662,7 +2798,7 @@
       <p>Devoir cacher ses émotions, gérer la colère ou la détresse d'autrui, peur de mal faire.</p>
       <span class="rps-hint">Voir des exemples</span>
       <div class="rps-tooltip" id="rps-tip-2" role="tooltip">
-        <h4>Exemples — Tertiaire</h4>
+        <h4>Exemples — Fonctions centrales GRDF</h4>
         <ul>
           <li>Conseiller·ère clientèle qui doit rester souriant·e face à un client agressif</li>
           <li>Manager qui annonce un plan de réorganisation auquel il/elle ne croit pas</li>
@@ -2681,12 +2817,13 @@
       <p>Procédures rigides, micro-management, impossibilité de décider de son rythme ou de ses méthodes.</p>
       <span class="rps-hint">Voir des exemples</span>
       <div class="rps-tooltip" id="rps-tip-3" role="tooltip">
-        <h4>Exemples — Tertiaire</h4>
+        <h4>Exemples — Fonctions centrales GRDF</h4>
         <ul>
-          <li>Scripts d'appel imposés mot pour mot, sans marge d'adaptation au client</li>
-          <li>Logiciel métier qui bloque toute action sans validation hiérarchique</li>
-          <li>Pause toilettes ou pause café chronométrée et tracée</li>
+          <li><strong>Logiciels métiers à la maille 1</strong> qui nationalisent les activités et imposent les mêmes process à tous les territoires, sans tenir compte des spécificités locales ou de l'expertise métier</li>
+          <li>Procédures et scripts imposés mot pour mot, sans marge d'adaptation à la situation</li>
+          <li>Outil qui bloque toute action sans validation hiérarchique formelle</li>
           <li>Télétravail accordé puis retiré arbitrairement sans concertation</li>
+          <li>Réorganisations qui dépossèdent les agents de leur savoir-faire historique</li>
         </ul>
       </div>
     </button>
@@ -2700,7 +2837,7 @@
       <p>Manque de soutien, conflits, manque de reconnaissance, comportements déplacés ou harcèlement.</p>
       <span class="rps-hint">Voir des exemples</span>
       <div class="rps-tooltip" id="rps-tip-4" role="tooltip">
-        <h4>Exemples — Tertiaire</h4>
+        <h4>Exemples — Fonctions centrales GRDF</h4>
         <ul>
           <li>Collègue mis·e à l'écart des réunions ou des fils de discussion clés sur Teams</li>
           <li>Évaluation annuelle déconnectée du travail réellement fourni</li>
@@ -2719,7 +2856,7 @@
       <p>Qualité empêchée, devoir faire un travail qu'on désapprouve, conflits éthiques quotidiens.</p>
       <span class="rps-hint">Voir des exemples</span>
       <div class="rps-tooltip" id="rps-tip-5" role="tooltip">
-        <h4>Exemples — Tertiaire</h4>
+        <h4>Exemples — Fonctions centrales GRDF</h4>
         <ul>
           <li>Devoir vendre un service / contrat dont on sait qu'il est inadapté au client</li>
           <li>Bâcler un dossier par manque de temps alors qu'on sait pouvoir mieux faire</li>
@@ -2738,7 +2875,7 @@
       <p>Réorganisations à répétition, peur du déclassement, incertitude sur l'avenir du poste ou du métier.</p>
       <span class="rps-hint">Voir des exemples</span>
       <div class="rps-tooltip" id="rps-tip-6" role="tooltip">
-        <h4>Exemples — Tertiaire</h4>
+        <h4>Exemples — Fonctions centrales GRDF</h4>
         <ul>
           <li>Annonce répétée de plans de transformation, fermetures de sites ou mobilités forcées</li>
           <li>Externalisation progressive des activités support (paie, IT, comptabilité)</li>
@@ -2754,6 +2891,39 @@
   <div class="alert green">
     <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="Action FO"><span class="a11y-emoji">🛡️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9,12 11,14 15,10"/></svg></span></div>
     <p><strong>Vous reconnaissez une situation ? Vous n'êtes pas seul·e.</strong> Les RPS ne sont <strong>jamais</strong> une faiblesse personnelle : ils relèvent de l'<strong>organisation du travail</strong>, et l'employeur a une <strong>obligation légale de prévention</strong> (art. L4121-1 du Code du travail). FO GRDF vous accompagne pour signaler, faire reconnaître et faire évoluer la situation, en mobilisant le DUERP, la CSSCT, la médecine du travail et — si nécessaire — le droit d'alerte.</p>
+  </div>
+
+  <!-- ═══════════ RÉSEAU SOUFFRANCE ET TRAVAIL ═══════════ -->
+  <div class="help-network-card">
+    <div class="hnc-icon" aria-hidden="true">
+      <span class="a11y-emoji">🤝</span>
+      <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="8.5" cy="7" r="4"/>
+        <path d="M20 8v6M23 11h-6"/>
+      </svg>
+    </div>
+    <div class="hnc-body">
+      <span class="hnc-tag">Vous vous sentez concerné(e) ?</span>
+      <h3>Le Réseau Souffrance et Travail</h3>
+      <p>Un réseau national de <strong>professionnels formés à la souffrance au travail</strong> (psychologues, médecins du travail, avocats, consultants…) fondé par <strong>Marie Pezé</strong>. Ils écoutent, conseillent et orientent en toute confidentialité, sans lien avec votre employeur.</p>
+      <div class="hnc-actions">
+        <a class="hnc-btn primary" href="https://www.souffrance-et-travail.com" target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true">
+            <span class="a11y-emoji">🌐</span>
+            <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </span>
+          souffrance-et-travail.com
+        </a>
+        <a class="hnc-btn" href="https://www.souffrance-et-travail.com/aide-pratique/trouver-un-pro/" target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true">
+            <span class="a11y-emoji">📍</span>
+            <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          Trouver un praticien près de chez vous
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- ═══════════ SECTION FOND SOMBRE — RÉFLEXES À AVOIR ═══════════ -->
