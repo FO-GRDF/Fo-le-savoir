@@ -1,0 +1,2769 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide des EPI 2026 — Catalogue interactif · FO GRDF</title>
+<meta name="description" content="Guide syndical FO GRDF des Équipements de Protection Individuelle (EPI) disponibles dans le nouveau marché CNATA001 — Groupe RG. Catalogue exhaustif et interactif pour les salariés.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script data-goatcounter="https://fo-grdf.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+  :root {
+    --bleu: #019cda;
+    --bleu-fonce: #017fb1;
+    --or: #f7dd5c;
+    --or-clair: #fde8ea;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --rouge-fo: #c0303a;
+    --rouge-fo-fonce: #7a0e1c;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --gris-clair: #E5E5E5;
+    --texte: #1A1A2E;
+    /* Palette accessibilité daltoniens (Tol Bright) */
+    --a11y-bg: #FFFFFF;
+    --a11y-text: #000000;
+    --a11y-blue: #4477AA;
+    --a11y-cyan: #66CCEE;
+    --a11y-green: #228833;
+    --a11y-yellow: #CCBB44;
+    --a11y-red: #EE6677;
+    --a11y-purple: #AA3377;
+    --a11y-grey: #BBBBBB;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    position: relative;
+    background: linear-gradient(135deg, #019cda 0%, #017fb1 60%, #015a82 100%);
+    border-radius: 22px;
+    padding: 44px 48px 40px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    color: white;
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(247,221,92,0.25) 0%, transparent 70%);
+  }
+  .header .badge {
+    display: inline-block;
+    background: var(--or);
+    color: var(--bleu-fonce);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 40px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+  }
+  .header h1 em { color: var(--or); font-style: italic; }
+  .header .subtitle {
+    margin-top: 14px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.82);
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+  }
+  .header .meta {
+    margin-top: 22px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .header .meta span {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.92);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dot { width: 8px; height: 8px; background: #4ADE80; border-radius: 50%; }
+
+  /* ─── BOUTON ACCESSIBILITÉ ─── */
+  .a11y-btn-wrap {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1000;
+  }
+  .a11y-btn {
+    background: var(--blanc);
+    border: 2px solid var(--bleu);
+    color: var(--bleu);
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+  }
+  .a11y-btn:hover { background: var(--bleu); color: white; }
+  .a11y-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+  /* ─── INTRO ─── */
+  .intro {
+    background: var(--blanc);
+    border-radius: 18px;
+    padding: 32px 36px;
+    margin-bottom: 24px;
+    border-left: 6px solid var(--bleu);
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #2a2a2a;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  }
+  .intro strong { color: var(--bleu); }
+  .intro h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--bleu);
+    margin-bottom: 12px;
+  }
+
+  /* ─── ALERTE FO (PHARE) ─── */
+  .fo-manifest {
+    background: linear-gradient(135deg, var(--rouge-fo) 0%, var(--rouge-fo-fonce) 100%);
+    color: white;
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fo-manifest::after {
+    content: "FO";
+    position: absolute;
+    right: -20px; bottom: -60px;
+    font-family: 'Fraunces', serif;
+    font-size: 240px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+  }
+  .fo-manifest h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .fo-manifest h2 em { color: var(--or); font-style: italic; }
+  .fo-manifest p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+  .fo-manifest p:last-child { margin-bottom: 0; }
+  .fo-manifest strong { color: var(--or); }
+
+  /* ─── FOURNISSEURS ─── */
+  .suppliers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .supplier {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 26px;
+    border-top: 5px solid var(--bleu);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .supplier.alt { border-top-color: var(--vert); }
+  .supplier h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--bleu);
+    margin-bottom: 8px;
+  }
+  .supplier.alt h3 { color: var(--vert); }
+  .supplier p { font-size: 13.5px; color: var(--gris); line-height: 1.65; }
+  .supplier ul { margin-top: 8px; padding-left: 18px; }
+  .supplier li { font-size: 13px; color: #444; line-height: 1.55; margin-bottom: 3px; }
+
+  /* ─── BARRE CONTRÔLE ─── */
+  .control-bar {
+    background: var(--blanc);
+    border-radius: 18px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .control-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .search-box {
+    flex: 1;
+    min-width: 220px;
+    position: relative;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 11px 14px 11px 40px;
+    border: 2px solid var(--gris-clair);
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    transition: border 0.2s;
+  }
+  .search-box input:focus { outline: none; border-color: var(--bleu); }
+  .search-box svg {
+    position: absolute;
+    left: 12px; top: 50%;
+    transform: translateY(-50%);
+    width: 18px; height: 18px;
+    color: var(--gris);
+    stroke: currentColor; fill: none; stroke-width: 2;
+  }
+  .compare-btn {
+    background: var(--bleu);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 11px 18px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+  .compare-btn:hover { background: var(--bleu-fonce); }
+  .compare-btn:disabled { background: var(--gris-clair); color: var(--gris); cursor: not-allowed; }
+  .compare-btn .count {
+    background: var(--or);
+    color: var(--bleu-fonce);
+    border-radius: 14px;
+    padding: 1px 8px;
+    font-size: 11.5px;
+    font-weight: 800;
+  }
+  .arg-btn {
+    background: var(--rouge-fo);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 11px 18px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+  .arg-btn:hover { background: var(--rouge-fo-fonce); }
+
+  .filters-row {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .filter-group label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gris);
+    font-weight: 700;
+  }
+  .filter-group select {
+    padding: 8px 32px 8px 12px;
+    border: 2px solid var(--gris-clair);
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-family: 'DM Sans', sans-serif;
+    background: white;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23019cda' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  .filter-group select:focus { outline: none; border-color: var(--bleu); }
+
+  .reset-btn {
+    background: transparent;
+    color: var(--rouge);
+    border: 1.5px solid var(--rouge);
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: all 0.2s;
+  }
+  .reset-btn:hover { background: var(--rouge); color: white; }
+
+  .results-info {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--gris);
+  }
+  .results-info b { color: var(--bleu); font-weight: 700; }
+
+  /* ─── GRILLE PRODUITS — STYLE CATALOGUE PREMIUM ─── */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 22px;
+    margin-bottom: 40px;
+  }
+  .product {
+    background: var(--blanc);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .product:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(1,156,218,0.18), 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .product.selected {
+    outline: 3px solid var(--or);
+    outline-offset: -3px;
+  }
+  .product-img {
+    position: relative;
+    background: linear-gradient(135deg, #fafbfc 0%, #f0f4f8 100%);
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+  }
+  .product-img::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.7) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .product-img img.real {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.12));
+    z-index: 1;
+    position: relative;
+  }
+  .product:hover .product-img img.real { transform: scale(1.08) rotate(-1deg); }
+  .product-img .ico-wrap {
+    width: 110px; height: 110px;
+    background: var(--blanc);
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(1,156,218,0.18);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bleu);
+    z-index: 1;
+  }
+  .product-img .ico-wrap svg { width: 60px; height: 60px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+  .product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--bleu);
+    color: white;
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 3;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .product-badge.is { background: var(--rouge); }
+  .product-badge.haut { background: var(--vert); }
+  .product-badge.chim { background: #8b5cf6; }
+  .product-badge.elec { background: #f59e0b; }
+  .product-badge.soud { background: #ef333e; }
+  .product-badge.froid { background: #0ea5e9; }
+
+  .product-tier {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    z-index: 3;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .product-tier.premium {
+    background: linear-gradient(135deg, #f7dd5c 0%, #d4b400 100%);
+    color: #5a4000;
+  }
+  .product-tier.premium::before { content: '★ '; }
+  .product-tier.standard { background: rgba(255,255,255,0.92); color: #444; }
+  .product-tier.eco { background: rgba(40,177,147,0.95); color: white; }
+
+  .product-supplier-tag {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--bleu);
+    color: white;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 4px 10px 4px 14px;
+    border-top-left-radius: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 3;
+  }
+
+  .product-body {
+    padding: 16px 18px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-cat {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: var(--bleu);
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .product-name {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--texte);
+    line-height: 1.2;
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+  }
+  .product-brand {
+    font-size: 11.5px;
+    color: var(--gris);
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+  .product-shortdesc {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .product-bottom {
+    margin-top: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .product-price {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--bleu);
+    line-height: 1;
+  }
+  .product-price small {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gris);
+    margin-left: 2px;
+  }
+  .product-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 6px;
+  }
+  .pa-btn {
+    flex: 1;
+    background: var(--fond);
+    border: 1.5px solid transparent;
+    border-radius: 9px;
+    padding: 8px 10px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--bleu);
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: center;
+    letter-spacing: 0.2px;
+  }
+  .pa-btn:hover { background: var(--bleu); color: white; }
+  .pa-btn.compare-tog {
+    background: white;
+    border-color: var(--gris-clair);
+    color: var(--gris);
+  }
+  .pa-btn.compare-tog.active {
+    background: var(--or);
+    border-color: var(--or);
+    color: var(--bleu-fonce);
+  }
+  .pa-btn.basket-tog {
+    background: var(--vert);
+    color: white;
+  }
+  .pa-btn.basket-tog:hover {
+    background: #1f9078;
+  }
+  .pa-btn.basket-tog.active {
+    background: var(--or);
+    color: var(--bleu-fonce);
+  }
+
+  .empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gris);
+    font-size: 15px;
+  }
+  .empty svg { width: 48px; height: 48px; margin-bottom: 14px; opacity: 0.4; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+  /* ─── SECTIONS ─── */
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin: 40px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title .icon {
+    width: 42px; height: 42px;
+    background: var(--or);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bleu-fonce);
+  }
+  .section-title .icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+  /* ─── CATALOGUE OFFICIEL ─── */
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+  .cat-page {
+    background: var(--blanc);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    cursor: zoom-in;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cat-page:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.12); }
+  .cat-page img { width: 100%; height: auto; display: block; }
+  .cat-page .cap {
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: var(--gris);
+    text-align: center;
+    font-weight: 600;
+    border-top: 1px solid var(--gris-clair);
+  }
+
+  /* ─── DROITS FO ─── */
+  .rights-section {
+    background: var(--blanc);
+    border-radius: 20px;
+    padding: 36px 40px;
+    margin-bottom: 32px;
+    border-left: 6px solid var(--rouge-fo);
+  }
+  .rights-section h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    color: var(--rouge-fo);
+    margin-bottom: 18px;
+  }
+  .rights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .right-card {
+    background: var(--fond);
+    border-radius: 14px;
+    padding: 22px 24px;
+    border-top: 4px solid var(--bleu);
+  }
+  .right-card.warn { border-top-color: var(--or); }
+  .right-card.danger { border-top-color: var(--rouge-fo); }
+  .right-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    color: var(--bleu);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .right-card.warn h3 { color: #a36200; }
+  .right-card.danger h3 { color: var(--rouge-fo); }
+  .right-card p { font-size: 13.5px; color: #333; line-height: 1.7; margin-bottom: 8px; }
+  .right-card ul { padding-left: 20px; margin-top: 6px; }
+  .right-card li { font-size: 13.5px; color: #333; line-height: 1.7; margin-bottom: 5px; }
+  .right-card .ref { font-size: 11.5px; color: var(--gris); font-style: italic; margin-top: 8px; }
+
+  /* ─── PROCÉDURE ─── */
+  .procedure {
+    background: linear-gradient(135deg, #fff8e3 0%, #fff 100%);
+    border-radius: 18px;
+    padding: 32px 36px;
+    margin-bottom: 32px;
+    border: 2px solid var(--or);
+  }
+  .procedure h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    color: #5a4000;
+    margin-bottom: 18px;
+  }
+  .steps {
+    display: grid;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .step {
+    display: flex;
+    gap: 16px;
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    border-left: 4px solid var(--or);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .step .num {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    background: var(--bleu);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 16px;
+  }
+  .step h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 15.5px;
+    color: var(--bleu-fonce);
+    margin-bottom: 5px;
+  }
+  .step p { font-size: 13.5px; color: #444; line-height: 1.6; }
+  .step strong { color: var(--rouge-fo); }
+
+  /* ─── GÉNÉRATEUR ARGUMENTAIRE ─── */
+  .generator {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 22px;
+    padding: 36px 40px;
+    margin-bottom: 32px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .generator::before {
+    content: "";
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(247,221,92,0.18) 0%, transparent 70%);
+  }
+  .generator h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .generator > p {
+    font-size: 14.5px;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 20px;
+    max-width: 720px;
+    position: relative;
+    z-index: 1;
+  }
+  .gen-form {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .gen-form label {
+    display: block;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-top: 14px;
+  }
+  .gen-form label:first-of-type { margin-top: 0; }
+  .gen-form select,
+  .gen-form input,
+  .gen-form textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--texte);
+  }
+  .gen-form textarea { resize: vertical; min-height: 60px; }
+  .gen-form select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23019cda' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+  .gen-actions {
+    display: flex; gap: 12px; flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .gen-btn {
+    background: var(--or);
+    color: var(--bleu-fonce);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.15s;
+  }
+  .gen-btn:hover { transform: translateY(-2px); }
+  .gen-btn.secondary { background: rgba(255,255,255,0.92); color: var(--bleu); }
+  .gen-output {
+    background: rgba(255,255,255,0.97);
+    color: var(--texte);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 16px;
+    font-size: 13.5px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    display: none;
+    position: relative;
+    z-index: 1;
+  }
+  .gen-output.show { display: block; }
+
+  /* ─── MODALES ─── */
+  .modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(20,20,40,0.7);
+    backdrop-filter: blur(4px);
+    z-index: 500;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 16px;
+    overflow-y: auto;
+  }
+  .modal-bg.open { display: flex; }
+  .modal {
+    background: var(--blanc);
+    border-radius: 20px;
+    max-width: 880px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    position: relative;
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 22px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-close:hover { background: var(--rouge); }
+  .modal-header {
+    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-fonce) 100%);
+    color: white;
+    padding: 28px 36px 24px;
+  }
+  .modal-header .mh-cat {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--or); font-weight: 700; margin-bottom: 6px;
+  }
+  .modal-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 900;
+  }
+  .modal-header .mh-brand { color: rgba(255,255,255,0.78); font-size: 13.5px; margin-top: 4px; }
+  .modal-header .mh-price {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--or);
+    margin-top: 14px;
+  }
+  .modal-body { padding: 28px 36px 32px; }
+  .modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+  .mg-block {
+    background: var(--fond);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .mg-block h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    color: var(--bleu);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .mg-block ul { padding-left: 18px; }
+  .mg-block li { font-size: 13px; color: #333; line-height: 1.6; margin-bottom: 4px; }
+  .mg-block p { font-size: 13px; color: #333; line-height: 1.65; }
+
+  .why-pay-more {
+    background: linear-gradient(135deg, #fff8e3 0%, #fff 100%);
+    border: 2px solid var(--or);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 22px;
+  }
+  .why-pay-more h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    color: #5a4000;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .why-pay-more p { font-size: 13.5px; color: #444; line-height: 1.7; }
+  .why-pay-more strong { color: #7a5200; }
+
+  .arg-block {
+    background: linear-gradient(135deg, var(--rouge-fo) 0%, var(--rouge-fo-fonce) 100%);
+    color: white;
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-bottom: 16px;
+  }
+  .arg-block h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+    color: var(--or);
+  }
+  .arg-block .arg-text {
+    background: rgba(255,255,255,0.96);
+    color: var(--texte);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 13.5px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+  .arg-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .copy-btn, .mail-btn {
+    background: var(--or);
+    color: var(--bleu-fonce);
+    border: none;
+    border-radius: 10px;
+    padding: 9px 16px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mail-btn { background: white; color: var(--rouge-fo); text-decoration: none; }
+  .copy-btn:hover, .mail-btn:hover { transform: translateY(-1px); }
+
+  .certifs {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .certif {
+    background: var(--vert-clair);
+    color: #0a4f3a;
+    border: 1px solid var(--vert);
+    border-radius: 16px;
+    padding: 3px 10px;
+    font-size: 11.5px;
+    font-weight: 600;
+  }
+
+  /* ─── COMPARATEUR MODAL ─── */
+  .compare-grid {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .compare-grid[data-cols="2"] { grid-template-columns: 1fr 1fr; }
+  .compare-grid[data-cols="3"] { grid-template-columns: 1fr 1fr 1fr; }
+  .compare-card {
+    background: var(--fond);
+    border-radius: 12px;
+    padding: 16px;
+    border-top: 4px solid var(--bleu);
+  }
+  .compare-card h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: var(--bleu);
+    margin-bottom: 4px;
+  }
+  .compare-card .cc-brand { font-size: 11.5px; color: var(--gris); margin-bottom: 8px; }
+  .compare-card .cc-price {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--bleu);
+    margin-bottom: 10px;
+  }
+  .compare-card .cc-acts { font-size: 12px; color: #333; line-height: 1.5; margin-bottom: 8px; }
+  .compare-card .cc-points { font-size: 12px; color: #333; }
+  .compare-card .cc-points li { margin-bottom: 4px; line-height: 1.5; }
+  .compare-card .cc-rm {
+    background: transparent;
+    color: var(--rouge);
+    border: 1px solid var(--rouge);
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 11.5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  /* ─── FOOTER ─── */
+  .fo-contact-card {
+    background: linear-gradient(135deg, var(--rouge-fo) 0%, var(--rouge-fo-fonce) 100%);
+    border-radius: 20px;
+    padding: 28px 32px;
+    color: white;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 22px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .fo-contact-card .fo-logo-wrap img {
+    height: 72px;
+    border-radius: 12px;
+    background: white;
+    padding: 6px;
+  }
+  .fo-contact-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    margin-bottom: 4px;
+    color: var(--or);
+  }
+  .fo-contact-card p { font-size: 13.5px; color: rgba(255,255,255,0.92); }
+  .fo-contact-card p strong { color: white; }
+  .fo-mailto-btn {
+    background: var(--or);
+    color: var(--bleu-fonce);
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 12px 22px;
+    font-size: 13.5px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .fo-mailto-btn:hover { transform: translateY(-2px); }
+  .footer {
+    text-align: center;
+    padding: 24px 16px;
+    font-size: 12.5px;
+    color: var(--gris);
+    line-height: 1.7;
+  }
+  .footer a { color: var(--bleu); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  .footer img { height: 60px; object-fit: contain; opacity: 0.85; }
+  .insta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--bleu);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 8px;
+  }
+  .insta-link:hover { color: var(--rouge-fo); }
+
+  /* ─── ACCESSIBILITÉ — Mode Lecture Universelle ─── */
+  .a11y-emoji { display: inline-block; }
+  .a11y-ico { display: none; width: 1em; height: 1em; vertical-align: -0.15em; }
+
+  body.a11y-mode {
+    background: var(--a11y-bg);
+    color: var(--a11y-text);
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+  }
+  body.a11y-mode .a11y-emoji { display: none; }
+  body.a11y-mode .a11y-ico { display: inline-block; }
+  body.a11y-mode .header { background: var(--a11y-blue); }
+  body.a11y-mode .header h1 em { color: var(--a11y-yellow); }
+  body.a11y-mode .intro { background: var(--a11y-bg); border-left-color: var(--a11y-blue); color: var(--a11y-text); }
+  body.a11y-mode .intro strong { color: var(--a11y-blue); }
+  body.a11y-mode .intro h2 { color: var(--a11y-blue); }
+  body.a11y-mode .fo-manifest { background: var(--a11y-purple); }
+  body.a11y-mode .fo-manifest h2 em,
+  body.a11y-mode .fo-manifest strong { color: var(--a11y-yellow); }
+  body.a11y-mode .supplier { background: var(--a11y-bg); border-top-color: var(--a11y-blue); color: var(--a11y-text); }
+  body.a11y-mode .supplier h3 { color: var(--a11y-blue); }
+  body.a11y-mode .supplier.alt { border-top-color: var(--a11y-green); }
+  body.a11y-mode .supplier.alt h3 { color: var(--a11y-green); }
+  body.a11y-mode .supplier p, body.a11y-mode .supplier li { color: var(--a11y-text); }
+  body.a11y-mode .control-bar { background: var(--a11y-bg); border: 2px solid var(--a11y-blue); }
+  body.a11y-mode .search-box input { border-color: var(--a11y-blue); color: var(--a11y-text); }
+  body.a11y-mode .filter-group select { border-color: var(--a11y-blue); color: var(--a11y-text); }
+  body.a11y-mode .filter-group label { color: var(--a11y-text); }
+  body.a11y-mode .compare-btn { background: var(--a11y-blue); color: var(--a11y-bg); }
+  body.a11y-mode .arg-btn { background: var(--a11y-purple); color: var(--a11y-bg); }
+  body.a11y-mode .reset-btn { color: var(--a11y-red); border-color: var(--a11y-red); }
+  body.a11y-mode .product { background: var(--a11y-bg); border: 2px solid var(--a11y-text); }
+  body.a11y-mode .product-name { color: var(--a11y-text); }
+  body.a11y-mode .product-price { color: var(--a11y-blue); }
+  body.a11y-mode .product-cat { color: var(--a11y-text); }
+  body.a11y-mode .product-img { background: var(--a11y-bg); border-bottom: 2px solid var(--a11y-text); }
+  body.a11y-mode .product-img .ico-wrap { background: var(--a11y-bg); color: var(--a11y-blue); border: 2px solid var(--a11y-blue); }
+  body.a11y-mode .product-badge { background: var(--a11y-blue); color: var(--a11y-bg); }
+  body.a11y-mode .product-badge.is { background: var(--a11y-red); }
+  body.a11y-mode .product-badge.haut { background: var(--a11y-green); }
+  body.a11y-mode .product-badge.chim { background: var(--a11y-purple); }
+  body.a11y-mode .product-badge.elec { background: var(--a11y-yellow); color: var(--a11y-text); }
+  body.a11y-mode .product-badge.soud { background: var(--a11y-red); }
+  body.a11y-mode .product-badge.froid { background: var(--a11y-cyan); color: var(--a11y-text); }
+  body.a11y-mode .product-tier { background: var(--a11y-text); color: var(--a11y-bg); }
+  body.a11y-mode .product-tier.premium { background: var(--a11y-yellow); color: var(--a11y-text); }
+  body.a11y-mode .product-tier.eco { background: var(--a11y-green); color: var(--a11y-bg); }
+  body.a11y-mode .pa-btn { background: var(--a11y-bg); border-color: var(--a11y-blue); color: var(--a11y-blue); }
+  body.a11y-mode .pa-btn:hover { background: var(--a11y-blue); color: var(--a11y-bg); }
+  body.a11y-mode .pa-btn.compare-tog.active { background: var(--a11y-yellow); color: var(--a11y-text); border-color: var(--a11y-yellow); }
+  body.a11y-mode .section-title { color: var(--a11y-blue); }
+  body.a11y-mode .section-title .icon { background: var(--a11y-yellow); color: var(--a11y-text); }
+  body.a11y-mode .cat-page { background: var(--a11y-bg); border: 2px solid var(--a11y-text); }
+  body.a11y-mode .cat-page .cap { color: var(--a11y-text); border-top-color: var(--a11y-text); }
+  body.a11y-mode .rights-section { background: var(--a11y-bg); border-left-color: var(--a11y-purple); }
+  body.a11y-mode .rights-section h2 { color: var(--a11y-purple); }
+  body.a11y-mode .right-card { background: var(--a11y-bg); border-top-color: var(--a11y-blue); border: 2px solid var(--a11y-text); }
+  body.a11y-mode .right-card h3 { color: var(--a11y-blue); }
+  body.a11y-mode .right-card.warn { border-top-color: var(--a11y-yellow); }
+  body.a11y-mode .right-card.warn h3 { color: var(--a11y-yellow); }
+  body.a11y-mode .right-card.danger { border-top-color: var(--a11y-red); }
+  body.a11y-mode .right-card.danger h3 { color: var(--a11y-red); }
+  body.a11y-mode .right-card p, body.a11y-mode .right-card li { color: var(--a11y-text); }
+  body.a11y-mode .procedure { background: var(--a11y-bg); border-color: var(--a11y-yellow); }
+  body.a11y-mode .procedure h2 { color: var(--a11y-yellow); }
+  body.a11y-mode .step { background: var(--a11y-bg); border-left-color: var(--a11y-yellow); border: 2px solid var(--a11y-text); border-left-width: 4px; }
+  body.a11y-mode .step .num { background: var(--a11y-blue); color: var(--a11y-bg); }
+  body.a11y-mode .step h4 { color: var(--a11y-blue); }
+  body.a11y-mode .step p, body.a11y-mode .step strong { color: var(--a11y-text); }
+  body.a11y-mode .generator { background: var(--a11y-blue); }
+  body.a11y-mode .gen-btn { background: var(--a11y-yellow); color: var(--a11y-text); }
+  body.a11y-mode .gen-btn.secondary { background: var(--a11y-bg); color: var(--a11y-blue); }
+  body.a11y-mode .gen-output { background: var(--a11y-bg); color: var(--a11y-text); }
+  body.a11y-mode .modal { background: var(--a11y-bg); }
+  body.a11y-mode .modal-header { background: var(--a11y-blue); }
+  body.a11y-mode .modal-header .mh-cat,
+  body.a11y-mode .modal-header .mh-price { color: var(--a11y-yellow); }
+  body.a11y-mode .mg-block { background: var(--a11y-bg); border: 2px solid var(--a11y-text); }
+  body.a11y-mode .mg-block h4 { color: var(--a11y-blue); }
+  body.a11y-mode .mg-block li, body.a11y-mode .mg-block p { color: var(--a11y-text); }
+  body.a11y-mode .why-pay-more { background: var(--a11y-bg); border-color: var(--a11y-yellow); }
+  body.a11y-mode .why-pay-more h4 { color: var(--a11y-yellow); }
+  body.a11y-mode .why-pay-more p, body.a11y-mode .why-pay-more strong { color: var(--a11y-text); }
+  body.a11y-mode .arg-block { background: var(--a11y-purple); }
+  body.a11y-mode .arg-block h4 { color: var(--a11y-yellow); }
+  body.a11y-mode .arg-block .arg-text { background: var(--a11y-bg); color: var(--a11y-text); }
+  body.a11y-mode .copy-btn { background: var(--a11y-yellow); color: var(--a11y-text); }
+  body.a11y-mode .mail-btn { background: var(--a11y-bg); color: var(--a11y-purple); border: 2px solid var(--a11y-purple); }
+  body.a11y-mode .certif { background: var(--a11y-bg); color: var(--a11y-green); border-color: var(--a11y-green); }
+  body.a11y-mode .compare-card { background: var(--a11y-bg); border: 2px solid var(--a11y-text); border-top: 4px solid var(--a11y-blue); }
+  body.a11y-mode .compare-card h4, body.a11y-mode .compare-card .cc-price { color: var(--a11y-blue); }
+  body.a11y-mode .compare-card .cc-brand,
+  body.a11y-mode .compare-card .cc-acts,
+  body.a11y-mode .compare-card .cc-points { color: var(--a11y-text); }
+  body.a11y-mode .compare-card .cc-rm { color: var(--a11y-red); border-color: var(--a11y-red); }
+  body.a11y-mode .fo-contact-card { background: var(--a11y-purple); }
+  body.a11y-mode .fo-contact-card h3 { color: var(--a11y-yellow); }
+  body.a11y-mode .fo-mailto-btn { background: var(--a11y-yellow); color: var(--a11y-text); }
+  body.a11y-mode .a11y-btn { background: var(--a11y-bg); color: var(--a11y-blue); border-color: var(--a11y-blue); }
+
+  /* ─── BANDEAU STATS ─── */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .stat-item {
+    background: var(--blanc);
+    border-radius: 14px;
+    padding: 18px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid var(--bleu);
+  }
+  .stat-item:nth-child(2) { border-top-color: var(--vert); }
+  .stat-item:nth-child(3) { border-top-color: var(--or); }
+  .stat-item:nth-child(4) { border-top-color: var(--rouge-fo); }
+  .stat-item .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--bleu);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-item:nth-child(2) .stat-num { color: var(--vert); }
+  .stat-item:nth-child(3) .stat-num { color: #a36200; }
+  .stat-item:nth-child(4) .stat-num { color: var(--rouge-fo); }
+  .stat-item .stat-lbl { font-size: 11.5px; color: var(--gris); text-transform: uppercase; letter-spacing: 1.2px; font-weight: 600; }
+  body.a11y-mode .stat-item { background: var(--a11y-bg); border-top-color: var(--a11y-blue); border: 2px solid var(--a11y-text); border-top-width: 4px; }
+  body.a11y-mode .stat-item:nth-child(2) { border-top-color: var(--a11y-green); }
+  body.a11y-mode .stat-item:nth-child(3) { border-top-color: var(--a11y-yellow); }
+  body.a11y-mode .stat-item:nth-child(4) { border-top-color: var(--a11y-purple); }
+  body.a11y-mode .stat-item .stat-num { color: var(--a11y-blue); }
+  body.a11y-mode .stat-item:nth-child(2) .stat-num { color: var(--a11y-green); }
+  body.a11y-mode .stat-item:nth-child(3) .stat-num { color: var(--a11y-yellow); }
+  body.a11y-mode .stat-item:nth-child(4) .stat-num { color: var(--a11y-purple); }
+  body.a11y-mode .stat-item .stat-lbl { color: var(--a11y-text); }
+
+  /* ─── ANIMATION TOAST ─── */
+  @keyframes slideUp {
+    from { transform: translate(-50%, 20px); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .modal-bg.open { animation: fadeIn 0.2s; }
+
+  @media (max-width: 720px) {
+    .page { padding: 24px 16px 48px; }
+    .header { padding: 32px 24px 28px; border-radius: 16px; }
+    .header h1 { font-size: 30px; }
+    .intro { padding: 24px 22px; }
+    .fo-manifest, .generator, .rights-section, .procedure { padding: 24px 22px; }
+    .modal-header { padding: 22px 22px 24px; grid-template-columns: 1fr !important; }
+    .modal-body { padding: 22px 22px 24px; }
+    .modal-header h2 { font-size: 22px; }
+    .modal-grid, .rights-grid, .suppliers { grid-template-columns: 1fr; }
+    .compare-grid[data-cols="3"], .compare-grid[data-cols="2"] { grid-template-columns: 1fr; }
+    .fo-contact-card { grid-template-columns: 1fr; text-align: center; }
+    .control-bar { position: relative; top: auto; }
+    .section-title { font-size: 22px; }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .products { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .product-img { height: 150px; padding: 12px; }
+    .product-name { font-size: 14px; }
+    .product-price { font-size: 20px; }
+    .product-actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BOUTON ACCESSIBILITÉ -->
+<div class="a11y-btn-wrap">
+  <button id="a11yToggle" class="a11y-btn" type="button" aria-pressed="false" onclick="toggleA11y()" title="Activer le mode lecture universelle (accessibilité daltoniens)">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    <span>Mode lecture universelle</span>
+  </button>
+</div>
+
+<div class="page">
+
+  <!-- ─── HEADER ─── -->
+  <header class="header">
+    <span class="badge">FO Énergie GRDF · Catalogue EPI 2026</span>
+    <h1>Vos EPI, votre <em>sécurité</em>, votre <em>droit</em>.</h1>
+    <p class="subtitle">Le catalogue complet et interactif du <strong>nouveau marché de distribution des EPI</strong> (contrat CNATA001) — pour que chaque salarié GRDF sache ce qu'il a le droit de commander et puisse défendre son choix face à un manager qui privilégie le moins cher.</p>
+    <div class="meta">
+      <span><span class="dot"></span> Marché en vigueur · Mai 2026</span>
+      <span>Source : Kit de portage GRDF — Q. Vayssat</span>
+      <span>51 références · Groupe RG + Descours et Cabaud</span>
+    </div>
+  </header>
+
+  <!-- ─── INTRO ─── -->
+  <div class="intro">
+    <h2>Pourquoi ce guide FO ?</h2>
+    <p>GRDF a changé de marché EPI. Désormais, vos équipements sont commandés via <strong>Groupe RG</strong> (Punchout POPay) et <strong>Descours et Cabaud</strong> (travaux en hauteur, espaces confinés). Le catalogue est large et plusieurs gammes de prix coexistent pour un même usage.</p>
+    <p style="margin-top:12px;">Nous constatons sur le terrain que <strong>les managers ont tendance à commander systématiquement les produits les moins chers</strong>, sans tenir compte de l'adéquation à votre activité réelle. Or, à activité dangereuse égale, un EPI mal choisi peut coûter beaucoup plus cher qu'il n'économise — en TMS, en accidents, en arrêts de travail.</p>
+    <p style="margin-top:12px;"><strong>Ce guide vous donne le pouvoir de choisir.</strong> Sur chaque référence, vous trouverez les arguments concrets pour justifier votre demande, votre droit à être consulté sur vos EPI et la procédure à suivre si votre manager refuse.</p>
+  </div>
+
+  <!-- ─── MANIFESTE FO ─── -->
+  <div class="fo-manifest">
+    <h2>« Le moins cher n'est pas <em>le mieux adapté</em>. »</h2>
+    <p>La sécurité au travail n'est pas une variable d'ajustement budgétaire. Le Code du travail (art. <strong>L.4321-1</strong> et <strong>R.4323-91</strong>) impose à l'employeur de fournir des EPI <strong>appropriés aux risques</strong> et <strong>adaptés au travailleur</strong>. Pas les EPI les moins chers — les bons.</p>
+    <p>FO Énergie GRDF vous accompagne pour que <strong>chaque salarié</strong> reçoive le bon équipement, qu'il s'agisse d'IS, de travaux en hauteur, d'espaces confinés, de soudage ou de manutention courante.</p>
+  </div>
+
+  <!-- ─── STATS ─── -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">51</div>
+      <div class="stat-lbl">EPI au catalogue</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">8</div>
+      <div class="stat-lbl">Catégories</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">11</div>
+      <div class="stat-lbl">Marques référencées</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" style="font-size:30px;">2,94 €<span style="font-size:14px; color:var(--gris);"> → </span>168 €</div>
+      <div class="stat-lbl">Amplitude de prix HT</div>
+    </div>
+  </div>
+
+  <!-- ─── FOURNISSEURS ─── -->
+  <div class="suppliers">
+    <div class="supplier">
+      <h3>Groupe RG · Punchout POPay</h3>
+      <p>Fournisseur principal du nouveau marché. Catalogue accessible directement depuis POPay.</p>
+      <ul>
+        <li>Chaussures, gants, casques, casquettes, cagoules</li>
+        <li>Lunettes de sécurité, brasage, soudage</li>
+        <li>EPI hiver / été</li>
+        <li>Appareils respiratoires (demi-masques, masques, ventilation assistée, borne à air)</li>
+        <li>Kits (amiante, braie…)</li>
+      </ul>
+      <p style="margin-top:10px; font-size:12.5px;"><strong>Hotline RG :</strong> commandes.grdf@groupe-rg.com · 04 37 40 12 10</p>
+    </div>
+    <div class="supplier alt">
+      <h3>Descours et Cabaud · Punchout</h3>
+      <p>Spécialiste hauteur et espaces confinés.</p>
+      <ul>
+        <li>EPI travaux en hauteur : harnais, mousquetons, longes</li>
+        <li>Moyens d'ascension : échelles, PIRL</li>
+        <li>EPI espaces confinés</li>
+      </ul>
+      <p style="margin-top:10px; font-size:12.5px;">Vêtements de travail et EPI multirisques (soudeurs) : <strong>Armor Lux</strong>. Vestes + casques IS : <strong>CLM</strong>.</p>
+    </div>
+  </div>
+
+  <!-- ─── BARRE DE CONTRÔLE ─── -->
+  <div class="control-bar">
+    <div class="control-row">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="searchInput" placeholder="Rechercher une référence (ex. Tegera, Jalas, Bollé…)" aria-label="Rechercher un EPI">
+      </div>
+      <button class="compare-btn" id="compareBtn" disabled onclick="openCompare()" aria-label="Ouvrir le comparateur">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 5H3v14h6M15 5h6v14h-6M9 5v14M15 5v14"/></svg>
+        Comparer <span class="count" id="cmpCount">0</span>
+      </button>
+      <button class="compare-btn" style="background:var(--vert);" id="basketBtn" onclick="openBasket()" aria-label="Ouvrir ma demande EPI">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 3h2l2.4 12.5a2 2 0 0 0 2 1.5h9.7a2 2 0 0 0 2-1.6L23 6H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+        Ma demande <span class="count" id="basketCount" style="background:white; color:var(--vert);">0</span>
+      </button>
+      <button class="arg-btn" onclick="document.getElementById('generator').scrollIntoView({behavior:'smooth'})">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+        Argumentaire manager
+      </button>
+    </div>
+    <div class="filters-row">
+      <div class="filter-group">
+        <label for="catFilter">Catégorie</label>
+        <select id="catFilter">
+          <option value="">Toutes</option>
+          <option value="casque">Casques / Casquettes</option>
+          <option value="oculaire">Protections oculaires</option>
+          <option value="gant">Gants</option>
+          <option value="chaussure">Chaussures de sécurité</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="actFilter">Activité</label>
+        <select id="actFilter">
+          <option value="">Toutes activités</option>
+          <option value="is">Intervention de sécurité (IS)</option>
+          <option value="soudage">Soudage / brasage</option>
+          <option value="hauteur">Travaux en hauteur / charge</option>
+          <option value="clientele">Clientèle / visites</option>
+          <option value="rsf">RSF / terrain</option>
+          <option value="biomethane">Biométhane</option>
+          <option value="chimique">Produits chimiques</option>
+          <option value="electricien">Électricien</option>
+          <option value="froid">Travail au froid</option>
+          <option value="eau">Travaux en eau / waders</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="priceFilter">Gamme</label>
+        <select id="priceFilter">
+          <option value="">Toutes gammes</option>
+          <option value="eco">Économique (entrée de gamme)</option>
+          <option value="standard">Standard</option>
+          <option value="premium">Premium (qualité supérieure)</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="sortBy">Trier</label>
+        <select id="sortBy">
+          <option value="cat">Par catégorie</option>
+          <option value="prix-asc">Prix croissant</option>
+          <option value="prix-desc">Prix décroissant</option>
+          <option value="nom">Nom A-Z</option>
+        </select>
+      </div>
+      <button class="reset-btn" onclick="resetFilters()">Réinitialiser</button>
+    </div>
+    <div class="results-info" id="resultsInfo">Affichage de <b id="visibleCount">0</b> EPI sur <b id="totalCount">0</b>.</div>
+  </div>
+
+  <!-- ─── GRILLE PRODUITS ─── -->
+  <div class="products" id="productsGrid"></div>
+
+  <!-- ─── DROITS FO ─── -->
+  <div class="rights-section">
+    <h2>Vos droits face au choix des EPI</h2>
+    <p>Vous n'êtes pas un simple destinataire passif d'EPI : la loi vous donne <strong>un droit de regard, un droit de proposition et un droit de refus</strong>. FO vous le rappelle.</p>
+
+    <div class="rights-grid">
+      <div class="right-card">
+        <h3>
+          <span aria-hidden="true"><span class="a11y-emoji">⚖️</span><svg aria-hidden="true" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l3-8 3 8c-2 1-4 1-6 0z"/><path d="M2 16l3-8 3 8c-2 1-4 1-6 0z"/><path d="M12 2v20M5 8h14M5 22h14"/></svg></span>
+          Droit d'être consulté
+        </h3>
+        <p>L'article <strong>R.4321-4</strong> impose à l'employeur de tenir compte des spécificités du salarié et de son poste. Vous avez le droit de <strong>demander un essai</strong> avant attribution définitive (art. R.4323-94).</p>
+        <p>Le CSE et la CSSCT sont obligatoirement consultés sur le choix des EPI (art. <strong>L.2312-9</strong>).</p>
+        <p class="ref">Code du travail · L.2312-9, R.4321-4, R.4323-94</p>
+      </div>
+
+      <div class="right-card warn">
+        <h3>
+          <span aria-hidden="true"><span class="a11y-emoji">💬</span><svg aria-hidden="true" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          Droit de proposition
+        </h3>
+        <p>Vous pouvez <strong>proposer formellement</strong> à votre manager un EPI différent de celui qu'il a choisi, dès lors qu'il est validé par la DP2S (tous les EPI du Punchout RG le sont).</p>
+        <p>Votre proposition doit être écrite, motivée et tracée. <strong>Utilisez le générateur d'argumentaire</strong> en bas de page pour formaliser votre demande.</p>
+        <p class="ref">Bonne pratique CSSCT · Modèle FO</p>
+      </div>
+
+      <div class="right-card danger">
+        <h3>
+          <span aria-hidden="true"><span class="a11y-emoji">🛑</span><svg aria-hidden="true" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></span>
+          Droit de retrait
+        </h3>
+        <p>Si l'EPI fourni est <strong>manifestement inadapté</strong> au risque et présente un <strong>danger grave et imminent</strong> pour votre santé, vous pouvez exercer votre <strong>droit de retrait</strong> (art. L.4131-1).</p>
+        <p>Ce droit est protégé : vous ne pouvez subir aucune sanction si le motif est sérieux. Prévenez immédiatement votre manager, le CSE et la médecine du travail.</p>
+        <p class="ref">Code du travail · L.4131-1 à L.4131-4</p>
+      </div>
+
+      <div class="right-card">
+        <h3>
+          <span aria-hidden="true"><span class="a11y-emoji">🧑‍⚕️</span><svg aria-hidden="true" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.5 3-5.5a5.5 5.5 0 0 0-11 0c0 2 1.5 4 3 5.5l3 3 2-3z"/><circle cx="16" cy="8.5" r="1.5"/></svg></span>
+          Saisine médecine du travail
+        </h3>
+        <p>Si un EPI vous provoque des <strong>douleurs, allergies, fatigue excessive</strong> ou si vous avez une pathologie qui le rend inadapté (TMS, pieds sensibles, etc.), prenez rendez-vous avec le <strong>médecin du travail</strong>.</p>
+        <p>Son avis s'impose à l'employeur. Il peut prescrire un EPI spécifique ou un aménagement.</p>
+        <p class="ref">Code du travail · L.4624-1 et suivants</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── PROCÉDURE REFUS MANAGER ─── -->
+  <div class="procedure">
+    <h2>Que faire si votre manager refuse l'EPI que vous demandez ?</h2>
+    <p style="font-size:14.5px; color:#5a4000; line-height:1.7;">Tous les EPI du Punchout Groupe RG sont <strong>validés par la DP2S</strong> et donc utilisables. Un refus pour seul motif de coût n'est pas opposable. Voici la marche à suivre :</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div>
+          <h4>Formaliser votre demande par écrit</h4>
+          <p>Email à votre manager + copie au préventeur de votre AI. Utilisez <strong>le générateur d'argumentaire ci-dessous</strong> : il vous prépare un message complet avec justifications réglementaires et motifs santé/sécurité.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div>
+          <h4>En cas de refus, saisir la CSSCT</h4>
+          <p>La <strong>Commission Santé Sécurité et Conditions de Travail</strong> est l'instance compétente. Adressez votre demande au secrétaire CSSCT (FO en fait partie sur la plupart des établissements). Elle peut inscrire le sujet à l'ordre du jour.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div>
+          <h4>Saisir le médecin du travail</h4>
+          <p>Indiquez par écrit le motif médical (douleurs, antécédents, contraintes spécifiques de votre poste). Son avis s'impose à l'employeur : il peut prescrire un EPI adapté.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div>
+          <h4>Contacter FO Énergie GRDF</h4>
+          <p>Si le blocage persiste, contactez nos délégués nationaux : <strong>syndicat-fo_grdf-delegations-nationales@grdf.fr</strong>. Nous vous accompagnerons dans la démarche (courrier formel, saisine de la DP2S, alerte CSE central si récurrence).</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">5</div>
+        <div>
+          <h4>Tracer, conserver, archiver</h4>
+          <p>Conservez <strong>tous les échanges</strong> (mails, comptes-rendus). En cas d'accident lié à un EPI inadapté refusé sciemment, ces traces sont déterminantes pour la <strong>faute inexcusable de l'employeur</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── GÉNÉRATEUR ARGUMENTAIRE ─── -->
+  <div class="generator" id="generator">
+    <h2>Générateur d'argumentaire pour votre manager</h2>
+    <p>Préparez en 30 secondes un message professionnel et motivé pour justifier le choix d'un EPI plus adapté (et souvent plus cher) à votre activité. Le texte est prêt à copier-coller ou à envoyer par email.</p>
+
+    <div class="gen-form">
+      <label for="genName">Votre nom (ou laissez vide)</label>
+      <input type="text" id="genName" placeholder="Ex. Mickaël LOPES">
+
+      <label for="genActivity">Votre activité principale</label>
+      <select id="genActivity">
+        <option value="">— Choisir —</option>
+        <option value="IS">Intervention de sécurité (IS) — fuites de gaz, incidents réseau</option>
+        <option value="travaux en hauteur ou en charge">Travaux en hauteur / en charge</option>
+        <option value="soudage et brasage">Soudage / brasage</option>
+        <option value="clientèle et visites de chantiers">Clientèle / visites de chantiers</option>
+        <option value="RSF et travaux sur terrain meuble">RSF / terrain meuble</option>
+        <option value="exploitation biométhane">Exploitation biométhane</option>
+        <option value="manutention et travaux divers">Manutention / travaux divers</option>
+        <option value="produits chimiques">Manipulation de produits chimiques</option>
+        <option value="électrique / consignation">Électrique / consignation</option>
+        <option value="travail au froid">Travail au froid (hiver, gaz détendu)</option>
+        <option value="travaux en eau">Travaux en eau / inondations</option>
+      </select>
+
+      <label for="genProduct">EPI demandé</label>
+      <select id="genProduct"></select>
+
+      <label for="genReason">Motif spécifique (optionnel)</label>
+      <textarea id="genReason" placeholder="Ex. antécédent TMS aux pieds, ampoules récurrentes avec le modèle économique, environnement de chantier humide…"></textarea>
+    </div>
+
+    <div class="gen-actions">
+      <button class="gen-btn" onclick="generateArgument()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+        Générer mon argumentaire
+      </button>
+      <button class="gen-btn secondary" id="copyGenBtn" onclick="copyGenerated()" style="display:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copier le texte
+      </button>
+      <a class="gen-btn secondary" id="mailGenBtn" href="#" style="display:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        Ouvrir dans mon mail
+      </a>
+    </div>
+
+    <div class="gen-output" id="genOutput"></div>
+  </div>
+
+  <!-- ─── CATALOGUE OFFICIEL ─── -->
+  <div class="section-title">
+    <span class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+    </span>
+    Catalogue officiel — pages PDF
+  </div>
+  <p style="font-size:14px; color:#555; margin-bottom:20px;">Les pages du catalogue distribué par GRDF (kit de portage Q. Vayssat, mai 2026). Cliquez sur une page pour zoomer.</p>
+  <div class="catalog-grid" id="catalogGrid"></div>
+
+  <!-- ─── CONTACT FO ─── -->
+  <div class="fo-contact-card">
+    <div class="fo-logo-wrap">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO Énergie GRDF">
+      </a>
+    </div>
+    <div>
+      <h3>
+        <span aria-hidden="true"><span class="a11y-emoji">✉</span><svg aria-hidden="true" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span>
+        Un problème avec vos EPI ? Contactez FO GRDF
+      </h3>
+      <p>Nos délégués nationaux vous accompagnent en cas de refus manager, d'EPI inadapté, d'accident lié à un équipement défaillant ou de toute situation personnelle.</p>
+    </div>
+    <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=EPI%20%E2%80%94%20Demande%20d%27accompagnement%20FO" class="fo-mailto-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      Nous écrire
+    </a>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div style="margin-bottom:14px;">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO Énergie GRDF">
+      </a>
+    </div>
+    Document d'information syndicale FO Énergie GRDF · Mai 2026 · Source : Kit de portage nouveau marché EPI (CNATA001 — Q. Vayssat)<br>
+    Contact :
+    <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr">syndicat-fo_grdf-delegations-nationales@grdf.fr</a>
+    ·
+    <a class="insta-link" href="https://www.instagram.com/FO_GRDF" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+      @FO_GRDF
+    </a>
+  </footer>
+
+</div><!-- fin .page -->
+
+<!-- ─── MODAL DÉTAILS PRODUIT ─── -->
+<div class="modal-bg" id="modalProduct" onclick="if(event.target===this)closeModal('modalProduct')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modalProduct')" aria-label="Fermer">×</button>
+    <div id="modalProductContent"></div>
+  </div>
+</div>
+
+<!-- ─── MODAL COMPARATEUR ─── -->
+<div class="modal-bg" id="modalCompare" onclick="if(event.target===this)closeModal('modalCompare')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modalCompare')" aria-label="Fermer">×</button>
+    <div class="modal-header">
+      <div class="mh-cat">Comparateur FO</div>
+      <h2>Comparer mes EPI sélectionnés</h2>
+      <p class="mh-brand">Mettez côte à côte 2 ou 3 produits pour faire votre choix éclairé.</p>
+    </div>
+    <div class="modal-body">
+      <div class="compare-grid" id="compareGrid"></div>
+      <p style="font-size:12.5px; color:var(--gris); margin-top:14px;">Astuce FO : un écart de prix se justifie par <strong>la durée d'usage</strong>, le <strong>confort</strong>, les <strong>certifications</strong> additionnelles, et la <strong>réduction des arrêts de travail</strong>. Pensez coût total, pas seulement prix d'achat.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL ZOOM CATALOGUE ─── -->
+<div class="modal-bg" id="modalCatalog" onclick="if(event.target===this)closeModal('modalCatalog')">
+  <div class="modal" style="max-width:1100px;">
+    <button class="modal-close" onclick="closeModal('modalCatalog')" aria-label="Fermer">×</button>
+    <div id="modalCatalogContent" style="padding:14px;"></div>
+  </div>
+</div>
+
+<!-- ─── MODAL PANIER DE DEMANDE ─── -->
+<div class="modal-bg" id="modalBasket" onclick="if(event.target===this)closeModal('modalBasket')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modalBasket')" aria-label="Fermer">×</button>
+    <div class="modal-header" style="background:linear-gradient(135deg,#28b193 0%,#019cda 100%);">
+      <div class="mh-cat">Ma demande EPI · FO GRDF</div>
+      <h2>Envoyer ma demande à mon manager</h2>
+      <p class="mh-brand">Préparez un email professionnel listant les EPI que vous demandez, avec un argumentaire santé/sécurité/conditions de travail clé en main.</p>
+    </div>
+    <div class="modal-body">
+      <div id="basketList"></div>
+      <div class="gen-form" style="background:var(--fond); border:1px solid var(--gris-clair);">
+        <label for="bName" style="color:#444;">Votre nom & poste</label>
+        <input type="text" id="bName" placeholder="Ex. Mickaël LOPES — Technicien réseau, AI Sud-Ouest" style="background:white; border:1.5px solid var(--gris-clair);">
+
+        <label for="bManager" style="color:#444;">Email de votre manager</label>
+        <input type="email" id="bManager" placeholder="prenom.nom@grdf.fr" style="background:white; border:1.5px solid var(--gris-clair);">
+
+        <label for="bActivity" style="color:#444;">Votre activité principale</label>
+        <select id="bActivity" style="background:white; border:1.5px solid var(--gris-clair);">
+          <option value="">— Choisir —</option>
+          <option value="IS">Intervention de sécurité (IS) — fuites de gaz, incidents réseau</option>
+          <option value="travaux en hauteur ou en charge">Travaux en hauteur / en charge</option>
+          <option value="soudage et brasage">Soudage / brasage</option>
+          <option value="clientèle et visites de chantiers">Clientèle / visites de chantiers</option>
+          <option value="RSF et travaux sur terrain meuble">RSF / terrain meuble</option>
+          <option value="exploitation biométhane">Exploitation biométhane</option>
+          <option value="manutention et travaux divers">Manutention / travaux divers</option>
+          <option value="produits chimiques">Manipulation de produits chimiques</option>
+          <option value="électrique / consignation">Électrique / consignation</option>
+          <option value="travail au froid">Travail au froid (hiver, gaz détendu)</option>
+          <option value="travaux en eau">Travaux en eau / inondations</option>
+        </select>
+
+        <label for="bReason" style="color:#444;">Motif personnel / situation (optionnel)</label>
+        <textarea id="bReason" placeholder="Ex. antécédents TMS, ampoules récurrentes avec le modèle bas de gamme, environnement de chantier humide…" style="background:white; border:1.5px solid var(--gris-clair); min-height:70px;"></textarea>
+
+        <label for="bCcFO" style="display:flex; align-items:center; gap:8px; cursor:pointer; color:#444; text-transform:none; letter-spacing:0; font-weight:500; margin-top:14px;">
+          <input type="checkbox" id="bCcFO" checked style="width:auto; margin:0;">
+          Mettre FO GRDF en copie (recommandé)
+        </label>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+        <a class="gen-btn" id="basketSendBtn" href="#" style="background:var(--vert); color:white;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9 22,2"/></svg>
+          Envoyer la demande à mon manager
+        </a>
+        <button class="gen-btn secondary" onclick="copyBasketMail()" style="background:#fff; color:var(--bleu); border:1.5px solid var(--bleu);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copier le mail
+        </button>
+        <button class="gen-btn secondary" onclick="clearBasket()" style="background:#fff; color:var(--rouge); border:1.5px solid var(--rouge);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="3,6 5,6 21,6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+          Vider ma demande
+        </button>
+      </div>
+
+      <div class="gen-output" id="basketPreview"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═══════════ ICÔNES SVG PAR CATÉGORIE ═══════════ */
+const ICONS = {
+  casque: '<svg viewBox="0 0 64 64"><path d="M10 44c0-12 10-24 22-24s22 12 22 24M6 44h52M14 44v6h36v-6M22 30l-2 -8M42 30l2 -8M32 18v-4"/></svg>',
+  casquette: '<svg viewBox="0 0 64 64"><path d="M8 40c0-12 10-22 24-22s24 10 24 22M8 40h48M28 18c4-4 8-4 8-4M30 24l4-6"/></svg>',
+  lunettes: '<svg viewBox="0 0 64 64"><circle cx="18" cy="34" r="10"/><circle cx="46" cy="34" r="10"/><path d="M28 32c2-2 6-2 8 0M8 28l6 2M50 30l6-2"/></svg>',
+  masque: '<svg viewBox="0 0 64 64"><path d="M14 22c0-6 8-10 18-10s18 4 18 10v18c0 6-8 10-18 10s-18-4-18-10z"/><line x1="14" y1="30" x2="50" y2="30"/><line x1="14" y1="42" x2="50" y2="42"/><line x1="8" y1="26" x2="14" y2="26"/><line x1="50" y1="26" x2="56" y2="26"/></svg>',
+  gant: '<svg viewBox="0 0 64 64"><path d="M22 56V32M22 32V12c0-2 2-4 4-4s4 2 4 4v18M30 30V8c0-2 2-4 4-4s4 2 4 4v22M38 30V14c0-2 2-4 4-4s4 2 4 4v18M46 30V18c0-2 2-4 4-4s4 2 4 4v22c0 8-6 16-16 16h-12c-4 0-8-2-10-6"/></svg>',
+  chaussure: '<svg viewBox="0 0 64 64"><path d="M6 44h52c2 0 4-2 4-4v-2c0-2-2-4-4-4l-4-2c-4-2-6-6-8-10l-2-4c-2-4-6-6-10-6h-8c-4 0-8 2-10 6L14 28c-2 2-4 4-6 4l-4 2c-2 0-2 2-2 4v2c0 2 2 4 4 4z"/><line x1="20" y1="34" x2="22" y2="38"/><line x1="28" y1="32" x2="30" y2="36"/><line x1="36" y1="30" x2="38" y2="34"/></svg>',
+  bottes: '<svg viewBox="0 0 64 64"><path d="M22 6h12c2 0 4 2 4 4v28c0 4 2 6 6 8l8 4c2 2 4 4 4 6v2c0 2-2 4-4 4H10c-2 0-4-2-4-4v-2c0-4 4-6 8-6h8c2 0 4-2 4-4z"/><line x1="22" y1="20" x2="38" y2="20"/><line x1="22" y1="30" x2="38" y2="30"/></svg>',
+  waders: '<svg viewBox="0 0 64 64"><path d="M20 6h24v22l4 28c0 2-2 4-4 4h-8c-2 0-4-2-4-4l-2-20-2 20c0 2-2 4-4 4h-8c-2 0-4-2-4-4l4-28z"/><line x1="20" y1="14" x2="44" y2="14"/></svg>'
+};
+
+/* ═══════════ DONNÉES PRODUITS ═══════════ */
+const PRODUITS = [
+  /* ━━━ CASQUES TRAVAUX EN CHARGE ━━━ */
+  { id:'vistashield', nom:'VISTASHIELD', marque:'Schuberth', prix:39.95, cat:'casque', sousCat:'Travaux en charge', ico:'casque', page:8, tier:'eco',
+    activites:['hauteur'], badge:'haut', badgeLabel:'TRAV. CHARGE',
+    description:"Casque d'entrée de gamme pour travaux en charge. Coque ABS, harnais textile, mentonnière standard. Convient aux usages occasionnels.",
+    pour:["Travaux en charge ponctuels","Usage en atelier"],
+    points:["Très léger","Prix d'appel","Visière fournie de série"],
+    limites:["Confort harnais basique pour port longue durée","Pas de système rotatif → ajustement moins fin","Aération limitée — fait transpirer en été"],
+    pourquoi:"C'est le casque le moins cher du catalogue. Choisi par défaut quand le manager regarde la colonne 'prix' avant l'usage. Acceptable pour un usage occasionnel, à éviter pour le port quotidien.",
+    arg:"Le VISTASHIELD est un bon casque d'appoint, mais pour un usage quotidien et confort longue durée, un modèle à harnais rotatif (IDRA 2 ou V-GARD 950) reste plus adapté.",
+    certifs:['EN 397','EN 50365'], fournisseur:'Groupe RG' },
+
+  { id:'vgard950', nom:'V-GARD 950', marque:'MSA', prix:92.75, cat:'casque', sousCat:'Travaux en charge', ico:'casque', page:8, tier:'premium',
+    activites:['hauteur','is'], badge:'haut', badgeLabel:'TRAV. CHARGE',
+    description:"Casque de protection intégrale avec écran de visage rabattable, harnais à crémaillère 6 points, jugulaire 4 points. Référence MSA très utilisée en intervention.",
+    pour:["IS (intervention de sécurité)","Travaux en hauteur","Travaux en charge longue durée"],
+    points:["Écran de visage intégré (anti-projections)","Harnais crémaillère 6 points → ajustement millimétrique","Jugulaire 4 points (norme travail en hauteur)","Confort longue durée — port quotidien","Coque ABS haute résistance"],
+    limites:["Plus lourd que le VISTASHIELD","Plus cher (~2× le bas de gamme)"],
+    pourquoi:"Le surcoût se justifie par l'écran de visage intégré (sécurité face aux projections en IS et travaux en charge), la jugulaire 4 points (obligatoire pour le travail en hauteur ≥ 2m) et le confort du harnais rotatif qui évite céphalées et tensions cervicales en port quotidien.",
+    arg:"Pour mon activité quotidienne en intervention, le V-GARD 950 offre la jugulaire 4 points conforme aux exigences EN 397 § 5.2 et un écran de visage indispensable face aux projections de terre/gravillons lors des fouilles d'urgence. Le surcoût de 50 € est largement amorti sur la durée d'usage (4-5 ans contre 2 ans pour un casque d'entrée de gamme).",
+    certifs:['EN 397','EN 50365','EN 12492','EN 166'], fournisseur:'Groupe RG' },
+
+  { id:'idra2', nom:'IDRA 2', marque:'Auboueix', prix:74.18, cat:'casque', sousCat:'Travaux en charge', ico:'casque', page:8, tier:'standard',
+    activites:['hauteur','is'], badge:'haut', badgeLabel:'TRAV. CHARGE',
+    description:"Casque français Auboueix, harnais rotatif, jugulaire 4 points. Bon compromis qualité/prix.",
+    pour:["Travaux en charge","IS","Port quotidien"],
+    points:["Fabrication française","Harnais rotatif crémaillère","Jugulaire 4 points","Coque ventilée","Bon confort longue durée"],
+    limites:["Pas d'écran de visage intégré (à acheter séparément)"],
+    pourquoi:"Bon rapport qualité/prix. Conserve les bénéfices clés (rotatif, jugulaire 4 points) en restant 20 € en dessous du V-GARD 950.",
+    arg:"L'IDRA 2 propose le confort harnais rotatif et la jugulaire 4 points pour 75 €, contre 40 € pour le VISTASHIELD qui n'a ni l'un ni l'autre. Sur 4 ans d'usage quotidien, c'est un investissement rentable en confort et en sécurité.",
+    certifs:['EN 397','EN 50365','EN 12492'], fournisseur:'Groupe RG' },
+
+  { id:'vertex-vizen', nom:'VERTEX + VIZEN', marque:'Petzl', prix:92.53, cat:'casque', sousCat:'Travaux en charge', ico:'casque', page:8, tier:'premium',
+    activites:['hauteur','is'], badge:'haut', badgeLabel:'TRAV. CHARGE',
+    description:"Casque Petzl VERTEX (référence travaux en hauteur professionnels) avec écran de visage VIZEN intégré. La référence de l'élagage et des secours.",
+    pour:["Travaux en hauteur fréquents","IS","Travaux d'élagage et accès sur corde"],
+    points:["Coque ABS ultra-résistante (chocs latéraux EN 12492)","Mousses confort interchangeables (renouvelables)","Système CenterFit pour centrer le casque","Écran VIZEN clipsable (anti-buée, anti-rayures)","Compatibilité accessoires Petzl (lampe, casques anti-bruit)"],
+    limites:["Casque plus lourd (455 g)","VIZEN à acheter en plus si non fourni d'origine"],
+    pourquoi:"Le VERTEX est la référence mondiale du travail en hauteur. Sa résistance aux chocs latéraux (EN 12492) est supérieure à celle des casques EN 397 'classiques'. Indispensable pour les chutes potentielles non purement verticales (déplacements en hauteur, accès sur corde).",
+    arg:"Le VERTEX répond à la norme EN 12492 (chocs latéraux), ce qui est essentiel pour mes interventions où le risque n'est pas que vertical. Le confort des mousses interchangeables permet de garder le casque propre et hygiénique sur la durée — un atout pour la santé cutanée (eczéma de contact).",
+    certifs:['EN 397','EN 12492','EN 50365','EN 166'], fournisseur:'Groupe RG' },
+
+  { id:'protos', nom:'PROTOS Integral Industry', marque:'Pfanner', prix:168.07, cat:'casque', sousCat:'Travaux en charge', ico:'casque', page:8, tier:'premium',
+    activites:['hauteur','soudage','is'], badge:'haut', badgeLabel:'PREMIUM',
+    description:"Casque haut de gamme Pfanner PROTOS Integral Industry : casque + visière + coquilles anti-bruit + protections latérales intégrées en un seul ensemble.",
+    pour:["Travaux à risques multiples combinés","Soudage / brasage en hauteur","Élagage industriel","Espaces complexes (bruit + projection + chute)"],
+    points:["Tout-en-un : casque + visière + anti-bruit + protections latérales","Aération naturelle (température casque réduite de 4°C en moyenne)","Confort exceptionnel — port toute une journée sans gêne","Modulaire : on retire ou ajoute selon le risque","Très haute résistance EN 12492","Anti-buée"],
+    limites:["Prix élevé (~170 €)","Nécessite une formation rapide à l'usage des modules"],
+    pourquoi:"Le PROTOS coûte 4× le casque d'entrée de gamme MAIS remplace simultanément 4 EPI (casque + visière + casque anti-bruit + protections faciales). Si on additionne ces 4 EPI distincts, on dépasse 200 €, et le confort/sécurité du tout-en-un est sans commune mesure. Durée d'usage : 8-10 ans avec entretien.",
+    arg:"Le PROTOS combine en un seul ensemble les protections dont j'ai besoin (chocs, projections, bruit). Acheter ces 4 fonctions séparément coûterait plus cher et créerait des interférences (visière qui ne tient pas sur le casque, anti-bruit qui glisse). Sa durabilité (8-10 ans) en fait l'investissement le plus rentable du catalogue pour les activités combinant plusieurs risques.",
+    certifs:['EN 397','EN 12492','EN 352-3','EN 1731','EN 166'], fournisseur:'Groupe RG' },
+
+  /* ━━━ CASQUETTES ━━━ */
+  { id:'casquette-7cm', nom:'Casquette coquée 7cm', marque:'Std', prix:21.90, cat:'casque', sousCat:'Casquette coquée', ico:'casquette', page:8, tier:'eco',
+    activites:['clientele','rsf'], badge:'', badgeLabel:'CASQUETTE',
+    description:"Casquette coquée légère, visière 7cm. Protection contre les chocs faibles (heurts en zone basse, tête contre obstacle).",
+    pour:["Clientèle","RSF léger","Maintenance bureautique","Visites de chantier sans risque de chute d'objet"],
+    points:["Légère (~150 g)","Esthétique 'casquette' (moins stigmatisant en clientèle)","Coque interne dissimulée"],
+    limites:["Ne protège pas contre la chute d'objets","Pas adaptée aux travaux en hauteur","Norme EN 812 (heurts seulement)"],
+    pourquoi:"Convient uniquement aux risques de heurt (cogner sa tête). Surtout pas pour les chantiers actifs où des objets peuvent tomber.",
+    arg:"Pour mes visites clientèle, la casquette coquée est plus appropriée qu'un casque complet : elle protège des heurts en accès souterrain (regards, branchements) sans intimider le client.",
+    certifs:['EN 812'], fournisseur:'Groupe RG' },
+
+  { id:'hardcap', nom:'Hardcap A1+', marque:'JSP', prix:31.57, cat:'casque', sousCat:'Casquette coquée', ico:'casquette', page:8, tier:'standard',
+    activites:['clientele','rsf'], badge:'', badgeLabel:'CASQUETTE',
+    description:"Casquette coquée premium JSP, mousses absorbantes, ajustement précis. Plus longue durée que la version standard.",
+    pour:["Clientèle quotidienne","RSF","Maintenance en regards"],
+    points:["Mousses haute densité (absorption de choc supérieure)","Ajustement par molette","Confort longue durée","Visière 7cm renforcée","Aération améliorée"],
+    limites:["Idem : protection contre les heurts uniquement (EN 812)"],
+    pourquoi:"Pour 10 € de plus que la casquette d'entrée, le Hardcap dure 2× plus longtemps et le confort est sans comparaison. Les mousses absorbent réellement le choc au lieu de le transmettre au cuir chevelu.",
+    arg:"Le Hardcap A1+ offre des mousses haute densité qui réduisent réellement la transmission du choc. Pour un usage quotidien en clientèle, c'est un confort qui évite les céphalées de fin de journée.",
+    certifs:['EN 812'], fournisseur:'Groupe RG' },
+
+  /* ━━━ CASQUES HORS TRAVAUX EN CHARGE ━━━ */
+  { id:'iris2', nom:'IRIS 2', marque:'Auboueix', prix:35.43, cat:'casque', sousCat:'Casque standard', ico:'casque', page:8, tier:'standard',
+    activites:['rsf','clientele'], badge:'', badgeLabel:'STANDARD',
+    description:"Casque standard Auboueix (hors travaux en charge). Harnais textile, jugulaire optionnelle.",
+    pour:["Visites chantier de routine","Maintenance générale","Activités sans risque de chute d'objet majeur"],
+    points:["Fabrication française","Léger (350 g)","Coque polyéthylène","Bon rapport qualité-prix"],
+    limites:["Pas pour les travaux en charge","Harnais textile (moins de confort qu'un crémaillère)"],
+    pourquoi:"Casque polyvalent standard, équivalent en qualité aux modèles d'entrée de gamme du marché. Bon choix pour les activités où le risque chute d'objet est faible.",
+    arg:"L'IRIS 2 répond à mes besoins de protection courante. Pour les interventions sur ouvrages exposés (réseau, postes), je demanderai en complément un casque à jugulaire 4 points type IDRA 2 ou V-GARD 950.",
+    certifs:['EN 397'], fournisseur:'Groupe RG' },
+
+  /* ━━━ LUNETTES DE SÉCURITÉ ━━━ */
+  { id:'rush2-inc', nom:'Rush 2+ incolore', marque:'Bollé', prix:5.50, cat:'oculaire', sousCat:'Lunettes sécurité', ico:'lunettes', page:9, tier:'eco',
+    activites:['clientele','rsf','manutention'], badge:'', badgeLabel:'LUNETTES',
+    description:"Lunettes Bollé Rush 2+ verres incolores. Référence du catalogue sécurité française. Verres anti-rayures et anti-buée.",
+    pour:["Port quasi-quotidien (manipulation outils, projections faibles)","Interventions en intérieur"],
+    points:["Légères (23 g)","Branches flexibles ergonomiques","Verres anti-buée Platinum (durée 5× supérieure aux verres standards)","Anti-rayures Platinum","Excellent champ de vision panoramique","Pont nasal anti-glissement"],
+    limites:["Pas de protection latérale renforcée","Pas anti-UV solaire (utiliser la version Fumé)"],
+    pourquoi:"Lunettes de référence à prix imbattable. Aucune raison de les remplacer par moins cher.",
+    arg:"Les Rush 2+ Bollé sont la référence Bollé en sécurité industrielle. Leur anti-buée Platinum dure 5× plus longtemps que les verres standard et évite les microaccidents dus à la buée en intervention.",
+    certifs:['EN 166','EN 170','EN 172'], fournisseur:'Groupe RG' },
+
+  { id:'rush2-fume', nom:'Rush 2+ Fumé', marque:'Bollé', prix:6.05, cat:'oculaire', sousCat:'Lunettes solaires', ico:'lunettes', page:9, tier:'eco',
+    activites:['clientele','rsf'], badge:'', badgeLabel:'SOLAIRE',
+    description:"Version solaire des Rush 2+. Verres teintés gris, filtre UV intégral. Idéales travaux extérieurs en plein soleil.",
+    pour:["Travaux extérieurs en plein soleil","Conduite VL d'intervention","Soudage rapide à l'arc d'éblouissement (non recommandé pour soudage prolongé)"],
+    points:["Filtre UV 99,9% (catégorie 3)","Anti-éblouissement","Verres anti-rayures","Légères (23 g)"],
+    limites:["Pas pour la conduite de nuit","Ne remplace pas une lunette de soudage Teinte 3 ou 5"],
+    pourquoi:"Économies santé : éviter de plisser les yeux en plein soleil réduit la fatigue oculaire et les céphalées en fin de journée.",
+    arg:"Pour mon activité extérieure (chantiers, conduite VL), les Rush 2+ Fumé sont indispensables : protection UV + protection mécanique en une seule paire. Cela évite le réflexe de retirer les lunettes pour mettre des solaires, qui crée un risque d'oubli en zone à projection.",
+    certifs:['EN 166','EN 172'], fournisseur:'Groupe RG' },
+
+  { id:'rush2-t17', nom:'Rush 2+ Teinte 1,7', marque:'Bollé', prix:8.95, cat:'oculaire', sousCat:'Brasage', ico:'lunettes', page:9, tier:'standard',
+    activites:['soudage'], badge:'soud', badgeLabel:'BRASAGE',
+    description:"Rush 2+ avec verres teinte 1,7 pour brasage léger.",
+    pour:["Brasage léger","Découpage à la disqueuse","Allumage de chalumeau"],
+    points:["Idem confort Rush 2+","Teinte adaptée aux flammes basses"],
+    limites:["Insuffisant pour soudage à l'arc ou oxy-acétylène (utiliser Teinte 3 ou 5)"],
+    pourquoi:"Filtre adapté au brasage gaz uniquement. Pour la soudure à l'arc, exiger Teinte 3 minimum.",
+    arg:"Les Rush 2+ Teinte 1,7 conviennent à mon activité de brasage léger. Pour la soudure à l'arc, je demanderai en complément un modèle Teinte 3 ou supérieur.",
+    certifs:['EN 166','EN 169'], fournisseur:'Groupe RG' },
+
+  { id:'rush2-t3', nom:'Rush 2+ Teinte 3', marque:'Bollé', prix:8.95, cat:'oculaire', sousCat:'Brasage', ico:'lunettes', page:9, tier:'standard',
+    activites:['soudage'], badge:'soud', badgeLabel:'BRASAGE',
+    description:"Rush 2+ teinte 3 pour brasage. Filtre adapté aux flammes oxy-acétylène brèves.",
+    pour:["Brasage standard","Découpe oxy"],
+    points:["Teinte 3 EN 169","Confort Rush 2+","Anti-buée Platinum"],
+    limites:["Pas pour soudure à l'arc intense (préférer Teinte 5)"],
+    pourquoi:"Teinte appropriée à la majorité des opérations de brasage gaz GRDF.",
+    arg:"Les Rush 2+ Teinte 3 sont conformes EN 169 pour le brasage oxy-acétylène standard, qui constitue l'essentiel de mon activité.",
+    certifs:['EN 166','EN 169'], fournisseur:'Groupe RG' },
+
+  { id:'rush2-t5', nom:'Rush 2+ Teinte 5 + kit (Oxy)', marque:'Bollé', prix:15.31, cat:'oculaire', sousCat:'Oxycoupage', ico:'lunettes', page:9, tier:'premium',
+    activites:['soudage'], badge:'soud', badgeLabel:'OXY',
+    description:"Rush 2+ teinte 5 avec kit mousse de protection et tresse de tenue. Pour oxycoupage et soudures intenses.",
+    pour:["Oxycoupage","Soudage à l'arc faible intensité","Travaux prolongés sur métaux chauds"],
+    points:["Teinte 5 (EN 169)","Kit mousse anti-projection latérale","Tresse de maintien (lunettes ne tombent pas)","Anti-buée Platinum"],
+    limites:["Champ de vision réduit pour les opérations qui ne sont pas du soudage","Plus chères que les Teinte 3"],
+    pourquoi:"Le kit mousse + tresse fait la différence : il évite les brûlures latérales et garantit que les lunettes ne tombent pas pendant une opération critique (chute = arc électrique sans protection = lésions oculaires graves).",
+    arg:"Pour l'oxycoupage, la teinte 3 est insuffisante (norme EN 169 § Annexe B). Le kit mousse + tresse des Rush 2+ Teinte 5 est précisément ce qui protège contre les projections latérales et garantit que mes lunettes ne tombent pas pendant une opération à risque. Le surcoût de 6 € est largement justifié pour la sécurité oculaire.",
+    certifs:['EN 166','EN 169'], fournisseur:'Groupe RG' },
+
+  { id:'spectrum', nom:'SPECTRUM', marque:'Bollé', prix:10.95, cat:'oculaire', sousCat:'Sur-lunettes', ico:'lunettes', page:9, tier:'standard',
+    activites:['clientele','rsf','manutention'], badge:'', badgeLabel:'SUR-LUNETTES',
+    description:"Sur-lunettes Bollé portées par-dessus les lunettes de vue correctrice. Verres panoramiques incolores.",
+    pour:["Porteurs de lunettes correctrices","Visites occasionnelles à risque","Visiteurs externes"],
+    points:["Couvrent les lunettes de vue jusqu'à 145 mm","Pas besoin de lunettes de sécurité à la vue (économie 200-400 €)","Verres anti-buée","Légères et confortables"],
+    limites:["Champ de vision périphérique légèrement réduit","Pas pour le soudage"],
+    pourquoi:"Solution économique pour les porteurs de lunettes : pas besoin de monture spéciale à 200-400 €. Important pour la mise en conformité immédiate des collègues à la vue.",
+    arg:"Étant porteur de lunettes de vue, les SPECTRUM me permettent d'avoir une protection EN 166 immédiate sans devoir attendre des lunettes correctrices à la vue (délai 4-8 semaines + 250 € minimum). C'est un gain de temps et de sécurité.",
+    certifs:['EN 166','EN 170'], fournisseur:'Groupe RG' },
+
+  { id:'super-f', nom:'SUPER F OTG Teinte 3', marque:'Bollé', prix:10.25, cat:'oculaire', sousCat:'Sur-lunettes brasage', ico:'lunettes', page:9, tier:'standard',
+    activites:['soudage'], badge:'soud', badgeLabel:'BRASAGE',
+    description:"Sur-lunettes Bollé OTG (Over The Glasses) avec verres teinte 3 pour brasage chez les porteurs de lunettes correctrices.",
+    pour:["Soudeurs/braseurs à la vue","Brasage avec lunettes correctrices en dessous"],
+    points:["Compatible avec lunettes de vue","Teinte 3 EN 169","Mousses latérales anti-projection","Verres en polycarbonate haute résistance"],
+    limites:["Limite teinte 3 → préférer FLIP UP pour soudage intense"],
+    pourquoi:"Indispensable aux braseurs porteurs de lunettes correctrices. Évite l'achat de doubles lunettes (vue + brasage) coûteuses.",
+    arg:"Étant porteur de lunettes de vue, les SUPER F OTG me permettent d'avoir une protection EN 169 sans changer de monture entre intervention et brasage. Sécurité et productivité.",
+    certifs:['EN 166','EN 169'], fournisseur:'Groupe RG' },
+
+  { id:'flip-up', nom:'FLIP UP Teinte 5', marque:'Bollé', prix:22.95, cat:'oculaire', sousCat:'Soudage', ico:'lunettes', page:9, tier:'premium',
+    activites:['soudage'], badge:'soud', badgeLabel:'SOUDAGE',
+    description:"Lunettes-masques relevables (Flip-Up) teinte 5. Verre teinte 5 relevable pour passer de l'observation à la soudure sans changer de lunettes.",
+    pour:["Soudage à l'arc","Soudage prolongé avec contrôles fréquents","Travaux mixtes soudure/inspection"],
+    points:["Verre teinte 5 relevable (gain de temps majeur en soudure intermittente)","Champ de vision intégral","Bandeau élastique réglable","Verre intérieur incolore EN 166 (protection mécanique conservée)","Très haute polyvalence"],
+    limites:["Plus encombrantes que des lunettes simples","Prix élevé"],
+    pourquoi:"Le système relevable supprime le geste 'enlever/remettre les lunettes' entre chaque cordon de soudure. Sur une journée, c'est des centaines de mouvements évités → moins de fatigue, moins d'oublis (= risques d'arc électrique sans protection).",
+    arg:"Le FLIP UP Teinte 5 est conçu pour la soudure intermittente où je dois constamment inspecter mon cordon. Le système relevable évite de retirer et remettre les lunettes 200 fois par jour — c'est à la fois un gain de productivité et de sécurité (moins de risques d'oublier de les remettre avant un nouveau cordon).",
+    certifs:['EN 166','EN 169'], fournisseur:'Groupe RG' },
+
+  { id:'universal', nom:'UNIVERSAL Teinte 5', marque:'Bollé', prix:21.96, cat:'oculaire', sousCat:'Soudage', ico:'lunettes', page:9, tier:'premium',
+    activites:['soudage'], badge:'soud', badgeLabel:'SOUDAGE',
+    description:"Lunettes-masques universelles teinte 5. Joint d'étanchéité intégral, protection latérale renforcée.",
+    pour:["Soudage à l'arc intensif","Travaux en environnement à forte projection"],
+    points:["Joint mousse intégral (étanchéité aux particules)","Verre teinte 5","Bandeau élastique","Protection latérale 360°","Compatible avec sur-lunettes correctrices"],
+    limites:["Cloisonnent davantage qu'une lunette classique","Buée possible en environnement humide"],
+    pourquoi:"Étanchéité maximale = protection contre les meulures incandescentes qui se logent sous les lunettes classiques.",
+    arg:"L'UNIVERSAL est étanche aux projections et particules incandescentes — essentiel pour mes travaux de soudage à l'arc où les meulures peuvent entrer sous des lunettes classiques et provoquer des brûlures cornéennes.",
+    certifs:['EN 166','EN 169'], fournisseur:'Groupe RG' },
+
+  /* ━━━ GANTS MANUTENTION ━━━ */
+  { id:'tegera255', nom:'TEGERA 255', marque:'Ejendals', prix:15.80, cat:'gant', sousCat:'Manutention', ico:'gant', page:10, tier:'standard',
+    activites:['manutention','rsf'], badge:'', badgeLabel:'MANUTENTION',
+    description:"Gants Tegera 255 enduction polyuréthane sur paume, dos respirant. Référence Ejendals pour la manutention précise.",
+    pour:["Manutention fine","Préhension d'objets glissants","Pose de matériel délicat"],
+    points:["Niveau de dextérité maximal (5/5)","Enduction PU paume — anti-glissement précis","Dos respirant — peu de transpiration","Très résistants à l'abrasion (4/4)"],
+    limites:["Pas de protection thermique","Pas adapté au manipulation d'objets coupants importants"],
+    pourquoi:"Référence du marché en manutention précise. Bonne durée d'usage (1-3 mois selon intensité).",
+    arg:"Les TEGERA 255 me permettent une préhension précise tout en protégeant des abrasions. Pour ma manutention quotidienne, c'est le bon compromis dextérité/protection.",
+    certifs:['EN 388:2016 4131A','EN 420'], fournisseur:'Groupe RG' },
+
+  { id:'perseus', nom:'PERSEUS', marque:'Ansell', prix:12.09, cat:'gant', sousCat:'Manutention', ico:'gant', page:10, tier:'standard',
+    activites:['manutention','rsf'], badge:'', badgeLabel:'MANUTENTION',
+    description:"Gants Ansell Perseus, enduction nitrile micro-mousse. Excellent grip en milieu humide ou huileux.",
+    pour:["Manutention en milieu humide","Travaux en présence de graisse / huile"],
+    points:["Enduction nitrile micro-mousse → grip sur surfaces grasses","Bonne dextérité (4/5)","Lavables 5 cycles","Bon rapport qualité-prix"],
+    limites:["Pas pour travaux à chaud","Pas de protection chimique homologuée"],
+    pourquoi:"Excellent compromis pour les manipulations en milieu humide / huileux (boîtiers de comptage, raccordement).",
+    arg:"Les PERSEUS sont les gants à privilégier dès qu'il y a présence de graisse ou d'huile sur les pièces manipulées. Le nitrile mousse adhère même mouillé.",
+    certifs:['EN 388:2016 4121X','EN 420'], fournisseur:'Groupe RG' },
+
+  { id:'tegera666', nom:'TEGERA 666', marque:'Ejendals', prix:12.80, cat:'gant', sousCat:'Manutention', ico:'gant', page:10, tier:'standard',
+    activites:['manutention','rsf'], badge:'', badgeLabel:'MANUTENTION',
+    description:"Gants Tegera 666 cuir + textile, doublure respirante. Polyvalents pour travaux de manutention courants.",
+    pour:["Manutention générale","Travaux de réparation","Activités d'extérieur en saison tempérée"],
+    points:["Cuir grain doux paume","Dos textile respirant","Renforts entre pouce et index","Souples dès l'enfilage (pas de période de rodage)"],
+    limites:["Pas pour environnements très humides (le cuir absorbe)"],
+    pourquoi:"Gant polyvalent à durée d'usage longue (3-6 mois). Le cuir s'adapte à la main au fil du temps.",
+    arg:"Les TEGERA 666 sont mes gants 'tout usage'. Le cuir naturel respecte la sensibilité tactile nécessaire à mon métier.",
+    certifs:['EN 388:2016 3132X','EN 420'], fournisseur:'Groupe RG' },
+
+  /* ━━━ GANTS SOUDAGE ━━━ */
+  { id:'flexwelder', nom:'FLEXWELDER', marque:'Tegera', prix:14.90, cat:'gant', sousCat:'Soudage', ico:'gant', page:10, tier:'standard',
+    activites:['soudage','is'], badge:'soud', badgeLabel:'SOUDAGE',
+    description:"Gants de soudage Tegera Flexwelder, cuir de chèvre. Spécifiques soudure TIG / Oxy / brasage IS.",
+    pour:["Soudage TIG (haute précision)","Brasage","Intervention de sécurité (IS) sur fuite gaz","Manipulation de pièces chaudes < 100°C"],
+    points:["Cuir chèvre fin → dextérité supérieure pour TIG","Doublure interne anti-feu","Manchette protège poignet","Coutures Kevlar (résistantes au feu)","Souples — pas de période de rodage"],
+    limites:["Pas adaptés au soudage à l'arc intensif (préférer PROSOUD pour MIG/MAG)","Protection thermique courte durée"],
+    pourquoi:"Le FLEXWELDER est conçu pour la précision (TIG, brasage). Pour le soudage MIG/MAG intensif, choisir un gant plus épais (PROSOUD).",
+    arg:"Pour mes travaux d'IS (manipulation de pièces chaudes après ouverture d'un branchement défectueux) et de brasage TIG, le FLEXWELDER offre la dextérité nécessaire à un travail de précision sans sacrifier la protection thermique.",
+    certifs:['EN 388:2016 2122X','EN 407 412X4X','EN 12477:A'], fournisseur:'Groupe RG' },
+
+  { id:'prosoud', nom:'PROSOUD', marque:'Singer', prix:15.64, cat:'gant', sousCat:'Soudage', ico:'gant', page:10, tier:'standard',
+    activites:['soudage'], badge:'soud', badgeLabel:'SOUDAGE',
+    description:"Gants Singer Prosoud, cuir de bovin épais, doublure feutre. Pour soudage à l'arc intensif.",
+    pour:["Soudage MIG/MAG","Soudage arc","Manipulation de pièces chaudes prolongée"],
+    points:["Cuir bovin épais (~1.4 mm)","Doublure feutre haute résistance thermique","Manchette longue (15 cm) — protège l'avant-bras","Coutures Kevlar","Excellent rapport protection-prix"],
+    limites:["Dextérité réduite (4/5 vs 5/5 du Flexwelder)","Pas pour le TIG de précision"],
+    pourquoi:"Le PROSOUD prolonge la durée de contact possible avec pièces chaudes grâce à sa doublure feutre. Indispensable en soudage à l'arc.",
+    arg:"Pour mon soudage à l'arc, le PROSOUD offre une protection thermique réelle (cuir + feutre) qui permet de manipuler les pièces immédiatement après soudage. La manchette protège l'avant-bras des projections d'arc.",
+    certifs:['EN 388:2016 3132X','EN 407 412X4X','EN 12477:A'], fournisseur:'Groupe RG' },
+
+  /* ━━━ GANTS CHIMIQUES ━━━ */
+  { id:'fluotech468', nom:'FLUOTECH 468', marque:'Mapa', prix:78.90, cat:'gant', sousCat:'Produits chimiques', ico:'gant', page:11, tier:'premium',
+    activites:['chimique'], badge:'chim', badgeLabel:'CHIMIQUE',
+    description:"Gants Mapa Fluotech 468 multi-couches : néoprène + butyle + fluoroélastomère. Le top de la protection chimique.",
+    pour:["Manipulation acides forts","Hydrocarbures","Solvants industriels","Mercaptans (gaz odorisé THT)","Décontamination accidentelle"],
+    points:["Triple couche fluoroélastomère (résistance étendue aux produits)","Indice Type A EN 374-1 (étanche à 6 produits chimiques de classe A)","Protection complète main + poignet","Manchette longue 38 cm","Excellente résistance à la perforation"],
+    limites:["Prix élevé","Dextérité réduite (gant épais)","Pas pour la manutention fine"],
+    pourquoi:"En milieu chimique GRDF (mercaptans, hydrocarbures), seuls les gants Type A EN 374 protègent réellement. Les gants 'nitrile standard' laissent passer les solvants en quelques minutes. Le FLUOTECH 468 est conforme à la directive Seveso pour les situations à risque chimique majeur.",
+    arg:"Le FLUOTECH 468 est de Type A EN 374-1, ce qui signifie qu'il résiste à 6 produits chimiques classés A (vs 3 produits pour le Type B). Pour mes manipulations de mercaptans (THT) et d'hydrocarbures, c'est le seul gant qui m'offre une protection >30 min. Les gants nitrile standard (10 €) sont percés en 10 min par les solvants.",
+    certifs:['EN 388:2016','EN 374-1:Type A','EN 374-5'], fournisseur:'Groupe RG' },
+
+  { id:'nitrile719b', nom:'NITRILE 719B', marque:'Mapa', prix:10.20, cat:'gant', sousCat:'Produits chimiques', ico:'gant', page:11, tier:'eco',
+    activites:['chimique','manutention'], badge:'chim', badgeLabel:'CHIM. LÉGER',
+    description:"Gants nitrile standard, manchette courte. Pour contact bref avec produits chimiques peu agressifs.",
+    pour:["Contact bref avec graisses, huiles","Nettoyage outils","Manipulation produits non agressifs"],
+    points:["Bon marché","Souples","Lavables","Bonne dextérité"],
+    limites:["Type B EN 374 seulement → résistance limitée aux solvants forts","Manchette courte (peu de protection avant-bras)"],
+    pourquoi:"Convient aux contacts brefs et peu agressifs. Ne remplace JAMAIS un FLUOTECH pour les mercaptans ou hydrocarbures.",
+    arg:"Pour mes tâches de nettoyage d'outils ou de manipulation d'huiles, les NITRILE 719B suffisent. Mais pour les opérations Seveso (mercaptans, hydrocarbures), je demanderai du FLUOTECH 468 — la durée de pénétration des solvants y est bien supérieure.",
+    certifs:['EN 388','EN 374-1:Type B'], fournisseur:'Groupe RG' },
+
+  /* ━━━ GANTS ÉLECTRICIEN ━━━ */
+  { id:'sibille-c0', nom:'SIBILLE Classe 0', marque:'Catu/Sibille', prix:21.33, cat:'gant', sousCat:'Électricien', ico:'gant', page:11, tier:'standard',
+    activites:['electricien'], badge:'elec', badgeLabel:'ÉLECTRICIEN',
+    description:"Gants isolants Sibille classe 0 : protection jusqu'à 1000 V AC / 1500 V DC. Référence française CATU.",
+    pour:["Travaux sous tension BT (TST-BT)","Consignation","Mesures sur tableau électrique BT","Manœuvres disjoncteurs"],
+    points:["Isolation classe 0 (1000 V AC)","Latex naturel souple","Marquage normatif (EN 60903)","Test annuel obligatoire (à programmer)","Compatibles sur-gants GMS pour protection mécanique"],
+    limites:["Latex sensible aux UV (stockage en sachet)","Test diélectrique annuel obligatoire","Toujours porter avec sur-gants pour la protection mécanique"],
+    pourquoi:"OBLIGATOIRES pour tout travail sous tension BT, sans aucune alternative. Le test annuel est une obligation réglementaire UTE C18-510.",
+    arg:"Pour mes interventions sous tension BT, les SIBILLE Classe 0 sont l'EPI réglementaire imposé par l'UTE C18-510. Il est impératif de les associer aux sur-gants GMS pour la protection mécanique (le latex seul ne résiste pas à l'abrasion).",
+    certifs:['EN 60903','IEC 60903','Classe 0 — 1000 V AC'], fournisseur:'Groupe RG' },
+
+  { id:'sibille-c2', nom:'SIBILLE Classe 2', marque:'Catu/Sibille', prix:42.28, cat:'gant', sousCat:'Électricien', ico:'gant', page:11, tier:'standard',
+    activites:['electricien'], badge:'elec', badgeLabel:'ÉLECTRICIEN HTA',
+    description:"Gants isolants Sibille classe 2 : protection jusqu'à 17 000 V AC. Pour travaux sous tension HTA.",
+    pour:["Travaux sous tension HTA","Manœuvres disjoncteur HTA","Postes de livraison HTA"],
+    points:["Isolation classe 2 (17 kV AC)","Plus épais → plus de protection mécanique","Latex naturel haute qualité","Test diélectrique régulier requis"],
+    limites:["Dextérité réduite par l'épaisseur","Test diélectrique tous les 6 mois (CMP 18-510)","Stockage en sachet UV-protégé impératif"],
+    pourquoi:"Le passage de Classe 0 à Classe 2 ne se choisit pas par convenance : il est dicté par la tension réelle des installations sur lesquelles vous intervenez. Sur HTA, la Classe 0 est totalement insuffisante (risque arc électrique mortel).",
+    arg:"Mes interventions HTA imposent réglementairement les gants Classe 2 (IEC 60903) jusqu'à 17 kV. Les Classe 0 ne sont en aucun cas suffisantes — c'est une question de vie ou de mort. Le surcoût (21 € → 42 €) est non négociable.",
+    certifs:['EN 60903','IEC 60903','Classe 2 — 17 kV AC'], fournisseur:'Groupe RG' },
+
+  { id:'surgants', nom:'Sur-gants GMS/7/ELC', marque:'Catu', prix:6.80, cat:'gant', sousCat:'Électricien', ico:'gant', page:11, tier:'eco',
+    activites:['electricien'], badge:'elec', badgeLabel:'SUR-GANTS',
+    description:"Sur-gants en cuir tannage chrome à porter par-dessus les gants isolants Sibille. Protection mécanique.",
+    pour:["Compléter les gants isolants (toujours)","Protéger le latex contre les coupures/abrasions"],
+    points:["Cuir chrome souple","Renforcement paume","Coutures Kevlar","Indispensables avec Sibille Classe 0/1/2"],
+    limites:["Ne se portent QUE par-dessus des gants isolants — pas seuls"],
+    pourquoi:"Sans sur-gants, le latex des Sibille se déchire au premier objet pointu. Un gant isolant percé = aucune protection.",
+    arg:"Les sur-gants GMS sont indispensables pour préserver l'intégrité des gants isolants Sibille. Sans eux, je perds la protection diélectrique au premier objet pointu (vis, sertissure, arête). Ce sont les sur-gants qui font durer l'investissement en gants isolants.",
+    certifs:['EN 388 2122X','EN 60903 Annexe B'], fournisseur:'Groupe RG' },
+
+  /* ━━━ SOUS-GANTS FROID ━━━ */
+  { id:'canada', nom:'CANADA', marque:'Mapa', prix:2.94, cat:'gant', sousCat:'Sous-gants froid', ico:'gant', page:11, tier:'eco',
+    activites:['froid'], badge:'froid', badgeLabel:'FROID',
+    description:"Sous-gants tricot polyamide CANADA, à porter sous les gants de travail en hiver.",
+    pour:["Travail au froid (extérieur hiver)","Manipulations longues à basse température"],
+    points:["Très bon marché","Souples","Sèche-rapide","Lavables"],
+    limites:["Protection thermique limitée — convient à 0°C / -5°C max"],
+    pourquoi:"Solution économique pour les jours de froid modéré.",
+    arg:"Les sous-gants CANADA améliorent significativement le confort hivernal sans réduire la dextérité de mes gants de travail.",
+    certifs:['EN 511'], fournisseur:'Groupe RG' },
+
+  { id:'zpp25', nom:'ZPP25', marque:'Singer', prix:3.24, cat:'gant', sousCat:'Sous-gants froid', ico:'gant', page:11, tier:'eco',
+    activites:['froid'], badge:'froid', badgeLabel:'FROID',
+    description:"Sous-gants Singer ZPP25, fibre thermolite. Isolation thermique supérieure aux CANADA.",
+    pour:["Travail au froid intense (-10°C)","Interventions hivernales prolongées"],
+    points:["Fibre thermolite (mieux isolant que polyamide simple)","Confort prolongé","Lavables"],
+    limites:["Légèrement moins fins que les CANADA"],
+    pourquoi:"Pour un surcoût négligeable (30 cts), gain notable en isolation. Le froid persistant aux extrémités cause des engelures.",
+    arg:"Pour mes interventions hivernales prolongées (températures négatives), les ZPP25 offrent une meilleure isolation que les CANADA grâce à la fibre Thermolite, prévenant les engelures et la perte de sensibilité tactile.",
+    certifs:['EN 511'], fournisseur:'Groupe RG' },
+
+  /* ━━━ CHAUSSURES BASSES MIXTES ━━━ */
+  { id:'heckel-ms300', nom:'HECKEL MS 300 LOW', marque:'Heckel', prix:56.85, cat:'chaussure', sousCat:'Chaussures basses', ico:'chaussure', page:12, tier:'eco',
+    activites:['clientele','rsf','biomethane','manutention'], badge:'', badgeLabel:'BASSES',
+    description:"Chaussures Heckel MS 300 LOW basses, semelle PU bi-densité, embout composite. Modèle économique d'entrée de gamme.",
+    pour:["Visites clientèle","Maintenance bureautique","Travaux secs en intérieur"],
+    points:["Embout composite (non métallique → confort)","Légères (~580 g/paire)","Semelle PU bi-densité antidérapante","Conformes S3"],
+    limites:["Confort longue durée moyen — pas de mousse mémoire","Tige courte → pas de protection cheville","Pas pour terrains accidentés"],
+    pourquoi:"Modèle d'entrée de gamme. Convient à un usage occasionnel ou à des activités où vous n'êtes pas debout toute la journée.",
+    arg:"Les HECKEL MS 300 LOW conviennent à un usage modéré en intérieur. Pour mon usage quotidien debout, je préfère un modèle à mousse mémoire (JALAS EXALTER) qui réduit la fatigue plantaire en fin de journée.",
+    certifs:['EN ISO 20345 S3'], fournisseur:'Groupe RG' },
+
+  { id:'heckel-1', nom:'HECKEL 1', marque:'Heckel', prix:74.00, cat:'chaussure', sousCat:'Chaussures basses', ico:'chaussure', page:12, tier:'standard',
+    activites:['clientele','rsf','biomethane','manutention'], badge:'', badgeLabel:'BASSES',
+    description:"Chaussures Heckel 1 basses, cuir grainé. Standard milieu de gamme avec confort renforcé.",
+    pour:["Visites clientèle quotidiennes","RSF léger","Biométhane"],
+    points:["Cuir grainé hydrofuge","Doublure respirante","Semelle EVA + PU bi-densité","Pied confortable même en fin de journée"],
+    limites:["Pas pour terrain instable","Tige courte"],
+    pourquoi:"Le saut de qualité entre MS 300 et HECKEL 1 se justifie par le cuir hydrofuge (résiste à la pluie d'intervention) et le confort EVA.",
+    arg:"Les HECKEL 1 offrent un cuir hydrofuge qui résiste aux conditions pluvieuses de mes visites clientèle. Le confort EVA réduit la fatigue plantaire — un atout pour les longues journées en clientèle.",
+    certifs:['EN ISO 20345 S3'], fournisseur:'Groupe RG' },
+
+  { id:'jalas-exalter', nom:'JALAS EXALTER', marque:'Jalas', prix:110.00, cat:'chaussure', sousCat:'Chaussures basses', ico:'chaussure', page:12, tier:'premium',
+    activites:['clientele','rsf','biomethane','manutention'], badge:'', badgeLabel:'PREMIUM',
+    description:"Jalas EXALTER : chaussures de sécurité finlandaises haut de gamme. Confort sneaker, technologie BOA en option, mousse à mémoire de forme.",
+    pour:["Port quotidien longue durée","Salariés à pieds sensibles, antécédents TMS","Activités mixtes intérieur/extérieur"],
+    points:["Confort sneaker (sentation marche urbaine)","Mousse mémoire de forme talon + voûte plantaire","Embout composite légèreté maximale","Semelle anti-perforation textile (plus souple que métal)","Conformes S3","Excellente respirabilité — pas d'ampoule"],
+    limites:["Prix élevé (2× le MS 300)","Pas pour terrains très boueux (préférer brodequins)"],
+    pourquoi:"Le surcoût Jalas se justifie par le confort réel : sur une journée 8h debout, le gain est mesurable (moins de fatigue plantaire, moins de tensions lombaires). Un salarié avec antécédents TMS aux pieds (épine calcanéenne, fasciite plantaire) doit pouvoir choisir un modèle premium.",
+    arg:"Étant debout/marche 6 à 8 heures par jour, les JALAS EXALTER me protègent des troubles musculo-squelettiques (TMS plantaires, lombaires) liés aux chaussures bas de gamme. La mousse à mémoire de forme est documentée comme réduisant la fatigue plantaire de 30% sur 8h (étude Jalas-Fraunhofer). Sur 4 ans d'usage, ce surcoût est compensé par les jours d'arrêt évités.",
+    certifs:['EN ISO 20345 S3 SRC'], fournisseur:'Groupe RG' },
+
+  { id:'jalfairy', nom:'JALLATTE JALFAIRY', marque:'Jallatte', prix:73.84, cat:'chaussure', sousCat:'Chaussures basses', ico:'chaussure', page:12, tier:'standard',
+    activites:['clientele','rsf','manutention'], badge:'', badgeLabel:'BASSES',
+    description:"Jallatte JALFAIRY basses, taille femme adaptée. Conception française, confort en milieu varié.",
+    pour:["Personnel féminin (forme anatomique adaptée)","Clientèle, RSF"],
+    points:["Coupe femme (forme plus étroite, talon plus serré)","Embout composite","Doublure respirante","Cuir tanné","Fabrication française"],
+    limites:["Disponible en pointures femme uniquement","Tige courte"],
+    pourquoi:"La conception 'unisexe' des autres modèles est souvent inadaptée aux pieds féminins (talon flottant = ampoules, instabilité). Disposer d'un modèle femme est un droit (Code travail R.4321-4).",
+    arg:"Les chaussures unisexes sont mal adaptées à la morphologie de mon pied (talon flottant, frottements). La JALFAIRY est conçue avec une forme féminine spécifique, ce qui prévient les ampoules et les troubles posturaux. L'article R.4321-4 impose à l'employeur d'adapter l'EPI au travailleur.",
+    certifs:['EN ISO 20345 S3'], fournisseur:'Groupe RG' },
+
+  { id:'jalroseau', nom:'JALLATTE JALROSEAU', marque:'Jallatte', prix:87.09, cat:'chaussure', sousCat:'Chaussures basses', ico:'chaussure', page:12, tier:'premium',
+    activites:['clientele','rsf','manutention'], badge:'', badgeLabel:'PREMIUM',
+    description:"Jallatte JALROSEAU : modèle premium, cuir nubuck, confort dynamique pour journée longue.",
+    pour:["Port quotidien","Activités exigeant flexibilité (chantiers variés)"],
+    points:["Cuir nubuck haute qualité","Mousse confort dynamique","Embout composite léger","Semelle anti-perforation flexible","Conformes S3"],
+    limites:["Prix élevé"],
+    pourquoi:"Alternative haut de gamme française aux Jalas. Bon choix pour pieds difficiles.",
+    arg:"Les JALROSEAU offrent un confort dynamique en cuir nubuck, idéal pour mes journées longues avec déplacements variés (clientèle + chantier ponctuel).",
+    certifs:['EN ISO 20345 S3 SRC'], fournisseur:'Groupe RG' },
+
+  /* ━━━ BRODEQUINS MI-HAUTE ━━━ */
+  { id:'jalas-1598', nom:'JALAS 1598 GP', marque:'Jalas', prix:108.88, cat:'chaussure', sousCat:'Brodequins', ico:'bottes', page:13, tier:'premium',
+    activites:['is','rsf','biomethane'], badge:'is', badgeLabel:'IS / BRODEQUIN',
+    description:"Jalas 1598 GP brodequin mi-haute : protection cheville renforcée, embout métallique, semelle anti-perforation. Le standard IS finlandais.",
+    pour:["Intervention de sécurité (IS)","Toutes activités y compris terrain accidenté","RSF terrain meuble","Travaux extérieurs intensifs"],
+    points:["Tige mi-haute → protection cheville (anti-entorse)","Embout métallique ou composite selon variant","Semelle anti-perforation acier","Cuir hydrofuge","Bonne accroche multi-terrains","Confort longue durée"],
+    limites:["Plus lourd que des chaussures basses","Prix élevé"],
+    pourquoi:"En IS et terrain meuble, le risque d'entorse de cheville est majeur. Les chaussures basses ne protègent PAS la cheville — c'est ergonomiquement insuffisant pour ces activités.",
+    arg:"Mon activité d'IS me confronte à des terrains accidentés (fouilles, talus, sols meubles). Les chaussures basses (modèles MS 300 ou EXALTER) ne protègent pas la cheville — risque majeur d'entorse. Les JALAS 1598 GP sont réglementairement plus adaptées (cf. fiche DP2S 'IS') car elles couvrent et soutiennent la cheville.",
+    certifs:['EN ISO 20345 S3 SRC'], fournisseur:'Groupe RG' },
+
+  { id:'jalas-zenit', nom:'JALAS ZENIT 2718', marque:'Jalas', prix:107.95, cat:'chaussure', sousCat:'Brodequins', ico:'bottes', page:13, tier:'premium',
+    activites:['is','rsf','biomethane'], badge:'is', badgeLabel:'IS / BRODEQUIN',
+    description:"Jalas Zenit 2718 brodequin polyvalent. Confort sport, embout aluminium ultraléger.",
+    pour:["IS","Toutes activités","Recherche de légèreté"],
+    points:["Embout aluminium (40% plus léger que l'acier)","Très léger pour un brodequin (~700 g)","Bonne flexibilité","Cuir résistant"],
+    limites:["Prix élevé"],
+    pourquoi:"Alternative au 1598 GP pour ceux qui veulent un brodequin plus léger.",
+    arg:"Le ZENIT 2718 offre la protection brodequin (cheville) avec un poids d'une chaussure basse. Idéal pour mes longues journées d'IS.",
+    certifs:['EN ISO 20345 S3 SRC'], fournisseur:'Groupe RG' },
+
+  { id:'jalbambou', nom:'JALLATTE JALBAMBOU', marque:'Jallatte', prix:91.25, cat:'chaussure', sousCat:'Brodequins', ico:'bottes', page:13, tier:'standard',
+    activites:['is','rsf'], badge:'is', badgeLabel:'IS / BRODEQUIN',
+    description:"Brodequin Jallatte JALBAMBOU, fibres bambou, légère, respirante.",
+    pour:["IS","Activités estivales (transpiration)","Personnes à transpiration importante"],
+    points:["Fibre bambou (régulation thermique)","Très respirant","Anti-bactérien naturel","Cuir + textile recyclé"],
+    limites:["Moins isolant en hiver"],
+    pourquoi:"Confort thermique estival. Utile pour les collègues à forte sudation.",
+    arg:"Le JALBAMBOU régule la transpiration grâce à sa fibre bambou — essentiel pour mes interventions estivales prolongées sans inconfort plantaire.",
+    certifs:['EN ISO 20345 S3 SRC'], fournisseur:'Groupe RG' },
+
+  { id:'mts-constructor', nom:'MTS TECH CONSTRUCTOR', marque:'MTS', prix:46.94, cat:'chaussure', sousCat:'Brodequins', ico:'bottes', page:13, tier:'eco',
+    activites:['rsf','manutention'], badge:'', badgeLabel:'BRODEQUIN ÉCO',
+    description:"Brodequin MTS Tech Constructor : modèle économique, embout acier, semelle anti-perforation acier.",
+    pour:["Usage occasionnel","Stagiaires, intérimaires court terme","Budget contraint"],
+    points:["Prix très bas pour un brodequin","Embout acier + semelle anti-perforation","Conforme S3"],
+    limites:["Confort basique","Durée de vie limitée (12-18 mois)","Pas pour port quotidien intensif"],
+    pourquoi:"Modèle d'appel. Pour un usage régulier et intense, préférer un Jalas/Jallatte qui durera 3-4 ans.",
+    arg:"Le MTS Constructor convient à un usage occasionnel. Pour mon usage IS quotidien, je préfère un Jalas 1598 GP qui durera 3-4 ans (vs 12-18 mois pour le MTS) — TCO inférieur sur la durée.",
+    certifs:['EN ISO 20345 S3'], fournisseur:'Groupe RG' },
+
+  { id:'heckel-crossroad', nom:'HECKEL MACCROSSROAD 3.0 BOA', marque:'Heckel', prix:74.78, cat:'chaussure', sousCat:'Brodequins', ico:'bottes', page:13, tier:'standard',
+    activites:['is','rsf','manutention'], badge:'is', badgeLabel:'IS / BRODEQUIN',
+    description:"Brodequin Heckel avec système BOA (laçage par molette à câbles inox). Plus de lacets traditionnels.",
+    pour:["Activités où le laçage doit être rapide / précis","IS","Salariés à difficultés de laçage (raideur mains, gants)"],
+    points:["Système BOA : serrage uniforme en 2 secondes","Pas de lacets qui se défont","Idéal avec gants (impossible à délacer accidentellement)","Cuir nubuck","Tige mi-haute"],
+    limites:["Système BOA à entretenir (câble)","Réparation BOA = SAV constructeur"],
+    pourquoi:"Le système BOA fait gagner du temps en habillage (15 secondes vs 2 minutes pour un laçage classique). Idéal en IS (urgence d'intervention).",
+    arg:"Le HECKEL MACCROSSROAD avec système BOA me permet de m'équiper en 15 secondes en cas d'IS urgente. Le serrage est uniforme — pas de point de compression douloureux. C'est un gain de sécurité et de confort.",
+    certifs:['EN ISO 20345 S3 SRC'], fournisseur:'Groupe RG' },
+
+  { id:'jalgrove', nom:'JALLATTE JALGROVE', marque:'Jallatte', prix:94.90, cat:'chaussure', sousCat:'Brodequins', ico:'bottes', page:13, tier:'standard',
+    activites:['is','rsf'], badge:'is', badgeLabel:'IS / BRODEQUIN',
+    description:"Jallatte JALGROVE brodequin polyvalent, cuir nubuck. Standard français premium.",
+    pour:["IS","Activités courantes","Toutes saisons"],
+    points:["Cuir nubuck haute qualité","Doublure thermorégulatrice","Embout composite","Anti-perforation textile","Fabrication française"],
+    limites:["Prix moyen-élevé"],
+    pourquoi:"Excellent compromis Jallatte français.",
+    arg:"Le JALGROVE me protège efficacement en IS tout en restant léger et flexible. La doublure thermorégulatrice convient à toutes les saisons.",
+    certifs:['EN ISO 20345 S3 SRC'], fournisseur:'Groupe RG' },
+
+  /* ━━━ BRODEQUINS SOUDEURS ━━━ */
+  { id:'jalas-1218w', nom:'JALAS 1218W', marque:'Jalas', prix:125.56, cat:'chaussure', sousCat:'Brodequins soudeurs', ico:'bottes', page:13, tier:'premium',
+    activites:['soudage'], badge:'soud', badgeLabel:'SOUDEUR',
+    description:"Brodequin soudeur Jalas 1218W : languette spéciale anti-projection, cuir traité haute température.",
+    pour:["Soudage à l'arc","Brasage","Oxycoupage"],
+    points:["Cuir traité haute température (résiste 200°C)","Languette anti-projection (rabat de protection)","Couture Kevlar","Anti-perforation","Sans œillets métalliques (pas de point chaud)","Conforme HRO"],
+    limites:["Lourd (~900 g)","Prix élevé"],
+    pourquoi:"Les brodequins standard NE PROTÈGENT PAS contre les projections de métal en fusion. Le 1218W est conçu pour le soudage : la languette anti-projection est essentielle pour éviter les brûlures sévères au cou-de-pied.",
+    arg:"Pour mon activité de soudage, des brodequins standards laissent passer les projections incandescentes par les œillets métalliques et la languette ouverte. Les JALAS 1218W sont spécifiquement conçus 'soudeur' (HRO + sans œillets) — une protection que la norme S3 standard n'apporte pas.",
+    certifs:['EN ISO 20345 S3 HRO HI WR'], fournisseur:'Groupe RG' },
+
+  { id:'jalplasma', nom:'JALLATTE JALPLASMA', marque:'Jallatte', prix:97.48, cat:'chaussure', sousCat:'Brodequins soudeurs', ico:'bottes', page:13, tier:'standard',
+    activites:['soudage'], badge:'soud', badgeLabel:'SOUDEUR',
+    description:"Jallatte JALPLASMA brodequin soudeur français : protection thermique, languette anti-projection.",
+    pour:["Soudage industriel","Brasage"],
+    points:["Languette anti-projection","Cuir thermo-traité","Couture Kevlar","HRO (résiste 300°C en contact bref)"],
+    limites:["Plus lourd que modèle standard"],
+    pourquoi:"Alternative française au Jalas 1218W. Bon rapport qualité-prix pour soudeur.",
+    arg:"Le JALPLASMA répond aux exigences de protection thermique en soudage industriel sans le surcoût du modèle finlandais.",
+    certifs:['EN ISO 20345 S3 HRO'], fournisseur:'Groupe RG' },
+
+  /* ━━━ BOTTES RANGERS ━━━ */
+  { id:'jalarcher', nom:'JALLATTE JALARCHER', marque:'Jallatte', prix:97.12, cat:'chaussure', sousCat:'Bottes Rangers', ico:'bottes', page:14, tier:'standard',
+    activites:['is','rsf'], badge:'is', badgeLabel:'RANGERS / IS',
+    description:"Bottes Rangers Jallatte JALARCHER : tige haute, protection mollet + cheville. Pour IS et terrains difficiles.",
+    pour:["IS sur terrain instable","Inondations légères","Forêt / berge"],
+    points:["Tige haute (~20 cm) — protection mollet","Cuir hydrofuge","Embout composite","Anti-perforation","Bonne accroche multi-terrains"],
+    limites:["Plus chaud que brodequin"],
+    pourquoi:"En IS sur terrain instable / boueux, les Rangers offrent un soutien et une protection supérieurs aux brodequins.",
+    arg:"Mes interventions IS sur terrain instable nécessitent un soutien du mollet et une étanchéité partielle que les brodequins n'offrent pas. Les JALARCHER sont la bonne réponse à ce risque ergonomique.",
+    certifs:['EN ISO 20345 S3 SRC'], fournisseur:'Groupe RG' },
+
+  { id:'jalbarad', nom:'JALLATTE JALBARAD', marque:'Jallatte', prix:105.82, cat:'chaussure', sousCat:'Bottes Rangers', ico:'bottes', page:14, tier:'premium',
+    activites:['is','rsf'], badge:'is', badgeLabel:'RANGERS / IS',
+    description:"Jallatte JALBARAD Rangers premium : cuir nubuck, mousse confort, idéal port longue durée.",
+    pour:["IS","Activités hauteur + sol meuble","Port quotidien Rangers"],
+    points:["Cuir nubuck haute qualité","Mousse confort talon","Anti-perforation","Hydrofuge","Anti-statique"],
+    limites:["Prix élevé"],
+    pourquoi:"Rangers haut de gamme pour port quotidien.",
+    arg:"Les JALBARAD allient la protection Rangers (mollet, cheville, étanchéité) au confort longue durée — essentiel pour mon port quotidien.",
+    certifs:['EN ISO 20345 S3 SRC'], fournisseur:'Groupe RG' },
+
+  { id:'mts-kinley', nom:'MTS KINLEY', marque:'MTS', prix:79.75, cat:'chaussure', sousCat:'Bottes Rangers', ico:'bottes', page:14, tier:'standard',
+    activites:['is','rsf'], badge:'is', badgeLabel:'RANGERS',
+    description:"Rangers MTS Kinley : bon rapport qualité-prix, tige haute, embout composite.",
+    pour:["IS","RSF","Usage régulier"],
+    points:["Prix accessible pour une Rangers","Tige haute","Embout composite","S3 conforme"],
+    limites:["Confort moindre que Jallatte premium"],
+    pourquoi:"Bon choix budget pour Rangers IS.",
+    arg:"Les MTS KINLEY offrent la protection Rangers à un prix raisonnable. Bon compromis si mon usage Rangers est ponctuel.",
+    certifs:['EN ISO 20345 S3 SRC'], fournisseur:'Groupe RG' },
+
+  { id:'jalas-1508', nom:'JALAS 1508 GP', marque:'Jalas', prix:114.73, cat:'chaussure', sousCat:'Bottes Rangers', ico:'bottes', page:14, tier:'premium',
+    activites:['is','rsf'], badge:'is', badgeLabel:'RANGERS / IS',
+    description:"Jalas 1508 GP Rangers haute : haut de gamme finlandais, semelle Vibram, hydrofuge.",
+    pour:["IS terrain difficile","Toutes saisons","Port intensif"],
+    points:["Semelle Vibram (accroche extrême)","Cuir Nubuck hydrofuge","Embout composite","Mousse mémoire confort","Anti-perforation textile"],
+    limites:["Prix élevé"],
+    pourquoi:"Référence Rangers premium. Confort durable sur 4-5 ans.",
+    arg:"Les JALAS 1508 GP avec semelle Vibram offrent une adhérence inégalée en terrain difficile (IS sur boue, neige, gravillons). C'est l'EPI le plus adapté aux conditions extrêmes de mon activité.",
+    certifs:['EN ISO 20345 S3 SRC'], fournisseur:'Groupe RG' },
+
+  /* ━━━ BOTTES FROID ━━━ */
+  { id:'heckel-macultimate', nom:'HECKEL MACULTIMATE', marque:'Heckel', prix:121.62, cat:'chaussure', sousCat:'Bottes froid', ico:'bottes', page:15, tier:'premium',
+    activites:['is','froid','rsf'], badge:'froid', badgeLabel:'FROID -40°C',
+    description:"Bottes Rangers de froid Heckel MACULTIMATE : doublure Primaloft, isolation jusqu'à -40°C.",
+    pour:["Interventions hivernales prolongées","Travaux à proximité de gaz détendu (très froid)","Zones montagne"],
+    points:["Isolation Primaloft jusqu'à -40°C","Tige haute hydrofuge","Embout composite","Anti-perforation","Semelle anti-glisse glace"],
+    limites:["Trop chaud en mi-saison","Prix élevé"],
+    pourquoi:"Pour les salariés exposés au froid réel (montagne, gaz détendu), les bottes standards = engelures + glissades.",
+    arg:"Mes interventions en zone froide (hiver montagne, abords de stations de détente où le gaz refroidit le sol) imposent une isolation à -40°C. Une botte standard cause engelures et risque de glissade sur glace.",
+    certifs:['EN ISO 20345 S3 CI HRO','EN 511 (froid)'], fournisseur:'Groupe RG' },
+
+  { id:'mts-iseran', nom:'MTS ISERAN', marque:'MTS', prix:59.76, cat:'chaussure', sousCat:'Bottes froid', ico:'bottes', page:15, tier:'eco',
+    activites:['froid','rsf'], badge:'froid', badgeLabel:'FROID',
+    description:"Bottes de froid MTS Iseran : doublure thinsulate, isolation -20°C. Modèle économique.",
+    pour:["Usage occasionnel froid","Hivers modérés"],
+    points:["Doublure Thinsulate","Tige haute","Prix abordable"],
+    limites:["Isolation limitée -20°C max","Confort basique"],
+    pourquoi:"Convient aux usages occasionnels de froid modéré.",
+    arg:"Les MTS Iseran conviennent à mon usage occasionnel hivernal. En cas d'exposition prolongée au froid intense, je demanderai un modèle Primaloft (HECKEL MACULTIMATE).",
+    certifs:['EN ISO 20345 S3 CI','EN 511'], fournisseur:'Groupe RG' },
+
+  /* ━━━ BOTTES CAOUTCHOUC ━━━ */
+  { id:'dunlop-snugboot', nom:'DUNLOP SNUGBOOT', marque:'Dunlop', prix:111.70, cat:'chaussure', sousCat:'Bottes caoutchouc', ico:'bottes', page:15, tier:'premium',
+    activites:['rsf','biomethane','eau'], badge:'', badgeLabel:'CAOUTCHOUC PREMIUM',
+    description:"Dunlop SnugBoot Workpro : botte caoutchouc premium, Purotex (mousse polyuréthane), isolation, étanchéité totale.",
+    pour:["Travaux en milieu humide intense (biométhane, station, branchements en sous-sol inondé)","Inondations","Hiver pluvieux"],
+    points:["Mousse Purotex isolante (-20°C)","Très légère pour une botte caoutchouc (~750 g)","Embout composite","Semelle anti-glisse SRC","Confort port longue durée (rare en caoutchouc)"],
+    limites:["Prix élevé pour caoutchouc"],
+    pourquoi:"Bottes caoutchouc standard = inconfort, transpiration, fatigue. SnugBoot a la légèreté d'un brodequin tout en étant 100% étanche.",
+    arg:"Pour mes interventions en milieu humide / boueux (biométhane, branchements inondés), les Dunlop SnugBoot allient étanchéité totale et confort de port longue durée — impossible avec une botte caoutchouc classique. Le surcoût est rentabilisé par la durée d'usage (3-4 ans).",
+    certifs:['EN ISO 20345 S5 SRC CI'], fournisseur:'Groupe RG' },
+
+  { id:'dunlop-terrapro', nom:'DUNLOP TERRAPRO', marque:'Dunlop', prix:34.97, cat:'chaussure', sousCat:'Bottes caoutchouc', ico:'bottes', page:15, tier:'eco',
+    activites:['rsf','eau'], badge:'', badgeLabel:'CAOUTCHOUC',
+    description:"Dunlop TerraPro : botte caoutchouc PVC entrée de gamme. Pour usage ponctuel.",
+    pour:["Usage occasionnel en milieu humide","Stagiaires, dépannage ponctuel"],
+    points:["Prix bas","Étanchéité totale","Embout acier"],
+    limites:["PVC lourd","Pas d'isolation thermique","Inconfort longue durée"],
+    pourquoi:"À réserver à l'usage ponctuel. Pour un usage régulier, choisir SnugBoot.",
+    arg:"La TerraPro convient à mon usage occasionnel humide. Pour un usage régulier (biométhane par ex.), je demanderai des Dunlop SnugBoot.",
+    certifs:['EN ISO 20345 S5'], fournisseur:'Groupe RG' },
+
+  /* ━━━ WADERS ━━━ */
+  { id:'singer-waders', nom:'SINGER WADERS', marque:'Singer', prix:75.49, cat:'chaussure', sousCat:'Waders', ico:'waders', page:15, tier:'standard',
+    activites:['eau'], badge:'', badgeLabel:'WADERS',
+    description:"Waders Singer : combinaison étanche cuissardes, pour interventions en eau profonde (inondations, branchements inondés).",
+    pour:["Interventions en eau profonde","Inondations sévères","Travaux dans regards inondés"],
+    points:["Étanchéité totale jusqu'à la poitrine","PVC souple","Bottes intégrées","Bretelles ajustables"],
+    limites:["Encombrant","Transpiration importante en été","Non isolante (froid)"],
+    pourquoi:"Seule solution pour intervenir en eau > 30 cm sans inonder ses chaussures. Indispensable en RSF post-inondation.",
+    arg:"Pour mes interventions post-inondation ou en regards inondés (eau > 30 cm), les SINGER WADERS sont la seule protection efficace. Sans elles, le risque hypothermie + chute par perte d'équilibre est majeur.",
+    certifs:['EN 343 (protection eau)'], fournisseur:'Groupe RG' }
+];
+
+/* ═══════════ ÉTAT GLOBAL ═══════════ */
+let compareList = [];
+let basketList_ = [];
+
+const CAT_LABELS = {
+  casque: 'Casques / Casquettes',
+  oculaire: 'Protections oculaires',
+  gant: 'Gants',
+  chaussure: 'Chaussures de sécurité'
+};
+
+const ACT_LABELS = {
+  is:'IS',
+  soudage:'Soudage',
+  hauteur:'Hauteur/charge',
+  clientele:'Clientèle',
+  rsf:'RSF',
+  biomethane:'Biométhane',
+  chimique:'Chimique',
+  electricien:'Électricien',
+  froid:'Froid',
+  eau:'Eau / waders',
+  manutention:'Manutention'
+};
+
+/* ═══════════ RENDU PRODUITS ═══════════ */
+function getIcon(p) {
+  return ICONS[p.ico] || ICONS.casque;
+}
+
+function renderProducts(list) {
+  const grid = document.getElementById('productsGrid');
+  if (!list.length) {
+    grid.innerHTML = `<div class="empty">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <p>Aucun EPI ne correspond à votre recherche.<br>Essayez d'élargir les filtres.</p>
+    </div>`;
+    return;
+  }
+  grid.innerHTML = list.map(p => {
+    const inCmp = compareList.includes(p.id);
+    const inBskt = basketList_.includes(p.id);
+    const tierLabel = p.tier === 'premium' ? 'PREMIUM' : (p.tier === 'eco' ? 'ÉCO' : 'STANDARD');
+    const shortDesc = p.description.length > 90 ? p.description.slice(0, 90).split(' ').slice(0,-1).join(' ') + '…' : p.description;
+    return `
+    <div class="product${inCmp ? ' selected' : ''}" data-id="${p.id}" onclick="openProduct('${p.id}')">
+      <div class="product-img">
+        ${p.badge ? `<span class="product-badge ${p.badge}">${p.badgeLabel}</span>` : `<span class="product-badge" style="background:var(--gris);">${p.badgeLabel}</span>`}
+        <span class="product-tier ${p.tier}">${tierLabel}</span>
+        <img class="real" src="epi_images/products/${p.id}.jpg" alt="${p.nom}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="ico-wrap" style="display:none;">${getIcon(p)}</div>
+        <span class="product-supplier-tag">${p.fournisseur === 'Groupe RG' ? 'Punchout RG' : p.fournisseur}</span>
+      </div>
+      <div class="product-body">
+        <div class="product-cat">${p.sousCat}</div>
+        <div class="product-name">${p.nom}</div>
+        <div class="product-brand">${p.marque}</div>
+        <div class="product-shortdesc">${shortDesc}</div>
+        <div class="product-bottom">
+          <div class="product-price">${p.prix.toFixed(2).replace('.', ',')}<small> € HT</small></div>
+        </div>
+        <div class="product-actions" onclick="event.stopPropagation()">
+          <button class="pa-btn compare-tog ${inCmp?'active':''}" onclick="toggleCompare('${p.id}'); event.stopPropagation()" title="Ajouter au comparateur">${inCmp?'✓ Comp.':'+ Comparer'}</button>
+          <button class="pa-btn basket-tog ${inBskt?'active':''}" onclick="toggleBasket('${p.id}'); event.stopPropagation()" title="Ajouter à ma demande EPI">${inBskt?'✓ Demandé':'+ Demander'}</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ═══════════ FILTRES ═══════════ */
+function applyFilters() {
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  const cat = document.getElementById('catFilter').value;
+  const act = document.getElementById('actFilter').value;
+  const tier = document.getElementById('priceFilter').value;
+  const sort = document.getElementById('sortBy').value;
+
+  let list = PRODUITS.filter(p => {
+    if (cat && p.cat !== cat) return false;
+    if (act && !p.activites.includes(act)) return false;
+    if (tier && p.tier !== tier) return false;
+    if (q) {
+      const hay = (p.nom + ' ' + p.marque + ' ' + p.sousCat + ' ' + p.cat + ' ' + p.description).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  if (sort === 'prix-asc') list.sort((a,b) => a.prix - b.prix);
+  else if (sort === 'prix-desc') list.sort((a,b) => b.prix - a.prix);
+  else if (sort === 'nom') list.sort((a,b) => a.nom.localeCompare(b.nom));
+  else list.sort((a,b) => {
+    const orderC = ['casque','oculaire','gant','chaussure'];
+    const dc = orderC.indexOf(a.cat) - orderC.indexOf(b.cat);
+    if (dc !== 0) return dc;
+    return a.prix - b.prix;
+  });
+
+  renderProducts(list);
+  document.getElementById('visibleCount').textContent = list.length;
+  document.getElementById('totalCount').textContent = PRODUITS.length;
+}
+
+function resetFilters() {
+  document.getElementById('searchInput').value = '';
+  document.getElementById('catFilter').value = '';
+  document.getElementById('actFilter').value = '';
+  document.getElementById('priceFilter').value = '';
+  document.getElementById('sortBy').value = 'cat';
+  applyFilters();
+}
+
+/* ═══════════ COMPARATEUR ═══════════ */
+function toggleCompare(id) {
+  const i = compareList.indexOf(id);
+  if (i >= 0) compareList.splice(i, 1);
+  else if (compareList.length < 3) compareList.push(id);
+  else { alert('Maximum 3 produits à comparer'); return; }
+  updateCompareBtn();
+  applyFilters();
+}
+function updateCompareBtn() {
+  document.getElementById('cmpCount').textContent = compareList.length;
+  document.getElementById('compareBtn').disabled = compareList.length < 2;
+}
+function openCompare() {
+  if (compareList.length < 2) return;
+  const products = compareList.map(id => PRODUITS.find(p => p.id === id));
+  const grid = document.getElementById('compareGrid');
+  grid.setAttribute('data-cols', compareList.length);
+  grid.innerHTML = products.map(p => `
+    <div class="compare-card">
+      <h4>${p.nom}</h4>
+      <div class="cc-brand">${p.marque} · ${p.sousCat}</div>
+      <div class="cc-price">${p.prix.toFixed(2).replace('.', ',')} €</div>
+      <div class="cc-acts"><strong>Activités :</strong> ${p.activites.map(a => ACT_LABELS[a]||a).join(', ')}</div>
+      <div><strong style="font-size:12px; color:var(--bleu);">Points forts</strong></div>
+      <ul class="cc-points">${p.points.slice(0,4).map(pt => `<li>${pt}</li>`).join('')}</ul>
+      <div style="margin-top:8px;"><strong style="font-size:12px; color:var(--rouge);">Limites</strong></div>
+      <ul class="cc-points">${p.limites.slice(0,3).map(pt => `<li>${pt}</li>`).join('')}</ul>
+      <div style="margin-top:8px;"><strong style="font-size:12px;">Certifications</strong></div>
+      <div class="certifs">${p.certifs.map(c => `<span class="certif">${c}</span>`).join('')}</div>
+      <button class="cc-rm" onclick="toggleCompare('${p.id}'); openCompare()">Retirer</button>
+    </div>
+  `).join('');
+  openModal('modalCompare');
+}
+
+/* ═══════════ MODAL DÉTAILS ═══════════ */
+function openProduct(id) {
+  const p = PRODUITS.find(x => x.id === id);
+  if (!p) return;
+  const inBskt = basketList_.includes(p.id);
+  const html = `
+    <div class="modal-header" style="display:grid; grid-template-columns:1.4fr 1fr; gap:24px; align-items:center;">
+      <div>
+        <div class="mh-cat">${p.sousCat} · ${p.fournisseur}</div>
+        <h2>${p.nom}</h2>
+        <div class="mh-brand">${p.marque} · ${p.tier === 'premium' ? '★ Gamme premium' : p.tier === 'eco' ? 'Gamme économique' : 'Gamme standard'}</div>
+        <div class="mh-price">${p.prix.toFixed(2).replace('.', ',')} € <span style="font-size:14px; font-weight:500; color:rgba(255,255,255,0.7);">HT</span></div>
+      </div>
+      <div style="background:linear-gradient(135deg,#fafbfc 0%,#f0f4f8 100%); border-radius:14px; padding:14px; height:180px; display:flex; align-items:center; justify-content:center;">
+        <img src="epi_images/products/${p.id}.jpg" alt="${p.nom}" style="max-width:100%; max-height:100%; object-fit:contain; filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18));" onerror="this.parentElement.innerHTML='<div style=&quot;color:var(--bleu); opacity:0.5;&quot;>${getIcon(p).replace(/'/g, '')}</div>';">
+      </div>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:14.5px; line-height:1.7; margin-bottom:18px;">${p.description}</p>
+
+      <div class="modal-grid">
+        <div class="mg-block">
+          <h4>
+            <span aria-hidden="true"><span class="a11y-emoji">🎯</span><svg aria-hidden="true" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+            Pour quelle activité ?
+          </h4>
+          <ul>${p.pour.map(x => `<li>${x}</li>`).join('')}</ul>
+          <div style="margin-top:10px; font-size:11.5px; color:var(--gris);">Tags : ${p.activites.map(a => ACT_LABELS[a]||a).join(' · ')}</div>
+        </div>
+        <div class="mg-block">
+          <h4>
+            <span aria-hidden="true"><span class="a11y-emoji">✓</span><svg aria-hidden="true" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20,6 9,17 4,12"/></svg></span>
+            Points forts
+          </h4>
+          <ul>${p.points.map(x => `<li>${x}</li>`).join('')}</ul>
+        </div>
+        <div class="mg-block">
+          <h4>
+            <span aria-hidden="true"><span class="a11y-emoji">⚠</span><svg aria-hidden="true" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10.3 3.3L1.6 19a2 2 0 0 0 1.7 3h17.4a2 2 0 0 0 1.7-3L13.7 3.3a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/></svg></span>
+            Limites à connaître
+          </h4>
+          <ul>${p.limites.map(x => `<li>${x}</li>`).join('')}</ul>
+        </div>
+        <div class="mg-block">
+          <h4>
+            <span aria-hidden="true"><span class="a11y-emoji">🏅</span><svg aria-hidden="true" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><polyline points="8,12 9,22 12,20 15,22 16,12"/></svg></span>
+            Certifications
+          </h4>
+          <div class="certifs">${p.certifs.map(c => `<span class="certif">${c}</span>`).join('')}</div>
+        </div>
+      </div>
+
+      <div class="why-pay-more">
+        <h4>
+          <span aria-hidden="true"><span class="a11y-emoji">💡</span><svg aria-hidden="true" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.6-1.4 4.9-3.5 6.2L15 17H9l-.5-1.8A7 7 0 0 1 12 2z"/></svg></span>
+          Pourquoi ce prix ? (ou : pourquoi ce produit en particulier ?)
+        </h4>
+        <p>${p.pourquoi}</p>
+      </div>
+
+      <div class="arg-block">
+        <h4>
+          <span aria-hidden="true"><span class="a11y-emoji">📝</span><svg aria-hidden="true" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4z"/></svg></span>
+          Argumentaire prêt-à-l'emploi pour votre manager
+        </h4>
+        <div class="arg-text">« ${p.arg} »</div>
+        <div class="arg-actions">
+          <button class="copy-btn" onclick="copyToClipboard(\`${p.arg.replace(/`/g, "'").replace(/"/g, "'")}\`)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copier l'argumentaire
+          </button>
+          <a class="mail-btn" href="mailto:?subject=${encodeURIComponent('Demande EPI · ' + p.nom)}&body=${encodeURIComponent('Bonjour,\n\nJe souhaite vous proposer la commande de l\'EPI suivant : ' + p.nom + ' (' + p.marque + ') — ' + p.prix.toFixed(2) + ' €.\n\n' + p.arg + '\n\nCet EPI est validé par la DP2S et disponible sur le Punchout Groupe RG.\n\nCordialement.')}">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            Envoyer par email
+          </a>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
+        <button class="gen-btn" onclick="toggleBasket('${p.id}'); openProduct('${p.id}')" style="background:var(--vert); color:white;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 3h2l2.4 12.5a2 2 0 0 0 2 1.5h9.7a2 2 0 0 0 2-1.6L23 6H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+          ${inBskt ? '✓ Retirer de ma demande' : 'Ajouter à ma demande'}
+        </button>
+        <button class="gen-btn secondary" onclick="toggleCompare('${p.id}'); openProduct('${p.id}')">
+          ${compareList.includes(p.id) ? '✓ Retirer du comparateur' : '+ Comparer'}
+        </button>
+      </div>
+    </div>
+  `;
+  document.getElementById('modalProductContent').innerHTML = html;
+  openModal('modalProduct');
+}
+
+/* ═══════════ PANIER DE DEMANDE ═══════════ */
+function toggleBasket(id) {
+  const i = basketList_.indexOf(id);
+  if (i >= 0) basketList_.splice(i, 1);
+  else basketList_.push(id);
+  updateBasketBtn();
+  applyFilters();
+  // si modal panier ouverte, rafraîchir
+  if (document.getElementById('modalBasket').classList.contains('open')) {
+    renderBasketModal();
+  }
+}
+function updateBasketBtn() {
+  document.getElementById('basketCount').textContent = basketList_.length;
+}
+function openBasket() {
+  renderBasketModal();
+  openModal('modalBasket');
+}
+function renderBasketModal() {
+  const list = document.getElementById('basketList');
+  if (!basketList_.length) {
+    list.innerHTML = `<div style="background:var(--fond); border-radius:14px; padding:30px; text-align:center; color:var(--gris); margin-bottom:14px;">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity:0.4;"><path d="M3 3h2l2.4 12.5a2 2 0 0 0 2 1.5h9.7a2 2 0 0 0 2-1.6L23 6H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+      <p style="margin-top:10px; font-size:14px;">Aucun EPI dans votre demande pour le moment.</p>
+      <p style="font-size:12.5px; margin-top:8px;">Cliquez sur <b style="color:var(--vert);">+ Demander</b> sous chaque produit pour l'ajouter ici.</p>
+    </div>`;
+    return;
+  }
+  const products = basketList_.map(id => PRODUITS.find(p => p.id === id)).filter(Boolean);
+  const total = products.reduce((s, p) => s + p.prix, 0);
+  list.innerHTML = `
+    <div style="background:var(--fond); border-radius:14px; padding:18px 22px; margin-bottom:14px;">
+      <div style="font-family:'Fraunces',serif; font-size:18px; color:var(--bleu); margin-bottom:10px;">${products.length} EPI demandé${products.length>1?'s':''} · Total ${total.toFixed(2).replace('.', ',')} €</div>
+      ${products.map(p => `
+        <div style="display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid var(--gris-clair);">
+          <div style="font-weight:700; color:var(--texte); flex:1;">${p.nom} <span style="font-weight:400; color:var(--gris); font-size:12.5px;">· ${p.marque} · ${p.sousCat}</span></div>
+          <div style="font-family:'Fraunces',serif; font-weight:700; color:var(--bleu); min-width:80px; text-align:right;">${p.prix.toFixed(2).replace('.', ',')} €</div>
+          <button onclick="toggleBasket('${p.id}')" style="background:transparent; border:1.5px solid var(--rouge); color:var(--rouge); border-radius:8px; padding:4px 10px; cursor:pointer; font-size:12px;">Retirer</button>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  // build preview
+  updateBasketMail();
+}
+
+function buildBasketMail() {
+  const name = document.getElementById('bName').value.trim() || '[Votre nom]';
+  const mgr = document.getElementById('bManager').value.trim();
+  const act = document.getElementById('bActivity').value;
+  const reason = document.getElementById('bReason').value.trim();
+  const ccFO = document.getElementById('bCcFO').checked;
+
+  const products = basketList_.map(id => PRODUITS.find(p => p.id === id)).filter(Boolean);
+  if (!products.length) return null;
+  const total = products.reduce((s, p) => s + p.prix, 0);
+
+  const sujet = `Demande de commande EPI — ${products.length} référence${products.length>1?'s':''} pour ${act || 'mon activité'}`;
+  let body = `Bonjour,\n\nDans le cadre du nouveau marché EPI (contrat CNATA001) et conformément au catalogue Groupe RG validé par la DP2S, je sollicite la commande des équipements suivants pour mon activité${act ? ' de ' + act : ''} :\n\n`;
+  products.forEach((p, i) => {
+    body += `${i+1}. ${p.nom} (${p.marque}) — ${p.prix.toFixed(2).replace('.', ',')} €\n   Catégorie : ${p.sousCat}\n   Référence catalogue : Punchout ${p.fournisseur}\n   Justification : ${p.arg}\n\n`;
+  });
+  body += `Total estimé : ${total.toFixed(2).replace('.', ',')} € HT\n\n`;
+  body += `─── ARGUMENTAIRE SANTÉ, SÉCURITÉ ET CONDITIONS DE TRAVAIL ───\n\n`;
+  body += `Ces équipements sont sélectionnés en application de l'article L.4321-1 du Code du travail, qui impose que les EPI soient appropriés aux risques et adaptés au travailleur, ainsi que de l'article R.4321-4 imposant la prise en compte des spécificités du poste et du salarié.\n\n`;
+  body += `Chaque référence demandée :\n`;
+  body += `• est validée par la DP2S et présente dans le catalogue officiel du nouveau marché ;\n`;
+  body += `• est ajustée à mon activité réelle (cf. justifications détaillées ci-dessus) ;\n`;
+  body += `• participe directement à la prévention des risques professionnels et à l'amélioration de mes conditions de travail (réduction des TMS, prévention des accidents, confort de port longue durée).\n\n`;
+  body += `Ces EPI contribuent à la prévention des accidents du travail et des maladies professionnelles, et à la préservation de ma santé physique et mentale au sens de l'article L.4121-1 du Code du travail (obligation générale de sécurité de l'employeur).\n\n`;
+  if (reason) {
+    body += `─── ÉLÉMENT PERSONNEL ───\n${reason}\n\n`;
+  }
+  body += `Je reste à votre disposition pour échanger sur cette demande, et sollicite votre validation pour transmission au gestionnaire de commandes POPay.\n\n`;
+  body += `Pour information, le CSE et la CSSCT sont compétents sur le choix des EPI (art. L.2312-9). En cas de difficulté à arbitrer, je propose de saisir conjointement la CSSCT et le médecin du travail pour avis.\n\n`;
+  body += `Cordialement,\n${name}`;
+
+  const cc = ccFO ? '&cc=' + encodeURIComponent('syndicat-fo_grdf-delegations-nationales@grdf.fr') : '';
+  const href = `mailto:${encodeURIComponent(mgr)}?subject=${encodeURIComponent(sujet)}${cc}&body=${encodeURIComponent(body)}`;
+
+  return { href, body, sujet, raw: `À : ${mgr || '[email manager]'}${ccFO ? '\nCc : syndicat-fo_grdf-delegations-nationales@grdf.fr' : ''}\nObjet : ${sujet}\n\n${body}` };
+}
+
+function updateBasketMail() {
+  const m = buildBasketMail();
+  const btn = document.getElementById('basketSendBtn');
+  const out = document.getElementById('basketPreview');
+  if (!m) {
+    btn.removeAttribute('href');
+    out.classList.remove('show');
+    return;
+  }
+  btn.href = m.href;
+  out.textContent = m.raw;
+  out.classList.add('show');
+}
+
+function copyBasketMail() {
+  const m = buildBasketMail();
+  if (!m) { alert('Ajoutez d\'abord des EPI à votre demande.'); return; }
+  copyToClipboard(m.raw);
+}
+
+function clearBasket() {
+  if (basketList_.length === 0) return;
+  if (!confirm('Vider votre demande EPI ?')) return;
+  basketList_ = [];
+  updateBasketBtn();
+  renderBasketModal();
+  applyFilters();
+}
+
+/* live update */
+['bName','bManager','bActivity','bReason','bCcFO'].forEach(id => {
+  document.addEventListener('input', e => { if (e.target.id === id) updateBasketMail(); });
+  document.addEventListener('change', e => { if (e.target.id === id) updateBasketMail(); });
+});
+
+/* ═══════════ GÉNÉRATEUR ARG (1 PRODUIT) ═══════════ */
+function populateGenProducts() {
+  const sel = document.getElementById('genProduct');
+  sel.innerHTML = '<option value="">— Choisir —</option>' + PRODUITS.map(p =>
+    `<option value="${p.id}">${p.sousCat} · ${p.nom} (${p.prix.toFixed(2)} €)</option>`
+  ).join('');
+}
+
+function generateArgument() {
+  const name = document.getElementById('genName').value.trim() || '[Votre nom]';
+  const act = document.getElementById('genActivity').value;
+  const pid = document.getElementById('genProduct').value;
+  const reason = document.getElementById('genReason').value.trim();
+  const p = PRODUITS.find(x => x.id === pid);
+  if (!p) { alert('Sélectionnez un EPI'); return; }
+
+  let body = `Bonjour,\n\nDans le cadre du nouveau marché EPI (CNATA001) et du catalogue Groupe RG validé DP2S, je sollicite la commande de l'EPI suivant pour mon activité${act ? ' de ' + act : ''} :\n\n`;
+  body += `→ ${p.nom} (${p.marque}) — ${p.prix.toFixed(2).replace('.', ',')} €\n   Catégorie : ${p.sousCat}\n\n`;
+  body += `─── JUSTIFICATION SANTÉ, SÉCURITÉ, CONDITIONS DE TRAVAIL ───\n\n${p.arg}\n\n`;
+  body += `Cet EPI :\n• est validé par la DP2S et présent au catalogue officiel ;\n• répond aux articles L.4321-1 et R.4321-4 du Code du travail (EPI approprié au risque et adapté au travailleur) ;\n• participe à la prévention des accidents et des troubles musculo-squelettiques (TMS) ;\n• améliore mes conditions de travail au sens de l'article L.4121-1.\n\n`;
+  if (reason) body += `Élément personnel : ${reason}\n\n`;
+  body += `Je vous prie de bien vouloir valider cette commande sur POPay (Punchout ${p.fournisseur}).\n\nCordialement,\n${name}`;
+
+  const out = document.getElementById('genOutput');
+  out.textContent = body;
+  out.classList.add('show');
+
+  const sujet = encodeURIComponent(`Demande EPI · ${p.nom} — ${act || 'activité'}`);
+  const mailBody = encodeURIComponent(body);
+  document.getElementById('mailGenBtn').href = `mailto:?subject=${sujet}&cc=syndicat-fo_grdf-delegations-nationales@grdf.fr&body=${mailBody}`;
+  document.getElementById('mailGenBtn').style.display = 'inline-flex';
+  document.getElementById('copyGenBtn').style.display = 'inline-flex';
+}
+
+function copyGenerated() {
+  const txt = document.getElementById('genOutput').textContent;
+  copyToClipboard(txt);
+}
+
+/* ═══════════ CATALOGUE PDF ═══════════ */
+const CATALOG_PAGES = [
+  { p:8, label:'Casques & Casquettes' },
+  { p:9, label:'Protections oculaires' },
+  { p:10, label:'Gants (1/2) — Manutention & Soudage' },
+  { p:11, label:'Gants (2/2) — Chimique, Élec, Froid' },
+  { p:12, label:'Chaussures basses' },
+  { p:13, label:'Brodequins & Soudeurs' },
+  { p:14, label:'Rangers' },
+  { p:15, label:'Bottes froid, caoutchouc & Waders' }
+];
+
+function renderCatalog() {
+  const g = document.getElementById('catalogGrid');
+  g.innerHTML = CATALOG_PAGES.map(c => `
+    <div class="cat-page" onclick="zoomCatalog(${c.p}, '${c.label}')">
+      <img src="epi_images/cat-${String(c.p).padStart(2,'0')}.jpg" alt="Page ${c.p} catalogue — ${c.label}" loading="lazy">
+      <div class="cap">Page ${c.p} — ${c.label}</div>
+    </div>
+  `).join('');
+}
+
+function zoomCatalog(p, label) {
+  const html = `
+    <div style="text-align:center;">
+      <img src="epi_images/cat-${String(p).padStart(2,'0')}.jpg" alt="Page ${p}" style="max-width:100%; height:auto; border-radius:10px;">
+      <div style="font-size:13px; color:var(--gris); margin-top:10px;">Page ${p} — ${label}</div>
+    </div>`;
+  document.getElementById('modalCatalogContent').innerHTML = html;
+  openModal('modalCatalog');
+}
+
+/* ═══════════ UTIL ═══════════ */
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    ['modalProduct','modalCompare','modalCatalog','modalBasket'].forEach(closeModal);
+  }
+});
+
+function copyToClipboard(txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt).then(() => {
+      showToast('Texte copié dans le presse-papier');
+    }).catch(() => { fallbackCopy(txt); });
+  } else fallbackCopy(txt);
+}
+function fallbackCopy(txt) {
+  const ta = document.createElement('textarea');
+  ta.value = txt; document.body.appendChild(ta);
+  ta.select(); document.execCommand('copy');
+  document.body.removeChild(ta);
+  showToast('Texte copié');
+}
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = 'position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:var(--vert); color:white; padding:12px 24px; border-radius:30px; font-size:13.5px; font-weight:600; box-shadow:0 8px 24px rgba(0,0,0,0.2); z-index:9999; animation:slideUp 0.3s;';
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2500);
+}
+
+/* ═══════════ ACCESSIBILITÉ ═══════════ */
+function toggleA11y() {
+  const body = document.body;
+  const btn = document.getElementById('a11yToggle');
+  const on = body.classList.toggle('a11y-mode');
+  if (btn) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  try { localStorage.setItem('fo-a11y', on ? '1' : '0'); } catch(e) {}
+}
+try {
+  if (localStorage.getItem('fo-a11y') === '1') {
+    document.body.classList.add('a11y-mode');
+    const btn = document.getElementById('a11yToggle');
+    if (btn) btn.setAttribute('aria-pressed', 'true');
+  }
+} catch(e) {}
+
+/* ═══════════ ÉCOUTEURS ═══════════ */
+['searchInput','catFilter','actFilter','priceFilter','sortBy'].forEach(id => {
+  document.getElementById(id).addEventListener('input', applyFilters);
+  document.getElementById(id).addEventListener('change', applyFilters);
+});
+
+/* ═══════════ INIT ═══════════ */
+applyFilters();
+populateGenProducts();
+renderCatalog();
+updateCompareBtn();
+updateBasketBtn();
+</script>
+
+</body>
+</html>
