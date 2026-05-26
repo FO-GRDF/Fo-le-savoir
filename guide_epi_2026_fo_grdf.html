@@ -1069,7 +1069,19 @@
       <div class="nb">12 gants</div>
     </div>
     <div class="fam" data-fam="chaussure" onclick="goFam('chaussure')">
-      <div class="fam-icon"><svg viewBox="0 0 64 64"><path d="M6 44h52c2 0 4-2 4-4v-2c0-2-2-4-4-4l-4-2c-4-2-6-6-8-10l-2-4c-2-4-6-6-10-6h-8c-4 0-8 2-10 6L14 28c-2 2-4 4-6 4l-4 2c-2 0-2 2-2 4v2c0 2 2 4 4 4z"/></svg></div>
+      <div class="fam-icon">
+        <svg viewBox="0 0 64 64" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Tige de la chaussure -->
+          <path d="M14 8h12v32c0 3 3 6 6 6h20c4 0 6 1 8 3l4 4v6c0 2-2 4-4 4H10c-2 0-4-2-4-4v-4c0-3 2-6 6-6h2V8z"/>
+          <!-- Lacets -->
+          <line x1="14" y1="16" x2="26" y2="16"/>
+          <line x1="14" y1="22" x2="26" y2="22"/>
+          <line x1="14" y1="28" x2="26" y2="28"/>
+          <line x1="14" y1="34" x2="26" y2="34"/>
+          <!-- Embout renforcé (en pointillés visuels) -->
+          <path d="M52 50c2 0 4 0 6 2"/>
+        </svg>
+      </div>
       <h3>Pieds</h3>
       <div class="nb">22 chaussures & bottes</div>
     </div>
@@ -1150,19 +1162,19 @@
     <div class="rights-mini">
       <div class="rm-card">
         <h4>1 · Demander par écrit</h4>
-        <p>Email au manager avec l'argumentaire ci-dessous. Bouton « Ma demande » au-dessus.</p>
+        <p>Email au manager avec l'argumentaire intégré. Bouton « Ma demande » au-dessus.</p>
       </div>
       <div class="rm-card">
         <h4>2 · Saisir la CSSCT</h4>
-        <p>Commission Santé-Sécurité. FO y siège — contactez votre élu.</p>
+        <p>Commission Santé-Sécurité. FO y siège — contactez votre élu FO local.</p>
       </div>
       <div class="rm-card">
         <h4>3 · Médecine du travail</h4>
         <p>Son avis s'impose. Indispensable si motif médical (TMS, allergies).</p>
       </div>
       <div class="rm-card">
-        <h4>4 · Contacter FO</h4>
-        <p>Nous saisissons la DP2S et accompagnons la démarche.</p>
+        <h4>4 · Vos représentants FO</h4>
+        <p><strong>Rapprochez-vous de vos représentants FO</strong> en local : ils vous accompagnent et saisissent la DP2S si nécessaire.</p>
       </div>
     </div>
   </div>
@@ -1176,22 +1188,20 @@
   <div class="fo-contact">
     <img class="fo-logo" src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO GRDF">
     <div>
-      <h3>Une question, un blocage ? Contactez FO</h3>
-      <p>Refus manager, EPI inadapté, accident lié à un équipement défaillant — nos délégués nationaux vous accompagnent.</p>
+      <h3>Une question, un blocage ?</h3>
+      <p><strong>Rapprochez-vous de vos représentants FO</strong> en local. Refus manager, EPI inadapté, accident lié à un équipement défaillant — votre équipe FO de proximité est votre premier appui.</p>
     </div>
-    <a class="fo-btn" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=EPI%20%E2%80%94%20Demande%20FO">
-      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-      Nous écrire
-    </a>
+    <span class="fo-btn" style="cursor:default;">
+      <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
+      Vos élus FO
+    </span>
   </div>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr">
-      <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO Énergie GRDF">
-    </a><br>
+    <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO Énergie GRDF"><br>
     Document syndical FO Énergie GRDF · Catalogue EPI mai 2026 ·
-    <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr">nous écrire</a> ·
+    <strong>Rapprochez-vous de vos représentants FO</strong> ·
     <a href="https://www.instagram.com/FO_GRDF" target="_blank" rel="noopener">@FO_GRDF</a>
   </footer>
 
@@ -1263,9 +1273,8 @@
         <label for="bReason">Élément personnel (optionnel)</label>
         <textarea id="bReason" placeholder="Ex. antécédent TMS aux pieds, transpiration excessive en été, ampoules récurrentes…"></textarea>
 
-        <div class="checkbox-row">
-          <input type="checkbox" id="bCcFO" checked>
-          <label for="bCcFO" style="font-size:13px; color:#333; text-transform:none; letter-spacing:0; font-weight:500; margin:0;">Mettre FO en copie (recommandé)</label>
+        <div style="margin-top:14px; padding:10px 14px; background:white; border-radius:8px; border-left:3px solid var(--rouge-fo); font-size:12.5px; color:#444;">
+          <strong style="color:var(--rouge-fo);">Conseil FO :</strong> en cas de refus ou de blocage, <strong>rapprochez-vous de vos représentants FO en local</strong> pour relayer la demande.
         </div>
       </div>
 
@@ -1298,10 +1307,12 @@
 <script>
 /* ═══════════ DONNÉES ═══════════ */
 /*
-  Référentiel anti-coupure (gants) :
-   - cut-l (-)  Léger    EN388 niveau 1-2 (A/B)  → Manutention douce
-   - cut-m (+)  Moyen    EN388 niveau 3   (C)    → Manutention courante, IS, soudage
-   - cut-h (++) Élevé    EN388 niveau 4-5 (D-F)  → Verre, métal, risques élevés
+  Référentiel anti-coupure FO (basé sur EN 388:2016 — risques mécaniques) :
+   - cut-l (−)  Léger    Coup test 1-2 / ISO 13997 A-B (≤ 10 N)   → Manutention douce, IS, soudage gaz
+   - cut-m (+)  Moyen    Coup test 3   / ISO 13997 C   (10-15 N)  → Manutention courante avec arêtes
+   - cut-h (++) Élevé    Coup test 4-5 / ISO 13997 D-F (≥ 15 N)   → Verre, tôle, métal coupant
+  Notation EN 388:2016 lue à 6 caractères : abrasion (0-4), coupure-coup (0-5), déchirure (0-4),
+  perforation (0-4), ISO 13997 (A-F), impact (P ou rien).
   Champ "climate" : chaud (Climate Control), froid, eau
 */
 const PRODUITS = [
@@ -1462,17 +1473,17 @@ const PRODUITS = [
 
   /* ━━ MAINS ━━ */
   { id:'tegera255', cat:'gant', sub:'Manutention', nom:'TEGERA 255', marque:'Ejendals', prix:15.80, tier:'standard',
-    activites:['manutention','rsf'], tags:[{c:'',l:'Manutention'}], cut:'cut-m',
-    use:"Gant nitrile-mousse, dextérité 5/5, anti-coupure niveau 3 (+). Pour manutention précise.",
+    activites:['manutention','rsf'], tags:[{c:'',l:'Manutention'}], cut:'cut-l',
+    use:"Gant nitrile-mousse, dextérité 5/5. EN 388 = 4131A — anti-coupure léger (−). Pour manutention précise.",
     pour:['Manutention fine','Préhension précise'],
-    plus:['Dextérité maximale 5/5','Enduction PU anti-glissement','Dos respirant'],
-    moins:['Pas de protection thermique'],
-    arg:"Préhension précise + anticoupure niveau 3 (+) suffisant pour ma manutention quotidienne.",
+    plus:['Dextérité maximale 5/5','Enduction PU anti-glissement','Dos respirant','EN 388: 4131A'],
+    moins:['Anti-coupure léger (−) — pas pour métal/verre'],
+    arg:"Préhension précise + anti-coupure niveau léger (−) adapté à ma manutention quotidienne sans arêtes vives.",
     cert:['EN 388:2016 4131A','EN 420'] },
 
   { id:'perseus', cat:'gant', sub:'Manutention', nom:'PERSEUS', marque:'Ansell', prix:12.09, tier:'standard',
     activites:['manutention','rsf'], tags:[{c:'',l:'Humide / huileux'}], cut:'cut-l',
-    use:"Gants nitrile micro-mousse : grip en milieu humide et huileux (compteurs, raccordements).",
+    use:"Gant nitrile micro-mousse. EN 388 = 4121X — anti-coupure léger (−). Grip en milieu humide et huileux.",
     pour:['Milieu humide','Présence d\'huile'],
     plus:['Grip sur surfaces grasses','Lavables'],
     moins:['Anticoupure faible (-)','Pas thermique'],
@@ -1480,8 +1491,8 @@ const PRODUITS = [
     cert:['EN 388:2016 4121X','EN 420'] },
 
   { id:'tegera666', cat:'gant', sub:'Manutention', nom:'TEGERA 666', marque:'Ejendals', prix:12.80, tier:'standard',
-    activites:['manutention','rsf'], tags:[{c:'',l:'Polyvalent'}], cut:'cut-m',
-    use:"Gant cuir + textile polyvalent. Anticoupure niveau 3 (+). Le 'tout-usage' du quotidien.",
+    activites:['manutention','rsf'], tags:[{c:'',l:'Polyvalent'}], cut:'cut-l',
+    use:"Gant cuir + textile polyvalent. EN 388 = 3132X — anti-coupure léger (−). Le 'tout-usage' du quotidien.",
     pour:['Manutention générale','Réparation','Extérieur tempéré'],
     plus:['Cuir grain doux','Dos textile respirant','Durée 3-6 mois'],
     moins:['Pas pour très humide'],
@@ -1490,7 +1501,7 @@ const PRODUITS = [
 
   { id:'flexwelder', cat:'gant', sub:'Soudage / IS', nom:'FLEXWELDER', marque:'Tegera', prix:14.90, tier:'standard',
     activites:['soudage','is'], tags:[{c:'soud',l:'TIG / IS'}], cut:'cut-l',
-    use:"Cuir chèvre fin pour soudage TIG, brasage et IS. Dextérité maximale.",
+    use:"Cuir chèvre fin pour soudage TIG, brasage et IS. EN 388 = 2122X. EN 12477 type A.",
     pour:['Soudage TIG','Brasage','IS sur pièces chaudes'],
     plus:['Cuir chèvre fin','Doublure anti-feu','Manchette poignet','Coutures Kevlar'],
     moins:['Pas pour soudure arc intensif','Anticoupure modeste (-)'],
@@ -1498,8 +1509,8 @@ const PRODUITS = [
     cert:['EN 388 2122X','EN 407 412X4X','EN 12477:A'] },
 
   { id:'prosoud', cat:'gant', sub:'Soudage / IS', nom:'PROSOUD', marque:'Singer', prix:15.64, tier:'standard',
-    activites:['soudage'], tags:[{c:'soud',l:'Arc MIG/MAG'}], cut:'cut-m',
-    use:"Cuir bovin épais + feutre. Pour soudage à l'arc intensif et manipulation pièces chaudes.",
+    activites:['soudage'], tags:[{c:'soud',l:'Arc MIG/MAG'}], cut:'cut-l',
+    use:"Cuir bovin épais + feutre. EN 388 = 3132X. EN 12477 type A. Pour soudage à l'arc et pièces chaudes.",
     pour:['Soudage MIG/MAG','Soudage arc','Pièces chaudes prolongées'],
     plus:['Cuir bovin 1.4 mm','Doublure feutre haute T°','Manchette 15 cm'],
     moins:['Dextérité 4/5'],
@@ -1507,8 +1518,8 @@ const PRODUITS = [
     cert:['EN 388 3132X','EN 407 412X4X','EN 12477:A'] },
 
   { id:'fluotech468', cat:'gant', sub:'Produits chimiques', nom:'FLUOTECH 468', marque:'Mapa', prix:78.90, tier:'premium',
-    activites:['chimique'], tags:[{c:'chim',l:'Chimique Type A'}], cut:'cut-m',
-    use:"Tri-couches néoprène + butyle + fluoroélastomère. Type A EN 374 = résiste à 6 produits classés A.",
+    activites:['chimique'], tags:[{c:'chim',l:'Chimique Type A'}], cut:'cut-l',
+    use:"Tri-couches néoprène + butyle + fluoroélastomère. Type A EN 374. EN 388 = 4101A — anti-coupure léger (−).",
     pour:['Mercaptans (THT)','Hydrocarbures','Acides forts','Solvants'],
     plus:['Type A EN 374','Manchette 38 cm','Résistance perforation'],
     moins:['Dextérité réduite','Prix élevé'],
@@ -1517,7 +1528,7 @@ const PRODUITS = [
 
   { id:'nitrile719b', cat:'gant', sub:'Produits chimiques', nom:'NITRILE 719B', marque:'Mapa', prix:10.20, tier:'eco',
     activites:['chimique','manutention'], tags:[{c:'chim',l:'Chim. léger'}], cut:'cut-l',
-    use:"Nitrile Type B EN 374. Pour contact bref avec produits chimiques peu agressifs.",
+    use:"Nitrile Type B EN 374. EN 388 = 4010 — anti-coupure léger (−). Contact bref avec produits peu agressifs.",
     pour:['Nettoyage outils','Huiles','Graisses'],
     plus:['Bon marché','Souples'],
     moins:['Type B seulement','Résistance limitée aux solvants forts'],
@@ -1779,7 +1790,7 @@ const FAMILIES = {
   casque: { label:'Tête', ico:'<svg viewBox="0 0 24 24"><path d="M3 18c0-5 4-10 9-10s9 5 9 10M2 18h20M5 18v2h14v-2"/></svg>' },
   oculaire: { label:'Yeux', ico:'<svg viewBox="0 0 24 24"><circle cx="7" cy="13" r="4"/><circle cx="17" cy="13" r="4"/><path d="M11 12c.5-.5 1.5-.5 2 0M3 11l2 1M19 12l2-1"/></svg>' },
   gant: { label:'Mains', ico:'<svg viewBox="0 0 24 24"><path d="M8 22V8M8 8V4c0-1 1-2 2-2s2 1 2 2v6M12 10V3c0-1 1-2 2-2s2 1 2 2v7M16 10V5c0-1 1-2 2-2s2 1 2 2v9c0 4-3 8-7 8H7"/></svg>' },
-  chaussure: { label:'Pieds', ico:'<svg viewBox="0 0 24 24"><path d="M3 17h18M3 17c-1 0-1-1-1-2v-1c0-1 1-1 2-1h1c1-1 2-2 3-3l1-2c1-2 3-3 5-3h2c1 0 2 0 3 1l1 2 1 4 2 1c1 0 1 1 1 2v2c0 1-1 2-2 2H3z"/></svg>' }
+  chaussure: { label:'Pieds', ico:'<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4v12c0 1 1 2 2 2h7c2 0 3 0 4 1l2 2v2c0 1-1 2-2 2H4c-1 0-2-1-2-2v-2c0-1 1-2 2-2h1V3z"/><line x1="5" y1="6" x2="9" y2="6"/><line x1="5" y1="9" x2="9" y2="9"/><line x1="5" y1="12" x2="9" y2="12"/></svg>' }
 };
 
 const ACT_LABELS = {
@@ -2087,7 +2098,6 @@ function buildBasketMail() {
   const mgr = (document.getElementById('bManager').value || '').trim();
   const act = document.getElementById('bActivity').value;
   const reason = (document.getElementById('bReason').value || '').trim();
-  const ccFO = document.getElementById('bCcFO').checked;
   const products = basketList_.map(id => PRODUITS.find(p => p.id === id)).filter(Boolean);
   if (!products.length) return null;
   const total = products.reduce((s, p) => s + p.prix, 0);
@@ -2106,10 +2116,9 @@ function buildBasketMail() {
   body += `• améliore mes conditions de travail au sens de l'article L.4121-1.\n\n`;
   if (reason) body += `Élément personnel : ${reason}\n\n`;
   body += `Je vous remercie de bien vouloir valider cette commande et reste à votre disposition.\n\nCordialement,\n${name}`;
-  const cc = ccFO ? '&cc=' + encodeURIComponent('syndicat-fo_grdf-delegations-nationales@grdf.fr') : '';
   return {
-    href: `mailto:${encodeURIComponent(mgr)}?subject=${encodeURIComponent(sujet)}${cc}&body=${encodeURIComponent(body)}`,
-    raw: `À : ${mgr || '[email manager]'}${ccFO ? '\nCc : syndicat-fo_grdf-delegations-nationales@grdf.fr' : ''}\nObjet : ${sujet}\n\n${body}`
+    href: `mailto:${encodeURIComponent(mgr)}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(body)}`,
+    raw: `À : ${mgr || '[email manager]'}\nObjet : ${sujet}\n\n${body}`
   };
 }
 
@@ -2135,7 +2144,7 @@ function clearBasket() {
   renderCatalogue();
 }
 
-['bName','bManager','bActivity','bReason','bCcFO'].forEach(id => {
+['bName','bManager','bActivity','bReason'].forEach(id => {
   document.addEventListener('input', e => { if (e.target.id === id) updateBasketMail(); });
   document.addEventListener('change', e => { if (e.target.id === id) updateBasketMail(); });
 });
