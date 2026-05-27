@@ -867,6 +867,93 @@
   body.a11y-mode .wink-note strong { color: var(--a11y-txt1) !important; }
   body.a11y-mode .wink-note .wink-tag { background: var(--a11y-txt1) !important; color: var(--a11y-dark-txt) !important; }
 
+  /* — Glossaire (grille de définitions, bas de page) — */
+  .glossary {
+    background: var(--blanc);
+    border-radius: 18px;
+    padding: 28px 30px 26px;
+    margin-bottom: 32px;
+    box-shadow: 0 6px 22px rgba(1,156,218,0.06);
+  }
+  .glossary .glos-intro {
+    font-size: 13.5px;
+    color: var(--gris);
+    line-height: 1.65;
+    margin: -4px 0 18px;
+  }
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .glos-item {
+    background: var(--fond);
+    border-left: 4px solid var(--bleu);
+    border-radius: 0 12px 12px 0;
+    padding: 12px 16px 12px 14px;
+    transition: background 0.18s, transform 0.18s, border-color 0.18s;
+  }
+  .glos-item:hover {
+    background: #fff;
+    transform: translateX(2px);
+    border-left-color: var(--or);
+  }
+  .glos-item dt {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 2px;
+    letter-spacing: 0.3px;
+  }
+  .glos-item dt .glos-full {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--texte);
+    margin-top: 2px;
+    letter-spacing: 0;
+  }
+  .glos-item dd {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
+    color: var(--gris);
+    line-height: 1.55;
+    margin: 4px 0 0;
+  }
+  /* alterner accent or pour les items techniques/produits */
+  .glos-item.tech { border-left-color: var(--or); }
+  .glos-item.tech dt { color: #a36200; }
+  .glos-item.law { border-left-color: var(--vert); }
+  .glos-item.law dt { color: #0e6b54; }
+
+  @media (max-width: 600px) {
+    .glossary-grid { grid-template-columns: 1fr; }
+  }
+
+  body.a11y-mode .glossary {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .glossary .glos-intro { color: var(--a11y-txt3) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .glos-item,
+  body.a11y-mode .glos-item.tech,
+  body.a11y-mode .glos-item.law {
+    background: var(--a11y-surface2) !important;
+    border-left: 4px solid var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .glos-item dt,
+  body.a11y-mode .glos-item.tech dt,
+  body.a11y-mode .glos-item.law dt {
+    color: var(--a11y-txt1) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .glos-item dt .glos-full,
+  body.a11y-mode .glos-item dd { color: var(--a11y-txt2) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .glos-item:hover { background: var(--a11y-surface) !important; transform: none !important; }
+
   /* — Acronymes : soulignement pointillé + tooltip natif HTML — */
   abbr[title] {
     text-decoration: none;
@@ -3544,7 +3631,7 @@
         <span class="logo-tooltip"><span aria-hidden="true">✉️</span> Écrire à FO GRDF</span>
       </span>
     </div>
-    <h1 style="color:white;"><abbr title="Intelligence Artificielle">IA</abbr> à la <abbr title="Direction des Systèmes d'Information">DSI</abbr> : <em>une révolution sans les salariés ?</em></h1>
+    <h1 style="color:white;">IA à la DSI : <em>une révolution sans les salariés ?</em></h1>
     <p class="subtitle">FO GRDF alerte sur le déploiement non concerté de l'IA générative à la DSI. Pour l'intelligence artificielle, oui — pour l'oubli de ses impacts humains, non.</p>
     <div class="update" role="status">
       <span class="dot" aria-hidden="true"></span> Alerte FO — Mai 2026 · Déclaration liminaire CSE remise en séance
@@ -3574,10 +3661,10 @@
 
   <!-- ═══════════ INTRO ═══════════ -->
   <div class="intro">
-    Depuis plusieurs mois, des <strong>outils d'IA générative</strong> ont été déployés à la <abbr title="Direction des Systèmes d'Information">DSI</abbr> <strong>sans concertation préalable</strong>, sans étude d'impact partagée avec les représentants du personnel, sans véritable plan de formation, et sans engagement clair sur l'évolution de nos métiers. <abbr title="Force Ouvrière — confédération syndicale française fondée en 1948">FO</abbr> <abbr title="Gaz Réseau Distribution France — gestionnaire principal du réseau de distribution de gaz naturel en France">GRDF</abbr> a donc <strong>remis en séance plénière du <abbr title="Comité Social et Économique — instance représentative du personnel issue des ordonnances Macron de 2017">CSE</abbr> une déclaration liminaire</strong> pour porter votre voix, faire reconnaître les <strong><abbr title="Risques Psychosociaux — souffrance générée par l'organisation du travail (stress chronique, burn-out, etc.)">risques psychosociaux</abbr></strong> que cette transformation génère déjà sur le terrain, et exiger un <strong>vrai dialogue social</strong>.<br><br>
+    Depuis plusieurs mois, des <strong>outils d'IA générative</strong> ont été déployés à la DSI <strong>sans concertation préalable</strong>, sans étude d'impact partagée avec les représentants du personnel, sans véritable plan de formation, et sans engagement clair sur l'évolution de nos métiers. FO GRDF a donc <strong>remis en séance plénière du CSE une déclaration liminaire</strong> pour porter votre voix, faire reconnaître les <strong>risques psychosociaux</strong> que cette transformation génère déjà sur le terrain, et exiger un <strong>vrai dialogue social</strong>.<br><br>
     <strong style="color:var(--rouge);">Notre position est limpide :</strong> nous sommes <strong>pour</strong> l'utilisation de l'intelligence artificielle comme outil d'aide au travail. Nous sommes <strong>contre</strong> tout déploiement qui ignore ses impacts sur les salariés.
     <br><br>
-    <em style="font-size:13px; color:var(--gris);">💡 Astuce de lecture : les <abbr title="Exemple de définition au survol">mots soulignés en pointillé</abbr> contiennent une définition au survol (ou au clic sur mobile). Pratique pour les acronymes syndicaux et juridiques.</em>
+    <em style="font-size:13px; color:var(--gris);">📖 Astuce de lecture : tous les acronymes syndicaux, juridiques et techniques utilisés dans cette communication sont expliqués dans le <a href="#glossaire" style="color:var(--bleu); font-weight:600; text-decoration:underline;">glossaire en bas de page</a>.</em>
   </div>
 
   <!-- ═══════════ TERMINAL — citation prompt symbolique ═══════════ -->
@@ -3611,14 +3698,14 @@
     </div>
     <div class="stat-desc">
       <strong>Une transformation qui touche TOUS les facteurs de RPS</strong><br><br>
-      Le déploiement non concerté de l'IA à la DSI active simultanément les <strong>6 grandes familles de risques psychosociaux</strong> identifiées par le <strong>rapport Gollac (2011)</strong> — référence officielle utilisée par l'<abbr title="Institut National de Recherche et de Sécurité — organisme français de référence en santé et sécurité au travail">INRS</abbr> et le <abbr title="Document Unique d'Évaluation des Risques Professionnels — obligatoire dans toute entreprise (art. R.4121-1)">DUERP</abbr>. <strong>Insécurité socio-économique en tête</strong> : c'est notre principal point de vigilance pour la DSI.
+      Le déploiement non concerté de l'IA à la DSI active simultanément les <strong>6 grandes familles de risques psychosociaux</strong> identifiées par le <strong>rapport Gollac (2011)</strong> — référence officielle utilisée par l'INRS et le DUERP. <strong>Insécurité socio-économique en tête</strong> : c'est notre principal point de vigilance pour la DSI.
     </div>
   </div>
 
   <!-- ═══════════ ALERTE JAUNE — INSÉCURITÉ AU CŒUR ═══════════ -->
   <div class="alert">
     <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="Point de vigilance"><span class="a11y-emoji">⚠️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.3L1.6 19a2 2 0 0 0 1.7 3h17.4a2 2 0 0 0 1.7-3L13.7 3.3a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg></span></div>
-    <p><strong>Le point de vigilance n°1 pour la DSI :</strong> l'<strong>insécurité socio-économique</strong> — facteur Gollac n°6. Quand un outil capable d'écrire, tester, documenter et auditer du code s'installe sans plan de formation ni engagement <abbr title="Gestion Prévisionnelle des Emplois et des Compétences — dispositif obligatoire prévoyant l'évolution des métiers et compétences à 3 ans">GPEC</abbr>, c'est légitimement la question « <em>mon métier sera-t-il encore là demain ?</em> » qui surgit. <strong>Cette question mérite une réponse explicite de la direction</strong>, pas un silence stratégique.</p>
+    <p><strong>Le point de vigilance n°1 pour la DSI :</strong> l'<strong>insécurité socio-économique</strong> — facteur Gollac n°6. Quand un outil capable d'écrire, tester, documenter et auditer du code s'installe sans plan de formation ni engagement GPEC, c'est légitimement la question « <em>mon métier sera-t-il encore là demain ?</em> » qui surgit. <strong>Cette question mérite une réponse explicite de la direction</strong>, pas un silence stratégique.</p>
   </div>
 
   <!-- CTA mailto — vous vous posez la question ? -->
@@ -3764,7 +3851,7 @@
   <!-- ═══════════ ALERTE BLEUE — INTRO GOLLAC ═══════════ -->
   <div class="alert blue">
     <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="Information"><span class="a11y-emoji">ℹ️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><circle cx="12" cy="8" r="0.5" fill="currentColor"/></svg></span></div>
-    <p><strong>Le rapport Gollac (2011), référence française :</strong> en France, les RPS sont structurés autour de <strong>6 grandes familles de facteurs</strong> identifiées par le rapport du collège d'expertise présidé par Michel Gollac. Ces 6 axes constituent la <strong>grille de lecture officielle</strong> utilisée par l'INRS, l'<abbr title="Agence Nationale pour l'Amélioration des Conditions de Travail — organisme paritaire public">ANACT</abbr>, la médecine du travail et le DUERP de l'entreprise.</p>
+    <p><strong>Le rapport Gollac (2011), référence française :</strong> en France, les RPS sont structurés autour de <strong>6 grandes familles de facteurs</strong> identifiées par le rapport du collège d'expertise présidé par Michel Gollac. Ces 6 axes constituent la <strong>grille de lecture officielle</strong> utilisée par l'INRS, l'ANACT, la médecine du travail et le DUERP de l'entreprise.</p>
   </div>
 
   <!-- ═══════════ 6 FACTEURS GOLLAC — CARTES INTERACTIVES ═══════════ -->
@@ -3943,7 +4030,7 @@
     <div class="position-card pour">
       <span class="pos-badge">POUR</span>
       <h3>La formation et la reconversion</h3>
-      <p>Un vrai plan de montée en compétences <strong>financé, individualisé et obligatoire</strong> — pas un <abbr title="Massive Open Online Course — formation en ligne massive, souvent autonome et non accompagnée">MOOC</abbr> envoyé en pièce jointe.</p>
+      <p>Un vrai plan de montée en compétences <strong>financé, individualisé et obligatoire</strong> — pas un MOOC envoyé en pièce jointe.</p>
     </div>
 
     <div class="position-card contre">
@@ -4011,7 +4098,7 @@
     <ol>
       <li>
         <strong>Transparence complète sur le déploiement IA</strong>
-        Combien de licences achetées et lesquelles, sur quel périmètre, pour quels métiers, dans quel but, dans quelles conditions contractuelles, avec quelles garanties de confidentialité et de conformité <abbr title="Règlement Général sur la Protection des Données — règlement européen 2016/679">RGPD</abbr>, et selon quelle politique d'usage. Présentation à faire en séance plénière dès la prochaine occasion.
+        Combien de licences achetées et lesquelles, sur quel périmètre, pour quels métiers, dans quel but, dans quelles conditions contractuelles, avec quelles garanties de confidentialité et de conformité RGPD, et selon quelle politique d'usage. Présentation à faire en séance plénière dès la prochaine occasion.
       </li>
       <li>
         <strong>Information-consultation du CSE en bonne et due forme</strong>
@@ -4019,11 +4106,11 @@
       </li>
       <li>
         <strong>Mise à jour du DUERP avec les risques psychosociaux</strong>
-        Le <abbr title="Document Unique d'Évaluation des Risques Professionnels — obligatoire dans toute entreprise (art. R.4121-1 du Code du travail)">Document Unique d'Évaluation des Risques Professionnels</abbr> doit intégrer explicitement les <abbr title="Risques Psychosociaux">RPS</abbr> générés par ces évolutions. Sans cette inscription, le risque n'existe pas juridiquement pour l'employeur.
+        Le Document Unique d'Évaluation des Risques Professionnels doit intégrer explicitement les RPS générés par ces évolutions. Sans cette inscription, le risque n'existe pas juridiquement pour l'employeur.
       </li>
       <li>
         <strong>Droit à une expertise indépendante (art. L.2315-94)</strong>
-        Le <abbr title="Comité Social et Économique">CSE</abbr> doit pouvoir mandater une expertise externe si la complexité technique et organisationnelle du sujet le justifie.
+        Le CSE doit pouvoir mandater une expertise externe si la complexité technique et organisationnelle du sujet le justifie.
       </li>
       <li>
         <strong>Un discours managérial clair et homogène</strong>
@@ -4064,12 +4151,12 @@
       <div class="link-item">
         <div class="li-label">Étape 3</div>
         <div class="li-val">Alerte CSSCT / FO</div>
-        <div class="li-sub">Vos élu·es FO peuvent saisir la <abbr title="Commission Santé, Sécurité et Conditions de Travail — émanation obligatoire du CSE dans les entreprises ≥300 salariés (art. L.2315-36)">CSSCT</abbr> et, si nécessaire, exercer un droit d'alerte sur les RPS liés au déploiement IA.</div>
+        <div class="li-sub">Vos élu·es FO peuvent saisir la CSSCT et, si nécessaire, exercer un droit d'alerte sur les RPS liés au déploiement IA.</div>
       </div>
       <div class="link-item">
         <div class="li-label">Étape 4</div>
         <div class="li-val">Inscription au DUERP</div>
-        <div class="li-sub">Les risques liés à l'IA doivent figurer au <abbr title="Document Unique d'Évaluation des Risques Professionnels">Document Unique</abbr>. Sinon, ils n'existent pas pour l'employeur.</div>
+        <div class="li-sub">Les risques liés à l'IA doivent figurer au Document Unique. Sinon, ils n'existent pas pour l'employeur.</div>
       </div>
     </div>
     <p style="margin-top:14px; font-size:12px; color:rgba(255,255,255,0.7);">Sources : Rapport Gollac « Mesurer les facteurs psychosociaux de risque au travail » (2011) · Code du travail art. L.2312-8, L.4121-1 et L.4612-8 · Déclaration liminaire FO GRDF — CSE Mai 2026.</p>
@@ -4079,6 +4166,86 @@
   <div class="alert">
     <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="À retenir"><span class="a11y-emoji">📣</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8v18l-18-8z"/><path d="M11 11v8"/></svg></span></div>
     <p><strong>FO GRDF est pour l'IA, pas contre les salariés.</strong> Nous refusons que la modernisation technologique se fasse <strong>au prix de votre santé, de votre métier, ou de votre dignité professionnelle</strong>. Une transformation réussie commence par une vraie négociation. <strong>N'hésitez surtout pas à nous contacter</strong> — tout retour, anonyme ou non, alimente notre travail au CSE et à la CSSCT.</p>
+  </div>
+
+  <!-- ═══════════ GLOSSAIRE ═══════════ -->
+  <div class="glossary" id="glossaire">
+    <div class="section-title" style="margin-bottom:6px;">
+      <span class="icon" aria-hidden="true"><span class="a11y-emoji">📖</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+      Glossaire — pour ne pas perdre le fil
+    </div>
+    <p class="glos-intro">
+      Tous les acronymes syndicaux, juridiques et techniques utilisés dans cette communication, expliqués simplement. Les termes <strong style="color:var(--bleu);">en bleu</strong> sont syndicaux ou organisationnels, <strong style="color:#0e6b54;">en vert</strong> juridiques, <strong style="color:#a36200;">en or</strong> techniques.
+    </p>
+
+    <dl class="glossary-grid">
+
+      <div class="glos-item">
+        <dt>FO <span class="glos-full">Force Ouvrière</span></dt>
+        <dd>Confédération syndicale française fondée en 1948, indépendante des partis politiques et des pouvoirs publics.</dd>
+      </div>
+
+      <div class="glos-item">
+        <dt>GRDF <span class="glos-full">Gaz Réseau Distribution France</span></dt>
+        <dd>Gestionnaire principal du réseau de distribution de gaz naturel en France métropolitaine.</dd>
+      </div>
+
+      <div class="glos-item tech">
+        <dt>IA <span class="glos-full">Intelligence Artificielle</span></dt>
+        <dd>Ensemble de techniques logicielles permettant à une machine de produire des contenus, des analyses ou des décisions comparables à ceux d'un humain.</dd>
+      </div>
+
+      <div class="glos-item tech">
+        <dt>DSI <span class="glos-full">Direction des Systèmes d'Information</span></dt>
+        <dd>Entité qui conçoit, déploie et maintient l'ensemble des outils informatiques de l'entreprise (applicatifs, infra, data, support…).</dd>
+      </div>
+
+      <div class="glos-item">
+        <dt>CSE <span class="glos-full">Comité Social et Économique</span></dt>
+        <dd>Instance représentative du personnel obligatoire dans les entreprises ≥11 salariés, issue des ordonnances Macron de 2017. Elle remplace les anciens CE, DP et CHSCT.</dd>
+      </div>
+
+      <div class="glos-item law">
+        <dt>CSSCT <span class="glos-full">Commission Santé, Sécurité et Conditions de Travail</span></dt>
+        <dd>Émanation obligatoire du CSE dans les entreprises ≥300 salariés (art. L.2315-36). Elle se consacre spécifiquement aux questions de santé, sécurité et conditions de travail.</dd>
+      </div>
+
+      <div class="glos-item law">
+        <dt>DUERP <span class="glos-full">Document Unique d'Évaluation des Risques Professionnels</span></dt>
+        <dd>Document obligatoire dans toute entreprise (art. R.4121-1 du Code du travail) qui inventorie et hiérarchise les risques professionnels. Un risque non inscrit au DUERP n'existe pas juridiquement pour l'employeur.</dd>
+      </div>
+
+      <div class="glos-item">
+        <dt>RPS <span class="glos-full">Risques Psychosociaux</span></dt>
+        <dd>Risques pour la santé mentale et physique générés par l'organisation du travail : stress chronique, épuisement professionnel (burn-out), violences internes ou externes, etc.</dd>
+      </div>
+
+      <div class="glos-item law">
+        <dt>GPEC <span class="glos-full">Gestion Prévisionnelle des Emplois et des Compétences</span></dt>
+        <dd>Dispositif de gestion qui anticipe à 3 ans l'évolution des métiers et des compétences nécessaires à l'entreprise — obligatoire de négociation dans les groupes ≥300 salariés.</dd>
+      </div>
+
+      <div class="glos-item law">
+        <dt>RGPD <span class="glos-full">Règlement Général sur la Protection des Données</span></dt>
+        <dd>Règlement européen 2016/679 entré en application en 2018. Il encadre la collecte, le traitement et la conservation des données personnelles dans l'UE.</dd>
+      </div>
+
+      <div class="glos-item">
+        <dt>INRS <span class="glos-full">Institut National de Recherche et de Sécurité</span></dt>
+        <dd>Organisme français de référence en matière de santé et sécurité au travail. Produit des études, des outils et des recommandations pour la prévention des risques professionnels.</dd>
+      </div>
+
+      <div class="glos-item">
+        <dt>ANACT <span class="glos-full">Agence Nationale pour l'Amélioration des Conditions de Travail</span></dt>
+        <dd>Organisme paritaire public dédié à l'amélioration des conditions de travail. Accompagne entreprises et IRP sur les transformations du travail.</dd>
+      </div>
+
+      <div class="glos-item tech">
+        <dt>MOOC <span class="glos-full">Massive Open Online Course</span></dt>
+        <dd>Cours en ligne massif, accessible à un grand nombre de participants. Souvent en autoformation, sans accompagnement individualisé — d'où la critique « pas un MOOC envoyé en pièce jointe ».</dd>
+      </div>
+
+    </dl>
   </div>
 
   <!-- ═══════════ BANDEAU CONTACT FO (ne pas modifier) ═══════════ -->
