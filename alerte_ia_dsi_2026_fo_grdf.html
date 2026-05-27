@@ -740,6 +740,133 @@
   }
   .demands ol li strong { color: var(--bleu); display: block; margin-bottom: 2px; font-size: 15px; }
 
+  /* — Pastille "écrivez-nous" inline (réutilisable) — */
+  .mail-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: linear-gradient(135deg, #c0303a 0%, #9e1a28 100%);
+    color: #fff !important;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 16px 8px 14px;
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(192,48,58,0.25);
+    transition: transform 0.18s, box-shadow 0.18s;
+    vertical-align: middle;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .mail-pill::before {
+    content: '✉';
+    display: inline-flex;
+    width: 22px; height: 22px;
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  .mail-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(192,48,58,0.4);
+  }
+  .mail-pill.compact { font-size: 12px; padding: 6px 14px 6px 12px; }
+  .mail-pill.compact::before { width: 18px; height: 18px; font-size: 11px; }
+  .mail-cta-row {
+    margin: 18px 0 24px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, rgba(192,48,58,0.06), rgba(247,221,92,0.08));
+    border: 1px dashed rgba(192,48,58,0.35);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .mail-cta-row .mcr-text {
+    flex: 1;
+    min-width: 220px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    color: var(--texte);
+    line-height: 1.55;
+  }
+  .mail-cta-row .mcr-text strong { color: var(--rouge); }
+
+  /* a11y — mail-pill */
+  body.a11y-mode .mail-pill {
+    background: var(--a11y-dark) !important;
+    color: var(--a11y-dark-txt) !important;
+    border: 2px solid var(--a11y-txt1) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .mail-pill::before {
+    background: var(--a11y-surface) !important;
+    color: var(--a11y-txt1) !important;
+  }
+  body.a11y-mode .mail-pill:hover {
+    background: var(--a11y-txt1) !important;
+    transform: none !important;
+  }
+  body.a11y-mode .mail-cta-row {
+    background: var(--a11y-surface2) !important;
+    border: 1.5px dashed var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .mail-cta-row .mcr-text { color: var(--a11y-txt2) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .mail-cta-row .mcr-text strong { color: var(--a11y-txt1) !important; }
+
+  /* — Clin d'œil ironique en intro (note auto-dérision) — */
+  .wink-note {
+    position: relative;
+    background: linear-gradient(135deg, #fff8d6 0%, #fde8a8 100%);
+    border: 1.5px dashed #c19c00;
+    border-radius: 14px;
+    padding: 16px 22px 16px 64px;
+    margin-bottom: 26px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    color: #5a4000;
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .wink-note::before {
+    content: '😉';
+    position: absolute;
+    top: 50%; left: 18px;
+    transform: translateY(-50%);
+    font-size: 26px;
+    line-height: 1;
+    font-style: normal;
+  }
+  .wink-note strong { color: #3a2800; font-style: normal; }
+  .wink-note .wink-tag {
+    display: inline-block;
+    background: #3a2800;
+    color: #fde8a8;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-right: 8px;
+    font-style: normal;
+    vertical-align: 1px;
+  }
+  body.a11y-mode .wink-note {
+    background: var(--a11y-surface2) !important;
+    border: 1.5px dashed var(--a11y-txt2) !important;
+    color: var(--a11y-txt2) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .wink-note::before { font-size: 22px; }
+  body.a11y-mode .wink-note strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .wink-note .wink-tag { background: var(--a11y-txt1) !important; color: var(--a11y-dark-txt) !important; }
+
   /* — Surcharge a11y des composants alerte IA — */
   body.a11y-mode .pulse-badge {
     background: var(--a11y-dark) !important;
@@ -3265,6 +3392,12 @@
 
   <div id="contenu-principal">
 
+  <!-- ═══════════ CLIN D'ŒIL — TRANSPARENCE IRONIQUE ═══════════ -->
+  <div class="wink-note" role="note">
+    <span class="wink-tag">Transparence</span>
+    Nous admettons sans détour avoir utilisé <strong>Claude</strong> pour la réalisation de cette communication. Rassurez-vous&nbsp;: nous nous sommes assurés de la <strong>pérennité de nos emplois</strong> avant de cliquer sur «&nbsp;générer&nbsp;». <strong>L'ironie, elle, reste 100&nbsp;% humaine et syndicale.</strong>
+  </div>
+
   <!-- ═══════════ INTRO ═══════════ -->
   <div class="intro">
     Depuis plusieurs mois, des <strong>outils d'IA générative</strong> ont été déployés à la DSI <strong>sans concertation préalable</strong>, sans étude d'impact partagée avec les représentants du personnel, sans véritable plan de formation, et sans engagement clair sur l'évolution de nos métiers. FO GRDF a donc <strong>remis en séance plénière du CSE une déclaration liminaire</strong> pour porter votre voix, faire reconnaître les <strong>risques psychosociaux</strong> que cette transformation génère déjà sur le terrain, et exiger un <strong>vrai dialogue social</strong>.<br><br>
@@ -3284,6 +3417,16 @@
     <span class="term-line" style="margin-top:8px;"><span class="term-ok">✔ alerte transmise — déclaration liminaire CSE</span></span>
   </div>
 
+  <!-- CTA mailto — invite à témoigner -->
+  <div class="mail-cta-row">
+    <div class="mcr-text">
+      <strong>Vous êtes salarié·e à la DSI ?</strong> Votre vécu nous intéresse — vos retours alimentent directement notre travail au CSE et à la CSSCT.
+    </div>
+    <a class="mail-pill" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=%5BAlerte%20IA%20DSI%5D%20Mon%20témoignage&amp;body=Bonjour%2C%20%0A%0AJe%20souhaite%20vous%20faire%20part%20de%20mon%20vécu%20concernant%20le%20déploiement%20de%20l%27IA%20à%20la%20DSI...%0A%0ACordialement">
+      Écrivez-nous
+    </a>
+  </div>
+
   <!-- ═══════════ STAT BOX ═══════════ -->
   <div class="stat-box">
     <div class="stat-main">
@@ -3300,6 +3443,16 @@
   <div class="alert">
     <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="Point de vigilance"><span class="a11y-emoji">⚠️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.3L1.6 19a2 2 0 0 0 1.7 3h17.4a2 2 0 0 0 1.7-3L13.7 3.3a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg></span></div>
     <p><strong>Le point de vigilance n°1 pour la DSI :</strong> l'<strong>insécurité socio-économique</strong> — facteur Gollac n°6. Quand un outil capable d'écrire, tester, documenter et auditer du code s'installe sans plan de formation ni engagement GPEC, c'est légitimement la question « <em>mon métier sera-t-il encore là demain ?</em> » qui surgit. <strong>Cette question mérite une réponse explicite de la direction</strong>, pas un silence stratégique.</p>
+  </div>
+
+  <!-- CTA mailto — vous vous posez la question ? -->
+  <div class="mail-cta-row">
+    <div class="mcr-text">
+      <strong>Cette question vous traverse aussi ?</strong> Ne restez pas seul·e avec — <strong>parlons-en confidentiellement</strong>. Tout retour, même bref, nous aide à porter votre voix.
+    </div>
+    <a class="mail-pill" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=%5BAlerte%20IA%20DSI%5D%20Inquiétude%20sur%20mon%20avenir%20professionnel">
+      Contactez FO GRDF
+    </a>
   </div>
 
   <!-- ═══════════ FLIP CARDS — AVANT / APRÈS IA ═══════════ -->
@@ -3421,6 +3574,14 @@
     <div class="reco-count" id="recoCount" role="status" aria-live="polite">
       <span class="reco-num" id="recoNum">0</span>
       <span class="reco-msg" id="recoMsg">Cochez ce qui vous parle. <strong>Si au moins une case est cochée, vous êtes concerné·e.</strong> Et vous n'êtes pas seul·e.</span>
+    </div>
+    <div style="text-align:center; margin-top:18px;">
+      <a class="mail-pill" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=%5BAlerte%20IA%20DSI%5D%20Je%20me%20reconnais%20dans%20ces%20situations">
+        Partager mon vécu avec FO GRDF
+      </a>
+      <p style="font-size:11.5px; color:var(--gris); margin-top:8px; line-height:1.55;">
+        Échange strictement confidentiel — vos retours n'arrivent <strong>jamais</strong> à votre hiérarchie.
+      </p>
     </div>
   </div><!-- fin .reco-section -->
 
@@ -3564,6 +3725,16 @@
 
   </div><!-- fin .gollac-grid -->
 
+  <!-- CTA mailto — un facteur vous parle ? -->
+  <div class="mail-cta-row">
+    <div class="mcr-text">
+      <strong>Un de ces 6 facteurs résonne avec votre quotidien ?</strong> Décrivez-nous précisément la situation — c'est concret, daté et confidentiel : ça fait toute la différence en CSE.
+    </div>
+    <a class="mail-pill" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=%5BAlerte%20IA%20DSI%5D%20Situation%20vécue%20-%20Facteur%20Gollac">
+      Décrire ma situation
+    </a>
+  </div>
+
   <!-- ═══════════ ALERTE VERTE — RÔLE FO ═══════════ -->
   <div class="alert green">
     <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="Action FO"><span class="a11y-emoji">🛡️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9,12 11,14 15,10"/></svg></span></div>
@@ -3687,6 +3858,16 @@
         Engagement formel de la direction à consulter le CSE avant tout projet impactant l'organisation du travail — y compris les projets présentés comme « techniques » ou « de faible ampleur », qui se révèlent souvent structurants pour le quotidien des équipes.
       </li>
     </ol>
+  </div>
+
+  <!-- CTA mailto — soutenir nos revendications -->
+  <div class="mail-cta-row">
+    <div class="mcr-text">
+      <strong>Vous voulez soutenir ces revendications</strong> ou en proposer d'autres ? Chaque message reçu renforce notre poids en CSE. <strong>N'hésitez pas — écrivez-nous.</strong>
+    </div>
+    <a class="mail-pill" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=%5BAlerte%20IA%20DSI%5D%20Soutien%20aux%20revendications%20FO">
+      Soutenir FO GRDF
+    </a>
   </div>
 
   <!-- ═══════════ SECTION FOND SOMBRE — LES BONS RÉFLEXES ═══════════ -->
