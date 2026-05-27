@@ -1,0 +1,3905 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alerte IA en DSI — FO GRDF · Pour l'IA, contre l'oubli des salariés</title>
+<meta name="description" content="Communication FO GRDF aux salariés de la DSI : alerte sur le déploiement non concerté de l'IA générative, ressentis, facteurs Gollac, position et revendications.">
+<script data-goatcounter="https://fo-grdf.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+
+  :root {
+    --bleu: #019cda;
+    --bleu-clair: #019cda;
+    --or: #f7dd5c;
+    --or-clair: #fde8ea;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --texte: #1A1A2E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+
+  /* HEADER */
+  .header {
+    position: relative;
+    background: linear-gradient(135deg, #019cda 0%, #028bc2 100%);
+    border-radius: 20px;
+    padding: 44px 48px 36px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .header::before { display: none; }
+  .header::after { display: none; }
+
+  .badge {
+    display: inline-block;
+    background: var(--or);
+    color: var(--bleu);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 40px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--blanc);
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+  }
+  .header h1 em { color: var(--or); font-style: italic; }
+  .header .subtitle {
+    margin-top: 14px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.72);
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+  }
+  .header .update {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    position: relative;
+    z-index: 1;
+  }
+  .dot { width: 7px; height: 7px; background: #4ADE80; border-radius: 50%; display: inline-block; }
+
+  /* INTRO */
+  .intro {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    border-left: 5px solid var(--bleu-clair);
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #2a2a2a;
+  }
+  .intro strong { color: var(--bleu); }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon {
+    width: 36px; height: 36px;
+    background: var(--or-clair);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  /* CARDS GRID */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,59,111,0.1); }
+  .card .card-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+  .card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .card p { font-size: 13.5px; color: var(--gris); line-height: 1.65; }
+  .card.highlight { background: var(--bleu); color: white; }
+  .card.highlight h3 { color: var(--or); }
+  .card.highlight p { color: rgba(255,255,255,0.78); }
+
+  /* ALERT BOX */
+  .alert {
+    background: var(--or-clair);
+    border: 1.5px solid var(--or);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .alert .alert-icon { font-size: 24px; flex-shrink: 0; }
+  .alert p { font-size: 14px; line-height: 1.7; color: #5a4000; }
+  .alert strong { color: #3a2800; }
+  .alert.green { background: var(--vert-clair); border-color: var(--vert); }
+  .alert.green p { color: #0e3d22; }
+  .alert.green strong { color: #0a2e19; }
+
+  /* BIG STAT BOX */
+  .stat-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 20px;
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .stat-box .stat-main { flex-shrink: 0; text-align: center; }
+  .stat-box .stat-val { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 900; color: var(--or); line-height: 1; }
+  .stat-box .stat-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+  .stat-box .stat-desc { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.7; }
+  .stat-box .stat-desc strong { color: white; }
+
+  /* PLACEMENT CARDS */
+  .placement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .place-card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 18px;
+    border-top: 4px solid var(--bleu-clair);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .place-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,59,111,0.1); }
+  .place-card.default { border-top-color: var(--gris); }
+  .place-card .place-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+  .place-card h3 { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .place-card p { font-size: 12.5px; color: var(--gris); line-height: 1.6; }
+  .place-card .tag { display: inline-block; margin-top: 10px; font-size: 11px; padding: 3px 10px; border-radius: 20px; background: var(--or-clair); color: #7a5200; font-weight: 500; }
+  .place-card .tag.blue { background: #e6f5fb; color: #017fb1; }
+  .place-card .tag.grey { background: #f0f0f0; color: #555; }
+
+  /* BRUT/NET TABLE SECTION */
+  .fiscal-section { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+  .fiscal-flow { display: flex; flex-direction: column; gap: 0; margin: 20px 0; }
+  .fiscal-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    background: var(--fond);
+    margin-bottom: 4px;
+  }
+  .fiscal-row.start { background: #e6f5fb; }
+  .fiscal-row.deduct { background: var(--rouge-clair); }
+  .fiscal-row.net { background: var(--vert-clair); }
+  .fiscal-row.taxable { background: #FFF3D6; }
+  .fiscal-row .f-icon { font-size: 22px; flex-shrink: 0; width: 36px; text-align:center; }
+  .fiscal-row .f-label { flex: 1; font-size: 13.5px; line-height: 1.5; }
+  .fiscal-row .f-label strong { font-size: 14.5px; display:block; margin-bottom:2px; }
+  .fiscal-row .f-amount { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; text-align: right; flex-shrink: 0; min-width: 100px; }
+  .fiscal-row.start .f-amount { color: var(--bleu); }
+  .fiscal-row.deduct .f-amount { color: var(--rouge); }
+  .fiscal-row.net .f-amount { color: var(--vert); }
+  .fiscal-row.taxable .f-amount { color: #a36200; }
+  .arrow-down { text-align: center; font-size: 18px; color: var(--gris); margin: 2px 0; opacity: 0.5; }
+  .fiscal-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+  .fc-col { border-radius: 14px; padding: 20px; border-top: 4px solid; }
+  .fc-col.placement { background: var(--vert-clair); border-top-color: var(--vert); }
+  .fc-col.paiement { background: #FFF3D6; border-top-color: var(--or); }
+  .fc-col h4 { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 10px; }
+  .fc-col ul { list-style: none; padding: 0; }
+  .fc-col ul li { font-size: 12.5px; color: #333; line-height: 1.65; padding-left: 18px; position: relative; margin-bottom: 6px; }
+  .fc-col ul li::before { content: '✓'; position: absolute; left: 0; color: var(--vert); font-weight: 700; }
+  .fc-col.paiement ul li::before { color: #a36200; }
+  .fc-col .fc-highlight { margin-top: 12px; background: rgba(255,255,255,0.7); border-radius: 8px; padding: 8px 12px; font-size: 12px; line-height: 1.5; }
+
+  /* LINK SECTION */
+  .link-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    color: white;
+    position: relative;
+    z-index: 0;          /* explicite pour rester en arrière des tooltips Gollac */
+    overflow: hidden;
+  }
+  .link-box::after { display: none; }
+  .link-box h3 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--or); margin-bottom: 12px; }
+  .link-box p { font-size: 13.5px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 16px; }
+  .link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .link-item { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 16px; }
+  .link-item .li-label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+  .link-item .li-val { font-family: 'Fraunces', serif; font-size: 18px; color: var(--or); margin-top: 2px; }
+  .link-item .li-sub { font-size: 11.5px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+  /* CALENDAR */
+  .calendar-section { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--bleu-clair), var(--or)); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -22px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bleu-clair); border: 2px solid white; box-shadow: 0 0 0 2px var(--bleu-clair); }
+  .tl-item.active::before { background: var(--or); box-shadow: 0 0 0 2px var(--or); }
+  .tl-date { font-size: 11px; font-weight: 500; color: var(--bleu-clair); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .tl-item.active .tl-date { color: var(--or); }
+  .tl-title { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 3px; }
+  .tl-desc { font-size: 13px; color: var(--gris); line-height: 1.55; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead tr { background: var(--bleu); color: white; }
+  thead th { padding: 12px 14px; text-align: left; font-weight: 500; font-size: 12px; letter-spacing: 0.5px; }
+  tbody tr:nth-child(even) { background: var(--fond); }
+  tbody td { padding: 11px 14px; border-bottom: 1px solid #eee; color: #2a2a2a; }
+
+  /* FOOTER */
+  .footer { text-align: center; font-size: 12px; color: var(--gris); padding-top: 24px; border-top: 1px solid #ddd; }
+
+  @media (max-width: 600px) {
+    .cards, .placement-grid, .fiscal-compare, .link-grid { grid-template-columns: 1fr; }
+    .stat-box { flex-direction: column; text-align: center; }
+    .header h1 { font-size: 30px; }
+    .header { padding: 32px 24px; }
+    .page { padding: 24px 16px 48px; }
+  }
+
+  /* ═══════════════════════════════════════════════
+     ALERTE IA DSI — COMPOSANTS INNOVANTS
+     (témoignages, checklist, flip-card, position FO, terminal)
+  ═══════════════════════════════════════════════ */
+
+  /* — Badge "ALERTE" pulsé dans le header — */
+  .pulse-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--rouge);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 40px;
+    box-shadow: 0 0 0 0 rgba(239,51,62,0.7);
+    animation: pulse-red 2.4s ease-out infinite;
+  }
+  .pulse-badge::before {
+    content:'';
+    width: 8px; height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse-dot 1.2s ease-in-out infinite alternate;
+  }
+  @keyframes pulse-red {
+    0%   { box-shadow: 0 0 0 0 rgba(239,51,62,0.65); }
+    70%  { box-shadow: 0 0 0 14px rgba(239,51,62,0); }
+    100% { box-shadow: 0 0 0 0 rgba(239,51,62,0); }
+  }
+  @keyframes pulse-dot {
+    from { opacity: 0.4; transform: scale(0.85); }
+    to   { opacity: 1;   transform: scale(1.15); }
+  }
+
+  /* — Bandeau "terminal / prompt IA" en intro — */
+  .terminal-box {
+    background: #0f1726;
+    border: 1px solid #1d2a44;
+    border-radius: 14px;
+    padding: 18px 22px 20px;
+    margin-bottom: 32px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    color: #c8d3ec;
+    font-size: 13.5px;
+    line-height: 1.7;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 32px rgba(15,23,38,0.18);
+  }
+  .terminal-box::before {
+    content:'';
+    position: absolute;
+    top: 14px; left: 16px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #ef333e;
+    box-shadow: 16px 0 0 #f7dd5c, 32px 0 0 #28b193;
+  }
+  .terminal-box .term-title {
+    display: block;
+    color: #6f86b1;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 4px 0 14px 64px;
+  }
+  .terminal-box .term-line { display: block; margin-bottom: 6px; }
+  .terminal-box .term-prompt { color: #f7dd5c; font-weight: 700; }
+  .terminal-box .term-cmd { color: #c8d3ec; }
+  .terminal-box .term-out { color: #6f86b1; font-style: italic; }
+  .terminal-box .term-flag { color: #ef333e; font-weight: 700; }
+  .terminal-box .term-ok { color: #28b193; font-weight: 700; }
+  .terminal-box .term-cursor {
+    display: inline-block;
+    width: 9px; height: 16px;
+    background: #f7dd5c;
+    vertical-align: -3px;
+    margin-left: 2px;
+    animation: term-blink 1.05s steps(2,start) infinite;
+  }
+  @keyframes term-blink { to { background: transparent; } }
+
+  /* — Cartes témoignages DSI (quote cards animées) — */
+  .quote-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+  .quote-card {
+    position: relative;
+    background: var(--blanc);
+    border-radius: 18px;
+    padding: 26px 24px 22px;
+    border-left: 5px solid var(--bleu);
+    box-shadow: 0 8px 24px rgba(1,156,218,0.07);
+    transition: transform 0.25s, box-shadow 0.25s;
+    overflow: hidden;
+  }
+  .quote-card::before {
+    content: '“';
+    position: absolute;
+    top: -28px; right: 14px;
+    font-family: 'Fraunces', serif;
+    font-size: 140px;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(1,156,218,0.08);
+    pointer-events: none;
+  }
+  .quote-card:hover {
+    transform: translateY(-4px) rotate(-0.25deg);
+    box-shadow: 0 16px 36px rgba(1,156,218,0.15);
+  }
+  .quote-card.accent-or  { border-left-color: var(--or); }
+  .quote-card.accent-or::before  { color: rgba(247,221,92,0.30); }
+  .quote-card.accent-rouge { border-left-color: var(--rouge); }
+  .quote-card.accent-rouge::before { color: rgba(239,51,62,0.10); }
+  .quote-card.accent-vert  { border-left-color: var(--vert); }
+  .quote-card.accent-vert::before  { color: rgba(40,177,147,0.10); }
+  .quote-card .qc-text {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--texte);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .quote-card .qc-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12.5px;
+    color: var(--gris);
+  }
+  .quote-card .qc-avatar {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bleu), var(--vert));
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .quote-card.accent-or .qc-avatar { background: linear-gradient(135deg, #f7dd5c, #c19c00); color: #5a4000; }
+  .quote-card.accent-rouge .qc-avatar { background: linear-gradient(135deg, #ef333e, #9e1a28); }
+  .quote-card.accent-vert  .qc-avatar { background: linear-gradient(135deg, #28b193, #0f6b56); }
+  .quote-card .qc-role strong { display: block; color: var(--texte); font-size: 13px; font-weight: 700; font-family: 'DM Sans', sans-serif; font-style: normal; }
+  .quote-card .qc-tag {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    background: rgba(1,156,218,0.10);
+    color: var(--bleu);
+    border-radius: 20px;
+  }
+  .quote-card.accent-or  .qc-tag { background: rgba(247,221,92,0.30); color: #7a5200; }
+  .quote-card.accent-rouge .qc-tag { background: rgba(239,51,62,0.10); color: var(--rouge); }
+  .quote-card.accent-vert .qc-tag { background: rgba(40,177,147,0.13); color: #0e6b54; }
+
+  @media (max-width: 700px) {
+    .quote-grid { grid-template-columns: 1fr; }
+  }
+
+  /* — Flip card "AVANT IA / APRÈS IA" — */
+  .flip-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+  .flip-card {
+    perspective: 1200px;
+    height: 220px;
+    cursor: pointer;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%; height: 100%;
+    transition: transform 0.7s cubic-bezier(.3,.7,.4,1);
+    transform-style: preserve-3d;
+  }
+  .flip-card:hover .flip-card-inner,
+  .flip-card:focus-within .flip-card-inner,
+  .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+  .flip-face {
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 22px 24px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .flip-face.front {
+    background: linear-gradient(135deg, #e6f5fb 0%, #d0eaf6 100%);
+    border: 1.5px solid #b6dff0;
+    color: #014a72;
+  }
+  .flip-face.back {
+    background: linear-gradient(135deg, #1a2240 0%, #0f1726 100%);
+    color: #fff;
+    transform: rotateY(180deg);
+    border: 1.5px solid #2a3568;
+  }
+  .flip-face .ff-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+  }
+  .flip-face.front .ff-label { color: #017fb1; }
+  .flip-face.back  .ff-label { color: var(--or); }
+  .flip-face .ff-title {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 8px 0 4px;
+  }
+  .flip-face .ff-desc { font-size: 13.5px; line-height: 1.6; }
+  .flip-face .ff-hint {
+    font-size: 11px;
+    opacity: 0.6;
+    margin-top: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .flip-face .ff-hint::before {
+    content: '↻';
+    display: inline-block;
+    font-size: 13px;
+    animation: flip-rotate 4s linear infinite;
+  }
+  @keyframes flip-rotate { to { transform: rotate(360deg); } }
+
+  @media (max-width: 700px) {
+    .flip-grid { grid-template-columns: 1fr; }
+  }
+
+  /* — Checklist interactive "Reconnaissez-vous votre quotidien ?" — */
+  .reco-section {
+    background: var(--blanc);
+    border-radius: 18px;
+    padding: 28px 30px;
+    margin-bottom: 32px;
+    box-shadow: 0 6px 22px rgba(1,156,218,0.06);
+  }
+  .reco-list { list-style: none; padding: 0; margin: 18px 0 0; }
+  .reco-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1.5px solid #e7e3d6;
+    background: var(--fond);
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    user-select: none;
+  }
+  .reco-item:hover { background: #fff; border-color: var(--bleu); transform: translateX(2px); }
+  .reco-checkbox {
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    border-radius: 6px;
+    border: 2px solid #c4c0b3;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    margin-top: 1px;
+  }
+  .reco-checkbox::after {
+    content: '';
+    width: 11px; height: 6px;
+    border-left: 2.5px solid #fff;
+    border-bottom: 2.5px solid #fff;
+    transform: rotate(-45deg) scale(0);
+    transition: transform 0.2s;
+    margin-top: -2px;
+  }
+  .reco-item.is-checked .reco-checkbox {
+    background: var(--vert);
+    border-color: var(--vert);
+  }
+  .reco-item.is-checked .reco-checkbox::after { transform: rotate(-45deg) scale(1); }
+  .reco-item.is-checked { background: #f0faf6; border-color: var(--vert); }
+  .reco-item .reco-text { font-size: 14.5px; line-height: 1.55; color: var(--texte); }
+  .reco-item.is-checked .reco-text { color: #0a4a36; }
+  .reco-count {
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #019cda, #28b193);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .reco-count .reco-num {
+    font-family: 'Fraunces', serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: var(--or);
+    line-height: 1;
+    transition: transform 0.3s;
+  }
+  .reco-count.is-bumped .reco-num { transform: scale(1.15); }
+  .reco-count .reco-msg { flex: 1; min-width: 200px; line-height: 1.5; }
+  .reco-count .reco-msg strong { color: var(--or); }
+
+  /* — Bloc "Position FO" (4 piliers — pour / contre) — */
+  .position-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .position-card {
+    border-radius: 16px;
+    padding: 22px 22px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .position-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,0.08); }
+  .position-card.pour {
+    background: linear-gradient(135deg, #28b193 0%, #1e8a70 100%);
+    color: #fff;
+  }
+  .position-card.contre {
+    background: linear-gradient(135deg, #ef333e 0%, #b81f29 100%);
+    color: #fff;
+  }
+  .position-card .pos-badge {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 40px;
+    background: rgba(255,255,255,0.18);
+    margin-bottom: 12px;
+  }
+  .position-card.pour   .pos-badge::before { content: '✓ '; }
+  .position-card.contre .pos-badge::before { content: '✕ '; }
+  .position-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    line-height: 1.25;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .position-card p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.92);
+    margin: 0;
+  }
+  .position-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    pointer-events: none;
+  }
+
+  @media (max-width: 700px) {
+    .position-grid { grid-template-columns: 1fr; }
+  }
+
+  /* — Revendications numérotées — */
+  .demands {
+    background: var(--blanc);
+    border-radius: 18px;
+    padding: 28px 30px;
+    margin-bottom: 32px;
+  }
+  .demands ol { list-style: none; padding: 0; counter-reset: dem; margin-top: 8px; }
+  .demands ol li {
+    counter-increment: dem;
+    position: relative;
+    padding: 16px 14px 16px 60px;
+    border-bottom: 1px dashed #e0dccf;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--texte);
+  }
+  .demands ol li:last-child { border-bottom: none; }
+  .demands ol li::before {
+    content: counter(dem, decimal-leading-zero);
+    position: absolute;
+    left: 0; top: 14px;
+    width: 44px; height: 44px;
+    background: var(--or-clair);
+    color: var(--bleu);
+    border-radius: 12px;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(1,156,218,0.18);
+  }
+  .demands ol li strong { color: var(--bleu); display: block; margin-bottom: 2px; font-size: 15px; }
+
+  /* — Surcharge a11y des composants alerte IA — */
+  body.a11y-mode .pulse-badge {
+    background: var(--a11y-dark) !important;
+    color: var(--a11y-dark-txt) !important;
+    animation: none !important;
+    border: 2px solid var(--a11y-txt1) !important;
+  }
+  body.a11y-mode .pulse-badge::before { animation: none !important; background: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .terminal-box {
+    background: var(--a11y-surface) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .terminal-box::before { background: var(--a11y-txt1) !important; box-shadow: 16px 0 0 var(--a11y-txt2), 32px 0 0 var(--a11y-txt3) !important; }
+  body.a11y-mode .terminal-box .term-title,
+  body.a11y-mode .terminal-box .term-prompt,
+  body.a11y-mode .terminal-box .term-cmd,
+  body.a11y-mode .terminal-box .term-out,
+  body.a11y-mode .terminal-box .term-flag,
+  body.a11y-mode .terminal-box .term-ok {
+    color: var(--a11y-txt2) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .terminal-box .term-flag { font-weight: 700 !important; text-decoration: underline; }
+  body.a11y-mode .terminal-box .term-ok   { font-weight: 700 !important; }
+  body.a11y-mode .terminal-box .term-cursor { background: var(--a11y-txt1) !important; animation: none !important; }
+  body.a11y-mode .quote-card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .quote-card::before { color: var(--a11y-surface2) !important; }
+  body.a11y-mode .quote-card .qc-text { color: var(--a11y-txt1) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .quote-card .qc-meta,
+  body.a11y-mode .quote-card .qc-role strong,
+  body.a11y-mode .quote-card .qc-tag {
+    color: var(--a11y-txt2) !important;
+    background: var(--a11y-surface2) !important;
+    border: 1px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .quote-card .qc-avatar {
+    background: var(--a11y-dark) !important;
+    color: var(--a11y-dark-txt) !important;
+  }
+  body.a11y-mode .flip-card-inner { transition: none !important; }
+  body.a11y-mode .flip-face.front, body.a11y-mode .flip-face.back {
+    background: var(--a11y-surface) !important;
+    color: var(--a11y-txt1) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .flip-face.back { background: var(--a11y-surface2) !important; }
+  body.a11y-mode .flip-face .ff-label,
+  body.a11y-mode .flip-face.front .ff-label,
+  body.a11y-mode .flip-face.back .ff-label { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .flip-face .ff-title { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .flip-face .ff-hint::before { animation: none !important; }
+  body.a11y-mode .reco-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .reco-item {
+    background: var(--a11y-surface) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .reco-item:hover { background: var(--a11y-surface2) !important; }
+  body.a11y-mode .reco-checkbox {
+    border: 2px solid var(--a11y-txt2) !important;
+    background: var(--a11y-surface) !important;
+  }
+  body.a11y-mode .reco-item.is-checked .reco-checkbox { background: var(--a11y-txt1) !important; border-color: var(--a11y-txt1) !important; }
+  body.a11y-mode .reco-item.is-checked { background: var(--a11y-surface2) !important; border-color: var(--a11y-txt1) !important; }
+  body.a11y-mode .reco-item .reco-text,
+  body.a11y-mode .reco-item.is-checked .reco-text { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .reco-count {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .reco-count .reco-num,
+  body.a11y-mode .reco-count .reco-msg strong { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .reco-count .reco-msg { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .position-card.pour,
+  body.a11y-mode .position-card.contre {
+    background: var(--a11y-dark) !important;
+    color: var(--a11y-dark-txt) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .position-card.contre {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt1) !important;
+    border: 2px dashed var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .position-card.contre h3,
+  body.a11y-mode .position-card.contre p { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .position-card.contre .pos-badge { background: var(--a11y-surface) !important; color: var(--a11y-txt1) !important; }
+  body.a11y-mode .position-card .pos-badge { background: rgba(255,255,255,0.18) !important; color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .position-card h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .position-card p  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .demands {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .demands ol li { color: var(--a11y-txt2) !important; border-bottom-color: var(--a11y-border) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .demands ol li strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .demands ol li::before {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt1) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+
+  /* a11y — override "FOCUS" inline span sur Facteur 6 */
+  body.a11y-mode .rps-card h3 span[style*="background:var(--rouge)"],
+  body.a11y-mode .rps-card h3 span[style*="background: var(--rouge)"] {
+    background: var(--a11y-txt1) !important;
+    color: var(--a11y-dark-txt) !important;
+  }
+  body.a11y-mode .rps-card[style*="border-top-color: var(--rouge)"] { border-top-color: var(--a11y-txt1) !important; }
+
+  /* ═══════════════════════════════════════════════
+     6 FACTEURS GOLLAC — CARTES INTERACTIVES
+     Survol souris (desktop) / tap (mobile) → exemples
+  ═══════════════════════════════════════════════ */
+  .gollac-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .rps-card {
+    position: relative;
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 20px 18px;
+    border-top: 4px solid var(--bleu-clair);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    text-align: left;
+    font-family: inherit;
+    width: 100%;
+    color: inherit;
+  }
+  .rps-card:hover,
+  .rps-card:focus-visible,
+  .rps-card:focus-within,
+  .rps-card.is-open { z-index: 9999; }
+  .rps-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,59,111,.12); }
+  .rps-card:focus-visible { outline: 3px solid var(--or); outline-offset: 3px; }
+  .rps-card .rps-num {
+    position: absolute;
+    top: 14px; right: 14px;
+    width: 26px; height: 26px;
+    background: var(--or-clair);
+    color: var(--bleu);
+    border-radius: 8px;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .rps-card .rps-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+  .rps-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: var(--bleu);
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+    padding-right: 30px;
+  }
+  .rps-card p {
+    font-size: 12.5px;
+    color: var(--gris);
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .rps-card .rps-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--bleu);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-top: 2px;
+  }
+  .rps-card .rps-hint::after {
+    content: '＋';
+    display: inline-block;
+    width: 16px; height: 16px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 50%;
+    background: var(--or);
+    color: var(--bleu);
+    font-size: 11px;
+    transition: transform .2s;
+  }
+  .rps-card.is-open .rps-hint::after { content: '−'; }
+
+  /* Tooltip / panneau d'exemples (DESKTOP — overlay) */
+  .rps-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: 10000;
+    left: 50%;
+    top: calc(100% + 12px);
+    transform: translateX(-50%) translateY(-6px);
+    width: 290px;
+    max-width: calc(100vw - 48px);
+    background: linear-gradient(135deg, #019cda 0%, #017fb1 100%);
+    color: #fff;
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: 0 16px 36px rgba(0,0,0,.22);
+    pointer-events: none;
+    transition: opacity .2s, transform .2s, visibility .2s;
+  }
+  .rps-tooltip::before {
+    content:'';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-bottom-color: #019cda;
+  }
+  .rps-tooltip h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 12px;
+    color: var(--or);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+  .rps-tooltip ul { list-style: none; padding: 0; margin: 0; }
+  .rps-tooltip li {
+    font-size: 12.5px;
+    color: rgba(255,255,255,.93);
+    line-height: 1.55;
+    padding: 7px 0 7px 18px;
+    position: relative;
+    border-top: 1px solid rgba(255,255,255,.14);
+  }
+  .rps-tooltip li:first-child { border-top: none; padding-top: 4px; }
+  .rps-tooltip li::before {
+    content: '›';
+    position: absolute;
+    left: 4px; top: 6px;
+    color: var(--or);
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  /* DESKTOP — hover, focus clavier, ou ouverture par tap */
+  @media (hover: hover) and (min-width: 601px) {
+    .rps-card:hover .rps-tooltip,
+    .rps-card:focus-visible .rps-tooltip,
+    .rps-card.is-open .rps-tooltip,
+    .rps-card:focus-within .rps-tooltip {
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+    /* Repositionnement pour la 3e colonne (clamp côté droit) */
+    .rps-card[data-pos="right"] .rps-tooltip {
+      left: auto; right: 0;
+      transform: translateX(0) translateY(-6px);
+    }
+    .rps-card[data-pos="right"] .rps-tooltip::before {
+      left: auto; right: 24px; transform: none;
+    }
+    .rps-card[data-pos="right"]:hover .rps-tooltip,
+    .rps-card[data-pos="right"]:focus-visible .rps-tooltip,
+    .rps-card[data-pos="right"].is-open .rps-tooltip,
+    .rps-card[data-pos="right"]:focus-within .rps-tooltip {
+      transform: translateX(0) translateY(0);
+    }
+    /* Repositionnement pour la 1ère colonne */
+    .rps-card[data-pos="left"] .rps-tooltip {
+      left: 0; right: auto;
+      transform: translateX(0) translateY(-6px);
+    }
+    .rps-card[data-pos="left"] .rps-tooltip::before {
+      left: 24px; right: auto; transform: none;
+    }
+    .rps-card[data-pos="left"]:hover .rps-tooltip,
+    .rps-card[data-pos="left"]:focus-visible .rps-tooltip,
+    .rps-card[data-pos="left"].is-open .rps-tooltip,
+    .rps-card[data-pos="left"]:focus-within .rps-tooltip {
+      transform: translateX(0) translateY(0);
+    }
+  }
+
+  /* MOBILE / TACTILE — accordéon en flux normal */
+  @media (max-width: 600px), (hover: none) {
+    .gollac-grid { grid-template-columns: 1fr; }
+    .rps-tooltip {
+      position: static;
+      visibility: visible;
+      opacity: 0;
+      width: auto;
+      max-width: 100%;
+      transform: none;
+      margin-top: 0;
+      max-height: 0;
+      overflow: hidden;
+      padding-top: 0;
+      padding-bottom: 0;
+      transition: max-height .25s ease, opacity .2s, padding .25s, margin-top .25s;
+      pointer-events: none;
+    }
+    .rps-tooltip::before { display: none; }
+    .rps-card.is-open .rps-tooltip {
+      opacity: 1;
+      max-height: 600px;
+      margin-top: 14px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      pointer-events: auto;
+    }
+  }
+
+  /* ═══════════════════════════════════════════════
+     RÉSEAU SOUFFRANCE ET TRAVAIL — CARTE D'AIDE
+  ═══════════════════════════════════════════════ */
+  .help-network-card {
+    background: linear-gradient(135deg, #28b193 0%, #1e8a70 100%);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 32px;
+    color: #fff;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    position: relative;
+    z-index: 0;          /* explicite pour rester en arrière des tooltips Gollac */
+    overflow: hidden;
+  }
+  .help-network-card::after {
+    content: '＋';
+    position: absolute;
+    right: -18px; top: -28px;
+    font-family: 'Fraunces', serif;
+    font-size: 140px;
+    font-weight: 900;
+    color: rgba(255,255,255,.07);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .help-network-card .hnc-icon {
+    flex-shrink: 0;
+    width: 48px; height: 48px;
+    background: rgba(255,255,255,.18);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+  }
+  .help-network-card .hnc-body { flex: 1; min-width: 0; }
+  .help-network-card .hnc-tag {
+    display: inline-block;
+    background: var(--or);
+    color: #1e8a70;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+  }
+  .help-network-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .help-network-card p {
+    font-size: 13.5px;
+    color: rgba(255,255,255,.92);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .help-network-card p strong { color: var(--or); font-weight: 700; }
+  .help-network-card .hnc-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .help-network-card .hnc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,.14);
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,.32);
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+  }
+  .help-network-card .hnc-btn:hover {
+    background: rgba(255,255,255,.24);
+    transform: translateY(-2px);
+  }
+  .help-network-card .hnc-btn.primary {
+    background: var(--or);
+    color: #1e8a70;
+    border-color: var(--or);
+    font-weight: 700;
+  }
+  .help-network-card .hnc-btn.primary:hover {
+    background: #fde9a8;
+    color: #1e8a70;
+  }
+  @media (max-width: 600px) {
+    .help-network-card { flex-direction: column; padding: 20px 22px; }
+    .help-network-card .hnc-actions .hnc-btn { width: 100%; justify-content: center; }
+  }
+
+  /* a11y mode — help-network-card (palette neutre gris chauds) */
+  body.a11y-mode .help-network-card {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .help-network-card::after { display: none !important; }
+  body.a11y-mode .help-network-card .hnc-icon {
+    background: rgba(255,255,255,.08) !important;
+    border: 1px solid rgba(255,255,255,.2) !important;
+  }
+  body.a11y-mode .help-network-card .hnc-tag {
+    background: var(--a11y-surface) !important;
+    color: var(--a11y-txt1) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .help-network-card h3 {
+    color: var(--a11y-dark-txt) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .help-network-card p {
+    color: var(--a11y-txt4-dark) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .help-network-card p strong { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .help-network-card .hnc-btn {
+    background: rgba(255,255,255,.06) !important;
+    color: var(--a11y-dark-txt) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .help-network-card .hnc-btn.primary {
+    background: var(--a11y-surface) !important;
+    color: var(--a11y-txt1) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+
+  /* ═══════════════════════════════════════════════
+     6 FACTEURS GOLLAC — MODE LECTURE UNIVERSELLE
+  ═══════════════════════════════════════════════ */
+  body.a11y-mode .rps-card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-top: 4px solid var(--a11y-txt2) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .rps-card h3 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .rps-card p  { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .rps-card .rps-num {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt1) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .rps-card .rps-hint {
+    color: var(--a11y-txt2) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .rps-card .rps-hint::after {
+    background: var(--a11y-txt1) !important;
+    color: var(--a11y-dark-txt) !important;
+  }
+  body.a11y-mode .rps-tooltip {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .rps-tooltip::before { border-bottom-color: var(--a11y-dark) !important; }
+  body.a11y-mode .rps-tooltip h4 {
+    color: var(--a11y-dark-txt) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .rps-tooltip li {
+    color: var(--a11y-txt4-dark) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    border-top-color: rgba(255,255,255,.18) !important;
+  }
+  body.a11y-mode .rps-tooltip li::before { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .rps-card:focus-visible {
+    outline: 3px solid var(--a11y-txt1) !important;
+    outline-offset: 3px !important;
+  }
+
+  /* ═══════════════════════════════════════════════
+     BOUTON LECTURE UNIVERSELLE + MODE A11Y
+     Palette gris chauds — confort maximal
+  ═══════════════════════════════════════════════ */
+
+  /* Variables palette mode lecture */
+  body.a11y-mode {
+    --a11y-bg:        #FAFAF7;
+    --a11y-surface:   #FFFFFF;
+    --a11y-surface2:  #F4F3EF;
+    --a11y-border:    #E2E0DA;
+    --a11y-border2:   #CCCAC4;
+    --a11y-txt1:      #2C2C29;
+    --a11y-txt2:      #4A4A46;
+    --a11y-txt3:      #6E6D69;
+    --a11y-txt4:      #6F6E68;
+    --a11y-dark:      #525250;
+    --a11y-dark-txt:  #F8F7F4;
+    --a11y-txt4-dark:  #C8C6C0;
+  }
+
+  /* Bouton de bascule */
+  
+
+
+  /* ═══════════════════════════════════════════════
+     MODE LECTURE UNIVERSELLE — BLOC UNIQUE AUTORITAIRE
+     Palette douce gris chauds, différenciation sans couleur
+  ═══════════════════════════════════════════════ */
+
+  /* Variables */
+  body.a11y-mode {
+    --a11y-bg:        #FAFAF7;
+    --a11y-surface:   #FFFFFF;
+    --a11y-surface2:  #F4F3EF;
+    --a11y-border:    #E2E0DA;
+    --a11y-border2:   #CCCAC4;
+    --a11y-txt1:      #2C2C29;
+    --a11y-txt2:      #4A4A46;
+    --a11y-txt3:      #6E6D69;
+    --a11y-txt4:      #6F6E68;
+    --a11y-dark:      #525250;
+    --a11y-dark-txt:  #F8F7F4;
+    --a11y-txt4-dark: #C8C6C0;
+  }
+
+  /* Body & page */
+  body.a11y-mode {
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 16px; line-height: 1.85;
+    background: var(--a11y-bg) !important;
+    color: var(--a11y-txt2);
+  }
+  body.a11y-mode .page { background: var(--a11y-bg) !important; }
+
+  /* Toggle button active state */
+  body.a11y-mode .a11y-btn {
+    background: var(--a11y-dark); border-color: var(--a11y-dark);
+    color: var(--a11y-dark-txt); font-weight: 700;
+  }
+  body.a11y-mode .a11y-btn .a11y-label-on  { display: inline; }
+  body.a11y-mode .a11y-btn .a11y-label-off { display: none; }
+
+  /* Header */
+  body.a11y-mode .header { background: var(--a11y-dark) !important; border-radius: 16px; }
+  body.a11y-mode .header h1 {
+    color: var(--a11y-dark-txt) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 34px; letter-spacing: 0.01em;
+  }
+  body.a11y-mode .header h1 em {
+    color: var(--a11y-dark-txt) !important; font-style: normal;
+    text-decoration: underline; text-underline-offset: 4px;
+  }
+  body.a11y-mode .header .subtitle { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .badge {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .header .update {
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.2) !important;
+    color: var(--a11y-txt4-dark) !important;
+  }
+  body.a11y-mode .dot { background: var(--a11y-dark-txt) !important; }
+
+  /* Typography */
+  body.a11y-mode p, body.a11y-mode li, body.a11y-mode td,
+  body.a11y-mode .card p, body.a11y-mode .place-card p,
+  body.a11y-mode .tl-desc, body.a11y-mode .intro,
+  body.a11y-mode .f-row .fi-label {
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 15px !important; line-height: 1.85 !important;
+    color: var(--a11y-txt3) !important;
+  }
+  body.a11y-mode .section-title { font-size: 21px !important; color: var(--a11y-txt1) !important; }
+  body.a11y-mode .section-title .icon {
+    background: var(--a11y-surface2) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+    border-radius: 8px !important;
+  }
+  body.a11y-mode .card h3, body.a11y-mode .place-card h3,
+  body.a11y-mode .col-card h4, body.a11y-mode .fo-contact-card h3 {
+    font-size: 16px !important; color: var(--a11y-txt1) !important;
+  }
+
+  /* Intro */
+  body.a11y-mode .intro {
+    background: var(--a11y-surface) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    color: var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .intro strong { color: var(--a11y-txt1) !important; }
+
+  /* Cards */
+  body.a11y-mode .card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important; box-shadow: none !important;
+  }
+  body.a11y-mode .card h3 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .card p  { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .card.highlight {
+    background: var(--a11y-dark) !important;
+    border: 1px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .card.highlight h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .card.highlight p  { color: var(--a11y-txt4-dark) !important; }
+
+  /* Stat-box */
+  body.a11y-mode .stat-box {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .stat-box .stat-val    { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .stat-box .stat-label  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box .stat-desc   { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box .stat-desc strong { color: var(--a11y-dark-txt) !important; }
+
+  /* Schema section */
+  body.a11y-mode .schema-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .schema-section p { color: var(--a11y-txt3) !important; }
+
+  /* SVG schema grayscale */
+  body.a11y-mode #svg-standard svg, body.a11y-mode #svg-a11y svg {
+    filter: grayscale(1) contrast(1.05) !important;
+  }
+
+  /* Alerts — plain */
+  body.a11y-mode div.alert {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode div.alert p,
+  body.a11y-mode div.alert > p   { color: var(--a11y-txt2) !important; font-size: 14.5px !important; }
+  body.a11y-mode div.alert strong { color: var(--a11y-txt1) !important; }
+
+  /* Alerts — green */
+  body.a11y-mode .alert.green, body.a11y-mode div.alert.green {
+    background: var(--a11y-surface2) !important;
+    border: 1px dashed var(--a11y-border2) !important;
+    border-left: 5px dashed var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .alert.green p, body.a11y-mode div.alert.green p      { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .alert.green strong, body.a11y-mode div.alert.green strong { color: var(--a11y-txt1) !important; }
+
+  /* Alerts — blue */
+  body.a11y-mode .alert.blue, body.a11y-mode div.alert.blue {
+    background: var(--a11y-surface) !important;
+    border: 1px dotted var(--a11y-border2) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .alert.blue p, body.a11y-mode div.alert.blue p,
+  body.a11y-mode div.alert.blue > p     { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .alert.blue strong, body.a11y-mode div.alert.blue strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .alert-icon { font-size: 26px !important; }
+
+  /* Place-cards */
+  body.a11y-mode .place-card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-top: 4px solid var(--a11y-txt2) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .place-card h3 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .place-card p  { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .place-card .tag,
+  body.a11y-mode .place-card .tag.blue,
+  body.a11y-mode .place-card .tag.green,
+  body.a11y-mode .place-card .tag.grey {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .tag-fo-link {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1px solid var(--a11y-border2) !important;
+  }
+
+  /* Gradient-box (CCAS) */
+  body.a11y-mode .gradient-box {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .gradient-box::after  { display: none !important; }
+  body.a11y-mode .gradient-box h3      { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .gradient-box p       { color: var(--a11y-txt4-dark) !important; }
+
+  /* Gradient-box-vert (CMCAS) */
+  body.a11y-mode .gradient-box-vert {
+    background: var(--a11y-dark) !important;
+    border: 2px dashed var(--a11y-border2) !important;
+  }
+  body.a11y-mode .gradient-box-vert::after { display: none !important; }
+  body.a11y-mode .gradient-box-vert h3     { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .gradient-box-vert p      { color: var(--a11y-txt4-dark) !important; }
+
+  /* Gradient-items */
+  body.a11y-mode .gradient-item {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+  }
+  body.a11y-mode .gradient-item .gi-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .gradient-item .gi-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .gradient-item .gi-sub   { color: var(--a11y-txt4-dark) !important; }
+
+  /* Link-box */
+  body.a11y-mode .link-box {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .link-box::after { display: none !important; }
+  body.a11y-mode .link-box h3     { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .link-box p      { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .link-item {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    border-radius: 8px !important;
+  }
+  body.a11y-mode .link-item .li-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .link-item .li-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .link-item .li-sub   { color: var(--a11y-txt4-dark) !important; }
+
+  /* Financement-section */
+  body.a11y-mode .financement-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .f-row { background: var(--a11y-surface2) !important; }
+  body.a11y-mode .f-row.source  { border-left: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .f-row.salarie { border-left: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .f-row.total   { border-left: 4px dotted var(--a11y-txt2) !important; }
+  body.a11y-mode .f-row .fi-badge { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .f-row .fi-label { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .f-row .fi-label strong { color: var(--a11y-txt1) !important; }
+
+  /* Calendar/Timeline */
+  body.a11y-mode .calendar-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .timeline::before { background: var(--a11y-border2) !important; }
+  body.a11y-mode .tl-item::before {
+    background: var(--a11y-surface) !important;
+    border: 2.5px solid var(--a11y-txt2) !important; box-shadow: none !important;
+  }
+  body.a11y-mode .tl-item.active::before {
+    background: var(--a11y-txt1) !important;
+    border: 2.5px solid var(--a11y-txt1) !important;
+    box-shadow: 0 0 0 3px var(--a11y-surface), 0 0 0 5px var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .tl-title { color: var(--a11y-txt1) !important; font-size: 15px !important; }
+  body.a11y-mode .tl-date  { color: var(--a11y-txt3) !important; font-weight: 600 !important; }
+  body.a11y-mode .tl-item.active .tl-date { color: var(--a11y-txt1) !important; font-weight: 700 !important; }
+  body.a11y-mode .tl-item.active .tl-date::after {
+    content: ' — EN COURS'; font-size: 9px; font-weight: 700;
+    letter-spacing: .08em; color: var(--a11y-txt3); vertical-align: middle;
+  }
+
+  /* Two-cols (CCAS/CMCAS résumé) */
+  body.a11y-mode .col-card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-top: 4px solid var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .col-card.ccas  { border-top: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card.cmcas { border-top: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .col-card h4 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card ul li { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .col-card ul li::before { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card a { color: var(--a11y-txt2) !important; }
+
+  /* Versus-table */
+  body.a11y-mode .versus-table { box-shadow: none !important; border: 1px solid var(--a11y-border) !important; }
+  body.a11y-mode .vt-ieg { background: var(--a11y-surface) !important; border-left: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .vt-cse { background: var(--a11y-surface2) !important; border-right: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .vt-ieg-head {
+    background: var(--a11y-dark) !important;
+    border-left: 4px solid var(--a11y-txt1) !important; border-bottom: none !important;
+  }
+  body.a11y-mode .vt-cse-head {
+    background: var(--a11y-surface2) !important;
+    border-right: 4px dashed var(--a11y-txt2) !important; border-bottom: none !important;
+  }
+  body.a11y-mode .vt-vs { background: var(--a11y-txt2) !important; }
+  body.a11y-mode .vt-label { background: var(--a11y-surface2) !important; border-color: var(--a11y-border) !important; }
+  body.a11y-mode .vt-cell { color: var(--a11y-txt2) !important; border-bottom-color: var(--a11y-border) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .vt-ieg strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .vt-cse strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .versus-badge { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .vt-cse-head .versus-badge { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .versus-sub { color: rgba(255,255,255,0.65) !important; }
+  body.a11y-mode .vt-cse-head .versus-sub { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .vs-circle { background: var(--a11y-surface) !important; color: var(--a11y-txt1) !important; }
+
+  /* fo-contact-card */
+  body.a11y-mode .fo-contact-card {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .fo-contact-card h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .fo-contact-card p  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .fo-mailto-btn {
+    background: var(--a11y-surface) !important;
+    color: var(--a11y-txt1) !important;
+    border: 2px solid var(--a11y-border2) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .fo-mailto-btn:hover {
+    background: var(--a11y-surface2) !important;
+    transform: none !important;
+  }
+
+  /* Tags */
+  body.a11y-mode .tag {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1px solid var(--a11y-border2) !important;
+  }
+
+  /* Table */
+  body.a11y-mode table thead tr { background: var(--a11y-dark) !important; }
+  body.a11y-mode table thead th { color: var(--a11y-dark-txt) !important; font-size: 13px !important; }
+  body.a11y-mode table tbody td { color: var(--a11y-txt2) !important; font-size: 14px !important; border-bottom-color: var(--a11y-border) !important; }
+  body.a11y-mode table tbody tr:nth-child(even) { background: var(--a11y-surface2) !important; }
+
+  /* Footer */
+  body.a11y-mode .footer { color: var(--a11y-txt3) !important; border-top-color: var(--a11y-border) !important; }
+  body.a11y-mode .footer a { color: var(--a11y-txt2) !important; text-decoration: underline; }
+
+  /* Focus */
+  body.a11y-mode *:focus {
+    outline: 3px solid var(--a11y-txt1) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 5px rgba(44,44,41,0.15) !important;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    body.a11y-mode .cards, body.a11y-mode .placement-grid,
+    body.a11y-mode .two-cols, body.a11y-mode .gradient-grid { grid-template-columns: 1fr; }
+    body.a11y-mode .stat-box { flex-direction: column; }
+    body.a11y-mode .page { padding: 16px; }
+  }
+
+  /* Icônes SVG a11y — affichage */
+  .a11y-ico { display: none; width: 1.1em; height: 1.1em; vertical-align: -0.18em; flex-shrink: 0; color: currentColor; }
+  body.a11y-mode .a11y-ico { display: inline; }
+  body.a11y-mode .a11y-emoji { font-size: 0 !important; line-height: 0 !important; width: 0 !important; display: inline-block; }
+
+  body.a11y-mode .card-icon .a11y-ico, body.a11y-mode .place-icon .a11y-ico,
+  body.a11y-mode .gi-icon .a11y-ico, body.a11y-mode .fi-icon .a11y-ico,
+  body.a11y-mode .vs-icon .a11y-ico, body.a11y-mode .vt-label .a11y-ico,
+  body.a11y-mode .f-icon .a11y-ico, body.a11y-mode .icon .a11y-ico {
+    width: 1.4em !important; height: 1.4em !important;
+  }
+  body.a11y-mode .gi-icon .a11y-emoji, body.a11y-mode .fi-icon .a11y-emoji,
+  body.a11y-mode .vs-icon .a11y-emoji, body.a11y-mode .vt-label .a11y-emoji {
+    font-size: 0 !important; line-height: 0 !important; width: 0 !important; display: inline-block !important;
+  }
+  body.a11y-mode .gradient-box h3 .a11y-ico,
+  body.a11y-mode .gradient-box-vert h3 .a11y-ico,
+  body.a11y-mode .col-card h4 .a11y-ico,
+  body.a11y-mode .tag-fo-link .a11y-ico {
+    display: inline !important; width: 1em; height: 1em; vertical-align: -0.15em; color: currentColor !important;
+  }
+  body.a11y-mode .gradient-box h3 .a11y-emoji,
+  body.a11y-mode .gradient-box-vert h3 .a11y-emoji,
+  body.a11y-mode .col-card h4 .a11y-emoji,
+  body.a11y-mode .tag-fo-link .a11y-emoji {
+    font-size: 0 !important; width: 0 !important; display: inline-block !important;
+  }
+  body.a11y-mode .btn-icon .a11y-ico, body.a11y-mode .a11y-icon .a11y-ico {
+    width: 1em; height: 1em;
+  }
+
+/* ═══════════════════════════════════════════════
+     SKIP LINK
+  ═══════════════════════════════════════════════ */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: #ffbf00;
+    color: #2C2C29;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 16px; }
+
+  /* ═══════════════════════════════════════════════
+     LOGO CLIQUABLE + INFO-BULLE (TOOLTIP)
+  ═══════════════════════════════════════════════ */
+  .logo-link-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .logo-link-wrap .logo-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0,0,0,0.82);
+    color: #FFFFFF;
+    font-size: 11.5px;
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
+    padding: 6px 12px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    right: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, visibility 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .logo-link-wrap .logo-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 14px;
+    border: 6px solid transparent;
+    border-top-color: rgba(0,0,0,0.82);
+  }
+  .logo-link-wrap:hover .logo-tooltip,
+  .logo-link-wrap:focus-within .logo-tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  .logo-link-wrap img {
+    transition: transform 0.25s, filter 0.25s;
+    cursor: pointer;
+    filter: drop-shadow(0 2px 8px rgba(247,221,92,0.2));
+  }
+  .logo-link-wrap:hover img {
+    transform: scale(1.06);
+    filter: drop-shadow(0 4px 14px rgba(247,221,92,0.5));
+  }
+
+  /* ═══════════════════════════════════════════════
+     CARTE CONTACT FO (bandeau avant footer)
+  ═══════════════════════════════════════════════ */
+  .fo-contact-card {
+    background: linear-gradient(135deg, #c0303a 0%, #9e1a28 60%, #7a0e1c 100%);
+    border-radius: 16px;
+    padding: 18px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fo-contact-card::before {
+    content: '✉';
+    position: absolute;
+    right: -8px; top: -16px;
+    font-size: 100px;
+    color: rgba(255,255,255,0.08);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .fo-contact-card .fo-logo-wrap { flex-shrink: 0; }
+  .fo-contact-card .fo-logo-wrap img {
+    height: 44px;
+    object-fit: contain;
+    transition: transform 0.25s;
+    cursor: pointer;
+    display: block;
+    background: white;
+    border-radius: 8px;
+    padding: 5px 8px;
+  }
+  .fo-contact-card .fo-logo-wrap img:hover { transform: scale(1.07); }
+  .fo-contact-card .fo-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .fo-contact-card .fo-text { flex: 1; min-width: 180px; }
+  .fo-contact-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+  }
+  .fo-contact-card p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .fo-mailto-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #525250;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 9px 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  }
+  .fo-mailto-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    background: #F4F3EF;
+  }
+  .fo-mailto-btn .btn-icon { font-size: 15px; }
+
+  /* a11y mode — contact card */
+  body.a11y-mode .fo-contact-card {
+    background: #525250;
+    border: 3px solid #6F6E68;
+  }
+  body.a11y-mode .fo-contact-card h3 { color: #FFFFFF !important; }
+  body.a11y-mode .fo-contact-card p  { color: #C8C6C0 !important; }
+  body.a11y-mode .fo-mailto-btn {
+    background: #FFFFFF;
+    color: #2C2C29 !important;
+    border: 2px solid #2C2C29;
+  }
+
+  /* ═══════════════════════════════════════════════
+     MODE PAYSAGE FORCÉ SUR MOBILE (portrait → rotation 90°)
+  ═══════════════════════════════════════════════ */
+
+  /* Bandeau d'invite rotation — visible uniquement sur mobile portrait */
+  .rotate-banner {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(135deg, #019cda, #028bc2);
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 9998;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.15);
+  }
+  .rotate-banner .rb-icon {
+    font-size: 20px;
+    animation: rb-spin 2s ease-in-out infinite;
+    display: inline-block;
+  }
+  @keyframes rb-spin {
+    0%   { transform: rotate(0deg); }
+    40%  { transform: rotate(90deg); }
+    60%  { transform: rotate(90deg); }
+    100% { transform: rotate(0deg); }
+  }
+  .rotate-banner .rb-close {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .rotate-banner .rb-close:hover { background: rgba(255,255,255,0.35); }
+
+  /* Sur mobile en portrait : afficher le bandeau */
+  @media (max-width: 768px) and (orientation: portrait) {
+    .rotate-banner { display: flex; }
+    /* Ajouter du padding en bas pour ne pas cacher le contenu */
+    body { padding-bottom: 52px; }
+  }
+
+  /* Sur mobile en paysage : masquer le bandeau, optimiser la mise en page */
+  @media (max-width: 900px) and (orientation: landscape) {
+    .rotate-banner { display: none !important; }
+    body { padding-bottom: 0; }
+    .page { padding: 16px 24px 32px; max-width: 100%; }
+    .header { padding: 20px 28px 16px; border-radius: 12px; margin-bottom: 20px; }
+    .header h1 { font-size: 26px; }
+    .header .subtitle { font-size: 13px; }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .placement-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .fiscal-compare { grid-template-columns: 1fr 1fr; }
+    .link-grid { grid-template-columns: 1fr 1fr; }
+    .stat-box { padding: 18px 24px; gap: 16px; }
+    .stat-box .stat-val { font-size: 36px; }
+    .fiscal-section,
+    .calendar-section { padding: 18px 22px; }
+    .fo-contact-card { padding: 12px 16px; }
+    .a11y-toggle-bar { margin: -12px 0 20px; }
+  }
+
+
+  /* ═══════════════════════════════════════════════
+     ICÔNES SVG MODE LECTURE UNIVERSELLE
+  ═══════════════════════════════════════════════ */
+  .a11y-ico {
+    display: none;
+    width: 1.1em;
+    height: 1.1em;
+    vertical-align: -0.18em;
+    flex-shrink: 0;
+    color: currentColor;
+  }
+  body.a11y-mode .a11y-ico {
+    display: inline;
+  }
+  /* Masquer l'emoji et afficher le SVG en mode a11y */
+  body.a11y-mode .a11y-emoji {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    width: 0 !important;
+    display: inline-block;
+  }
+  /* Taille icône dans les card-icon / place-icon / f-icon / section icon */
+  body.a11y-mode .card-icon .a11y-ico,
+  body.a11y-mode .place-icon .a11y-ico,
+  body.a11y-mode .f-icon .a11y-ico,
+  body.a11y-mode .icon .a11y-ico {
+    width: 1.4em;
+    height: 1.4em;
+  }
+  /* Icône dans tl-date (timeline) */
+  body.a11y-mode .tl-date .a11y-ico {
+    width: 0.95em;
+    height: 0.95em;
+    vertical-align: -0.1em;
+  }
+  /* Icône dans les boutons/liens */
+  body.a11y-mode .btn-icon .a11y-ico,
+  body.a11y-mode .a11y-icon .a11y-ico {
+    width: 1em;
+    height: 1em;
+  }
+
+
+  /* ═══════════════════════════════════════════════
+     TIMELINE — MODE LECTURE UNIVERSELLE
+     Différenciation par forme, pas par couleur
+  ═══════════════════════════════════════════════ */
+
+  /* Ligne verticale : couleur neutre */
+  body.a11y-mode .timeline::before {
+    background: var(--a11y-border2) !important;
+    border-radius: 0 !important;
+    width: 2px !important;
+  }
+
+  /* Point standard : cercle CREUX (fond blanc, contour gris foncé) */
+  body.a11y-mode .tl-item::before {
+    background: var(--a11y-surface) !important;
+    border: 2.5px solid var(--a11y-txt2) !important;
+    box-shadow: none !important;
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* Point actif : cercle PLEIN (fond foncé) + plus grand */
+  body.a11y-mode .tl-item.active::before {
+    background: var(--a11y-txt1) !important;
+    border: 2.5px solid var(--a11y-txt1) !important;
+    box-shadow: 0 0 0 3px var(--a11y-surface), 0 0 0 5px var(--a11y-txt2) !important;
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* Date standard : couleur texte neutre */
+  body.a11y-mode .tl-date {
+    color: var(--a11y-txt3) !important;
+    font-weight: 600 !important;
+  }
+
+  /* Date active : texte foncé + badge "En cours" */
+  body.a11y-mode .tl-item.active .tl-date {
+    color: var(--a11y-txt1) !important;
+    font-weight: 700 !important;
+  }
+
+  /* Badge "En cours" injecté via ::after sur les items actifs */
+  body.a11y-mode .tl-item.active .tl-date::after {
+    content: ' — EN COURS';
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--a11y-txt3);
+    vertical-align: middle;
+  }
+
+
+  /* ═══════════════════════════════════════════════
+     FC-COL + FC-HIGHLIGHT — MODE LECTURE UNIVERSELLE
+     Différenciation par forme, pas par couleur
+  ═══════════════════════════════════════════════ */
+
+  /* Colonne "placement" : bordure PLEINE → neutre */
+  body.a11y-mode .fc-col.placement {
+    background: var(--a11y-surface) !important;
+    border: 1.5px solid var(--a11y-border) !important;
+    border-top: 5px solid var(--a11y-txt1) !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+
+  /* Colonne "paiement" : bordure EN TIRETS → différenciée sans couleur */
+  body.a11y-mode .fc-col.paiement {
+    background: var(--a11y-surface2) !important;
+    border: 1.5px dashed var(--a11y-txt2) !important;
+    border-top: 5px dashed var(--a11y-txt2) !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+
+  /* Titres des colonnes */
+  body.a11y-mode .fc-col.placement h4::before { content: '▬ '; font-size: 10px; }
+  body.a11y-mode .fc-col.paiement  h4::before { content: '╌╌ '; font-size: 10px; letter-spacing: -1px; }
+
+  /* Puces ✓ : neutres dans les deux colonnes */
+  body.a11y-mode .fc-col ul li::before {
+    content: '›' !important;
+    color: var(--a11y-txt2) !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+  }
+
+  /* Encadré fc-highlight 💡 (fond vert → neutre) */
+  body.a11y-mode .fc-col.placement .fc-highlight {
+    background: var(--a11y-surface2) !important;
+    border-left: 4px solid var(--a11y-txt1) !important;
+    border-radius: 0 6px 6px 0 !important;
+  }
+
+  /* Encadré fc-highlight ⚠️ (fond jaune → neutre + bordure tirets) */
+  body.a11y-mode .fc-col.paiement .fc-highlight {
+    background: var(--a11y-surface2) !important;
+    border-left: 4px dashed var(--a11y-txt2) !important;
+    border-radius: 0 6px 6px 0 !important;
+  }
+
+  /* Texte dans les encadrés */
+  body.a11y-mode .fc-highlight {
+    color: var(--a11y-txt2) !important;
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
+  body.a11y-mode .fc-highlight strong {
+    color: var(--a11y-txt1) !important;
+  }
+
+  .alert.blue { background: #e6f5fb; border-color: var(--bleu); }
+  .alert.blue p { color: #014c6e; }
+  .alert.blue strong { color: #012f44; }
+
+  /* BIG STAT BOX */
+  .stat-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 20px;
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .stat-box .stat-main { flex-shrink: 0; text-align: center; }
+  .stat-box .stat-val { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 900; color: var(--or); line-height: 1; }
+  .stat-box .stat-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+  .stat-box .stat-desc { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.7; }
+  .stat-box .stat-desc strong { color: white; }
+
+  /* SCHEMA SECTION */
+  .schema-section {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+  }
+
+  /* ORGANISATION SCHEMA */
+  .org-schema-wrap { width: 100%; overflow-x: auto; }
+  .org-schema-wrap svg { display: block; margin: 0 auto; max-width: 100%; }
+  .org-child {
+    background: var(--fond);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: var(--texte);
+    line-height: 1.5;
+    border-left: 3px solid var(--bleu-clair);
+    margin-bottom: 8px;
+  }
+  .org-child.vert { border-left-color: var(--vert); }
+  .org-child strong { color: var(--bleu); display: block; margin-bottom: 2px; }
+  .org-child.vert strong { color: var(--vert); }
+  .org-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .org-col-ccas, .org-col-cmcas { display: flex; flex-direction: column; }
+
+  /* PLACEMENT CARDS */
+  .placement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .place-card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 18px;
+    border-top: 4px solid var(--bleu-clair);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .place-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,59,111,0.1); }
+  .place-card.vert { border-top-color: var(--vert); }
+  .place-card .place-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+  .place-card h3 { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .place-card.vert h3 { color: var(--vert); }
+  .place-card p { font-size: 12.5px; color: var(--gris); line-height: 1.6; }
+  .place-card .tag { display: inline-block; margin-top: 10px; font-size: 11px; padding: 3px 10px; border-radius: 20px; background: var(--or-clair); color: #7a5200; font-weight: 500; }
+  .place-card .tag.blue { background: #e6f5fb; color: #017fb1; }
+  .place-card .tag.green { background: var(--vert-clair); color: #0a6e52; }
+
+  /* FINANCEMENT TABLE */
+  .financement-section { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+  .financement-flow { display: flex; flex-direction: column; gap: 0; margin: 20px 0; }
+  .f-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    background: var(--fond);
+    margin-bottom: 4px;
+  }
+  .f-row.source { background: #e6f5fb; }
+  .f-row.salarie { background: var(--vert-clair); }
+  .f-row.total { background: linear-gradient(90deg, #e6f5fb, var(--vert-clair)); }
+  .f-row .fi-icon { font-size: 22px; flex-shrink: 0; width: 36px; text-align:center; }
+  .f-row .fi-label { flex: 1; font-size: 13.5px; line-height: 1.5; }
+  .f-row .fi-label strong { font-size: 14.5px; display:block; margin-bottom:2px; }
+  .f-row .fi-badge { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; text-align: right; flex-shrink: 0; min-width: 120px; }
+  .f-row.source .fi-badge { color: var(--bleu); }
+  .f-row.salarie .fi-badge { color: var(--vert); }
+  .f-row.total .fi-badge { color: var(--bleu); }
+  .arrow-down { text-align: center; font-size: 18px; color: var(--gris); margin: 2px 0; opacity: 0.5; }
+
+  /* GRADIENT BOX (CCAS section) */
+  .gradient-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .gradient-box::after { content: 'CCAS'; position: absolute; right: -10px; top: -10px; font-family: 'Fraunces', serif; font-size: 90px; font-weight: 900; color: rgba(255,255,255,0.05); pointer-events: none; }
+  .gradient-box h3 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--or); margin-bottom: 12px; }
+  .gradient-box p { font-size: 13.5px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 16px; }
+  .gradient-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .gradient-item { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 14px 16px; }
+  .gradient-item .gi-icon { font-size: 22px; margin-bottom: 6px; }
+  .gradient-item .gi-label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+  .gradient-item .gi-val { font-family: 'Fraunces', serif; font-size: 15px; color: var(--or); margin-top: 2px; line-height: 1.4; }
+  .gradient-item .gi-sub { font-size: 11.5px; color: rgba(255,255,255,0.75); margin-top: 3px; }
+
+  /* GRADIENT BOX CMCAS */
+  .gradient-box-vert {
+    background: linear-gradient(135deg, #28b193 0%, #1e8a70 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .gradient-box-vert::after { content: 'CMCAS'; position: absolute; right: -10px; top: -10px; font-family: 'Fraunces', serif; font-size: 90px; font-weight: 900; color: rgba(255,255,255,0.05); pointer-events: none; }
+  .gradient-box-vert h3 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--or); margin-bottom: 12px; }
+  .gradient-box-vert p { font-size: 13.5px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 16px; }
+
+  /* CALENDAR */
+  .calendar-section { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--bleu-clair), var(--or)); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -22px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bleu-clair); border: 2px solid white; box-shadow: 0 0 0 2px var(--bleu-clair); }
+  .tl-item.active::before { background: var(--or); box-shadow: 0 0 0 2px var(--or); }
+  .tl-date { font-size: 11px; font-weight: 500; color: var(--bleu-clair); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .tl-item.active .tl-date { color: #b08000; }
+  .tl-title { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 3px; }
+  .tl-desc { font-size: 13px; color: var(--gris); line-height: 1.55; }
+
+  /* TWO COLS */
+  .two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .col-card {
+    border-radius: 14px;
+    padding: 20px;
+    border-top: 4px solid;
+  }
+  .col-card.ccas { background: #e6f5fb; border-top-color: var(--bleu); }
+  .col-card.cmcas { background: var(--vert-clair); border-top-color: var(--vert); }
+  .col-card h4 { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 10px; }
+  .col-card.cmcas h4 { color: var(--vert); }
+  .col-card ul { list-style: none; padding: 0; }
+  .col-card ul li { font-size: 12.5px; color: #4A4A46; line-height: 1.65; padding-left: 18px; position: relative; margin-bottom: 6px; }
+  .col-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--bleu); font-weight: 700; }
+  .col-card.cmcas ul li::before { color: var(--vert); }
+
+  /* CONTACT FO CARD */
+  .fo-contact-card {
+    background: linear-gradient(135deg, #c0303a 0%, #9e1a28 60%, #7a0e1c 100%);
+    border-radius: 16px;
+    padding: 18px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fo-contact-card::before {
+    content: '✉';
+    position: absolute;
+    right: -8px; top: -16px;
+    font-size: 100px;
+    color: rgba(255,255,255,0.08);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .fo-contact-card .fo-logo-wrap {
+    flex-shrink: 0;
+  }
+  .fo-contact-card .fo-logo-wrap img {
+    height: 44px;
+    object-fit: contain;
+    transition: transform 0.25s;
+    cursor: pointer;
+    display: block;
+    background: white;
+    border-radius: 8px;
+    padding: 5px 8px;
+  }
+  .fo-contact-card .fo-logo-wrap img:hover {
+    transform: scale(1.07);
+  }
+  .fo-contact-card .fo-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .fo-contact-card .fo-text {
+    flex: 1;
+    min-width: 180px;
+  }
+  .fo-contact-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+  }
+  .fo-contact-card p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .fo-mailto-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #525250;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 9px 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  }
+  .fo-mailto-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    background: #F4F3EF;
+  }
+  .fo-mailto-btn .btn-icon { font-size: 15px; }
+
+  /* FOOTER */
+  .footer { text-align: center; font-size: 12px; color: var(--gris); padding-top: 24px; border-top: 1px solid #ddd; }
+  .footer a { color: var(--bleu); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .cards, .placement-grid, .two-cols, .gradient-grid { grid-template-columns: 1fr; }
+    .stat-box { flex-direction: column; text-align: center; }
+    .header h1 { font-size: 30px; }
+    .header { padding: 32px 24px; }
+    .page { padding: 24px 16px 48px; }
+    .org-branch { flex-direction: column; align-items: center; }
+    .org-branch::before, .org-branch::after { display: none; }
+  }
+  /* ═══════════════════════════════════════════════
+     MODE LECTURE UNIVERSELLE
+     Couvre : basse vision · daltonisme · dyslexie
+              motricité réduite · fatigue visuelle
+  ═══════════════════════════════════════════════ */
+
+  /* Bouton de bascule */
+  .a11y-toggle-bar {
+    display: flex;
+    justify-content: center;
+    margin: -20px 0 28px;
+    position: relative;
+    z-index: 10;
+  }
+  .a11y-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 40px;
+    padding: 8px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #6E6D69;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .a11y-btn:hover { border-color: #019cda; color: #019cda; box-shadow: 0 4px 14px rgba(1,156,218,0.15); }
+  .a11y-btn:focus { outline: 4px solid #019cda; outline-offset: 3px; }
+  .a11y-btn .a11y-icon { font-size: 16px; }
+  .a11y-btn .a11y-label-on  { display: none; }
+  .a11y-btn .a11y-label-off { display: inline; }
+
+  /* ── Mode actif : bouton ── */
+  body.a11y-mode .a11y-btn {
+    background: #525250;
+    border-color: #525250;
+    color: white;
+    font-weight: 700;
+  }
+  body.a11y-mode .a11y-btn .a11y-label-on  { display: inline; }
+  body.a11y-mode .a11y-btn .a11y-label-off { display: none; }
+
+  /* ── Header en mode universel ── */
+  body.a11y-mode .header {
+    background: #525250;
+    border: 3px solid #2C2C29;
+    border-radius: 16px;
+  }
+  body.a11y-mode .header h1 {
+    color: #FFFFFF !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 34px;
+    letter-spacing: 0.02em;
+  }
+  body.a11y-mode .header h1 em {
+    color: #FFFFFF !important;
+    text-decoration: underline;
+    font-style: normal;
+  }
+  body.a11y-mode .header .subtitle {
+    color: #C8C6C0 !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 15px;
+  }
+  body.a11y-mode .badge {
+    background: #FFFFFF;
+    color: #2C2C29;
+    border: 2px solid #2C2C29;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+  body.a11y-mode .header .update {
+    background: rgba(255,255,255,0.15);
+    border: 1.5px solid rgba(255,255,255,0.5);
+    color: #FFFFFF;
+  }
+  body.a11y-mode .dot {
+    background: #FFFFFF;
+  }
+     Atkinson Hyperlegible : conçue pour la basse vision,
+     confusion de caractères réduite (b/d, p/q, I/l/1…)  */
+  body.a11y-mode {
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 17px;
+    line-height: 1.9;
+    letter-spacing: 0.025em;
+    word-spacing: 0.1em;
+    background: #FFFFFF;
+    color: #2C2C29;
+  }
+  body.a11y-mode p,
+  body.a11y-mode li,
+  body.a11y-mode td,
+  body.a11y-mode .card p,
+  body.a11y-mode .place-card p,
+  body.a11y-mode .tl-desc,
+  body.a11y-mode .intro,
+  body.a11y-mode .f-row .fi-label {
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 15px;
+    line-height: 1.9;
+    letter-spacing: 0.025em;
+  }
+
+  /* ── Titres : contraste AAA (7:1) ── */
+  body.a11y-mode .header h1  { font-size: 34px; }
+  body.a11y-mode .section-title { font-size: 22px; color: #2C2C29 !important; }
+  body.a11y-mode .card h3,
+  body.a11y-mode .place-card h3,
+  body.a11y-mode .col-card h4,
+  body.a11y-mode .fo-contact-card h3 { font-size: 17px; color: #2C2C29 !important; }
+
+  /* ── Palette sans dépendance couleur ──
+     Chaque zone a une FORME + MOTIF + ÉTIQUETTE en plus de la couleur
+     → compréhensible même en niveaux de gris total             */
+
+  body.a11y-mode .page { background: #FFFFFF; }
+
+  /* Intro : fond légèrement teinté + bordure épaisse */
+  body.a11y-mode .intro {
+    background: #FAFAF7;
+    border-left: 6px solid #2C2C29;
+    color: #2C2C29;
+  }
+  body.a11y-mode .intro strong { color: #2C2C29; text-decoration: underline; }
+
+  /* Cards : fond neutre + bordure pleine épaisse + pas de couleur seule */
+  body.a11y-mode .card {
+    background: #F4F3EF;
+    border: 2px solid #2C2C29;
+    box-shadow: none;
+  }
+  body.a11y-mode .card p { color: #2C2C29 !important; }
+  body.a11y-mode .card.highlight {
+    background: #525250;
+    border: 2px solid #2C2C29;
+  }
+  body.a11y-mode .card.highlight h3 { color: #FFFFFF !important; }
+  body.a11y-mode .card.highlight p  { color: #C8C6C0 !important; }
+
+  /* Schema section */
+  body.a11y-mode .schema-section {
+    background: #F4F3EF;
+    border: 2px solid #2C2C29;
+  }
+
+  /* Place cards : bordure haute épaisse + fond neutre */
+  body.a11y-mode .place-card {
+    background: #F4F3EF;
+    border: 2px solid #4A4A46;
+    border-top: 6px solid #2C2C29;
+  }
+  body.a11y-mode .place-card p { color: #2C2C29 !important; }
+
+  /* Financement et calendrier */
+  body.a11y-mode .financement-section,
+  body.a11y-mode .calendar-section {
+    background: #F4F3EF;
+    border: 2px solid #2C2C29;
+  }
+  body.a11y-mode .f-row {
+    border: 2px solid #6F6E68;
+  }
+  body.a11y-mode .f-row.source  { background: #E2E0DA; border-left: 6px solid #2C2C29; }
+  body.a11y-mode .f-row.salarie { background: #F4F3EF; border-left: 6px dashed #2C2C29; }
+  body.a11y-mode .f-row.total   { background: #E2E0DA; border-left: 6px dotted #2C2C29; }
+  body.a11y-mode .f-row .fi-badge { color: #2C2C29 !important; }
+
+  /* Col cards CCAS / CMCAS : différenciés par motif de bordure, pas couleur */
+  body.a11y-mode .col-card {
+    background: #F4F3EF;
+  }
+  body.a11y-mode .col-card.ccas {
+    border: 2px solid #2C2C29;
+    border-top: 6px solid #2C2C29; /* plein = CCAS */
+  }
+  body.a11y-mode .col-card.ccas h4 { color: #2C2C29 !important; }
+  body.a11y-mode .col-card.ccas::before {
+    content: '🏢 National —';
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #2C2C29;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  body.a11y-mode .col-card.cmcas {
+    border: 2px dashed #2C2C29;
+    border-top: 6px dashed #2C2C29; /* pointillés = CMCAS */
+  }
+  body.a11y-mode .col-card.cmcas h4 { color: #2C2C29 !important; }
+  body.a11y-mode .col-card.cmcas::before {
+    content: '📍 Local —';
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #2C2C29;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  body.a11y-mode .col-card ul li::before { color: #2C2C29 !important; }
+
+  /* Alertes universelles — spécificité maximale, tout forcé */
+  body.a11y-mode .alert,
+  body.a11y-mode div.alert {
+    background: #FFFFFF !important;
+    border: 3px solid #2C2C29 !important;
+    border-left: 8px solid #2C2C29 !important;
+    border-radius: 12px !important;
+  }
+  body.a11y-mode .alert p,
+  body.a11y-mode div.alert p          { color: #2C2C29 !important; font-size: 15px !important; line-height: 1.8 !important; }
+  body.a11y-mode .alert strong,
+  body.a11y-mode div.alert strong     { color: #2C2C29 !important; }
+  body.a11y-mode .alert .alert-icon,
+  body.a11y-mode div.alert .alert-icon { font-size: 26px !important; }
+
+  body.a11y-mode .alert.green,
+  body.a11y-mode div.alert.green {
+    background: #F4F3EF !important;
+    border: 3px dashed #2C2C29 !important;
+    border-left: 8px dashed #2C2C29 !important;
+  }
+  body.a11y-mode .alert.green p,
+  body.a11y-mode div.alert.green p      { color: #2C2C29 !important; }
+  body.a11y-mode .alert.green strong,
+  body.a11y-mode div.alert.green strong { color: #2C2C29 !important; }
+
+  body.a11y-mode .alert.blue,
+  body.a11y-mode div.alert.blue {
+    background: #FFFFFF !important;
+    border: 3px dotted #2C2C29 !important;
+    border-left: 8px solid #2C2C29 !important;
+  }
+  body.a11y-mode .alert.blue p,
+  body.a11y-mode div.alert.blue p      { color: #2C2C29 !important; }
+  body.a11y-mode .alert.blue strong,
+  body.a11y-mode div.alert.blue strong { color: #2C2C29 !important; }
+
+  /* Stat box / gradient boxes : fond sombre mais sans dépendance couleur */
+  body.a11y-mode .stat-box {
+    background: #525250;
+    border: 3px solid #2C2C29;
+  }
+  body.a11y-mode .stat-box .stat-val { color: #FFFFFF !important; }
+  body.a11y-mode .stat-box .stat-label { color: #C8C6C0 !important; }
+  body.a11y-mode .stat-box .stat-desc { color: #C8C6C0 !important; }
+  body.a11y-mode .stat-box .stat-desc strong { color: #FFFFFF !important; }
+
+  body.a11y-mode .gradient-box {
+    background: #525250;
+    border: 3px solid #2C2C29;
+  }
+  body.a11y-mode .gradient-box h3 { color: #FFFFFF !important; }
+  body.a11y-mode .gradient-box p  { color: #C8C6C0 !important; }
+  body.a11y-mode .gradient-item {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  body.a11y-mode .gradient-item .gi-val { color: #FFFFFF !important; }
+  body.a11y-mode .gradient-item .gi-sub { color: #C8C6C0 !important; }
+
+  body.a11y-mode .gradient-box-vert {
+    background: #525250;
+    border: 3px dashed #6E6D69;
+  }
+  body.a11y-mode .gradient-box-vert h3 { color: #FFFFFF !important; }
+  body.a11y-mode .gradient-box-vert p  { color: #C8C6C0 !important; }
+
+  /* Contact FO */
+  body.a11y-mode .fo-contact-card {
+    background: #525250;
+    border: 3px solid #6F6E68;
+  }
+  body.a11y-mode .fo-contact-card h3 { color: #FFFFFF !important; }
+  body.a11y-mode .fo-contact-card p  { color: #C8C6C0 !important; }
+  body.a11y-mode .fo-mailto-btn {
+    background: #FFFFFF;
+    color: #2C2C29 !important;
+    border: 2px solid #2C2C29;
+  }
+
+  /* Timeline */
+  body.a11y-mode .tl-title { color: #2C2C29 !important; }
+  body.a11y-mode .tl-date  { color: #4A4A46 !important; font-weight: 700; }
+  body.a11y-mode .tl-desc  { color: #525250 !important; }
+
+  /* Tags */
+  body.a11y-mode .tag {
+    background: #E2E0DA !important;
+    color: #2C2C29 !important;
+    border: 1px solid #6F6E68 !important;
+  }
+
+  /* Textes gris → noir */
+  body.a11y-mode .footer { color: #2C2C29 !important; }
+  body.a11y-mode .footer a { color: #2C2C29 !important; text-decoration: underline; }
+
+  /* ── Focus ultra-visible (motricité réduite) ── */
+
+  /* ── Skip link ── */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: #ffbf00;
+    color: #2C2C29;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 16px; }
+
+  /* ── Zoom 200% sans dépassement ── */
+  @media (max-width: 600px) {
+    body.a11y-mode .cards,
+    body.a11y-mode .placement-grid,
+    body.a11y-mode .two-cols,
+    body.a11y-mode .gradient-grid { grid-template-columns: 1fr; }
+    body.a11y-mode .stat-box { flex-direction: column; }
+    body.a11y-mode .page { padding: 16px; }
+  }
+
+  /* ── Contraste système élevé (Windows/macOS) ── */
+  @media (prefers-contrast: more) {
+    .card, .place-card, .intro, .alert { border: 3px solid #2C2C29 !important; }
+    * { color: #2C2C29 !important; background: #FFFFFF !important; }
+    a { color: #2C2C29 !important; text-decoration: underline !important; }
+  }
+
+  /* ── Réduction de mouvement (épilepsie, troubles vestibulaires) ── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+
+  /* ═══ OVERRIDE FINAL ALERTES MODE UNIVERSEL ═══
+     Placé en dernier pour gagner la cascade sans exception */
+  body.a11y-mode div.alert {
+    background-color: #FFFFFF !important;
+    border: 3px solid #2C2C29 !important;
+    border-left: 8px solid #2C2C29 !important;
+    border-radius: 12px !important;
+  }
+  body.a11y-mode div.alert > p { color: #2C2C29 !important; font-size: 15px !important; }
+  body.a11y-mode div.alert > p strong { color: #2C2C29 !important; }
+
+  body.a11y-mode div.alert.green {
+    background-color: #F4F3EF !important;
+    border: 3px dashed #2C2C29 !important;
+    border-left: 8px dashed #2C2C29 !important;
+  }
+  body.a11y-mode div.alert.green > p { color: #2C2C29 !important; }
+  body.a11y-mode div.alert.green > p strong { color: #2C2C29 !important; }
+
+  body.a11y-mode div.alert.blue {
+    background-color: #FFFFFF !important;
+    border: 3px dotted #2C2C29 !important;
+    border-left: 8px solid #2C2C29 !important;
+  }
+  body.a11y-mode div.alert.blue > p { color: #2C2C29 !important; }
+  body.a11y-mode div.alert.blue > p strong { color: #2C2C29 !important; }
+
+  /* ═══ OVERRIDE FINAL ICÔNES MODE UNIVERSEL ═══ */
+
+  /* .icon des titres de section : fond neutre + bordure */
+  body.a11y-mode .section-title .icon {
+    background: #E2E0DA !important;
+    border: 2px solid #2C2C29 !important;
+    border-radius: 6px !important;
+  }
+
+  /* .dot dans le header : blanc uni */
+  body.a11y-mode .dot {
+    background: #FFFFFF !important;
+    width: 9px !important;
+    height: 9px !important;
+    border: 1px solid rgba(255,255,255,0.6) !important;
+  }
+
+  /* card-icon : taille augmentée */
+  body.a11y-mode .card-icon {
+    font-size: 32px !important;
+  }
+
+  /* place-icon : taille augmentée */
+  body.a11y-mode .place-icon {
+    font-size: 32px !important;
+  }
+
+  /* alert-icon : taille augmentée */
+  body.a11y-mode .alert-icon,
+  body.a11y-mode div.alert-icon {
+    font-size: 28px !important;
+  }
+
+  /* gi-icon dans les gradient boxes */
+  body.a11y-mode .gi-icon {
+    font-size: 26px !important;
+  }
+
+  /* section-title : icône texte plus grand */
+  body.a11y-mode .section-title {
+    font-size: 22px !important;
+    gap: 12px !important;
+  }
+
+  /* ═══ TABLE COMPARAISON MODE UNIVERSEL ═══ */
+  body.a11y-mode table thead tr { background: #525250 !important; }
+  body.a11y-mode table thead th { color: #FFFFFF !important; font-size: 14px !important; border: 2px solid #2C2C29 !important; }
+  body.a11y-mode table tbody td { color: #2C2C29 !important; font-size: 14px !important; line-height: 1.7 !important; border: 1px solid #6F6E68 !important; }
+  body.a11y-mode table tbody td strong { color: #2C2C29 !important; }
+  body.a11y-mode table tbody tr:nth-child(even) { background: #F4F3EF !important; }
+  body.a11y-mode table tbody td[style*="background:#e6f5fb"] { background: #F4F3EF !important; border-left: 5px solid #2C2C29 !important; }
+
+  /* ══════════════════════════════════
+     SECTION VERSUS IEG / CSE
+  ══════════════════════════════════ */
+  /* ══ VERSUS TABLE : grille partagée — alignement ligne par ligne ══ */
+  .versus-table {
+    display: grid;
+    grid-template-columns: 1fr 36px 1fr;
+    margin-bottom: 32px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+
+  /* Chaque .vt-row est display:contents → ses enfants rejoignent la grille parente */
+  .vt-row { display: contents; }
+
+  /* Cellule générique */
+  .vt-cell {
+    padding: 14px 18px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid #ececec;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #4A4A46;
+  }
+  .vt-row:last-child .vt-cell { border-bottom: none; }
+
+  /* Colonne IEG */
+  .vt-ieg { background: #FFFFFF; }
+  .vt-ieg:hover { background: #f0faff; }
+  .vt-ieg strong { color: var(--bleu); display: block; margin-bottom: 2px; font-size: 13.5px; }
+
+  /* Colonne CSE */
+  .vt-cse { background: #fafafa; }
+  .vt-cse:hover { background: #f4f4f4; }
+  .vt-cse strong { color: #6E6D69; display: block; margin-bottom: 2px; font-size: 13.5px; }
+
+  /* Colonne centrale : icône séparateur */
+  .vt-label {
+    background: #F4F3EF;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 14px;
+    border-bottom: 1px solid #E2E0DA;
+    border-left: 1px solid #E2E0DA;
+    border-right: 1px solid #E2E0DA;
+  }
+  .vt-row:last-child .vt-label { border-bottom: none; }
+
+  /* En-têtes */
+  .vt-ieg-head {
+    background: linear-gradient(135deg, #019cda, #028bc2);
+    padding: 18px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    border-bottom: none;
+  }
+  .vt-cse-head {
+    background: linear-gradient(135deg, #6F6E68, #4A4A46);
+    padding: 18px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    border-bottom: none;
+  }
+  .vt-vs {
+    background: var(--texte);
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .versus-badge { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 700; color: #FFFFFF; }
+  .versus-sub { font-size: 11px; color: rgba(255,255,255,0.65); letter-spacing: 1px; text-transform: uppercase; }
+  .vs-circle { width: 36px; height: 36px; border-radius: 50%; background: white; color: var(--texte); font-family: 'Fraunces', serif; font-size: 11px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+  .vs-icon { font-size: 18px; flex-shrink: 0; width: 26px; text-align: center; }
+
+  @media (max-width: 600px) {
+    .versus-table { grid-template-columns: 1fr; box-shadow: none; }
+    .vt-row { display: grid; grid-template-columns: 1fr; margin-bottom: 4px; border-radius: 12px; overflow: hidden; }
+    .vt-label, .vt-vs { display: none; }
+    .vt-ieg-head, .vt-cse-head { border-radius: 12px 12px 0 0; }
+    .vt-row:last-child .vt-cell { border-bottom: 1px solid #ececec; }
+  }
+
+  /* Mode universel — versus table */
+  body.a11y-mode .versus-table { box-shadow: none !important; border: 2px solid #2C2C29 !important; }
+  body.a11y-mode .vt-ieg { background: #FFFFFF !important; border-left: 6px solid #2C2C29 !important; }
+  body.a11y-mode .vt-cse { background: #F4F3EF !important; border-right: 6px dashed #2C2C29 !important; }
+  body.a11y-mode .vt-ieg-head { background: #525250 !important; border-left: 6px solid #2C2C29 !important; }
+  body.a11y-mode .vt-cse-head { background: #4A4A46 !important; border-right: 6px dashed #2C2C29 !important; }
+  body.a11y-mode .vt-label, body.a11y-mode .vt-vs { background: #6F6E68 !important; }
+  body.a11y-mode .vt-cell { color: #2C2C29 !important; font-size: 14px !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; border-bottom-color: #6E6D69 !important; }
+  body.a11y-mode .vt-ieg strong { color: #2C2C29 !important; }
+  body.a11y-mode .vt-cse strong { color: #2C2C29 !important; }
+  body.a11y-mode .vs-circle { background: #FFFFFF !important; color: #2C2C29 !important; }
+
+
+  /* ══ FORCER PAYSAGE SUR MOBILE ══ */
+  .rotate-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #019cda;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    text-align: center;
+  }
+  .rotate-icon {
+    font-size: 64px;
+    animation: rotate-hint 1.8s ease-in-out infinite;
+  }
+  @keyframes rotate-hint {
+    0%   { transform: rotate(0deg); }
+    30%  { transform: rotate(-90deg); }
+    60%  { transform: rotate(-90deg); }
+    100% { transform: rotate(0deg); }
+  }
+  .rotate-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.2;
+  }
+  .rotate-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+    max-width: 280px;
+  }
+  /* Afficher l'overlay uniquement en portrait sur petit écran */
+  @media (max-width: 768px) and (orientation: portrait) {
+    .rotate-overlay { display: flex; }
+    body { overflow: hidden; }
+  }
+  /* Cacher en paysage */
+  @media (orientation: landscape) {
+    .rotate-overlay { display: none !important; }
+    body { overflow: auto; }
+  }
+
+
+  /* ═══ MODE LECTURE UNIVERSELLE — CORRECTIONS COMPLÈTES ═══ */
+
+  /* SVG schemas (schéma org, schéma a11y) — niveaux de gris */
+  body.a11y-mode #svg-standard svg,
+  body.a11y-mode #svg-a11y svg {
+    filter: grayscale(1) contrast(1.1) !important;
+  }
+
+  /* Gradient-box CCAS — fond neutre palette a11y */
+  body.a11y-mode .gradient-box {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .gradient-box h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .gradient-box p  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .gradient-box::after { display: none !important; }
+
+  /* Gradient-box CMCAS */
+  body.a11y-mode .gradient-box-vert {
+    background: var(--a11y-dark) !important;
+    border: 2px dashed var(--a11y-border2) !important;
+  }
+  body.a11y-mode .gradient-box-vert h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .gradient-box-vert p  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .gradient-box-vert::after { display: none !important; }
+
+  /* gradient-item tiles */
+  body.a11y-mode .gradient-item {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+  }
+  body.a11y-mode .gradient-item .gi-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .gradient-item .gi-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .gradient-item .gi-sub   { color: var(--a11y-txt4-dark) !important; }
+
+  /* gi-icon / fi-icon / vs-icon : masquer l'emoji, afficher le SVG */
+  body.a11y-mode .gi-icon .a11y-ico,
+  body.a11y-mode .fi-icon .a11y-ico,
+  body.a11y-mode .vs-icon .a11y-ico,
+  body.a11y-mode .vt-label .a11y-ico {
+    display: inline !important;
+    width: 1.2em !important;
+    height: 1.2em !important;
+    vertical-align: -0.2em !important;
+  }
+  body.a11y-mode .gi-icon .a11y-emoji,
+  body.a11y-mode .fi-icon .a11y-emoji,
+  body.a11y-mode .vs-icon .a11y-emoji,
+  body.a11y-mode .vt-label .a11y-emoji {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    width: 0 !important;
+    display: inline-block !important;
+  }
+
+  /* alert.blue — soft palette */
+  body.a11y-mode .alert.blue,
+  body.a11y-mode div.alert.blue {
+    background: var(--a11y-surface) !important;
+    border: 1px dotted var(--a11y-border2) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .alert.blue p,
+  body.a11y-mode div.alert.blue p,
+  body.a11y-mode div.alert.blue > p   { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .alert.blue strong,
+  body.a11y-mode div.alert.blue strong { color: var(--a11y-txt1) !important; }
+
+  /* h3 / h4 avec emoji (gradient-box, two-cols) */
+  body.a11y-mode .gradient-box h3 .a11y-ico,
+  body.a11y-mode .gradient-box-vert h3 .a11y-ico,
+  body.a11y-mode .col-card h4 .a11y-ico {
+    display: inline !important;
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    color: currentColor !important;
+  }
+  body.a11y-mode .gradient-box h3 .a11y-emoji,
+  body.a11y-mode .gradient-box-vert h3 .a11y-emoji,
+  body.a11y-mode .col-card h4 .a11y-emoji {
+    font-size: 0 !important;
+    width: 0 !important;
+    display: inline-block !important;
+  }
+
+  /* stat-box */
+  body.a11y-mode .stat-box {
+    background: var(--a11y-dark) !important;
+    border: 2px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .stat-box .stat-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .stat-box .stat-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box .stat-desc  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box .stat-desc strong { color: var(--a11y-dark-txt) !important; }
+
+  /* versus-table headers */
+  body.a11y-mode .vt-ieg-head {
+    background: var(--a11y-dark) !important;
+    border-left: 4px solid var(--a11y-txt1) !important;
+    border-bottom: none !important;
+  }
+  body.a11y-mode .vt-cse-head {
+    background: var(--a11y-surface2) !important;
+    border-right: 4px dashed var(--a11y-txt2) !important;
+    border-bottom: none !important;
+  }
+  body.a11y-mode .versus-badge { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .vt-cse-head .versus-badge { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .versus-sub { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .vt-cse-head .versus-sub { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .vt-vs { background: var(--a11y-txt2) !important; }
+
+  /* financement section */
+  body.a11y-mode .financement-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .f-row { background: var(--a11y-surface2) !important; }
+  body.a11y-mode .f-row.source  { border-left: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .f-row.salarie { border-left: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .f-row.total   { border-left: 4px dotted var(--a11y-txt2) !important; }
+  body.a11y-mode .f-row .fi-badge { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .f-row .fi-label { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .f-row .fi-label strong { color: var(--a11y-txt1) !important; }
+
+  /* place-card.vert */
+  body.a11y-mode .place-card.vert {
+    border-top: 4px solid var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .place-card.vert h3 { color: var(--a11y-txt1) !important; }
+
+  /* col-card two-cols */
+  body.a11y-mode .col-card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-top: 4px solid var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .col-card.ccas { border-top: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card.cmcas { border-top: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .col-card h4 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card ul li { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .col-card ul li::before { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .col-card a { color: var(--a11y-txt2) !important; }
+
+  /* schema section wrapper */
+  body.a11y-mode .schema-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+
+
+  /* ── versus-badge icon in a11y mode ── */
+  body.a11y-mode .versus-badge .a11y-ico {
+    display: inline !important;
+    width: 0.9em; height: 0.9em;
+    vertical-align: -0.1em;
+  }
+  body.a11y-mode .versus-badge .a11y-emoji {
+    font-size: 0 !important; width: 0 !important; display: inline-block !important;
+  }
+  /* ── 📌 in gradient-box-vert footer text ── */
+  body.a11y-mode .gradient-box-vert p .a11y-ico,
+  body.a11y-mode .gradient-box-vert .a11y-ico {
+    display: inline !important;
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    color: var(--a11y-txt4-dark);
+  }
+  body.a11y-mode .gradient-box-vert p .a11y-emoji {
+    font-size: 0 !important; width: 0 !important; display: inline-block !important;
+  }
+
+
+
+  /* ═══════════════════════════════════════════════════════
+     OVERRIDE FINAL — alertes mode lecture universelle
+     Force la palette douce sur TOUTES les alertes
+     (neutralise les règles héritées CCAS à fond coloré)
+  ═══════════════════════════════════════════════════════ */
+
+  /* Alert plain (🚪 retraite, etc.) */
+  body.a11y-mode .alert,
+  body.a11y-mode div.alert,
+  body.a11y-mode .alert:not(.green):not(.blue),
+  body.a11y-mode div.alert:not(.green):not(.blue) {
+    background: var(--a11y-surface) !important;
+    background-color: var(--a11y-surface) !important;
+    border-color: var(--a11y-border2) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .alert p,
+  body.a11y-mode div.alert p,
+  body.a11y-mode .alert > p,
+  body.a11y-mode div.alert > p { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .alert strong,
+  body.a11y-mode div.alert strong,
+  body.a11y-mode .alert > p strong,
+  body.a11y-mode div.alert > p strong { color: var(--a11y-txt1) !important; }
+
+  /* Alert green (💡 Bon à savoir) */
+  body.a11y-mode .alert.green,
+  body.a11y-mode div.alert.green {
+    background: var(--a11y-surface2) !important;
+    background-color: var(--a11y-surface2) !important;
+    border: 1px dashed var(--a11y-border2) !important;
+    border-left: 5px dashed var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .alert.green p,
+  body.a11y-mode div.alert.green p,
+  body.a11y-mode .alert.green > p,
+  body.a11y-mode div.alert.green > p { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .alert.green strong,
+  body.a11y-mode div.alert.green strong,
+  body.a11y-mode .alert.green > p strong,
+  body.a11y-mode div.alert.green > p strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .alert.green a { color: var(--a11y-txt2) !important; }
+
+  /* Alert blue (bloc IEG vs privé) */
+  body.a11y-mode .alert.blue,
+  body.a11y-mode div.alert.blue {
+    background: var(--a11y-surface) !important;
+    background-color: var(--a11y-surface) !important;
+    border: 1px dotted var(--a11y-border2) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .alert.blue p,
+  body.a11y-mode div.alert.blue p,
+  body.a11y-mode .alert.blue > p,
+  body.a11y-mode div.alert.blue > p { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .alert.blue strong,
+  body.a11y-mode div.alert.blue strong { color: var(--a11y-txt1) !important; }
+
+
+  /* ═══════════════════════════════════════════════════════════
+     BIBLIOTHÈQUE SVG MONOCHROME — à utiliser pour wrapper les emoji
+     Toujours associer : <span class="a11y-emoji">EMOJI</span> + SVG ci-dessous
+     stroke="currentColor" — jamais de couleur hex dans un a11y-ico
+     ───────────────────────────────────────────────────────────
+     💡 ampoule :   <svg ...><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.6-1.4 4.9-3.5 6.2L15 17H9l-.5-1.8A7 7 0 0 1 12 2z"/></svg>
+     🚪 porte :     <svg ...><path d="M13 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10z"/><polyline points="13,4 13,10 19,10"/><line x1="9" y1="14" x2="11" y2="14"/></svg>
+     ✉  enveloppe : <svg ...><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+     📍 pin :       <svg ...><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+     🌐 globe :     <svg ...><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+     ⚖️ balance :   <svg ...><line x1="12" y1="3" x2="12" y2="21"/><path d="M3 9l9-6 9 6"/><path d="M3 15l4.5-3M21 15l-4.5-3"/><path d="M3 19h6M15 19h6"/></svg>
+     📋 clipboard : <svg ...><path d="M9 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-2"/><rect x="9" y="0" width="6" height="4" rx="1"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+     👥 personnes : <svg ...><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+     💰 monnaie :   <svg ...><circle cx="12" cy="12" r="10"/><path d="M12 6v2m0 8v2m-3-7h6m-6 3h6"/></svg>
+     📊 graphique : <svg ...><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+     🛡️ bouclier :  <svg ...><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+     🏛️ bâtiment :  <svg ...><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12,2 20,7 4,7"/></svg>
+     🤝 cœur :      <svg ...><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+     🚀 fusée :     <svg ...><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+     ─────────────────────────────────────────────────────────
+     Attributs SVG standard : aria-hidden="true" focusable="false"
+     class="a11y-ico" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round"
+  ═══════════════════════════════════════════════════════════ */
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TEMPLATE ENRICHI "LE SAVIEZ-VOUS" — FO GRDF  v2.0
+     -------------------------------------------------------
+     RÈGLES IMPÉRATIVES :
+     1. Emails → mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr
+     2. Chaque emoji fonctionnel → <span class="a11y-emoji">X</span><svg class="a11y-ico"...>
+     3. Palette a11y → voir variables --a11y-* dans le CSS (NE PAS MODIFIER)
+     4. Overrides alertes → toujours EN FIN de <style> (cascade CSS)
+     -------------------------------------------------------
+     COMPOSANTS DISPONIBLES :
+     • .header / .badge               → bandeau titre
+     • .intro                         → paragraphe d'introduction
+     • .stat-box                      → grande boîte chiffre clé
+     • .section-title + .icon         → titre de section avec icône
+     • .cards / .card / .card.highlight → grille 2 colonnes
+     • .placement-grid / .place-card  → grille 3 colonnes
+     • .alert / .alert.green / .alert.blue → encadrés alertes
+     • .calendar-section / .timeline  → timeline / calendrier
+     • .fiscal-section / .fiscal-row  → calcul brut/net
+     • .fiscal-compare / .fc-col      → comparaison 2 colonnes
+     • .financement-section / .f-row  → flux financement
+     • .gradient-box                  → bloc dégradé bleu (CCAS)
+     • .gradient-box-vert             → bloc dégradé vert (CMCAS)
+     • .gradient-grid / .gradient-item → grille dans gradient-box
+     • .versus-table / .vt-row        → tableau comparatif IEG vs autre
+     • .two-cols / .col-card.ccas/.cmcas → 2 colonnes résumé
+     • .link-box / .link-grid         → section fond dégradé + grille
+     • .placement-grid / .place-card.vert → 3 cartes dont 1 verte
+     • .fo-contact-card               → bandeau contact FO rouge
+     • .footer                        → pied de page
+     • .a11y-toggle-bar               → bouton mode lecture universelle
+     • .rotate-banner                 → bandeau rotation mobile
+     ═══════════════════════════════════════════════════════════
+     -------------------------------------------------------
+     INSTRUCTIONS POUR L'IA :
+     Conserver TOUT le CSS et le JS sans modification.
+     Remplacer uniquement les zones marquées [COMME CECI].
+     Ne pas ajouter de nouvelles classes CSS sans vérifier
+     qu'elles existent déjà dans le <style> ci-dessus.
+     ─────────────────────────────────────────────────────────
+     COMPOSANTS DISPONIBLES (classes CSS déjà stylées) :
+     • .header                  → bandeau titre en haut
+     • .badge                   → pastille "Le Saviez-Vous ?"
+     • .intro                   → paragraphe d'introduction
+     • .stat-box                → grande boîte stat chiffrée
+     • .section-title + .icon   → titre de section avec icône
+     • .cards (.card)           → grille 2 colonnes de cartes
+     • .card.highlight          → carte mise en valeur (fond sombre)
+     • .placement-grid          → grille 3 colonnes de cartes
+     • .place-card              → carte dans la grille 3 col
+     • .alert / .alert.green    → encadré alerte jaune/vert
+     • .calendar-section        → bloc timeline / calendrier
+     • .timeline / .tl-item     → étapes (active = étape en cours)
+     • .fiscal-section          → section calcul brut/net
+     • .fiscal-row.start/.deduct/.net/.taxable → lignes calcul
+     • .fiscal-compare (.fc-col.placement / .paiement) → 2 colonnes comparaison
+     • .fc-highlight            → encadré conseil dans fc-col
+     • .link-box / .link-grid   → section fond sombre + grille 2×2
+     • .fo-contact-card         → bandeau contact FO rouge
+     • .footer                  → pied de page
+     • .a11y-toggle-bar         → bouton mode lecture universelle
+     • .rotate-banner           → bandeau rotation mobile
+     ═══════════════════════════════════════════════════════════ -->
+
+<!-- BANDEAU ROTATION MOBILE (ne pas modifier) -->
+<div class="rotate-banner" id="rotateBanner" role="status" aria-live="polite">
+  <span class="rb-icon" aria-hidden="true"><span class="a11y-emoji">📱</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/></svg></span>
+  <span>Tournez votre téléphone pour une meilleure lecture</span>
+  <button class="rb-close" onclick="dismissRotate()" aria-label="Fermer ce message"><span aria-hidden="true"><span class="a11y-emoji">✕</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></span></button>
+</div>
+
+<a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+
+<div class="page" role="main">
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="header" role="banner">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; position:relative; z-index:1;">
+      <div class="badge" style="margin-bottom:0;" aria-label="Le Saviez-Vous ?">
+        <span aria-hidden="true"><span class="a11y-emoji">✦</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 7.8H22l-6.6 4.8 2.5 7.6L12 17.4l-5.9 4.8 2.5-7.6L2 9.8h7.8z"/></svg></span>
+        Le Saviez-Vous ?
+      </div>
+      <span class="logo-link-wrap">
+        <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+          <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png"
+               alt="Logo FO Énergie GRDF — cliquez pour nous écrire"
+               style="height:clamp(44px,8vw,90px); width:auto; object-fit:contain; display:block; flex-shrink:0; transition:transform 0.2s, filter 0.2s; filter:drop-shadow(0 2px 8px rgba(247,221,92,0.2));"
+               onmouseover="this.style.transform='scale(1.06)';this.style.filter='drop-shadow(0 4px 14px rgba(247,221,92,0.5))'"
+               onmouseout="this.style.transform='scale(1)';this.style.filter='drop-shadow(0 2px 8px rgba(247,221,92,0.2))'">
+        </a>
+        <span class="logo-tooltip"><span aria-hidden="true">✉️</span> Écrire à FO GRDF</span>
+      </span>
+    </div>
+    <h1 style="color:white;">IA en DSI : <em>une révolution sans les salariés ?</em></h1>
+    <p class="subtitle">FO GRDF alerte sur le déploiement non concerté de l'IA générative en DSI. Pour l'intelligence artificielle, oui — pour l'oubli de ses impacts humains, non.</p>
+    <div class="update" role="status">
+      <span class="dot" aria-hidden="true"></span> Alerte FO — Mai 2026 · Déclaration liminaire CSE remise en séance
+    </div>
+    <div style="margin-top:18px;">
+      <span class="pulse-badge">Communication réservée aux salariés DSI</span>
+    </div>
+  </header>
+
+  <!-- BOUTON ACCESSIBILITÉ (ne pas modifier) -->
+  <div class="a11y-toggle-bar" role="navigation" aria-label="Options d'accessibilité">
+    <button class="a11y-btn" id="a11yToggle" onclick="toggleA11y()" aria-pressed="false"
+            title="Activer le mode lecture universelle : police adaptée, contrastes forts, différenciation sans couleur">
+      <span class="a11y-icon" aria-hidden="true"><span class="a11y-emoji">◐</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20A10 10 0 0 1 12 2z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"/></svg></span>
+      <span class="a11y-label-off">Mode lecture universelle</span>
+      <span class="a11y-label-on"><span aria-hidden="true"><span class="a11y-emoji">✓</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,12 9,18 20,6"/></svg></span> Mode lecture universelle actif — Revenir au mode standard</span>
+    </button>
+  </div>
+
+  <div id="contenu-principal">
+
+  <!-- ═══════════ INTRO ═══════════ -->
+  <div class="intro">
+    Depuis plusieurs mois, des <strong>outils d'IA générative</strong> ont été déployés en DSI <strong>sans concertation préalable</strong>, sans étude d'impact partagée avec les représentants du personnel, sans véritable plan de formation, et sans engagement clair sur l'évolution de nos métiers. FO GRDF a donc <strong>remis en séance plénière du CSE une déclaration liminaire</strong> pour porter votre voix, faire reconnaître les <strong>risques psychosociaux</strong> que cette transformation génère déjà sur le terrain, et exiger un <strong>vrai dialogue social</strong>.<br><br>
+    <strong style="color:var(--rouge);">Notre position est limpide :</strong> nous sommes <strong>pour</strong> l'utilisation de l'intelligence artificielle comme outil d'aide au travail. Nous sommes <strong>contre</strong> tout déploiement qui ignore ses impacts sur les salariés.
+  </div>
+
+  <!-- ═══════════ TERMINAL — citation prompt symbolique ═══════════ -->
+  <div class="terminal-box" role="figure" aria-label="Représentation symbolique de la situation en DSI">
+    <span class="term-title">~/dsi/ressenti-salaries — mai 2026</span>
+    <span class="term-line"><span class="term-prompt">user@dsi:~$</span> <span class="term-cmd">ai --deploy --no-consult --no-training --no-impact-study</span></span>
+    <span class="term-line"><span class="term-out">› analyse en cours…</span></span>
+    <span class="term-line"><span class="term-flag">⚠ warning</span> : <span class="term-out">aucune étude d'impact social détectée</span></span>
+    <span class="term-line"><span class="term-flag">⚠ warning</span> : <span class="term-out">aucun plan de formation associé</span></span>
+    <span class="term-line"><span class="term-flag">⚠ warning</span> : <span class="term-out">aucun engagement GPEC sur l'évolution des métiers</span></span>
+    <span class="term-line"><span class="term-flag">✕ error</span>  : <span class="term-out">consultation CSE/CSSCT manquante (art. L.2312-8 du Code du travail)</span></span>
+    <span class="term-line"><span class="term-prompt">fo@grdf:~$</span> <span class="term-cmd">alerte --pour-l-ia --contre-l-oubli-des-salaries</span><span class="term-cursor" aria-hidden="true"></span></span>
+    <span class="term-line" style="margin-top:8px;"><span class="term-ok">✔ alerte transmise — déclaration liminaire CSE</span></span>
+  </div>
+
+  <!-- ═══════════ STAT BOX ═══════════ -->
+  <div class="stat-box">
+    <div class="stat-main">
+      <div class="stat-val">6/6</div>
+      <div class="stat-label">facteurs Gollac impactés</div>
+    </div>
+    <div class="stat-desc">
+      <strong>Une transformation qui touche TOUS les facteurs de RPS</strong><br><br>
+      Le déploiement non concerté de l'IA en DSI active simultanément les <strong>6 grandes familles de risques psychosociaux</strong> identifiées par le <strong>rapport Gollac (2011)</strong> — référence officielle utilisée par l'INRS et le DUERP. <strong>Insécurité socio-économique en tête</strong> : c'est notre principal point de vigilance pour la DSI.
+    </div>
+  </div>
+
+  <!-- ═══════════ ALERTE JAUNE — INSÉCURITÉ AU CŒUR ═══════════ -->
+  <div class="alert">
+    <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="Point de vigilance"><span class="a11y-emoji">⚠️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.3L1.6 19a2 2 0 0 0 1.7 3h17.4a2 2 0 0 0 1.7-3L13.7 3.3a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg></span></div>
+    <p><strong>Le point de vigilance n°1 pour la DSI :</strong> l'<strong>insécurité socio-économique</strong> — facteur Gollac n°6. Quand un outil capable d'écrire, tester, documenter et auditer du code s'installe sans plan de formation ni engagement GPEC, c'est légitimement la question « <em>mon métier sera-t-il encore là demain ?</em> » qui surgit. <strong>Cette question mérite une réponse explicite de la direction</strong>, pas un silence stratégique.</p>
+  </div>
+
+  <!-- ═══════════ FLIP CARDS — AVANT / APRÈS IA ═══════════ -->
+  <div class="section-title">
+    <span class="icon" aria-hidden="true"><span class="a11y-emoji">🔄</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23,4 23,10 17,10"/><polyline points="1,20 1,14 7,14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+    Avant l'IA · Après l'IA — survolez les cartes
+  </div>
+  <p style="font-size:14px; color:var(--gris); margin: -8px 0 22px; line-height:1.65;">
+    Ce que change concrètement le déploiement de l'IA générative en DSI, <strong style="color:var(--bleu);">métier par métier</strong>. <span style="font-style:italic;">(passez la souris ou touchez pour retourner la carte)</span>
+  </p>
+
+  <div class="flip-grid">
+
+    <div class="flip-card" tabindex="0" role="button" aria-label="Métier du développeur — survolez pour voir l'évolution">
+      <div class="flip-card-inner">
+        <div class="flip-face front">
+          <span class="ff-label">Avant l'IA · Développeur·euse</span>
+          <div>
+            <h3 class="ff-title">Écrire du code</h3>
+            <p class="ff-desc">Concevoir, écrire, tester, déboguer. Le savoir-faire est dans les doigts et dans la tête.</p>
+          </div>
+          <span class="ff-hint">Retourner la carte</span>
+        </div>
+        <div class="flip-face back">
+          <span class="ff-label">Après l'IA · sans plan</span>
+          <div>
+            <h3 class="ff-title">Auditer ce que l'IA produit</h3>
+            <p class="ff-desc">Relire, vérifier, sécuriser. Le savoir-faire est dilué — sans reconnaissance, sans formation, sans pause.</p>
+          </div>
+          <span class="ff-hint">Retourner</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" tabindex="0" role="button" aria-label="Métier du tech lead — survolez pour voir l'évolution">
+      <div class="flip-card-inner">
+        <div class="flip-face front">
+          <span class="ff-label">Avant l'IA · Tech Lead</span>
+          <div>
+            <h3 class="ff-title">Cadrer l'équipe</h3>
+            <p class="ff-desc">Arbitrages techniques, mentorat, qualité, code review. Une expertise reconnue et transmise.</p>
+          </div>
+          <span class="ff-hint">Retourner la carte</span>
+        </div>
+        <div class="flip-face back">
+          <span class="ff-label">Après l'IA · sans plan</span>
+          <div>
+            <h3 class="ff-title">Arbitrer entre IA &amp; humains</h3>
+            <p class="ff-desc">Le rôle se transforme. Faut-il valider ? Reprendre ? Former ? Aucune ligne directrice claire.</p>
+          </div>
+          <span class="ff-hint">Retourner</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" tabindex="0" role="button" aria-label="Métier du PO — survolez pour voir l'évolution">
+      <div class="flip-card-inner">
+        <div class="flip-face front">
+          <span class="ff-label">Avant l'IA · Product Owner</span>
+          <div>
+            <h3 class="ff-title">Prioriser la valeur</h3>
+            <p class="ff-desc">Backlog, vision produit, dialogue métier. Une charge soutenue mais maîtrisée.</p>
+          </div>
+          <span class="ff-hint">Retourner la carte</span>
+        </div>
+        <div class="flip-face back">
+          <span class="ff-label">Après l'IA · sans plan</span>
+          <div>
+            <h3 class="ff-title">Encaisser l'accélération</h3>
+            <p class="ff-desc">Les délais se contractent, les attentes explosent : « si l'IA fait, vous devez livrer plus vite ». Sans réduction de scope.</p>
+          </div>
+          <span class="ff-hint">Retourner</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" tabindex="0" role="button" aria-label="Métier RH/management — survolez pour voir l'évolution">
+      <div class="flip-card-inner">
+        <div class="flip-face front">
+          <span class="ff-label">Avant l'IA · Manager DSI</span>
+          <div>
+            <h3 class="ff-title">Faire grandir l'équipe</h3>
+            <p class="ff-desc">Entretiens, montée en compétence, parcours professionnels, GPEC discutée.</p>
+          </div>
+          <span class="ff-hint">Retourner la carte</span>
+        </div>
+        <div class="flip-face back">
+          <span class="ff-label">Après l'IA · sans plan</span>
+          <div>
+            <h3 class="ff-title">Naviguer dans le flou</h3>
+            <p class="ff-desc">Comment annoncer un avenir qu'on ne maîtrise pas ? Quelles compétences valoriser ? Le manager est exposé sans grille de lecture.</p>
+          </div>
+          <span class="ff-hint">Retourner</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- fin .flip-grid -->
+
+  <!-- ═══════════ CHECKLIST INTERACTIVE — Reconnaissez-vous votre quotidien ? ═══════════ -->
+  <div class="reco-section" id="reco-section">
+    <div class="section-title" style="margin-bottom:8px;">
+      <span class="icon" aria-hidden="true"><span class="a11y-emoji">✅</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></span>
+      Reconnaissez-vous votre quotidien ?
+    </div>
+    <p style="font-size:14px; color:var(--gris); margin-bottom:6px; line-height:1.65;">
+      Cochez les situations que vous avez <strong>réellement vécues ces derniers mois</strong> en DSI. Le compteur ne nous est <strong>pas transmis</strong> — c'est juste pour vous, pour mesurer si la conversation vous concerne. <em>Anonyme. Local. Sans tracking.</em>
+    </p>
+    <ul class="reco-list" id="recoList" role="group" aria-label="Liste interactive — Reconnaissez-vous votre quotidien ?">
+      <li class="reco-item" tabindex="0"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Vous avez découvert l'arrivée d'un outil d'IA <strong>par hasard</strong> (release note, collègue, démo) avant toute communication formelle.</span></li>
+      <li class="reco-item" tabindex="0"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Vous vous posez la question : « <strong>vais-je encore avoir un métier à GRDF dans 2 ou 3 ans ?</strong> » et personne ne vous répond clairement.</span></li>
+      <li class="reco-item" tabindex="0"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Vous passez désormais plus de temps à <strong>relire / corriger / valider</strong> du code généré qu'à le produire vous-même.</span></li>
+      <li class="reco-item" tabindex="0"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Vous avez ressenti une <strong>accélération des délais</strong> ou des attentes managériales depuis l'arrivée de l'IA, sans réduction du périmètre.</span></li>
+      <li class="reco-item" tabindex="0"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Vous n'avez <strong>jamais reçu de formation formelle</strong> à ces outils, juste une URL et un « débrouille-toi, c'est intuitif ».</span></li>
+      <li class="reco-item" tabindex="0"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Vous avez le sentiment que votre <strong>expertise métier</strong> historique commence à être <strong>déconsidérée</strong> face à la « productivité » apportée par l'IA.</span></li>
+      <li class="reco-item" tabindex="0"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Vous avez observé des <strong>collègues plus juniors ou plus seniors</strong> particulièrement déstabilisés par ces évolutions.</span></li>
+      <li class="reco-item" tabindex="0"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Vous avez l'impression que l'IA est <strong>déployée pour faire des économies</strong>, pas pour vous aider vraiment.</span></li>
+    </ul>
+    <div class="reco-count" id="recoCount" role="status" aria-live="polite">
+      <span class="reco-num" id="recoNum">0</span>
+      <span class="reco-msg" id="recoMsg">Cochez ce qui vous parle. <strong>Si au moins une case est cochée, vous êtes concerné·e.</strong> Et vous n'êtes pas seul·e.</span>
+    </div>
+  </div><!-- fin .reco-section -->
+
+  <!-- ═══════════ ALERTE BLEUE — INTRO GOLLAC ═══════════ -->
+  <div class="alert blue">
+    <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="Information"><span class="a11y-emoji">ℹ️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><circle cx="12" cy="8" r="0.5" fill="currentColor"/></svg></span></div>
+    <p><strong>Le rapport Gollac (2011), référence française :</strong> en France, les RPS sont structurés autour de <strong>6 grandes familles de facteurs</strong> identifiées par le rapport du collège d'expertise présidé par Michel Gollac. Ces 6 axes constituent la <strong>grille de lecture officielle</strong> utilisée par l'INRS, l'ANACT, la médecine du travail et le DUERP de l'entreprise.</p>
+  </div>
+
+  <!-- ═══════════ 6 FACTEURS GOLLAC — CARTES INTERACTIVES ═══════════ -->
+  <div class="section-title">
+    <span class="icon" aria-hidden="true"><span class="a11y-emoji">🔍</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+    Les 6 facteurs de RPS selon Gollac
+  </div>
+  <p style="font-size:14px; color:var(--gris); margin: -8px 0 22px; line-height:1.65;">
+    <strong style="color:var(--bleu);">Survolez (ou touchez)</strong> chaque facteur pour découvrir des <strong>exemples concrets vécus en DSI GRDF</strong> avec le déploiement de l'IA — études, build, run, support, métiers transverses. Le facteur <strong style="color:var(--rouge);">n°6 « Insécurité socio-économique »</strong> est notre principal point de vigilance.
+  </p>
+
+  <div class="gollac-grid" role="list" aria-label="Les 6 facteurs de risques psychosociaux selon Gollac appliqués à la DSI">
+
+    <!-- Facteur 1 — Intensité et temps de travail -->
+    <button type="button" class="rps-card" data-pos="left" role="listitem"
+            aria-expanded="false" aria-describedby="rps-tip-1">
+      <span class="rps-num" aria-hidden="true">1</span>
+      <span class="rps-icon" aria-hidden="true"><span class="a11y-emoji">⏱️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><polyline points="12,9 12,13 15,15"/><line x1="9" y1="2" x2="15" y2="2"/></svg></span>
+      <h3>Intensité &amp; temps de travail</h3>
+      <p>Cadence accélérée par l'IA, surcharge cognitive, débordement des délais.</p>
+      <span class="rps-hint">Voir des exemples DSI</span>
+      <div class="rps-tooltip" id="rps-tip-1" role="tooltip">
+        <h4>Exemples vécus en DSI GRDF</h4>
+        <ul>
+          <li>Délais raccourcis « parce que vous avez désormais l'IA » — sans réduction de scope</li>
+          <li>Sprint planning recalibré à la hausse sur la base d'une <strong>productivité IA non mesurée</strong></li>
+          <li>Reviews et validations supplémentaires <strong>en plus</strong> du travail habituel, sans temps dédié</li>
+          <li>Réponses attendues plus rapides — « l'IA peut t'aider à rédiger » devient une injonction</li>
+          <li>Augmentation du nombre de tickets à traiter par sprint sans renfort d'effectif</li>
+        </ul>
+      </div>
+    </button>
+
+    <!-- Facteur 2 — Exigences émotionnelles -->
+    <button type="button" class="rps-card" role="listitem"
+            aria-expanded="false" aria-describedby="rps-tip-2">
+      <span class="rps-num" aria-hidden="true">2</span>
+      <span class="rps-icon" aria-hidden="true"><span class="a11y-emoji">😶</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="15" x2="16" y2="15"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>
+      <h3>Exigences émotionnelles</h3>
+      <p>Devoir afficher l'enthousiasme exigé, taire ses doutes, gérer ses craintes pro en silence.</p>
+      <span class="rps-hint">Voir des exemples DSI</span>
+      <div class="rps-tooltip" id="rps-tip-2" role="tooltip">
+        <h4>Exemples vécus en DSI GRDF</h4>
+        <ul>
+          <li>Manager DSI qui doit annoncer un plan IA <strong>auquel il ou elle ne croit pas pleinement</strong></li>
+          <li>Salarié qui doit montrer son « adhésion enthousiaste » à l'IA pendant des démos publiques</li>
+          <li>Crainte permanente — souvent tue — d'être <strong>perçu comme « techno-réfractaire »</strong> si l'on émet une réserve</li>
+          <li>Devoir rassurer son équipe alors qu'on n'a soi-même aucune visibilité sur l'avenir</li>
+        </ul>
+      </div>
+    </button>
+
+    <!-- Facteur 3 — Manque d'autonomie -->
+    <button type="button" class="rps-card" data-pos="right" role="listitem"
+            aria-expanded="false" aria-describedby="rps-tip-3">
+      <span class="rps-num" aria-hidden="true">3</span>
+      <span class="rps-icon" aria-hidden="true"><span class="a11y-emoji">🔒</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+      <h3>Autonomie &amp; marges de manœuvre</h3>
+      <p>Workflows imposés par l'IA, perte de la maîtrise du « comment », travail prescrit par un assistant.</p>
+      <span class="rps-hint">Voir des exemples DSI</span>
+      <div class="rps-tooltip" id="rps-tip-3" role="tooltip">
+        <h4>Exemples vécus en DSI GRDF</h4>
+        <ul>
+          <li>L'IA propose un design / une architecture — il devient difficile de <strong>justifier de faire autrement</strong></li>
+          <li>Workflows standardisés autour de l'IA, sans possibilité de revenir à sa pratique d'origine</li>
+          <li>Choix techniques internes orientés par défaut « comme l'IA l'a suggéré »</li>
+          <li>L'expertise <strong>locale, métier, historique</strong> n'est plus consultée car « plus rapide de demander à l'IA »</li>
+          <li>Pas de possibilité officielle de <strong>refuser ou paramétrer</strong> l'usage de l'IA selon sa propre situation</li>
+        </ul>
+      </div>
+    </button>
+
+    <!-- Facteur 4 — Rapports sociaux dégradés -->
+    <button type="button" class="rps-card" data-pos="left" role="listitem"
+            aria-expanded="false" aria-describedby="rps-tip-4">
+      <span class="rps-num" aria-hidden="true">4</span>
+      <span class="rps-icon" aria-hidden="true"><span class="a11y-emoji">👥</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      <h3>Rapports sociaux &amp; reconnaissance</h3>
+      <p>Échanges techniques réduits, isolement, expertise individuelle minorée au profit de l'IA.</p>
+      <span class="rps-hint">Voir des exemples DSI</span>
+      <div class="rps-tooltip" id="rps-tip-4" role="tooltip">
+        <h4>Exemples vécus en DSI GRDF</h4>
+        <ul>
+          <li>Moins de pair-programming, moins de code review entre humains : <strong>on demande à l'IA</strong></li>
+          <li>Le mentor / la mentore historique est <strong>contournée</strong> au profit d'une réponse instantanée</li>
+          <li>Collègues juniors qui apprennent <strong>avec l'IA mais sans accompagnement</strong> humain structuré</li>
+          <li>Salariés expérimentés dont l'expertise n'est <strong>plus citée ni reconnue</strong> en réunion</li>
+          <li>Fractures entre « adoptants enthousiastes » et « adoptants prudents » au sein des équipes</li>
+        </ul>
+      </div>
+    </button>
+
+    <!-- Facteur 5 — Conflits de valeurs -->
+    <button type="button" class="rps-card" role="listitem"
+            aria-expanded="false" aria-describedby="rps-tip-5">
+      <span class="rps-num" aria-hidden="true">5</span>
+      <span class="rps-icon" aria-hidden="true"><span class="a11y-emoji">⚖️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 8h14"/><path d="M5 8l-3 7a4 4 0 0 0 6 0z"/><path d="M19 8l3 7a4 4 0 0 1-6 0z"/></svg></span>
+      <h3>Conflits de valeurs &amp; qualité empêchée</h3>
+      <p>Livrer vite un code qu'on n'aurait pas validé soi-même, sacrifier la rigueur métier.</p>
+      <span class="rps-hint">Voir des exemples DSI</span>
+      <div class="rps-tooltip" id="rps-tip-5" role="tooltip">
+        <h4>Exemples vécus en DSI GRDF</h4>
+        <ul>
+          <li><strong>Valider une production IA</strong> sans avoir eu le temps de la comprendre intégralement</li>
+          <li>Pousser en prod un code que l'on n'aurait jamais écrit ainsi soi-même</li>
+          <li>Tensions éthiques : <strong>traitement des données personnelles, biais des modèles, traçabilité des décisions</strong></li>
+          <li>Acceptation tacite de la <strong>baisse de qualité au nom de la productivité</strong></li>
+          <li>Perte du « travail bien fait » comme repère professionnel partagé</li>
+        </ul>
+      </div>
+    </button>
+
+    <!-- Facteur 6 — Insécurité socio-économique (PRINCIPAL POINT DE VIGILANCE) -->
+    <button type="button" class="rps-card" data-pos="right" role="listitem"
+            aria-expanded="false" aria-describedby="rps-tip-6"
+            style="border-top-color: var(--rouge);">
+      <span class="rps-num" aria-hidden="true" style="background:var(--rouge); color:#fff;">6</span>
+      <span class="rps-icon" aria-hidden="true"><span class="a11y-emoji">⚠️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.3L1.6 19a2 2 0 0 0 1.7 3h17.4a2 2 0 0 0 1.7-3L13.7 3.3a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg></span>
+      <h3 style="color:var(--rouge);">Insécurité socio-économique <span style="font-size:10px; background:var(--rouge); color:#fff; padding:2px 8px; border-radius:20px; vertical-align:2px; letter-spacing:1px;">FOCUS</span></h3>
+      <p>Peur du déclassement, opacité sur l'avenir des postes, érosion silencieuse des compétences.</p>
+      <span class="rps-hint">Voir des exemples DSI</span>
+      <div class="rps-tooltip" id="rps-tip-6" role="tooltip">
+        <h4>Exemples vécus en DSI GRDF</h4>
+        <ul>
+          <li><strong>Aucun engagement GPEC clair</strong> sur l'évolution des métiers de la DSI exposés à l'IA générative</li>
+          <li>Pas d'<strong>étude d'impact</strong> partagée avec les représentants du personnel</li>
+          <li>Pas de <strong>plan de formation</strong> structuré, ni de parcours de reconversion proposé</li>
+          <li>Pas de <strong>garantie</strong> formelle de non-licenciement / non-déclassement lié à l'IA</li>
+          <li>Sentiment diffus mais croissant que les postes de <strong>développement, recette, support N1/N2</strong> sont les premiers visés</li>
+          <li>Recours à la sous-traitance « augmentée par l'IA » qui pèse sur la pérennité des postes internes</li>
+        </ul>
+      </div>
+    </button>
+
+  </div><!-- fin .gollac-grid -->
+
+  <!-- ═══════════ ALERTE VERTE — RÔLE FO ═══════════ -->
+  <div class="alert green">
+    <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="Action FO"><span class="a11y-emoji">🛡️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9,12 11,14 15,10"/></svg></span></div>
+    <p><strong>Vous reconnaissez une situation ? Vous n'êtes pas seul·e.</strong> Les RPS ne sont <strong>jamais</strong> une faiblesse personnelle : ils relèvent de l'<strong>organisation du travail</strong>, et l'employeur a une <strong>obligation légale de prévention</strong> (art. L4121-1 du Code du travail). FO GRDF vous accompagne pour signaler, faire reconnaître et faire évoluer la situation, en mobilisant le DUERP, la CSSCT, la médecine du travail et — si nécessaire — le droit d'alerte.</p>
+  </div>
+
+  <!-- ═══════════ NOTRE POSITION — POUR / CONTRE ═══════════ -->
+  <div class="section-title">
+    <span class="icon" aria-hidden="true"><span class="a11y-emoji">🧭</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88"/></svg></span>
+    Notre position — ni techno-béats, ni techno-phobes
+  </div>
+  <p style="font-size:14px; color:var(--gris); margin: -8px 0 18px; line-height:1.65;">
+    FO GRDF ne fait pas l'autruche : <strong>l'IA est une réalité, elle est utile et elle est là pour rester</strong>. Mais une transformation de cette ampleur ne peut pas se déployer en <strong>silence sur ses impacts humains</strong>. Voici ce que nous soutenons — et ce que nous combattons.
+  </p>
+
+  <div class="position-grid">
+
+    <div class="position-card pour">
+      <span class="pos-badge">POUR</span>
+      <h3>L'IA comme outil d'aide au quotidien</h3>
+      <p>Aider à coder, documenter, rédiger, analyser. Si elle libère du temps et soulage la charge cognitive : <strong>oui, sans hésiter</strong>.</p>
+    </div>
+
+    <div class="position-card contre">
+      <span class="pos-badge">CONTRE</span>
+      <h3>Le déploiement sans concertation</h3>
+      <p>Arriver dans les outils <strong>sans étude d'impact, sans dialogue social, sans plan de formation</strong> : c'est un manquement aux obligations légales de l'employeur.</p>
+    </div>
+
+    <div class="position-card pour">
+      <span class="pos-badge">POUR</span>
+      <h3>La formation et la reconversion</h3>
+      <p>Un vrai plan de montée en compétences <strong>financé, individualisé et obligatoire</strong> — pas un MOOC envoyé en pièce jointe.</p>
+    </div>
+
+    <div class="position-card contre">
+      <span class="pos-badge">CONTRE</span>
+      <h3>L'opacité sur l'avenir des métiers</h3>
+      <p>Refuser de répondre clairement à « <em>mon métier existera-t-il encore dans 3 ans ?</em> » n'est <strong>pas une posture managériale</strong>, c'est une faute.</p>
+    </div>
+
+    <div class="position-card pour">
+      <span class="pos-badge">POUR</span>
+      <h3>L'expérimentation encadrée</h3>
+      <p>Tester, mesurer, ajuster — avec des <strong>indicateurs RPS</strong>, un suivi CSSCT et une <strong>vraie possibilité de revenir en arrière</strong>.</p>
+    </div>
+
+    <div class="position-card contre">
+      <span class="pos-badge">CONTRE</span>
+      <h3>L'IA-prétexte aux économies</h3>
+      <p>L'IA ne doit pas servir à <strong>justifier des suppressions de postes</strong>, à intensifier la cadence ou à externaliser des activités vers des prestataires « augmentés ».</p>
+    </div>
+
+  </div><!-- fin .position-grid -->
+
+  <!-- ═══════════ RÉSEAU SOUFFRANCE ET TRAVAIL ═══════════ -->
+  <div class="help-network-card">
+    <div class="hnc-icon" aria-hidden="true">
+      <span class="a11y-emoji">🤝</span>
+      <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="8.5" cy="7" r="4"/>
+        <path d="M20 8v6M23 11h-6"/>
+      </svg>
+    </div>
+    <div class="hnc-body">
+      <span class="hnc-tag">Vous ressentez de l'inquiétude au quotidien ?</span>
+      <h3>Le Réseau Souffrance et Travail</h3>
+      <p>Si la transformation IA en DSI provoque chez vous de l'<strong>anxiété, de l'épuisement ou un sentiment d'effondrement professionnel</strong>, vous pouvez être écouté·e par des professionnels formés à la souffrance au travail (psychologues, médecins du travail, avocats…) — réseau fondé par <strong>Marie Pezé</strong>, en toute confidentialité, sans lien avec votre employeur.</p>
+      <div class="hnc-actions">
+        <a class="hnc-btn primary" href="https://www.souffrance-et-travail.com" target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true">
+            <span class="a11y-emoji">🌐</span>
+            <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </span>
+          souffrance-et-travail.com
+        </a>
+        <a class="hnc-btn" href="https://www.souffrance-et-travail.com/aide-pratique/trouver-un-pro/" target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true">
+            <span class="a11y-emoji">📍</span>
+            <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          Trouver un praticien près de chez vous
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ NOS REVENDICATIONS (issues de la déclaration liminaire CSE) ═══════════ -->
+  <div class="demands">
+    <div class="section-title" style="margin-bottom:8px;">
+      <span class="icon" aria-hidden="true"><span class="a11y-emoji">📋</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7"/></svg></span>
+      Nos revendications — déclaration liminaire CSE
+    </div>
+    <p style="font-size:14px; color:var(--gris); line-height:1.65; margin-bottom:14px;">
+      Voici les <strong>demandes formellement portées par FO GRDF en séance plénière du CSE</strong> dans le cadre de notre déclaration liminaire sur le déploiement des outils d'intelligence artificielle. Nous attendons des réponses précises à chacune d'entre elles.
+    </p>
+    <ol>
+      <li>
+        <strong>Transparence complète sur le déploiement IA</strong>
+        Combien de licences achetées et lesquelles, sur quel périmètre, pour quels métiers, dans quel but, dans quelles conditions contractuelles, avec quelles garanties de confidentialité et de conformité RGPD, et selon quelle politique d'usage. Présentation à faire en séance plénière dès la prochaine occasion.
+      </li>
+      <li>
+        <strong>Information-consultation du CSE en bonne et due forme</strong>
+        Une vraie procédure conforme à l'article L.2312-8 du Code du travail sur l'introduction de ces technologies — pas un simple point d'information rétroactif.
+      </li>
+      <li>
+        <strong>Mise à jour du DUERP avec les risques psychosociaux</strong>
+        Le Document Unique d'Évaluation des Risques Professionnels doit intégrer explicitement les RPS générés par ces évolutions. Sans cette inscription, le risque n'existe pas juridiquement pour l'employeur.
+      </li>
+      <li>
+        <strong>Droit à une expertise indépendante (art. L.2315-94)</strong>
+        Le CSE doit pouvoir mandater une expertise externe si la complexité technique et organisationnelle du sujet le justifie.
+      </li>
+      <li>
+        <strong>Un discours managérial clair et homogène</strong>
+        Les évolutions annoncées aux agents doivent s'inscrire dans un cadre, un calendrier et des garanties précises. L'incertitude anxiogène entretenue aujourd'hui n'est ni acceptable, ni durable.
+      </li>
+      <li>
+        <strong>Association systématique du CSE en amont</strong>
+        Engagement formel de la direction à consulter le CSE avant tout projet impactant l'organisation du travail — y compris les projets présentés comme « techniques » ou « de faible ampleur », qui se révèlent souvent structurants pour le quotidien des équipes.
+      </li>
+    </ol>
+  </div>
+
+  <!-- ═══════════ SECTION FOND SOMBRE — LES BONS RÉFLEXES ═══════════ -->
+  <div class="link-box">
+    <h3><span aria-hidden="true"><span class="a11y-emoji">🛟</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></svg></span></span> Les bons réflexes si vous vivez ces situations</h3>
+    <p>Si vous ressentez un impact concret de l'arrivée de l'IA sur votre travail, votre santé ou votre avenir professionnel : <strong>n'attendez pas que ça passe</strong>. Voici les 4 leviers à actionner — FO GRDF vous accompagne à chaque étape.</p>
+    <div class="link-grid">
+      <div class="link-item">
+        <div class="li-label">Étape 1</div>
+        <div class="li-val">Tracer par écrit</div>
+        <div class="li-sub">Notez les situations vécues, les mails, les consignes IA reçues. La preuve écrite est la base de toute action.</div>
+      </div>
+      <div class="link-item">
+        <div class="li-label">Étape 2</div>
+        <div class="li-val">Médecine du travail</div>
+        <div class="li-sub">Visite à votre demande, gratuite et confidentielle, sans accord du manager. Faites tracer ce que vous ressentez.</div>
+      </div>
+      <div class="link-item">
+        <div class="li-label">Étape 3</div>
+        <div class="li-val">Alerte CSSCT / FO</div>
+        <div class="li-sub">Vos élu·es FO peuvent saisir la CSSCT et, si nécessaire, exercer un droit d'alerte sur les RPS liés au déploiement IA.</div>
+      </div>
+      <div class="link-item">
+        <div class="li-label">Étape 4</div>
+        <div class="li-val">Inscription au DUERP</div>
+        <div class="li-sub">Les risques liés à l'IA doivent figurer au Document Unique. Sinon, ils n'existent pas pour l'employeur.</div>
+      </div>
+    </div>
+    <p style="margin-top:14px; font-size:12px; color:rgba(255,255,255,0.7);">Sources : Rapport Gollac « Mesurer les facteurs psychosociaux de risque au travail » (2011) · Code du travail art. L.2312-8, L.4121-1 et L.4612-8 · Déclaration liminaire FO GRDF — CSE Mai 2026.</p>
+  </div>
+
+  <!-- ═══════════ ALERTE JAUNE — APPEL FO ═══════════ -->
+  <div class="alert">
+    <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="À retenir"><span class="a11y-emoji">📣</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8v18l-18-8z"/><path d="M11 11v8"/></svg></span></div>
+    <p><strong>FO GRDF est pour l'IA, pas contre les salariés.</strong> Nous refusons que la modernisation technologique se fasse <strong>au prix de votre santé, de votre métier, ou de votre dignité professionnelle</strong>. Une transformation réussie commence par une vraie négociation. <strong>N'hésitez surtout pas à nous contacter</strong> — tout retour, anonyme ou non, alimente notre travail au CSE et à la CSSCT.</p>
+  </div>
+
+  <!-- ═══════════ BANDEAU CONTACT FO (ne pas modifier) ═══════════ -->
+  <div class="fo-contact-card">
+    <div class="fo-logo-wrap">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO Énergie GRDF">
+      </a>
+    </div>
+    <div class="fo-body">
+      <div class="fo-text">
+        <h3><span aria-hidden="true"><span class="a11y-emoji">✉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span> Salariés DSI — n'hésitez pas à nous écrire</h3>
+        <p>Nos délégués nationaux sont à votre écoute sur le <strong>déploiement IA en DSI</strong> et ses impacts au quotidien — <strong>témoignages, alertes, questions individuelles, situations difficiles</strong>. Tout est traité de manière strictement <strong>confidentielle</strong>.</p>
+      </div>
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" class="fo-mailto-btn">
+        <span class="btn-icon"><span aria-hidden="true"><span class="a11y-emoji">✉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span></span>
+        Nous écrire
+      </a>
+    </div>
+  </div>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer" role="contentinfo">
+    <div style="display:flex; justify-content:center; align-items:center; gap:24px; margin-bottom:16px; flex-wrap:wrap;">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png"
+             alt="Logo FO Énergie GRDF"
+             style="height:70px; object-fit:contain; opacity:0.85; transition:opacity 0.2s;"
+             onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+      </a>
+    </div>
+    <!-- ↓ MODIFIER : adapter la source et la date -->
+    Document d'information syndicale FO Énergie GRDF · Communication réservée aux salariés DSI · Sources : Rapport Gollac (2011), Code du travail, déclaration liminaire CSE FO — Mai 2026 · Pour tout retour ou témoignage :
+    <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" aria-label="Envoyer un email à FO GRDF">syndicat-fo_grdf-delegations-nationales@grdf.fr</a>
+  </footer>
+
+  </div><!-- fin #contenu-principal -->
+
+</div><!-- fin .page -->
+
+<script>
+  /* ── Rotation mobile ── */
+  function dismissRotate() {
+    const b = document.getElementById('rotateBanner');
+    if (b) b.style.display = 'none';
+    try { sessionStorage.setItem('fo-rotate-dismissed', '1'); } catch(e) {}
+  }
+  try {
+    if (sessionStorage.getItem('fo-rotate-dismissed') === '1') {
+      const b = document.getElementById('rotateBanner');
+      if (b) b.style.display = 'none';
+    }
+  } catch(e) {}
+
+  /* ── Mode lecture universelle ── */
+  function toggleA11y() {
+    const body = document.body;
+    const btn  = document.getElementById('a11yToggle');
+    const on   = body.classList.toggle('a11y-mode');
+    if (btn) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    try { localStorage.setItem('fo-a11y', on ? '1' : '0'); } catch(e) {}
+    const svgStd  = document.getElementById('svg-standard');
+    const svgA11y = document.getElementById('svg-a11y');
+    if (svgStd && svgA11y) {
+      svgStd.style.display  = on ? 'none'  : 'block';
+      svgA11y.style.display = on ? 'block' : 'none';
+    }
+  }
+  try {
+    if (localStorage.getItem('fo-a11y') === '1') {
+      document.body.classList.add('a11y-mode');
+      const btn = document.getElementById('a11yToggle');
+      if (btn) btn.setAttribute('aria-pressed', 'true');
+      const svgStd  = document.getElementById('svg-standard');
+      const svgA11y = document.getElementById('svg-a11y');
+      if (svgStd && svgA11y) {
+        svgStd.style.display  = 'none';
+        svgA11y.style.display = 'block';
+      }
+    }
+  } catch(e) {}
+
+  /* ── Tooltips RPS Gollac (mobile tap / desktop click + clavier) ── */
+  (function(){
+    const cards = document.querySelectorAll('.rps-card');
+    if (!cards.length) return;
+
+    function closeAll(except) {
+      cards.forEach(c => {
+        if (c !== except) {
+          c.classList.remove('is-open');
+          c.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('click', function(e){
+        e.stopPropagation();
+        const wasOpen = card.classList.contains('is-open');
+        closeAll(card);
+        if (!wasOpen) {
+          card.classList.add('is-open');
+          card.setAttribute('aria-expanded', 'true');
+        } else {
+          card.classList.remove('is-open');
+          card.setAttribute('aria-expanded', 'false');
+        }
+      });
+      card.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') {
+          card.classList.remove('is-open');
+          card.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    /* Fermer si clic à l'extérieur */
+    document.addEventListener('click', function(e){
+      if (!e.target.closest('.rps-card')) closeAll(null);
+    });
+  })();
+
+  /* ── Flip cards "Avant / Après IA" : tap mobile + clavier ── */
+  (function(){
+    const flips = document.querySelectorAll('.flip-card');
+    if (!flips.length) return;
+    flips.forEach(card => {
+      card.addEventListener('click', function(){
+        card.classList.toggle('is-flipped');
+      });
+      card.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.classList.toggle('is-flipped');
+        }
+        if (e.key === 'Escape') card.classList.remove('is-flipped');
+      });
+    });
+  })();
+
+  /* ── Checklist "Reconnaissez-vous votre quotidien ?" ── */
+  (function(){
+    const items = document.querySelectorAll('.reco-item');
+    if (!items.length) return;
+    const num = document.getElementById('recoNum');
+    const msg = document.getElementById('recoMsg');
+    const counter = document.getElementById('recoCount');
+    function refresh(){
+      const n = document.querySelectorAll('.reco-item.is-checked').length;
+      if (num) num.textContent = n;
+      if (counter) {
+        counter.classList.add('is-bumped');
+        setTimeout(()=>counter.classList.remove('is-bumped'), 280);
+      }
+      if (!msg) return;
+      if (n === 0) {
+        msg.innerHTML = 'Cochez ce qui vous parle. <strong>Si au moins une case est cochée, vous êtes concerné·e.</strong> Et vous n’êtes pas seul·e.';
+      } else if (n <= 2) {
+        msg.innerHTML = 'Vous reconnaissez déjà <strong>une ou deux situations</strong>. Ne les laissez pas s’installer — <strong>écrivez-nous</strong>, on en parle.';
+      } else if (n <= 4) {
+        msg.innerHTML = 'Plusieurs facteurs convergent. <strong>C’est exactement ce que nous remontons en CSE.</strong> Votre témoignage compte — <strong>contactez FO GRDF</strong>.';
+      } else if (n <= 6) {
+        msg.innerHTML = '<strong>Vous vivez une dégradation réelle</strong> de votre quotidien de travail. Faites-le savoir : médecine du travail, FO, CSSCT. <strong>Vous n’êtes pas seul·e</strong>.';
+      } else {
+        msg.innerHTML = '<strong>Situation préoccupante</strong>. Ne restez pas seul·e — médecine du travail, élu·es FO, réseau Souffrance &amp; Travail. <strong>Écrivez-nous dès aujourd’hui</strong>.';
+      }
+    }
+    items.forEach(li => {
+      function toggle(){
+        li.classList.toggle('is-checked');
+        refresh();
+      }
+      li.addEventListener('click', toggle);
+      li.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+      });
+    });
+  })();
+</script>
+</html>
