@@ -867,6 +867,66 @@
   body.a11y-mode .wink-note strong { color: var(--a11y-txt1) !important; }
   body.a11y-mode .wink-note .wink-tag { background: var(--a11y-txt1) !important; color: var(--a11y-dark-txt) !important; }
 
+  /* — Mention confidentialité (réutilisable) — */
+  .confid-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: linear-gradient(180deg, transparent 55%, #fff3a6 55%, #fff3a6 92%, transparent 92%);
+    color: #3a2800;
+    font-weight: 700;
+    padding: 0 4px;
+    border-radius: 2px;
+    font-style: normal;
+    white-space: nowrap;
+  }
+  .confid-tag::before {
+    content: '🔒';
+    font-size: 0.92em;
+    line-height: 1;
+  }
+  /* Variante pleine pour fonds sombres (carte contact rouge…) */
+  .confid-tag.solid {
+    background: #ffe14a;
+    color: #3a2800;
+    padding: 3px 10px;
+    border-radius: 30px;
+    font-size: 12px;
+    border: 1px solid #c19c00;
+  }
+  .confid-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #fff8d6 0%, #ffe8a8 100%);
+    border: 1.5px solid #c19c00;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: #3a2800;
+    font-weight: 600;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+  .confid-banner::before {
+    content: '🔒';
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .confid-banner strong { color: #5a1f00; }
+  body.a11y-mode .confid-tag {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt1) !important;
+    border: 1.5px solid var(--a11y-txt2) !important;
+    padding: 2px 6px !important;
+  }
+  body.a11y-mode .confid-banner {
+    background: var(--a11y-surface2) !important;
+    border: 1.5px solid var(--a11y-txt1) !important;
+    color: var(--a11y-txt1) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+
   /* — Glossaire (grille de définitions, bas de page) — */
   .glossary {
     background: var(--blanc);
@@ -3683,7 +3743,7 @@
   <!-- CTA mailto — invite à témoigner -->
   <div class="mail-cta-row">
     <div class="mcr-text">
-      <strong>Vous êtes salarié·e à la DSI ?</strong> Votre vécu nous intéresse — vos retours alimentent directement notre travail au CSE et à la CSSCT.
+      <strong>Vous êtes salarié·e à la DSI ?</strong> Votre vécu nous intéresse — vos retours alimentent directement notre travail au CSE et à la CSSCT. <span class="confid-tag">100&nbsp;% confidentiel</span> — lus uniquement par vos élus FO.
     </div>
     <a class="mail-pill" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=%5BAlerte%20IA%20DSI%5D%20Mon%20témoignage&amp;body=Bonjour%2C%20%0A%0AJe%20souhaite%20vous%20faire%20part%20de%20mon%20vécu%20concernant%20le%20déploiement%20de%20l%27IA%20à%20la%20DSI...%0A%0ACordialement">
       Écrivez-nous
@@ -3821,9 +3881,12 @@
       <span class="icon" aria-hidden="true"><span class="a11y-emoji">✅</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></span>
       Reconnaissez-vous votre quotidien ?
     </div>
-    <p style="font-size:14px; color:var(--gris); margin-bottom:6px; line-height:1.65;">
-      Cochez les situations que vous avez <strong>réellement vécues ces derniers mois</strong> à la DSI. Le compteur ne nous est <strong>pas transmis</strong> — c'est juste pour vous, pour mesurer si la conversation vous concerne. <em>Anonyme. Local. Sans tracking.</em>
+    <p style="font-size:14px; color:var(--gris); margin-bottom:10px; line-height:1.65;">
+      Cochez les situations que vous avez <strong>réellement vécues ces derniers mois</strong> à la DSI. Le compteur ne nous est <strong>pas transmis</strong> — c'est juste pour vous, pour mesurer si la conversation vous concerne.
     </p>
+    <div class="confid-banner">
+      <span><strong>Anonyme. Local. Sans tracking.</strong> — Vos cases cochées restent sur votre appareil. <strong>Aucune donnée n'est envoyée à FO, à GRDF, ni à qui que ce soit.</strong></span>
+    </div>
     <ul class="reco-list" id="recoList" role="group" aria-label="Liste interactive — Reconnaissez-vous votre quotidien ?">
       <li class="reco-item" tabindex="0"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Vous avez découvert l'arrivée d'un outil d'IA <strong>par hasard</strong> (release note, collègue, démo) avant toute communication formelle.</span></li>
       <li class="reco-item" tabindex="0"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Vous vous posez la question : « <strong>vais-je encore avoir un métier à GRDF dans 2 ou 3 ans ?</strong> » et personne ne vous répond clairement.</span></li>
@@ -3842,9 +3905,9 @@
       <a class="mail-pill" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=%5BAlerte%20IA%20DSI%5D%20Je%20me%20reconnais%20dans%20ces%20situations">
         Partager mon vécu avec FO GRDF
       </a>
-      <p style="font-size:11.5px; color:var(--gris); margin-top:8px; line-height:1.55;">
-        Échange strictement confidentiel — vos retours n'arrivent <strong>jamais</strong> à votre hiérarchie.
-      </p>
+      <div class="confid-banner" style="display:inline-flex; margin:14px auto 0; text-align:left; max-width:560px;">
+        <span><strong>Confidentialité absolue garantie.</strong> Vos témoignages sont <strong>lus exclusivement par vos élus FO</strong> et ne seront <strong>jamais</strong> partagés avec votre hiérarchie, vos collègues, les RH, la direction, ni qui que ce soit d'autre.</span>
+      </div>
     </div>
   </div><!-- fin .reco-section -->
 
@@ -3991,7 +4054,7 @@
   <!-- CTA mailto — un facteur vous parle ? -->
   <div class="mail-cta-row">
     <div class="mcr-text">
-      <strong>Un de ces 6 facteurs résonne avec votre quotidien ?</strong> Décrivez-nous précisément la situation — c'est concret, daté et confidentiel : ça fait toute la différence en CSE.
+      <strong>Un de ces 6 facteurs résonne avec votre quotidien ?</strong> Décrivez-nous précisément la situation — ça fait toute la différence en CSE. <span class="confid-tag">100&nbsp;% confidentiel</span> — vos retours ne quittent jamais le cercle FO.
     </div>
     <a class="mail-pill" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=%5BAlerte%20IA%20DSI%5D%20Situation%20vécue%20-%20Facteur%20Gollac">
       Décrire ma situation
@@ -4126,7 +4189,7 @@
   <!-- CTA mailto — soutenir nos revendications -->
   <div class="mail-cta-row">
     <div class="mcr-text">
-      <strong>Vous voulez soutenir ces revendications</strong> ou en proposer d'autres ? Chaque message reçu renforce notre poids en CSE. <strong>N'hésitez pas — écrivez-nous.</strong>
+      <strong>Vous voulez soutenir ces revendications</strong> ou en proposer d'autres ? Chaque message reçu renforce notre poids en CSE. <strong>N'hésitez pas — écrivez-nous.</strong> <span class="confid-tag">100&nbsp;% confidentiel</span>
     </div>
     <a class="mail-pill" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=%5BAlerte%20IA%20DSI%5D%20Soutien%20aux%20revendications%20FO">
       Soutenir FO GRDF
@@ -4258,7 +4321,7 @@
     <div class="fo-body">
       <div class="fo-text">
         <h3><span aria-hidden="true"><span class="a11y-emoji">✉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span> Salariés DSI — n'hésitez pas à nous écrire</h3>
-        <p>Nos délégués nationaux sont à votre écoute sur le <strong>déploiement IA à la DSI</strong> et ses impacts au quotidien — <strong>témoignages, alertes, questions individuelles, situations difficiles</strong>. Tout est traité de manière strictement <strong>confidentielle</strong>.</p>
+        <p>Nos délégués nationaux sont à votre écoute sur le <strong>déploiement IA à la DSI</strong> et ses impacts au quotidien — <strong>témoignages, alertes, questions individuelles, situations difficiles</strong>. <span class="confid-tag solid">100&nbsp;% confidentiel</span> — vos messages ne sortent <strong>jamais</strong> du cercle des élus FO.</p>
       </div>
       <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" class="fo-mailto-btn">
         <span class="btn-icon"><span aria-hidden="true"><span class="a11y-emoji">✉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span></span>
