@@ -867,6 +867,180 @@
   body.a11y-mode .wink-note strong { color: var(--a11y-txt1) !important; }
   body.a11y-mode .wink-note .wink-tag { background: var(--a11y-txt1) !important; color: var(--a11y-dark-txt) !important; }
 
+  /* — Acronymes : soulignement pointillé + tooltip natif HTML — */
+  abbr[title] {
+    text-decoration: none;
+    border-bottom: 1.5px dotted var(--bleu);
+    cursor: help;
+    font-weight: inherit;
+    padding-bottom: 1px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  abbr[title]:hover, abbr[title]:focus {
+    background: rgba(1,156,218,0.12);
+    border-bottom-color: var(--rouge);
+    border-radius: 2px;
+  }
+  body.a11y-mode abbr[title] {
+    border-bottom: 1.5px dotted var(--a11y-txt2) !important;
+    color: var(--a11y-txt1) !important;
+  }
+  body.a11y-mode abbr[title]:hover, body.a11y-mode abbr[title]:focus {
+    background: var(--a11y-surface2) !important;
+    border-bottom-color: var(--a11y-txt1) !important;
+  }
+
+  /* — Carte "Cas concret remonté du terrain" — */
+  .field-case {
+    background: linear-gradient(135deg, #fff8d6 0%, #ffe8a8 100%);
+    border-radius: 18px;
+    padding: 26px 30px 22px;
+    margin-bottom: 32px;
+    border-left: 6px solid #c19c00;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(193,156,0,0.10);
+  }
+  .field-case::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle, rgba(193,156,0,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .field-case .fc-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #3a2800;
+    color: #fde8a8;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    padding: 5px 13px;
+    border-radius: 30px;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .field-case .fc-tag::before {
+    content: '';
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #ffbf00;
+    animation: fc-pulse 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes fc-pulse { from { opacity: 0.5; } to { opacity: 1; } }
+  .field-case h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: #3a2800;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .field-case .fc-quote {
+    background: rgba(255,255,255,0.6);
+    border-left: 4px solid #c19c00;
+    border-radius: 0 12px 12px 0;
+    padding: 14px 18px;
+    margin: 14px 0 16px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #5a4000;
+    line-height: 1.65;
+    position: relative;
+    z-index: 1;
+  }
+  .field-case .fc-quote strong { color: #3a2800; font-style: normal; }
+  .field-case .fc-attr {
+    font-size: 11.5px;
+    color: #7a5200;
+    font-style: italic;
+    margin-top: 4px;
+    display: block;
+  }
+  .field-case .fc-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 16px 0 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .field-case .fc-stat {
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(193,156,0,0.3);
+    border-radius: 12px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .field-case .fc-stat .fc-val {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: #3a2800;
+    line-height: 1;
+  }
+  .field-case .fc-stat .fc-label {
+    font-size: 10.5px;
+    color: #7a5200;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+  .field-case .fc-analyse {
+    font-size: 13.5px;
+    color: #3a2800;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+  .field-case .fc-analyse strong { color: #6b1f25; }
+
+  @media (max-width: 600px) {
+    .field-case .fc-stats { grid-template-columns: 1fr; }
+  }
+
+  body.a11y-mode .field-case {
+    background: var(--a11y-surface2) !important;
+    border-left: 6px solid var(--a11y-txt1) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .field-case::before { display: none !important; }
+  body.a11y-mode .field-case .fc-tag {
+    background: var(--a11y-txt1) !important;
+    color: var(--a11y-dark-txt) !important;
+  }
+  body.a11y-mode .field-case .fc-tag::before { animation: none !important; background: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .field-case h3,
+  body.a11y-mode .field-case .fc-quote,
+  body.a11y-mode .field-case .fc-quote strong,
+  body.a11y-mode .field-case .fc-analyse,
+  body.a11y-mode .field-case .fc-analyse strong {
+    color: var(--a11y-txt1) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .field-case .fc-attr { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .field-case .fc-quote {
+    background: var(--a11y-surface) !important;
+    border-left: 4px solid var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .field-case .fc-stat {
+    background: var(--a11y-surface) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .field-case .fc-stat .fc-val,
+  body.a11y-mode .field-case .fc-stat .fc-label { color: var(--a11y-txt1) !important; }
+
   /* — Surcharge a11y des composants alerte IA — */
   body.a11y-mode .pulse-badge {
     background: var(--a11y-dark) !important;
@@ -3370,7 +3544,7 @@
         <span class="logo-tooltip"><span aria-hidden="true">✉️</span> Écrire à FO GRDF</span>
       </span>
     </div>
-    <h1 style="color:white;">IA à la DSI : <em>une révolution sans les salariés ?</em></h1>
+    <h1 style="color:white;"><abbr title="Intelligence Artificielle">IA</abbr> à la <abbr title="Direction des Systèmes d'Information">DSI</abbr> : <em>une révolution sans les salariés ?</em></h1>
     <p class="subtitle">FO GRDF alerte sur le déploiement non concerté de l'IA générative à la DSI. Pour l'intelligence artificielle, oui — pour l'oubli de ses impacts humains, non.</p>
     <div class="update" role="status">
       <span class="dot" aria-hidden="true"></span> Alerte FO — Mai 2026 · Déclaration liminaire CSE remise en séance
@@ -3400,8 +3574,10 @@
 
   <!-- ═══════════ INTRO ═══════════ -->
   <div class="intro">
-    Depuis plusieurs mois, des <strong>outils d'IA générative</strong> ont été déployés à la DSI <strong>sans concertation préalable</strong>, sans étude d'impact partagée avec les représentants du personnel, sans véritable plan de formation, et sans engagement clair sur l'évolution de nos métiers. FO GRDF a donc <strong>remis en séance plénière du CSE une déclaration liminaire</strong> pour porter votre voix, faire reconnaître les <strong>risques psychosociaux</strong> que cette transformation génère déjà sur le terrain, et exiger un <strong>vrai dialogue social</strong>.<br><br>
+    Depuis plusieurs mois, des <strong>outils d'IA générative</strong> ont été déployés à la <abbr title="Direction des Systèmes d'Information">DSI</abbr> <strong>sans concertation préalable</strong>, sans étude d'impact partagée avec les représentants du personnel, sans véritable plan de formation, et sans engagement clair sur l'évolution de nos métiers. FO GRDF a donc <strong>remis en séance plénière du <abbr title="Comité Social et Économique — instance représentative du personnel issue des ordonnances Macron de 2017">CSE</abbr> une déclaration liminaire</strong> pour porter votre voix, faire reconnaître les <strong><abbr title="Risques Psychosociaux — souffrance générée par l'organisation du travail (stress chronique, burn-out, etc.)">risques psychosociaux</abbr></strong> que cette transformation génère déjà sur le terrain, et exiger un <strong>vrai dialogue social</strong>.<br><br>
     <strong style="color:var(--rouge);">Notre position est limpide :</strong> nous sommes <strong>pour</strong> l'utilisation de l'intelligence artificielle comme outil d'aide au travail. Nous sommes <strong>contre</strong> tout déploiement qui ignore ses impacts sur les salariés.
+    <br><br>
+    <em style="font-size:13px; color:var(--gris);">💡 Astuce de lecture : les <abbr title="Exemple de définition au survol">mots soulignés en pointillé</abbr> contiennent une définition au survol (ou au clic sur mobile). Pratique pour les acronymes syndicaux et juridiques.</em>
   </div>
 
   <!-- ═══════════ TERMINAL — citation prompt symbolique ═══════════ -->
@@ -3442,7 +3618,7 @@
   <!-- ═══════════ ALERTE JAUNE — INSÉCURITÉ AU CŒUR ═══════════ -->
   <div class="alert">
     <div class="alert-icon" aria-hidden="true"><span role="img" aria-label="Point de vigilance"><span class="a11y-emoji">⚠️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.3L1.6 19a2 2 0 0 0 1.7 3h17.4a2 2 0 0 0 1.7-3L13.7 3.3a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg></span></div>
-    <p><strong>Le point de vigilance n°1 pour la DSI :</strong> l'<strong>insécurité socio-économique</strong> — facteur Gollac n°6. Quand un outil capable d'écrire, tester, documenter et auditer du code s'installe sans plan de formation ni engagement GPEC, c'est légitimement la question « <em>mon métier sera-t-il encore là demain ?</em> » qui surgit. <strong>Cette question mérite une réponse explicite de la direction</strong>, pas un silence stratégique.</p>
+    <p><strong>Le point de vigilance n°1 pour la DSI :</strong> l'<strong>insécurité socio-économique</strong> — facteur Gollac n°6. Quand un outil capable d'écrire, tester, documenter et auditer du code s'installe sans plan de formation ni engagement <abbr title="Gestion Prévisionnelle des Emplois et des Compétences — dispositif obligatoire prévoyant l'évolution des métiers et compétences à 3 ans">GPEC</abbr>, c'est légitimement la question « <em>mon métier sera-t-il encore là demain ?</em> » qui surgit. <strong>Cette question mérite une réponse explicite de la direction</strong>, pas un silence stratégique.</p>
   </div>
 
   <!-- CTA mailto — vous vous posez la question ? -->
@@ -3453,6 +3629,24 @@
     <a class="mail-pill" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=%5BAlerte%20IA%20DSI%5D%20Inquiétude%20sur%20mon%20avenir%20professionnel">
       Contactez FO GRDF
     </a>
+  </div>
+
+  <!-- ═══════════ CAS CONCRET REMONTÉ DU TERRAIN ═══════════ -->
+  <div class="field-case">
+    <span class="fc-tag">● Retour terrain · Mai 2026</span>
+    <h3>Quand 30&nbsp;% de productivité IA s'imposent dans les chiffrages</h3>
+    <div class="fc-quote">
+      « Pour les domaines/pôles de la <abbr title="Direction des Systèmes d'Information">DSI</abbr> soumis aux <abbr title="Dossier de Validation des Investissements">DVI</abbr> (Dossiers de Validation des Investissements), il est désormais demandé — voire imposé — d'appliquer sur l'ensemble des chiffrages un gain de productivité lié à l'IA compris entre <strong>20&nbsp;% et 50&nbsp;%</strong>. Ces derniers jours, le plancher semble même tendre vers <strong>30&nbsp;%</strong>, à la demande du management. La direction s'appuie notamment sur un <abbr title="Proof Of Concept — démonstrateur technique conçu pour valider une hypothèse sur un cas restreint">POC</abbr> réalisé en interne concluant à un gain de 50&nbsp;%. Toutefois, généraliser ce résultat à l'ensemble des activités à partir d'un cas spécifique me paraît assez hasardeux. »
+      <span class="fc-attr">— Retour d'un·e collègue à la DSI, transmis à FO GRDF en mai 2026</span>
+    </div>
+    <div class="fc-stats">
+      <div class="fc-stat"><div class="fc-val">20–50&nbsp;%</div><div class="fc-label">Fourchette imposée sur les chiffrages DVI</div></div>
+      <div class="fc-stat"><div class="fc-val">30&nbsp;%</div><div class="fc-label">Plancher de fait demandé par le management</div></div>
+      <div class="fc-stat"><div class="fc-val">1 POC</div><div class="fc-label">À 50 % généralisé à tout le périmètre</div></div>
+    </div>
+    <p class="fc-analyse">
+      <strong>Pourquoi c'est un problème :</strong> on demande aux équipes de <strong>budgéter à l'avance</strong> une productivité dopée par l'IA, sans plan de formation associé, sans étude d'impact sur les conditions de travail, et en s'appuyant sur <strong>un seul</strong> <abbr title="Proof Of Concept">POC</abbr> dont la généralisation est statistiquement infondée. Concrètement, cela signifie que les équipes devront tenir un engagement de productivité <strong>avant même</strong> d'avoir les outils, la formation et le retour d'expérience pour le faire — sous peine d'être en sous-performance affichée. FO GRDF exige une <strong>transparence complète sur la méthodologie</strong> et une <strong>évaluation contradictoire</strong>, métier par métier, avant toute généralisation.
+    </p>
   </div>
 
   <!-- ═══════════ FLIP CARDS — AVANT / APRÈS IA ═══════════ -->
@@ -3835,7 +4029,7 @@
     <ol>
       <li>
         <strong>Transparence complète sur le déploiement IA</strong>
-        Combien de licences achetées et lesquelles, sur quel périmètre, pour quels métiers, dans quel but, dans quelles conditions contractuelles, avec quelles garanties de confidentialité et de conformité RGPD, et selon quelle politique d'usage. Présentation à faire en séance plénière dès la prochaine occasion.
+        Combien de licences achetées et lesquelles, sur quel périmètre, pour quels métiers, dans quel but, dans quelles conditions contractuelles, avec quelles garanties de confidentialité et de conformité <abbr title="Règlement Général sur la Protection des Données — règlement européen 2016/679">RGPD</abbr>, et selon quelle politique d'usage. Présentation à faire en séance plénière dès la prochaine occasion.
       </li>
       <li>
         <strong>Information-consultation du CSE en bonne et due forme</strong>
@@ -3843,11 +4037,11 @@
       </li>
       <li>
         <strong>Mise à jour du DUERP avec les risques psychosociaux</strong>
-        Le Document Unique d'Évaluation des Risques Professionnels doit intégrer explicitement les RPS générés par ces évolutions. Sans cette inscription, le risque n'existe pas juridiquement pour l'employeur.
+        Le <abbr title="Document Unique d'Évaluation des Risques Professionnels — obligatoire dans toute entreprise (art. R.4121-1 du Code du travail)">Document Unique d'Évaluation des Risques Professionnels</abbr> doit intégrer explicitement les <abbr title="Risques Psychosociaux">RPS</abbr> générés par ces évolutions. Sans cette inscription, le risque n'existe pas juridiquement pour l'employeur.
       </li>
       <li>
         <strong>Droit à une expertise indépendante (art. L.2315-94)</strong>
-        Le CSE doit pouvoir mandater une expertise externe si la complexité technique et organisationnelle du sujet le justifie.
+        Le <abbr title="Comité Social et Économique">CSE</abbr> doit pouvoir mandater une expertise externe si la complexité technique et organisationnelle du sujet le justifie.
       </li>
       <li>
         <strong>Un discours managérial clair et homogène</strong>
@@ -3888,12 +4082,12 @@
       <div class="link-item">
         <div class="li-label">Étape 3</div>
         <div class="li-val">Alerte CSSCT / FO</div>
-        <div class="li-sub">Vos élu·es FO peuvent saisir la CSSCT et, si nécessaire, exercer un droit d'alerte sur les RPS liés au déploiement IA.</div>
+        <div class="li-sub">Vos élu·es FO peuvent saisir la <abbr title="Commission Santé, Sécurité et Conditions de Travail — émanation obligatoire du CSE dans les entreprises ≥300 salariés (art. L.2315-36)">CSSCT</abbr> et, si nécessaire, exercer un droit d'alerte sur les RPS liés au déploiement IA.</div>
       </div>
       <div class="link-item">
         <div class="li-label">Étape 4</div>
         <div class="li-val">Inscription au DUERP</div>
-        <div class="li-sub">Les risques liés à l'IA doivent figurer au Document Unique. Sinon, ils n'existent pas pour l'employeur.</div>
+        <div class="li-sub">Les risques liés à l'IA doivent figurer au <abbr title="Document Unique d'Évaluation des Risques Professionnels">Document Unique</abbr>. Sinon, ils n'existent pas pour l'employeur.</div>
       </div>
     </div>
     <p style="margin-top:14px; font-size:12px; color:rgba(255,255,255,0.7);">Sources : Rapport Gollac « Mesurer les facteurs psychosociaux de risque au travail » (2011) · Code du travail art. L.2312-8, L.4121-1 et L.4612-8 · Déclaration liminaire FO GRDF — CSE Mai 2026.</p>
