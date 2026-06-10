@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mon profil pour Claude — FO Énergie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F7FA;
+    --surface:#FFFFFF;
+    --ink:#0E2230;
+    --ink-soft:#4A5C6B;
+    --line:#E1E8EF;
+    --blue:#019CDA;
+    --green:#29B193;
+    --red:#EF333F;
+    --radius:16px;
+    --display:'Space Grotesk',system-ui,sans-serif;
+    --body:'Inter',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--body);
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    padding-bottom:160px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---- Header ---- */
+  header{
+    background:linear-gradient(135deg,#0E2230 0%,#123247 100%);
+    color:#fff;
+    padding:28px 20px 22px;
+    position:relative;
+    overflow:hidden;
+  }
+  header .bars{position:absolute;top:0;right:0;display:flex;height:6px;width:100%}
+  header .bars span{flex:1}
+  header .bars span:nth-child(1){background:var(--blue)}
+  header .bars span:nth-child(2){background:var(--green)}
+  header .bars span:nth-child(3){background:var(--red)}
+  .kicker{
+    font-family:var(--display);
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--blue);
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  header h1{
+    font-family:var(--display);
+    font-size:26px;
+    font-weight:700;
+    line-height:1.15;
+    letter-spacing:-.01em;
+  }
+  header p{
+    margin-top:10px;
+    font-size:14px;
+    color:#B9C7D2;
+    max-width:38ch;
+  }
+
+  /* ---- Progress ---- */
+  .progress-wrap{
+    position:sticky;top:0;z-index:20;
+    background:rgba(244,247,250,.92);
+    backdrop-filter:blur(8px);
+    padding:12px 20px;
+    border-bottom:1px solid var(--line);
+  }
+  .progress-row{display:flex;align-items:center;gap:12px}
+  .progress-track{flex:1;height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+  .progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));border-radius:99px;transition:width .35s ease}
+  .progress-pct{font-family:var(--display);font-weight:600;font-size:14px;color:var(--ink);min-width:42px;text-align:right}
+
+  /* ---- Layout ---- */
+  main{padding:20px 20px 0;max-width:680px;margin:0 auto}
+
+  .block{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px 18px;
+    margin-bottom:16px;
+  }
+  .block-head{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+  .num{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:13px;
+    color:#fff;
+    background:var(--blue);
+    border-radius:7px;
+    padding:3px 8px;
+    letter-spacing:.04em;
+  }
+  .block:nth-of-type(2) .num{background:var(--green)}
+  .block:nth-of-type(3) .num{background:var(--red)}
+  .block:nth-of-type(4) .num{background:var(--blue)}
+  .block:nth-of-type(5) .num{background:var(--green)}
+  .block-head h2{font-family:var(--display);font-size:18px;font-weight:600;letter-spacing:-.01em}
+  .block-sub{font-size:13px;color:var(--ink-soft);margin-bottom:16px}
+
+  .field{margin-bottom:16px}
+  .field:last-child{margin-bottom:0}
+  label{display:block;font-weight:600;font-size:14.5px;margin-bottom:7px}
+  label .hint{display:block;font-weight:400;font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+
+  input[type=text],textarea{
+    width:100%;
+    font-family:var(--body);
+    font-size:16px; /* >=16px : empêche le zoom auto iOS */
+    color:var(--ink);
+    background:#FAFCFD;
+    border:1.5px solid var(--line);
+    border-radius:11px;
+    padding:12px 13px;
+    transition:border-color .15s,background .15s;
+  }
+  textarea{resize:vertical;min-height:80px}
+  input[type=text]:focus,textarea:focus{
+    outline:none;
+    border-color:var(--blue);
+    background:#fff;
+  }
+  ::placeholder{color:#9DABB6}
+
+  /* ---- Choice chips ---- */
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{
+    font-family:var(--body);
+    font-size:14px;
+    font-weight:500;
+    padding:9px 14px;
+    border:1.5px solid var(--line);
+    border-radius:99px;
+    background:#fff;
+    color:var(--ink-soft);
+    cursor:pointer;
+    user-select:none;
+    transition:all .15s;
+  }
+  .chip:active{transform:scale(.97)}
+  .chip.on{
+    background:var(--ink);
+    color:#fff;
+    border-color:var(--ink);
+  }
+
+  /* ---- Preview ---- */
+  .preview-block{border-color:var(--blue);border-width:1.5px}
+  .preview-block .num{background:var(--ink)}
+  .md-out{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:13px;
+    line-height:1.6;
+    white-space:pre-wrap;
+    word-break:break-word;
+    background:#0E2230;
+    color:#D7E2EA;
+    border-radius:11px;
+    padding:16px;
+    max-height:340px;
+    overflow:auto;
+  }
+  .md-out .h{color:#5CC8F2;font-weight:700}
+  .md-out .k{color:#5FD3B4}
+
+  /* ---- Action bar ---- */
+  .actionbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:30;
+    background:var(--surface);
+    border-top:1px solid var(--line);
+    padding:14px 16px calc(14px + env(safe-area-inset-bottom));
+    display:flex;
+    gap:10px;
+    max-width:680px;
+    margin:0 auto;
+  }
+  .btn{
+    flex:1;
+    font-family:var(--display);
+    font-weight:600;
+    font-size:15px;
+    padding:14px 10px;
+    border-radius:12px;
+    border:none;
+    cursor:pointer;
+    transition:transform .12s,opacity .15s;
+  }
+  .btn:active{transform:scale(.97)}
+  .btn-primary{background:var(--blue);color:#fff}
+  .btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+
+  .toast{
+    position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(20px);
+    background:var(--green);color:#fff;
+    font-weight:600;font-size:14px;
+    padding:11px 20px;border-radius:99px;
+    opacity:0;pointer-events:none;transition:all .3s;
+    z-index:40;box-shadow:0 8px 24px rgba(0,0,0,.15);
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  footer{padding:24px 20px 8px;text-align:center;color:var(--ink-soft);font-size:12px;max-width:680px;margin:0 auto}
+  footer b{color:var(--blue)}
+
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bars"><span></span><span></span><span></span></div>
+  <div class="kicker">FO Énergie · Atelier IA</div>
+  <h1>Apprendre à Claude qui je suis</h1>
+  <p>Réponds depuis ton téléphone. À la fin, tu récupères ton profil prêt à coller dans Claude — sans rien recopier à la main.</p>
+</header>
+
+<div class="progress-wrap">
+  <div class="progress-row">
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <div class="progress-pct" id="pct">0%</div>
+  </div>
+</div>
+
+<main>
+  <div class="field" style="background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin-bottom:16px">
+    <label for="nom">Mon prénom / nom <span class="hint">Sert juste à nommer ton fichier.</span></label>
+    <input type="text" id="nom" placeholder="Ex. Camille Durand">
+  </div>
+
+  <!-- BLOC 1 -->
+  <section class="block">
+    <div class="block-head"><span class="num">01</span><h2>Qui je suis</h2></div>
+    <p class="block-sub">La base : Claude doit savoir à qui il parle.</p>
+    <div class="field">
+      <label for="metier">Mon métier / mon rôle</label>
+      <input type="text" id="metier" placeholder="Ex. Élu CSE, délégué syndical…">
+    </div>
+    <div class="field">
+      <label for="structure">Ma structure et mon secteur</label>
+      <input type="text" id="structure" placeholder="Ex. GRDF, secteur de l'énergie">
+    </div>
+    <div class="field">
+      <label for="respons">Mes responsabilités principales</label>
+      <textarea id="respons" placeholder="Ce dont je suis responsable au quotidien…"></textarea>
+    </div>
+  </section>
+
+  <!-- BLOC 2 -->
+  <section class="block">
+    <div class="block-head"><span class="num">02</span><h2>Mon quotidien</h2></div>
+    <p class="block-sub">Ce que je fais souvent, pour que Claude vise juste.</p>
+    <div class="field">
+      <label for="taches">Mes 3 tâches les plus fréquentes</label>
+      <textarea id="taches" placeholder="Ex. rédiger des tracts, répondre aux adhérents, préparer les réunions CSE…"></textarea>
+    </div>
+    <div class="field">
+      <label for="public">À qui je m'adresse</label>
+      <input type="text" id="public" placeholder="Ex. adhérents, direction, collègues…">
+    </div>
+    <div class="field">
+      <label for="docs">Les documents que je produis le plus</label>
+      <input type="text" id="docs" placeholder="Ex. mails, tracts, comptes rendus…">
+    </div>
+  </section>
+
+  <!-- BLOC 3 -->
+  <section class="block">
+    <div class="block-head"><span class="num">03</span><h2>Ce que j'attends de Claude</h2></div>
+    <p class="block-sub">Là où il peut vraiment m'aider — et ses limites.</p>
+    <div class="field">
+      <label for="usage">Je veux l'utiliser en priorité pour…</label>
+      <textarea id="usage" placeholder="Mon usage numéro 1…"></textarea>
+    </div>
+    <div class="field">
+      <label for="tempsperdu">Là où je perds du temps et où j'aimerais de l'aide</label>
+      <textarea id="tempsperdu" placeholder="Ce qui me prend trop de temps aujourd'hui…"></textarea>
+    </div>
+    <div class="field">
+      <label for="interdit">Ce que je ne veux PAS qu'il fasse à ma place</label>
+      <textarea id="interdit" placeholder="Mes garde-fous (ex. ne jamais inventer une source, ne pas décider à ma place…)"></textarea>
+    </div>
+  </section>
+
+  <!-- BLOC 4 -->
+  <section class="block">
+    <div class="block-head"><span class="num">04</span><h2>Comment je veux qu'il me réponde</h2></div>
+    <p class="block-sub">Touche pour choisir. Tu peux changer d'avis.</p>
+    <div class="field">
+      <label>Le ton</label>
+      <div class="chips" data-group="ton">
+        <div class="chip">Direct</div><div class="chip">Pédagogue</div><div class="chip">Formel</div><div class="chip">Chaleureux</div>
+      </div>
+    </div>
+    <div class="field">
+      <label>La longueur</label>
+      <div class="chips" data-group="longueur">
+        <div class="chip">Court et synthétique</div><div class="chip">Détaillé et complet</div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Le format</label>
+      <div class="chips" data-group="format">
+        <div class="chip">Avec des listes</div><div class="chip">Du texte rédigé</div>
+      </div>
+    </div>
+    <div class="field">
+      <label for="langue">La langue</label>
+      <input type="text" id="langue" placeholder="Français" value="Français">
+    </div>
+  </section>
+
+  <!-- BLOC 5 -->
+  <section class="block">
+    <div class="block-head"><span class="num">05</span><h2>Mes règles permanentes</h2></div>
+    <p class="block-sub">Les consignes que Claude doit garder en tête à chaque fois.</p>
+    <div class="field">
+      <label for="toujours">Ce que Claude doit TOUJOURS savoir sur moi</label>
+      <textarea id="toujours" placeholder="Une info de contexte valable en permanence…"></textarea>
+    </div>
+    <div class="field">
+      <label for="regle">Ma consigne non négociable</label>
+      <textarea id="regle" placeholder="Ex. « Vérifie toujours tes sources et donne-moi un niveau de fiabilité. »"></textarea>
+    </div>
+  </section>
+
+  <!-- PREVIEW -->
+  <section class="block preview-block">
+    <div class="block-head"><span class="num">→</span><h2>Mon profil pour Claude</h2></div>
+    <p class="block-sub">Voici exactement ce que tu vas coller dans Claude. Il se remplit tout seul pendant que tu réponds.</p>
+    <div class="md-out" id="preview"></div>
+  </section>
+</main>
+
+<footer>
+  Atelier IA — <b>FO Énergie</b> · ton profil reste sur ton téléphone, rien n'est envoyé.
+</footer>
+
+<div class="actionbar">
+  <button class="btn btn-ghost" id="copyBtn">Copier le profil</button>
+  <button class="btn btn-primary" id="dlBtn">Exporter en .md</button>
+</div>
+
+<div class="toast" id="toast">Copié&nbsp;!</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var choices = { ton:"", longueur:"", format:"" };
+
+  // --- Chips ---
+  document.querySelectorAll('.chips').forEach(function(group){
+    var name = group.getAttribute('data-group');
+    group.querySelectorAll('.chip').forEach(function(chip){
+      chip.addEventListener('click', function(){
+        var already = chip.classList.contains('on');
+        group.querySelectorAll('.chip').forEach(function(c){c.classList.remove('on');});
+        if(!already){ chip.classList.add('on'); choices[name] = chip.textContent.trim(); }
+        else { choices[name] = ""; }
+        render();
+      });
+    });
+  });
+
+  function val(id){ var el=document.getElementById(id); return el ? el.value.trim() : ""; }
+
+  // Champs comptés pour la progression
+  var counted = ['metier','structure','respons','taches','public','docs',
+                 'usage','tempsperdu','interdit','toujours','regle'];
+
+  function buildMarkdown(){
+    var nom = val('nom');
+    var L = [];
+    L.push("# Mon profil pour Claude");
+    L.push("");
+    L.push("Voici qui je suis. Prends-le en compte dans toutes nos conversations.");
+    L.push("");
+    L.push("## Qui je suis");
+    L.push("- Métier / rôle : " + (val('metier') || "—"));
+    L.push("- Structure & secteur : " + (val('structure') || "—"));
+    L.push("- Responsabilités principales : " + (val('respons') || "—"));
+    L.push("");
+    L.push("## Mon quotidien");
+    L.push("- Tâches les plus fréquentes : " + (val('taches') || "—"));
+    L.push("- À qui je m'adresse : " + (val('public') || "—"));
+    L.push("- Documents que je produis : " + (val('docs') || "—"));
+    L.push("");
+    L.push("## Ce que j'attends de Claude");
+    L.push("- Usage prioritaire : " + (val('usage') || "—"));
+    L.push("- Là où j'ai besoin d'aide : " + (val('tempsperdu') || "—"));
+    L.push("- Ce que Claude ne doit pas faire : " + (val('interdit') || "—"));
+    L.push("");
+    L.push("## Comment je veux que Claude me réponde");
+    L.push("- Ton : " + (choices.ton || "—"));
+    L.push("- Longueur : " + (choices.longueur || "—"));
+    L.push("- Format : " + (choices.format || "—"));
+    L.push("- Langue : " + (val('langue') || "Français"));
+    L.push("");
+    L.push("## Mes règles permanentes");
+    L.push("- À toujours savoir : " + (val('toujours') || "—"));
+    L.push("- Consigne non négociable : " + (val('regle') || "—"));
+    return { text:L.join("\n"), nom:nom };
+  }
+
+  function escapeHtml(s){
+    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+  function highlight(md){
+    return escapeHtml(md).split("\n").map(function(line){
+      if(line.indexOf("#")===0) return '<span class="h">'+line+'</span>';
+      var i = line.indexOf(" : ");
+      if(line.indexOf("- ")===0 && i>-1){
+        return '- <span class="k">'+line.slice(2,i)+'</span>'+line.slice(i);
+      }
+      return line;
+    }).join("\n");
+  }
+
+  function progress(){
+    var filled = 0;
+    counted.forEach(function(id){ if(val(id)) filled++; });
+    if(choices.ton) filled++;
+    if(choices.longueur) filled++;
+    if(choices.format) filled++;
+    var total = counted.length + 3;
+    return Math.round(filled/total*100);
+  }
+
+  function render(){
+    var md = buildMarkdown();
+    document.getElementById('preview').innerHTML = highlight(md.text);
+    var p = progress();
+    document.getElementById('fill').style.width = p + "%";
+    document.getElementById('pct').textContent = p + "%";
+  }
+
+  // --- Export .md ---
+  function download(){
+    var md = buildMarkdown();
+    var safe = (md.nom || "profil").toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+      .replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"") || "profil";
+    var blob = new Blob([md.text], {type:"text/markdown;charset=utf-8"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = "profil-claude-" + safe + ".md";
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1500);
+    showToast("Fichier .md téléchargé");
+  }
+
+  // --- Copie ---
+  function copy(){
+    var md = buildMarkdown().text;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(md).then(function(){ showToast("Profil copié !"); },
+        function(){ legacyCopy(md); });
+    } else { legacyCopy(md); }
+  }
+  function legacyCopy(text){
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try{ document.execCommand("copy"); showToast("Profil copié !"); }
+    catch(e){ showToast("Sélectionne et copie l'aperçu"); }
+    document.body.removeChild(ta);
+  }
+
+  var toastT;
+  function showToast(msg){
+    var t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(toastT);
+    toastT = setTimeout(function(){ t.classList.remove('show'); }, 2000);
+  }
+
+  document.getElementById('dlBtn').addEventListener('click', download);
+  document.getElementById('copyBtn').addEventListener('click', copy);
+  document.querySelectorAll('input,textarea').forEach(function(el){
+    el.addEventListener('input', render);
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
