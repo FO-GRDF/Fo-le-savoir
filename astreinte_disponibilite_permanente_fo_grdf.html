@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astreinte — NON à une disponibilité permanente · FO GRDF</title>
+<meta name="description" content="Communication nationale FO GRDF sur la proposition d'accord astreinte : ce qui change, le vrai prix de votre disponibilité, et ce que FO revendique.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script data-goatcounter="https://fo-grdf.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+
+  :root {
+    --bleu: #019cda;
+    --bleu-clair: #019cda;
+    --or: #f7dd5c;
+    --or-clair: #fde8ea;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --texte: #1A1A2E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+
+  /* HEADER */
+  .header {
+    position: relative;
+    background: linear-gradient(135deg, #c0303a 0%, #9e1a28 55%, #7a0e1c 100%);
+    border-radius: 20px;
+    padding: 44px 48px 36px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .header::after {
+    content: 'NON';
+    position: absolute;
+    right: -14px; bottom: -34px;
+    font-family: 'Fraunces', serif;
+    font-size: 150px; font-weight: 900;
+    color: rgba(255,255,255,0.06);
+    pointer-events: none; line-height: 1;
+  }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--or);
+    color: #7a0e1c;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 40px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--blanc);
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+  }
+  .header h1 em { color: var(--or); font-style: italic; }
+  .header .subtitle {
+    margin-top: 14px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.82);
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+    max-width: 640px;
+  }
+  .header .update {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.9);
+    position: relative;
+    z-index: 1;
+  }
+  .dot { width: 7px; height: 7px; background: var(--or); border-radius: 50%; display: inline-block; }
+
+  /* INTRO */
+  .intro {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    border-left: 5px solid var(--rouge);
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #2a2a2a;
+  }
+  .intro strong { color: #b01622; }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 20px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title.rouge { color: #b01622; }
+  .section-title .icon {
+    width: 36px; height: 36px;
+    background: var(--or-clair);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  /* CARDS GRID */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,59,111,0.1); }
+  .card .card-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+  .card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .card p { font-size: 13.5px; color: var(--gris); line-height: 1.65; }
+  .card.highlight { background: linear-gradient(135deg, #c0303a, #7a0e1c); color: white; }
+  .card.highlight h3 { color: var(--or); }
+  .card.highlight p { color: rgba(255,255,255,0.85); }
+  .card.rouge-top { border-top: 4px solid var(--rouge); }
+
+  /* ALERT BOX */
+  .alert {
+    background: var(--or-clair);
+    border: 1.5px solid var(--rouge);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .alert .alert-icon { font-size: 24px; flex-shrink: 0; }
+  .alert p { font-size: 14px; line-height: 1.7; color: #7a1019; }
+  .alert strong { color: #5a0a11; }
+  .alert.green { background: var(--vert-clair); border-color: var(--vert); }
+  .alert.green p { color: #0e3d22; }
+  .alert.green strong { color: #0a2e19; }
+  .alert.blue { background: #e6f5fb; border-color: var(--bleu); }
+  .alert.blue p { color: #014c6e; }
+  .alert.blue strong { color: #012f44; }
+
+  /* ═══ COMPARATIF AVANT / APRÈS (interactif) ═══ */
+  .compare { background: var(--blanc); border-radius: 18px; padding: 26px 28px 30px; margin-bottom: 32px; }
+  .compare-switch {
+    display: inline-flex; background: var(--fond); border-radius: 40px; padding: 5px;
+    margin: 0 auto 22px; gap: 4px; position: relative; left: 50%; transform: translateX(-50%);
+    border: 1px solid #e6e3da;
+  }
+  .compare-switch button {
+    border: none; background: transparent; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 13px;
+    padding: 9px 22px; border-radius: 40px; color: var(--gris); transition: all 0.25s;
+  }
+  .compare-switch button.is-active.avant { background: var(--vert); color: white; box-shadow: 0 4px 12px rgba(40,177,147,0.3); }
+  .compare-switch button.is-active.apres { background: var(--rouge); color: white; box-shadow: 0 4px 12px rgba(239,51,62,0.3); }
+  .compare-rows { display: grid; gap: 10px; }
+  .compare-row {
+    display: grid; grid-template-columns: 30px 1fr; gap: 14px; align-items: start;
+    padding: 14px 16px; border-radius: 12px; background: var(--fond);
+    border-left: 4px solid #ddd; transition: all 0.25s;
+  }
+  .compare-row .cr-ico { font-size: 20px; line-height: 1.3; }
+  .compare-row .cr-txt { font-size: 13.8px; line-height: 1.6; color: #2a2a2a; }
+  .compare-row .cr-txt b { color: #1a1a2e; }
+  .compare[data-view="avant"] .compare-row { border-left-color: var(--vert); }
+  .compare[data-view="apres"] .compare-row { border-left-color: var(--rouge); background: #fdf3f3; }
+  .compare .view-apres, .compare .view-avant { display: none; }
+  .compare[data-view="avant"] .view-avant { display: block; }
+  .compare[data-view="apres"] .view-apres { display: block; }
+  .compare-caption { text-align: center; font-size: 12.5px; color: var(--gris); margin-top: 16px; font-style: italic; }
+
+  /* ═══ SIMULATEUR ═══ */
+  .simulator {
+    background: linear-gradient(150deg, #0d2233 0%, #133247 60%, #0a1c2b 100%);
+    border-radius: 20px; padding: 30px 34px 34px; margin-bottom: 32px; color: white;
+    position: relative; overflow: hidden;
+  }
+  .simulator::after { content: '€'; position: absolute; right: 8px; top: -22px; font-family: 'Fraunces', serif; font-size: 130px; font-weight: 900; color: rgba(255,255,255,0.05); pointer-events: none; }
+  .simulator h3 { font-family: 'Fraunces', serif; font-size: 22px; color: var(--or); margin-bottom: 6px; position: relative; z-index: 1; }
+  .simulator .sim-sub { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 22px; line-height: 1.6; position: relative; z-index: 1; }
+  .sim-fields { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 22px; position: relative; z-index: 1; }
+  .sim-field label { display: block; font-size: 11.5px; color: rgba(255,255,255,0.75); margin-bottom: 7px; line-height: 1.4; font-weight: 500; }
+  .sim-field input[type="number"] {
+    width: 100%; background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.22);
+    border-radius: 10px; padding: 11px 13px; color: white; font-family: 'DM Sans', sans-serif;
+    font-size: 17px; font-weight: 700; transition: border-color 0.2s;
+  }
+  .sim-field input[type="number"]:focus { outline: none; border-color: var(--or); }
+  .sim-field .sim-hint { font-size: 10.5px; color: rgba(255,255,255,0.45); margin-top: 5px; font-style: italic; }
+  .sim-results { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; position: relative; z-index: 1; }
+  .sim-res { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 18px 20px; }
+  .sim-res .sr-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.6); margin-bottom: 6px; }
+  .sim-res .sr-val { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 900; color: white; line-height: 1; }
+  .sim-res .sr-unit { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.65); }
+  .sim-res.punch { grid-column: 1 / -1; background: linear-gradient(135deg, #c0303a, #7a0e1c); border-color: rgba(255,255,255,0.2); }
+  .sim-res.punch .sr-label { color: rgba(255,255,255,0.8); }
+  .sim-res.punch .sr-val { color: var(--or); font-size: 34px; }
+  .sim-res.punch .sr-msg { font-size: 13px; color: rgba(255,255,255,0.9); line-height: 1.6; margin-top: 8px; }
+  .sim-disclaimer { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 18px; line-height: 1.6; position: relative; z-index: 1; font-style: italic; }
+
+  /* RISK GRID */
+  .risk-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 18px; }
+  .risk-card { background: var(--blanc); border-radius: 14px; padding: 18px 12px; text-align: center; border-bottom: 4px solid var(--rouge); transition: transform 0.2s, box-shadow 0.2s; }
+  .risk-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(239,51,62,0.12); }
+  .risk-card .rk-ico { font-size: 28px; display: block; margin-bottom: 8px; }
+  .risk-card .rk-txt { font-size: 12px; color: #2a2a2a; font-weight: 500; line-height: 1.4; }
+
+  /* TIMELINE */
+  .calendar-section { background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--bleu-clair), var(--rouge)); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ''; position: absolute; left: -22px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bleu-clair); border: 2px solid white; box-shadow: 0 0 0 2px var(--bleu-clair); }
+  .tl-item.alerte::before { background: var(--rouge); box-shadow: 0 0 0 2px var(--rouge); }
+  .tl-date { font-size: 11px; font-weight: 700; color: var(--bleu-clair); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .tl-item.alerte .tl-date { color: #b01622; }
+  .tl-title { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 3px; }
+  .tl-item.alerte .tl-title { color: #b01622; }
+  .tl-desc { font-size: 13px; color: var(--gris); line-height: 1.55; }
+
+  /* REVENDICATIONS */
+  .revend { background: linear-gradient(135deg, #019cda 0%, #28b193 100%); border-radius: 18px; padding: 30px 34px; margin-bottom: 32px; color: white; position: relative; overflow: hidden; }
+  .revend::after { content: '✊'; position: absolute; right: 6px; bottom: -18px; font-size: 120px; opacity: 0.08; pointer-events: none; }
+  .revend h3 { font-family: 'Fraunces', serif; font-size: 22px; color: var(--or); margin-bottom: 18px; position: relative; z-index: 1; }
+  .revend ul { list-style: none; padding: 0; position: relative; z-index: 1; display: grid; gap: 12px; }
+  .revend ul li { font-size: 14.5px; line-height: 1.55; padding-left: 34px; position: relative; color: white; }
+  .revend ul li .rv-check { position: absolute; left: 0; top: 1px; width: 22px; height: 22px; background: rgba(255,255,255,0.18); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
+  .revend ul li b { color: var(--or); }
+
+  /* CONCLUSION */
+  .conclusion {
+    background: linear-gradient(135deg, #c0303a 0%, #7a0e1c 100%);
+    border-radius: 20px; padding: 34px 38px; margin-bottom: 32px; color: white; text-align: center; position: relative; overflow: hidden;
+  }
+  .conclusion .cc-kicker { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--or); font-weight: 700; margin-bottom: 12px; }
+  .conclusion h3 { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 900; line-height: 1.15; margin-bottom: 16px; }
+  .conclusion h3 em { color: var(--or); font-style: italic; }
+  .conclusion .cc-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 18px; }
+  .conclusion .cc-tag { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); border-radius: 30px; padding: 8px 18px; font-size: 13px; font-weight: 500; }
+  .conclusion .cc-sign { margin-top: 22px; font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--or); }
+
+  /* FOOTER */
+  .footer { text-align: center; font-size: 12px; color: var(--gris); padding-top: 24px; border-top: 1px solid #ddd; }
+  .footer a { color: var(--bleu); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  .footer-insta { margin: 14px 0 10px; font-size: 12.5px; }
+  .footer-logo img { height: 70px; object-fit: contain; opacity: 0.9; }
+
+  @media (max-width: 600px) {
+    .cards { grid-template-columns: 1fr; }
+    .sim-fields { grid-template-columns: 1fr; }
+    .sim-results { grid-template-columns: 1fr; }
+    .risk-grid { grid-template-columns: 1fr 1fr; }
+    .header h1 { font-size: 30px; }
+    .header { padding: 32px 24px; }
+    .page { padding: 24px 16px 48px; }
+    .conclusion h3 { font-size: 23px; }
+  }
+
+  /* ═══ ROTATE BANNER ═══ */
+  .rotate-banner {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(135deg, #019cda, #028bc2);
+    color: white; text-align: center; padding: 10px 16px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    z-index: 9998; gap: 10px; align-items: center; justify-content: center;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.15);
+  }
+  .rotate-banner .rb-icon { font-size: 20px; animation: rb-spin 2s ease-in-out infinite; display: inline-block; }
+  @keyframes rb-spin { 0%{transform:rotate(0deg)} 40%{transform:rotate(90deg)} 60%{transform:rotate(90deg)} 100%{transform:rotate(0deg)} }
+  .rotate-banner .rb-close {
+    background: rgba(255,255,255,0.2); border: none; color: white; font-size: 14px;
+    padding: 4px 10px; border-radius: 20px; cursor: pointer; margin-left: 8px; font-family: 'DM Sans', sans-serif;
+  }
+  .rotate-banner .rb-close:hover { background: rgba(255,255,255,0.35); }
+  @media (max-width: 768px) and (orientation: portrait) { .rotate-banner { display: flex; } body { padding-bottom: 52px; } }
+  @media (max-width: 900px) and (orientation: landscape) {
+    .rotate-banner { display: none !important; } body { padding-bottom: 0; }
+    .page { padding: 16px 24px 32px; max-width: 100%; }
+    .header { padding: 20px 28px 16px; border-radius: 12px; margin-bottom: 20px; }
+    .header h1 { font-size: 26px; }
+    .risk-grid { grid-template-columns: repeat(5, 1fr); }
+    .a11y-toggle-bar { margin: -12px 0 20px; }
+  }
+
+  /* ═══ SKIP LINK ═══ */
+  .skip-link { position: absolute; top: -100px; left: 16px; background: #ffbf00; color: #2C2C29; font-weight: 700; padding: 10px 20px; border-radius: 8px; z-index: 9999; text-decoration: none; transition: top 0.2s; }
+  .skip-link:focus { top: 16px; }
+
+  /* ═══ A11Y TOGGLE BUTTON ═══ */
+  .a11y-toggle-bar { display: flex; justify-content: center; margin: -20px 0 28px; position: relative; z-index: 10; }
+  .a11y-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white; border: 2px solid #ddd; border-radius: 40px;
+    padding: 8px 20px; font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 500;
+    color: #6E6D69; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .a11y-btn:hover { border-color: #019cda; color: #019cda; box-shadow: 0 4px 14px rgba(1,156,218,0.15); }
+  .a11y-btn:focus { outline: 4px solid #019cda; outline-offset: 3px; }
+  .a11y-btn .a11y-icon { font-size: 16px; }
+  .a11y-btn .a11y-label-on  { display: none; }
+  .a11y-btn .a11y-label-off { display: inline; }
+  body.a11y-mode .a11y-btn { background: #525250; border-color: #525250; color: white; font-weight: 700; }
+  body.a11y-mode .a11y-btn .a11y-label-on  { display: inline; }
+  body.a11y-mode .a11y-btn .a11y-label-off { display: none; }
+
+  /* ═══ SVG A11Y ICONS ═══ */
+  .a11y-ico { display: none; width: 1.1em; height: 1.1em; vertical-align: -0.18em; flex-shrink: 0; color: currentColor; }
+  body.a11y-mode .a11y-ico { display: inline; }
+  body.a11y-mode .a11y-emoji { font-size: 0 !important; line-height: 0 !important; width: 0 !important; display: inline-block; }
+  body.a11y-mode .card-icon .a11y-ico, body.a11y-mode .rk-ico .a11y-ico, body.a11y-mode .icon .a11y-ico, body.a11y-mode .cr-ico .a11y-ico { width: 1.4em !important; height: 1.4em !important; }
+  body.a11y-mode .btn-icon .a11y-ico, body.a11y-mode .a11y-icon .a11y-ico { width: 1em; height: 1em; }
+
+  /* ═══ MODE LECTURE UNIVERSELLE ═══ */
+  body.a11y-mode {
+    --a11y-bg: #FAFAF7; --a11y-surface: #FFFFFF; --a11y-surface2: #F4F3EF;
+    --a11y-border: #E2E0DA; --a11y-border2: #CCCAC4; --a11y-txt1: #2C2C29;
+    --a11y-txt2: #4A4A46; --a11y-txt3: #6E6D69; --a11y-txt4: #6F6E68;
+    --a11y-dark: #525250; --a11y-dark-txt: #F8F7F4; --a11y-txt4-dark: #C8C6C0;
+  }
+  body.a11y-mode { font-family: 'Atkinson Hyperlegible', sans-serif !important; font-size: 17px; line-height: 1.9; letter-spacing: 0.025em; word-spacing: 0.1em; background: #FFFFFF; color: #2C2C29; }
+  body.a11y-mode p, body.a11y-mode li, body.a11y-mode td, body.a11y-mode .card p, body.a11y-mode .tl-desc, body.a11y-mode .intro, body.a11y-mode .cr-txt, body.a11y-mode .rk-txt { font-family: 'Atkinson Hyperlegible', sans-serif !important; font-size: 15px; line-height: 1.9; letter-spacing: 0.025em; }
+  body.a11y-mode .header { background: #525250; border: 3px solid #2C2C29; border-radius: 16px; }
+  body.a11y-mode .header::after { display: none; }
+  body.a11y-mode .header h1 { color: #FFFFFF !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; font-size: 34px; letter-spacing: 0.02em; }
+  body.a11y-mode .header h1 em { color: #FFFFFF !important; text-decoration: underline; font-style: normal; }
+  body.a11y-mode .header .subtitle { color: #C8C6C0 !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .badge { background: #FFFFFF; color: #2C2C29; border: 2px solid #2C2C29; font-weight: 700; letter-spacing: 1.5px; }
+  body.a11y-mode .header .update { background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.5); color: #FFFFFF; }
+  body.a11y-mode .dot { background: #FFFFFF !important; width: 9px !important; height: 9px !important; border: 1px solid rgba(255,255,255,0.6) !important; }
+  body.a11y-mode .page { background: #FFFFFF; }
+  body.a11y-mode .intro { background: #FAFAF7; border-left: 6px solid #2C2C29; color: #2C2C29; }
+  body.a11y-mode .intro strong { color: #2C2C29; text-decoration: underline; }
+  body.a11y-mode .section-title, body.a11y-mode .section-title.rouge { font-size: 22px !important; color: #2C2C29 !important; gap: 12px !important; }
+  body.a11y-mode .section-title .icon { background: #E2E0DA !important; border: 2px solid #2C2C29 !important; border-radius: 6px !important; }
+  body.a11y-mode .card { background: #F4F3EF; border: 2px solid #2C2C29; box-shadow: none; }
+  body.a11y-mode .card h3 { font-size: 17px; color: #2C2C29 !important; }
+  body.a11y-mode .card p { color: #2C2C29 !important; }
+  body.a11y-mode .card.highlight { background: #525250; border: 2px solid #2C2C29; }
+  body.a11y-mode .card.highlight h3 { color: #FFFFFF !important; }
+  body.a11y-mode .card.highlight p  { color: #C8C6C0 !important; }
+  body.a11y-mode .card.rouge-top { border-top: 4px dashed #2C2C29 !important; }
+
+  body.a11y-mode .compare { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; }
+  body.a11y-mode .compare-switch { background: var(--a11y-surface2) !important; border: 1.5px solid var(--a11y-border2) !important; }
+  body.a11y-mode .compare-switch button { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .compare-switch button.is-active.avant { background: #2C2C29 !important; color: #FFFFFF !important; box-shadow: none !important; }
+  body.a11y-mode .compare-switch button.is-active.apres { background: #2C2C29 !important; color: #FFFFFF !important; box-shadow: none !important; }
+  body.a11y-mode .compare-row { background: var(--a11y-surface2) !important; border-left: 4px solid var(--a11y-txt2) !important; }
+  body.a11y-mode .compare[data-view="apres"] .compare-row { background: var(--a11y-surface2) !important; border-left: 4px dashed #2C2C29 !important; }
+  body.a11y-mode .compare-row .cr-txt, body.a11y-mode .compare-row .cr-txt b { color: #2C2C29 !important; }
+  body.a11y-mode .compare-caption { color: var(--a11y-txt3) !important; }
+
+  body.a11y-mode .simulator { background: var(--a11y-dark) !important; border: 2px solid var(--a11y-border2) !important; }
+  body.a11y-mode .simulator::after { display: none !important; }
+  body.a11y-mode .simulator h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .simulator .sim-sub, body.a11y-mode .sim-field label, body.a11y-mode .sim-disclaimer { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .sim-field input[type="number"] { background: rgba(255,255,255,0.1) !important; border: 1.5px solid var(--a11y-dark-txt) !important; color: #FFFFFF !important; }
+  body.a11y-mode .sim-res { background: rgba(255,255,255,0.08) !important; border: 1px solid rgba(255,255,255,0.25) !important; }
+  body.a11y-mode .sim-res .sr-val { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .sim-res.punch { background: #2C2C29 !important; border: 2px solid var(--a11y-dark-txt) !important; }
+  body.a11y-mode .sim-res.punch .sr-val { color: #FFFFFF !important; }
+
+  body.a11y-mode .risk-card { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; border-bottom: 4px dashed #2C2C29 !important; box-shadow: none !important; }
+  body.a11y-mode .risk-card .rk-txt { color: #2C2C29 !important; }
+
+  body.a11y-mode .calendar-section { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; }
+  body.a11y-mode .timeline::before { background: var(--a11y-border2) !important; border-radius: 0 !important; width: 2px !important; }
+  body.a11y-mode .tl-item::before { background: var(--a11y-surface) !important; border: 2.5px solid var(--a11y-txt2) !important; box-shadow: none !important; }
+  body.a11y-mode .tl-item.alerte::before { background: var(--a11y-txt1) !important; border: 2.5px solid var(--a11y-txt1) !important; box-shadow: 0 0 0 3px var(--a11y-surface), 0 0 0 5px var(--a11y-txt2) !important; }
+  body.a11y-mode .tl-title, body.a11y-mode .tl-item.alerte .tl-title { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .tl-date, body.a11y-mode .tl-item.alerte .tl-date { color: var(--a11y-txt3) !important; font-weight: 700 !important; }
+
+  body.a11y-mode .revend { background: var(--a11y-dark) !important; border: 2px solid var(--a11y-border2) !important; }
+  body.a11y-mode .revend::after { display: none !important; }
+  body.a11y-mode .revend h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .revend ul li { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .revend ul li b { color: #FFFFFF !important; text-decoration: underline; }
+  body.a11y-mode .revend ul li .rv-check { background: rgba(255,255,255,0.2) !important; }
+
+  body.a11y-mode .conclusion { background: #2C2C29 !important; border: 2px solid var(--a11y-border2) !important; }
+  body.a11y-mode .conclusion .cc-kicker, body.a11y-mode .conclusion h3 em, body.a11y-mode .conclusion .cc-sign { color: #FFFFFF !important; text-decoration: underline; }
+  body.a11y-mode .conclusion .cc-tag { background: rgba(255,255,255,0.12) !important; border: 1px solid var(--a11y-dark-txt) !important; }
+
+  body.a11y-mode .footer { color: var(--a11y-txt3) !important; border-top-color: var(--a11y-border) !important; }
+  body.a11y-mode .footer a { color: var(--a11y-txt2) !important; text-decoration: underline; }
+
+  /* ═══ OVERRIDE FINAL ALERTES MODE UNIVERSEL ═══ */
+  body.a11y-mode div.alert {
+    background-color: #FFFFFF !important; border: 3px solid #2C2C29 !important;
+    border-left: 8px solid #2C2C29 !important; border-radius: 12px !important;
+  }
+  body.a11y-mode div.alert > p { color: #2C2C29 !important; font-size: 15px !important; }
+  body.a11y-mode div.alert > p strong { color: #2C2C29 !important; }
+  body.a11y-mode div.alert.green { background-color: #F4F3EF !important; border: 3px dashed #2C2C29 !important; border-left: 8px dashed #2C2C29 !important; }
+  body.a11y-mode div.alert.green > p { color: #2C2C29 !important; }
+  body.a11y-mode div.alert.green > p strong { color: #2C2C29 !important; }
+  body.a11y-mode div.alert.blue { background-color: #FFFFFF !important; border: 3px dotted #2C2C29 !important; border-left: 8px solid #2C2C29 !important; }
+  body.a11y-mode div.alert.blue > p { color: #2C2C29 !important; }
+  body.a11y-mode div.alert.blue > p strong { color: #2C2C29 !important; }
+
+</style>
+</head>
+<body>
+
+<a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+
+<!-- Bandeau rotation mobile -->
+<div class="rotate-banner" id="rotateBanner" role="alert" aria-live="polite">
+  <span class="rb-icon" aria-hidden="true">📱</span>
+  Pour une meilleure lecture, tournez votre écran en mode paysage.
+  <button class="rb-close" onclick="dismissRotate()" aria-label="Fermer ce message">✕</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; position:relative; z-index:1;">
+      <div class="badge" aria-label="Communication nationale">
+        <span aria-hidden="true">
+          <span class="a11y-emoji">📣</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+        </span>
+        Communication Nationale
+      </div>
+      <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png"
+           alt="Logo FO Énergie GRDF"
+           style="height:clamp(44px, 8vw, 88px); width:auto; object-fit:contain; display:block; flex-shrink:0; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.25));">
+    </div>
+    <h1>Astreinte : <em>NON</em> à une disponibilité permanente</h1>
+    <p class="subtitle">Derrière les mots « clarification » et « harmonisation », la proposition d'accord organise une extension des contraintes, une atteinte à la vie personnelle et une dégradation des temps de repos.</p>
+    <div class="update">
+      <span class="dot" aria-hidden="true"></span>
+      Analyse FO de la proposition d'accord · Juin 2026
+    </div>
+  </header>
+
+  <!-- BOUTON MODE LECTURE -->
+  <div class="a11y-toggle-bar">
+    <button class="a11y-btn" id="a11yToggle" onclick="toggleA11y()" aria-pressed="false" aria-label="Activer le mode lecture universelle">
+      <span class="a11y-icon" aria-hidden="true">
+        <span class="a11y-emoji">👁</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      </span>
+      <span class="a11y-label-off">Mode lecture universelle</span>
+      <span class="a11y-label-on">Désactiver le mode lecture</span>
+    </button>
+  </div>
+
+  <main id="contenu-principal">
+
+    <!-- INTRO -->
+    <div class="intro" role="note">
+      FO GRDF le dit clairement : <strong>cet accord n'apporte pas de progrès social réel pour les salariés.</strong> En combinant astreinte (nuits, week-ends), mission Sécurité Gaz de jour et mobilisations de dernière minute, il aboutit à une <strong>disponibilité quasi continue</strong> — et fait reposer les aléas de l'organisation sur celles et ceux qui tiennent le réseau.
+    </div>
+
+    <!-- SECTION 1 : Un accord qui dégrade -->
+    <div class="section-title rouge">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">🔴</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </span>
+      Un accord qui dégrade nos conditions de travail
+    </div>
+
+    <div class="cards">
+      <div class="card rouge-top">
+        <span class="card-icon" aria-hidden="true">
+          <span class="a11y-emoji">⏱️</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg>
+        </span>
+        <h3>Extension des contraintes</h3>
+        <p>L'astreinte (nuits et week-ends) se cumule avec une mission Sécurité Gaz de jour. Le périmètre de disponibilité s'étend bien au-delà des heures de travail.</p>
+      </div>
+      <div class="card rouge-top">
+        <span class="card-icon" aria-hidden="true">
+          <span class="a11y-emoji">🏠</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-7h6v7"/></svg>
+        </span>
+        <h3>Atteinte à la vie personnelle</h3>
+        <p>La frontière entre travail et vie privée disparaît : mobilisation possible le matin même, pause méridienne sous contrainte, journée interruptible à tout moment.</p>
+      </div>
+      <div class="card rouge-top">
+        <span class="card-icon" aria-hidden="true">
+          <span class="a11y-emoji">🛌</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17v-5a2 2 0 0 1 2-2h12a4 4 0 0 1 4 4v3"/><path d="M2 17h20"/><path d="M2 13V7"/><circle cx="7" cy="10" r="1.5"/></svg>
+        </span>
+        <h3>Dégradation des temps de repos</h3>
+        <p>Vigilance permanente, sommeil perturbé, imprévisibilité des journées : le repos réel — celui qui protège la santé — n'est plus garanti.</p>
+      </div>
+      <div class="card highlight">
+        <span class="card-icon" aria-hidden="true">
+          <span class="a11y-emoji">⚖️</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 9l9-6 9 6M5 12l7 4.5L19 12M3 18h18"/></svg>
+        </span>
+        <h3>Une logique inacceptable</h3>
+        <p>Plus de contraintes, plus de flexibilité imposée, sans garanties suffisantes : les aléas de l'organisation sont transférés sur les salariés.</p>
+      </div>
+    </div>
+
+    <!-- COMPARATIF AVANT / APRÈS -->
+    <div class="section-title">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">🔄</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      </span>
+      Avant / Après : ce que change vraiment l'accord
+    </div>
+
+    <div class="compare" id="compare" data-view="apres">
+      <div class="compare-switch" role="tablist" aria-label="Comparer avant et après l'accord">
+        <button class="avant" role="tab" aria-selected="false" onclick="setCompare('avant')">Aujourd'hui</button>
+        <button class="apres is-active" role="tab" aria-selected="true" onclick="setCompare('apres')">Avec l'accord</button>
+      </div>
+      <div class="compare-rows">
+        <div class="compare-row">
+          <span class="cr-ico" aria-hidden="true"><span class="a11y-emoji">🗓️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+          <span class="cr-txt">
+            <span class="view-avant"><b>Planning :</b> une organisation théorique, avec des repères pour s'organiser à l'avance.</span>
+            <span class="view-apres"><b>Planning :</b> ajustements permanents, sollicitations et remplacements de <b>dernière minute</b> — impossible de s'organiser sereinement.</span>
+          </span>
+        </div>
+        <div class="compare-row">
+          <span class="cr-ico" aria-hidden="true"><span class="a11y-emoji">⏰</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+          <span class="cr-txt">
+            <span class="view-avant"><b>Disponibilité :</b> des périodes d'astreinte délimitées, distinctes du travail de jour.</span>
+            <span class="view-apres"><b>Disponibilité :</b> astreinte <b>+</b> mission Sécurité Gaz de jour <b>+</b> mobilisations imprévues = disponibilité <b>quasi continue</b>.</span>
+          </span>
+        </div>
+        <div class="compare-row">
+          <span class="cr-ico" aria-hidden="true"><span class="a11y-emoji">🍽️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v8a3 3 0 0 0 6 0V3M7 3v18M17 3c-1.5 0-3 1.5-3 5s1.5 5 3 5v8"/></svg></span>
+          <span class="cr-txt">
+            <span class="view-avant"><b>Pause méridienne :</b> un vrai temps de coupure dans la journée.</span>
+            <span class="view-apres"><b>Pause méridienne :</b> <b>sous contrainte</b>, interruptible à tout moment par une intervention.</span>
+          </span>
+        </div>
+        <div class="compare-row">
+          <span class="cr-ico" aria-hidden="true"><span class="a11y-emoji">📍</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.4-7-11a7 7 0 0 1 14 0c0 4.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span class="cr-txt">
+            <span class="view-avant"><b>Lieu de vie :</b> contrainte de résidence (ZHA) déjà présente, mais cadrée.</span>
+            <span class="view-apres"><b>Lieu de vie :</b> la ZHA renforce l'obligation de résidence et <b>limite les choix de vie</b> et la liberté du salarié.</span>
+          </span>
+        </div>
+        <div class="compare-row">
+          <span class="cr-ico" aria-hidden="true"><span class="a11y-emoji">🧠</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3a3 3 0 0 0-3 3 3 3 0 0 0-1 5.8A3 3 0 0 0 9 18a2.5 2.5 0 0 0 3-2.5V5.5A2.5 2.5 0 0 0 9 3z"/><path d="M15 3a3 3 0 0 1 3 3 3 3 0 0 1 1 5.8A3 3 0 0 1 15 18a2.5 2.5 0 0 1-3-2.5"/></svg></span>
+          <span class="cr-txt">
+            <span class="view-avant"><b>Charge mentale :</b> présente, mais sur des plages identifiées et compensables.</span>
+            <span class="view-apres"><b>Charge mentale :</b> vigilance permanente + stress des interventions sécurité gaz = <b>risque d'épuisement</b> non compensé par la rémunération.</span>
+          </span>
+        </div>
+      </div>
+      <p class="compare-caption">Cliquez sur « Aujourd'hui » et « Avec l'accord » pour comparer.</p>
+    </div>
+
+    <!-- SIMULATEUR -->
+    <div class="section-title">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">🧮</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10"/><line x1="12" y1="10" x2="12" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+      </span>
+      Le vrai prix de votre disponibilité
+    </div>
+
+    <div class="simulator">
+      <h3>Combien « vaut » votre disponibilité ?</h3>
+      <p class="sim-sub">Renseignez votre situation : le simulateur estime votre prime annuelle d'astreinte et la met en regard des heures de disponibilité que cela vous impose réellement. Ajustez les valeurs selon votre fiche de paie.</p>
+
+      <div class="sim-fields">
+        <div class="sim-field">
+          <label for="simWeeks">Semaines d'astreinte par an</label>
+          <input type="number" id="simWeeks" min="0" max="52" value="12" oninput="runSim()">
+          <span class="sim-hint">valeur indicative</span>
+        </div>
+        <div class="sim-field">
+          <label for="simPrime">Indemnité d'astreinte par semaine (€)</label>
+          <input type="number" id="simPrime" min="0" step="5" value="150" oninput="runSim()">
+          <span class="sim-hint">à ajuster — voir bulletin de paie</span>
+        </div>
+        <div class="sim-field">
+          <label for="simSorties">Interventions / sorties par mois</label>
+          <input type="number" id="simSorties" min="0" step="1" value="4" oninput="runSim()">
+          <span class="sim-hint">moyenne estimée</span>
+        </div>
+      </div>
+
+      <div class="sim-results">
+        <div class="sim-res">
+          <div class="sr-label">Prime annuelle estimée</div>
+          <div class="sr-val" id="resPrime">1 800 <span class="sr-unit">€ / an</span></div>
+        </div>
+        <div class="sim-res">
+          <div class="sr-label">Heures de disponibilité contrainte</div>
+          <div class="sr-val" id="resHeures">1 536 <span class="sr-unit">h / an</span></div>
+        </div>
+        <div class="sim-res punch">
+          <div class="sr-label">Votre disponibilité est « rémunérée »</div>
+          <div class="sr-val" id="resRatio">1,17 <span class="sr-unit">€ / heure</span></div>
+          <div class="sr-msg" id="resMsg">Soit le prix de votre vie personnelle hors heures travaillées. La rémunération ne compense pas les risques pour la santé.</div>
+        </div>
+      </div>
+
+      <p class="sim-disclaimer">Estimation indicative à but pédagogique. Les heures de disponibilité comptabilisent le temps de sujétion hors heures de travail effectif (environ 128 h par semaine d'astreinte). Ce simulateur n'a pas de valeur contractuelle : seuls votre bulletin de paie et les textes en vigueur font foi.</p>
+    </div>
+
+    <!-- SECTION : Risques santé mentale -->
+    <div class="section-title rouge">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">🧠</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3a3 3 0 0 0-3 3 3 3 0 0 0-1 5.8A3 3 0 0 0 9 18a2.5 2.5 0 0 0 3-2.5V5.5A2.5 2.5 0 0 0 9 3z"/><path d="M15 3a3 3 0 0 1 3 3 3 3 0 0 1 1 5.8A3 3 0 0 1 15 18a2.5 2.5 0 0 1-3-2.5"/></svg>
+      </span>
+      Des risques graves pour la santé mentale
+    </div>
+
+    <div class="risk-grid">
+      <div class="risk-card">
+        <span class="rk-ico" aria-hidden="true"><span class="a11y-emoji">🔔</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9z"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
+        <span class="rk-txt">Vigilance permanente</span>
+      </div>
+      <div class="risk-card">
+        <span class="rk-ico" aria-hidden="true"><span class="a11y-emoji">🛌</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17v-5a2 2 0 0 1 2-2h12a4 4 0 0 1 4 4v3"/><path d="M2 17h20"/><circle cx="7" cy="10" r="1.5"/></svg></span>
+        <span class="rk-txt">Sommeil perturbé</span>
+      </div>
+      <div class="risk-card">
+        <span class="rk-ico" aria-hidden="true"><span class="a11y-emoji">⏱️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg></span>
+        <span class="rk-txt">Imprévisibilité des journées</span>
+      </div>
+      <div class="risk-card">
+        <span class="rk-ico" aria-hidden="true"><span class="a11y-emoji">🏠</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg></span>
+        <span class="rk-txt">Contraintes de résidence (ZHA)</span>
+      </div>
+      <div class="risk-card">
+        <span class="rk-ico" aria-hidden="true"><span class="a11y-emoji">🔥</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s4 4 4 8a4 4 0 0 1-8 0c0-1 .5-2 1-3 .5 2 2 2 2 2s-1-3 1-7z"/></svg></span>
+        <span class="rk-txt">Stress interventions sécurité gaz</span>
+      </div>
+    </div>
+
+    <div class="alert">
+      <div class="alert-icon" aria-hidden="true">
+        <span class="a11y-emoji">⚠️</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <p>Ce cumul de facteurs conduit à de la <strong>fatigue mentale, du stress chronique et un risque d'épuisement professionnel</strong>. FO GRDF alerte : la rémunération ne compense pas ces risques. La santé des salariés n'est pas une variable d'ajustement.</p>
+    </div>
+
+    <!-- TIMELINE : semaine type -->
+    <div class="section-title">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">🗓️</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      </span>
+      Une semaine type sous astreinte
+    </div>
+
+    <div class="calendar-section">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">Lundi → Vendredi · Jour</div>
+          <div class="tl-title">Mission Sécurité Gaz</div>
+          <div class="tl-desc">Travail de jour interruptible : une intervention peut tomber à tout moment, y compris pendant la pause méridienne.</div>
+        </div>
+        <div class="tl-item alerte">
+          <div class="tl-date">Chaque nuit</div>
+          <div class="tl-title">Astreinte — vigilance permanente</div>
+          <div class="tl-desc">Téléphone allumé, sommeil sur le qui-vive, résidence imposée (ZHA). Le repos n'est jamais totalement déconnecté.</div>
+        </div>
+        <div class="tl-item alerte">
+          <div class="tl-date">Au dernier moment</div>
+          <div class="tl-title">Mobilisation imprévue</div>
+          <div class="tl-desc">Sollicitation le matin même, remplacement non anticipé : les projets personnels sautent sans préavis.</div>
+        </div>
+        <div class="tl-item alerte">
+          <div class="tl-date">Samedi · Dimanche</div>
+          <div class="tl-title">Week-end sous contrainte</div>
+          <div class="tl-desc">Disponibilité maintenue : la vie de famille et les activités personnelles passent après l'organisation.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Bilan</div>
+          <div class="tl-title">Une disponibilité quasi continue</div>
+          <div class="tl-desc">Jour + nuit + week-end : la frontière entre travail et vie personnelle a disparu.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVENDICATIONS FO -->
+    <div class="section-title">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">✊</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11V7a2 2 0 0 1 4 0M10 11V6a2 2 0 0 1 4 0v5M14 11V7a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7 7 7 0 0 1-7-7v-1a2 2 0 0 1 4 0"/></svg>
+      </span>
+      Ce que FO revendique
+    </div>
+
+    <div class="revend">
+      <h3>Nos exigences pour un vrai accord</h3>
+      <ul>
+        <li><span class="rv-check" aria-hidden="true">✓</span>De <b>vraies garanties sur les plannings</b> : fin des mobilisations de dernière minute.</li>
+        <li><span class="rv-check" aria-hidden="true">✓</span>Une <b>limitation du cumul</b> astreinte + mission de jour.</li>
+        <li><span class="rv-check" aria-hidden="true">✓</span>Une <b>protection réelle du temps de repos</b>.</li>
+        <li><span class="rv-check" aria-hidden="true">✓</span>Une <b>révision des contraintes ZHA</b> et de l'obligation de résidence.</li>
+        <li><span class="rv-check" aria-hidden="true">✓</span>Une <b>reconnaissance des risques psychosociaux</b> liés à l'astreinte.</li>
+      </ul>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion">
+      <div class="cc-kicker">Position FO GRDF</div>
+      <h3>FO dit <em>NON</em> à cet accord en l'état</h3>
+      <div class="cc-tags">
+        <span class="cc-tag">Il organise la surcharge</span>
+        <span class="cc-tag">Il banalise la contrainte</span>
+        <span class="cc-tag">Il fragilise les salariés</span>
+      </div>
+      <div class="cc-sign">✊ Ensemble, faisons entendre notre voix — Défendre les salariés, pas les contraintes !</div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-logo" style="margin-bottom:14px;">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO Énergie GRDF">
+      </div>
+      <div class="footer-insta">
+        Suivez-nous sur Instagram :
+        <a href="https://www.instagram.com/FO_GRDF" target="_blank" rel="noopener">@FO_GRDF</a>
+      </div>
+      Communication nationale FO Énergie · Analyse de la proposition d'accord astreinte — Juin 2026 · Ce document a une finalité informative et syndicale et ne constitue pas un avis juridique.
+    </footer>
+
+  </main>
+</div><!-- fin .page -->
+
+<script>
+  /* ── Rotation mobile ── */
+  function dismissRotate() {
+    const b = document.getElementById('rotateBanner');
+    if (b) b.style.display = 'none';
+    try { sessionStorage.setItem('fo-rotate-dismissed', '1'); } catch(e) {}
+  }
+  try {
+    if (sessionStorage.getItem('fo-rotate-dismissed') === '1') {
+      const b = document.getElementById('rotateBanner');
+      if (b) b.style.display = 'none';
+    }
+  } catch(e) {}
+
+  /* ── Mode lecture universelle ── */
+  function toggleA11y() {
+    const body = document.body;
+    const btn  = document.getElementById('a11yToggle');
+    const on   = body.classList.toggle('a11y-mode');
+    if (btn) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    try { localStorage.setItem('fo-a11y', on ? '1' : '0'); } catch(e) {}
+  }
+  try {
+    if (localStorage.getItem('fo-a11y') === '1') {
+      document.body.classList.add('a11y-mode');
+      const btn = document.getElementById('a11yToggle');
+      if (btn) btn.setAttribute('aria-pressed', 'true');
+    }
+  } catch(e) {}
+
+  /* ── Comparatif Avant / Après ── */
+  function setCompare(view) {
+    const box = document.getElementById('compare');
+    if (!box) return;
+    box.setAttribute('data-view', view);
+    box.querySelectorAll('.compare-switch button').forEach(function(b){
+      const active = b.classList.contains(view);
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  }
+
+  /* ── Simulateur ── */
+  function frFmt(n) {
+    return n.toLocaleString('fr-FR', { maximumFractionDigits: 0 });
+  }
+  function runSim() {
+    const weeks = Math.max(0, parseFloat(document.getElementById('simWeeks').value) || 0);
+    const prime = Math.max(0, parseFloat(document.getElementById('simPrime').value) || 0);
+    const HOURS_PER_WEEK = 128; // disponibilité hors heures de travail effectif
+    const primeAn = weeks * prime;
+    const heures = weeks * HOURS_PER_WEEK;
+    const ratio = heures > 0 ? primeAn / heures : 0;
+
+    document.getElementById('resPrime').innerHTML = frFmt(primeAn) + ' <span class="sr-unit">€ / an</span>';
+    document.getElementById('resHeures').innerHTML = frFmt(heures) + ' <span class="sr-unit">h / an</span>';
+    document.getElementById('resRatio').innerHTML =
+      ratio.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' <span class="sr-unit">€ / heure</span>';
+
+    let msg;
+    if (heures === 0) {
+      msg = "Renseignez vos semaines d'astreinte pour voir le résultat.";
+    } else if (ratio < 2) {
+      msg = "Soit le prix dérisoire de votre vie personnelle hors heures travaillées. La rémunération ne compense pas les risques pour la santé.";
+    } else if (ratio < 5) {
+      msg = "Une compensation modeste au regard de la disponibilité imposée et des risques psychosociaux encourus.";
+    } else {
+      msg = "Même à ce niveau, aucun montant ne rachète durablement le repos, le sommeil et la vie de famille.";
+    }
+    document.getElementById('resMsg').textContent = msg;
+  }
+  runSim();
+</script>
+
+</body>
+</html>
