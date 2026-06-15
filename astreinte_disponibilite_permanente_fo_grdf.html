@@ -223,6 +223,23 @@
   .revend-card.wide { grid-column: 1 / -1; }
   @media (max-width: 640px) { .revend-grid { grid-template-columns: 1fr; } }
 
+  /* ═══ PALIERS DE MAJORATION ═══ */
+  .paliers { background: var(--blanc); border-radius: 16px; padding: 24px 26px; margin-bottom: 16px; }
+  .paliers-head { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 18px; font-weight: 700; display: flex; align-items: center; gap: 9px; }
+  .paliers-head svg { width: 20px; height: 20px; }
+  .paliers-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: end; }
+  .palier { background: linear-gradient(180deg, #e6f5fb, #fff); border: 1.5px solid #cfeaf6; border-radius: 12px; padding: 16px 10px; text-align: center; min-height: 100px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .palier.p2 { min-height: 124px; background: linear-gradient(180deg, #fff4e0, #fff); border-color: #f1d9a8; }
+  .palier.p3 { min-height: 148px; background: linear-gradient(180deg, #fde8ea, #fff); border-color: #f6c4c8; }
+  .palier .p-step { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 900; color: var(--bleu); line-height: 1; }
+  .palier.p2 .p-step { color: #e08a00; } .palier.p3 .p-step { color: var(--rouge); }
+  .palier .p-day { font-size: 13.5px; font-weight: 700; color: var(--texte); margin-top: 8px; }
+  .palier .p-week { font-size: 11.5px; color: var(--gris); margin-top: 2px; }
+  .paliers-note { font-size: 12.8px; color: #4a4a46; margin-top: 16px; line-height: 1.6; padding-left: 22px; position: relative; }
+  .paliers-note::before { content: 'i'; position: absolute; left: 0; top: 1px; width: 15px; height: 15px; background: var(--bleu); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-style: normal; }
+  .paliers-note strong { color: var(--bleu); }
+  @media (max-width: 640px) { .paliers-row { grid-template-columns: 1fr; } .palier, .palier.p2, .palier.p3 { min-height: 0; } }
+
   /* ═══ FOCUS CADRES ═══ */
   .focus-callout { background: linear-gradient(135deg, #16243a 0%, #22344f 100%); border-radius: 18px; padding: 26px 30px; color: #fff; margin-bottom: 16px; position: relative; overflow: hidden; }
   .focus-badge { display: inline-flex; align-items: center; gap: 7px; background: var(--or); color: #16243a; font-weight: 700; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 40px; margin-bottom: 14px; }
@@ -332,6 +349,14 @@
   body.a11y-mode .timeline::before { background: #2C2C29 !important; }
   body.a11y-mode .tl-item::before { background: #FFFFFF !important; border: 2.5px solid #2C2C29 !important; box-shadow: none !important; }
   body.a11y-mode .tl-title, body.a11y-mode .tl-date { color: #2C2C29 !important; }
+  body.a11y-mode .paliers { background: #FFFFFF !important; border: 2px solid #2C2C29 !important; }
+  body.a11y-mode .paliers-head { color: #2C2C29 !important; }
+  body.a11y-mode .palier, body.a11y-mode .palier.p2, body.a11y-mode .palier.p3 { background: #F4F3EF !important; border: 1.5px solid #2C2C29 !important; }
+  body.a11y-mode .palier .p-step, body.a11y-mode .palier.p2 .p-step, body.a11y-mode .palier.p3 .p-step { color: #2C2C29 !important; }
+  body.a11y-mode .palier .p-day, body.a11y-mode .palier .p-week { color: #2C2C29 !important; }
+  body.a11y-mode .paliers-note { color: #2C2C29 !important; }
+  body.a11y-mode .paliers-note::before { background: #2C2C29 !important; }
+  body.a11y-mode .paliers-note strong { color: #2C2C29 !important; text-decoration: underline; }
   body.a11y-mode .focus-callout { background: #525250 !important; border: 2px solid #2C2C29 !important; }
   body.a11y-mode .focus-callout h3 { color: #FFFFFF !important; text-decoration: underline; }
   body.a11y-mode .focus-callout p { color: #F8F7F4 !important; }
@@ -429,8 +454,34 @@
     <div class="facts reveal">
       <div class="fact"><div class="f-num" data-count="1">1</div><div class="f-lab">accord national unique remplaçant les accords régionaux</div></div>
       <div class="fact vert"><div class="f-num" data-count="4.3" data-dec="1">4,3</div><div class="f-lab">fois l'IZHA pour les astreintes IS et Renfort (MIZHA)</div></div>
-      <div class="fact or"><div class="f-num" data-count="150" data-suffix="%">150%</div><div class="f-lab">de majoration d'indemnité au-delà de la 20ᵉ semaine</div></div>
+      <div class="fact or"><div class="f-num" data-count="84" data-suffix="j">84j</div><div class="f-lab">d'astreinte en moyenne par an aujourd'hui (≈ 12 × 7 jours)</div></div>
       <div class="fact navy"><div class="f-num" data-count="30" data-suffix="j">30j</div><div class="f-lab">de prévenance minimale avant toute modification de planning</div></div>
+    </div>
+
+    <!-- PALIERS DE MAJORATION -->
+    <div class="paliers reveal">
+      <div class="paliers-head">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+        Une indemnité d'astreinte qui augmente avec les occurrences
+      </div>
+      <div class="paliers-row" role="img" aria-label="Trois paliers de majoration : +50% au 106e jour (16e semaine), +100% au 120e jour (18e semaine), +150% au 134e jour (20e semaine).">
+        <div class="palier p1">
+          <div class="p-step">+50 %</div>
+          <div class="p-day">dès le 106ᵉ jour</div>
+          <div class="p-week">16ᵉ semaine d'astreinte</div>
+        </div>
+        <div class="palier p2">
+          <div class="p-step">+100 %</div>
+          <div class="p-day">dès le 120ᵉ jour</div>
+          <div class="p-week">18ᵉ semaine d'astreinte</div>
+        </div>
+        <div class="palier p3">
+          <div class="p-step">+150 %</div>
+          <div class="p-day">dès le 134ᵉ jour</div>
+          <div class="p-week">20ᵉ semaine d'astreinte</div>
+        </div>
+      </div>
+      <p class="paliers-note">À titre de repère, une astreinte représente aujourd'hui <strong>en moyenne 12 × 7 jours (≈ 84 jours) par an</strong>. Les paliers de majoration se déclenchent donc au-delà des situations les plus chargées, pour reconnaître un engagement particulièrement soutenu. La majoration est calculée en fin d'année et versée en début d'année suivante.</p>
     </div>
 
     <!-- BALANCE -->
