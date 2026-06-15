@@ -223,6 +223,24 @@
   .revend-card.wide { grid-column: 1 / -1; }
   @media (max-width: 640px) { .revend-grid { grid-template-columns: 1fr; } }
 
+  /* ═══ FOCUS CADRES ═══ */
+  .focus-callout { background: linear-gradient(135deg, #16243a 0%, #22344f 100%); border-radius: 18px; padding: 26px 30px; color: #fff; margin-bottom: 16px; position: relative; overflow: hidden; }
+  .focus-badge { display: inline-flex; align-items: center; gap: 7px; background: var(--or); color: #16243a; font-weight: 700; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 40px; margin-bottom: 14px; }
+  .focus-callout h3 { font-family: 'Fraunces', serif; font-size: 20px; color: #fff; margin-bottom: 10px; }
+  .focus-callout p { font-size: 14.5px; line-height: 1.7; color: rgba(255,255,255,0.88); }
+  .focus-callout strong { color: var(--or); }
+  .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+  .vs-card { background: #fff; border-radius: 14px; padding: 20px 22px; border-top: 4px solid var(--bleu); }
+  .vs-card.b { border-top-color: var(--navy); }
+  .vs-card h5 { font-family: 'Fraunces', serif; font-size: 15px; color: var(--bleu); margin-bottom: 12px; display:flex; align-items:center; gap:8px; }
+  .vs-card.b h5 { color: var(--navy); }
+  .vs-card h5 svg { width: 20px; height: 20px; }
+  .vs-card ul { list-style: none; padding: 0; }
+  .vs-card li { font-size: 13px; color: #4a4a46; line-height: 1.5; padding-left: 18px; position: relative; margin-bottom: 8px; }
+  .vs-card li::before { content: '•'; position: absolute; left: 3px; color: var(--bleu); font-weight: 700; }
+  .vs-card.b li::before { color: var(--navy); }
+  @media (max-width: 640px) { .vs-grid { grid-template-columns: 1fr; } }
+
   /* FOOTER */
   .footer { text-align: center; font-size: 12px; color: var(--gris); padding-top: 26px; border-top: 1px solid #ddd; margin-top: 44px; }
   .footer a { color: var(--bleu); text-decoration: none; }
@@ -314,6 +332,16 @@
   body.a11y-mode .timeline::before { background: #2C2C29 !important; }
   body.a11y-mode .tl-item::before { background: #FFFFFF !important; border: 2.5px solid #2C2C29 !important; box-shadow: none !important; }
   body.a11y-mode .tl-title, body.a11y-mode .tl-date { color: #2C2C29 !important; }
+  body.a11y-mode .focus-callout { background: #525250 !important; border: 2px solid #2C2C29 !important; }
+  body.a11y-mode .focus-callout h3 { color: #FFFFFF !important; text-decoration: underline; }
+  body.a11y-mode .focus-callout p { color: #F8F7F4 !important; }
+  body.a11y-mode .focus-callout strong { color: #FFFFFF !important; }
+  body.a11y-mode .focus-badge { background: #FFFFFF; color: #2C2C29; border: 2px solid #2C2C29; }
+  body.a11y-mode .vs-card { background: #FFFFFF !important; border: 2px solid #2C2C29 !important; border-top: 4px solid #2C2C29 !important; }
+  body.a11y-mode .vs-card.b { border-top: 4px dashed #2C2C29 !important; }
+  body.a11y-mode .vs-card h5 { color: #2C2C29 !important; }
+  body.a11y-mode .vs-card li { color: #2C2C29 !important; }
+  body.a11y-mode .vs-card li::before { color: #2C2C29 !important; }
   body.a11y-mode .revend-card { background: #FFFFFF !important; border: 2px solid #2C2C29 !important; border-top: 4px solid #2C2C29 !important; box-shadow: none !important; }
   body.a11y-mode .revend-card h4 { color: #2C2C29 !important; }
   body.a11y-mode .revend-card li { color: #2C2C29 !important; }
@@ -740,6 +768,100 @@
       <div class="tl-item"><div class="tl-date">Le suivi</div><div class="tl-title">Un comité de suivi annuel</div><div class="tl-desc">Bilan national + bilans régionaux chaque année, et un Questions/Réponses tenu à jour sur l'intranet.</div></div>
     </div>
 
+    <!-- FOCUS CADRES : PERMANENCES DE DIRECTION -->
+    <div class="section-title reveal">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">💼</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </span>
+      Focus cadres : la permanence de Direction
+    </div>
+    <p class="section-intro reveal">Le projet d'accord intègre aussi un chapitre dédié à l'encadrement. Point important à comprendre&nbsp;: une permanence de Direction <strong style="color:var(--bleu)">n'est pas une astreinte</strong>.</p>
+
+    <div class="focus-callout reveal">
+      <div class="focus-badge">★ Réservé à l'encadrement</div>
+      <h3>Une mission de continuité managériale, distincte de l'astreinte</h3>
+      <p>La permanence de Direction consiste, pour un salarié de l'encadrement, à être en mesure — hors heures ouvrables — d'assurer la <strong>continuité de gestion des événements</strong>, la coordination des acteurs et la circulation de l'information. Elle relève de la <strong>PERS 938</strong> et vient en complément des astreintes opérationnelles, sans s'y substituer.</p>
+    </div>
+
+    <div class="vs-grid reveal">
+      <div class="vs-card">
+        <h5><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 9l9-6 9 6M5 12l7 4.5L19 12"/></svg> L'astreinte</h5>
+        <ul>
+          <li>Une <b>sujétion de service</b> : intervenir physiquement dans les plus brefs délais.</li>
+          <li>Obligation de <b>résider dans la ZHA</b> (contrainte d'habitat).</li>
+          <li>Rémunérée par l'indemnité d'astreinte + IZHA / MIZHA.</li>
+        </ul>
+      </div>
+      <div class="vs-card b">
+        <h5><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg> La permanence de Direction</h5>
+        <ul>
+          <li>Une <b>mission de décision et de coordination</b> : être joignable, avec une connexion internet.</li>
+          <li><b>Sans contrainte d'habitat</b> (pas de ZHA imposée).</li>
+          <li>Rémunérée par une <b>indemnité forfaitaire hebdomadaire</b> (PERS 938).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="acc reveal">
+
+      <div class="acc-item plus">
+        <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+          <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">🏢</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></span>
+          <span class="acc-txt">Plusieurs niveaux de permanence</span>
+          <span class="acc-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          <span class="chip">Permanence nationale (équipe dirigeante)</span>
+          <span class="chip">Permanences régionales / territoriales</span>
+          <span class="chip">Permanences métiers (techniques ou transverses)</span>
+          Elles s'inscrivent dans le référentiel interne de gestion des événements significatifs et de crise.
+        </div></div>
+      </div>
+
+      <div class="acc-item plus">
+        <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+          <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">⚖️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 9l9-6 9 6M5 12l7 4.5L19 12M3 18h18"/></svg></span>
+          <span class="acc-txt">Conditions d'exercice et équilibre de vie</span>
+          <span class="acc-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          L'organisation doit préserver l'équilibre vie professionnelle / vie personnelle et le respect des temps de travail et de repos.
+          <span class="chip">Échange périodique avec le manager (entretien annuel)</span>
+          <span class="chip">Appréciation de la charge induite</span>
+          <span class="chip">Formation et maintien des compétences (gestion de crise)</span>
+          <span class="chip">Note M-RH-14-05 en cas d'événement exceptionnel</span>
+        </div></div>
+      </div>
+
+      <div class="acc-item plus">
+        <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+          <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">💶</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5a3.5 3.5 0 0 0-5 .5 4 4 0 0 0 0 4 3.5 3.5 0 0 0 5 .5M7.5 11h5M7.5 13h5"/></svg></span>
+          <span class="acc-txt">Les indemnités prévues</span>
+          <span class="acc-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          <b>Indemnité forfaitaire hebdomadaire</b> (PERS 938), versée pour le temps réellement assuré, revalorisée chaque année sur le SNB des IEG.
+          <span class="chip">+5 % prévus en 2026 si l'accord de branche sur la grille IEG est validé</span>
+          <br><br>
+          <b>Indemnité de fin de permanence</b> (DP 20-159) en cas de cessation liée à un changement d'emploi&nbsp;: montant égal aux indemnités perçues sur les 12 derniers mois.
+          <span class="chip">Indemnité doublée si la cessation découle d'une réorganisation (accord du 23 juillet 2010)</span>
+        </div></div>
+      </div>
+
+      <div class="acc-item plus">
+        <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+          <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">🤝</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13l3 3 5-6"/><path d="M5 21V8l7-5 7 5v13"/></svg></span>
+          <span class="acc-txt">Dialogue social</span>
+          <span class="acc-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          Toute évolution des modalités d'organisation des permanences de Direction fait l'objet d'une <b>information-consultation des instances représentatives compétentes</b>.
+        </div></div>
+      </div>
+
+    </div>
+
     <!-- GLOSSAIRE -->
     <div class="section-title reveal">
       <span class="icon" aria-hidden="true">
@@ -758,6 +880,7 @@
       <div class="gl"><dt>CE / ACE</dt><dd>Chef d'Exploitation et son Assistant — pilotage de la conduite du réseau.</dd></div>
       <div class="gl"><dt>BEX</dt><dd>Bureau d'Exploitation — pilote la stratégie d'intervention sur un territoire.</dd></div>
       <div class="gl"><dt>GF / NR</dt><dd>Groupe Fonctionnel et Niveau de Rémunération — les repères de classement et de salaire.</dd></div>
+      <div class="gl"><dt>Permanence de Direction</dt><dd>Mission de continuité managériale (PERS 938) hors heures ouvrables — distincte de l'astreinte, sans contrainte d'habitat.</dd></div>
     </dl>
 
     <!-- FOOTER -->
