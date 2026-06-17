@@ -486,7 +486,7 @@
   .baro-result.show { display: block; animation: baroIn .3s ease; }
   @keyframes baroIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
   .baro-result-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 8px; }
-  .baro-result-score { font-family: 'Fraunces', serif; font-size: 23px; font-weight: 900; }
+  .baro-result-score { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 900; font-variant-numeric: tabular-nums; }
   .baro-result-level { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; color: #fff; background: var(--gris); }
   .baro-result p { font-size: 14.5px; line-height: 1.65; color: #333; margin: 0; }
   .baro-result.res-faible { border-left-color: #ef333e; } .baro-result.res-faible .baro-result-score { color: #c0303a; } .baro-result.res-faible .baro-result-level { background: #ef333e; }
@@ -2590,7 +2590,7 @@
     </div>
     <div class="baro-result" id="baroResult" role="status" aria-live="polite">
       <div class="baro-result-head">
-        <span class="baro-result-score" id="baroScoreLabel"></span>
+        <span class="baro-result-score"><span id="baroLo">0</span> – <span id="baroHi">0</span>&nbsp;%</span>
         <span class="baro-result-level" id="baroLevelLabel"></span>
       </div>
       <p id="baroMsg"></p>
@@ -2907,28 +2907,45 @@
     }
   } catch(e) {}
 
-  /* ── Baromètre — 3 indicateurs cliquables ── */
+  /* ── Baromètre — 3 indicateurs cliquables + compteur animé ── */
   (function(){
     var data={
-      faible:{level:'Niveau faible',range:'0 – 40 %',cls:'res-faible',msg:"Le sujet est mal connu — ce n'est pas votre faute : c'est souvent le signe d'un manque d'information et de formation. Prenez quelques minutes pour les rubriques ci-dessous."},
-      moyen:{level:'Niveau moyen',range:'41 – 70 %',cls:'res-moyen',msg:"Les bases sont là, mais des idées reçues subsistent (intention, répétition, « c'était pour rire »). Les rubriques ci-dessous lèvent ces doutes."},
-      eleve:{level:'Niveau élevé',range:'71 – 100 %',cls:'res-eleve',msg:"Vous repérez bien les situations à risque et connaissez vos droits. Restez un relais : c'est aussi vous qui pouvez aider à libérer la parole."}
+      faible:{level:'Niveau faible',lo:0,hi:40,cls:'res-faible',msg:"Le sujet est mal connu — ce n'est pas votre faute : c'est souvent le signe d'un manque d'information et de formation. Prenez quelques minutes pour les rubriques ci-dessous."},
+      moyen:{level:'Niveau moyen',lo:41,hi:70,cls:'res-moyen',msg:"Les bases sont là, mais des idées reçues subsistent (intention, répétition, « c'était pour rire »). Les rubriques ci-dessous lèvent ces doutes."},
+      eleve:{level:'Niveau élevé',lo:71,hi:100,cls:'res-eleve',msg:"Vous repérez bien les situations à risque et connaissez vos droits. Restez un relais : c'est aussi vous qui pouvez aider à libérer la parole."}
     };
     var choices=document.querySelectorAll('.baro-choice');
     var result=document.getElementById('baroResult');
-    var scoreLabel=document.getElementById('baroScoreLabel');
+    var loEl=document.getElementById('baroLo');
+    var hiEl=document.getElementById('baroHi');
     var levelLabel=document.getElementById('baroLevelLabel');
     var msg=document.getElementById('baroMsg');
     if(!choices.length||!result) return;
+    var anims=[];
+    function countUp(el,target,dur){
+      var start=null;
+      function step(now){
+        if(start===null) start=now;
+        var t=Math.min((now-start)/dur,1);
+        var eased=1-Math.pow(1-t,3);
+        el.textContent=Math.round(eased*target);
+        if(t<1){ anims.push(requestAnimationFrame(step)); }
+        else { el.textContent=target; }
+      }
+      anims.push(requestAnimationFrame(step));
+    }
     choices.forEach(function(btn){
       btn.addEventListener('click',function(){
         var d=data[btn.getAttribute('data-level')];
         choices.forEach(function(b){ b.classList.remove('sel'); b.setAttribute('aria-pressed','false'); });
         btn.classList.add('sel'); btn.setAttribute('aria-pressed','true');
         result.className='baro-result show '+d.cls;
-        scoreLabel.textContent=d.range;
         levelLabel.textContent=d.level;
         msg.textContent=d.msg;
+        anims.forEach(cancelAnimationFrame); anims=[];
+        loEl.textContent='0'; hiEl.textContent='0';
+        countUp(loEl,d.lo,650);
+        countUp(hiEl,d.hi,750);
       });
     });
   })();
