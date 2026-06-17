@@ -437,6 +437,16 @@
     box-shadow: 0 3px 12px rgba(192,48,58,0.3);
   }
   .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(192,48,58,0.42); }
+  .cta-inline.share {
+    background: #e7f6fd; border-color: #b9e3f5; border-left-color: var(--bleu);
+  }
+  .cta-inline.share .cta-txt { color: #0a3a4a; }
+  .cta-inline.share .cta-txt strong { color: var(--bleu); }
+  .cta-btn.blue {
+    background: linear-gradient(135deg, #019cda 0%, #0277a3 100%);
+    box-shadow: 0 3px 12px rgba(1,156,218,0.32);
+  }
+  .cta-btn.blue:hover { box-shadow: 0 6px 18px rgba(1,156,218,0.45); }
 
   /* — Bouton lien guide DGT dans link-box — */
   .dgt-btn {
@@ -2370,6 +2380,12 @@
     background: var(--a11y-dark) !important; color: var(--a11y-dark-txt) !important;
     box-shadow: none !important; border: 1px solid var(--a11y-border2) !important;
   }
+  body.a11y-mode .cta-inline.share {
+    background: var(--a11y-surface2) !important; border-color: var(--a11y-border) !important;
+    border-left-color: var(--a11y-border2) !important;
+  }
+  body.a11y-mode .cta-inline.share .cta-txt { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .cta-inline.share .cta-txt strong { color: var(--a11y-txt1) !important; }
   body.a11y-mode .dgt-btn {
     background: var(--a11y-surface) !important; color: var(--a11y-txt1) !important;
     border: 1px solid var(--a11y-border2) !important;
@@ -2755,6 +2771,15 @@
     <a class="cta-btn" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=Pr%C3%A9vention%20harc%C3%A8lement%20%E2%80%93%20accompagnement">
       <span aria-hidden="true"><span class="a11y-emoji">✉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span>
       Nous écrire
+    </a>
+  </div>
+
+  <!-- ═══════════ PARTAGER LE QUESTIONNAIRE ═══════════ -->
+  <div class="cta-inline share">
+    <div class="cta-txt"><strong>Passez le mot.</strong> Plus on est nombreux à savoir reconnaître ces situations, mieux on les prévient. Invitez vos collègues à tester leurs connaissances&nbsp;: le questionnaire est anonyme et prend 5&nbsp;minutes.</div>
+    <a class="cta-btn blue" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=HAa--z2bREyV53FOMZtg9hkbGXUsz6lKiEa0lX2FWspUN09BSVRBWkRYNFk0REtROTFIMlVSTjNWRi4u" target="_blank" rel="noopener noreferrer">
+      <span aria-hidden="true"><span class="a11y-emoji">📝</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6a1 1 0 0 1 1 1v1h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2V3a1 1 0 0 1 1-1z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      Remplir le questionnaire
     </a>
   </div>
 
