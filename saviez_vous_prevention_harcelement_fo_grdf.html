@@ -463,6 +463,45 @@
   }
 
 
+  
+  /* ═══ BAROMÈTRE INTERACTIF — score de connaissance ═══ */
+  .baro { background: var(--blanc); border-radius: 18px; padding: 26px 26px 22px; margin: 14px 0 30px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
+  .baro-intro { font-size: 15px; font-weight: 600; color: var(--texte); margin-bottom: 32px; }
+  .baro-track { position: relative; height: 16px; border-radius: 8px;
+    background: linear-gradient(90deg,#ef333e 0%,#ef333e 43.75%,#f5a623 43.75%,#f5a623 75%,#28b193 75%,#28b193 100%); }
+  .baro-pointer { position: absolute; top: -16px; left: 0; transform: translateX(-50%); opacity: 0;
+    width: 0; height: 0; border-left: 11px solid transparent; border-right: 11px solid transparent; border-top: 15px solid var(--texte);
+    transition: left .45s cubic-bezier(.34,1.56,.64,1), opacity .25s; }
+  .baro-pointer.show { opacity: 1; }
+  .baro-zonelabels { display: flex; margin-top: 10px; font-size: 12px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+  .baro-zonelabels span { text-align: center; }
+  .baro-zonelabels span:nth-child(1) { width: 43.75%; color: #c0303a; }
+  .baro-zonelabels span:nth-child(2) { width: 31.25%; color: #b9750a; }
+  .baro-zonelabels span:nth-child(3) { width: 25%;    color: #0c6b56; }
+  .baro-scores { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+  .baro-score { flex: 1 1 46px; min-width: 46px; padding: 12px 0; border: 2px solid #d9d6cf; border-radius: 10px;
+    background: var(--blanc); color: var(--texte); font-family: inherit; font-weight: 700; font-size: 17px; cursor: pointer;
+    transition: transform .12s, box-shadow .2s, background .2s; }
+  .baro-score:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+  .baro-score:focus-visible { outline: 3px solid var(--bleu); outline-offset: 2px; }
+  .baro-score.z-faible { border-color: #f3b1b5; color: #c0303a; }
+  .baro-score.z-moyen  { border-color: #f5d29a; color: #b9750a; }
+  .baro-score.z-eleve  { border-color: #a8e0d3; color: #0c6b56; }
+  .baro-score.sel { transform: translateY(-2px); box-shadow: 0 5px 14px rgba(0,0,0,0.18); color: #fff; }
+  .baro-score.sel.z-faible { background: #ef333e; border-color: #ef333e; }
+  .baro-score.sel.z-moyen  { background: #f5a623; border-color: #f5a623; }
+  .baro-score.sel.z-eleve  { background: #28b193; border-color: #28b193; }
+  .baro-result { margin-top: 20px; border-radius: 14px; padding: 18px 22px; background: #f7f5f0; border: 1px solid #e9e6dd; border-left: 6px solid var(--gris); display: none; }
+  .baro-result.show { display: block; animation: baroIn .3s ease; }
+  @keyframes baroIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .baro-result-head { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .baro-result-score { font-family: 'Fraunces', serif; font-size: 23px; font-weight: 900; }
+  .baro-result-level { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; color: #fff; background: var(--gris); }
+  .baro-result p { font-size: 14.5px; line-height: 1.65; color: #333; margin: 0; }
+  .baro-result.res-faible { border-left-color: #ef333e; } .baro-result.res-faible .baro-result-score { color: #c0303a; } .baro-result.res-faible .baro-result-level { background: #ef333e; }
+  .baro-result.res-moyen  { border-left-color: #f5a623; } .baro-result.res-moyen .baro-result-score { color: #b9750a; } .baro-result.res-moyen .baro-result-level { background: #f5a623; }
+  .baro-result.res-eleve  { border-left-color: #28b193; } .baro-result.res-eleve .baro-result-score { color: #0c6b56; } .baro-result.res-eleve .baro-result-level { background: #28b193; }
+
   /* ═══════════════════════════════════════════════
      MODE LECTURE UNIVERSELLE — BLOC UNIQUE AUTORITAIRE
      Palette douce gris chauds, différenciation sans couleur
@@ -2391,6 +2430,20 @@
     border: 1px solid var(--a11y-border2) !important;
   }
 
+
+  /* ═══ OVERRIDES A11Y — BAROMÈTRE INTERACTIF (fin de cascade) ═══ */
+  body.a11y-mode .baro { background: var(--a11y-surface) !important; box-shadow: none !important; }
+  body.a11y-mode .baro-intro { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .baro-track { background: var(--a11y-surface2) !important; border: 1px solid var(--a11y-border2) !important; }
+  body.a11y-mode .baro-pointer { border-top-color: var(--a11y-txt1) !important; }
+  body.a11y-mode .baro-zonelabels span { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .baro-score { background: var(--a11y-surface) !important; color: var(--a11y-txt1) !important; border-color: var(--a11y-border2) !important; }
+  body.a11y-mode .baro-score.sel { background: var(--a11y-dark) !important; color: var(--a11y-dark-txt) !important; border-color: var(--a11y-dark) !important; }
+  body.a11y-mode .baro-result { background: var(--a11y-surface2) !important; border-color: var(--a11y-border) !important; border-left-color: var(--a11y-txt2) !important; }
+  body.a11y-mode .baro-result .baro-result-score { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .baro-result .baro-result-level { background: var(--a11y-dark) !important; color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .baro-result p { color: var(--a11y-txt3) !important; }
+
 </style>
 <script data-goatcounter="https://fo-grdf.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -2532,37 +2585,38 @@
   </div>
   <p style="font-size:14.5px; color:var(--gris); margin-bottom:14px; line-height:1.65;">Le questionnaire compte <strong>15 questions notées</strong> (1 point chacune). Reportez votre score sur cette échelle pour situer votre niveau de connaissance du sujet — du plus solide (vert) au plus fragile (rouge).</p>
 
-  <div class="niveau-scale" role="img" aria-label="Échelle de niveau de connaissance : 12 à 15 points niveau élevé, 7 à 11 points niveau moyen, 0 à 6 points niveau faible">
-    <div class="niveau-bar">
-      <div class="niveau-seg ns-eleve">
-        <span class="ns-ico" aria-hidden="true"><span class="a11y-emoji">✓</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,12 9,18 20,6"/></svg></span>
-        <span class="ns-range">12–15</span>
-        <span class="ns-name">Niveau élevé</span>
-      </div>
-      <div class="niveau-seg ns-moyen">
-        <span class="ns-ico" aria-hidden="true"><span class="a11y-emoji">≈</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/></svg></span>
-        <span class="ns-range">7–11</span>
-        <span class="ns-name">Niveau moyen</span>
-      </div>
-      <div class="niveau-seg ns-faible">
-        <span class="ns-ico" aria-hidden="true"><span class="a11y-emoji">!</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="4" x2="12" y2="14"/><circle cx="12" cy="19" r="0.6" fill="currentColor"/></svg></span>
-        <span class="ns-range">0–6</span>
-        <span class="ns-name">Niveau faible</span>
-      </div>
+  <div class="baro" id="baro">
+    <p class="baro-intro">Reportez le score obtenu au questionnaire (sur 15) et <strong>cliquez sur le chiffre correspondant</strong> pour afficher votre résultat&nbsp;:</p>
+    <div class="baro-track" aria-hidden="true">
+      <div class="baro-pointer" id="baroPointer"></div>
     </div>
-    <div class="ns-details">
-      <div class="ns-detail d-eleve">
-        <h4>Élevé — 12 à 15</h4>
-        Vous repérez bien les situations à risque et connaissez vos droits. Restez un relais&nbsp;: c'est aussi vous qui pouvez aider à libérer la parole.
+    <div class="baro-zonelabels" aria-hidden="true">
+      <span>Faible</span><span>Moyen</span><span>Élevé</span>
+    </div>
+    <div class="baro-scores" role="group" aria-label="Choisissez votre score sur 15">
+      <button type="button" class="baro-score z-faible" data-score="0" aria-pressed="false">0</button>
+      <button type="button" class="baro-score z-faible" data-score="1" aria-pressed="false">1</button>
+      <button type="button" class="baro-score z-faible" data-score="2" aria-pressed="false">2</button>
+      <button type="button" class="baro-score z-faible" data-score="3" aria-pressed="false">3</button>
+      <button type="button" class="baro-score z-faible" data-score="4" aria-pressed="false">4</button>
+      <button type="button" class="baro-score z-faible" data-score="5" aria-pressed="false">5</button>
+      <button type="button" class="baro-score z-faible" data-score="6" aria-pressed="false">6</button>
+      <button type="button" class="baro-score z-moyen" data-score="7" aria-pressed="false">7</button>
+      <button type="button" class="baro-score z-moyen" data-score="8" aria-pressed="false">8</button>
+      <button type="button" class="baro-score z-moyen" data-score="9" aria-pressed="false">9</button>
+      <button type="button" class="baro-score z-moyen" data-score="10" aria-pressed="false">10</button>
+      <button type="button" class="baro-score z-moyen" data-score="11" aria-pressed="false">11</button>
+      <button type="button" class="baro-score z-eleve" data-score="12" aria-pressed="false">12</button>
+      <button type="button" class="baro-score z-eleve" data-score="13" aria-pressed="false">13</button>
+      <button type="button" class="baro-score z-eleve" data-score="14" aria-pressed="false">14</button>
+      <button type="button" class="baro-score z-eleve" data-score="15" aria-pressed="false">15</button>
+    </div>
+    <div class="baro-result" id="baroResult" role="status" aria-live="polite">
+      <div class="baro-result-head">
+        <span class="baro-result-score" id="baroScoreLabel"></span>
+        <span class="baro-result-level" id="baroLevelLabel"></span>
       </div>
-      <div class="ns-detail d-moyen">
-        <h4>Moyen — 7 à 11</h4>
-        Les bases sont là, mais des idées reçues subsistent (intention, répétition, «&nbsp;c'était pour rire&nbsp;»). Les rubriques ci-dessous lèvent ces doutes.
-      </div>
-      <div class="ns-detail d-faible">
-        <h4>Faible — 0 à 6</h4>
-        Le sujet est mal connu — ce n'est pas votre faute&nbsp;: c'est souvent le signe d'un <strong>manque d'information et de formation</strong>. Prenez quelques minutes pour les rubriques suivantes.
-      </div>
+      <p id="baroMsg"></p>
     </div>
     <p class="niveau-note">Un niveau faible largement partagé sur un service n'accuse pas les salariés&nbsp;: il révèle une <strong>carence de prévention</strong> de l'employeur (information, sensibilisation, formation, affichage). C'est précisément ce que FO entend objectiver et corriger.</p>
   </div>
@@ -2875,5 +2929,36 @@
       }
     }
   } catch(e) {}
+
+  /* ── Baromètre interactif — niveau de connaissance ── */
+  (function(){
+    var data={
+      faible:{level:'Niveau faible',cls:'res-faible',msg:"Le sujet est mal connu — ce n'est pas votre faute : c'est souvent le signe d'un manque d'information et de formation. Prenez quelques minutes pour les rubriques ci-dessous."},
+      moyen:{level:'Niveau moyen',cls:'res-moyen',msg:"Les bases sont là, mais des idées reçues subsistent (intention, répétition, « c'était pour rire »). Les rubriques ci-dessous lèvent ces doutes."},
+      eleve:{level:'Niveau élevé',cls:'res-eleve',msg:"Vous repérez bien les situations à risque et connaissez vos droits. Restez un relais : c'est aussi vous qui pouvez aider à libérer la parole."}
+    };
+    function band(s){ return s<=6 ? 'faible' : (s<=11 ? 'moyen' : 'eleve'); }
+    var scores=document.querySelectorAll('.baro-score');
+    var pointer=document.getElementById('baroPointer');
+    var result=document.getElementById('baroResult');
+    var scoreLabel=document.getElementById('baroScoreLabel');
+    var levelLabel=document.getElementById('baroLevelLabel');
+    var msg=document.getElementById('baroMsg');
+    if(!scores.length||!result) return;
+    scores.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var s=parseInt(btn.getAttribute('data-score'),10);
+        scores.forEach(function(b){ b.classList.remove('sel'); b.setAttribute('aria-pressed','false'); });
+        btn.classList.add('sel'); btn.setAttribute('aria-pressed','true');
+        if(pointer){ pointer.style.left=(((s+0.5)/16)*100)+'%'; pointer.classList.add('show'); }
+        var d=data[band(s)];
+        result.className='baro-result show '+d.cls;
+        scoreLabel.textContent='Votre score : '+s+' / 15';
+        levelLabel.textContent=d.level;
+        msg.textContent=d.msg;
+      });
+    });
+  })();
+
 </script>
 </html>
