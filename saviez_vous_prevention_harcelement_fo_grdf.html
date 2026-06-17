@@ -464,26 +464,24 @@
 
 
   
-  /* ═══ BAROMÈTRE INTERACTIF — score de connaissance (en %) ═══ */
+  /* ═══ BAROMÈTRE — 3 indicateurs cliquables ═══ */
   .baro { background: var(--blanc); border-radius: 18px; padding: 26px 26px 22px; margin: 14px 0 30px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
-  .baro-intro { font-size: 15px; font-weight: 600; color: var(--texte); margin-bottom: 12px; }
-  .baro-slot { position: relative; padding-top: 46px; }
-  .baro-bubble { position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: var(--texte); color: #fff;
-    font-family: 'Fraunces', serif; font-weight: 900; font-size: 18px; padding: 5px 13px; border-radius: 8px; white-space: nowrap; }
-  .baro-bubble::after { content: ""; position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%);
-    border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid var(--texte); }
-  .baro-range { -webkit-appearance: none; appearance: none; width: 100%; height: 18px; border-radius: 9px; outline: none; cursor: pointer;
-    background: linear-gradient(90deg,#ef333e 0%,#ef333e 40%,#f5a623 40%,#f5a623 70%,#28b193 70%,#28b193 100%); }
-  .baro-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 12px; height: 34px; border-radius: 6px;
-    background: var(--texte); border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.35); cursor: pointer; }
-  .baro-range::-moz-range-thumb { width: 12px; height: 34px; border-radius: 6px; background: var(--texte); border: 3px solid #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.35); cursor: pointer; }
-  .baro-range:focus-visible { box-shadow: 0 0 0 3px rgba(1,156,218,0.5); }
-  .baro-zonelabels { display: flex; margin-top: 12px; font-size: 12px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
-  .baro-zonelabels span { text-align: center; }
-  .baro-zonelabels span:nth-child(1) { width: 40%; color: #c0303a; }
-  .baro-zonelabels span:nth-child(2) { width: 30%; color: #b9750a; }
-  .baro-zonelabels span:nth-child(3) { width: 30%; color: #0c6b56; }
+  .baro-intro { font-size: 15px; font-weight: 600; color: var(--texte); margin-bottom: 18px; }
+  .baro-choices { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+  .baro-choice { border: 2px solid; border-radius: 14px; padding: 20px 14px; background: var(--blanc); cursor: pointer;
+    font-family: inherit; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px;
+    transition: transform .14s, box-shadow .2s, background .2s; }
+  .baro-choice:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+  .baro-choice:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; }
+  .baro-choice .bc-range { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 900; line-height: 1; }
+  .baro-choice .bc-name { font-size: 12.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  .baro-choice.c-faible { border-color: #f3b1b5; color: #c0303a; }
+  .baro-choice.c-moyen  { border-color: #f5d29a; color: #b9750a; }
+  .baro-choice.c-eleve  { border-color: #a8e0d3; color: #0c6b56; }
+  .baro-choice.sel { color: #fff; transform: translateY(-3px); box-shadow: 0 7px 18px rgba(0,0,0,0.2); }
+  .baro-choice.sel.c-faible { background: #ef333e; border-color: #ef333e; }
+  .baro-choice.sel.c-moyen  { background: #f5a623; border-color: #f5a623; }
+  .baro-choice.sel.c-eleve  { background: #28b193; border-color: #28b193; }
   .baro-result { margin-top: 22px; border-radius: 14px; padding: 18px 22px; background: #f7f5f0; border: 1px solid #e9e6dd; border-left: 6px solid var(--gris); display: none; }
   .baro-result.show { display: block; animation: baroIn .3s ease; }
   @keyframes baroIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
@@ -494,6 +492,7 @@
   .baro-result.res-faible { border-left-color: #ef333e; } .baro-result.res-faible .baro-result-score { color: #c0303a; } .baro-result.res-faible .baro-result-level { background: #ef333e; }
   .baro-result.res-moyen  { border-left-color: #f5a623; } .baro-result.res-moyen .baro-result-score { color: #b9750a; } .baro-result.res-moyen .baro-result-level { background: #f5a623; }
   .baro-result.res-eleve  { border-left-color: #28b193; } .baro-result.res-eleve .baro-result-score { color: #0c6b56; } .baro-result.res-eleve .baro-result-level { background: #28b193; }
+  @media (max-width: 560px) { .baro-choices { grid-template-columns: 1fr; } }
   /* ═══════════════════════════════════════════════
      MODE LECTURE UNIVERSELLE — BLOC UNIQUE AUTORITAIRE
      Palette douce gris chauds, différenciation sans couleur
@@ -2423,15 +2422,11 @@
   }
 
 
-  /* ═══ OVERRIDES A11Y — BAROMÈTRE INTERACTIF (fin de cascade) ═══ */
+  /* ═══ OVERRIDES A11Y — BAROMÈTRE 3 indicateurs (fin de cascade) ═══ */
   body.a11y-mode .baro { background: var(--a11y-surface) !important; box-shadow: none !important; }
   body.a11y-mode .baro-intro { color: var(--a11y-txt1) !important; }
-  body.a11y-mode .baro-range { background: var(--a11y-surface2) !important; border: 1px solid var(--a11y-border2) !important; }
-  body.a11y-mode .baro-range::-webkit-slider-thumb { background: var(--a11y-txt1) !important; border-color: var(--a11y-surface) !important; }
-  body.a11y-mode .baro-range::-moz-range-thumb { background: var(--a11y-txt1) !important; border-color: var(--a11y-surface) !important; }
-  body.a11y-mode .baro-bubble { background: var(--a11y-dark) !important; color: var(--a11y-dark-txt) !important; }
-  body.a11y-mode .baro-bubble::after { border-top-color: var(--a11y-dark) !important; }
-  body.a11y-mode .baro-zonelabels span { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .baro-choice { background: var(--a11y-surface) !important; color: var(--a11y-txt1) !important; border-color: var(--a11y-border2) !important; }
+  body.a11y-mode .baro-choice.sel { background: var(--a11y-dark) !important; color: var(--a11y-dark-txt) !important; border-color: var(--a11y-dark) !important; }
   body.a11y-mode .baro-result { background: var(--a11y-surface2) !important; border-color: var(--a11y-border) !important; border-left-color: var(--a11y-txt2) !important; }
   body.a11y-mode .baro-result .baro-result-score { color: var(--a11y-txt1) !important; }
   body.a11y-mode .baro-result .baro-result-level { background: var(--a11y-dark) !important; color: var(--a11y-dark-txt) !important; }
@@ -2578,13 +2573,20 @@
   <p style="font-size:14.5px; color:var(--gris); margin-bottom:14px; line-height:1.65;">Le questionnaire compte <strong>15 questions notées</strong> (1 point chacune). Reportez votre score sur cette échelle pour situer votre niveau de connaissance du sujet — du plus solide (vert) au plus fragile (rouge).</p>
 
   <div class="baro" id="baro">
-    <p class="baro-intro">Forms vous donne un résultat <strong>en pourcentage</strong>. Déplacez le curseur sur votre score (ou cliquez sur la barre) pour afficher votre résultat&nbsp;:</p>
-    <div class="baro-slot">
-      <output class="baro-bubble" id="baroBubble" for="baroRange">50&nbsp;%</output>
-      <input type="range" min="0" max="100" step="1" value="50" class="baro-range" id="baroRange" aria-label="Votre score au questionnaire, en pourcentage">
-    </div>
-    <div class="baro-zonelabels" aria-hidden="true">
-      <span>Faible</span><span>Moyen</span><span>Élevé</span>
+    <p class="baro-intro">Forms vous donne un résultat <strong>en pourcentage</strong>. Cliquez sur la tranche qui correspond à votre score&nbsp;:</p>
+    <div class="baro-choices" role="group" aria-label="Choisissez votre niveau de connaissance">
+      <button type="button" class="baro-choice c-faible" data-level="faible" aria-pressed="false">
+        <span class="bc-range">0 – 40 %</span>
+        <span class="bc-name">Faible</span>
+      </button>
+      <button type="button" class="baro-choice c-moyen" data-level="moyen" aria-pressed="false">
+        <span class="bc-range">41 – 70 %</span>
+        <span class="bc-name">Moyen</span>
+      </button>
+      <button type="button" class="baro-choice c-eleve" data-level="eleve" aria-pressed="false">
+        <span class="bc-range">71 – 100 %</span>
+        <span class="bc-name">Élevé</span>
+      </button>
     </div>
     <div class="baro-result" id="baroResult" role="status" aria-live="polite">
       <div class="baro-result-head">
@@ -2905,30 +2907,30 @@
     }
   } catch(e) {}
 
-  /* ── Baromètre interactif — niveau de connaissance (score en %) ── */
+  /* ── Baromètre — 3 indicateurs cliquables ── */
   (function(){
     var data={
-      faible:{level:'Niveau faible',cls:'res-faible',msg:"Le sujet est mal connu — ce n'est pas votre faute : c'est souvent le signe d'un manque d'information et de formation. Prenez quelques minutes pour les rubriques ci-dessous."},
-      moyen:{level:'Niveau moyen',cls:'res-moyen',msg:"Les bases sont là, mais des idées reçues subsistent (intention, répétition, « c'était pour rire »). Les rubriques ci-dessous lèvent ces doutes."},
-      eleve:{level:'Niveau élevé',cls:'res-eleve',msg:"Vous repérez bien les situations à risque et connaissez vos droits. Restez un relais : c'est aussi vous qui pouvez aider à libérer la parole."}
+      faible:{level:'Niveau faible',range:'0 – 40 %',cls:'res-faible',msg:"Le sujet est mal connu — ce n'est pas votre faute : c'est souvent le signe d'un manque d'information et de formation. Prenez quelques minutes pour les rubriques ci-dessous."},
+      moyen:{level:'Niveau moyen',range:'41 – 70 %',cls:'res-moyen',msg:"Les bases sont là, mais des idées reçues subsistent (intention, répétition, « c'était pour rire »). Les rubriques ci-dessous lèvent ces doutes."},
+      eleve:{level:'Niveau élevé',range:'71 – 100 %',cls:'res-eleve',msg:"Vous repérez bien les situations à risque et connaissez vos droits. Restez un relais : c'est aussi vous qui pouvez aider à libérer la parole."}
     };
-    function band(p){ return p<41 ? 'faible' : (p<71 ? 'moyen' : 'eleve'); }
-    var range=document.getElementById('baroRange');
-    var bubble=document.getElementById('baroBubble');
+    var choices=document.querySelectorAll('.baro-choice');
     var result=document.getElementById('baroResult');
     var scoreLabel=document.getElementById('baroScoreLabel');
     var levelLabel=document.getElementById('baroLevelLabel');
     var msg=document.getElementById('baroMsg');
-    if(!range||!result) return;
-    function place(){ var p=parseInt(range.value,10); bubble.textContent=p+' %'; bubble.style.left=p+'%'; return p; }
-    range.addEventListener('input',function(){
-      var p=place(); var d=data[band(p)];
-      result.className='baro-result show '+d.cls;
-      scoreLabel.textContent='Votre score : '+p+' %';
-      levelLabel.textContent=d.level;
-      msg.textContent=d.msg;
+    if(!choices.length||!result) return;
+    choices.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var d=data[btn.getAttribute('data-level')];
+        choices.forEach(function(b){ b.classList.remove('sel'); b.setAttribute('aria-pressed','false'); });
+        btn.classList.add('sel'); btn.setAttribute('aria-pressed','true');
+        result.className='baro-result show '+d.cls;
+        scoreLabel.textContent=d.range;
+        levelLabel.textContent=d.level;
+        msg.textContent=d.msg;
+      });
     });
-    place();
   })();
 
 </script>
