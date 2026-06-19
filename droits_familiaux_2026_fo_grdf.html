@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Droits familiaux 2026 — Le simulateur FNEM-FO</title>
-<meta name="description" content="Récapitulatif interactif des droits familiaux des IEG 2026 : indemnités, aides sociales et congés. Renseignez votre situation, le simulateur FNEM-FO génère vos droits.">
-<link rel="icon" type="image/png" href="https://www.fnem-fo.org/wp-content/uploads/2026/05/Logo_FO_Energie_Rond.png">
+<title>Droits familiaux 2026 — Le simulateur FO GRDF Fonctions Centrales</title>
+<meta name="description" content="Récapitulatif interactif des droits familiaux des IEG 2026 : indemnités, aides sociales et congés. Renseignez votre situation, le simulateur FO GRDF Fonctions Centrales génère vos droits.">
+<link rel="icon" type="image/png" href="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bleu:         #019cda; /* bleu FO — couleur primaire */
+    --bleu:         #019cda;
     --bleu-fonce:   #028bc2;
     --bleu-tres-fonce: #016a96;
     --bleu-clair:   #e8f4fb;
@@ -19,7 +19,7 @@
     --vert:         #28b193;
     --vert-fonce:   #1f8d75;
     --vert-clair:   #e8f8f4;
-    --rouge:        #ef333e; /* accent identitaire FO — encart + contact */
+    --rouge:        #ef333e;
     --rouge-fonce:  #c0303a;
     --rouge-tres-fonce: #7a0e1c;
     --rouge-clair:  #fde8ea;
@@ -70,9 +70,10 @@
   .logo-link { flex-shrink: 0; display: inline-block; transition: transform 0.25s; }
   .logo-link:hover { transform: scale(1.05); }
   .logo-link img {
-    height: clamp(72px, 12vw, 110px);
+    height: clamp(64px, 11vw, 96px);
     width: auto; display: block;
-    filter: drop-shadow(0 4px 14px rgba(0,0,0,0.22));
+    background: #fff; border-radius: 12px; padding: 8px;
+    filter: drop-shadow(0 4px 14px rgba(0,0,0,0.18));
   }
   .header-text { flex: 1; min-width: 0; }
   .badge {
@@ -328,8 +329,8 @@
     display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
   }
   .fo-contact-card .fo-logo-wrap {
-    flex-shrink: 0; background: var(--blanc); border-radius: 50%;
-    padding: 8px; width: 64px; height: 64px;
+    flex-shrink: 0; background: var(--blanc); border-radius: 14px;
+    padding: 8px; width: 72px; height: 72px;
     display: flex; align-items: center; justify-content: center;
   }
   .fo-contact-card .fo-logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
@@ -455,11 +456,11 @@
   <!-- ═══ HEADER ═══ -->
   <header class="header" role="banner">
     <div class="header-row">
-      <a class="logo-link" href="https://www.fnem-fo.org" title="Site FNEM-FO" aria-label="Site officiel FNEM-FO Énergie et Mines">
-        <img src="https://www.fnem-fo.org/wp-content/uploads/2026/05/Logo_FO_Energie_Rond.png" alt="Logo FO Énergie et Mines (FNEM-FO)">
+      <a class="logo-link" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF Fonctions Centrales" aria-label="Contacter FO GRDF Fonctions Centrales par email">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO GRDF Fonctions Centrales">
       </a>
       <div class="header-text">
-        <span class="badge">FNEM-FO · Édition 2026</span>
+        <span class="badge">FO GRDF Fonctions Centrales · Édition 2026</span>
         <h1>Vos <em>droits familiaux</em> IEG, en un clic</h1>
         <p class="subtitle">Indemnités, aides sociales et congés des Industries Électriques et Gazières — un simulateur qui génère vos droits selon votre situation.</p>
         <span class="update"><span class="dot"></span>Mise à jour : juin 2026</span>
@@ -470,7 +471,7 @@
   <main id="contenu-principal" role="main">
 
     <div class="intro">
-      Entre le statut national, les accords de branche et le droit commun, les <strong>droits familiaux</strong> des IEG sont nombreux… mais peu connus. Naissance, union, garde d'enfant, études, perte d'autonomie d'un proche : à chaque étape de la vie correspondent des <strong>indemnités, des aides et des congés</strong>. Renseignez votre situation ci-dessous : le <strong>simulateur FNEM-FO</strong> affiche immédiatement les droits qui peuvent vous concerner.
+      Entre le statut national, les accords de branche et le droit commun, les <strong>droits familiaux</strong> des IEG sont nombreux… mais peu connus. Naissance, union, garde d'enfant, études, perte d'autonomie d'un proche : à chaque étape de la vie correspondent des <strong>indemnités, des aides et des congés</strong>. Renseignez votre situation ci-dessous : le <strong>simulateur FO GRDF Fonctions Centrales</strong> affiche immédiatement les droits qui peuvent vous concerner.
     </div>
 
     <!-- ═══════════════ SIMULATEUR ═══════════════ -->
@@ -580,7 +581,7 @@
             <div class="rb-count" id="rbCount">0</div>
             <div class="rb-text">
               <strong>droits peuvent vous concerner</strong>
-              <p>Estimation pédagogique d'après votre situation. Vérifiez l'éligibilité exacte auprès de la fédération, de votre CMCAS et de votre employeur.</p>
+              <p>Estimation pédagogique d'après votre situation. Vérifiez l'éligibilité exacte auprès de vos délégués FO GRDF Fonctions Centrales, de votre CMCAS et de votre employeur.</p>
             </div>
           </div>
           <div id="resIndemnites"></div>
@@ -590,14 +591,14 @@
       </div>
     </section>
 
-    <p class="section-sub" style="margin-top:16px">Astuce : le simulateur est un repère. Il ne remplace ni un dossier officiel ni le conseil d'un militant FNEM-FO.</p>
+    <p class="section-sub" style="margin-top:16px">Astuce : le simulateur est un repère. Il ne remplace ni un dossier officiel ni le conseil d'un militant FO GRDF Fonctions Centrales.</p>
 
     <!-- ═══ ENCART FO ═══ -->
     <div class="fo-callout">
       <div class="fo-callout-icon">!</div>
       <div class="fo-callout-body">
-        <div class="fo-callout-title">FNEM-FO : des droits à défendre, pas seulement à connaître</div>
-        <p>Plusieurs dispositifs (sursalaire familial, congés « en évolution »…) sont menacés ou en voie d'extinction. La fédération revendique le maintien et l'amélioration de l'ensemble des droits familiaux du statut et des accords de branche IEG.</p>
+        <div class="fo-callout-title">FO GRDF Fonctions Centrales : des droits à défendre, pas seulement à connaître</div>
+        <p>Plusieurs dispositifs (sursalaire familial, congés « en évolution »…) sont menacés ou en voie d'extinction. FO GRDF Fonctions Centrales revendique le maintien et l'amélioration de l'ensemble des droits familiaux du statut et des accords de branche IEG.</p>
       </div>
     </div>
 
@@ -641,30 +642,30 @@
       </details>
       <details>
         <summary>Où retrouver les textes officiels ?</summary>
-        <p>Les références réglementaires (statut national, PERS., DP, notes, accords de branche, Code du travail) sont consultables sur sgeieg.fr, legifrance.gouv.fr, ccas.fr et camieg.fr. En cas de doute sur l'application d'un texte, contactez la fédération.</p>
+        <p>Les références réglementaires (statut national, PERS., DP, notes, accords de branche, Code du travail) sont consultables sur sgeieg.fr, legifrance.gouv.fr, ccas.fr et camieg.fr. En cas de doute sur l'application d'un texte, contactez vos délégués FO GRDF Fonctions Centrales.</p>
       </details>
     </div>
 
   </main>
 
   <!-- ═══ CARTE CONTACT ═══ -->
-  <aside class="fo-contact-card" aria-label="Contact FNEM-FO">
+  <aside class="fo-contact-card" aria-label="Contact FO GRDF Fonctions Centrales">
     <div class="fo-logo-wrap">
-      <img src="https://www.fnem-fo.org/wp-content/uploads/2026/05/Logo_FO_Energie_Rond.png" alt="Logo FO Énergie et Mines">
+      <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO GRDF Fonctions Centrales">
     </div>
     <div class="fo-msg">
-      <div class="fo-msg-title">Un doute sur un droit familial ? Contactez la FNEM-FO</div>
-      <div class="fo-msg-body">Nos équipes vous accompagnent sur l'application du statut, des accords de branche et des aides des Activités Sociales propres aux IEG.</div>
+      <div class="fo-msg-title">Un doute sur un droit familial ? Contactez FO GRDF Fonctions Centrales</div>
+      <div class="fo-msg-body">Vos délégués vous accompagnent sur l'application du statut, des accords de branche et des aides des Activités Sociales propres aux IEG.</div>
     </div>
-    <a class="fo-cta-btn" href="https://www.fnem-fo.org/contact/" target="_blank" rel="noopener">
+    <a class="fo-cta-btn" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       Nous écrire
     </a>
   </aside>
 
   <footer class="footer" role="contentinfo">
-    <div>Communication fédérale — <strong>FNEM-FO</strong> · Document non opposable · Estimation pédagogique 2026 · <a href="https://www.fnem-fo.org/contact/" target="_blank" rel="noopener">Formulaire de contact</a></div>
-    <div class="addr">FO Énergie et Mines · 46 rue de Lagny, 93100 Montreuil · Tél. 01 44 16 86 20 · <a href="https://www.fnem-fo.org" target="_blank" rel="noopener">www.fnem-fo.org</a></div>
+    <div>Communication syndicale — <strong>FO GRDF Fonctions Centrales</strong> · Document non opposable · Estimation pédagogique 2026</div>
+    <div class="addr">Vos délégués FO GRDF Fonctions Centrales · <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr">Nous écrire</a></div>
   </footer>
 
 </div>
@@ -675,10 +676,10 @@
     const btn = document.getElementById('a11yToggle');
     const isOn = document.body.classList.toggle('a11y-mode');
     btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
-    try { localStorage.setItem('fnemfo-a11y', isOn ? '1' : '0'); } catch(e) {}
+    try { localStorage.setItem('fogrdf-a11y', isOn ? '1' : '0'); } catch(e) {}
   }
   try {
-    if (localStorage.getItem('fnemfo-a11y') === '1') {
+    if (localStorage.getItem('fogrdf-a11y') === '1') {
       document.body.classList.add('a11y-mode');
       const b = document.getElementById('a11yToggle');
       if (b) b.setAttribute('aria-pressed', 'true');
@@ -686,12 +687,7 @@
   } catch(e) {}
 
   /* ═══════════ DONNÉES DROITS FAMILIAUX (IEG 2026) ═══════════ */
-  const S = {
-    statut: null,
-    enfants: null,
-    ages: new Set(),
-    flags: new Set()
-  };
+  const S = { statut: null, enfants: null, ages: new Set(), flags: new Set() };
   const has = (set, v) => set.has(v);
   const enCouple = s => s.statut === 'union' || s.statut === 'concubinage';
   const aEnfants = s => (s.enfants||0) > 0;
