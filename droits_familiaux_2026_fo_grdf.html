@@ -855,6 +855,11 @@
       desc:"Pour assister un proche en phase avancée ou terminale d'une affection grave et incurable. Transformable en temps partiel ou fractionné.",
       show:s => has(s.flags,'aidant') },
 
+    { type:'cong', tag:'Statut IEG', title:"Congés spéciaux familiaux — Décès",
+      amount:"jusqu'à 14 j (+8 j deuil)", ref:"Art. 19 du Statut national",
+      desc:"Conjoint·e, partenaire de PACS ou concubin·e : 6 jours. Enfant : 12 jours ouvrables, ou 14 jours + 8 jours de deuil pour un enfant de moins de 25 ans. Mère/père : 4 jours.",
+      show:s => enCouple(s) || aEnfants(s) },
+
     { type:'cong', tag:'CAMIEG', title:"Allocation décès",
       amount:"680 €", ref:"CAMIEG — au 1er juillet 2025, réévalué chaque année",
       desc:"Participation aux frais d'obsèques lors du décès d'un membre de la famille (conjoint, partenaire de PACS, concubin, enfant de 26 ans au plus ou en situation de handicap). À demander dans les 2 ans et un trimestre.",
