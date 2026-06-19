@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Droits familiaux 2026 — Le simulateur FNEM-FO</title>
+<meta name="description" content="Récapitulatif interactif des droits familiaux des IEG 2026 : indemnités, aides sociales et congés. Renseignez votre situation, le simulateur FNEM-FO génère vos droits.">
+<link rel="icon" type="image/png" href="https://www.fnem-fo.org/wp-content/uploads/2026/05/Logo_FO_Energie_Rond.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rouge:        #ef333e;
+    --rouge-fonce:  #c0303a;
+    --rouge-tres-fonce: #7a0e1c;
+    --rouge-clair:  #fde8ea;
+    --or:           #f7dd5c;
+    --or-fonce:     #d4b829;
+    --bleu:         #019cda;
+    --bleu-fonce:   #028bc2;
+    --bleu-clair:   #e6f6fc;
+    --vert:         #28b193;
+    --vert-clair:   #e8f8f4;
+    --fond:         #F7F5F0;
+    --blanc:        #FFFFFF;
+    --gris:         #6B6B6B;
+    --gris-clair:   #E8E6E1;
+    --texte:        #1A1A2E;
+
+    --a11y-bg:      #FFFFFF;
+    --a11y-dark-txt:#000000;
+    --a11y-accent: #0033A0;
+    --a11y-warn:   #B00020;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+
+  /* ═══ HEADER ═══ */
+  .header {
+    position: relative;
+    background: linear-gradient(135deg, #ef333e 0%, #c0303a 60%, #7a0e1c 100%);
+    border-radius: 20px;
+    padding: 40px 44px 32px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 12px 36px rgba(192,48,58,0.25);
+  }
+  .header::after {
+    content: "";
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, rgba(247,221,92,0.25) 0%, rgba(247,221,92,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .header-row { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .logo-link { flex-shrink: 0; display: inline-block; transition: transform 0.25s; }
+  .logo-link:hover { transform: scale(1.05); }
+  .logo-link img {
+    height: clamp(72px, 12vw, 110px);
+    width: auto; display: block;
+    filter: drop-shadow(0 4px 14px rgba(0,0,0,0.22));
+  }
+  .header-text { flex: 1; min-width: 0; }
+  .badge {
+    display: inline-block;
+    background: var(--or);
+    color: var(--rouge-tres-fonce);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 40px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(26px, 4.2vw, 42px);
+    font-weight: 900;
+    color: var(--blanc);
+    line-height: 1.12;
+  }
+  .header h1 em { color: var(--or); font-style: italic; }
+  .header .subtitle {
+    margin-top: 12px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.82);
+    font-weight: 300;
+  }
+  .header .update {
+    margin-top: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.92);
+  }
+  .dot { width: 7px; height: 7px; background: var(--or); border-radius: 50%; display: inline-block; }
+
+  /* ═══ INTRO ═══ */
+  .intro {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    border-left: 5px solid var(--rouge);
+    font-size: 15.5px;
+    line-height: 1.7;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  }
+  .intro strong { color: var(--rouge); }
+
+  /* ═══ TITRES DE SECTION ═══ */
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 40px 0 18px;
+    color: var(--texte);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; height: 40px;
+    background: var(--rouge);
+    color: var(--blanc);
+    border-radius: 11px;
+    flex-shrink: 0;
+  }
+  .section-sub { color: var(--gris); font-size: 14.5px; margin: -8px 0 20px; }
+
+  /* ═══════════════ SIMULATEUR ═══════════════ */
+  .simulateur {
+    background: var(--blanc);
+    border-radius: 20px;
+    padding: 0;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 40px rgba(192,48,58,0.12);
+    overflow: hidden;
+    border: 1px solid var(--gris-clair);
+  }
+  .sim-head {
+    background: linear-gradient(135deg, #7a0e1c 0%, #c0303a 100%);
+    padding: 22px 30px;
+    color: var(--blanc);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .sim-head .sim-pin {
+    width: 44px; height: 44px;
+    background: var(--or);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--rouge-tres-fonce);
+    flex-shrink: 0;
+  }
+  .sim-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+  .sim-head p { font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 300; }
+
+  .sim-body { padding: 28px 30px; }
+  .sim-step-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--rouge);
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .sim-step-label .num {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--rouge); color: var(--blanc);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 12px;
+  }
+  .sim-block { margin-bottom: 26px; }
+
+  /* Choix segmentés (boutons) */
+  .choices { display: flex; flex-wrap: wrap; gap: 10px; }
+  .choice {
+    flex: 1 1 auto;
+    min-width: 130px;
+    border: 2px solid var(--gris-clair);
+    background: var(--fond);
+    border-radius: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.18s;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--texte);
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    user-select: none;
+  }
+  .choice .ic { color: var(--rouge); display: flex; }
+  .choice:hover { border-color: var(--rouge); transform: translateY(-2px); }
+  .choice[aria-pressed="true"] {
+    border-color: var(--rouge);
+    background: var(--rouge);
+    color: var(--blanc);
+    box-shadow: 0 6px 18px rgba(192,48,58,0.28);
+  }
+  .choice[aria-pressed="true"] .ic { color: var(--or); }
+
+  /* Cases à cocher illustrées */
+  .toggles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .toggle {
+    border: 2px solid var(--gris-clair);
+    background: var(--fond);
+    border-radius: 12px;
+    padding: 13px 15px;
+    cursor: pointer;
+    transition: all 0.18s;
+    display: flex; align-items: center; gap: 11px;
+    font-size: 14px;
+    font-weight: 500;
+    user-select: none;
+  }
+  .toggle .tk {
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid var(--gris); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.18s;
+  }
+  .toggle .tk svg { opacity: 0; transition: opacity 0.15s; }
+  .toggle:hover { border-color: var(--bleu); }
+  .toggle[aria-pressed="true"] {
+    border-color: var(--bleu);
+    background: var(--bleu-clair);
+  }
+  .toggle[aria-pressed="true"] .tk {
+    background: var(--bleu); border-color: var(--bleu); color: var(--blanc);
+  }
+  .toggle[aria-pressed="true"] .tk svg { opacity: 1; }
+
+  .sim-hint { font-size: 12.5px; color: var(--gris); margin-top: 8px; }
+
+  .sim-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+  .sim-btn {
+    background: var(--rouge);
+    color: var(--blanc);
+    border: none;
+    border-radius: 12px;
+    padding: 15px 26px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 9px;
+  }
+  .sim-btn:hover { background: var(--rouge-tres-fonce); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(192,48,58,0.3); }
+  .sim-btn.ghost { background: transparent; color: var(--rouge); border: 2px solid var(--gris-clair); }
+  .sim-btn.ghost:hover { background: var(--fond); box-shadow: none; border-color: var(--rouge); }
+
+  /* ═══ RÉSULTATS ═══ */
+  .sim-results { margin-top: 8px; }
+  .sim-results[hidden] { display: none; }
+  .results-banner {
+    background: linear-gradient(135deg, var(--vert) 0%, #1f8d75 100%);
+    color: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin-bottom: 22px;
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  }
+  .results-banner .rb-count {
+    font-family: 'Fraunces', serif;
+    font-size: 44px; font-weight: 900;
+    line-height: 1; flex-shrink: 0;
+  }
+  .results-banner .rb-text { flex: 1; min-width: 180px; }
+  .results-banner .rb-text strong { font-size: 17px; }
+  .results-banner .rb-text p { font-size: 13px; color: rgba(255,255,255,0.9); margin-top: 3px; }
+
+  .result-group-title {
+    font-family: 'Fraunces', serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--rouge-tres-fonce);
+    margin: 22px 0 12px;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .result-group-title .gic {
+    width: 30px; height: 30px; border-radius: 8px;
+    background: var(--rouge-clair); color: var(--rouge);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+
+  .result-card {
+    background: var(--blanc);
+    border: 1px solid var(--gris-clair);
+    border-left: 5px solid var(--rouge);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 11px;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: pop 0.45s forwards;
+  }
+  .result-card.cong { border-left-color: var(--bleu); }
+  @keyframes pop { to { opacity: 1; transform: translateY(0); } }
+  .rc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; flex-wrap: wrap; }
+  .rc-title {
+    font-family: 'Fraunces', serif;
+    font-size: 16.5px; font-weight: 700; color: var(--texte);
+    flex: 1; min-width: 160px;
+  }
+  .rc-amount {
+    font-weight: 700; font-size: 14px;
+    background: var(--rouge-clair); color: var(--rouge-tres-fonce);
+    padding: 5px 12px; border-radius: 30px; white-space: nowrap;
+  }
+  .result-card.cong .rc-amount { background: var(--bleu-clair); color: var(--bleu-fonce); }
+  .rc-desc { font-size: 13.5px; color: var(--texte); margin-top: 9px; line-height: 1.55; }
+  .rc-ref { font-size: 11.5px; color: var(--gris); margin-top: 8px; font-style: italic; }
+  .rc-tag {
+    display: inline-block; font-size: 10.5px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.6px;
+    padding: 2px 9px; border-radius: 20px; margin-top: 9px;
+    background: var(--vert-clair); color: #1f8d75;
+  }
+  .rc-tag.perso { background: #fff4d6; color: var(--or-fonce); }
+
+  /* ═══ CARTES STATIQUES (récap complet) ═══ */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .card {
+    background: var(--blanc);
+    border-radius: 14px;
+    padding: 22px 24px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(192,48,58,0.12); }
+  .card .card-icon { display: inline-flex; color: var(--rouge); margin-bottom: 10px; }
+  .card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--rouge); margin-bottom: 6px; }
+  .card .card-amount { font-weight: 700; color: var(--rouge-tres-fonce); font-size: 14.5px; margin-bottom: 6px; }
+  .card p { font-size: 13.5px; line-height: 1.55; color: var(--texte); }
+  .card .card-ref { font-size: 11px; color: var(--gris); font-style: italic; margin-top: 8px; }
+
+  /* ═══ ENCART FO ═══ */
+  .fo-callout {
+    background: var(--rouge-clair);
+    border-left: 4px solid var(--rouge);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 22px 0;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .fo-callout-icon {
+    flex-shrink: 0; width: 24px; height: 24px;
+    background: var(--rouge); color: var(--blanc);
+    border-radius: 50%; display: inline-flex;
+    align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+  }
+  .fo-callout-title { font-weight: 700; color: var(--rouge-tres-fonce); font-size: 14px; margin-bottom: 4px; }
+  .fo-callout-body p { font-size: 13.5px; line-height: 1.6; color: var(--texte); }
+
+  /* ═══ FAQ ═══ */
+  .faq details {
+    background: var(--blanc);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 14px 20px;
+    border-left: 3px solid var(--rouge);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .faq summary {
+    font-family: 'Fraunces', serif;
+    font-size: 16px; font-weight: 700;
+    color: var(--rouge-tres-fonce);
+    cursor: pointer; padding: 4px 0; list-style: none;
+  }
+  .faq summary::before {
+    content: '▶'; display: inline-block; margin-right: 10px;
+    color: var(--rouge); font-size: 11px; transition: transform 0.2s;
+  }
+  .faq details[open] summary::before { transform: rotate(90deg); }
+  .faq details p { margin-top: 10px; font-size: 14px; line-height: 1.65; color: var(--texte); }
+
+  /* ═══ CARTE CONTACT ═══ */
+  .fo-contact-card {
+    background: linear-gradient(135deg, var(--rouge-fonce) 0%, var(--rouge-tres-fonce) 100%);
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin-top: 36px;
+    color: var(--blanc);
+    display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+  }
+  .fo-contact-card .fo-logo-wrap {
+    flex-shrink: 0; background: var(--blanc); border-radius: 50%;
+    padding: 8px; width: 64px; height: 64px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .fo-contact-card .fo-logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
+  .fo-contact-card .fo-msg { flex: 1; min-width: 200px; }
+  .fo-contact-card .fo-msg-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+  .fo-contact-card .fo-msg-body { font-size: 13px; color: rgba(255,255,255,0.88); line-height: 1.5; }
+  .fo-contact-card .fo-cta-btn {
+    background: var(--blanc); color: var(--rouge-tres-fonce);
+    border-radius: 10px; padding: 10px 18px;
+    font-weight: 700; font-size: 14px; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .fo-contact-card .fo-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+
+  /* ═══ FOOTER ═══ */
+  .footer {
+    text-align: center; margin-top: 32px; padding-top: 24px;
+    border-top: 1px solid var(--gris-clair);
+    color: var(--gris); font-size: 12.5px; line-height: 1.65;
+  }
+  .footer a { color: var(--rouge-fonce); text-decoration: none; font-weight: 600; }
+  .footer a:hover { text-decoration: underline; }
+  .footer .addr { font-size: 11.5px; margin-top: 8px; color: var(--gris); }
+
+  /* ═══ A11Y TOGGLE ═══ */
+  .a11y-toggle-bar { display: flex; justify-content: flex-end; margin-bottom: 12px; }
+  .a11y-toggle {
+    background: var(--blanc); border: 2px solid var(--rouge); color: var(--rouge);
+    border-radius: 30px; padding: 8px 18px;
+    font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 600;
+    cursor: pointer; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .a11y-toggle:hover, .a11y-toggle[aria-pressed="true"] { background: var(--rouge); color: var(--blanc); }
+
+  .skip-link {
+    position: absolute; top: -100px; left: 16px;
+    background: var(--or); color: #000; font-weight: 700;
+    padding: 10px 20px; border-radius: 8px; z-index: 9999;
+    text-decoration: none; transition: top 0.2s;
+  }
+  .skip-link:focus { top: 16px; }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media (max-width: 720px) {
+    .page { padding: 20px 16px 48px; }
+    .header { padding: 32px 26px 28px; border-radius: 16px; }
+    .cards { grid-template-columns: 1fr; }
+    .toggles { grid-template-columns: 1fr; }
+    .fo-contact-card { flex-direction: column; text-align: center; }
+    .sim-body { padding: 22px 18px; }
+    .sim-head { padding: 18px 20px; }
+  }
+
+  /* ═══ MODE LECTURE UNIVERSELLE ═══ */
+  body.a11y-mode {
+    background: var(--a11y-bg);
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 16px; line-height: 1.85;
+  }
+  body.a11y-mode .header { background: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .header::after { display: none; }
+  body.a11y-mode .header h1, body.a11y-mode .header h1 em { color: var(--a11y-bg) !important; font-style: normal; }
+  body.a11y-mode .header .subtitle, body.a11y-mode .header .update { color: var(--a11y-bg) !important; }
+  body.a11y-mode .badge { background: var(--a11y-bg) !important; color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .intro { background: var(--a11y-bg); color: var(--a11y-dark-txt); border-left-color: var(--a11y-warn); }
+  body.a11y-mode .intro strong { color: var(--a11y-warn); }
+  body.a11y-mode .section-title { color: var(--a11y-dark-txt); }
+  body.a11y-mode .section-title .icon { background: var(--a11y-dark-txt); color: var(--a11y-bg); }
+  body.a11y-mode .simulateur { border: 2px solid var(--a11y-dark-txt); }
+  body.a11y-mode .sim-head { background: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .sim-head .sim-pin { background: var(--a11y-bg); color: var(--a11y-dark-txt); }
+  body.a11y-mode .sim-step-label { color: var(--a11y-warn); }
+  body.a11y-mode .sim-step-label .num { background: var(--a11y-warn); }
+  body.a11y-mode .choice { background: var(--a11y-bg); border-color: var(--a11y-dark-txt); color: var(--a11y-dark-txt); }
+  body.a11y-mode .choice .ic { color: var(--a11y-warn); }
+  body.a11y-mode .choice[aria-pressed="true"] { background: var(--a11y-warn); color: var(--a11y-bg); }
+  body.a11y-mode .choice[aria-pressed="true"] .ic { color: var(--a11y-bg); }
+  body.a11y-mode .toggle { background: var(--a11y-bg); border-color: var(--a11y-dark-txt); }
+  body.a11y-mode .toggle[aria-pressed="true"] { background: var(--a11y-bg); border-color: var(--a11y-accent); }
+  body.a11y-mode .toggle[aria-pressed="true"] .tk { background: var(--a11y-accent); border-color: var(--a11y-accent); }
+  body.a11y-mode .sim-btn { background: var(--a11y-warn); }
+  body.a11y-mode .sim-btn.ghost { background: var(--a11y-bg); color: var(--a11y-warn); border-color: var(--a11y-warn); }
+  body.a11y-mode .results-banner { background: var(--a11y-accent); }
+  body.a11y-mode .result-card { background: var(--a11y-bg); border: 2px solid var(--a11y-dark-txt); border-left: 5px solid var(--a11y-warn); }
+  body.a11y-mode .result-card.cong { border-left: 5px solid var(--a11y-accent); }
+  body.a11y-mode .rc-amount { background: var(--a11y-bg); color: var(--a11y-warn); border: 1px solid var(--a11y-warn); }
+  body.a11y-mode .result-card.cong .rc-amount { color: var(--a11y-accent); border-color: var(--a11y-accent); }
+  body.a11y-mode .result-group-title { color: var(--a11y-dark-txt); }
+  body.a11y-mode .result-group-title .gic { background: var(--a11y-bg); color: var(--a11y-warn); border: 1px solid var(--a11y-warn); }
+  body.a11y-mode .card { background: var(--a11y-bg); border: 2px solid var(--a11y-dark-txt); }
+  body.a11y-mode .card h3, body.a11y-mode .card .card-icon { color: var(--a11y-warn); }
+  body.a11y-mode .card p, body.a11y-mode .card .card-amount { color: var(--a11y-dark-txt); }
+  body.a11y-mode .fo-callout { background: var(--a11y-bg); border-left-color: var(--a11y-warn); border: 2px solid var(--a11y-warn); }
+  body.a11y-mode .fo-callout-icon { background: var(--a11y-warn); color: var(--a11y-bg); }
+  body.a11y-mode .fo-callout-title { color: var(--a11y-warn); }
+  body.a11y-mode .fo-callout-body p { color: var(--a11y-dark-txt); }
+  body.a11y-mode .faq details { background: var(--a11y-bg); border: 2px solid var(--a11y-dark-txt); border-left: 4px solid var(--a11y-warn); }
+  body.a11y-mode .faq summary { color: var(--a11y-warn); }
+  body.a11y-mode .faq details p { color: var(--a11y-dark-txt); }
+  body.a11y-mode .fo-contact-card { background: var(--a11y-dark-txt); color: var(--a11y-bg); }
+  body.a11y-mode .fo-contact-card .fo-cta-btn { background: var(--a11y-bg); color: var(--a11y-dark-txt); border: 2px solid var(--a11y-bg); }
+  body.a11y-mode .footer { color: var(--a11y-dark-txt); }
+  body.a11y-mode .footer a { color: var(--a11y-warn); text-decoration: underline; }
+  body.a11y-mode .a11y-toggle { background: var(--a11y-warn); color: var(--a11y-bg); border-color: var(--a11y-warn); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+
+<div class="page">
+
+  <div class="a11y-toggle-bar" role="navigation" aria-label="Options d'accessibilité">
+    <button id="a11yToggle" class="a11y-toggle" type="button" aria-pressed="false" onclick="toggleA11y()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+      </svg>
+      Mode lecture universelle
+    </button>
+  </div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" role="banner">
+    <div class="header-row">
+      <a class="logo-link" href="https://www.fnem-fo.org" title="Site FNEM-FO" aria-label="Site officiel FNEM-FO Énergie et Mines">
+        <img src="https://www.fnem-fo.org/wp-content/uploads/2026/05/Logo_FO_Energie_Rond.png" alt="Logo FO Énergie et Mines (FNEM-FO)">
+      </a>
+      <div class="header-text">
+        <span class="badge">FNEM-FO · Édition 2026</span>
+        <h1>Vos <em>droits familiaux</em> IEG, en un clic</h1>
+        <p class="subtitle">Indemnités, aides sociales et congés des Industries Électriques et Gazières — un simulateur qui génère vos droits selon votre situation.</p>
+        <span class="update"><span class="dot"></span>Mise à jour : juin 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu-principal" role="main">
+
+    <div class="intro">
+      Entre le statut national, les accords de branche et le droit commun, les <strong>droits familiaux</strong> des IEG sont nombreux… mais peu connus. Naissance, union, garde d'enfant, études, perte d'autonomie d'un proche : à chaque étape de la vie correspondent des <strong>indemnités, des aides et des congés</strong>. Renseignez votre situation ci-dessous : le <strong>simulateur FNEM-FO</strong> affiche immédiatement les droits qui peuvent vous concerner.
+    </div>
+
+    <!-- ═══════════════ SIMULATEUR ═══════════════ -->
+    <section class="simulateur" aria-label="Simulateur de droits familiaux">
+      <div class="sim-head">
+        <div class="sim-pin" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <div>
+          <h2>Le simulateur de mes droits familiaux</h2>
+          <p>Renseignez votre situation — aucune donnée n'est enregistrée, tout se calcule dans votre navigateur.</p>
+        </div>
+      </div>
+
+      <div class="sim-body">
+
+        <!-- Étape 1 : statut -->
+        <div class="sim-block">
+          <div class="sim-step-label"><span class="num">1</span> Votre situation conjugale</div>
+          <div class="choices" id="grp-statut" role="group" aria-label="Situation conjugale">
+            <button type="button" class="choice" data-val="celibataire" aria-pressed="false">
+              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></svg></span>
+              Célibataire
+            </button>
+            <button type="button" class="choice" data-val="union" aria-pressed="false">
+              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+              Marié(e) / Pacsé(e)
+            </button>
+            <button type="button" class="choice" data-val="concubinage" aria-pressed="false">
+              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="16" cy="9" r="2.6"/><path d="M3 20v-1a6 6 0 0 1 12 0v1"/><path d="M15 20v-1a5 5 0 0 1 6-4.9"/></svg></span>
+              En concubinage
+            </button>
+          </div>
+        </div>
+
+        <!-- Étape 2 : enfants -->
+        <div class="sim-block">
+          <div class="sim-step-label"><span class="num">2</span> Nombre d'enfants à charge</div>
+          <div class="choices" id="grp-enfants" role="group" aria-label="Nombre d'enfants à charge">
+            <button type="button" class="choice" data-val="0" aria-pressed="false">Aucun</button>
+            <button type="button" class="choice" data-val="1" aria-pressed="false">1 enfant</button>
+            <button type="button" class="choice" data-val="2" aria-pressed="false">2 enfants</button>
+            <button type="button" class="choice" data-val="3" aria-pressed="false">3 et +</button>
+          </div>
+          <p class="sim-hint">Au sens des prestations familiales (enfant à votre charge).</p>
+        </div>
+
+        <!-- Étape 3 : tranches d'âge -->
+        <div class="sim-block" id="block-ages" hidden>
+          <div class="sim-step-label"><span class="num">3</span> Âge de vos enfants <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--gris)">(plusieurs choix possibles)</span></div>
+          <div class="toggles" id="grp-ages" role="group" aria-label="Tranches d'âge des enfants">
+            <button type="button" class="toggle" data-val="petite" aria-pressed="false">
+              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              0 à 3 ans (petite enfance)
+            </button>
+            <button type="button" class="toggle" data-val="enfance" aria-pressed="false">
+              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              3 à 12 ans
+            </button>
+            <button type="button" class="toggle" data-val="ado" aria-pressed="false">
+              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              12 à 16 ans
+            </button>
+            <button type="button" class="toggle" data-val="etudiant" aria-pressed="false">
+              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Étudiant / 16 à 26 ans
+            </button>
+          </div>
+        </div>
+
+        <!-- Étape 4 : situations particulières -->
+        <div class="sim-block">
+          <div class="sim-step-label"><span class="num">4</span> Situations particulières <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--gris)">(facultatif)</span></div>
+          <div class="toggles" id="grp-flags" role="group" aria-label="Situations particulières">
+            <button type="button" class="toggle" data-val="grossesse" aria-pressed="false">
+              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Grossesse / naissance ou adoption à venir
+            </button>
+            <button type="button" class="toggle" data-val="mono" aria-pressed="false">
+              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Famille monoparentale
+            </button>
+            <button type="button" class="toggle" data-val="handicap" aria-pressed="false">
+              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Enfant en situation de handicap
+            </button>
+            <button type="button" class="toggle" data-val="aidant" aria-pressed="false">
+              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Proche en perte d'autonomie (aidant)
+            </button>
+          </div>
+        </div>
+
+        <div class="sim-actions">
+          <button type="button" class="sim-btn" id="simRun">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Afficher mes droits
+          </button>
+          <button type="button" class="sim-btn ghost" id="simReset">Réinitialiser</button>
+        </div>
+
+        <!-- RÉSULTATS -->
+        <div class="sim-results" id="simResults" hidden aria-live="polite">
+          <div class="results-banner">
+            <div class="rb-count" id="rbCount">0</div>
+            <div class="rb-text">
+              <strong>droits peuvent vous concerner</strong>
+              <p>Estimation pédagogique d'après votre situation. Vérifiez l'éligibilité exacte auprès de la fédération, de votre CMCAS et de votre employeur.</p>
+            </div>
+          </div>
+          <div id="resIndemnites"></div>
+          <div id="resConges"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <p class="section-sub" style="margin-top:16px">Astuce : le simulateur est un repère. Il ne remplace ni un dossier officiel ni le conseil d'un militant FNEM-FO.</p>
+
+    <!-- ═══ ENCART FO ═══ -->
+    <div class="fo-callout">
+      <div class="fo-callout-icon">!</div>
+      <div class="fo-callout-body">
+        <div class="fo-callout-title">FNEM-FO : des droits à défendre, pas seulement à connaître</div>
+        <p>Plusieurs dispositifs (sursalaire familial, congés « en évolution »…) sont menacés ou en voie d'extinction. La fédération revendique le maintien et l'amélioration de l'ensemble des droits familiaux du statut et des accords de branche IEG.</p>
+      </div>
+    </div>
+
+    <!-- ═══ RÉCAP INDEMNITÉS ═══ -->
+    <h2 class="section-title">
+      <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+      Les indemnités &amp; aides
+    </h2>
+    <p class="section-sub">Statut national, accords de branche, CAMIEG et Activités Sociales (CCAS / CMCAS).</p>
+    <div class="cards" id="cardsIndemnites"></div>
+
+    <!-- ═══ RÉCAP CONGÉS ═══ -->
+    <h2 class="section-title">
+      <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+      Les congés &amp; absences
+    </h2>
+    <p class="section-sub">Issus des textes IEG (statut, accords de branche) et du droit commun.</p>
+    <div class="cards" id="cardsConges"></div>
+
+    <!-- ═══ FAQ ═══ -->
+    <h2 class="section-title">
+      <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg></span>
+      Questions fréquentes
+    </h2>
+    <div class="faq">
+      <details>
+        <summary>Mon conjoint travaille aussi dans les IEG : peut-on cumuler ?</summary>
+        <p>Cela dépend du droit. L'indemnité d'union et le CESU de branche sont cumulables au sein d'un couple IEG ; l'indemnité de naissance/adoption et la prime layette ne sont attribuées qu'à un seul des deux parents. Le simulateur signale les principaux cas, mais vérifiez auprès de votre employeur.</p>
+      </details>
+      <details>
+        <summary>Sursalaire ou forfait familial : lequel choisir ?</summary>
+        <p>Les deux ne sont pas cumulables. Le sursalaire familial s'éteint au 1er janvier 2029 ; le forfait familial est de 48,64 €/mois et par enfant jusqu'au 20e anniversaire (au 1er janvier 2026), réévalué chaque année. Faites le point avec un militant pour l'option la plus favorable.</p>
+      </details>
+      <details>
+        <summary>Le congé supplémentaire de naissance, c'est quoi de nouveau ?</summary>
+        <p>Issu de la loi de financement de la Sécurité sociale pour 2026, il s'ajoute aux congés existants à partir du 1er juillet 2026 : une période indemnisée d'un ou deux mois, prise simultanément ou en alternance avec l'autre parent, fractionnable en deux périodes d'un mois.</p>
+      </details>
+      <details>
+        <summary>Les montants affichés sont-ils garantis ?</summary>
+        <p>Non : ce sont les références 2026 connues, données à titre pédagogique. Beaucoup d'aides sont sous conditions de ressources et selon le coefficient social. Les montants sont réévalués chaque année. Seuls votre employeur, la CAMIEG et votre CMCAS font foi.</p>
+      </details>
+      <details>
+        <summary>Où retrouver les textes officiels ?</summary>
+        <p>Les références réglementaires (statut national, PERS., DP, notes, accords de branche, Code du travail) sont consultables sur sgeieg.fr, legifrance.gouv.fr, ccas.fr et camieg.fr. En cas de doute sur l'application d'un texte, contactez la fédération.</p>
+      </details>
+    </div>
+
+  </main>
+
+  <!-- ═══ CARTE CONTACT ═══ -->
+  <aside class="fo-contact-card" aria-label="Contact FNEM-FO">
+    <div class="fo-logo-wrap">
+      <img src="https://www.fnem-fo.org/wp-content/uploads/2026/05/Logo_FO_Energie_Rond.png" alt="Logo FO Énergie et Mines">
+    </div>
+    <div class="fo-msg">
+      <div class="fo-msg-title">Un doute sur un droit familial ? Contactez la FNEM-FO</div>
+      <div class="fo-msg-body">Nos équipes vous accompagnent sur l'application du statut, des accords de branche et des aides des Activités Sociales propres aux IEG.</div>
+    </div>
+    <a class="fo-cta-btn" href="https://www.fnem-fo.org/contact/" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Nous écrire
+    </a>
+  </aside>
+
+  <footer class="footer" role="contentinfo">
+    <div>Communication fédérale — <strong>FNEM-FO</strong> · Document non opposable · Estimation pédagogique 2026 · <a href="https://www.fnem-fo.org/contact/" target="_blank" rel="noopener">Formulaire de contact</a></div>
+    <div class="addr">FO Énergie et Mines · 46 rue de Lagny, 93100 Montreuil · Tél. 01 44 16 86 20 · <a href="https://www.fnem-fo.org" target="_blank" rel="noopener">www.fnem-fo.org</a></div>
+  </footer>
+
+</div>
+
+<script>
+  /* ═══ Mode lecture universelle ═══ */
+  function toggleA11y() {
+    const btn = document.getElementById('a11yToggle');
+    const isOn = document.body.classList.toggle('a11y-mode');
+    btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+    try { localStorage.setItem('fnemfo-a11y', isOn ? '1' : '0'); } catch(e) {}
+  }
+  try {
+    if (localStorage.getItem('fnemfo-a11y') === '1') {
+      document.body.classList.add('a11y-mode');
+      const b = document.getElementById('a11yToggle');
+      if (b) b.setAttribute('aria-pressed', 'true');
+    }
+  } catch(e) {}
+
+  /* ═══════════ DONNÉES DROITS FAMILIAUX (IEG 2026) ═══════════ */
+  /* type: 'ind' (indemnité/aide) ou 'cong' (congé/absence)            */
+  /* show(s) : prédicat d'éligibilité d'après la situation s           */
+  const S = {
+    statut: null,        // 'celibataire' | 'union' | 'concubinage'
+    enfants: null,       // 0,1,2,3
+    ages: new Set(),     // 'petite','enfance','ado','etudiant'
+    flags: new Set()     // 'grossesse','mono','handicap','aidant'
+  };
+  const has = (set, v) => set.has(v);
+  const enCouple = s => s.statut === 'union' || s.statut === 'concubinage';
+  const aEnfants = s => (s.enfants||0) > 0;
+  const naissanceContext = s => has(s.flags,'grossesse');
+
+  const DROITS = [
+    /* ───────── INDEMNITÉS & AIDES ───────── */
+    { type:'ind', tag:'Statut national', title:"Indemnité statutaire d'union",
+      amount:"1 mois de salaire", ref:"Art. 26 du Statut national — plancher NR 160 / plafond NR 300",
+      desc:"Versée une seule fois dans la carrière à l'occasion d'un mariage ou d'un PACS. Cumulable dans un couple IEG.",
+      show:s => s.statut === 'union' },
+
+    { type:'ind', tag:'Statut national', title:"Indemnité statutaire de naissance ou d'adoption",
+      amount:"1 à 1,5 mois de salaire", ref:"Art. 26 du Statut national — plancher NR 160 / plafond NR 300",
+      desc:"1,5 mois de salaire pour le 1er enfant, 1 mois à partir du 2e. Attribuée à un seul des deux parents pour un couple IEG.",
+      show:s => naissanceContext(s) },
+
+    { type:'ind', tag:'CAMIEG', title:"Prime layette",
+      amount:"340 € / enfant", ref:"CAMIEG — montant réévalué chaque année en janvier",
+      desc:"Prime attribuée pour chaque enfant né ou adopté. Attribuée à un seul des deux parents pour un couple IEG.",
+      show:s => naissanceContext(s) },
+
+    { type:'ind', tag:'Statut national', title:"Sursalaire familial",
+      amount:"dès 2,29 € (1 enfant)", ref:"Art. 26 du Statut · Circ. PERS. 320 · Accord du 15 déc. 2017",
+      desc:"Pour 2 enfants et plus : part fixe + part variable sur la rémunération principale (plancher/plafond). Non cumulable avec le forfait familial. Extinction au 1er janvier 2029.",
+      show:s => aEnfants(s) },
+
+    { type:'ind', tag:'Statut national', title:"Forfait familial",
+      amount:"48,64 € / mois / enfant", ref:"Art. 26 du Statut · Accord du 15 déc. 2017 — au 1er janvier 2026",
+      desc:"Par enfant à charge jusqu'au 20e anniversaire, y compris en garde alternée. Non cumulable avec le sursalaire familial. Réévalué chaque année.",
+      show:s => aEnfants(s) },
+
+    { type:'ind', tag:'Activités Sociales', title:"Aide familiale à la petite enfance",
+      amount:"189 € à 500 € / an / enfant", ref:"Activités Sociales — sous conditions de ressources",
+      desc:"Pour un enfant de 3 mois à 3 ans (7 ans si handicap). 189 €→450 € pour un couple, 210 €→500 € pour une famille monoparentale, selon le coefficient social.",
+      show:s => has(s.ages,'petite') || (naissanceContext(s)) },
+
+    { type:'ind', tag:'Accord de branche', title:"CESU de branche",
+      amount:"60 à 120 × SMIC horaire", ref:"Accord du 15 déc. 2017 — 80 % employeur / 20 % salarié",
+      desc:"Pour un enfant de moins de 12 ans : 100× le SMIC horaire (1 mois–3 ans), 60× (3–12 ans), +20× si famille monoparentale. Usage libre (garde, aide ménagère, soutien scolaire).",
+      show:s => has(s.ages,'petite') || has(s.ages,'enfance') },
+
+    { type:'ind', tag:'Accord de branche', title:"Aide aux frais d'études (AFE)",
+      amount:"113,63 € / mois", ref:"Accord de branche IEG du 7 mars 2011 et avenants — au 1er janv. 2026",
+      desc:"Pour un enfant de moins de 26 ans poursuivant des études, pendant 5 ans maximum. Boursiers : aide forfaitaire de 1 262,57 € versée une fois.",
+      show:s => has(s.ages,'etudiant') },
+
+    { type:'ind', tag:'Activités Sociales', title:"Aide au soutien scolaire",
+      amount:"jusqu'à 1 000–2 000 € / an", ref:"Activités Sociales — sous conditions de ressources, selon coefficient social",
+      desc:"Pour les enfants de 6 à 26 ans scolarisés. Soutien à domicile ou en ligne, plafond selon le dispositif et par enfant.",
+      show:s => has(s.ages,'enfance') || has(s.ages,'ado') || has(s.ages,'etudiant') },
+
+    { type:'ind', tag:'Activités Sociales', title:"Aide à l'autonomie des jeunes",
+      amount:"24,20 € à 217,80 € / mois", ref:"Activités Sociales — sous conditions de ressources",
+      desc:"Pour les enfants de 20 à 26 ans (18 ans si enfant unique) étudiants, en alternance ou en recherche d'emploi. Cumulable avec l'AFE et l'allocation logement.",
+      show:s => has(s.ages,'etudiant') },
+
+    { type:'ind', tag:'Activités Sociales', title:"Contribution à la vie étudiante et de campus",
+      amount:"73,50 € à 105 € / an", ref:"Activités Sociales 2025/2026 — sous conditions de ressources",
+      desc:"Participation à la cotisation obligatoire de vie étudiante pour un enfant de moins de 26 ans en études post-bac. Cumulable avec l'AFE.",
+      show:s => has(s.ages,'etudiant') },
+
+    { type:'ind', tag:'Accord de branche', title:"Plateforme d'aide aux aidants",
+      amount:"Service dédié", ref:"Accord du 15 déc. 2017 · Avenant prévoyance",
+      desc:"Conseil, orientation, écoute psychologique et participation aux frais d'hébergement en cas de congé de proche aidant, de présence parentale ou de solidarité familiale.",
+      show:s => has(s.flags,'aidant') },
+
+    { type:'ind', tag:'Activités Sociales', title:"Aide aux bénéficiaires aidants bénévoles",
+      amount:"jusqu'à 2 000 €", ref:"Activités Sociales (CMCAS) — sous conditions de ressources",
+      desc:"Pour les aidants familiaux bénéficiaires de l'action sanitaire et sociale du régime des IEG, selon le coefficient social.",
+      show:s => has(s.flags,'aidant') },
+
+    /* ───────── CONGÉS & ABSENCES ───────── */
+    { type:'cong', tag:'Statut IEG', title:"Congés spéciaux familiaux — Union",
+      amount:"5 jours", ref:"Art. 19 du Statut national",
+      desc:"Pour un mariage ou un PACS (contre 4 jours dans le droit commun). 1 jour pour le mariage/PACS d'un enfant.",
+      show:s => s.statut === 'union' },
+
+    { type:'cong', tag:'Statut IEG', title:"Congés spéciaux familiaux — Naissance / adoption",
+      amount:"4 jours", ref:"Art. 19 du Statut national",
+      desc:"À l'arrivée d'un enfant en vue de son adoption ou à la naissance (3 jours dans le droit commun).",
+      show:s => naissanceContext(s) },
+
+    { type:'cong', tag:'Réglementaire', title:"Congé de maternité",
+      amount:"20 à 28 semaines", ref:"Code du travail · Art. 22 du Statut — maintien du salaire",
+      desc:"20 semaines (8+12) pour le 1er et le 2e enfant, 28 semaines (8+20) à partir du 3e. Majoration en cas de naissances multiples.",
+      show:s => naissanceContext(s) },
+
+    { type:'cong', tag:'Réglementaire', title:"Congé de paternité et d'accueil de l'enfant",
+      amount:"25 jours (32 si multiples)", ref:"Art. L.1225-35 et s. du Code du travail — maintien du salaire",
+      desc:"À prendre dans les 6 mois suivant la naissance. Ouvert à tout salarié qui accueille un enfant.",
+      show:s => naissanceContext(s) },
+
+    { type:'cong', tag:'Réglementaire', title:"Heure d'allaitement",
+      amount:"1 h / jour pendant 1 an", ref:"Art. L.1225-30 du Code du travail",
+      desc:"Une heure de pause par jour pendant un an à compter de la naissance pour la salariée qui allaite. Absence rémunérée dans les IEG.",
+      show:s => naissanceContext(s) },
+
+    { type:'cong', tag:'Réglementaire', title:"Congé pour examens médicaux",
+      amount:"Temps nécessaire", ref:"Art. L.1225-16 du Code du travail",
+      desc:"Pour les examens prénataux/postnataux ou en cas d'AMP. La personne avec qui vous vivez bénéficie aussi d'une absence pour 3 de ces examens.",
+      show:s => naissanceContext(s) },
+
+    { type:'cong', tag:'Réglementaire', title:"Autorisation d'absence femme enceinte",
+      amount:"1 h / jour", ref:"Circulaire n° 79-13 (étendue)",
+      desc:"À partir du 3e mois de grossesse. Ces heures peuvent être groupées en demi-journées ou journées complètes.",
+      show:s => naissanceContext(s) },
+
+    { type:'cong', tag:'Réglementaire', title:"Congé supplémentaire de naissance (nouveau)",
+      amount:"1 ou 2 mois indemnisés", ref:"Loi de financement de la Sécurité sociale pour 2026 — dès le 1er juillet 2026",
+      desc:"En complément des congés existants : période indemnisée d'un ou deux mois, prise simultanément ou en alternance avec l'autre parent, fractionnable en deux périodes d'un mois.",
+      show:s => naissanceContext(s) },
+
+    { type:'cong', tag:'Réglementaire', title:"Congé parental d'éducation",
+      amount:"jusqu'aux 3 ans de l'enfant", ref:"Art. L.1225-47 et s. du Code du travail · Circ. PERS. 890",
+      desc:"Ou activité à temps partiel de droit pour élever un enfant. Validation gratuite pour la retraite, dans la limite de 12 trimestres par enfant.",
+      show:s => has(s.ages,'petite') || naissanceContext(s) },
+
+    { type:'cong', tag:'Accord de branche', title:"Congé enfant malade",
+      amount:"6 à 10 demi-journées / an", ref:"Accord du 15 déc. 2017 · Art. L.1225-61",
+      desc:"Pour un enfant malade de moins de 16 ans, dont 4 demi-journées rémunérées jusqu'au 12e anniversaire du dernier enfant. Sur justificatif médical.",
+      show:s => has(s.ages,'petite') || has(s.ages,'enfance') || has(s.ages,'ado') },
+
+    { type:'cong', tag:'Accord de branche', title:"Congé parent",
+      amount:"8 demi-journées / an", ref:"Accord du 15 déc. 2017",
+      desc:"Pour un enfant de moins de 12 ans. +8 jours/an pour les parents d'enfant handicapé, +2 jours/an pour les familles monoparentales. Non cumulable avec le CESU de branche.",
+      show:s => has(s.ages,'petite') || has(s.ages,'enfance') },
+
+    { type:'cong', tag:'Statut IEG', title:"Autorisation d'absence — rentrée scolaire",
+      amount:"2 heures rémunérées", ref:"Note DP. 31-133",
+      desc:"Jusqu'aux 13 ans de l'enfant (sans limite d'âge si handicap). Groupables en demi-journée ou journée complète.",
+      show:s => has(s.ages,'petite') || has(s.ages,'enfance') || has(s.ages,'ado') },
+
+    { type:'cong', tag:'Statut IEG', title:"Congé sans solde pour élever un enfant de -8 ans",
+      amount:"jusqu'à 3 ans renouvelables", ref:"Art. 20 du Statut · Annexe III",
+      desc:"Durée initiale de 3 ans maximum, renouvelable jusqu'au 8e anniversaire de l'enfant né, adopté ou recueilli.",
+      show:s => has(s.ages,'petite') || has(s.ages,'enfance') },
+
+    { type:'cong', tag:'Droit commun', title:"Don de jours de repos",
+      amount:"Don anonyme", ref:"Loi 2014-459 · Art. L.1225-65-1 et s. · accord d'entreprise",
+      desc:"Pour un enfant de moins de 20 ans à charge atteint d'une maladie, d'un handicap ou victime d'un accident nécessitant une présence soutenue.",
+      show:s => has(s.flags,'handicap') },
+
+    { type:'cong', tag:'Statut IEG', title:"Congé sans solde — accueil d'un enfant handicapé",
+      amount:"3 mois maximum", ref:"Art. 20 du Statut national",
+      desc:"Pour recueillir un enfant handicapé de 8 à 20 ans dont le taux d'incapacité est d'au moins 80 %. Prise en charge des cotisations retraite si à plein temps.",
+      show:s => has(s.flags,'handicap') },
+
+    { type:'cong', tag:'En évolution', title:"Congé de présence parentale",
+      amount:"310 jours sur 3 ans", ref:"Code du travail · Annexe III du Statut — maintien de 100 % du net après AJPP",
+      desc:"Pour un enfant victime d'une maladie, d'un accident ou d'un grave handicap. Validation gratuite retraite jusqu'à 12 trimestres par enfant.",
+      show:s => has(s.flags,'handicap') },
+
+    { type:'cong', tag:'En évolution', title:"Congé de proche aidant",
+      amount:"3 mois renouvelables (1 an max)", ref:"Art. L.3142-16 et s. · Accord du 15 déc. 2017",
+      desc:"Pour assister un proche en situation de handicap ou de perte d'autonomie d'une particulière gravité. Maintien partiel de rémunération après AJPA.",
+      show:s => has(s.flags,'aidant') },
+
+    { type:'cong', tag:'En évolution', title:"Congé de solidarité familiale",
+      amount:"6 mois (3 mois × 2)", ref:"Art. L.3142-16 et s. · Accord du 15 déc. 2017 — maintien de 100 % du net après AJAP",
+      desc:"Pour assister un proche en phase avancée ou terminale d'une affection grave et incurable. Transformable en temps partiel ou fractionné.",
+      show:s => has(s.flags,'aidant') },
+
+    { type:'cong', tag:'CAMIEG', title:"Allocation décès",
+      amount:"680 €", ref:"CAMIEG — au 1er juillet 2025, réévalué chaque année",
+      desc:"Participation aux frais d'obsèques lors du décès d'un membre de la famille (conjoint, partenaire de PACS, concubin, enfant de 26 ans au plus ou en situation de handicap). À demander dans les 2 ans et un trimestre.",
+      show:s => enCouple(s) || aEnfants(s) }
+  ];
+
+  /* ───────── Cartes récap statiques ───────── */
+  const ICON_IND = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>';
+  const ICON_CONG = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>';
+  function escapeHtml(t){return (t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function staticCard(d){
+    return '<article class="card"><span class="card-icon" aria-hidden="true">'+(d.type==='ind'?ICON_IND:ICON_CONG)+'</span>'+
+      '<h3>'+escapeHtml(d.title)+'</h3>'+
+      '<div class="card-amount">'+escapeHtml(d.amount)+'</div>'+
+      '<p>'+escapeHtml(d.desc)+'</p>'+
+      '<div class="card-ref">'+escapeHtml(d.ref)+'</div></article>';
+  }
+  document.getElementById('cardsIndemnites').innerHTML = DROITS.filter(d=>d.type==='ind').map(staticCard).join('');
+  document.getElementById('cardsConges').innerHTML = DROITS.filter(d=>d.type==='cong').map(staticCard).join('');
+
+  /* ───────── Gestion des sélecteurs ───────── */
+  function bindSingle(groupId, key){
+    document.querySelectorAll('#'+groupId+' .choice').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('#'+groupId+' .choice').forEach(b=>b.setAttribute('aria-pressed','false'));
+        btn.setAttribute('aria-pressed','true');
+        let v = btn.dataset.val;
+        S[key] = (key==='enfants') ? parseInt(v,10) : v;
+        if(key==='enfants'){
+          const blockAges = document.getElementById('block-ages');
+          if(S.enfants>0){ blockAges.hidden = false; }
+          else { blockAges.hidden = true; document.querySelectorAll('#grp-ages .toggle').forEach(b=>b.setAttribute('aria-pressed','false')); S.ages.clear(); }
+        }
+      });
+    });
+  }
+  function bindMulti(groupId, set){
+    document.querySelectorAll('#'+groupId+' .toggle').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const on = btn.getAttribute('aria-pressed')==='true';
+        btn.setAttribute('aria-pressed', on?'false':'true');
+        if(on) set.delete(btn.dataset.val); else set.add(btn.dataset.val);
+      });
+    });
+  }
+  bindSingle('grp-statut','statut');
+  bindSingle('grp-enfants','enfants');
+  bindMulti('grp-ages', S.ages);
+  bindMulti('grp-flags', S.flags);
+
+  /* ───────── Génération des résultats ───────── */
+  function resultCard(d, i){
+    const cls = d.type==='cong' ? 'result-card cong' : 'result-card';
+    const tagCls = d.tag==='Activités Sociales'||d.tag==='CAMIEG' ? 'rc-tag perso' : 'rc-tag';
+    return '<div class="'+cls+'" style="animation-delay:'+(i*60)+'ms">'+
+      '<div class="rc-top"><div class="rc-title">'+escapeHtml(d.title)+'</div>'+
+      '<div class="rc-amount">'+escapeHtml(d.amount)+'</div></div>'+
+      '<div class="rc-desc">'+escapeHtml(d.desc)+'</div>'+
+      '<div class="rc-ref">'+escapeHtml(d.ref)+'</div>'+
+      '<span class="'+tagCls+'">'+escapeHtml(d.tag)+'</span></div>';
+  }
+  function run(){
+    if(!S.statut || S.enfants===null){
+      alert("Renseignez au moins votre situation conjugale et le nombre d'enfants.");
+      return;
+    }
+    const elig = DROITS.filter(d=>{ try { return d.show(S); } catch(e){ return false; } });
+    const inds = elig.filter(d=>d.type==='ind');
+    const congs = elig.filter(d=>d.type==='cong');
+
+    const wrapInd = document.getElementById('resIndemnites');
+    const wrapCong = document.getElementById('resConges');
+    wrapInd.innerHTML = '';
+    wrapCong.innerHTML = '';
+
+    if(inds.length){
+      wrapInd.innerHTML = '<div class="result-group-title"><span class="gic" aria-hidden="true">'+ICON_IND+'</span> Indemnités &amp; aides ('+inds.length+')</div>' + inds.map((d,i)=>resultCard(d,i)).join('');
+    }
+    if(congs.length){
+      wrapCong.innerHTML = '<div class="result-group-title"><span class="gic" aria-hidden="true">'+ICON_CONG+'</span> Congés &amp; absences ('+congs.length+')</div>' + congs.map((d,i)=>resultCard(d,i)).join('');
+    }
+    if(!elig.length){
+      wrapInd.innerHTML = '<div class="result-card"><div class="rc-title">Aucun droit spécifique détecté</div><div class="rc-desc">Affinez votre situation (âge des enfants, situations particulières). Pensez aussi à l\'allocation décès et aux aides aux personnes victimes de violences intrafamiliales, ouvertes indépendamment de la composition familiale.</div></div>';
+    }
+
+    /* compteur animé */
+    const res = document.getElementById('simResults');
+    res.hidden = false;
+    const target = elig.length;
+    const countEl = document.getElementById('rbCount');
+    let cur = 0;
+    const step = Math.max(1, Math.round(target/18));
+    clearInterval(window.__cnt);
+    window.__cnt = setInterval(()=>{
+      cur += step;
+      if(cur>=target){ cur=target; clearInterval(window.__cnt); }
+      countEl.textContent = cur;
+    }, 35);
+
+    res.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+  document.getElementById('simRun').addEventListener('click', run);
+  document.getElementById('simReset').addEventListener('click', ()=>{
+    S.statut=null; S.enfants=null; S.ages.clear(); S.flags.clear();
+    document.querySelectorAll('.choice,.toggle').forEach(b=>b.setAttribute('aria-pressed','false'));
+    document.getElementById('block-ages').hidden = true;
+    document.getElementById('simResults').hidden = true;
+    document.querySelector('.simulateur').scrollIntoView({behavior:'smooth', block:'start'});
+  });
+</script>
+
+</body>
+</html>
