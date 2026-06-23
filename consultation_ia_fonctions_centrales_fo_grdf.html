@@ -194,6 +194,15 @@
   }
   .cta-meta span { display: inline-flex; align-items: center; gap: 6px; }
 
+  /* ═══ CTA COMPACT (haut de page) ═══ */
+  .cta-top {
+    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-tres-fonce) 100%);
+    border-radius: 16px; padding: 20px 24px; margin-bottom: 28px;
+    text-align: center; box-shadow: 0 10px 30px rgba(1,106,150,0.22);
+  }
+  .cta-top .cta-btn { margin-top: 0; }
+  .cta-top .cta-top-note { display: block; margin-top: 12px; font-size: 12.5px; color: rgba(255,255,255,0.92); }
+
   /* ═══ BANDEAU ANONYMAT ═══ */
   .anon-bar {
     background: var(--vert-clair); border: 1px solid #bfe9de;
@@ -405,6 +414,8 @@
   body.a11y-mode .cta-block { background: var(--a11y-accent) !important; }
   body.a11y-mode .cta-block::after { display: none; }
   body.a11y-mode .cta-block .cta-kicker { color: var(--a11y-bg); }
+  body.a11y-mode .cta-top { background: var(--a11y-accent) !important; }
+  body.a11y-mode .cta-top .cta-top-note { color: var(--a11y-bg); }
   body.a11y-mode .cta-btn { background: var(--a11y-bg); color: var(--a11y-accent); border: 2px solid var(--a11y-bg); }
   body.a11y-mode .anon-bar { background: var(--a11y-bg); border: 2px solid var(--a11y-accent); }
   body.a11y-mode .anon-bar .anon-ic { background: var(--a11y-accent); }
@@ -467,6 +478,15 @@
 
   <main id="contenu-principal">
 
+  <!-- ═══ CTA HAUT (accès direct) ═══ -->
+  <div class="cta-top">
+    <a class="cta-btn disabled formsBtn" href="#" target="_blank" rel="noopener" aria-disabled="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <span class="formsBtnLabel">Lien du questionnaire à venir</span>
+    </a>
+    <span class="cta-top-note">🔒 100 % anonyme · ⏱ 4–6 min · 🗓 pour le CSE extraordinaire du 7 juillet</span>
+  </div>
+
   <!-- ═══ BANDEAU TERMINAL ═══ -->
   <div class="terminal-box" role="figure" aria-label="Garanties de confidentialité de la consultation, présentées sous forme de terminal">
     <span class="term-title">~/fo/consultation-ia — confidentialité</span>
@@ -520,22 +540,6 @@
       <p>Le questionnaire ne demande <strong>ni nom, ni e-mail, ni matricule, ni adresse</strong>. Il est paramétré pour ne pas enregistrer l'identité du répondant. On exploite uniquement des <strong>tendances agrégées</strong> ; aucune réponse individuelle n'est rattachable à une personne. Répondez librement, y compris si vous êtes manager.</p>
     </div>
   </div>
-
-  <!-- ═══ CTA QUESTIONNAIRE ═══ -->
-  <section class="cta-block" aria-label="Accès au questionnaire">
-    <div class="cta-kicker">⏱ 4 à 6 minutes</div>
-    <h2>Donnez votre avis sur l'IA générative</h2>
-    <p>Anonyme, sur la base du volontariat. Vos réponses alimentent directement la préparation du CSE du 7 juillet et les travaux de la CSSCT.</p>
-    <a id="formsBtn" class="cta-btn disabled" href="#" target="_blank" rel="noopener" aria-disabled="true">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-      <span id="formsBtnLabel">Lien du questionnaire à venir</span>
-    </a>
-    <div class="cta-meta">
-      <span>🔒 Aucune donnée nominative</span>
-      <span>🗓 Avant le 7 juillet</span>
-      <span>🗣 Champ libre disponible</span>
-    </div>
-  </section>
 
   <!--
     ╔══════════════════════════════════════════════════════════════════╗
@@ -685,6 +689,22 @@
     </details>
   </div>
 
+  <!-- ═══ CTA BAS (rappel) ═══ -->
+  <section class="cta-block" aria-label="Accès au questionnaire">
+    <div class="cta-kicker">⏱ 4 à 6 minutes · anonyme</div>
+    <h2>Prêt·e à donner votre avis ?</h2>
+    <p>Sur la base du volontariat. Vos réponses alimentent directement la préparation du CSE extraordinaire du 7 juillet et les travaux de la CSSCT.</p>
+    <a class="cta-btn disabled formsBtn" href="#" target="_blank" rel="noopener" aria-disabled="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <span class="formsBtnLabel">Lien du questionnaire à venir</span>
+    </a>
+    <div class="cta-meta">
+      <span>🔒 Aucune donnée nominative</span>
+      <span>🗓 Avant le 7 juillet</span>
+      <span>🗣 Champ libre disponible</span>
+    </div>
+  </section>
+
   <!-- ═══ CARTE CONTACT ═══ -->
   <aside class="fo-contact-card" aria-label="Contact FO GRDF Fonctions Centrales">
     <div class="fo-logo-wrap">
@@ -717,14 +737,16 @@
 
   // Active le bouton du questionnaire dès qu'une URL Forms est renseignée plus haut.
   (function () {
-    var btn = document.getElementById('formsBtn');
-    var label = document.getElementById('formsBtnLabel');
-    if (typeof FORMS_URL === 'string' && FORMS_URL.trim() !== '') {
-      btn.href = FORMS_URL.trim();
+    if (typeof FORMS_URL !== 'string' || FORMS_URL.trim() === '') return;
+    var url = FORMS_URL.trim();
+    document.querySelectorAll('.formsBtn').forEach(function (btn) {
+      btn.href = url;
       btn.classList.remove('disabled');
       btn.setAttribute('aria-disabled', 'false');
+    });
+    document.querySelectorAll('.formsBtnLabel').forEach(function (label) {
       label.textContent = 'Répondre au questionnaire';
-    }
+    });
   })();
 </script>
 
