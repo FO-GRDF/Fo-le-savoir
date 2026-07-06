@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accord IA & Dialogue social — FO GRDF · Pourquoi FO n'a pas signé</title>
+<meta name="description" content="Communication FO GRDF à tous les salariés : décryptage de l'accord de méthode sur l'intelligence artificielle signé par la CGT, la CFE-CGC et la CFDT. FO est POUR l'IA, mais CONTRE le muselage du dialogue social. Explications, cas concret, position et revendications.">
+<script data-goatcounter="https://fo-grdf.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu: #019cda;
+    --bleu-clair: #019cda;
+    --or: #f7dd5c;
+    --or-clair: #fde8ea;
+    --jaune-clair: #fff8d6;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --texte: #1A1A2E;
+    /* mode lecture universelle */
+    --a11y-bg: #FFFFFF;
+    --a11y-surface: #F4F4F2;
+    --a11y-surface2: #E9E9E6;
+    --a11y-border: #2C2C29;
+    --a11y-txt1: #111111;
+    --a11y-txt2: #2C2C29;
+    --a11y-txt3: #4A4A47;
+    --a11y-dark: #1A1A1A;
+    --a11y-dark-txt: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  .page { max-width: 860px; margin: 0 auto; padding: 40px 32px 64px; }
+
+  .skip-link {
+    position: absolute; left: -999px; top: 0;
+    background: var(--bleu); color: #fff; padding: 10px 18px; border-radius: 0 0 10px 0;
+    z-index: 999; font-weight: 700; text-decoration: none;
+  }
+  .skip-link:focus { left: 0; }
+
+  /* HEADER */
+  .header {
+    position: relative;
+    background: linear-gradient(135deg, #019cda 0%, #028bc2 100%);
+    border-radius: 20px;
+    padding: 40px 44px 34px;
+    margin-bottom: 34px;
+    overflow: hidden;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--or); color: var(--bleu);
+    font-weight: 500; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 40px; position: relative; z-index: 1;
+  }
+  .header h1 {
+    font-family: 'Fraunces', serif; font-size: 40px; font-weight: 900;
+    color: var(--blanc); line-height: 1.12; position: relative; z-index: 1; max-width: 640px;
+  }
+  .header h1 em { color: var(--or); font-style: italic; }
+  .header .subtitle {
+    margin-top: 14px; font-size: 15.5px; color: rgba(255,255,255,0.82);
+    position: relative; z-index: 1; font-weight: 300; max-width: 640px;
+  }
+  .header .update {
+    margin-top: 20px; display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px; padding: 6px 16px; font-size: 12px; color: rgba(255,255,255,0.9);
+    position: relative; z-index: 1;
+  }
+  .dot { width: 7px; height: 7px; background: #4ADE80; border-radius: 50%; display: inline-block; }
+  .pulse-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--rouge); color: #fff; font-weight: 700; font-size: 12px;
+    letter-spacing: 1.5px; text-transform: uppercase; padding: 7px 16px; border-radius: 40px;
+    box-shadow: 0 0 0 0 rgba(239,51,62,0.7); animation: pulse-red 2.4s ease-out infinite;
+  }
+  .pulse-badge::before {
+    content:''; width: 8px; height: 8px; background: #fff; border-radius: 50%;
+    display: inline-block; animation: pulse-dot 1.2s ease-in-out infinite alternate;
+  }
+  @keyframes pulse-red { 0%{box-shadow:0 0 0 0 rgba(239,51,62,0.65);} 70%{box-shadow:0 0 0 14px rgba(239,51,62,0);} 100%{box-shadow:0 0 0 0 rgba(239,51,62,0);} }
+  @keyframes pulse-dot { from{opacity:.4;transform:scale(.85);} to{opacity:1;transform:scale(1.15);} }
+
+  /* A11Y TOGGLE */
+  .a11y-toggle-bar { display: flex; justify-content: flex-end; margin-bottom: 26px; }
+  .a11y-btn {
+    display: inline-flex; align-items: center; gap: 9px; cursor: pointer;
+    background: var(--blanc); border: 1.5px solid #e0dccf; border-radius: 40px;
+    padding: 9px 18px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    color: var(--texte); transition: all .2s;
+  }
+  .a11y-btn:hover { border-color: var(--bleu); box-shadow: 0 4px 14px rgba(1,156,218,.12); }
+  .a11y-icon { font-size: 17px; }
+  .a11y-label-on { display: none; }
+  body.a11y-mode .a11y-label-on { display: inline; }
+  body.a11y-mode .a11y-label-off { display: none; }
+
+  /* INTRO */
+  .intro {
+    background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 28px;
+    border-left: 5px solid var(--bleu-clair); font-size: 15.5px; line-height: 1.75; color: #2a2a2a;
+  }
+  .intro strong { color: var(--bleu); }
+
+  /* WINK NOTE */
+  .wink-note {
+    position: relative; background: linear-gradient(135deg, #fff8d6 0%, #fde8a8 100%);
+    border: 1.5px dashed #c19c00; border-radius: 14px; padding: 16px 22px 16px 64px;
+    margin-bottom: 26px; font-size: 13.5px; color: #5a4000; line-height: 1.6; font-style: italic;
+  }
+  .wink-note::before { content: '😉'; position: absolute; top: 50%; left: 18px; transform: translateY(-50%); font-size: 26px; font-style: normal; }
+  .wink-note strong { color: #3a2800; font-style: normal; }
+  .wink-note .wink-tag {
+    display: inline-block; background: #3a2800; color: #fde8a8; font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px;
+    margin-right: 8px; font-style: normal; vertical-align: 1px;
+  }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Fraunces', serif; font-size: 23px; font-weight: 700; color: var(--bleu);
+    margin: 8px 0 20px; display: flex; align-items: center; gap: 12px;
+  }
+  .section-title .icon {
+    width: 38px; height: 38px; background: var(--or-clair); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; font-size: 19px; flex-shrink: 0;
+  }
+  .lead { font-size: 15px; color: #333; line-height: 1.75; margin-bottom: 22px; }
+  .lead strong { color: var(--bleu); }
+
+  /* TERMINAL */
+  .terminal-box {
+    background: #0f1726; border: 1px solid #1d2a44; border-radius: 14px; padding: 18px 22px 20px;
+    margin-bottom: 30px; font-family: 'JetBrains Mono', ui-monospace, monospace; color: #c8d3ec;
+    font-size: 13px; line-height: 1.7; position: relative; overflow: hidden;
+    box-shadow: 0 10px 32px rgba(15,23,38,0.18);
+  }
+  .terminal-box::before { content:''; position: absolute; top:14px; left:16px; width:10px; height:10px; border-radius:50%; background:#ef333e; box-shadow: 16px 0 0 #f7dd5c, 32px 0 0 #28b193; }
+  .terminal-box .term-title { display:block; color:#6f86b1; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; margin:4px 0 14px 64px; }
+  .terminal-box .term-line { display:block; margin-bottom:6px; }
+  .terminal-box .term-prompt { color:#f7dd5c; font-weight:700; }
+  .terminal-box .term-out { color:#6f86b1; font-style:italic; }
+  .terminal-box .term-flag { color:#ef333e; font-weight:700; }
+  .terminal-box .term-ok { color:#28b193; font-weight:700; }
+  .terminal-box .term-cursor { display:inline-block; width:9px; height:15px; background:#f7dd5c; vertical-align:-2px; margin-left:2px; animation: term-blink 1.05s steps(2,start) infinite; }
+  @keyframes term-blink { to { background: transparent; } }
+
+  /* CARDS */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 30px; }
+  .card { background: var(--blanc); border-radius: 16px; padding: 24px; transition: transform .2s, box-shadow .2s; position: relative; overflow: hidden; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,59,111,0.1); }
+  .card .card-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+  .card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .card p { font-size: 13.5px; color: var(--gris); line-height: 1.65; }
+  .card.highlight { background: var(--bleu); color: white; }
+  .card.highlight h3 { color: var(--or); }
+  .card.highlight p { color: rgba(255,255,255,0.85); }
+
+  /* ALERT */
+  .alert { background: var(--or-clair); border: 1.5px solid var(--or); border-radius: 14px; padding: 20px 24px; margin-bottom: 30px; display: flex; gap: 14px; align-items: flex-start; }
+  .alert .alert-icon { font-size: 24px; flex-shrink: 0; }
+  .alert p { font-size: 14px; line-height: 1.7; color: #5a4000; }
+  .alert strong { color: #3a2800; }
+  .alert.green { background: var(--vert-clair); border-color: var(--vert); }
+  .alert.green p { color: #0e3d22; }
+  .alert.green strong { color: #0a2e19; }
+  .alert.blue { background: #e6f5fb; border-color: var(--bleu); }
+  .alert.blue p { color: #024a6b; }
+  .alert.blue strong { color: #013147; }
+
+  /* TABLE catégories */
+  .cat-table { background: var(--blanc); border-radius: 16px; overflow: hidden; margin-bottom: 12px; box-shadow: 0 6px 22px rgba(1,156,218,0.06); }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead tr { background: var(--bleu); color: white; }
+  thead th { padding: 13px 14px; text-align: left; font-weight: 500; font-size: 12px; letter-spacing: 0.5px; }
+  tbody td { padding: 13px 14px; border-bottom: 1px solid #eee; color: #2a2a2a; vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr.structurante { background: var(--vert-clair); }
+  tbody tr.structurante td { color: #0e3d22; }
+  .pill { display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+  .pill.no { background: var(--rouge-clair); color: var(--rouge); }
+  .pill.yes { background: var(--vert-clair); color: #0e6b54; }
+  .cat-name { font-family: 'Fraunces', serif; font-weight: 700; color: var(--bleu); font-size: 14px; }
+
+  /* FLIP */
+  .flip-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-bottom: 30px; }
+  .flip-card { perspective: 1200px; height: 240px; cursor: pointer; }
+  .flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform .7s cubic-bezier(.3,.7,.4,1); transform-style: preserve-3d; }
+  .flip-card:hover .flip-card-inner, .flip-card:focus-within .flip-card-inner, .flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+  .flip-face { position: absolute; inset: 0; border-radius: 18px; padding: 22px 24px; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+  .flip-face.front { background: linear-gradient(135deg, #e6f5fb 0%, #d0eaf6 100%); border: 1.5px solid #b6dff0; color: #014a72; }
+  .flip-face.back { background: linear-gradient(135deg, #1a2240 0%, #0f1726 100%); color: #fff; transform: rotateY(180deg); border: 1.5px solid #2a3568; }
+  .flip-face .ff-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; opacity: .8; }
+  .flip-face.front .ff-label { color: #017fb1; }
+  .flip-face.back .ff-label { color: var(--or); }
+  .flip-face .ff-title { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; line-height: 1.2; margin: 8px 0 4px; }
+  .flip-face .ff-desc { font-size: 13.5px; line-height: 1.6; }
+  .flip-face .ff-hint { font-size: 11px; opacity: .6; margin-top: 6px; display: inline-flex; align-items: center; gap: 6px; }
+  .flip-face .ff-hint::before { content: '↻'; display: inline-block; font-size: 13px; }
+
+  /* FIELD CASE */
+  .field-case { background: linear-gradient(135deg, #fff8d6 0%, #ffe8a8 100%); border-radius: 18px; padding: 26px 30px 22px; margin-bottom: 30px; border-left: 6px solid #c19c00; position: relative; overflow: hidden; box-shadow: 0 6px 20px rgba(193,156,0,0.10); }
+  .field-case .fc-tag { display: inline-flex; align-items: center; gap: 7px; background: #3a2800; color: #fde8a8; font-weight: 700; font-size: 11px; letter-spacing: 1.8px; text-transform: uppercase; padding: 5px 13px; border-radius: 30px; margin-bottom: 14px; }
+  .field-case h3 { font-family: 'Fraunces', serif; font-size: 20px; color: #5a4000; margin-bottom: 10px; }
+  .field-case p { font-size: 14px; line-height: 1.7; color: #5a4000; margin-bottom: 10px; }
+  .field-case ul { margin: 6px 0 10px; padding-left: 4px; list-style: none; }
+  .field-case li { font-size: 13.5px; line-height: 1.6; color: #5a4000; padding-left: 26px; position: relative; margin-bottom: 8px; }
+  .field-case li::before { content: '▸'; position: absolute; left: 6px; color: #c19c00; font-weight: 700; }
+  .field-case strong { color: #3a2800; }
+
+  /* QUOTE / avocat */
+  .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 30px; }
+  .quote-card { position: relative; background: var(--blanc); border-radius: 18px; padding: 24px 24px 20px; border-left: 5px solid var(--bleu); box-shadow: 0 8px 24px rgba(1,156,218,0.07); overflow: hidden; }
+  .quote-card::before { content: '“'; position: absolute; top: -28px; right: 14px; font-family: 'Fraunces', serif; font-size: 130px; font-weight: 900; line-height: 1; color: rgba(1,156,218,0.08); pointer-events: none; }
+  .quote-card.accent-rouge { border-left-color: var(--rouge); }
+  .quote-card.accent-rouge::before { color: rgba(239,51,62,0.10); }
+  .quote-card.accent-or { border-left-color: var(--or); }
+  .quote-card.accent-or::before { color: rgba(247,221,92,0.30); }
+  .quote-card.accent-vert { border-left-color: var(--vert); }
+  .quote-card.accent-vert::before { color: rgba(40,177,147,0.10); }
+  .quote-card .qc-text { font-family: 'Fraunces', serif; font-style: italic; font-size: 16px; line-height: 1.55; color: var(--texte); margin-bottom: 12px; position: relative; z-index: 1; }
+  .quote-card .qc-tag { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 10px; background: rgba(1,156,218,0.10); color: var(--bleu); border-radius: 20px; }
+  .quote-card.accent-rouge .qc-tag { background: rgba(239,51,62,0.10); color: var(--rouge); }
+  .quote-card.accent-or .qc-tag { background: rgba(247,221,92,0.30); color: #7a5200; }
+  .quote-card.accent-vert .qc-tag { background: rgba(40,177,147,0.13); color: #0e6b54; }
+
+  /* STAT */
+  .stat-box { background: linear-gradient(135deg, #019cda 0%, #28b193 100%); border-radius: 20px; padding: 30px 40px; margin-bottom: 30px; color: white; display: flex; align-items: center; gap: 32px; }
+  .stat-box .stat-main { flex-shrink: 0; text-align: center; }
+  .stat-box .stat-val { font-family: 'Fraunces', serif; font-size: 50px; font-weight: 900; color: var(--or); line-height: 1; }
+  .stat-box .stat-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+  .stat-box .stat-desc { font-size: 14px; color: rgba(255,255,255,0.9); line-height: 1.7; }
+  .stat-box .stat-desc strong { color: white; }
+
+  /* POSITION */
+  .position-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 30px; }
+  .position-card { border-radius: 16px; padding: 24px 24px 22px; position: relative; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+  .position-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,0.08); }
+  .position-card.pour { background: linear-gradient(135deg, #28b193 0%, #1e8a70 100%); color: #fff; }
+  .position-card.contre { background: linear-gradient(135deg, #ef333e 0%, #b81f29 100%); color: #fff; }
+  .position-card .pos-badge { display: inline-block; font-weight: 700; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 40px; background: rgba(255,255,255,0.18); margin-bottom: 12px; }
+  .position-card.pour .pos-badge::before { content: '✓ '; }
+  .position-card.contre .pos-badge::before { content: '✕ '; }
+  .position-card h3 { font-family: 'Fraunces', serif; font-size: 20px; line-height: 1.25; margin-bottom: 8px; color: #fff; }
+  .position-card p { font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,0.94); margin: 0; }
+  .position-card::after { content: ''; position: absolute; bottom: -40px; right: -40px; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.06); pointer-events: none; }
+
+  /* RECO */
+  .reco-section { background: var(--blanc); border-radius: 18px; padding: 28px 30px; margin-bottom: 30px; box-shadow: 0 6px 22px rgba(1,156,218,0.06); }
+  .reco-list { list-style: none; padding: 0; margin: 18px 0 0; }
+  .reco-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; border-radius: 12px; border: 1.5px solid #e7e3d6; background: var(--fond); margin-bottom: 10px; cursor: pointer; transition: background .2s, border-color .2s, transform .15s; user-select: none; }
+  .reco-item:hover { background: #fff; border-color: var(--bleu); transform: translateX(2px); }
+  .reco-checkbox { flex-shrink: 0; width: 22px; height: 22px; border-radius: 6px; border: 2px solid #c4c0b3; background: #fff; display: inline-flex; align-items: center; justify-content: center; transition: all .2s; margin-top: 1px; }
+  .reco-checkbox::after { content: ''; width: 11px; height: 6px; border-left: 2.5px solid #fff; border-bottom: 2.5px solid #fff; transform: rotate(-45deg) scale(0); transition: transform .2s; margin-top: -2px; }
+  .reco-item.is-checked .reco-checkbox { background: var(--vert); border-color: var(--vert); }
+  .reco-item.is-checked .reco-checkbox::after { transform: rotate(-45deg) scale(1); }
+  .reco-item.is-checked { background: #f0faf6; border-color: var(--vert); }
+  .reco-item .reco-text { font-size: 14.5px; line-height: 1.55; color: var(--texte); }
+  .reco-item.is-checked .reco-text { color: #0a4a36; }
+  .reco-count { margin-top: 18px; padding: 16px 18px; border-radius: 12px; background: linear-gradient(135deg, #019cda, #28b193); color: #fff; font-size: 14px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .reco-count .reco-num { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 900; color: var(--or); line-height: 1; transition: transform .3s; }
+  .reco-count.is-bumped .reco-num { transform: scale(1.15); }
+  .reco-count .reco-msg { flex: 1; min-width: 200px; line-height: 1.5; }
+  .reco-count .reco-msg strong { color: var(--or); }
+
+  /* DEMANDS */
+  .demands { background: var(--blanc); border-radius: 18px; padding: 28px 30px; margin-bottom: 30px; }
+  .demands ol { list-style: none; padding: 0; counter-reset: dem; margin-top: 8px; }
+  .demands ol li { counter-increment: dem; position: relative; padding: 16px 14px 16px 60px; border-bottom: 1px dashed #e0dccf; font-size: 14.5px; line-height: 1.6; color: var(--texte); }
+  .demands ol li:last-child { border-bottom: none; }
+  .demands ol li::before { content: counter(dem, decimal-leading-zero); position: absolute; left: 0; top: 14px; width: 44px; height: 44px; background: var(--or-clair); color: var(--bleu); border-radius: 12px; font-family: 'Fraunces', serif; font-weight: 900; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid rgba(1,156,218,0.18); }
+  .demands ol li strong { color: var(--bleu); display: block; margin-bottom: 2px; font-size: 15px; }
+
+  /* CTA mailto */
+  .mail-cta-row { margin: 6px 0 28px; padding: 14px 18px; background: linear-gradient(135deg, rgba(192,48,58,0.06), rgba(247,221,92,0.08)); border: 1px dashed rgba(192,48,58,0.35); border-radius: 14px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .mail-cta-row .mcr-text { flex: 1; min-width: 220px; font-size: 13.5px; color: var(--texte); line-height: 1.55; }
+  .mail-cta-row .mcr-text strong { color: var(--rouge); }
+  .mail-pill { display: inline-flex; align-items: center; gap: 7px; background: linear-gradient(135deg, #c0303a 0%, #9e1a28 100%); color: #fff !important; font-weight: 700; font-size: 13px; padding: 8px 16px 8px 14px; border-radius: 40px; text-decoration: none; box-shadow: 0 4px 14px rgba(192,48,58,0.25); transition: transform .18s, box-shadow .18s; white-space: nowrap; }
+  .mail-pill::before { content: '✉'; display: inline-flex; width: 22px; height: 22px; background: rgba(255,255,255,0.18); color: #fff; border-radius: 50%; align-items: center; justify-content: center; font-size: 12px; }
+  .mail-pill:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(192,48,58,0.4); }
+  .confid-tag { display: inline-flex; align-items: center; gap: 5px; background: linear-gradient(180deg, transparent 55%, #fff3a6 55%, #fff3a6 92%, transparent 92%); color: #3a2800; font-weight: 700; padding: 0 4px; border-radius: 2px; white-space: nowrap; }
+  .confid-tag::before { content: '🔒'; font-size: 0.92em; }
+  .confid-tag.solid { background: #ffe14a; color: #3a2800; padding: 3px 10px; border-radius: 30px; font-size: 12px; border: 1px solid #c19c00; }
+
+  /* CONTACT CARD */
+  .fo-contact-card { display: flex; align-items: center; gap: 24px; background: linear-gradient(135deg, #019cda 0%, #017fb1 100%); border-radius: 20px; padding: 26px 30px; margin-bottom: 30px; flex-wrap: wrap; }
+  .fo-contact-card .fo-logo-wrap img { height: 84px; width: auto; object-fit: contain; background: #fff; border-radius: 14px; padding: 8px 12px; transition: transform .2s; }
+  .fo-contact-card .fo-logo-wrap img:hover { transform: scale(1.07); }
+  .fo-contact-card .fo-body { flex: 1; min-width: 260px; }
+  .fo-contact-card h3 { font-family: 'Fraunces', serif; font-size: 19px; color: #fff; margin-bottom: 8px; }
+  .fo-contact-card p { font-size: 13.5px; color: rgba(255,255,255,0.92); line-height: 1.6; margin-bottom: 14px; }
+  .fo-mailto-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--or); color: #3a2800 !important; font-weight: 700; font-size: 14px; padding: 10px 20px; border-radius: 40px; text-decoration: none; transition: transform .2s; }
+  .fo-mailto-btn:hover { transform: translateY(-2px); }
+
+  /* GLOSSARY */
+  .glossary { background: var(--blanc); border-radius: 18px; padding: 28px 30px 26px; margin-bottom: 30px; box-shadow: 0 6px 22px rgba(1,156,218,0.06); }
+  .glossary .glos-intro { font-size: 13.5px; color: var(--gris); line-height: 1.65; margin: -4px 0 18px; }
+  .glossary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .glos-item { background: var(--fond); border-left: 4px solid var(--bleu); border-radius: 0 12px 12px 0; padding: 12px 16px 12px 14px; transition: background .18s, transform .18s, border-color .18s; }
+  .glos-item:hover { background: #fff; transform: translateX(2px); border-left-color: var(--or); }
+  .glos-item dt { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: var(--bleu); margin-bottom: 2px; }
+  .glos-item dt .glos-full { display: block; font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 500; color: var(--texte); margin-top: 2px; }
+  .glos-item dd { font-size: 12.5px; color: var(--gris); line-height: 1.55; margin: 4px 0 0; }
+  .glos-item.law { border-left-color: var(--vert); }
+  .glos-item.law dt { color: #0e6b54; }
+  .glos-item.tech { border-left-color: var(--or); }
+  .glos-item.tech dt { color: #a36200; }
+
+  abbr[title] { text-decoration: none; border-bottom: 1.5px dotted var(--bleu); cursor: help; padding-bottom: 1px; }
+  abbr[title]:hover { background: rgba(1,156,218,0.12); border-bottom-color: var(--rouge); border-radius: 2px; }
+
+  /* FOOTER */
+  .footer { text-align: center; font-size: 12px; color: var(--gris); padding-top: 24px; border-top: 1px solid #ddd; line-height: 1.7; }
+  .footer a { color: var(--bleu); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* MODE LECTURE UNIVERSELLE */
+  body.a11y-mode { background: var(--a11y-bg); }
+  body.a11y-mode, body.a11y-mode p, body.a11y-mode li, body.a11y-mode dd, body.a11y-mode .lead, body.a11y-mode .intro { font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .header { background: var(--a11y-dark) !important; border: 2px solid var(--a11y-border); }
+  body.a11y-mode .header h1, body.a11y-mode .header .subtitle { color: #fff !important; }
+  body.a11y-mode .header h1 em { color: var(--or) !important; }
+  body.a11y-mode .intro, body.a11y-mode .card, body.a11y-mode .cat-table, body.a11y-mode .reco-section, body.a11y-mode .demands, body.a11y-mode .glossary, body.a11y-mode .quote-card { background: var(--a11y-surface) !important; border: 1.5px solid var(--a11y-border) !important; color: var(--a11y-txt1) !important; box-shadow: none !important; }
+  body.a11y-mode .intro strong, body.a11y-mode .card h3, body.a11y-mode .section-title, body.a11y-mode .demands ol li strong, body.a11y-mode .glos-item dt { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .card p, body.a11y-mode .glos-item dd, body.a11y-mode .reco-item .reco-text { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .stat-box, body.a11y-mode .position-card.pour, body.a11y-mode .position-card.contre, body.a11y-mode .fo-contact-card, body.a11y-mode .reco-count { background: var(--a11y-dark) !important; color: #fff !important; border: 2px solid var(--a11y-border); }
+  body.a11y-mode .position-card.contre { border: 3px solid #fff !important; }
+  body.a11y-mode .field-case, body.a11y-mode .alert, body.a11y-mode .wink-note { background: var(--a11y-surface2) !important; border: 1.5px solid var(--a11y-border) !important; color: var(--a11y-txt1) !important; }
+  body.a11y-mode .field-case *, body.a11y-mode .alert *, body.a11y-mode .wink-note * { color: var(--a11y-txt1) !important; }
+  body.a11y-mode thead tr { background: var(--a11y-dark) !important; }
+  body.a11y-mode .glos-item { border-left: 4px solid var(--a11y-border) !important; }
+
+  @media (max-width: 700px) {
+    .cards, .quote-grid, .position-grid, .flip-grid, .glossary-grid { grid-template-columns: 1fr; }
+    .stat-box { flex-direction: column; text-align: center; }
+    .header h1 { font-size: 29px; }
+    .header { padding: 30px 22px; }
+    .page { padding: 22px 15px 48px; }
+    .cat-table { overflow-x: auto; }
+    table { min-width: 560px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#contenu" class="skip-link">Aller au contenu principal</a>
+
+<div class="page" role="main">
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; position:relative; z-index:1; gap:16px; flex-wrap:wrap;">
+      <div class="badge">Décryptage FO · Juillet 2026</div>
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png"
+             alt="Logo FO Énergie GRDF — cliquez pour nous écrire"
+             style="height:clamp(44px,8vw,88px); width:auto; object-fit:contain; display:block; filter:drop-shadow(0 2px 8px rgba(247,221,92,0.25));">
+      </a>
+    </div>
+    <h1>Accord IA & dialogue social : <em>pourquoi FO n'a pas signé</em></h1>
+    <p class="subtitle">Un accord de méthode sur l'intelligence artificielle vient d'être signé chez GRDF par trois syndicats. FO a refusé de le parapher. Voici pourquoi — expliqué simplement, sans jargon.</p>
+    <div class="update" role="status"><span class="dot" aria-hidden="true"></span> Accord signé le 3 juillet 2026 · Signataires : CGT, CFE-CGC, CFDT · FO non-signataire</div>
+    <div style="margin-top:18px;"><span class="pulse-badge">Communication à tous les salariés GRDF</span></div>
+  </header>
+
+  <!-- A11Y -->
+  <div class="a11y-toggle-bar" role="navigation" aria-label="Options d'accessibilité">
+    <button class="a11y-btn" id="a11yToggle" onclick="toggleA11y()" aria-pressed="false" title="Activer le mode lecture universelle : police adaptée, contrastes forts">
+      <span class="a11y-icon" aria-hidden="true">◐</span>
+      <span class="a11y-label-off">Mode lecture universelle</span>
+      <span class="a11y-label-on">✓ Mode actif — revenir au mode standard</span>
+    </button>
+  </div>
+
+  <div id="contenu">
+
+  <!-- WINK -->
+  <div class="wink-note" role="note">
+    <span class="wink-tag">Transparence</span>
+    Oui, nous avons utilisé une <strong>IA</strong> pour mettre en forme cette communication. C'est justement pour ça qu'on connaît le sujet : <strong>l'IA est un formidable outil… à condition qu'elle ne décide pas à notre place, ni de nos métiers, ni de notre avenir.</strong> L'analyse, la colère et les revendications, elles, sont 100&nbsp;% humaines et syndicales.
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    Chez GRDF, l'intelligence artificielle arrive dans nos métiers. Pour encadrer son déploiement, la direction a négocié un <strong>« accord de méthode »</strong>. Le 3 juillet 2026, il a été signé par la <strong>CGT, la CFE-CGC et la CFDT</strong>. <strong>FO a refusé de signer.</strong><br><br>
+    Notre position tient en une phrase : <strong style="color:var(--rouge);">FO est POUR l'intelligence artificielle comme outil d'aide au travail — mais CONTRE un accord qui muselle le dialogue social</strong> et qui laisse la direction décider seule quand vous consulter… ou pas.<br><br>
+    <em style="font-size:13px; color:var(--gris);">📖 Tous les sigles (CSE, CSSCT, IRP, RPS, DUERP…) sont expliqués dans le <a href="#glossaire" style="color:var(--bleu); font-weight:600; text-decoration:underline;">glossaire en bas de page</a>. Prenez le temps, c'est fait pour ça.</em>
+  </div>
+
+  <!-- EN 30 SECONDES -->
+  <h2 class="section-title"><span class="icon" aria-hidden="true">⏱️</span> L'essentiel en 30 secondes</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="card-icon" aria-hidden="true">🗂️</span>
+      <h3>Un accord qui range l'IA en 4 tiroirs</h3>
+      <p>L'accord classe chaque IA dans l'une de 4 catégories : « techno », « facilitatrice », « expérimentale » et « structurante ». C'est la direction qui décide dans quel tiroir ranger chaque projet.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon" aria-hidden="true">🚪</span>
+      <h3>Une seule catégorie ouvre la porte du CSE</h3>
+      <p>Sur ces 4 catégories, <strong>une seule</strong> (« structurante ») oblige à consulter vos élus au CSE avant de déployer. Les 3 autres passent sans consultation obligatoire.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon" aria-hidden="true">⚖️</span>
+      <h3>La loi dit pourtant l'inverse</h3>
+      <p>Le Code du travail impose de consulter le CSE pour <strong>toute nouvelle technologie</strong>, sans condition. Un accord d'entreprise peut améliorer la loi, jamais la restreindre.</p>
+    </div>
+    <div class="card highlight">
+      <span class="card-icon" aria-hidden="true">✊</span>
+      <h3>La position de FO</h3>
+      <p>Nous ne signons pas un texte qui réduit vos droits en dessous de ce que la loi garantit. Pour l'IA, oui. Pour le contournement du CSE, non.</p>
+    </div>
+  </div>
+
+  <!-- COMMENT CA MARCHE : LOI -->
+  <h2 class="section-title"><span class="icon" aria-hidden="true">📘</span> D'abord, un rappel simple : que dit la loi ?</h2>
+  <p class="lead">Quand une entreprise introduit une <strong>nouvelle technologie</strong>, la loi (article <abbr title="Article du Code du travail sur les attributions du CSE">L.2312-8</abbr> du Code du travail) l'oblige à <strong>informer et consulter le CSE</strong> — c'est-à-dire vos élus — <strong>avant</strong> de la déployer. Et ce, quelle que soit l'ampleur du projet : même une IA aux impacts « mineurs » doit passer par cette étape.</p>
+  <div class="alert blue">
+    <div class="alert-icon" aria-hidden="true">💡</div>
+    <p><strong>Une image simple :</strong> la loi pose une question <strong>« oui / non »</strong> — « Est-ce une nouvelle technologie&nbsp;? » Si oui, on consulte le CSE. Point. L'accord GRDF, lui, rajoute une deuxième question — « Est-ce assez <em>important</em>&nbsp;? » — pour trier ce qui mérite ou non une consultation. <strong>Ce tri-là n'existe plus dans la loi depuis 2017.</strong> En le réintroduisant, l'accord fait passer certains projets IA sous le radar du CSE.</p>
+  </div>
+
+  <!-- TERMINAL -->
+  <div class="terminal-box" role="figure" aria-label="Illustration symbolique du problème">
+    <span class="term-title">grdf@dialogue-social — juillet 2026</span>
+    <span class="term-line"><span class="term-prompt">direction@grdf:~$</span> deployer_ia --categorie="facilitatrice" --consultation-cse=non</span>
+    <span class="term-line"><span class="term-out">› projet classé hors périmètre de consultation obligatoire…</span></span>
+    <span class="term-line"><span class="term-flag">⚠ alerte</span> : <span class="term-out">c'est la direction qui a choisi la catégorie</span></span>
+    <span class="term-line"><span class="term-flag">⚠ alerte</span> : <span class="term-out">aucun recours prévu pour les élus si la classification est contestée</span></span>
+    <span class="term-line"><span class="term-flag">✕ erreur</span> : <span class="term-out">contradiction avec l'article L.2312-8 (toute nouvelle techno = consultation)</span></span>
+    <span class="term-line"><span class="term-prompt">fo@grdf:~$</span> refuser_signature --motif="dialogue-social-museledé"<span class="term-cursor" aria-hidden="true"></span></span>
+    <span class="term-line" style="margin-top:8px;"><span class="term-ok">✔ FO non-signataire — pour l'IA, contre l'oubli des salariés</span></span>
+  </div>
+
+  <!-- LES 4 CATEGORIES -->
+  <h2 class="section-title"><span class="icon" aria-hidden="true">🗂️</span> Les 4 catégories de l'accord, et le piège</h2>
+  <p class="lead">Voici comment l'accord classe les IA — et ce que chaque catégorie déclenche (ou pas) comme dialogue social. Regardez la dernière colonne : <strong>une seule ligne sur quatre garantit une consultation du CSE avant déploiement.</strong></p>
+  <div class="cat-table">
+    <table>
+      <thead>
+        <tr><th>Catégorie d'IA</th><th>Exemple donné par l'accord</th><th>Ce que l'accord prévoit</th><th>CSE consulté avant&nbsp;?</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="cat-name">IA « techno »</span></td>
+          <td>Outil informatique interne à la DSI, non génératif</td>
+          <td>On « répond aux questions » des représentants, si questions il y a</td>
+          <td><span class="pill no">Non</span></td>
+        </tr>
+        <tr>
+          <td><span class="cat-name">IA « facilitatrice »</span></td>
+          <td>Tri de données, reconnaissance photo, comptes-rendus, présentations</td>
+          <td>On « répond aux questions » — pas d'information préalable obligatoire</td>
+          <td><span class="pill no">Non</span></td>
+        </tr>
+        <tr>
+          <td><span class="cat-name">IA « expérimentale »</span></td>
+          <td>Tester un chatbot pour remplacer un accueil téléphonique</td>
+          <td>Information/concertation des délégués syndicaux ; info CSE seulement « si demandée »</td>
+          <td><span class="pill no">Facultatif</span></td>
+        </tr>
+        <tr class="structurante">
+          <td><span class="cat-name" style="color:#0e6b54;">IA « structurante »</span></td>
+          <td>Activités confiées à l'IA, modifiant l'organisation, les effectifs…</td>
+          <td>Consultation du CSE obligatoire (avec passage en CSSCT)</td>
+          <td><span class="pill yes">Oui</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="alert">
+    <div class="alert-icon" aria-hidden="true">⚠️</div>
+    <p><strong>Le piège en une phrase :</strong> c'est la direction qui décide dans quelle case ranger chaque projet. Il lui suffit de qualifier une IA de « facilitatrice » ou « expérimentale » pour <strong>éviter la consultation du CSE</strong> — même si, dans les faits, l'outil change déjà votre façon de travailler. Et l'accord ne prévoit <strong>aucun moyen pour vos élus de contester</strong> cette classification.</p>
+  </div>
+
+  <!-- FLIP : LOI vs ACCORD -->
+  <h2 class="section-title"><span class="icon" aria-hidden="true">🔄</span> Ce que dit la loi / ce que permet l'accord</h2>
+  <p class="lead">Survolez ou touchez chaque carte pour retourner la comparaison.</p>
+  <div class="flip-grid">
+    <div class="flip-card" tabindex="0" role="button" aria-label="Comparaison : la nouvelle technologie">
+      <div class="flip-card-inner">
+        <div class="flip-face front">
+          <span class="ff-label">La loi</span>
+          <div><div class="ff-title">Toute nouvelle techno = CSE consulté</div><div class="ff-desc">Sans condition d'importance. Même un petit outil d'IA.</div></div>
+          <span class="ff-hint">L'accord dit quoi ?</span>
+        </div>
+        <div class="flip-face back">
+          <span class="ff-label">L'accord</span>
+          <div><div class="ff-title">3 catégories sur 4 échappent au CSE</div><div class="ff-desc">« techno », « facilitatrice » et « expérimentale » passent sans consultation obligatoire.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" tabindex="0" role="button" aria-label="Comparaison : la phase pilote">
+      <div class="flip-card-inner">
+        <div class="flip-face front">
+          <span class="ff-label">La loi</span>
+          <div><div class="ff-title">On consulte AVANT de déployer</div><div class="ff-desc">Y compris pour un pilote utilisé en conditions réelles (justice, 2025).</div></div>
+          <span class="ff-hint">L'accord dit quoi ?</span>
+        </div>
+        <div class="flip-face back">
+          <span class="ff-label">L'accord</span>
+          <div><div class="ff-title">L'« expérimentation » peut se lancer sans CSE</div><div class="ff-desc">Alors qu'un test grandeur nature engage déjà de vrais salariés.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" tabindex="0" role="button" aria-label="Comparaison : les conditions de travail">
+      <div class="flip-card-inner">
+        <div class="flip-face front">
+          <span class="ff-label">La loi</span>
+          <div><div class="ff-title">Conditions de travail = motif de consultation</div><div class="ff-desc">Rythme, charge mentale, autonomie, contrôle de l'activité.</div></div>
+          <span class="ff-hint">L'accord dit quoi ?</span>
+        </div>
+        <div class="flip-face back">
+          <span class="ff-label">L'accord</span>
+          <div><div class="ff-title">Ce critère a disparu de la liste</div><div class="ff-desc">Une IA qui dégrade vos conditions de travail, sans toucher aux effectifs, peut échapper au CSE.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" tabindex="0" role="button" aria-label="Comparaison : l'accompagnement">
+      <div class="flip-card-inner">
+        <div class="flip-face front">
+          <span class="ff-label">La loi</span>
+          <div><div class="ff-title">L'employeur doit vous former</div><div class="ff-desc">Adapter vos compétences à l'évolution des technologies (art. L.6321-1).</div></div>
+          <span class="ff-hint">L'accord dit quoi ?</span>
+        </div>
+        <div class="flip-face back">
+          <span class="ff-label">L'accord</span>
+          <div><div class="ff-title">Formation « en tant que de besoin »</div><div class="ff-desc">Aucun volume, budget ni délai chiffré. Un engagement non chiffré n'est pas exécutoire.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAS CONCRET DSI -->
+  <div class="field-case">
+    <span class="fc-tag" aria-hidden="true">🔎 Cas concret — remonté du terrain</span>
+    <h3>Ce qui se passe déjà à la DSI</h3>
+    <p>Ce n'est pas une crainte théorique. Aux Fonctions Centrales, la DSI déploie déjà une IA générative (type Claude) <strong>sous couvert de « phase de test »</strong>, sans consultation préalable du CSE. Or&nbsp;:</p>
+    <ul>
+      <li>Des <strong>mails de managers fixent déjà des objectifs directement liés au déploiement</strong> de l'outil — on est donc bien au-delà d'une simple expérimentation.</li>
+      <li>Sur les dossiers d'investissement, un <strong>gain de productivité de 20 à 50&nbsp;%</strong> est imposé dans les chiffrages, sur la base d'un seul test interne.</li>
+      <li>Des salariés confient <strong>craindre que leur poste n'existe plus dans deux ans</strong>.</li>
+    </ul>
+    <p>Il a fallu que FO <strong>dépose une résolution en CSE et hausse le ton</strong> pour que le sujet soit seulement inscrit à l'ordre du jour. Selon la classification de l'accord, ce déploiement « n'aurait pas nécessité de consultation ». <strong>Signé en l'état, l'accord ne corrige pas cette situation : il la légalise.</strong></p>
+  </div>
+
+  <!-- CTA -->
+  <div class="mail-cta-row">
+    <div class="mcr-text"><strong>Une IA arrive dans votre service ?</strong> Un « test » qui ressemble à un vrai déploiement&nbsp;? Dites-le nous. Vos retours alimentent directement notre travail au CSE. <span class="confid-tag">100&nbsp;% confidentiel</span></div>
+    <a class="mail-pill" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=%5BAccord%20IA%5D%20Situation%20dans%20mon%20service">Écrivez-nous</a>
+  </div>
+
+  <!-- AVOCAT -->
+  <h2 class="section-title"><span class="icon" aria-hidden="true">⚖️</span> Ce que confirme l'analyse juridique</h2>
+  <p class="lead">FO a fait analyser le projet par un avocat spécialisé. Son verdict rejoint le nôtre : l'accord <strong>restreint les droits du CSE en dessous de ce que la loi garantit</strong>. Ses points-clés, traduits en clair :</p>
+  <div class="quote-grid">
+    <div class="quote-card accent-rouge">
+      <p class="qc-text">« L'accord réintroduit un seuil d'“impact” pour déclencher la consultation. Ce seuil a été supprimé de la loi en 2017. »</p>
+      <span class="qc-tag">Un critère abrogé</span>
+    </div>
+    <div class="quote-card accent-rouge">
+      <p class="qc-text">« Lancer un “pilote” utilisé par de vrais salariés sans consulter le CSE constitue un trouble manifestement illicite. »</p>
+      <span class="qc-tag">Justice — TJ Nanterre, févr. 2025</span>
+    </div>
+    <div class="quote-card accent-or">
+      <p class="qc-text">« Une IA qui trie des données ou suit l'activité peut relever du contrôle des salariés — un sujet totalement absent de l'accord. »</p>
+      <span class="qc-tag">Contrôle de l'activité oublié</span>
+    </div>
+    <div class="quote-card accent-vert">
+      <p class="qc-text">« Les engagements d'accompagnement (formation, prévention) sont vagues, non chiffrés, non datés : juridiquement, ils n'engagent à rien. »</p>
+      <span class="qc-tag">Un article 4 sans garanties</span>
+    </div>
+  </div>
+
+  <!-- STAT -->
+  <div class="stat-box">
+    <div class="stat-main">
+      <div class="stat-val">1 / 4</div>
+      <div class="stat-label">catégorie déclenche le CSE</div>
+    </div>
+    <div class="stat-desc">
+      <strong>Trois catégories d'IA sur quatre peuvent être déployées sans consultation obligatoire de vos élus.</strong><br><br>
+      C'est le cœur du problème. Là où la loi protège tous les salariés face à toute nouvelle technologie, l'accord réserve cette protection à une seule case — celle que la direction choisit, ou non, de cocher.
+    </div>
+  </div>
+
+  <!-- POSITION FO -->
+  <h2 class="section-title"><span class="icon" aria-hidden="true">✊</span> La position de FO, en clair</h2>
+  <div class="position-grid">
+    <div class="position-card pour">
+      <span class="pos-badge">Ce pour quoi FO est</span>
+      <h3>POUR l'IA comme outil d'aide</h3>
+      <p>L'IA peut alléger les tâches pénibles et faire progresser nos métiers. FO ne s'oppose pas au progrès : nous voulons qu'il se fasse <strong>avec</strong> les salariés, pas malgré eux.</p>
+    </div>
+    <div class="position-card contre">
+      <span class="pos-badge">Ce que FO refuse</span>
+      <h3>CONTRE le muselage du dialogue social</h3>
+      <p>Nous refusons un accord qui laisse la direction décider seule quand vous consulter, qui contourne le CSE et n'offre <strong>aucune garantie chiffrée</strong> sur votre formation et votre avenir.</p>
+    </div>
+  </div>
+  <div class="alert green">
+    <div class="alert-icon" aria-hidden="true">🎯</div>
+    <p><strong>Ce n'est pas un refus du progrès, c'est une exigence de respect.</strong> FO demande simplement l'application de la loi : une information-consultation du CSE <strong>avant</strong> tout déploiement d'IA, comme pour n'importe quelle nouvelle technologie. Ni blocage, ni surenchère — le droit, tout le droit.</p>
+  </div>
+
+  <!-- RECO -->
+  <div class="reco-section">
+    <h2 class="section-title" style="margin-top:0;"><span class="icon" aria-hidden="true">🤔</span> Vous vous posez ces questions ?</h2>
+    <p class="lead" style="margin-bottom:4px;">Cochez celles qui vous parlent. Elles sont légitimes — et ce sont exactement celles que FO porte pour vous.</p>
+    <ul class="reco-list">
+      <li class="reco-item" tabindex="0" role="checkbox" aria-checked="false"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Une IA est arrivée dans mon service, mais personne ne m'a expliqué ce qui va changer.</span></li>
+      <li class="reco-item" tabindex="0" role="checkbox" aria-checked="false"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">On me parle de « test » ou de « pilote », mais je l'utilise déjà pour de vrai.</span></li>
+      <li class="reco-item" tabindex="0" role="checkbox" aria-checked="false"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Je me demande si mon métier existera encore dans deux ou trois ans.</span></li>
+      <li class="reco-item" tabindex="0" role="checkbox" aria-checked="false"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">On attend de moi des gains de productivité liés à l'IA sans m'avoir formé·e.</span></li>
+      <li class="reco-item" tabindex="0" role="checkbox" aria-checked="false"><span class="reco-checkbox" aria-hidden="true"></span><span class="reco-text">Je ne sais pas où vont les données que je saisis dans ces outils.</span></li>
+    </ul>
+    <div class="reco-count" id="recoCount" role="status" aria-live="polite">
+      <span class="reco-num" id="recoNum">0</span>
+      <span class="reco-msg" id="recoMsg">Cochez ce qui vous parle. <strong>Si au moins une case est cochée, vous êtes concerné·e — et vous n'êtes pas seul·e.</strong></span>
+    </div>
+  </div>
+
+  <!-- DEMANDS -->
+  <h2 class="section-title"><span class="icon" aria-hidden="true">📋</span> Ce que FO demande pour signer</h2>
+  <p class="lead">FO n'est pas dans le refus systématique. Nous signerons un accord qui respecte vraiment vos droits. Voici nos exigences essentielles&nbsp;:</p>
+  <div class="demands">
+    <ol>
+      <li><strong>Consultation du CSE avant tout déploiement d'IA</strong> — quelle que soit la catégorie, comme l'exige la loi pour toute nouvelle technologie.</li>
+      <li><strong>Un délai réel entre l'information du CSE et le déploiement</strong> — pour que la consultation ait un sens, et non un simple « pour information » après coup.</li>
+      <li><strong>La charge de la preuve à la direction</strong> — c'est à l'employeur de démontrer qu'une IA n'est PAS structurante, pas aux élus de le contester après coup.</li>
+      <li><strong>Une garantie d'emploi</strong> — aucun licenciement ni déclassement lié à l'introduction d'une IA.</li>
+      <li><strong>Une étude d'impact sur les risques psychosociaux avant chaque déploiement</strong> + mise à jour du <abbr title="Document Unique d'Évaluation des Risques Professionnels">DUERP</abbr>.</li>
+      <li><strong>Un accompagnement chiffré et daté</strong> — formation garantie (volume, budget, délai), pas de « en tant que de besoin », et un passeport IA dès maintenant, pas en 2027.</li>
+    </ol>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="fo-contact-card">
+    <div class="fo-logo-wrap">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO Énergie GRDF">
+      </a>
+    </div>
+    <div class="fo-body">
+      <h3>✉ Une question, un témoignage ? Écrivez-nous</h3>
+      <p>Vos élus FO sont à votre écoute sur le déploiement de l'IA et ses impacts au quotidien — dans tous les établissements de GRDF. <span class="confid-tag solid">100&nbsp;% confidentiel</span> — vos messages ne sortent jamais du cercle des élus FO.</p>
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" class="fo-mailto-btn">✉ Nous écrire</a>
+    </div>
+  </div>
+
+  <!-- GLOSSAIRE -->
+  <div class="glossary" id="glossaire">
+    <h2 class="section-title" style="margin-top:0;"><span class="icon" aria-hidden="true">📚</span> Le glossaire — tous les sigles expliqués</h2>
+    <p class="glos-intro">Pas besoin d'être expert du droit du travail. Voici, en une phrase chacun, les termes utilisés dans cette communication.</p>
+    <dl class="glossary-grid">
+      <div class="glos-item law"><dt>CSE <span class="glos-full">Comité Social et Économique</span></dt><dd>L'instance qui représente les salariés. La direction doit l'informer et le consulter sur les grands sujets de l'entreprise, dont les nouvelles technologies.</dd></div>
+      <div class="glos-item law"><dt>CSSCT <span class="glos-full">Commission Santé, Sécurité et Conditions de Travail</span></dt><dd>Une commission du CSE spécialisée sur la santé, la sécurité et les conditions de travail. Elle examine les projets avant le CSE.</dd></div>
+      <div class="glos-item law"><dt>IRP <span class="glos-full">Institutions Représentatives du Personnel</span></dt><dd>Terme général pour désigner les instances qui représentent les salariés (CSE, CSSCT…).</dd></div>
+      <div class="glos-item law"><dt>DS / RSS <span class="glos-full">Délégué Syndical / Responsable de Section Syndicale</span></dt><dd>Les représentants syndicaux qui négocient les accords avec la direction.</dd></div>
+      <div class="glos-item"><dt>Consultation</dt><dd>Étape où la direction présente un projet aux élus, qui rendent un avis <strong>avant</strong> la décision. Ce n'est pas une simple information.</dd></div>
+      <div class="glos-item"><dt>RPS <span class="glos-full">Risques Psychosociaux</span></dt><dd>Risques pour la santé mentale au travail : stress, surcharge, perte de sens, insécurité sur l'avenir de son poste.</dd></div>
+      <div class="glos-item"><dt>DUERP <span class="glos-full">Document Unique d'Évaluation des Risques Professionnels</span></dt><dd>Document obligatoire recensant tous les risques du travail. Il doit être mis à jour quand un nouveau risque apparaît.</dd></div>
+      <div class="glos-item"><dt>GPEC <span class="glos-full">Gestion des Emplois et des Parcours</span></dt><dd>La manière dont l'entreprise anticipe l'évolution des métiers et accompagne les salariés (formation, reconversion).</dd></div>
+      <div class="glos-item tech"><dt>IA générative</dt><dd>Une IA capable de créer du contenu (textes, images, code) à partir d'une consigne — comme Claude ou ChatGPT.</dd></div>
+      <div class="glos-item tech"><dt>Phase pilote</dt><dd>Un premier déploiement réel, après décision. À ne pas confondre avec une expérimentation, qui n'est qu'un test préalable.</dd></div>
+      <div class="glos-item law"><dt>Art. L.2312-8 <span class="glos-full">Code du travail</span></dt><dd>L'article qui impose la consultation du CSE sur l'introduction de nouvelles technologies. C'est le cœur de l'argument FO.</dd></div>
+      <div class="glos-item law"><dt>Art. L.6321-1 <span class="glos-full">Code du travail</span></dt><dd>L'obligation, pour l'employeur, d'adapter les salariés à l'évolution des technologies par la formation.</dd></div>
+    </dl>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div style="display:flex; justify-content:center; align-items:center; margin-bottom:16px;">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO Énergie GRDF" style="height:66px; object-fit:contain; opacity:0.85;">
+      </a>
+    </div>
+    Communication syndicale FO Énergie GRDF · Décryptage de l'« Accord de méthode pour aborder les impacts de l'IA dans le dialogue social » (signé le 3 juillet 2026) · Sources : Code du travail (art. L.2312-8, L.2312-37/38, L.6321-1, L.4121-1/2), jurisprudence TJ Nanterre 14 février 2025, analyse juridique du projet d'accord · Juillet 2026 · Pour tout retour : <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr">syndicat-fo_grdf-delegations-nationales@grdf.fr</a>
+  </footer>
+
+  </div><!-- #contenu -->
+</div><!-- .page -->
+
+<script>
+  function toggleA11y() {
+    var on = document.body.classList.toggle('a11y-mode');
+    var btn = document.getElementById('a11yToggle');
+    if (btn) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    try { localStorage.setItem('fo-a11y-ia', on ? '1' : '0'); } catch(e) {}
+  }
+  try { if (localStorage.getItem('fo-a11y-ia') === '1') { document.body.classList.add('a11y-mode'); var b=document.getElementById('a11yToggle'); if(b) b.setAttribute('aria-pressed','true'); } } catch(e) {}
+
+  /* Flip cards */
+  document.querySelectorAll('.flip-card').forEach(function(card){
+    card.addEventListener('click', function(){ card.classList.toggle('is-flipped'); });
+    card.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.classList.toggle('is-flipped'); }
+      if (e.key === 'Escape') card.classList.remove('is-flipped');
+    });
+  });
+
+  /* Reco checklist */
+  (function(){
+    var items = document.querySelectorAll('.reco-item');
+    var num = document.getElementById('recoNum');
+    var msg = document.getElementById('recoMsg');
+    var counter = document.getElementById('recoCount');
+    function refresh(){
+      var n = document.querySelectorAll('.reco-item.is-checked').length;
+      if (num) num.textContent = n;
+      if (counter){ counter.classList.add('is-bumped'); setTimeout(function(){counter.classList.remove('is-bumped');},280); }
+      if (!msg) return;
+      if (n === 0) msg.innerHTML = 'Cochez ce qui vous parle. <strong>Si au moins une case est cochée, vous êtes concerné·e — et vous n\'êtes pas seul·e.</strong>';
+      else if (n <= 2) msg.innerHTML = 'Vous reconnaissez <strong>une ou deux situations</strong>. Ne les laissez pas s\'installer — <strong>écrivez-nous</strong>, on en parle.';
+      else if (n <= 3) msg.innerHTML = 'Plusieurs signaux convergent. <strong>C\'est exactement ce que FO remonte en CSE.</strong> Votre témoignage compte — <strong>contactez vos élus FO</strong>.';
+      else msg.innerHTML = '<strong>Vous vivez de plein fouet l\'arrivée de l\'IA sans cadre.</strong> Ne restez pas seul·e — <strong>écrivez à FO GRDF dès aujourd\'hui</strong>.';
+    }
+    items.forEach(function(li){
+      function toggle(){ li.classList.toggle('is-checked'); li.setAttribute('aria-checked', li.classList.contains('is-checked')?'true':'false'); refresh(); }
+      li.addEventListener('click', toggle);
+      li.addEventListener('keydown', function(e){ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
+    });
+  })();
+</script>
+</body>
+</html>
