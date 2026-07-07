@@ -218,6 +218,18 @@
   .footer-insta { margin: 14px 0 10px; font-size: 12.5px; }
   .footer-logo img { height: 64px; object-fit: contain; opacity: 0.9; }
 
+  /* ═══ SOMMAIRE INTERACTIF ═══ */
+  html { scroll-behavior: smooth; }
+  .sa { scroll-margin-top: 24px; }
+  .toc { background: var(--blanc); border-radius: 16px; padding: 18px 24px; margin-bottom: 30px; border: 1px solid #e6e6e6; box-shadow: 0 4px 14px rgba(0,0,0,0.05); }
+  .toc .toc-t { font-family: 'Fraunces', serif; font-size: 13px; font-weight: 700; color: var(--bleu); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .toc-links { display: flex; flex-wrap: wrap; gap: 9px; }
+  .toc-links a { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; font-size: 13.5px; font-weight: 700; color: #2a5568; background: #eef6fb; border: 1.5px solid #d7ebf6; padding: 8px 15px; border-radius: 40px; transition: all .2s; }
+  .toc-links a:hover { border-color: var(--bleu); color: var(--bleu); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(1,156,218,0.18); }
+  .toc-links a.active { background: var(--bleu); border-color: var(--bleu); color: #fff; }
+  .totop { position: fixed; right: 18px; bottom: 18px; width: 46px; height: 46px; border-radius: 50%; background: var(--bleu); color: #fff; border: none; cursor: pointer; font-size: 22px; line-height: 1; box-shadow: 0 6px 18px rgba(1,60,90,0.28); opacity: 0; pointer-events: none; transition: opacity .25s; z-index: 9997; }
+  .totop.show { opacity: 1; pointer-events: auto; }
+
   /* REVEAL ON SCROLL */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.in { opacity: 1; transform: none; }
@@ -319,6 +331,11 @@
   body.a11y-mode .bcol li strong { color: #2C2C29 !important; }
   body.a11y-mode .bcol.pour li::before { color: #0e6b54 !important; }
   body.a11y-mode .bcol.contre li::before { color: #b3232d !important; }
+  body.a11y-mode .toc { background:#FFFFFF; border:2px solid #2C2C29; }
+  body.a11y-mode .toc .toc-t { color:#2C2C29; }
+  body.a11y-mode .toc-links a { background:#F4F3EF; border:1.5px solid #2C2C29; color:#2C2C29; }
+  body.a11y-mode .toc-links a.active { background:#2C2C29; color:#FFFFFF; }
+  body.a11y-mode .totop { background:#2C2C29; }
   body.a11y-mode *:focus { outline: 3px solid #2C2C29 !important; outline-offset: 3px; }
 
 </style>
@@ -376,8 +393,20 @@
       Un <strong>projet d'accord national sur l'astreinte</strong> est proposé à la signature des organisations syndicales. FO ne décidera <strong>pas à votre place</strong> : nous vous consultons d'abord. Cette page vous présente honnêtement <strong>les raisons de signer</strong> et <strong>les raisons de ne pas signer — ou pas encore</strong>. À vous, ensuite, de nous dire ce que vous en pensez.
     </div>
 
+    <!-- SOMMAIRE INTERACTIF -->
+    <nav class="toc" aria-label="Sommaire de la page">
+      <div class="toc-t"><span aria-hidden="true">🧭</span> Sommaire</div>
+      <div class="toc-links">
+        <a href="#s-decide"><span aria-hidden="true">⚖️</span> Qui décide</a>
+        <a href="#s-enjeu"><span aria-hidden="true">🔑</span> L'enjeu</a>
+        <a href="#s-balance"><span aria-hidden="true">👍</span> Pour / Contre</a>
+        <a href="#s-avis"><span aria-hidden="true">🗳️</span> Donner mon avis</a>
+        <a href="#s-glossaire"><span aria-hidden="true">📖</span> Sigles</a>
+      </div>
+    </nav>
+
     <!-- QUI COTISE DÉCIDE -->
-    <div class="decide reveal" role="note">
+    <div class="decide reveal sa" id="s-decide" role="note">
       <div class="slog">Qui cotise décide.</div>
       <p>C'est <strong>votre engagement</strong> qui fait notre force, et c'est <strong>votre avis</strong> qui guidera notre choix. FO signera cet accord — ou refusera de le signer — <strong>en fonction de ce que vous, adhérents, aurez exprimé</strong>. Pas de consigne d'en haut : une décision construite avec vous.</p>
     </div>
@@ -407,7 +436,7 @@
         <span class="a11y-emoji">🔑</span>
         <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3 21 2M16 7l3 3M14 9l3 3"/></svg>
       </span>
-      L'enjeu en un coup d'œil
+      <span id="s-enjeu" class="sa">L'enjeu en un coup d'œil</span>
     </div>
     <div class="facts reveal">
       <div class="fact"><div class="f-num" data-count="1">1</div><div class="f-lab">accord national unique remplaçant les accords régionaux</div></div>
@@ -422,7 +451,7 @@
         <span class="a11y-emoji">⚖️</span>
         <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 9l9-6 9 6M5 12l7 4.5L19 12M3 18h18"/></svg>
       </span>
-      Pesez le pour et le contre
+      <span id="s-balance" class="sa">Pesez le pour et le contre</span>
     </div>
     <p class="section-intro reveal">Les deux plateaux de la balance, côte à côte. À gauche ce qui plaide pour la signature, à droite ce qui accroche. Faites-vous votre idée.</p>
 
@@ -463,7 +492,7 @@
         <span class="a11y-emoji">🗳️</span>
         <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4M4 7l8-4 8 4v10l-8 4-8-4z"/></svg>
       </span>
-      Comment donner votre avis
+      <span id="s-avis" class="sa">Comment donner votre avis</span>
     </div>
     <p class="section-intro reveal">Trois étapes simples. Votre position — pour ou contre la signature — compte.</p>
     <div class="steps reveal">
@@ -496,7 +525,7 @@
         <span class="a11y-emoji">📖</span>
         <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5a2 2 0 0 1 2-2h6v18H4a2 2 0 0 1-2-2zM22 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2z"/></svg>
       </span>
-      Décoder les sigles
+      <span id="s-glossaire" class="sa">Décoder les sigles</span>
     </div>
     <dl class="glossary reveal">
       <div class="gl"><dt>ZHA</dt><dd>Zone d'Habitat d'Astreinte — la zone où vous devez résider pour tenir les délais d'intervention.</dd></div>
@@ -595,6 +624,28 @@
       });
     }, { threshold: 0.18 });
     reveals.forEach(function (r) { io.observe(r); });
+  })();
+</script>
+
+<button id="toTop" class="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Revenir en haut de page">↑</button>
+
+<script>
+  /* ── Sommaire : surlignage section active + bouton haut ── */
+  (function () {
+    var links = [].slice.call(document.querySelectorAll('.toc-links a'));
+    var targets = links.map(function (a) {
+      return { a: a, el: document.querySelector(a.getAttribute('href')) };
+    }).filter(function (x) { return x.el; });
+    var toTop = document.getElementById('toTop');
+    function onScroll() {
+      var pos = window.scrollY + 130, cur = null;
+      targets.forEach(function (x) { if (x.el.getBoundingClientRect().top + window.scrollY <= pos) cur = x; });
+      links.forEach(function (a) { a.classList.remove('active'); });
+      if (cur) cur.a.classList.add('active');
+      if (toTop) toTop.classList.toggle('show', window.scrollY > 500);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   })();
 </script>
 
