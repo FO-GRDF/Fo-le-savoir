@@ -347,6 +347,23 @@
   abbr[title]:hover { background: rgba(1,156,218,0.12); border-bottom-color: var(--rouge); border-radius: 2px; }
 
   /* FOOTER */
+  /* ===== FRISE / SOMMAIRE INTERACTIF ===== */
+  html { scroll-behavior: smooth; }
+  .section-title, .glossary, .doc-access, .field-case { scroll-margin-top: 86px; }
+  .toc { position: sticky; top: 8px; z-index: 60; background: rgba(255,255,255,0.97); border:1px solid #e7e3d6; border-radius:40px; margin-bottom:28px; padding:7px 8px; box-shadow:0 6px 20px rgba(1,60,90,0.10); overflow-x:auto; }
+  .toc::-webkit-scrollbar { height:0; background:transparent; }
+  .toc-inner { display:flex; align-items:center; gap:4px; min-width:max-content; }
+  .toc a { white-space:nowrap; text-decoration:none; color:var(--gris); font-size:12.5px; font-weight:600; padding:7px 14px; border-radius:30px; transition:background .2s,color .2s; }
+  .toc a:hover { background:#eef7fb; color:var(--bleu); }
+  .toc a.active { background:var(--bleu); color:#fff; }
+  .toc a.toc-accord { background:var(--or); color:#3a2800; font-weight:800; }
+  .toc a.toc-accord:hover { background:#f2d33f; color:#3a2800; }
+  .toc a.toc-accord.active { background:var(--or); color:#3a2800; }
+  body.a11y-mode .toc { background:var(--a11y-surface) !important; border-color:var(--a11y-border) !important; }
+  body.a11y-mode .toc a { color:var(--a11y-txt2) !important; }
+  body.a11y-mode .toc a.active { background:var(--a11y-dark) !important; color:#fff !important; }
+  @media (max-width:600px){ .toc a { font-size:12px; padding:6px 12px; } }
+
   .footer { text-align: center; font-size: 12px; color: var(--gris); padding-top: 24px; border-top: 1px solid #ddd; line-height: 1.7; }
   .footer a { color: var(--bleu); text-decoration: none; }
   .footer a:hover { text-decoration: underline; }
@@ -410,6 +427,19 @@
   </div>
 
   <div id="contenu">
+  <nav class="toc" aria-label="Sommaire de la page">
+    <div class="toc-inner">
+      <a href="#accord" class="toc-accord">📄 L'accord</a>
+      <a href="#essentiel">L'essentiel</a>
+      <a href="#loi">La loi</a>
+      <a href="#categories">Les 4 catégories</a>
+      <a href="#juridique">Analyse juridique</a>
+      <a href="#position">Position FO</a>
+      <a href="#propositions">Nos propositions</a>
+      <a href="#glossaire">Glossaire</a>
+    </div>
+  </nav>
+
 
   <!-- WINK -->
   <div class="wink-note" role="note">
@@ -425,7 +455,7 @@
   </div>
 
   <!-- ACCÈS À L'ACCORD -->
-  <div class="doc-access">
+  <div class="doc-access" id="accord">
     <span class="da-ico" aria-hidden="true">📄</span>
     <div class="da-txt"><strong>Envie de vous faire votre propre avis&nbsp;?</strong> FO met à votre disposition le <strong>texte intégral de l'accord</strong> de méthode signé le 3 juillet 2026. À lire et à télécharger librement.</div>
     <a class="da-btn" href="https://drive.google.com/uc?export=download&amp;id=1C_ZhG3SnYjeWJU8frQYRCDW4Ov-wJA5S" target="_blank" rel="noopener">📥 Télécharger l'accord (PDF)</a>
@@ -438,7 +468,7 @@
   </figure>
 
   <!-- EN 30 SECONDES -->
-  <h2 class="section-title"><span class="icon" aria-hidden="true">⏱️</span> L'essentiel en 30 secondes</h2>
+  <h2 id="essentiel" class="section-title"><span class="icon" aria-hidden="true">⏱️</span> L'essentiel en 30 secondes</h2>
   <div class="cards">
     <div class="card">
       <span class="card-icon" aria-hidden="true">🗂️</span>
@@ -463,7 +493,7 @@
   </div>
 
   <!-- COMMENT CA MARCHE : LOI -->
-  <h2 class="section-title"><span class="icon" aria-hidden="true">📘</span> D'abord, un rappel simple : que dit la loi ?</h2>
+  <h2 id="loi" class="section-title"><span class="icon" aria-hidden="true">📘</span> D'abord, un rappel simple : que dit la loi ?</h2>
   <p class="lead">Quand une entreprise introduit une <strong>nouvelle technologie</strong>, la loi (article <abbr title="Article du Code du travail sur les attributions du CSE">L.2312-8</abbr> du Code du travail) l'oblige à <strong>informer et consulter le CSE</strong> — c'est-à-dire vos élus — <strong>avant</strong> de la déployer. Et ce, quelle que soit l'ampleur du projet : même une IA aux impacts « mineurs » doit passer par cette étape.</p>
   <div class="alert blue">
     <div class="alert-icon" aria-hidden="true">💡</div>
@@ -483,7 +513,7 @@
   </div>
 
   <!-- LES 4 CATEGORIES -->
-  <h2 class="section-title"><span class="icon" aria-hidden="true">🗂️</span> Les 4 catégories de l'accord — le point de vigilance</h2>
+  <h2 id="categories" class="section-title"><span class="icon" aria-hidden="true">🗂️</span> Les 4 catégories de l'accord — le point de vigilance</h2>
   <p class="lead">Voici comment l'accord classe les IA — et ce que chaque catégorie déclenche (ou pas) comme dialogue social. Regardez la dernière colonne : <strong>une seule ligne sur quatre garantit une consultation du CSE avant déploiement.</strong></p>
   <div class="cat-table">
     <table>
@@ -606,7 +636,7 @@
   </div>
 
   <!-- AVOCAT -->
-  <h2 class="section-title"><span class="icon" aria-hidden="true">⚖️</span> Ce que confirme l'analyse juridique</h2>
+  <h2 id="juridique" class="section-title"><span class="icon" aria-hidden="true">⚖️</span> Ce que confirme l'analyse juridique</h2>
   <p class="lead">FO a fait analyser le projet par un avocat spécialisé. Son analyse rejoint la nôtre : plusieurs stipulations <strong>encadrent l'information-consultation du CSE de façon plus restrictive que la loi</strong>. Ses points-clés, en clair :</p>
   <div class="quote-grid">
     <div class="quote-card accent-rouge">
@@ -646,7 +676,7 @@
   </figure>
 
   <!-- POSITION FO -->
-  <h2 class="section-title"><span class="icon" aria-hidden="true">✊</span> La position de FO, en clair</h2>
+  <h2 id="position" class="section-title"><span class="icon" aria-hidden="true">✊</span> La position de FO, en clair</h2>
   <div class="position-grid">
     <div class="position-card pour">
       <span class="pos-badge">Ce pour quoi FO est</span>
@@ -682,7 +712,7 @@
   </div>
 
   <!-- DEMANDS -->
-  <h2 class="section-title"><span class="icon" aria-hidden="true">📋</span> Pourquoi nous n'avons pas signé — et ce que nous voulons sur le sujet</h2>
+  <h2 id="propositions" class="section-title"><span class="icon" aria-hidden="true">📋</span> Pourquoi nous n'avons pas signé — et ce que nous voulons sur le sujet</h2>
   <div class="alert green">
     <div class="alert-icon" aria-hidden="true">🤝</div>
     <p><strong>Une position responsable, pas un blocage.</strong> FO connaît la loi — l'article <abbr title="Article du Code du travail sur les attributions du CSE">L.2312-8</abbr> prévoit la consultation du CSE avant tout déploiement d'une nouvelle technologie. Mais FO sait aussi qu'il faut de la <strong>souplesse</strong> : <strong>GRDF ne peut pas prendre de retard sur l'intelligence artificielle</strong>, à la fois pour la <strong>compétitivité de l'entreprise</strong> et pour la <strong>montée en compétences des salariés</strong>. Cette flexibilité, FO l'accepte — à condition qu'elle s'accompagne d'une <strong>information régulière</strong> des représentants du personnel et de garanties concrètes.</p>
@@ -785,6 +815,18 @@
       li.addEventListener('keydown', function(e){ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); } });
     });
   })();
+</script>
+<script>
+(function(){
+  var toc=document.querySelector('.toc'); if(!toc) return;
+  var links=[].slice.call(toc.querySelectorAll('a'));
+  var map={}; links.forEach(function(a){var id=a.getAttribute('href').slice(1);var el=document.getElementById(id);if(el)map[id]=a;});
+  if(!Object.keys(map).length) return;
+  var obs=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ var a=map[e.target.id]; if(!a)return; links.forEach(function(l){l.classList.remove('active');}); a.classList.add('active'); try{toc.scrollTo({left:Math.max(0,a.offsetLeft-16),behavior:'smooth'});}catch(_){ } } });
+  },{rootMargin:'-45% 0px -50% 0px',threshold:0});
+  Object.keys(map).forEach(function(id){obs.observe(document.getElementById(id));});
+})();
 </script>
 </body>
 </html>
