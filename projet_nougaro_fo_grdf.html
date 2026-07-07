@@ -49,6 +49,23 @@
   }
   .header-logo img { width:76px; height:auto; display:block; }
   @media (max-width:720px){ .header-logo{ top:20px; right:20px; padding:7px 9px; } .header-logo img{ width:56px; } }
+  html { scroll-behavior: smooth; }
+  .toc {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; gap: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    background: rgba(255,255,255,0.96); backdrop-filter: blur(6px);
+    border: 1px solid #e4e0d6; border-radius: 12px; padding: 10px 12px;
+    margin-bottom: 30px; box-shadow: 0 2px 12px rgba(11,61,92,.07);
+  }
+  .toc a {
+    flex: none; font-size: 13px; font-weight: 600; color: var(--bleu-fonce);
+    text-decoration: none; padding: 7px 14px; border-radius: 30px; background: var(--fond);
+    white-space: nowrap; transition: background .15s, color .15s;
+  }
+  .toc a:hover { background: var(--bleu); color: #fff; }
+  section, .qa-wrap, .cta { scroll-margin-top: 74px; }
+  .toc::-webkit-scrollbar { height: 6px; }
+  .toc::-webkit-scrollbar-thumb { background: #cfd6d0; border-radius: 3px; }
   .header h1 {
     font-family:'Fraunces', serif; font-size:40px; font-weight:900; color:#fff;
     line-height:1.1; position:relative; z-index:1; max-width:720px;
@@ -136,6 +153,20 @@
     </div>
   </header>
 
+  <!-- SOMMAIRE STICKY -->
+  <nav class="toc" aria-label="Sommaire">
+    <a href="#reponses">Réponses CSE</a>
+    <a href="#contexte">Contexte</a>
+    <a href="#mobilite">Mobilité</a>
+    <a href="#site">Site BOW</a>
+    <a href="#acces">Accès</a>
+    <a href="#resto">Restauration</a>
+    <a href="#calendrier">Calendrier</a>
+    <a href="#accompagnement">Accompagnement</a>
+    <a href="#sigles">Sigles</a>
+    <a href="#contact">Nous écrire</a>
+  </nav>
+
   <!-- INTRO -->
   <div class="intro">
     <p>La Direction a présenté au CSE (Comité Social et Économique) le <strong>projet Nougaro</strong> : le regroupement des Fonctions Centrales de Toulouse, aujourd'hui réparties sur <strong>deux sites</strong> (Sébastopol et Toulouse Occitane), vers un site unique baptisé <strong>BOW — Borderouge Open Work</strong>. FO vous en présente ici les grandes lignes de façon claire et factuelle.</p>
@@ -144,7 +175,14 @@
   <!-- REPONSES CSE 7 JUILLET -->
   <style>
     .qa-wrap { margin-bottom: 38px; }
-    .qa-frise { position: relative; border-radius: 20px 20px 0 0; overflow: hidden; padding: 48px 44px 40px; }
+    .qa-wrap summary { list-style:none; cursor:pointer; }
+    .qa-wrap summary::-webkit-details-marker { display:none; }
+    .qa-frise { position: relative; border-radius: 20px; overflow: hidden; padding: 44px 44px 40px; }
+    .qa-wrap[open] .qa-frise { border-radius: 20px 20px 0 0; }
+    .qa-hint { position:absolute; right:40px; top:26px; z-index:3; display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.45); color:#fff; font-size:13px; font-weight:700; padding:8px 15px; border-radius:30px; }
+    .qa-hint .chev { transition:transform .2s; }
+    .qa-wrap[open] .qa-hint .chev { transform:rotate(180deg); }
+    .qa-hint .txt-open { display:none; } .qa-wrap[open] .qa-hint .txt-open { display:inline; } .qa-wrap[open] .qa-hint .txt-closed { display:none; }
     .qa-frise::before { content:""; position:absolute; inset:0; background:url('https://t3.ftcdn.net/jpg/07/14/05/90/240_F_714059085_7SWyLnu2SaxXqd6kcejhHm6Dksb7Ax7f.jpg') center/cover no-repeat; filter:blur(1.5px); transform:scale(1.08); z-index:0; }
     .qa-frise::after { content:""; position:absolute; inset:0; background:linear-gradient(120deg, rgba(1,156,218,.93) 0%, rgba(11,61,92,.9) 55%, rgba(40,177,147,.92) 100%); z-index:1; }
     .qa-frise > * { position: relative; z-index: 2; }
@@ -163,12 +201,13 @@
     .qa-r .lbl { background:var(--vert); color:#fff; }
     .qa-r.pending { color:#b45309; }
   </style>
-  <div class="qa-wrap">
-    <div class="qa-frise">
+  <details class="qa-wrap" id="reponses">
+    <summary class="qa-frise">
+      <span class="qa-hint"><span class="txt-closed">Afficher</span><span class="txt-open">Masquer</span> <span class="chev">▼</span></span>
       <span class="tag">CSE du 7 juillet 2026</span>
       <h2>Les réponses à vos <em>questions</em></h2>
-      <p>Retour de vos élus FO : les réponses apportées par la Direction en séance.</p>
-    </div>
+      <p>Retour de vos élus FO : cliquez pour afficher les réponses apportées par la Direction en séance.</p>
+    </summary>
     <div class="qa-body">
 
       <div class="qa-theme">Capacité d'accueil du site</div>
@@ -234,10 +273,10 @@
       </div>
 
     </div>
-  </div>
+  </details>
 
   <!-- 1. CONTEXTE -->
-  <section>
+  <section id="contexte">
     <div class="sec-head"><div class="sec-num">1</div><h2>Pourquoi ce projet ? Le contexte</h2></div>
     <p>Le déménagement est rendu nécessaire par la <strong>fin du bail ENGIE</strong> et la <strong>vente du foncier</strong> des sites actuels. Environ <strong>500 personnes</strong> sont concernées, réparties entre le site de Sébastopol (≈ 350 salariés) et Toulouse Occitane (≈ 150 salariés), intérimaires, alternants et stagiaires compris.</p>
     <div class="stats">
@@ -255,7 +294,7 @@
   </section>
 
   <!-- 2. HABITAT & MOBILITE -->
-  <section>
+  <section id="mobilite">
     <div class="sec-head"><div class="sec-num">2</div><h2>Comment les salariés se déplacent aujourd'hui</h2></div>
     <p>Le <strong>Plan de Mobilité Employeur</strong> (l'enquête menée par l'entreprise sur les trajets domicile-travail) de 2024 a recueilli 50 % de réponses. Il éclaire les habitudes de déplacement des salariés et les difficultés qu'ils rencontrent.</p>
     <div class="grid2">
@@ -283,7 +322,7 @@
   </section>
 
   <!-- 3. SOLUTION BOW -->
-  <section>
+  <section id="site">
     <div class="sec-head"><div class="sec-num">3</div><h2>La solution retenue : le site BOW (Borderouge Open Work)</h2></div>
     <p>Le site retenu se situe au <strong>nord du quartier Borderouge</strong>, en bordure de la rocade A62. Il est accessible par la <strong>rocade</strong>, les <strong>transports en commun</strong> (bus et métro ligne B) et les <strong>mobilités douces</strong> (pistes cyclables, station Vélô Toulouse).</p>
     <figure>
@@ -319,7 +358,7 @@
   </section>
 
   <!-- 4. ACCES -->
-  <section>
+  <section id="acces">
     <div class="sec-head"><div class="sec-num">4</div><h2>Les accès en transports</h2></div>
     <p>Le site est desservi par le <strong>métro ligne B</strong>, avec interconnexions avec la ligne A (Jean-Jaurès), la future ligne C (La Vache) et la gare St-Agne. Comptez par exemple 15 min jusqu'à Marengo SNCF, 19 min jusqu'à St-Agne, 30 min jusqu'à Basso-Cambo.</p>
     <figure>
@@ -339,7 +378,7 @@
   </section>
 
   <!-- 5. RESTAURATION -->
-  <section>
+  <section id="resto">
     <div class="sec-head"><div class="sec-num">5</div><h2>Restauration & commerces à proximité</h2></div>
     <p>Le quartier propose déjà une offre variée : restauration (Koboon, Green sur mesure, Mona Pizza, Bistronum, boulangerie Maison Daurey…) et courses (Carrefour, tabac Les Maourines), avec une offre appelée à se développer sur le site.</p>
     <figure>
@@ -350,7 +389,7 @@
   </section>
 
   <!-- 6. PLANNING -->
-  <section>
+  <section id="calendrier">
     <div class="sec-head"><div class="sec-num">6</div><h2>Le calendrier cible</h2></div>
     <p>Le projet s'étale sur plusieurs années, de la présentation aux instances qui représentent les salariés jusqu'à l'emménagement prévu à l'horizon <strong>2029</strong>.</p>
     <div class="tl">
@@ -369,7 +408,7 @@
   </section>
 
   <!-- 7. ACCOMPAGNEMENT -->
-  <section>
+  <section id="accompagnement">
     <div class="sec-head"><div class="sec-num">7</div><h2>L'accompagnement du changement</h2></div>
     <p>La Direction prévoit plusieurs actions : newsletters régulières, réseau d'ambassadeurs, ateliers de diagnostic, interviews des managers et des organisations syndicales, et une <strong>enquête de satisfaction adressée à tous les salariés</strong>. Un point d'attention pour FO : la qualité réelle de cet accompagnement et la prise en compte des situations individuelles.</p>
     <figure>
@@ -380,7 +419,7 @@
   </section>
 
   <!-- GLOSSAIRE -->
-  <section>
+  <section id="sigles">
     <div class="sec-head"><div class="sec-num">?</div><h2>En clair : les sigles du projet</h2></div>
     <div class="grid2">
       <div class="card"><h3>Les instances</h3><ul>
@@ -399,7 +438,7 @@
   </section>
 
   <!-- CTA -->
-  <div class="cta">
+  <div class="cta" id="contact">
     <h2>Vos questions, vos <em>inquiétudes</em> ? Faites-nous un retour</h2>
     <p>Ce projet vous concerne directement : trajets, organisation, conditions de travail sur le futur site… Vos remontées nourrissent l'action de vos élus FO en CSE. N'attendez pas : partagez-nous vos questions et vos inquiétudes.</p>
     <a class="btn" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr?subject=Projet%20Nougaro%20-%20Mes%20questions%2Finquietudes">✉️ Écrire à vos élus FO</a>
