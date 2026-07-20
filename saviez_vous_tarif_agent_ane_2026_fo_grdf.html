@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Saviez-Vous — Tarif Agent : quel impact fiscal pour vous ? · FO GRDF</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu: #019cda;
+    --bleu-clair: #019cda;
+    --or: #f7dd5c;
+    --or-clair: #fde8ea;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --texte: #1A1A2E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+
+  /* HEADER */
+  .header {
+    position: relative;
+    background: linear-gradient(135deg, #019cda 0%, #028bc2 100%);
+    border-radius: 20px;
+    padding: 44px 48px 36px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .header::before { display: none; }
+  .header::after { display: none; }
+
+  .badge {
+    display: inline-block;
+    background: var(--or);
+    color: var(--bleu);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 40px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--blanc);
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+  }
+  .header h1 em { color: var(--or); font-style: italic; }
+  .header .subtitle {
+    margin-top: 14px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.72);
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+  }
+  .header .update {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    position: relative;
+    z-index: 1;
+  }
+  .dot { width: 7px; height: 7px; background: #4ADE80; border-radius: 50%; display: inline-block; }
+
+  /* INTRO */
+  .intro {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    border-left: 5px solid var(--bleu-clair);
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #2a2a2a;
+  }
+  .intro strong { color: var(--bleu); }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon {
+    width: 36px; height: 36px;
+    background: var(--or-clair);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  /* CARDS GRID */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,59,111,0.1); }
+  .card .card-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+  .card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+  .card p { font-size: 13.5px; color: var(--gris); line-height: 1.65; }
+  .card.highlight { background: var(--bleu); color: white; }
+  .card.highlight h3 { color: var(--or); }
+  .card.highlight p { color: rgba(255,255,255,0.78); }
+
+  /* ALERT BOX */
+  .alert {
+    background: var(--or-clair);
+    border: 1.5px solid var(--or);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .alert .alert-icon { font-size: 24px; flex-shrink: 0; }
+  .alert p { font-size: 14px; line-height: 1.7; color: #5a4000; }
+  .alert strong { color: #3a2800; }
+  .alert.green { background: var(--vert-clair); border-color: var(--vert); }
+  .alert.green p { color: #0e3d22; }
+  .alert.green strong { color: #0a2e19; }
+  .alert.blue { background: #e8f4fb; border-color: var(--bleu); }
+  .alert.blue p { color: #003f6e; }
+  .alert.blue strong { color: #00264a; }
+
+  /* BIG STAT BOX */
+  .stat-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 20px;
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .stat-box .stat-main { flex-shrink: 0; text-align: center; }
+  .stat-box .stat-val { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 900; color: var(--or); line-height: 1; }
+  .stat-box .stat-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+  .stat-box .stat-desc { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.7; }
+  .stat-box .stat-desc strong { color: white; }
+
+  /* PLACEMENT CARDS */
+  .placement-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .place-card {
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 20px;
+    border-top: 4px solid var(--bleu);
+    transition: transform 0.2s;
+  }
+  .place-card:hover { transform: translateY(-2px); }
+  .place-card .place-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+  .place-card h3 { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: var(--bleu); margin-bottom: 6px; }
+  .place-card p { font-size: 13px; color: var(--gris); line-height: 1.6; }
+  .tag {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--or-clair);
+    color: var(--bleu);
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .tag.blue { background: #e8f4fb; color: #005a8e; }
+  .tag.green { background: var(--vert-clair); color: #0e5c3c; }
+
+  /* FISCAL SECTION */
+  .fiscal-section {
+    background: var(--blanc);
+    border-radius: 18px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+
+  .fiscal-flow { display: flex; flex-direction: column; gap: 0; }
+  .fiscal-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 4px;
+  }
+  .fiscal-row.start { background: #f0f9ff; border-left: 4px solid var(--bleu); }
+  .fiscal-row.deduct { background: #fff5f5; border-left: 4px dashed var(--rouge); }
+  .fiscal-row.net { background: #f0fff8; border-left: 4px solid var(--vert); }
+  .fiscal-row .f-icon { font-size: 22px; flex-shrink: 0; width: 36px; text-align: center; }
+  .fiscal-row .f-label { flex: 1; font-size: 13.5px; color: #2a2a2a; line-height: 1.6; }
+  .fiscal-row .f-label strong { color: var(--texte); display: block; font-size: 14px; }
+  .fiscal-row .f-amount { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--bleu); white-space: nowrap; }
+  .arrow-down { text-align: center; font-size: 18px; color: var(--gris); padding: 2px 0; }
+
+  /* BARÈME TABLE */
+  .bareme-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+    background: var(--blanc);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .bareme-table thead tr {
+    background: var(--bleu);
+  }
+  .bareme-table thead th {
+    padding: 12px 16px;
+    color: white;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 0.3px;
+  }
+  .bareme-table tbody td {
+    padding: 11px 16px;
+    font-size: 13.5px;
+    color: #2a2a2a;
+    border-bottom: 1px solid #f0ede8;
+  }
+  .bareme-table tbody tr:nth-child(even) { background: #f8f6f2; }
+  .bareme-table tbody tr:last-child td { border-bottom: none; }
+  .bareme-table td.taux { font-weight: 700; color: var(--bleu); text-align: right; }
+
+  /* LINK BOX */
+  .link-box {
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .link-box::after { content: 'AVANTAGES 2026'; position: absolute; right: -20px; top: -10px; font-family: 'Fraunces', serif; font-size: 90px; font-weight: 900; color: rgba(255,255,255,0.05); pointer-events: none; }
+  .link-box h3 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--or); margin-bottom: 12px; }
+  .link-box p { font-size: 13.5px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 16px; }
+  .link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .link-item { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 16px; }
+  .link-item .li-label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+  .link-item .li-val { font-family: 'Fraunces', serif; font-size: 18px; color: var(--or); margin-top: 2px; }
+  .link-item .li-sub { font-size: 11.5px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+  /* CALENDAR */
+  .calendar-section {
+    background: var(--blanc);
+    border-radius: 18px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--bleu), var(--vert));
+    border-radius: 2px;
+  }
+  .tl-item { position: relative; margin-bottom: 24px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -27px; top: 4px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--bleu);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--bleu);
+  }
+  .tl-item.active::before {
+    background: var(--or);
+    box-shadow: 0 0 0 3px rgba(247,221,92,0.4);
+    width: 13px; height: 13px;
+    left: -28px;
+  }
+  .tl-date { font-size: 11px; font-weight: 700; color: var(--bleu); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .tl-item.active .tl-date { color: var(--rouge); }
+  .tl-title { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 700; color: var(--texte); margin-bottom: 4px; }
+  .tl-desc { font-size: 13px; color: var(--gris); line-height: 1.6; }
+
+  /* CONTACT FO */
+  .fo-contact-card {
+    background: linear-gradient(135deg, #c0303a 0%, #9e1a28 60%, #7a0e1c 100%);
+    border-radius: 16px;
+    padding: 18px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fo-contact-card::before {
+    content: '✉';
+    position: absolute;
+    right: -8px; top: -16px;
+    font-size: 100px;
+    color: rgba(255,255,255,0.08);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .fo-contact-card .fo-logo-wrap { flex-shrink: 0; }
+  .fo-contact-card .fo-logo-wrap img {
+    height: 44px;
+    object-fit: contain;
+    transition: transform 0.25s;
+    cursor: pointer;
+    display: block;
+    background: white;
+    border-radius: 8px;
+    padding: 5px 8px;
+  }
+  .fo-contact-card .fo-logo-wrap img:hover { transform: scale(1.07); }
+  .fo-contact-card .fo-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .fo-contact-card .fo-text { flex: 1; min-width: 180px; }
+  .fo-contact-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+  .fo-contact-card p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .fo-mailto-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 9px 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  }
+  .fo-mailto-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    background: #f5f5f5;
+  }
+  .fo-mailto-btn .btn-icon { font-size: 15px; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gris);
+    line-height: 1.8;
+    padding-top: 16px;
+    border-top: 1px solid #e0ddd8;
+  }
+  .footer a { color: var(--bleu); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* SKIP LINK */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: #ffbf00;
+    color: #000;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 16px; }
+
+  /* LOGO TOOLTIP */
+  .logo-link-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .logo-link-wrap .logo-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0,0,0,0.82);
+    color: #fff;
+    font-size: 11.5px;
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
+    padding: 6px 12px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    right: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, visibility 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .logo-link-wrap .logo-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; right: 14px;
+    border: 6px solid transparent;
+    border-top-color: rgba(0,0,0,0.82);
+  }
+  .logo-link-wrap:hover .logo-tooltip,
+  .logo-link-wrap:focus-within .logo-tooltip { visibility: visible; opacity: 1; }
+  .logo-link-wrap img {
+    transition: transform 0.25s, filter 0.25s;
+    cursor: pointer;
+    filter: drop-shadow(0 2px 8px rgba(247,221,92,0.2));
+  }
+  .logo-link-wrap:hover img {
+    transform: scale(1.06);
+    filter: drop-shadow(0 4px 14px rgba(247,221,92,0.5));
+  }
+
+  /* A11Y TOGGLE BAR */
+  .a11y-toggle-bar {
+    display: flex;
+    justify-content: center;
+    margin: -20px 0 28px;
+    position: relative;
+    z-index: 10;
+  }
+  .a11y-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 40px;
+    padding: 8px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .a11y-btn:hover { border-color: #019cda; color: #019cda; box-shadow: 0 4px 14px rgba(1,156,218,0.15); }
+  .a11y-btn:focus { outline: 4px solid #019cda; outline-offset: 3px; }
+  .a11y-btn .a11y-icon { font-size: 16px; }
+  .a11y-btn .a11y-label-on  { display: none; }
+  .a11y-btn .a11y-label-off { display: inline; }
+  body.a11y-mode .a11y-btn {
+    background: var(--a11y-dark);
+    border-color: var(--a11y-dark);
+    color: var(--a11y-dark-txt);
+    font-weight: 700;
+  }
+  body.a11y-mode .a11y-btn .a11y-label-on  { display: inline; }
+  body.a11y-mode .a11y-btn .a11y-label-off { display: none; }
+
+  /* A11Y ICO */
+  .a11y-ico {
+    display: none;
+    width: 1.1em;
+    height: 1.1em;
+    vertical-align: -0.18em;
+    flex-shrink: 0;
+    color: currentColor;
+  }
+  body.a11y-mode .a11y-ico { display: inline; }
+  body.a11y-mode .a11y-emoji {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    width: 0 !important;
+    display: inline-block;
+  }
+  body.a11y-mode .card-icon .a11y-ico,
+  body.a11y-mode .place-icon .a11y-ico,
+  body.a11y-mode .f-icon .a11y-ico,
+  body.a11y-mode .icon .a11y-ico { width: 1.4em; height: 1.4em; }
+  body.a11y-mode .btn-icon .a11y-ico,
+  body.a11y-mode .a11y-icon .a11y-ico { width: 1em; height: 1em; }
+
+  /* ROTATE BANNER */
+  .rotate-banner {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(135deg, #019cda, #028bc2);
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 9998;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.15);
+  }
+  .rotate-banner .rb-icon { font-size: 20px; animation: rb-spin 2s ease-in-out infinite; display: inline-block; }
+  @keyframes rb-spin {
+    0%   { transform: rotate(0deg); }
+    40%  { transform: rotate(90deg); }
+    60%  { transform: rotate(90deg); }
+    100% { transform: rotate(0deg); }
+  }
+  .rotate-banner .rb-close {
+    background: rgba(255,255,255,0.2); border: none; color: white;
+    font-size: 14px; padding: 4px 10px; border-radius: 20px;
+    cursor: pointer; margin-left: 8px; font-family: 'DM Sans', sans-serif;
+  }
+  .rotate-banner .rb-close:hover { background: rgba(255,255,255,0.35); }
+  @media (max-width: 768px) and (orientation: portrait) {
+    .rotate-banner { display: flex; }
+    body { padding-bottom: 52px; }
+  }
+  @media (max-width: 900px) and (orientation: landscape) {
+    .rotate-banner { display: none !important; }
+    body { padding-bottom: 0; }
+    .page { padding: 16px 24px 32px; max-width: 100%; }
+    .header { padding: 20px 28px 16px; border-radius: 12px; margin-bottom: 20px; }
+    .header h1 { font-size: 26px; }
+    .header .subtitle { font-size: 13px; }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .placement-grid { grid-template-columns: 1fr 1fr; }
+    .link-grid { grid-template-columns: 1fr 1fr; }
+    .stat-box { padding: 18px 24px; gap: 16px; }
+    .stat-box .stat-val { font-size: 36px; }
+    .fiscal-section, .calendar-section { padding: 18px 22px; }
+    .fo-contact-card { padding: 12px 16px; }
+    .a11y-toggle-bar { margin: -12px 0 20px; }
+  }
+  @media (max-width: 600px) {
+    .cards, .placement-grid, .link-grid { grid-template-columns: 1fr; }
+    .stat-box { flex-direction: column; }
+    .page { padding: 16px 16px 48px; }
+    .header { padding: 28px 24px 24px; }
+    .header h1 { font-size: 28px; }
+    .bareme-table { font-size: 12px; }
+  }
+
+  /* ═══ CALCULETTE FRAIS RÉELS ══════════════════════════════════════ */
+  .calc-wrap { background: var(--blanc); border-radius: 18px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+  .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .calc-col { background: var(--fond); border-radius: 14px; padding: 24px; }
+  .calc-col h3 { font-family: 'Fraunces', serif; font-size: 18px; color: var(--bleu); margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid #e0e6eb; display: flex; align-items: center; gap: 8px; }
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; color: #333; margin-bottom: 6px; }
+  .field .hint { font-size: 11.5px; color: var(--gris); margin-top: 3px; font-style: italic; }
+  .field input[type="number"], .field select, .field textarea { width: 100%; padding: 10px 14px; border: 2px solid #e0e6eb; border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif; background: white; color: var(--texte); transition: border-color .2s, background .2s; }
+  .field input[type="number"]:focus, .field select:focus { outline: none; border-color: var(--bleu); background: #f9fcfe; }
+  .field textarea { min-height: 70px; resize: vertical; font-family: inherit; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .radio-group { display: flex; gap: 10px; margin-top: 4px; }
+  .radio-pill { flex: 1; position: relative; cursor: pointer; }
+  .radio-pill input { position: absolute; opacity: 0; pointer-events: none; }
+  .radio-pill span { display: block; padding: 9px 12px; border: 2px solid #e0e6eb; border-radius: 10px; text-align: center; font-size: 13px; font-weight: 500; color: #555; background: white; transition: all .2s; }
+  .radio-pill input:checked + span { background: var(--bleu); color: white; border-color: var(--bleu); }
+  .radio-pill:hover span { border-color: var(--bleu); }
+  .checkbox-wrap { display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px; background: #fff7d6; border: 1.5px solid #f7dd5c; border-radius: 10px; cursor: pointer; margin-top: 12px; }
+  .checkbox-wrap input { margin-top: 2px; flex-shrink: 0; }
+  .checkbox-wrap label { font-size: 13px; font-weight: 500; color: #5a4000; cursor: pointer; line-height: 1.5; }
+  .eloignement-zone { margin-top: 12px; padding: 14px; background: #fff8e1; border-left: 4px solid var(--or); border-radius: 10px; display: none; }
+  .eloignement-zone.visible { display: block; }
+  .eloignement-zone .hint { font-size: 12px; color: #7a5200; line-height: 1.5; }
+  .verdict-card { background: linear-gradient(135deg, #019cda 0%, #28b193 100%); border-radius: 14px; padding: 24px; color: white; margin-bottom: 18px; text-align: center; }
+  .verdict-card.neutral { background: linear-gradient(135deg, #6B6B6B 0%, #888 100%); }
+  .verdict-card .verdict-eyebrow { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; margin-bottom: 8px; }
+  .verdict-card .verdict-msg { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; line-height: 1.35; }
+  .verdict-card .verdict-gain { margin-top: 12px; display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 14px; border-radius: 30px; font-size: 14px; font-weight: 600; }
+  .result-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: white; border-radius: 10px; margin-bottom: 8px; border: 1px solid #e0e6eb; }
+  .result-row .label { font-size: 13px; color: #555; font-weight: 500; }
+  .result-row .val { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--bleu); }
+  .result-row.ecart .val { color: var(--vert); }
+  .result-row.ecart.negative .val { color: var(--rouge); }
+  .gauge-wrap { background: white; border-radius: 12px; padding: 16px 18px; margin-top: 14px; border: 1px solid #e0e6eb; }
+  .gauge-label { font-size: 12px; color: var(--gris); margin-bottom: 8px; display: flex; justify-content: space-between; }
+  .gauge-bar { height: 14px; background: #eef1f5; border-radius: 7px; overflow: hidden; }
+  .gauge-fill { height: 100%; background: linear-gradient(90deg, #28b193, #019cda); border-radius: 7px; transition: width .4s ease; width: 0%; }
+  .gauge-fill.negative { background: linear-gradient(90deg, #ef333e, #ff7a82); }
+  .justif-alert { margin-top: 14px; padding: 14px 16px; background: #fff8e1; border-left: 4px solid var(--or); border-radius: 10px; font-size: 12.5px; color: #5a4000; line-height: 1.6; }
+  .justif-alert strong { color: #3a2800; }
+  .calc-disclaimer { background: var(--rouge-clair); border-left: 5px solid var(--rouge); border-radius: 0 12px 12px 0; padding: 16px 22px; margin-bottom: 32px; display: flex; gap: 14px; align-items: flex-start; }
+  .calc-disclaimer .alert-icon { font-size: 22px; flex-shrink: 0; }
+  .calc-disclaimer p { font-size: 13.5px; color: #6e1922; line-height: 1.65; }
+  .calc-disclaimer strong { color: #4e0f14; }
+  @media (max-width: 820px) { .calc-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .calc-wrap { padding: 22px 20px; } .field-row { grid-template-columns: 1fr; } }
+  /* CALCULETTE — MODE LECTURE UNIVERSELLE */
+  body.a11y-mode .calc-wrap { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; box-shadow: none !important; }
+  body.a11y-mode .calc-col { background: var(--a11y-surface2) !important; color: var(--a11y-txt2) !important; border: 1px solid var(--a11y-border) !important; }
+  body.a11y-mode .calc-col h3 { color: var(--a11y-txt1) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; border-bottom-color: var(--a11y-border) !important; }
+  body.a11y-mode .result-row { background: var(--a11y-surface) !important; border-color: var(--a11y-border) !important; }
+  body.a11y-mode .result-row .label { color: var(--a11y-txt3) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .result-row .val { color: var(--a11y-txt1) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .gauge-wrap { background: var(--a11y-surface) !important; border-color: var(--a11y-border) !important; }
+  body.a11y-mode .gauge-fill { background: var(--a11y-dark) !important; }
+  body.a11y-mode .verdict-card, body.a11y-mode .verdict-card.neutral { background: var(--a11y-dark) !important; border: none !important; }
+  body.a11y-mode .verdict-card .verdict-msg { color: var(--a11y-dark-txt) !important; font-family: 'Atkinson Hyperlegible', sans-serif !important; }
+  body.a11y-mode .field input, body.a11y-mode .field select, body.a11y-mode .field textarea { background: var(--a11y-surface) !important; color: var(--a11y-txt1) !important; border-color: var(--a11y-border) !important; }
+  body.a11y-mode .radio-pill input:checked + span { background: var(--a11y-dark) !important; color: var(--a11y-dark-txt) !important; border-color: var(--a11y-dark) !important; }
+  body.a11y-mode .checkbox-wrap { background: var(--a11y-surface2) !important; border-color: var(--a11y-border) !important; }
+  body.a11y-mode .checkbox-wrap label { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .justif-alert { background: var(--a11y-surface2) !important; border-left-color: var(--a11y-border) !important; color: var(--a11y-txt2) !important; }
+  body.a11y-mode .justif-alert strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .calc-disclaimer { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; border-left: 5px solid var(--a11y-txt2) !important; }
+  body.a11y-mode .calc-disclaimer p { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .calc-disclaimer strong { color: var(--a11y-txt1) !important; }
+
+  /* ══ A11Y MODE VARIABLES ══ */
+  body.a11y-mode {
+    --a11y-bg:        #FAFAF7;
+    --a11y-surface:   #FFFFFF;
+    --a11y-surface2:  #F4F3EF;
+    --a11y-border:    #E2E0DA;
+    --a11y-border2:   #CCCAC4;
+    --a11y-txt1:      #2C2C29;
+    --a11y-txt2:      #4A4A46;
+    --a11y-txt3:      #6E6D69;
+    --a11y-txt4:      #6F6E68;
+    --a11y-dark:      #525250;
+    --a11y-dark-txt:  #F8F7F4;
+    --a11y-txt4-dark: #C8C6C0;
+    background: var(--a11y-bg) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  }
+  body.a11y-mode .header {
+    background: var(--a11y-dark) !important;
+    border-radius: 12px !important;
+  }
+  body.a11y-mode .header h1 {
+    color: var(--a11y-dark-txt) !important;
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 34px;
+    letter-spacing: 0.01em;
+  }
+  body.a11y-mode .header h1 em {
+    color: var(--a11y-dark-txt) !important;
+    font-style: normal;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  body.a11y-mode .header .subtitle { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .header .update {
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.2) !important;
+    color: var(--a11y-txt4-dark) !important;
+  }
+  body.a11y-mode .dot { background: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .badge {
+    background: var(--a11y-surface2) !important;
+    color: var(--a11y-txt2) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode p, body.a11y-mode li, body.a11y-mode td,
+  body.a11y-mode .card p, body.a11y-mode .place-card p,
+  body.a11y-mode .tl-desc, body.a11y-mode .fiscal-row .f-label {
+    font-family: 'Atkinson Hyperlegible', sans-serif !important;
+    font-size: 15px !important; line-height: 1.85 !important; color: var(--a11y-txt3) !important;
+  }
+  body.a11y-mode .section-title { font-size: 21px !important; color: var(--a11y-txt1) !important; }
+  body.a11y-mode .card h3, body.a11y-mode .place-card h3 { font-size: 16px !important; color: var(--a11y-txt1) !important; }
+  body.a11y-mode .intro {
+    background: var(--a11y-surface) !important;
+    border-left: 5px solid var(--a11y-dark) !important;
+    color: var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .intro strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .card p { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .card h3 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .card.highlight {
+    background: var(--a11y-dark) !important;
+    border: 1px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .card.highlight h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .card.highlight p  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box {
+    background: var(--a11y-dark) !important; border: none !important;
+  }
+  body.a11y-mode .stat-box .stat-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .stat-box .stat-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .stat-box .stat-desc  { color: #C8C7C2 !important; }
+  body.a11y-mode .stat-box .stat-desc strong { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .section-title .icon {
+    background: var(--a11y-surface2) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+    border-radius: 8px !important;
+  }
+  body.a11y-mode .card-icon  { font-size: 30px !important; }
+  body.a11y-mode .place-icon { font-size: 30px !important; }
+  body.a11y-mode .fiscal-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .fiscal-row { color: var(--a11y-txt2) !important; border-radius: 8px !important; }
+  body.a11y-mode .fiscal-row.start  { background: var(--a11y-surface2) !important; border-left: 4px solid var(--a11y-txt1) !important; }
+  body.a11y-mode .fiscal-row.deduct { background: var(--a11y-surface2) !important; border-left: 4px dashed var(--a11y-txt2) !important; }
+  body.a11y-mode .fiscal-row.net    { background: var(--a11y-surface2) !important; border-left: 4px dotted var(--a11y-txt2) !important; }
+  body.a11y-mode .fiscal-row .f-amount { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .fiscal-row .f-label strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .place-card {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-top: 4px solid var(--a11y-txt2) !important;
+    box-shadow: none !important;
+  }
+  body.a11y-mode .place-card p { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .place-card h3 { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .link-box { background: var(--a11y-dark) !important; border: none !important; }
+  body.a11y-mode .link-box h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .link-box p  { color: #C8C7C2 !important; }
+  body.a11y-mode .link-item {
+    background: rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    border-radius: 8px !important;
+  }
+  body.a11y-mode .link-item .li-val   { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .link-item .li-label { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .link-item .li-sub   { color: #C8C7C2 !important; }
+  body.a11y-mode .calendar-section {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+  }
+  body.a11y-mode .tl-title { color: var(--a11y-txt1) !important; font-size: 15px !important; }
+  body.a11y-mode .tl-date  { color: var(--a11y-txt3) !important; font-weight: 600 !important; }
+  body.a11y-mode .tl-item.active .tl-date { color: var(--a11y-txt1) !important; font-weight: 700 !important; }
+  body.a11y-mode .tl-item.active .tl-date::after { content: ' — EN COURS'; font-size: 9px; font-weight: 700; letter-spacing: .08em; color: var(--a11y-txt3); vertical-align: middle; }
+  body.a11y-mode .tl-desc  { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .timeline::before { background: var(--a11y-border2) !important; border-radius: 0 !important; width: 2px !important; }
+  body.a11y-mode .tl-item::before { background: var(--a11y-surface) !important; border: 2.5px solid var(--a11y-txt2) !important; box-shadow: none !important; width: 13px !important; height: 13px !important; }
+  body.a11y-mode .tl-item.active::before { background: var(--a11y-txt1) !important; border: 2.5px solid var(--a11y-txt1) !important; box-shadow: 0 0 0 3px var(--a11y-surface), 0 0 0 5px var(--a11y-txt2) !important; width: 13px !important; height: 13px !important; }
+  body.a11y-mode .tag { background: var(--a11y-surface2) !important; color: var(--a11y-txt2) !important; border: 1px solid var(--a11y-border2) !important; }
+  body.a11y-mode table thead tr { background: var(--a11y-dark) !important; }
+  body.a11y-mode table thead th { color: var(--a11y-dark-txt) !important; font-size: 13px !important; }
+  body.a11y-mode table tbody td { color: var(--a11y-txt2) !important; font-size: 14px !important; border-bottom-color: var(--a11y-border) !important; }
+  body.a11y-mode table tbody tr:nth-child(even) { background: var(--a11y-surface2) !important; }
+  body.a11y-mode .fo-contact-card { background: var(--a11y-dark) !important; border: none !important; }
+  body.a11y-mode .fo-contact-card h3 { color: var(--a11y-dark-txt) !important; }
+  body.a11y-mode .fo-contact-card p  { color: var(--a11y-txt4-dark) !important; }
+  body.a11y-mode .fo-mailto-btn { background: var(--a11y-surface) !important; color: var(--a11y-txt1) !important; border: 1.5px solid var(--a11y-border2) !important; }
+  body.a11y-mode .footer { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .footer a { color: var(--a11y-txt2) !important; text-decoration: underline; }
+  body.a11y-mode *:focus { outline: 3px solid var(--a11y-txt1) !important; outline-offset: 3px !important; box-shadow: 0 0 0 5px rgba(28,28,26,0.15) !important; }
+  @media (max-width: 600px) {
+    body.a11y-mode .cards, body.a11y-mode .placement-grid, body.a11y-mode .link-grid { grid-template-columns: 1fr; }
+    body.a11y-mode .stat-box { flex-direction: column; }
+    body.a11y-mode .page { padding: 16px; }
+  }
+  @media (prefers-contrast: more) { .card, .place-card, .intro, .alert { border: 2px solid #1C1C1A !important; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+  /* GUIDES PRATIQUES FO */
+  .guides-block {
+    background: var(--vert-clair);
+    border: 1.5px solid var(--vert);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .guides-body { flex: 1; min-width: 220px; }
+  .guides-intro { font-size: 14px; line-height: 1.7; color: #0e3d22; margin-bottom: 12px; }
+  .guides-intro strong { color: #0a2e19; }
+  .guides-sub { font-size: 12.5px; color: #0e3d22; margin-top: 12px; line-height: 1.6; }
+  .guides-sub strong { color: #0a2e19; }
+  .guides-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--vert);
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 9px 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .guides-btn:hover { opacity: 0.85; }
+  .guides-btn .a11y-ico { width: 14px; height: 14px; }
+  .guides-qr { flex-shrink: 0; text-align: center; }
+  .guides-qr img {
+    width: 110px; height: 110px;
+    border-radius: 10px;
+    border: 3px solid var(--vert);
+    background: white;
+    padding: 4px;
+    display: block;
+  }
+  .guides-qr-label { font-size: 10.5px; color: #0e3d22; margin-top: 6px; font-weight: 600; }
+
+  /* GUIDES — MODE LECTURE UNIVERSELLE */
+  body.a11y-mode .guides-block {
+    background: var(--a11y-surface2) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-left: 5px dashed var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode .guides-intro { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .guides-intro strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .guides-sub { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .guides-sub strong { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .guides-btn {
+    background: var(--a11y-dark) !important;
+    color: var(--a11y-dark-txt) !important;
+    border: 1.5px solid var(--a11y-border2) !important;
+  }
+  body.a11y-mode .guides-qr img {
+    border-color: var(--a11y-border2) !important;
+    filter: grayscale(1) contrast(1.1);
+  }
+  body.a11y-mode .guides-qr-label { color: var(--a11y-txt3) !important; }
+
+  /* ENCART SOURCE */
+  .source-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f4f7fb;
+    border: 1px solid #d0dcea;
+    border-left: 4px solid var(--bleu);
+    border-radius: 0 10px 10px 0;
+    padding: 13px 18px;
+    margin-bottom: 24px;
+  }
+  .source-icon { font-size: 16px; flex-shrink: 0; color: var(--bleu); }
+  .source-icon .a11y-ico { width: 16px; height: 16px; }
+  .source-body { font-size: 12.5px; color: #3a4a5a; line-height: 1.65; }
+  .source-link { color: var(--bleu); text-decoration: underline; font-weight: 600; }
+  .source-link:hover { opacity: 0.8; }
+
+  /* SOURCE — MODE LECTURE UNIVERSELLE */
+  body.a11y-mode .source-block {
+    background: var(--a11y-surface2) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-left: 4px solid var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .source-icon { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .source-body { color: var(--a11y-txt3) !important; }
+  body.a11y-mode .source-link { color: var(--a11y-txt2) !important; }
+
+  /* OVERRIDE FINAL ALERTES */
+  body.a11y-mode div.alert {
+    background: var(--a11y-surface) !important;
+    border: 1px solid var(--a11y-border) !important;
+    border-left: 5px solid var(--a11y-txt2) !important;
+    border-radius: 0 12px 12px 0 !important;
+  }
+  body.a11y-mode div.alert p,
+  body.a11y-mode div.alert > p { color: var(--a11y-txt2) !important; font-size: 14.5px !important; }
+  body.a11y-mode div.alert strong { color: var(--a11y-txt1) !important; }
+  body.a11y-mode div.alert.green {
+    background: var(--a11y-surface2) !important;
+    border-left: 5px dashed var(--a11y-txt2) !important;
+  }
+  body.a11y-mode div.alert.blue {
+    background: var(--a11y-surface) !important;
+    border-left: 5px dotted var(--a11y-txt2) !important;
+  }
+  body.a11y-mode .alert-icon { font-size: 26px !important; }
+
+  /* ═══ SPÉCIFIQUE PAGE TARIF AGENT / ANE ══════════════════════════ */
+  .taux-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+  .taux-chips .radio-pill { flex: 1 1 auto; min-width: 62px; }
+  .foyer-pills { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 4px; }
+  .foyer-pills .radio-pill span { padding: 10px 4px; font-size: 14px; font-weight: 700; }
+  .mode-zone { display: none; margin-top: 12px; }
+  .mode-zone.visible { display: block; }
+  .tmi-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #e8f4fb; border: 1.5px solid var(--bleu); color: #005a8e;
+    border-radius: 30px; padding: 7px 16px; font-size: 13px; font-weight: 700; margin-top: 10px;
+  }
+  .compare-bars { background: white; border-radius: 12px; padding: 16px 18px; margin-top: 14px; border: 1px solid #e0e6eb; }
+  .cbar-row { margin-bottom: 12px; }
+  .cbar-row:last-child { margin-bottom: 0; }
+  .cbar-head { display: flex; justify-content: space-between; font-size: 12px; color: var(--gris); margin-bottom: 6px; }
+  .cbar-head .cbar-val { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 700; color: var(--texte); }
+  .cbar-track { height: 16px; background: #eef1f5; border-radius: 8px; overflow: hidden; }
+  .cbar-fill { height: 100%; border-radius: 8px; transition: width .5s ease; min-width: 2px; }
+  .cbar-fill.now { background: linear-gradient(90deg, #019cda, #28b193); }
+  .cbar-fill.next { background: linear-gradient(90deg, #ef333e, #ff7a82); }
+  .result-row .sub { display: block; font-size: 11px; color: var(--gris); font-weight: 400; margin-top: 2px; }
+  .result-row .val small { font-size: 12px; color: var(--gris); font-family: 'DM Sans', sans-serif; font-weight: 400; }
+  .result-divider { text-align: center; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); margin: 14px 0 10px; display: flex; align-items: center; gap: 10px; }
+  .result-divider::before, .result-divider::after { content: ''; flex: 1; height: 1px; background: #ddd; }
+  .verdict-card.surcout { background: linear-gradient(135deg, #c0303a 0%, #9e1a28 100%); }
+  .greve-box {
+    background: linear-gradient(135deg, #c0303a 0%, #9e1a28 60%, #7a0e1c 100%);
+    border-radius: 18px; padding: 30px 34px; margin-bottom: 32px; color: white;
+    position: relative; overflow: hidden;
+  }
+  .greve-box::after { content: '15 SEPT.'; position: absolute; right: -14px; top: -14px; font-family: 'Fraunces', serif; font-size: 84px; font-weight: 900; color: rgba(255,255,255,0.07); pointer-events: none; }
+  .greve-box .greve-eyebrow { display: inline-block; background: var(--or); color: #7a0e1c; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 30px; margin-bottom: 14px; }
+  .greve-box h3 { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 900; line-height: 1.2; margin-bottom: 10px; position: relative; z-index: 1; }
+  .greve-box h3 em { color: var(--or); font-style: italic; }
+  .greve-box p { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.88); position: relative; z-index: 1; }
+  .greve-box .greve-1h {
+    margin-top: 16px; display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.14); border: 1.5px solid rgba(255,255,255,0.35);
+    border-radius: 12px; padding: 12px 18px; font-size: 14px; font-weight: 700; position: relative; z-index: 1;
+  }
+  .greve-box .greve-1h .g-icon { font-size: 22px; }
+  .presse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+  .presse-card {
+    display: block; background: var(--blanc); border-radius: 14px; padding: 18px 20px;
+    border-left: 4px solid var(--bleu); text-decoration: none; transition: transform .2s, box-shadow .2s;
+  }
+  .presse-card:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,59,111,0.1); }
+  .presse-card .p-media { font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--rouge); margin-bottom: 6px; }
+  .presse-card .p-title { font-family: 'Fraunces', serif; font-size: 14px; font-weight: 700; color: var(--texte); line-height: 1.45; margin-bottom: 6px; }
+  .presse-card .p-cta { font-size: 11.5px; color: var(--bleu); font-weight: 600; }
+  .bareme-table td.old-val { color: #2a2a2a; }
+  .bareme-table td.new-val { font-weight: 700; color: var(--rouge); text-align: right; white-space: nowrap; }
+  .bareme-table td.now-val { font-weight: 700; color: var(--bleu); text-align: right; white-space: nowrap; }
+  .approx { font-size: 11px; color: var(--gris); font-style: italic; }
+  @media (max-width: 600px) {
+    .foyer-pills { grid-template-columns: repeat(3, 1fr); }
+    .presse-grid { grid-template-columns: 1fr; }
+    .greve-box { padding: 24px 22px; }
+  }
+  body.a11y-mode .greve-box { background: var(--a11y-surface) !important; border: 2px solid var(--a11y-border) !important; }
+  body.a11y-mode .greve-box h3, body.a11y-mode .greve-box h3 em { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .greve-box p { color: var(--a11y-txt2) !important; }
+  body.a11y-mode .presse-card { background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; border-left: 4px solid var(--a11y-txt2) !important; }
+  body.a11y-mode .presse-card .p-title { color: var(--a11y-txt1) !important; }
+  body.a11y-mode .compare-bars, body.a11y-mode .tmi-badge { background: var(--a11y-surface) !important; border-color: var(--a11y-border) !important; color: var(--a11y-txt1) !important; }
+
+</style>
+<!-- GoatCounter -->
+<script data-goatcounter="https://fo-grdf.goatcounter.com/count"
+async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<div class="rotate-banner" id="rotateBanner" role="status" aria-live="polite">
+  <span class="rb-icon" aria-hidden="true"><span class="a11y-emoji">📱</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/></svg></span>
+  <span>Tournez votre téléphone pour une meilleure lecture</span>
+  <button class="rb-close" onclick="dismissRotate()" aria-label="Fermer ce message"><span class="a11y-emoji">✕</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg></button>
+</div>
+
+<a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+<div class="page" role="main">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; position:relative; z-index:1;">
+      <div class="badge" style="margin-bottom:0;"><span class="a11y-emoji">✦</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 7.8H22l-6.6 4.8 2.5 7.6L12 17.4l-5.9 4.8 2.5-7.6L2 9.8h7.8z"/></svg> Le Saviez-Vous ?</div>
+      <span class="logo-link-wrap">
+        <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+          <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO Énergie GRDF — cliquez pour nous écrire" style="height:clamp(44px, 8vw, 90px); width:auto; object-fit:contain; display:block; flex-shrink:0;">
+        </a>
+        <span class="logo-tooltip"><span class="a11y-emoji">✉️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg> Écrire à FO GRDF</span>
+      </span>
+    </div>
+    <h1>Tarif Agent : ce que la <em>taxation envisagée</em> vous coûterait</h1>
+    <p class="subtitle">Rapport de la Cour des comptes, barème ANE 2026 et calculette FO — mesurez l'impact réel sur votre foyer</p>
+    <div class="update"><span class="dot"></span> Juillet 2026 — chiffres du projet non confirmés : ordre de grandeur uniquement</div>
+  </div>
+
+  <!-- BOUTON ACCESSIBILITÉ -->
+  <div class="a11y-toggle-bar" role="navigation" aria-label="Options d'accessibilité">
+    <button class="a11y-btn" id="a11yToggle" onclick="toggleA11y()" aria-pressed="false" title="Activer le mode lecture universelle">
+      <span class="a11y-icon" aria-hidden="true"><span class="a11y-emoji">◐</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20A10 10 0 0 1 12 2z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"/></svg></span>
+      <span class="a11y-label-off">Mode lecture universelle</span>
+      <span class="a11y-label-on"><span class="a11y-emoji">✓</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,12 9,18 20,6"/></svg> Mode lecture universelle actif — Revenir au mode standard</span>
+    </button>
+  </div>
+
+  <div id="contenu-principal">
+
+  <!-- INTRO -->
+  <div class="intro">
+    Après le rapport de l'IGAS visant la CNIEG, c'est désormais la <strong>Cour des comptes</strong> qui s'attaque à l'<strong>Avantage en Nature Énergie (ANE)</strong>, plus communément appelé « Tarif Agent ». Son rapport, largement relayé par les médias mi-juillet, le présente comme un « coût démesuré » et recommande de le <strong>réduire par étapes</strong> : plafonnement des consommations prises en compte, puis <strong>revalorisation du barème fiscal et social</strong> — c'est-à-dire davantage d'impôts pour chaque agent, actif comme pensionné. FO Énergie vous explique ce qui se joue et vous donne les moyens de <strong>mesurer concrètement l'impact sur votre foyer</strong>.
+  </div>
+
+  <!-- STAT -->
+  <div class="stat-box">
+    <div class="stat-main">
+      <div class="stat-val">0,6&nbsp;%</div>
+      <div class="stat-label">du chiffre d'affaires d'EDF</div>
+    </div>
+    <div class="stat-desc">
+      Selon la Cour des comptes, le Tarif Agent représenterait <strong>plus de 700 millions d'euros par an</strong> pour le groupe EDF… soit environ <strong>0,6&nbsp;% de son chiffre d'affaires</strong>. Est-ce exceptionnel pour un élément de rémunération globale dans une grande entreprise ? <strong>Pour FO Énergie, la réponse est NON.</strong> Cet avantage bénéficie à plus de 300&nbsp;000 ayants droit de la branche des IEG.
+    </div>
+  </div>
+
+  <!-- CONTEXTE -->
+  <div class="section-title">
+    <span class="icon" aria-hidden="true"><span class="a11y-emoji">📰</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg></span>
+    Ce qui se passe — et ce que FO répond
+  </div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-icon"><span class="a11y-emoji">⚖️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7l-3 6a4 4 0 0 0 6 0zM19 7l-3 6a4 4 0 0 0 6 0z"/><line x1="5" y1="7" x2="19" y2="7"/></svg></span>
+      <h3>Ce que dit la Cour des comptes</h3>
+      <p>Le Tarif Agent serait un « coût démesuré » : plus de 700 M€/an pour le groupe EDF, une réduction « de plus de 95 % » sur les prix de l'énergie, et un traitement fiscal jugé trop favorable aux agents.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon"><span class="a11y-emoji">✂️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="8.5" y1="8" x2="20" y2="19"/><line x1="8.5" y1="16" x2="20" y2="5"/></svg></span>
+      <h3>Ce qu'elle recommande</h3>
+      <p>Réduire l'avantage « par étapes » : plafonner les consommations prises en compte, puis <strong>revaloriser le barème fiscal et social</strong> — donc augmenter le montant imposable déclaré par chaque agent.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon"><span class="a11y-emoji">🏛️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10M19 21V10M3 10l9-6 9 6M9 21v-6h6v6"/></svg></span>
+      <h3>Ce qui circule côté ministère</h3>
+      <p>Selon les données ministérielles disponibles — <strong>à prendre avec prudence</strong> —, l'avantage déclaré passerait de <strong>1 168 € à 2 512 €</strong> pour une personne seule avec chauffage, soit une base imposable multipliée par <strong>≈ 2,15</strong>.</p>
+    </div>
+    <div class="card highlight">
+      <span class="card-icon"><span class="a11y-emoji">✊</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V7a2 2 0 1 1 4 0v4M11 11V5a2 2 0 1 1 4 0v6M15 11V7a2 2 0 1 1 4 0v7a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3a2 2 0 1 1 4 0"/></svg></span>
+      <h3>Ce que répond FO Énergie</h3>
+      <p>Le Tarif Agent est un <strong>élément de rémunération globale</strong>, composante du contrat social fondateur des IEG depuis la nationalisation de 1946, construit en contrepartie des contraintes spécifiques des métiers de l'énergie. Y toucher, c'est une <strong>diminution nette du revenu</strong> des salariés et pensionnés.</p>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER GLOBAL -->
+  <div class="calc-disclaimer">
+    <div class="alert-icon"><span class="a11y-emoji">⚠️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg></div>
+    <p><strong>Important : aucun chiffre du projet n'est confirmé à ce jour.</strong> Le seul repère public concerne une personne seule avec chauffage (1 168 € → 2 512 €). Tous les montants « envisagés » de cette page sont des <strong>ordres de grandeur</strong>, extrapolés proportionnellement (× 2,15) à partir du barème officiel 2026. Ils seront mis à jour dès que des données officielles seront disponibles.</p>
+  </div>
+
+  <!-- BARÈME OFFICIEL -->
+  <div class="section-title">
+    <span class="icon" aria-hidden="true"><span class="a11y-emoji">📋</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg></span>
+    Aujourd'hui vs demain : le barème ANE en un coup d'œil
+  </div>
+
+  <div class="alert blue">
+    <div class="alert-icon"><span class="a11y-emoji">💡</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.6-1.4 4.9-3.5 6.2L15 17H9l-.5-1.8A7 7 0 0 1 12 2z"/></svg></div>
+    <p><strong>Le barème officiel 2026</strong> (SGE des IEG, novembre 2025, sur communication de l'URSSAF) fixe le montant forfaitaire annuel ajouté à votre revenu imposable au titre du Tarif Agent. Le même barème sert aux cotisations sociales et à l'impôt. Les colonnes « envisagé » appliquent le ratio ministériel ≈ × 2,15 : <strong>ce ne sont pas des chiffres officiels</strong>.</p>
+  </div>
+
+  <table class="bareme-table" role="table" aria-label="Barème avantage en nature énergie 2026 et projection envisagée">
+    <thead>
+      <tr>
+        <th>Composition du foyer</th>
+        <th style="text-align:right;">Avec chauffage<br><span style="font-weight:400; font-size:11px;">Barème 2026</span></th>
+        <th style="text-align:right;">Avec chauffage<br><span style="font-weight:400; font-size:11px;">Envisagé ≈</span></th>
+        <th style="text-align:right;">Sans chauffage<br><span style="font-weight:400; font-size:11px;">Barème 2026</span></th>
+        <th style="text-align:right;">Sans chauffage<br><span style="font-weight:400; font-size:11px;">Envisagé ≈</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1 personne</td><td class="now-val">1 141,60 €</td><td class="new-val">≈ 2 455 €</td><td class="now-val">572,50 €</td><td class="new-val">≈ 1 231 €</td></tr>
+      <tr><td>2 personnes</td><td class="now-val">1 632,70 €</td><td class="new-val">≈ 3 511 €</td><td class="now-val">815,70 €</td><td class="new-val">≈ 1 754 €</td></tr>
+      <tr><td>3 personnes</td><td class="now-val">1 839,30 €</td><td class="new-val">≈ 3 956 €</td><td class="now-val">916,60 €</td><td class="new-val">≈ 1 971 €</td></tr>
+      <tr><td>4 personnes</td><td class="now-val">2 078,00 €</td><td class="new-val">≈ 4 469 €</td><td class="now-val">1 036,00 €</td><td class="new-val">≈ 2 228 €</td></tr>
+      <tr><td>5 personnes</td><td class="now-val">2 197,30 €</td><td class="new-val">≈ 4 726 €</td><td class="now-val">1 095,70 €</td><td class="new-val">≈ 2 357 €</td></tr>
+      <tr><td>6 personnes ou plus</td><td class="now-val">2 316,60 €</td><td class="new-val">≈ 4 982 €</td><td class="now-val">1 155,30 €</td><td class="new-val">≈ 2 485 €</td></tr>
+    </tbody>
+  </table>
+
+  <!-- CALCULETTE -->
+  <div class="section-title" id="calculette">
+    <span class="icon" aria-hidden="true"><span class="a11y-emoji">🧮</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11.01"/><line x1="12" y1="11" x2="12" y2="11.01"/><line x1="16" y1="11" x2="16" y2="11.01"/><line x1="8" y1="15" x2="8" y2="15.01"/><line x1="12" y1="15" x2="12" y2="15.01"/><line x1="16" y1="15" x2="16" y2="15.01"/><line x1="8" y1="19" x2="16" y2="19"/></svg></span>
+    La calculette FO : votre profil, votre impact
+  </div>
+
+  <div class="calc-wrap">
+    <div class="calc-grid">
+      <!-- COLONNE PROFIL -->
+      <div class="calc-col">
+        <h3><span class="a11y-emoji">👤</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg> Votre profil</h3>
+
+        <div class="field">
+          <label id="lblFoyer">1. Combien de personnes vivent dans votre foyer ?</label>
+          <div class="foyer-pills" role="radiogroup" aria-labelledby="lblFoyer">
+            <label class="radio-pill"><input type="radio" name="aneFoyer" value="0" checked onchange="aneRecalc()"><span>1</span></label>
+            <label class="radio-pill"><input type="radio" name="aneFoyer" value="1" onchange="aneRecalc()"><span>2</span></label>
+            <label class="radio-pill"><input type="radio" name="aneFoyer" value="2" onchange="aneRecalc()"><span>3</span></label>
+            <label class="radio-pill"><input type="radio" name="aneFoyer" value="3" onchange="aneRecalc()"><span>4</span></label>
+            <label class="radio-pill"><input type="radio" name="aneFoyer" value="4" onchange="aneRecalc()"><span>5</span></label>
+            <label class="radio-pill"><input type="radio" name="aneFoyer" value="5" onchange="aneRecalc()"><span>6+</span></label>
+          </div>
+          <div class="hint">Composition du foyer au sens du barème ANE.</div>
+        </div>
+
+        <div class="field">
+          <label id="lblChauffage">2. Votre logement est-il chauffé à l'électricité ou au gaz du Tarif Agent ?</label>
+          <div class="radio-group" role="radiogroup" aria-labelledby="lblChauffage">
+            <label class="radio-pill"><input type="radio" name="aneChauffage" value="avec" checked onchange="aneRecalc()"><span>🔥 Avec chauffage</span></label>
+            <label class="radio-pill"><input type="radio" name="aneChauffage" value="sans" onchange="aneRecalc()"><span>❄️ Sans chauffage</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label id="lblMode">3. Votre taux d'imposition</label>
+          <div class="radio-group" role="radiogroup" aria-labelledby="lblMode">
+            <label class="radio-pill"><input type="radio" name="aneMode" value="direct" checked onchange="aneToggleMode()"><span>Je connais mon taux</span></label>
+            <label class="radio-pill"><input type="radio" name="aneMode" value="calc" onchange="aneToggleMode()"><span>Calculer mon taux</span></label>
+          </div>
+
+          <div class="mode-zone visible" id="aneModeDirect">
+            <div class="taux-chips" role="radiogroup" aria-label="Taux marginal d'imposition">
+              <label class="radio-pill"><input type="radio" name="aneTaux" value="0" onchange="aneRecalc()"><span>0 %</span></label>
+              <label class="radio-pill"><input type="radio" name="aneTaux" value="0.11" onchange="aneRecalc()"><span>11 %</span></label>
+              <label class="radio-pill"><input type="radio" name="aneTaux" value="0.30" checked onchange="aneRecalc()"><span>30 %</span></label>
+              <label class="radio-pill"><input type="radio" name="aneTaux" value="0.41" onchange="aneRecalc()"><span>41 %</span></label>
+              <label class="radio-pill"><input type="radio" name="aneTaux" value="0.45" onchange="aneRecalc()"><span>45 %</span></label>
+            </div>
+            <div class="hint">C'est votre taux marginal d'imposition (TMI) : la tranche la plus haute que votre foyer atteint. Il figure sur votre avis d'imposition.</div>
+          </div>
+
+          <div class="mode-zone" id="aneModeCalc">
+            <div class="field">
+              <label for="aneRevenu">Revenu net imposable annuel du foyer (€)</label>
+              <input type="number" id="aneRevenu" value="35000" min="0" step="500" oninput="aneRecalc()">
+              <div class="hint">Ligne « revenu imposable » de votre avis d'imposition (avant impôt).</div>
+            </div>
+            <div class="field">
+              <label for="aneParts">Nombre de parts fiscales du foyer</label>
+              <select id="aneParts" onchange="aneRecalc()">
+                <option value="1">1 part (célibataire)</option>
+                <option value="1.5">1,5 part</option>
+                <option value="2">2 parts (couple)</option>
+                <option value="2.5">2,5 parts (couple + 1 enfant)</option>
+                <option value="3">3 parts (couple + 2 enfants)</option>
+                <option value="3.5">3,5 parts</option>
+                <option value="4">4 parts (couple + 3 enfants)</option>
+                <option value="4.5">4,5 parts</option>
+                <option value="5">5 parts et plus</option>
+              </select>
+              <div class="hint">Il figure sur votre avis d'imposition. 1 part célibataire, 2 parts couple, + 0,5 part par enfant (1 part dès le 3ᵉ).</div>
+            </div>
+            <div class="tmi-badge" id="aneTmiBadge" aria-live="polite">Votre taux marginal estimé : <span id="aneTmiVal">30 %</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLONNE RÉSULTAT -->
+      <div class="calc-col">
+        <h3><span class="a11y-emoji">📊</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg> Votre résultat</h3>
+
+        <div class="verdict-card surcout" id="aneVerdict" aria-live="polite">
+          <div class="verdict-eyebrow">Surcoût annuel estimé si le projet aboutit</div>
+          <div class="verdict-msg" id="aneVerdictMsg">+ 394 € par an</div>
+          <div class="verdict-gain" id="aneVerdictMois">soit ≈ 33 € de plus chaque mois</div>
+        </div>
+
+        <div class="result-divider">Aujourd'hui — barème officiel 2026</div>
+        <div class="result-row">
+          <span class="label">Montant ajouté à votre revenu imposable<span class="sub">Barème ANE 2026 (SGE des IEG / URSSAF)</span></span>
+          <span class="val" id="aneResBaseNow">1 142 €</span>
+        </div>
+        <div class="result-row">
+          <span class="label">Ce que l'ANE vous coûte en impôt<span class="sub" id="aneResImpotNowMois">soit ≈ 29 €/mois</span></span>
+          <span class="val" id="aneResImpotNow">343 €<small>/an</small></span>
+        </div>
+
+        <div class="result-divider">Demain — projet envisagé (≈ × 2,15)</div>
+        <div class="result-row">
+          <span class="label">Montant imposable envisagé<span class="sub">Extrapolation proportionnelle — non confirmé</span></span>
+          <span class="val" id="aneResBaseNext">≈ 2 455 €</span>
+        </div>
+        <div class="result-row ecart negative">
+          <span class="label">Ce que l'ANE vous coûterait en impôt<span class="sub" id="aneResImpotNextMois">soit ≈ 61 €/mois</span></span>
+          <span class="val" id="aneResImpotNext">≈ 737 €<small>/an</small></span>
+        </div>
+
+        <div class="compare-bars" aria-hidden="false">
+          <div class="cbar-row">
+            <div class="cbar-head"><span>Impôt lié à l'ANE aujourd'hui</span><span class="cbar-val" id="aneBarNowVal">343 €</span></div>
+            <div class="cbar-track"><div class="cbar-fill now" id="aneBarNow" style="width:46%;"></div></div>
+          </div>
+          <div class="cbar-row">
+            <div class="cbar-head"><span>Impôt envisagé (ordre de grandeur)</span><span class="cbar-val" id="aneBarNextVal">≈ 737 €</span></div>
+            <div class="cbar-track"><div class="cbar-fill next" id="aneBarNext" style="width:100%;"></div></div>
+          </div>
+        </div>
+
+        <div class="justif-alert" id="aneNote0" style="display:none;">
+          <strong>Vous n'êtes pas imposable aujourd'hui :</strong> le surcoût d'impôt direct serait nul, mais le doublement du montant déclaré augmenterait votre revenu fiscal de référence — avec un effet possible sur vos aides, exonérations et votre entrée dans l'impôt.
+        </div>
+
+        <div class="justif-alert">
+          <strong>À savoir :</strong> l'ANE est déjà soumis aux cotisations sociales, à la CSG et à la CRDS. La calculette n'affiche que l'impôt sur le revenu ; une hausse du barème alourdirait aussi ces prélèvements.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="calc-disclaimer">
+    <div class="alert-icon"><span class="a11y-emoji">⚠️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg></div>
+    <p><strong>Simulation indicative.</strong> Les montants « envisagés » ne sont <strong>ni officiels ni confirmés</strong> : ils extrapolent proportionnellement le seul repère ministériel connu (personne seule avec chauffage : 1 168 € → 2 512 €). Le calcul d'impôt utilise le barème IR 2026 et ne remplace ni le simulateur officiel impots.gouv.fr ni un conseil personnalisé.</p>
+  </div>
+
+  <!-- COMPARATIF TRACT -->
+  <div class="section-title">
+    <span class="icon" aria-hidden="true"><span class="a11y-emoji">📄</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></span>
+    L'exemple chiffré du communiqué FO Énergie
+  </div>
+
+  <div class="fiscal-section">
+    <div class="fiscal-flow">
+      <div class="fiscal-row start">
+        <span class="f-icon"><span class="a11y-emoji">📌</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 1 8 8c0 5.25-8 12-8 12S4 15.25 4 10a8 8 0 0 1 8-8z"/></svg></span>
+        <span class="f-label"><strong>Référence ministérielle : personne seule, avec chauffage</strong>Avantage déclaré aujourd'hui</span>
+        <span class="f-amount">1 168 €</span>
+      </div>
+      <div class="arrow-down" aria-hidden="true">↓</div>
+      <div class="fiscal-row deduct">
+        <span class="f-icon"><span class="a11y-emoji">📈</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,17 9,11 13,15 21,7"/><polyline points="15,7 21,7 21,13"/></svg></span>
+        <span class="f-label"><strong>Avantage déclaré envisagé</strong>Soit une base imposable en hausse de <strong>+ 1 344 €</strong></span>
+        <span class="f-amount" style="color:var(--rouge);">2 512 €</span>
+      </div>
+    </div>
+  </div>
+
+  <table class="bareme-table" role="table" aria-label="Surcoût annuel d'impôt selon le taux marginal — exemple du communiqué FO">
+    <thead>
+      <tr>
+        <th>Votre taux marginal d'imposition</th>
+        <th style="text-align:right;">Surcoût annuel estimé</th>
+        <th style="text-align:right;">Soit par mois</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>11 %</td><td class="new-val">≈ 148 €</td><td class="new-val">≈ 12 €</td></tr>
+      <tr><td>30 %</td><td class="new-val">≈ 403 €</td><td class="new-val">≈ 34 €</td></tr>
+      <tr><td>41 %</td><td class="new-val">≈ 551 €</td><td class="new-val">≈ 46 €</td></tr>
+      <tr><td>45 %</td><td class="new-val">≈ 605 €</td><td class="new-val">≈ 50 €</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert">
+    <div class="alert-icon"><span class="a11y-emoji">💡</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.6-1.4 4.9-3.5 6.2L15 17H9l-.5-1.8A7 7 0 0 1 12 2z"/></svg></div>
+    <p><strong>Pourquoi un léger écart avec la calculette ?</strong> Le communiqué FO s'appuie sur la référence ministérielle de 1 168 € (barème antérieur) ; la calculette part du barème officiel 2026 (1 141,60 € pour une personne seule avec chauffage) et applique le même ratio. Dans les deux cas, l'ordre de grandeur est identique : <strong>une facture fiscale environ doublée</strong>.</p>
+  </div>
+
+  <!-- MOBILISATION -->
+  <div class="greve-box" role="region" aria-label="Appel à la grève intersyndicale du 15 septembre">
+    <span class="greve-eyebrow">Mobilisation intersyndicale</span>
+    <h3>Le 15 septembre, <em>tous en grève</em> pour faire reculer le Gouvernement</h3>
+    <p>FO Énergie dénonce ces attaques successives contre le statut des IEG et l'instrumentalisation politique et médiatique qui en est faite. Actifs et retraités, nous sommes toutes et tous concernés : c'est notre contrat social de 1946 que l'on veut détricoter, avantage après avantage. Répondons massivement à l'appel à la grève <strong>intersyndicale</strong>.</p>
+    <div class="greve-1h">
+      <span class="g-icon" aria-hidden="true"><span class="a11y-emoji">⏱️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><line x1="12" y1="13" x2="12" y2="9"/><line x1="12" y1="13" x2="15" y2="14"/><line x1="9" y1="2" x2="15" y2="2"/></svg></span>
+      Déposez au moins 1 heure de grève pour protéger nos acquis — chaque heure compte pour peser dans le rapport de force.
+    </div>
+    <p style="margin-top:14px; font-family:'Fraunces', serif; font-weight:700; color:var(--or);">Agir, ne pas subir !</p>
+  </div>
+
+  <!-- PRESSE -->
+  <div class="section-title">
+    <span class="icon" aria-hidden="true"><span class="a11y-emoji">🗞️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h16v14H4a2 2 0 0 1-2-2z"/><path d="M18 8h4v10a2 2 0 0 1-2 2h-2z"/><line x1="6" y1="10" x2="14" y2="10"/><line x1="6" y1="14" x2="14" y2="14"/></svg></span>
+    Ce qu'en disent les médias
+  </div>
+  <div class="presse-grid">
+    <a class="presse-card" href="https://www.franceinfo.fr/environnement/energie/le-tarif-preferentiel-accorde-par-edf-a-ses-salaries-represente-un-cout-demesure-selon-la-cour-des-comptes_8112668.html" target="_blank" rel="noopener noreferrer">
+      <div class="p-media">franceinfo</div>
+      <div class="p-title">Le tarif préférentiel accordé par EDF à ses salariés représente un « coût démesuré », selon la Cour des comptes</div>
+      <div class="p-cta">Lire l'article →</div>
+    </a>
+    <a class="presse-card" href="https://www.franceinfo.fr/economie/trois-questions-sur-le-tarif-agent-avantage-dont-beneficient-les-salaries-d-edf-et-que-la-cour-des-comptes-veut-raboter_8113136.html" target="_blank" rel="noopener noreferrer">
+      <div class="p-media">franceinfo</div>
+      <div class="p-title">Trois questions sur le « tarif agent », avantage dont bénéficient les salariés d'EDF, et que la Cour des comptes veut raboter</div>
+      <div class="p-cta">Lire l'article →</div>
+    </a>
+    <a class="presse-card" href="https://www.cnews.fr/france/2026-07-19/95-de-reduction-quest-ce-que-le-tarif-agent-sur-les-prix-de-lenergie-accorde-aux" target="_blank" rel="noopener noreferrer">
+      <div class="p-media">CNEWS</div>
+      <div class="p-title">« 95 % de réduction » : qu'est-ce que le « tarif agent » sur les prix de l'énergie que la Cour des comptes veut raboter ?</div>
+      <div class="p-cta">Lire l'article →</div>
+    </a>
+    <a class="presse-card" href="https://www.jechange.fr/energie/electricite/news/tarif-agent-ieg-electricite-presque-gratuite-reforme" target="_blank" rel="noopener noreferrer">
+      <div class="p-media">JeChange</div>
+      <div class="p-title">Le tarif agent EDF-GDF que Bercy compte raboter : ce que prévoit la réforme</div>
+      <div class="p-cta">Lire l'article →</div>
+    </a>
+  </div>
+
+  <!-- ENCART SOURCE -->
+  <div class="source-block">
+    <span class="source-icon"><span class="a11y-emoji">📖</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+    <span class="source-body">Sources : communiqué <strong>FO Énergie « Tarif Agent — Nouvelle attaque contre le statut des IEG »</strong> (juillet 2026) · <strong>Barème social et fiscal ANE 2026</strong> du SGE des IEG (27 novembre 2025, sur communication de la Caisse Nationale des URSSAF) · rapport de la Cour des comptes relayé par la presse (juillet 2026).</span>
+  </div>
+
+  <!-- CONTACT FO GRDF -->
+  <div class="fo-contact-card">
+    <div class="fo-logo-wrap">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="FO Énergie GRDF">
+      </a>
+    </div>
+    <div class="fo-body">
+      <div class="fo-text">
+        <h3><span class="a11y-emoji">✉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg> Une question sur votre Tarif Agent ? Contactez FO GRDF</h3>
+        <p>Nos délégués nationaux vous accompagnent sur <strong>l'avantage en nature énergie, sa fiscalité</strong> et la défense de vos droits statutaires.</p>
+      </div>
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" class="fo-mailto-btn">
+        <span class="btn-icon"><span class="a11y-emoji">✉</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span>
+        Nous écrire
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div style="display:flex; justify-content:center; align-items:center; gap:24px; margin-bottom:16px; flex-wrap:wrap;">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png"
+             alt="Logo FO Énergie GRDF"
+             style="height:70px; object-fit:contain; opacity:0.85; transition:opacity 0.2s;"
+             onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+      </a>
+    </div>
+    Document d'information syndicale FO Énergie · Chiffres du projet non confirmés — ordre de grandeur · Pour tout renseignement :
+    <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" aria-label="Envoyer un email à FO GRDF">syndicat-fo_grdf-delegations-nationales@grdf.fr</a>
+  </footer>
+
+  </div><!-- fin #contenu-principal -->
+</div><!-- fin .page -->
+
+<script>
+  /* ── Rotation mobile ── */
+  function dismissRotate() {
+    const b = document.getElementById('rotateBanner');
+    if (b) b.style.display = 'none';
+    try { sessionStorage.setItem('fo-rotate-dismissed', '1'); } catch(e) {}
+  }
+  try {
+    if (sessionStorage.getItem('fo-rotate-dismissed') === '1') {
+      const b = document.getElementById('rotateBanner');
+      if (b) b.style.display = 'none';
+    }
+  } catch(e) {}
+
+  /* ── Mode lecture universelle ── */
+  function toggleA11y() {
+    const body = document.body;
+    const btn  = document.getElementById('a11yToggle');
+    const on   = body.classList.toggle('a11y-mode');
+    if (btn) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    try { localStorage.setItem('fo-a11y', on ? '1' : '0'); } catch(e) {}
+  }
+  try {
+    if (localStorage.getItem('fo-a11y') === '1') {
+      document.body.classList.add('a11y-mode');
+      const btn = document.getElementById('a11yToggle');
+      if (btn) btn.setAttribute('aria-pressed', 'true');
+    }
+  } catch(e) {}
+
+  /* ═══ CALCULETTE TARIF AGENT / ANE ═══════════════════════════════ */
+  /* Barème officiel ANE 2026 (SGE des IEG, 27/11/2025) — index 0 = 1 personne … 5 = 6 personnes ou + */
+  const ANE_2026 = {
+    avec: [1141.60, 1632.70, 1839.30, 2078.00, 2197.30, 2316.60],
+    sans: [ 572.50,  815.70,  916.60, 1036.00, 1095.70, 1155.30]
+  };
+  /* Ratio du projet : seul repère public (données ministérielles, non confirmées)
+     personne seule avec chauffage : 1168 € -> 2512 € */
+  const ANE_RATIO = 2512 / 1168;
+  /* Barème IR 2026 (revenus 2025) — par part de quotient familial */
+  const ANE_TRANCHES_IR = [
+    { jusqua: 11600,    taux: 0.00 },
+    { jusqua: 29579,    taux: 0.11 },
+    { jusqua: 84577,    taux: 0.30 },
+    { jusqua: 181917,   taux: 0.41 },
+    { jusqua: Infinity, taux: 0.45 }
+  ];
+
+  function aneImpot(rev, parts) {
+    if (rev <= 0 || parts <= 0) return 0;
+    const q = rev / parts;
+    let imp = 0, bas = 0;
+    for (const t of ANE_TRANCHES_IR) {
+      if (q > t.jusqua) { imp += (t.jusqua - bas) * t.taux; bas = t.jusqua; }
+      else { imp += (q - bas) * t.taux; break; }
+    }
+    return imp * parts;
+  }
+  function aneTmi(rev, parts) {
+    if (rev <= 0 || parts <= 0) return 0;
+    const q = rev / parts;
+    let bas = 0;
+    for (const t of ANE_TRANCHES_IR) {
+      if (q <= t.jusqua) return t.taux;
+      bas = t.jusqua;
+    }
+    return 0.45;
+  }
+
+  function aneToggleMode() {
+    const mode = document.querySelector('input[name="aneMode"]:checked').value;
+    document.getElementById('aneModeDirect').classList.toggle('visible', mode === 'direct');
+    document.getElementById('aneModeCalc').classList.toggle('visible', mode === 'calc');
+    aneRecalc();
+  }
+
+  function aneRecalc() {
+    const idx   = parseInt(document.querySelector('input[name="aneFoyer"]:checked').value, 10);
+    const chauf = document.querySelector('input[name="aneChauffage"]:checked').value;
+    const mode  = document.querySelector('input[name="aneMode"]:checked').value;
+
+    const baseNow  = ANE_2026[chauf][idx];
+    const baseNext = baseNow * ANE_RATIO;
+
+    let impNow = 0, impNext = 0, tmi = 0;
+    if (mode === 'direct') {
+      tmi = parseFloat(document.querySelector('input[name="aneTaux"]:checked').value) || 0;
+      impNow  = baseNow  * tmi;
+      impNext = baseNext * tmi;
+    } else {
+      const rev   = parseFloat(document.getElementById('aneRevenu').value) || 0;
+      const parts = parseFloat(document.getElementById('aneParts').value)  || 1;
+      tmi = aneTmi(rev, parts);
+      /* Calcul précis : impôt (revenu incluant l'ANE) - impôt (revenu hors ANE).
+         Le revenu net imposable saisi inclut déjà l'ANE actuel. */
+      const revHorsAne = Math.max(rev - baseNow, 0);
+      impNow  = aneImpot(revHorsAne + baseNow,  parts) - aneImpot(revHorsAne, parts);
+      impNext = aneImpot(revHorsAne + baseNext, parts) - aneImpot(revHorsAne, parts);
+      const badge = document.getElementById('aneTmiVal');
+      if (badge) badge.textContent = Math.round(tmi * 100) + ' %';
+    }
+
+    const surcout = impNext - impNow;
+    const fmt  = v => Math.round(v).toLocaleString('fr-FR') + ' €';
+    const set  = (id, v) => { const el = document.getElementById(id); if (el) el.innerHTML = v; };
+
+    set('aneResBaseNow',  fmt(baseNow));
+    set('aneResBaseNext', '≈ ' + fmt(baseNext));
+    set('aneResImpotNow',  fmt(impNow)  + '<small>/an</small>');
+    set('aneResImpotNext', '≈ ' + fmt(impNext) + '<small>/an</small>');
+    set('aneResImpotNowMois',  'soit ≈ ' + fmt(impNow  / 12) + '/mois');
+    set('aneResImpotNextMois', 'soit ≈ ' + fmt(impNext / 12) + '/mois');
+
+    set('aneVerdictMsg',  (surcout > 0 ? '+ ' : '') + fmt(surcout) + ' par an');
+    set('aneVerdictMois', surcout > 0
+        ? 'soit ≈ ' + fmt(surcout / 12) + ' de plus chaque mois'
+        : 'aucun impôt supplémentaire direct');
+
+    /* Barres comparatives */
+    const maxVal = Math.max(impNext, impNow, 1);
+    const bn = document.getElementById('aneBarNow');
+    const bx = document.getElementById('aneBarNext');
+    if (bn) bn.style.width = Math.max((impNow  / maxVal) * 100, impNow  > 0 ? 4 : 1) + '%';
+    if (bx) bx.style.width = Math.max((impNext / maxVal) * 100, impNext > 0 ? 4 : 1) + '%';
+    set('aneBarNowVal',  fmt(impNow));
+    set('aneBarNextVal', '≈ ' + fmt(impNext));
+
+    /* Message non-imposable */
+    const n0 = document.getElementById('aneNote0');
+    if (n0) n0.style.display = (tmi === 0 ? 'block' : 'none');
+  }
+  document.addEventListener('DOMContentLoaded', aneRecalc);
+</script>
+</body>
+</html>
