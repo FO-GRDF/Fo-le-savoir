@@ -1039,6 +1039,31 @@
   .privacy-badge .pb-icon { font-size: 18px; flex-shrink: 0; }
   .privacy-badge strong { color: #0a2e19; }
   @media (max-width: 600px) { .calc-cta { width: 100%; justify-content: center; padding: 14px 18px; font-size: 14px; } }
+  /* ═══ ILLUSTRATIONS ══════════════════════════════════════════════ */
+  .illu { position: relative; border-radius: 18px; overflow: hidden; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .illu img { width: 100%; height: 230px; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .illu:hover img { transform: scale(1.03); }
+  .illu .illu-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(10,20,40,0.78));
+    color: white; padding: 42px 22px 14px;
+    font-size: 13.5px; font-weight: 500; line-height: 1.5;
+  }
+  .illu .illu-caption strong { color: var(--or); }
+  .illu .illu-credit {
+    position: absolute; top: 12px; right: 14px;
+    background: rgba(0,0,0,0.45); color: rgba(255,255,255,0.85);
+    font-size: 10px; letter-spacing: 0.8px; padding: 4px 12px; border-radius: 20px;
+  }
+  .greve-box {
+    background-image: linear-gradient(135deg, rgba(178,32,45,0.93) 0%, rgba(140,15,30,0.94) 60%, rgba(108,8,22,0.96) 100%), url('ane_images/mobilisation.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  @media (max-width: 600px) { .illu img { height: 170px; } }
+  body.a11y-mode .illu { border: 1px solid var(--a11y-border) !important; box-shadow: none !important; }
+  body.a11y-mode .illu .illu-caption { background: rgba(0,0,0,0.82) !important; }
+  body.a11y-mode .greve-box { background-image: none !important; }
   body.a11y-mode .calc-cta { background: var(--a11y-txt1) !important; color: var(--a11y-surface) !important; animation: none; box-shadow: none !important; }
   body.a11y-mode .privacy-badge { background: var(--a11y-surface2) !important; border-color: var(--a11y-border) !important; color: var(--a11y-txt2) !important; }
   body.a11y-mode .privacy-badge strong { color: var(--a11y-txt1) !important; }
@@ -1110,6 +1135,13 @@ async src="//gc.zgo.at/count.js"></script>
     </div>
   </div>
 
+  <!-- ILLUSTRATION ÉNERGIE -->
+  <div class="illu">
+    <img src="ane_images/pylones_energie.jpg" alt="Pylônes électriques haute tension se détachant sur un ciel bleu à l'aube" loading="lazy">
+    <span class="illu-credit">Adobe Stock</span>
+    <div class="illu-caption">Depuis 1946, les agents des IEG font fonctionner le réseau énergétique du pays, <strong>24h/24, 365 jours par an</strong>.</div>
+  </div>
+
   <!-- CONTEXTE -->
   <div class="section-title">
     <span class="icon" aria-hidden="true"><span class="a11y-emoji">📰</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg></span>
@@ -1142,6 +1174,13 @@ async src="//gc.zgo.at/count.js"></script>
   <div class="calc-disclaimer">
     <div class="alert-icon"><span class="a11y-emoji">⚠️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg></div>
     <p><strong>Important : aucun chiffre du projet n'est confirmé à ce jour.</strong> Le seul repère public concerne une personne seule avec chauffage (1 168 € → 2 512 €). Tous les montants « envisagés » de cette page sont des <strong>ordres de grandeur</strong>, extrapolés proportionnellement (× 2,15) à partir du barème officiel 2026. Ils seront mis à jour dès que des données officielles seront disponibles.</p>
+  </div>
+
+  <!-- ILLUSTRATION GAZ -->
+  <div class="illu">
+    <img src="ane_images/flamme_gaz.jpg" alt="Flammes bleues de brûleurs de gazinière dans une cuisine" loading="lazy">
+    <span class="illu-credit">Adobe Stock</span>
+    <div class="illu-caption">Le Tarif Agent couvre l'électricité <strong>et le gaz</strong> : les agents GRDF sont directement concernés.</div>
   </div>
 
   <!-- BARÈME OFFICIEL -->
@@ -1314,6 +1353,13 @@ async src="//gc.zgo.at/count.js"></script>
     <p><strong>Simulation indicative.</strong> Les montants « envisagés » ne sont <strong>ni officiels ni confirmés</strong> : ils extrapolent proportionnellement le seul repère ministériel connu (personne seule avec chauffage : 1 168 € → 2 512 €). Le calcul d'impôt utilise le barème IR 2026 et ne remplace ni le simulateur officiel impots.gouv.fr ni un conseil personnalisé. <strong>Rappel confidentialité :</strong> vos saisies restent sur votre appareil — personne ne peut accéder aux données renseignées dans la calculette.</p>
   </div>
 
+  <!-- ILLUSTRATION COÛT -->
+  <div class="illu">
+    <img src="ane_images/cout_energie_euros.jpg" alt="Câble électrique noué autour d'un billet de 20 euros, symbole du poids de l'énergie sur le budget" loading="lazy">
+    <span class="illu-credit">Adobe Stock</span>
+    <div class="illu-caption">Doubler la base imposable, c'est <strong>réduire le revenu disponible</strong> des salariés et pensionnés des IEG.</div>
+  </div>
+
   <!-- COMPARATIF TRACT -->
   <div class="section-title">
     <span class="icon" aria-hidden="true"><span class="a11y-emoji">📄</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></span>
@@ -1400,7 +1446,7 @@ async src="//gc.zgo.at/count.js"></script>
   <!-- ENCART SOURCE -->
   <div class="source-block">
     <span class="source-icon"><span class="a11y-emoji">📖</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
-    <span class="source-body">Sources : communiqué <strong>FO Énergie « Tarif Agent — Nouvelle attaque contre le statut des IEG »</strong> (juillet 2026) · <strong>Barème social et fiscal ANE 2026</strong> du SGE des IEG (27 novembre 2025, sur communication de la Caisse Nationale des URSSAF) · rapport de la Cour des comptes relayé par la presse (juillet 2026).</span>
+    <span class="source-body">Sources : communiqué <strong>FO Énergie « Tarif Agent — Nouvelle attaque contre le statut des IEG »</strong> (juillet 2026) · <strong>Barème social et fiscal ANE 2026</strong> du SGE des IEG (27 novembre 2025, sur communication de la Caisse Nationale des URSSAF) · rapport de la Cour des comptes relayé par la presse (juillet 2026) · Photos : Adobe Stock (licences FO GRDF).</span>
   </div>
 
   <!-- CONTACT FO GRDF -->
