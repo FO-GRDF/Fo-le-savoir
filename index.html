@@ -23,6 +23,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -32,6 +33,14 @@
   }
 
   .page { max-width: 960px; margin: 0 auto; padding: 48px 32px 64px; }
+
+  /* ===== ANIMATIONS D'APPARITION ===== */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
 
   /* ===== BOUTON A11Y ===== */
   .a11y-btn {
@@ -44,16 +53,23 @@
   }
   .a11y-btn:hover { background: var(--bleu); color: #fff; }
 
-  /* ===== HEADER ===== */
+  /* ===== HEADER AVEC PHOTO ===== */
   .header {
     position: relative;
-    background: linear-gradient(135deg, #019cda 0%, #028bc2 100%);
+    background:
+      linear-gradient(115deg, rgba(1,80,120,.92) 0%, rgba(1,120,175,.82) 55%, rgba(2,139,194,.55) 100%),
+      url('img/accueil/hero.jpg') center 40% / cover no-repeat;
     border-radius: 20px;
-    padding: 44px 48px 40px;
+    padding: 48px 48px 42px;
     margin-bottom: 36px;
     overflow: hidden;
     color: #fff;
   }
+  .header::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at 85% 15%, rgba(247,221,92,.16), transparent 55%);
+  }
+  .header > * { position: relative; z-index: 1; }
   .header-logo { height: 74px; width: auto; background: #fff; border-radius: 12px; padding: 8px 12px; margin-bottom: 20px; }
   .badge {
     display: inline-block; background: var(--or); color: #026b96;
@@ -64,77 +80,113 @@
   .header h1 {
     font-family: 'Fraunces', serif; font-weight: 900;
     font-size: clamp(30px, 5vw, 44px); line-height: 1.12; margin-bottom: 12px;
+    text-shadow: 0 2px 14px rgba(0,0,0,.35);
   }
-  .header p { font-size: 16.5px; font-weight: 300; max-width: 620px; opacity: .95; line-height: 1.55; }
+  .header p { font-size: 16.5px; font-weight: 300; max-width: 620px; opacity: .97; line-height: 1.55; text-shadow: 0 1px 8px rgba(0,0,0,.3); }
 
-  /* nav ancres */
   .nav-ancres { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
   .nav-ancres a {
     background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.45);
     color: #fff; text-decoration: none; font-size: 13.5px; font-weight: 500;
-    padding: 8px 16px; border-radius: 30px; transition: background .15s;
+    padding: 8px 16px; border-radius: 30px; transition: background .15s, transform .15s;
+    backdrop-filter: blur(3px);
   }
-  .nav-ancres a:hover { background: rgba(255,255,255,.3); }
+  .nav-ancres a:hover { background: rgba(255,255,255,.32); transform: translateY(-2px); }
+
+  /* ===== COMPTEURS ===== */
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px; margin: 22px 0 0;
+  }
+  .stat {
+    background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.35);
+    border-radius: 14px; padding: 14px 10px; text-align: center; backdrop-filter: blur(3px);
+  }
+  .stat .chiffre { font-family: 'Fraunces', serif; font-weight: 900; font-size: 32px; color: var(--or); line-height: 1; }
+  .stat .lbl { font-size: 12px; font-weight: 500; letter-spacing: .8px; text-transform: uppercase; margin-top: 6px; opacity: .95; }
+
+  /* ===== RECHERCHE ===== */
+  .recherche {
+    position: sticky; top: 12px; z-index: 50;
+    background: var(--blanc); border-radius: 40px;
+    box-shadow: 0 4px 18px rgba(26,26,46,.13);
+    display: flex; align-items: center; gap: 10px;
+    padding: 6px 10px 6px 22px; margin-bottom: 40px;
+    border: 2px solid transparent; transition: border-color .2s;
+  }
+  .recherche:focus-within { border-color: var(--bleu); }
+  .recherche .loupe { font-size: 17px; }
+  .recherche input {
+    flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif;
+    font-size: 15.5px; padding: 12px 0; background: transparent; color: var(--texte);
+  }
+  .recherche .compteur {
+    font-size: 12.5px; font-weight: 700; color: var(--bleu);
+    background: #e5f5fc; border-radius: 20px; padding: 7px 14px; white-space: nowrap;
+  }
+  .recherche .effacer {
+    display: none; border: none; background: var(--rouge-clair); color: var(--rouge);
+    font-weight: 700; font-size: 13px; border-radius: 20px; padding: 7px 13px; cursor: pointer;
+  }
+  .recherche.actif .effacer { display: block; }
+  .aucun-resultat {
+    display: none; text-align: center; background: var(--blanc); border-radius: 16px;
+    padding: 34px 20px; color: var(--gris); font-size: 15px; margin-bottom: 30px;
+  }
 
   /* ===== TITRES DE SECTION ===== */
   .section { margin-bottom: 44px; }
-  .section-titre {
-    display: flex; align-items: baseline; gap: 12px;
-    margin-bottom: 6px;
-  }
-  .section-titre h2 {
-    font-family: 'Fraunces', serif; font-weight: 900; font-size: 26px;
-  }
+  .section-titre { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+  .section-titre h2 { font-family: 'Fraunces', serif; font-weight: 900; font-size: 26px; }
   .section-titre .emoji { font-size: 22px; }
-  .section-sous {
-    color: var(--gris); font-size: 14.5px; margin-bottom: 18px;
-  }
+  .section-sous { color: var(--gris); font-size: 14.5px; margin-bottom: 18px; }
   .filet { height: 4px; width: 64px; border-radius: 2px; background: var(--bleu); margin: 10px 0 18px; }
-  .filet.or { background: var(--or); }
   .filet.vert { background: var(--vert); }
 
-  /* ===== À LA UNE ===== */
+  /* ===== À LA UNE (cartes photo) ===== */
   .une-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
   .une-card {
     position: relative; display: flex; flex-direction: column;
-    background: var(--blanc); border-radius: 16px; padding: 26px 24px 22px;
+    background: var(--blanc); border-radius: 16px; overflow: hidden;
     text-decoration: none; color: var(--texte);
-    border-top: 6px solid var(--bleu);
-    box-shadow: 0 2px 12px rgba(26,26,46,.06);
-    transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 2px 12px rgba(26,26,46,.08);
+    transition: transform .2s, box-shadow .2s;
   }
-  .une-card:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(26,26,46,.12); }
-  .une-card.consult { border-top-color: var(--rouge); }
-  .une-card.vert { border-top-color: var(--vert); }
+  .une-card:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(26,26,46,.16); }
+  .une-photo { position: relative; height: 150px; overflow: hidden; }
+  .une-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; display: block; }
+  .une-card:hover .une-photo img { transform: scale(1.07); }
+  .une-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(1,120,175,.12), rgba(1,60,95,.42)); }
+  .une-corps { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 20px; border-top: 5px solid var(--bleu); }
+  .une-card.consult .une-corps { border-top-color: var(--rouge); }
+  .une-card.vert .une-corps { border-top-color: var(--vert); }
   .une-tag {
-    align-self: flex-start; font-size: 10.5px; font-weight: 700;
-    letter-spacing: 1.8px; text-transform: uppercase;
-    padding: 4px 11px; border-radius: 14px; margin-bottom: 14px;
-    background: #e5f5fc; color: var(--bleu-fonce);
+    position: absolute; top: 12px; left: 12px; z-index: 2;
+    font-size: 10.5px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 14px;
+    background: rgba(255,255,255,.94); color: var(--bleu-fonce);
   }
-  .une-card.consult .une-tag { background: var(--rouge-clair); color: var(--rouge); }
-  .une-card.vert .une-tag { background: var(--vert-clair); color: #1c8a72; }
-  .une-card h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; line-height: 1.28; margin-bottom: 10px; }
-  .une-card p { font-size: 14px; color: var(--gris); line-height: 1.55; flex: 1; }
-  .une-lire { margin-top: 16px; font-size: 13.5px; font-weight: 700; color: var(--bleu); }
+  .une-card.consult .une-tag { color: var(--rouge); }
+  .une-card.vert .une-tag { color: #1c8a72; }
+  .une-corps h3 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; line-height: 1.28; margin-bottom: 10px; }
+  .une-corps p { font-size: 14px; color: var(--gris); line-height: 1.55; flex: 1; }
+  .une-lire { margin-top: 16px; font-size: 13.5px; font-weight: 700; color: var(--bleu); transition: transform .15s; }
+  .une-card:hover .une-lire { transform: translateX(5px); }
   .une-card.consult .une-lire { color: var(--rouge); }
   .une-card.vert .une-lire { color: #1c8a72; }
 
   /* ===== SAVIEZ-VOUS ===== */
-  .sv-bande {
-    background: linear-gradient(135deg, #fdf6d8 0%, #fbeeb0 100%);
-    border-radius: 20px; padding: 30px 30px 26px;
-  }
+  .sv-bande { background: linear-gradient(135deg, #fdf6d8 0%, #fbeeb0 100%); border-radius: 20px; padding: 30px 30px 26px; }
   .sv-bande .section-sous { color: #7a6a1e; }
   .sv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 14px; }
   .sv-card {
     background: var(--blanc); border-radius: 14px; padding: 18px 18px 16px;
     text-decoration: none; color: var(--texte);
     box-shadow: 0 2px 8px rgba(26,26,46,.07);
-    transition: transform .15s;
+    transition: transform .2s, box-shadow .2s;
     display: flex; flex-direction: column;
   }
-  .sv-card:hover { transform: translateY(-3px); }
+  .sv-card:hover { transform: translateY(-4px) rotate(-.4deg); box-shadow: 0 10px 22px rgba(122,106,30,.25); }
   .sv-pastille {
     align-self: flex-start; background: var(--or); color: #6b5a10;
     font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
@@ -143,28 +195,34 @@
   .sv-card h3 { font-family: 'Fraunces', serif; font-size: 15.5px; font-weight: 700; line-height: 1.3; }
   .sv-card p { font-size: 12.5px; color: var(--gris); margin-top: 6px; line-height: 1.5; }
 
-  /* ===== THÈMES ===== */
-  .theme { background: var(--blanc); border-radius: 18px; padding: 26px 28px 22px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(26,26,46,.05); }
-  .theme-titre { display: flex; align-items: center; gap: 11px; margin-bottom: 4px; }
-  .theme-titre .pic {
-    width: 40px; height: 40px; border-radius: 11px; display: flex;
-    align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+  /* ===== THÈMES (avec bandeau photo) ===== */
+  .theme { background: var(--blanc); border-radius: 18px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(26,26,46,.05); }
+  .theme-banniere { position: relative; height: 96px; overflow: hidden; }
+  .theme-banniere img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+  .theme:hover .theme-banniere img { transform: scale(1.05); }
+  .theme-banniere::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(1,90,135,.82) 0%, rgba(1,140,200,.45) 60%, rgba(1,140,200,.18) 100%); }
+  .theme-banniere .theme-titre {
+    position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; gap: 12px;
+    padding: 0 26px; color: #fff;
   }
-  .pic.bleu  { background: #e5f5fc; }
-  .pic.vert  { background: var(--vert-clair); }
-  .pic.rouge { background: var(--rouge-clair); }
-  .pic.or    { background: #fdf6d8; }
-  .theme-titre h3 { font-family: 'Fraunces', serif; font-weight: 900; font-size: 20px; }
-  .theme-sous { color: var(--gris); font-size: 13.5px; margin: 4px 0 16px 51px; }
+  .theme-titre .pic {
+    width: 42px; height: 42px; border-radius: 12px; display: flex;
+    align-items: center; justify-content: center; font-size: 21px; flex-shrink: 0;
+    background: rgba(255,255,255,.92);
+  }
+  .theme-titre h3 { font-family: 'Fraunces', serif; font-weight: 900; font-size: 21px; text-shadow: 0 2px 8px rgba(0,0,0,.35); }
+  .theme-corps { padding: 18px 26px 22px; }
+  .theme-sous { color: var(--gris); font-size: 13.5px; margin-bottom: 14px; }
   .liens { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; }
   .lien {
     display: flex; align-items: flex-start; gap: 10px;
     background: var(--fond); border-radius: 12px; padding: 13px 15px;
     text-decoration: none; color: var(--texte);
-    border: 1.5px solid transparent; transition: border-color .15s, background .15s;
+    border: 1.5px solid transparent; transition: border-color .15s, background .15s, transform .15s;
   }
-  .lien:hover { border-color: var(--bleu); background: #fff; }
-  .lien .fleche { color: var(--bleu); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .lien:hover { border-color: var(--bleu); background: #fff; transform: translateX(4px); }
+  .lien .fleche { color: var(--bleu); font-weight: 700; flex-shrink: 0; margin-top: 1px; transition: transform .15s; }
+  .lien:hover .fleche { transform: translateX(3px); }
   .lien .txt strong { display: block; font-size: 14px; font-weight: 700; line-height: 1.35; }
   .lien .txt span { font-size: 12.5px; color: var(--gris); line-height: 1.45; display: block; margin-top: 2px; }
   .mini-sv {
@@ -189,20 +247,24 @@
   .trombi-card {
     background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.3);
     border-radius: 14px; padding: 16px 12px 14px; text-align: center;
+    transition: transform .2s, background .2s;
   }
+  .trombi-card:hover { transform: translateY(-6px); background: rgba(255,255,255,.22); }
   .trombi-card img {
     width: 92px; height: 92px; border-radius: 50%; object-fit: cover;
     border: 3px solid var(--or); margin-bottom: 10px; background: #fff;
+    transition: transform .3s ease;
   }
+  .trombi-card:hover img { transform: scale(1.09); }
   .trombi-card .nom { font-weight: 700; font-size: 14.5px; line-height: 1.25; }
   .trombi-card .role { font-size: 11.5px; opacity: .92; margin-top: 4px; line-height: 1.35; }
   .trombi-card .lieu { display: inline-block; margin-top: 7px; background: var(--or); color: #026b96; font-size: 10.5px; font-weight: 700; padding: 2px 10px; border-radius: 12px; }
   .trombi-cta {
     display: inline-block; margin-top: 22px; background: var(--or); color: #026b96;
     font-weight: 700; font-size: 14px; text-decoration: none;
-    padding: 12px 26px; border-radius: 30px;
+    padding: 12px 26px; border-radius: 30px; transition: transform .15s, filter .15s;
   }
-  .trombi-cta:hover { filter: brightness(1.05); }
+  .trombi-cta:hover { filter: brightness(1.05); transform: translateY(-2px); }
 
   /* ===== CONTACT ===== */
   .contact {
@@ -215,22 +277,43 @@
   .contact a {
     background: #fff; color: var(--rouge); font-weight: 700; font-size: 14px;
     text-decoration: none; padding: 12px 24px; border-radius: 30px; white-space: nowrap;
+    transition: transform .15s;
   }
+  .contact a:hover { transform: scale(1.04); }
   .footer { text-align: center; color: var(--gris); font-size: 12.5px; margin-top: 34px; line-height: 1.6; }
+  .footer .credit { font-size: 11px; opacity: .75; }
+
+  /* ===== RETOUR EN HAUT ===== */
+  .haut-btn {
+    position: fixed; bottom: 20px; right: 20px; z-index: 998;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--bleu); color: #fff; border: none; cursor: pointer;
+    font-size: 20px; box-shadow: 0 4px 14px rgba(0,0,0,.25);
+    opacity: 0; pointer-events: none; transform: translateY(12px);
+    transition: opacity .25s, transform .25s;
+  }
+  .haut-btn.visible { opacity: 1; pointer-events: auto; transform: none; }
+  .haut-btn:hover { background: var(--bleu-fonce); }
 
   /* ===== MODE LECTURE UNIVERSELLE ===== */
   body.a11y-mode { background: #fff; }
-  body.a11y-mode, body.a11y-mode .une-card p, body.a11y-mode .lien .txt span,
+  body.a11y-mode .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  body.a11y-mode, body.a11y-mode .une-corps p, body.a11y-mode .lien .txt span,
   body.a11y-mode .sv-card p, body.a11y-mode .section-sous, body.a11y-mode .theme-sous {
     font-family: 'Atkinson Hyperlegible', sans-serif !important;
     color: #111 !important;
   }
-  body.a11y-mode h1, body.a11y-mode h2, body.a11y-mode h3, body.a11y-mode .une-card h3, body.a11y-mode .sv-card h3 {
+  body.a11y-mode h1, body.a11y-mode h2, body.a11y-mode h3, body.a11y-mode .une-corps h3, body.a11y-mode .sv-card h3 {
     font-family: 'Atkinson Hyperlegible', sans-serif !important;
   }
-  body.a11y-mode .une-card p, body.a11y-mode .lien .txt span, body.a11y-mode .sv-card p { font-size: 15px !important; }
+  body.a11y-mode .une-corps p, body.a11y-mode .lien .txt span, body.a11y-mode .sv-card p { font-size: 15px !important; }
   body.a11y-mode .lien .txt strong { font-size: 16px !important; }
-  body.a11y-mode .header, body.a11y-mode .trombi-bloc { background: #005a80; }
+  body.a11y-mode .header { background: #005a80; }
+  body.a11y-mode .trombi-bloc { background: #005a80; }
+  body.a11y-mode .theme-banniere img { display: none; }
+  body.a11y-mode .theme-banniere { background: #005a80; }
+  body.a11y-mode .une-photo { display: none; }
+  body.a11y-mode .une-tag { position: static; align-self: flex-start; margin-bottom: 10px; background: #fff3b0; }
   body.a11y-mode .sv-bande { background: #fff8dc; border: 2px solid #b89b00; }
   body.a11y-mode .theme, body.a11y-mode .une-card, body.a11y-mode .sv-card { border: 2px solid #333 !important; box-shadow: none; }
   body.a11y-mode .contact { background: #a3121c; }
@@ -238,8 +321,9 @@
   @media (max-width: 640px) {
     .page { padding: 28px 16px 48px; }
     .header { padding: 30px 24px 28px; }
-    .theme { padding: 20px 18px 16px; }
-    .theme-sous { margin-left: 0; }
+    .theme-corps { padding: 16px 18px 18px; }
+    .theme-banniere .theme-titre { padding: 0 18px; }
+    .recherche { top: 8px; }
   }
 </style>
 </head>
@@ -262,66 +346,89 @@
       <a href="#equipe">👥 L'équipe</a>
       <a href="#contact">✉️ Nous contacter</a>
     </nav>
+    <div class="stats" aria-label="Nos chiffres">
+      <div class="stat"><div class="chiffre" data-cible="24">0</div><div class="lbl">Communications</div></div>
+      <div class="stat"><div class="chiffre" data-cible="6">0</div><div class="lbl">Thèmes</div></div>
+      <div class="stat"><div class="chiffre" data-cible="3">0</div><div class="lbl">Outils interactifs</div></div>
+      <div class="stat"><div class="chiffre" data-cible="7">0</div><div class="lbl">Militants à l'écoute</div></div>
+    </div>
   </header>
 
+  <!-- ================= RECHERCHE ================= -->
+  <div class="recherche" id="rechercheBarre" role="search">
+    <span class="loupe" aria-hidden="true">🔍</span>
+    <input type="search" id="champRecherche" placeholder="Rechercher une communication… (ex : impôts, astreinte, IA, salaires)" aria-label="Rechercher une communication">
+    <span class="compteur" id="compteurResultats">24 communications</span>
+    <button class="effacer" id="btnEffacer" aria-label="Effacer la recherche">✕ Effacer</button>
+  </div>
+  <div class="aucun-resultat" id="aucunResultat">
+    😕 Aucune communication ne correspond à votre recherche.<br>Essayez un autre mot-clé, ou <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr">posez-nous directement la question</a> !
+  </div>
+
   <!-- ================= À LA UNE ================= -->
-  <section class="section" id="une">
+  <section class="section reveal" id="une">
     <div class="section-titre"><span class="emoji">🔥</span><h2>À la une</h2></div>
     <div class="filet"></div>
     <div class="une-grid">
-      <a class="une-card consult" href="astreinte-nouvel-accord-modifications-fo-grdf.html">
-        <span class="une-tag">Consultation adhérents</span>
-        <h3>Accord astreinte : FO doit-elle signer ?</h3>
-        <p>Le nouveau projet d'accord modifie en profondeur le régime d'astreinte. Comparatif avant/après, simulateur… et c'est vous qui décidez : qui cotise décide.</p>
-        <span class="une-lire">Donner mon avis →</span>
+      <a class="une-card consult cherchable" href="astreinte-nouvel-accord-modifications-fo-grdf.html">
+        <div class="une-photo"><span class="une-tag">Consultation adhérents</span><img src="img/accueil/astreinte.jpg" alt="" loading="lazy"></div>
+        <div class="une-corps">
+          <h3>Accord astreinte : FO doit-elle signer ?</h3>
+          <p>Le nouveau projet d'accord modifie en profondeur le régime d'astreinte. Comparatif avant/après, simulateur… et c'est vous qui décidez : qui cotise décide.</p>
+          <span class="une-lire">Donner mon avis →</span>
+        </div>
       </a>
-      <a class="une-card" href="alerte_ia_dsi_2026_fo_grdf.html">
-        <span class="une-tag">Alerte</span>
-        <h3>IA à la DSI : pour l'IA, contre l'oubli des salariés</h3>
-        <p>Le déploiement de l'IA générative s'accélère à la DSI. FO alerte sur l'accompagnement des salariés et vous donne la parole.</p>
-        <span class="une-lire">Lire l'alerte →</span>
+      <a class="une-card cherchable" href="alerte_ia_dsi_2026_fo_grdf.html">
+        <div class="une-photo"><span class="une-tag">Alerte</span><img src="img/accueil/ia.jpg" alt="" loading="lazy"></div>
+        <div class="une-corps">
+          <h3>IA à la DSI : pour l'IA, contre l'oubli des salariés</h3>
+          <p>Le déploiement de l'IA générative s'accélère à la DSI. FO alerte sur l'accompagnement des salariés et vous donne la parole.</p>
+          <span class="une-lire">Lire l'alerte →</span>
+        </div>
       </a>
-      <a class="une-card vert" href="saviez_vous_tarif_agent_ane_2026_fo_grdf.html">
-        <span class="une-tag">Le Saviez-Vous</span>
-        <h3>Tarif Agent : quel impact fiscal pour vous ?</h3>
-        <p>Avantage en nature énergie et impôts : ce qui change en 2026, avec la calculette FO pour estimer votre situation en 2 minutes.</p>
-        <span class="une-lire">Faire le calcul →</span>
+      <a class="une-card vert cherchable" href="saviez_vous_tarif_agent_ane_2026_fo_grdf.html">
+        <div class="une-photo"><span class="une-tag">Le Saviez-Vous</span><img src="img/accueil/remu.jpg" alt="" loading="lazy"></div>
+        <div class="une-corps">
+          <h3>Tarif Agent : quel impact fiscal pour vous ?</h3>
+          <p>Avantage en nature énergie et impôts : ce qui change en 2026, avec la calculette FO pour estimer votre situation en 2 minutes.</p>
+          <span class="une-lire">Faire le calcul →</span>
+        </div>
       </a>
     </div>
   </section>
 
   <!-- ================= LE SAVIEZ-VOUS ================= -->
-  <section class="section" id="saviez-vous">
+  <section class="section reveal" id="saviez-vous">
     <div class="sv-bande">
       <div class="section-titre"><span class="emoji">💡</span><h2>La série « Le Saviez-Vous »</h2></div>
       <p class="section-sous">Nos décryptages courts et concrets : un sujet, l'essentiel à savoir, ce que FO revendique.</p>
       <div class="sv-grid">
-        <a class="sv-card" href="saviez_vous_impots_2026_fo_grdf.html">
+        <a class="sv-card cherchable" href="saviez_vous_impots_2026_fo_grdf.html">
           <span class="sv-pastille">Impôts</span>
           <h3>Impôts 2026 : bien déclarer vos revenus 2025</h3>
           <p>Frais réels, cases à ne pas oublier, spécificités IEG.</p>
         </a>
-        <a class="sv-card" href="saviez_vous_rapport_cour_comptes_edf_2026_fo_grdf.html">
+        <a class="sv-card cherchable" href="saviez_vous_rapport_cour_comptes_edf_2026_fo_grdf.html">
           <span class="sv-pastille">Décryptage</span>
           <h3>Rapport Cour des comptes EDF : ce qui peut changer pour vous</h3>
           <p>Ce que le rapport dit vraiment de nos droits et statuts.</p>
         </a>
-        <a class="sv-card" href="saviez_vous_rps_oit_2026_fo_grdf.html">
+        <a class="sv-card cherchable" href="saviez_vous_rps_oit_2026_fo_grdf.html">
           <span class="sv-pastille">Santé</span>
           <h3>Risques psychosociaux : l'alerte de l'OIT</h3>
           <p>Pourquoi l'Organisation Internationale du Travail tire la sonnette d'alarme.</p>
         </a>
-        <a class="sv-card" href="saviez_vous_prevention_harcelement_fo_grdf.html">
+        <a class="sv-card cherchable" href="saviez_vous_prevention_harcelement_fo_grdf.html">
           <span class="sv-pastille">Prévention</span>
           <h3>Prévenir le harcèlement sexuel et les agissements sexistes</h3>
           <p>Repérer, réagir, se faire accompagner.</p>
         </a>
-        <a class="sv-card" href="evolution-grille-salaire.html">
+        <a class="sv-card cherchable" href="evolution-grille-salaire.html">
           <span class="sv-pastille">Salaires</span>
           <h3>Projet d'évolution des grilles de salaires</h3>
           <p>Ce que le projet change à votre rémunération.</p>
         </a>
-        <a class="sv-card" href="saviez_vous_ccas_cmcas_fo_grdf.html">
+        <a class="sv-card cherchable" href="saviez_vous_ccas_cmcas_fo_grdf.html">
           <span class="sv-pastille">Activités sociales</span>
           <h3>La CCAS &amp; CMCAS dans les IEG</h3>
           <p>Vos activités sociales : qui fait quoi, quels droits.</p>
@@ -332,126 +439,156 @@
 
   <!-- ================= THÈMES ================= -->
   <section class="section" id="themes">
-    <div class="section-titre"><span class="emoji">📚</span><h2>Toutes nos communications, par thème</h2></div>
+    <div class="section-titre reveal"><span class="emoji">📚</span><h2>Toutes nos communications, par thème</h2></div>
     <div class="filet vert"></div>
 
     <!-- Rémunération -->
-    <div class="theme">
-      <div class="theme-titre"><span class="pic bleu">💶</span><h3>Rémunération &amp; pouvoir d'achat</h3></div>
-      <p class="theme-sous">Grilles, intéressement, transparence, tarif agent, impôts.</p>
-      <div class="liens">
-        <a class="lien" href="synthese-modernisation-grille-ieg.html"><span class="fleche">→</span><span class="txt"><strong>Modernisation de la grille de rémunération IEG</strong><span>La synthèse complète de la négociation de branche.</span></span></a>
-        <a class="lien" href="evolution-grille-salaire.html"><span class="fleche">→</span><span class="txt"><strong>Projet d'évolution des grilles de salaires <span class="mini-sv">Saviez-Vous</span></strong><span>L'essentiel du projet, en clair.</span></span></a>
-        <a class="lien" href="transparence_remunerations_cadres_FO.html"><span class="fleche">→</span><span class="txt"><strong>Transparence des rémunérations <span class="mini-sv">Saviez-Vous</span></strong><span>Ce que la directive européenne va changer.</span></span></a>
-        <a class="lien" href="cest_a_vous_2026_decryptage_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>« C'est à vous ! » 2026 — le décryptage FO</strong><span>Intéressement : comprendre votre prime.</span></span></a>
-        <a class="lien" href="tarif-agent.html"><span class="fleche">→</span><span class="txt"><strong>Tarif Agent : la calculette <span class="mini-outil">Outil</span></strong><span>Estimez l'impact fiscal de votre avantage énergie.</span></span></a>
-        <a class="lien" href="saviez_vous_tarif_agent_ane_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Tarif Agent : quel impact fiscal ? <span class="mini-sv">Saviez-Vous</span></strong><span>ANE et impôts : ce qui change en 2026.</span></span></a>
-        <a class="lien" href="saviez_vous_impots_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Impôts 2026 : déclarez vos revenus 2025 <span class="mini-sv">Saviez-Vous</span></strong><span>Frais réels et pièges à éviter.</span></span></a>
+    <div class="theme reveal">
+      <div class="theme-banniere">
+        <img src="img/accueil/remu.jpg" alt="" loading="lazy">
+        <div class="theme-titre"><span class="pic">💶</span><h3>Rémunération &amp; pouvoir d'achat</h3></div>
+      </div>
+      <div class="theme-corps">
+        <p class="theme-sous">Grilles, intéressement, transparence, tarif agent, impôts.</p>
+        <div class="liens">
+          <a class="lien cherchable" href="synthese-modernisation-grille-ieg.html"><span class="fleche">→</span><span class="txt"><strong>Modernisation de la grille de rémunération IEG</strong><span>La synthèse complète de la négociation de branche.</span></span></a>
+          <a class="lien cherchable" href="evolution-grille-salaire.html"><span class="fleche">→</span><span class="txt"><strong>Projet d'évolution des grilles de salaires <span class="mini-sv">Saviez-Vous</span></strong><span>L'essentiel du projet, en clair.</span></span></a>
+          <a class="lien cherchable" href="transparence_remunerations_cadres_FO.html"><span class="fleche">→</span><span class="txt"><strong>Transparence des rémunérations <span class="mini-sv">Saviez-Vous</span></strong><span>Ce que la directive européenne va changer.</span></span></a>
+          <a class="lien cherchable" href="cest_a_vous_2026_decryptage_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>« C'est à vous ! » 2026 — le décryptage FO</strong><span>Intéressement : comprendre votre prime.</span></span></a>
+          <a class="lien cherchable" href="tarif-agent.html"><span class="fleche">→</span><span class="txt"><strong>Tarif Agent : la calculette <span class="mini-outil">Outil</span></strong><span>Estimez l'impact fiscal de votre avantage énergie.</span></span></a>
+          <a class="lien cherchable" href="saviez_vous_tarif_agent_ane_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Tarif Agent : quel impact fiscal ? <span class="mini-sv">Saviez-Vous</span></strong><span>ANE et impôts : ce qui change en 2026.</span></span></a>
+          <a class="lien cherchable" href="saviez_vous_impots_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Impôts 2026 : déclarez vos revenus 2025 <span class="mini-sv">Saviez-Vous</span></strong><span>Frais réels et pièges à éviter.</span></span></a>
+        </div>
       </div>
     </div>
 
     <!-- Frais & droits pratiques -->
-    <div class="theme">
-      <div class="theme-titre"><span class="pic vert">🧳</span><h3>Frais, famille &amp; droits pratiques</h3></div>
-      <p class="theme-sous">Déplacements, droits familiaux, activités sociales.</p>
-      <div class="liens">
-        <a class="lien" href="baremes_frais_deplacement_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Barèmes frais de déplacement IEG 2026</strong><span>Tous les montants à jour, poste par poste.</span></span></a>
-        <a class="lien" href="frais_deplacement.html"><span class="fleche">→</span><span class="txt"><strong>Frais de déplacement IEG <span class="mini-sv">Saviez-Vous</span></strong><span>Vos droits en déplacement, en clair.</span></span></a>
-        <a class="lien" href="droits_familiaux_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Droits familiaux 2026 : le simulateur <span class="mini-outil">Outil</span></strong><span>Congés, primes, aides : testez votre situation.</span></span></a>
-        <a class="lien" href="saviez_vous_ccas_cmcas_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>La CCAS &amp; CMCAS dans les IEG <span class="mini-sv">Saviez-Vous</span></strong><span>Vos activités sociales : qui fait quoi.</span></span></a>
+    <div class="theme reveal">
+      <div class="theme-banniere">
+        <img src="img/accueil/famille.jpg" alt="" loading="lazy">
+        <div class="theme-titre"><span class="pic">🧳</span><h3>Frais, famille &amp; droits pratiques</h3></div>
+      </div>
+      <div class="theme-corps">
+        <p class="theme-sous">Déplacements, droits familiaux, activités sociales.</p>
+        <div class="liens">
+          <a class="lien cherchable" href="baremes_frais_deplacement_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Barèmes frais de déplacement IEG 2026</strong><span>Tous les montants à jour, poste par poste.</span></span></a>
+          <a class="lien cherchable" href="frais_deplacement.html"><span class="fleche">→</span><span class="txt"><strong>Frais de déplacement IEG <span class="mini-sv">Saviez-Vous</span></strong><span>Vos droits en déplacement, en clair.</span></span></a>
+          <a class="lien cherchable" href="droits_familiaux_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Droits familiaux 2026 : le simulateur <span class="mini-outil">Outil</span></strong><span>Congés, primes, aides : testez votre situation.</span></span></a>
+          <a class="lien cherchable" href="saviez_vous_ccas_cmcas_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>La CCAS &amp; CMCAS dans les IEG <span class="mini-sv">Saviez-Vous</span></strong><span>Vos activités sociales : qui fait quoi.</span></span></a>
+        </div>
       </div>
     </div>
 
     <!-- Astreinte -->
-    <div class="theme">
-      <div class="theme-titre"><span class="pic rouge">⏰</span><h3>Astreinte</h3></div>
-      <p class="theme-sous">Le projet d'accord national et la consultation des adhérents.</p>
-      <div class="liens">
-        <a class="lien" href="astreinte-nouvel-accord-modifications-fo-grdf.html"><span class="fleche">→</span><span class="txt"><strong>Consultation : FO doit-elle signer l'accord astreinte ?</strong><span>Comparatif avant/après, simulateur — qui cotise décide.</span></span></a>
-        <a class="lien" href="astreinte_disponibilite_permanente_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Astreinte : ce que prévoit le projet d'accord</strong><span>Le décryptage complet du texte, point par point.</span></span></a>
+    <div class="theme reveal">
+      <div class="theme-banniere">
+        <img src="img/accueil/astreinte.jpg" alt="" loading="lazy">
+        <div class="theme-titre"><span class="pic">⏰</span><h3>Astreinte</h3></div>
+      </div>
+      <div class="theme-corps">
+        <p class="theme-sous">Le projet d'accord national et la consultation des adhérents.</p>
+        <div class="liens">
+          <a class="lien cherchable" href="astreinte-nouvel-accord-modifications-fo-grdf.html"><span class="fleche">→</span><span class="txt"><strong>Consultation : FO doit-elle signer l'accord astreinte ?</strong><span>Comparatif avant/après, simulateur — qui cotise décide.</span></span></a>
+          <a class="lien cherchable" href="astreinte_disponibilite_permanente_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Astreinte : ce que prévoit le projet d'accord</strong><span>Le décryptage complet du texte, point par point.</span></span></a>
+        </div>
       </div>
     </div>
 
     <!-- Santé -->
-    <div class="theme">
-      <div class="theme-titre"><span class="pic rouge">🧠</span><h3>Santé &amp; conditions de travail</h3></div>
-      <p class="theme-sous">Santé mentale, RPS, prévention, équipements.</p>
-      <div class="liens">
-        <a class="lien" href="sante-mentale-travail-fo-grdf.html"><span class="fleche">→</span><span class="txt"><strong>Santé mentale au travail</strong><span>Comprendre, agir, se faire aider : le guide FO.</span></span></a>
-        <a class="lien" href="saviez_vous_rps_oit_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Risques psychosociaux : l'alerte de l'OIT <span class="mini-sv">Saviez-Vous</span></strong><span>Ce que dit l'Organisation Internationale du Travail.</span></span></a>
-        <a class="lien" href="saviez_vous_prevention_harcelement_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Prévenir le harcèlement sexuel et les agissements sexistes <span class="mini-sv">Saviez-Vous</span></strong><span>Repérer, réagir, se faire accompagner.</span></span></a>
-        <a class="lien" href="guide_epi_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Catalogue EPI 2026</strong><span>Vos équipements de protection : le guide complet.</span></span></a>
+    <div class="theme reveal">
+      <div class="theme-banniere">
+        <img src="img/accueil/sante.jpg" alt="" loading="lazy">
+        <div class="theme-titre"><span class="pic">🧠</span><h3>Santé &amp; conditions de travail</h3></div>
+      </div>
+      <div class="theme-corps">
+        <p class="theme-sous">Santé mentale, RPS, prévention, équipements.</p>
+        <div class="liens">
+          <a class="lien cherchable" href="sante-mentale-travail-fo-grdf.html"><span class="fleche">→</span><span class="txt"><strong>Santé mentale au travail</strong><span>Comprendre, agir, se faire aider : le guide FO.</span></span></a>
+          <a class="lien cherchable" href="saviez_vous_rps_oit_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Risques psychosociaux : l'alerte de l'OIT <span class="mini-sv">Saviez-Vous</span></strong><span>Ce que dit l'Organisation Internationale du Travail.</span></span></a>
+          <a class="lien cherchable" href="saviez_vous_prevention_harcelement_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Prévenir le harcèlement sexuel et les agissements sexistes <span class="mini-sv">Saviez-Vous</span></strong><span>Repérer, réagir, se faire accompagner.</span></span></a>
+          <a class="lien cherchable" href="guide_epi_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Catalogue EPI 2026</strong><span>Vos équipements de protection : le guide complet.</span></span></a>
+        </div>
       </div>
     </div>
 
     <!-- IA & numérique -->
-    <div class="theme">
-      <div class="theme-titre"><span class="pic bleu">🤖</span><h3>IA &amp; numérique</h3></div>
-      <p class="theme-sous">Le déploiement de l'IA à la DSI : alerte, consultation et résultats.</p>
-      <div class="liens">
-        <a class="lien" href="alerte_ia_dsi_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Alerte IA à la DSI</strong><span>Pour l'IA, contre l'oubli des salariés.</span></span></a>
-        <a class="lien" href="consultation_ia_fonctions_centrales_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>IA générative à la DSI : donnez votre avis <span class="mini-outil">Consultation</span></strong><span>Questionnaire anonyme ouvert à tous.</span></span></a>
-        <a class="lien" href="resultats_consultation_ia_dsi_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Résultats de la consultation IA</strong><span>Ce que vous nous avez dit, chiffres à l'appui.</span></span></a>
+    <div class="theme reveal">
+      <div class="theme-banniere">
+        <img src="img/accueil/ia.jpg" alt="" loading="lazy">
+        <div class="theme-titre"><span class="pic">🤖</span><h3>IA &amp; numérique</h3></div>
+      </div>
+      <div class="theme-corps">
+        <p class="theme-sous">Le déploiement de l'IA à la DSI : alerte, consultation et résultats.</p>
+        <div class="liens">
+          <a class="lien cherchable" href="alerte_ia_dsi_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Alerte IA à la DSI</strong><span>Pour l'IA, contre l'oubli des salariés.</span></span></a>
+          <a class="lien cherchable" href="consultation_ia_fonctions_centrales_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>IA générative à la DSI : donnez votre avis <span class="mini-outil">Consultation</span></strong><span>Questionnaire anonyme ouvert à tous.</span></span></a>
+          <a class="lien cherchable" href="resultats_consultation_ia_dsi_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Résultats de la consultation IA</strong><span>Ce que vous nous avez dit, chiffres à l'appui.</span></span></a>
+        </div>
       </div>
     </div>
 
     <!-- Décryptages & vie du syndicat -->
-    <div class="theme">
-      <div class="theme-titre"><span class="pic or">🔎</span><h3>Décryptages &amp; vie du syndicat</h3></div>
-      <p class="theme-sous">Actualité des IEG, projets d'entreprise, vos questions.</p>
-      <div class="liens">
-        <a class="lien" href="saviez_vous_rapport_cour_comptes_edf_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Rapport Cour des comptes EDF <span class="mini-sv">Saviez-Vous</span></strong><span>Ce qui peut changer pour vous.</span></span></a>
-        <a class="lien" href="rapport-edf.html"><span class="fleche">→</span><span class="txt"><strong>Rapport Cour des comptes : le décryptage complet</strong><span>L'analyse détaillée de FO GRDF.</span></span></a>
-        <a class="lien" href="projet_nougaro_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Projet Nougaro — Toulouse</strong><span>Déménagement des Fonctions Centrales : le suivi FO.</span></span></a>
-        <a class="lien" href="proximite_questions_reponses_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Commission Proximité : questions &amp; réponses</strong><span>Vos questions, les réponses obtenues.</span></span></a>
+    <div class="theme reveal">
+      <div class="theme-banniere">
+        <img src="img/accueil/decrypt.jpg" alt="" loading="lazy">
+        <div class="theme-titre"><span class="pic">🔎</span><h3>Décryptages &amp; vie du syndicat</h3></div>
+      </div>
+      <div class="theme-corps">
+        <p class="theme-sous">Actualité des IEG, projets d'entreprise, vos questions.</p>
+        <div class="liens">
+          <a class="lien cherchable" href="saviez_vous_rapport_cour_comptes_edf_2026_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Rapport Cour des comptes EDF <span class="mini-sv">Saviez-Vous</span></strong><span>Ce qui peut changer pour vous.</span></span></a>
+          <a class="lien cherchable" href="rapport-edf.html"><span class="fleche">→</span><span class="txt"><strong>Rapport Cour des comptes : le décryptage complet</strong><span>L'analyse détaillée de FO GRDF.</span></span></a>
+          <a class="lien cherchable" href="projet_nougaro_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Projet Nougaro — Toulouse</strong><span>Déménagement des Fonctions Centrales : le suivi FO.</span></span></a>
+          <a class="lien cherchable" href="proximite_questions_reponses_fo_grdf.html"><span class="fleche">→</span><span class="txt"><strong>Commission Proximité : questions &amp; réponses</strong><span>Vos questions, les réponses obtenues.</span></span></a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ================= TROMBINOSCOPE ================= -->
-  <section class="section" id="equipe">
+  <section class="section reveal" id="equipe">
     <div class="trombi-bloc">
       <h2>👥 Votre équipe FO Fonctions Centrales</h2>
       <p class="intro">Sept militants à votre écoute, partout en France. Une question, un doute, un problème ? Contactez-nous, on vous répond.</p>
       <div class="trombi-grid">
         <div class="trombi-card">
-          <img src="photos/Carine.png" alt="Photo de Carine Brusson">
+          <img src="photos/Carine.png" alt="Photo de Carine Brusson" loading="lazy">
           <div class="nom">Carine Brusson</div>
           <div class="role">Élue au CSE · Déléguée syndicale</div>
           <span class="lieu">Saint-Denis</span>
         </div>
         <div class="trombi-card">
-          <img src="photos/Helene.png" alt="Photo de Hélène Wallyn">
+          <img src="photos/Helene.png" alt="Photo de Hélène Wallyn" loading="lazy">
           <div class="nom">Hélène Wallyn</div>
           <div class="role">Représentante syndicale</div>
           <span class="lieu">Nantes</span>
         </div>
         <div class="trombi-card">
-          <img src="photos/Bebby.png" alt="Photo de Bebby Buffe Mulolo">
+          <img src="photos/Bebby.png" alt="Photo de Bebby Buffe Mulolo" loading="lazy">
           <div class="nom">Bebby Buffe Mulolo</div>
           <div class="role">Élu au CSE</div>
           <span class="lieu">Gennevilliers</span>
         </div>
         <div class="trombi-card">
-          <img src="photos/Hubert.png" alt="Photo de Hubert Darcourt">
+          <img src="photos/Hubert.png" alt="Photo de Hubert Darcourt" loading="lazy">
           <div class="nom">Hubert Darcourt</div>
           <div class="role">Délégué syndical</div>
           <span class="lieu">Lyon</span>
         </div>
         <div class="trombi-card">
-          <img src="photos/Celine.png" alt="Photo de Céline Le Bec">
+          <img src="photos/Celine.png" alt="Photo de Céline Le Bec" loading="lazy">
           <div class="nom">Céline Le Bec</div>
           <div class="role">Élue au CSE</div>
           <span class="lieu">Toulouse</span>
         </div>
         <div class="trombi-card">
-          <img src="photos/Mickael.png" alt="Photo de Mickaël Lopes">
+          <img src="photos/Mickael.png" alt="Photo de Mickaël Lopes" loading="lazy">
           <div class="nom">Mickaël Lopes</div>
           <div class="role">Élu au CSE</div>
           <span class="lieu">Lyon</span>
         </div>
         <div class="trombi-card">
-          <img src="photos/David.png" alt="Photo de David Mineur">
+          <img src="photos/David.png" alt="Photo de David Mineur" loading="lazy">
           <div class="nom">David Mineur</div>
           <div class="role">Interlocuteur privilégié Acheminement</div>
           <span class="lieu">Isneauville</span>
@@ -462,7 +599,7 @@
   </section>
 
   <!-- ================= CONTACT ================= -->
-  <section id="contact">
+  <section id="contact" class="reveal">
     <div class="contact">
       <div class="txt">
         <h3>Une question ? Écrivez-nous.</h3>
@@ -470,18 +607,90 @@
       </div>
       <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr">✉️ Contacter FO</a>
     </div>
-    <p class="footer">FO GRDF Fonctions Centrales · Page de garde des communications<br>« Qui cotise décide » — l'info syndicale claire, pour tous.</p>
+    <p class="footer">FO GRDF Fonctions Centrales · Page de garde des communications<br>« Qui cotise décide » — l'info syndicale claire, pour tous.<br><span class="credit">Photos : Adobe Stock (licence standard)</span></p>
   </section>
 
 </div>
 
+<button class="haut-btn" id="hautBtn" aria-label="Retour en haut de page">↑</button>
+
 <script>
+  // ===== Mode lecture universelle =====
   const btn = document.getElementById('a11yBtn');
   btn.addEventListener('click', () => {
     const on = document.body.classList.toggle('a11y-mode');
     btn.setAttribute('aria-pressed', on ? 'true' : 'false');
     btn.textContent = on ? '👓 Mode standard' : '👓 Mode lecture universelle';
   });
+
+  // ===== Apparition au défilement =====
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ===== Compteurs animés =====
+  const ioStats = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      ioStats.unobserve(e.target);
+      const cible = parseInt(e.target.dataset.cible, 10);
+      const duree = 1100;
+      const debut = performance.now();
+      const anim = (t) => {
+        const p = Math.min((t - debut) / duree, 1);
+        e.target.textContent = Math.round(cible * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(anim);
+      };
+      requestAnimationFrame(anim);
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.stat .chiffre').forEach(el => ioStats.observe(el));
+
+  // ===== Recherche en direct =====
+  const champ = document.getElementById('champRecherche');
+  const compteur = document.getElementById('compteurResultats');
+  const barre = document.getElementById('rechercheBarre');
+  const btnEffacer = document.getElementById('btnEffacer');
+  const aucun = document.getElementById('aucunResultat');
+  const cartes = Array.from(document.querySelectorAll('.cherchable'));
+  const total = new Set(Array.from(document.querySelectorAll('.lien.cherchable')).map(a => a.getAttribute('href'))).size;
+
+  const normaliser = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+  function filtrer() {
+    const q = normaliser(champ.value.trim());
+    barre.classList.toggle('actif', q.length > 0);
+    let visibles = 0;
+    cartes.forEach(c => {
+      const ok = q === '' || normaliser(c.textContent).includes(q);
+      c.style.display = ok ? '' : 'none';
+      if (ok) visibles++;
+    });
+    // masquer les thèmes vides
+    document.querySelectorAll('.theme').forEach(th => {
+      const actifs = th.querySelectorAll('.lien.cherchable:not([style*="none"])').length;
+      th.style.display = actifs > 0 ? '' : 'none';
+    });
+    // masquer les sections À la une / Saviez-vous si vides
+    const uneVisibles = document.querySelectorAll('#une .une-card:not([style*="none"])').length;
+    document.getElementById('une').style.display = uneVisibles > 0 ? '' : 'none';
+    const svVisibles = document.querySelectorAll('#saviez-vous .sv-card:not([style*="none"])').length;
+    document.getElementById('saviez-vous').style.display = svVisibles > 0 ? '' : 'none';
+
+    compteur.textContent = q === '' ? total + ' communications' : visibles + ' résultat' + (visibles > 1 ? 's' : '');
+    aucun.style.display = (q !== '' && visibles === 0) ? 'block' : 'none';
+    if (q !== '') document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  }
+  champ.addEventListener('input', filtrer);
+  btnEffacer.addEventListener('click', () => { champ.value = ''; filtrer(); champ.focus(); });
+
+  // ===== Retour en haut =====
+  const hautBtn = document.getElementById('hautBtn');
+  window.addEventListener('scroll', () => {
+    hautBtn.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+  hautBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 </script>
 
 </body>
