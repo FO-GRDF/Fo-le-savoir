@@ -732,7 +732,7 @@
 
     { type:'ind', tag:'Accord de branche', title:"Aide aux frais d'études (AFE)",
       amount:"113,63 € / mois", ref:"Accord de branche IEG du 7 mars 2011 et avenants — au 1er janv. 2026",
-      desc:"Pour un enfant de moins de 26 ans poursuivant des études, pendant 5 ans maximum. Boursiers : aide forfaitaire de 1 262,57 € versée une fois.",
+      desc:"Versée mensuellement pour un enfant à charge poursuivant des études, jusqu'à ses 25 ans, pendant 5 ans maximum (84 versements au plus). Condition : 1 an d'ancienneté continue dans la branche ; non cumulable avec l'AFE du conjoint. Imposable et soumise aux cotisations, CSG/CRDS, mais cumulable avec les prestations familiales. Boursiers (bourse d'État sur critères sociaux) : aide forfaitaire de 1 262,57 € versée une seule fois par enfant.",
       show:s => has(s.ages,'etudiant') },
 
     { type:'ind', tag:'Activités Sociales', title:"Aide au soutien scolaire",
@@ -816,9 +816,9 @@
       desc:"Pour un enfant de moins de 12 ans. +8 jours/an pour les parents d'enfant handicapé, +2 jours/an pour les familles monoparentales. Non cumulable avec le CESU de branche.",
       show:s => has(s.ages,'petite') || has(s.ages,'enfance') },
 
-    { type:'cong', tag:'Statut IEG', title:"Autorisation d'absence — rentrée scolaire",
-      amount:"2 heures rémunérées", ref:"Note DP. 31-133",
-      desc:"Jusqu'aux 13 ans de l'enfant (sans limite d'âge si handicap). Groupables en demi-journée ou journée complète.",
+    { type:'cong', tag:'Accord de branche', title:"Autorisation d'absence — rentrée scolaire",
+      amount:"jusqu'à 2 heures rémunérées / an", ref:"Accord de branche IEG du 12 juillet 2024 (se substitue à la note DP 31.133)",
+      desc:"Enfant jusqu'à 13 ans dans l'année civile de la rentrée — sans limite d'âge si handicap (justificatif AEEH ou MDPH), jusqu'au terme de la scolarité. Droit ouvert à CHACUN des deux parents salariés IEG. Sur demande, sous réserve des nécessités de service et après validation managériale. Absence collectée via un code spécifique « rentrée scolaire », cumulable avec une autre demande d'absence ; possibilité aussi de poser un congé (parental, annuel, RTT).",
       show:s => has(s.ages,'petite') || has(s.ages,'enfance') || has(s.ages,'ado') },
 
     { type:'cong', tag:'Statut IEG', title:"Congé sans solde pour élever un enfant de -8 ans",
