@@ -230,9 +230,13 @@
   .frow{display:flex;align-items:center;gap:10px;margin-bottom:7px}
   .frow-lab{width:202px;flex-shrink:0;font-size:13px;font-weight:600;line-height:1.25}
   .frow-lab small{display:block;font-weight:400;color:var(--gris);font-size:11px}
-  .frow-bar{flex:1;height:26px;background:var(--fond);border-radius:7px;position:relative;overflow:hidden}
+  .frow-bar{flex:1;height:26px;background:var(--fond);border-radius:7px;position:relative}
   .frow-fill{position:absolute;top:0;bottom:0;border-radius:7px;display:flex;align-items:center;
-    padding:0 9px;font-size:11.5px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}
+    padding:0 9px;font-size:11.5px;font-weight:700;color:#fff;white-space:nowrap}
+  /* barre trop courte : l'etiquette passe a droite, en texte sombre, jamais tronquee */
+  .frow-fill.mini{padding:0}
+  .frow-fill.mini span{position:absolute;left:calc(100% + 8px);color:var(--texte)}
+  .frow-fill.mini.gauche span{left:auto;right:calc(100% + 8px)}
   .frise-legend{margin-top:14px;display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--gris)}
   .frise-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
 
@@ -715,7 +719,7 @@
       <button type="button" class="filt" data-cat="as" aria-pressed="false">Activités Sociales</button>
       <button type="button" class="filt" data-cat="camieg" aria-pressed="false">CAMIEG</button>
     </div>
-    <div class="cards" id="catalogue"></div>
+    <div class="cards" id="catalogue-liste"></div>
 
     <!-- ══════ CCAS / SLVie ══════ -->
     <h2 class="section-title" id="ccas">
@@ -1283,8 +1287,8 @@ document.getElementById('simReset').addEventListener('click',()=>{
     const l=Math.max(0,d.age[0])/MAX*100, w=Math.max(3,(Math.min(MAX,d.age[1])-Math.max(0,d.age[0]))/MAX*100);
     h+='<div class="frow"><div class="frow-lab">'+esc(d.frise)+'<small>'+
        (d.gta&&d.gta!=='—'?'Code '+esc(d.gta)+' · ':'')+esc(d.amount)+'</small></div>'+
-       '<div class="frow-bar"><div class="frow-fill" style="left:'+l.toFixed(1)+'%;width:'+w.toFixed(1)+'%;background:'+COL[d.cat]+'">'+
-       (d.age[0]>0?d.age[0]+'–':'0–')+d.age[1]+' ans</div></div></div>';
+       '<div class="frow-bar"><div class="frow-fill'+(w<13?(l+w>72?' mini gauche':' mini'):'')+'" style="left:'+l.toFixed(1)+'%;width:'+w.toFixed(1)+'%;background:'+COL[d.cat]+'"><span>'+
+       (d.age[0]>0?d.age[0]+'–':'0–')+d.age[1]+' ans</span></div></div></div>';
   });
   h+='<div class="frise-legend">'+
      '<span><i style="background:#28b193"></i>Congés &amp; absences</span>'+
@@ -1338,7 +1342,7 @@ document.getElementById('simReset').addEventListener('click',()=>{
 
 /* ═══════════ CATALOGUE FILTRABLE ═══════════ */
 (function(){
-  const box=document.getElementById('catalogue');
+  const box=document.getElementById('catalogue-liste');
   function card(d){
     return '<article class="card '+d.cat+'" data-cat="'+d.cat+'">'+
       (d.gta&&d.gta!=='—'?'<span class="gta-mini">GTA '+esc(d.gta)+'</span>':'')+
