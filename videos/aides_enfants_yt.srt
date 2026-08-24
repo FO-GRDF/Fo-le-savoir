@@ -28,80 +28,88 @@ Votre enfant fait des études ? L'aide aux frais d'études :
 
 8
 00:00:14,950 --> 00:00:16,358
-cent treize euros soixante-trois par mois, pendant cinq années.
+cent treize euros soixante-trois par mois,
 
 9
-00:00:16,358 --> 00:00:24,456
-Et s'il est boursier, mille deux cent soixante-deux euros de plus,
+00:00:16,358 --> 00:00:19,599
+pendant cinq années. Et s'il est boursier,
 
 10
+00:00:19,599 --> 00:00:24,456
+mille deux cent soixante-deux euros de plus,
+
+11
 00:00:24,456 --> 00:00:24,696
 versés en une fois.
 
-11
+12
 00:00:24,696 --> 00:00:26,516
 Avant douze ans, vous choisissez :
 
-12
+13
 00:00:26,516 --> 00:00:28,776
 quatre jours de congé parent rémunérés,
 
-13
-00:00:28,776 --> 00:00:34,114
-ou une dotation CESU pour la garde, le ménage, l'aide aux devoirs.
-
 14
-00:00:34,114 --> 00:00:37,440
-Financée à quatre-vingts pour cent par l'employeur.
+00:00:28,776 --> 00:00:34,114
+ou une dotation CESU pour la garde, le ménage,
 
 15
+00:00:34,114 --> 00:00:37,196
+l'aide aux devoirs.
+
+16
+00:00:37,196 --> 00:00:37,440
+Financée à quatre-vingts pour cent par l'employeur.
+
+17
 00:00:37,440 --> 00:00:39,245
 Du côté des Activités Sociales : le soutien scolaire,
 
-16
+18
 00:00:39,245 --> 00:00:42,752
 jusqu'à mille euros en cours individuels,
 
-17
+19
 00:00:42,752 --> 00:00:45,067
 deux mille pour les autres dispositifs.
 
-18
+20
 00:00:45,067 --> 00:00:49,426
 L'aide à l'autonomie des jeunes,
 
-19
+21
 00:00:49,426 --> 00:00:52,792
 jusqu'à deux cent dix-sept euros par mois. La petite enfance,
 
-20
+22
 00:00:52,792 --> 00:00:53,040
 jusqu'à cinq cents euros par an.
 
-21
+23
 00:00:53,040 --> 00:00:53,890
 Et le sport.
 
-22
+24
 00:00:53,890 --> 00:01:00,996
 Votre CMCAS peut participer à la licence de votre enfant :
 
-23
+25
 00:01:00,996 --> 00:01:01,224
 au judo, au foot, à la danse, à la musique.
 
-24
+26
 00:01:01,224 --> 00:01:05,515
 Mais attention :
 
-25
+27
 00:01:05,515 --> 00:01:07,656
 les montants et les âges changent d'une CMCAS à l'autre.
 
-26
+28
 00:01:07,656 --> 00:01:09,648
 C'est votre SLVie qui décide. Alors posez-lui la question.
 
-27
+29
 00:01:09,648 --> 00:01:14,640
 Cet argent est le vôtre. FO GRDF Fonctions Centrales.

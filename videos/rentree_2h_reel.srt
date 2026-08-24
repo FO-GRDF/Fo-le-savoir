@@ -7,81 +7,85 @@ C'est la rentrée.
 Et beaucoup d'agents l'ignorent encore :
 
 3
-00:00:03,291 --> 00:00:07,032
-vous avez le droit de vous absenter pour accompagner votre enfant à l'école.
+00:00:03,291 --> 00:00:06,823
+vous avez le droit de vous
 
 4
+00:00:06,823 --> 00:00:07,032
+absenter pour accompagner votre enfant à l'école.
+
+5
 00:00:07,032 --> 00:00:10,332
 Un accord de branche le garantit à tous les salariés des IEG :
 
-5
+6
 00:00:10,332 --> 00:00:13,940
 jusqu'à deux heures d'absence autorisée,
 
-6
+7
 00:00:13,940 --> 00:00:14,208
 et payées par l'employeur.
 
-7
+8
 00:00:14,208 --> 00:00:15,797
 Jusqu'aux treize ans de l'enfant.
 
-8
+9
 00:00:15,797 --> 00:00:21,512
 Et sans aucune limite d'âge quand l'enfant est en situation de handicap,
 
-9
+10
 00:00:21,512 --> 00:00:21,720
 jusqu'à la fin de sa scolarité.
 
-10
+11
 00:00:21,720 --> 00:00:24,446
 Vous êtes deux à travailler dans les IEG ?
 
-11
+12
 00:00:24,446 --> 00:00:26,673
 Chacun des deux parents y a droit.
 
-12
+13
 00:00:26,673 --> 00:00:28,872
 Il suffit d'en faire la demande avant.
 
-13
+14
 00:00:28,872 --> 00:00:33,087
 Dans la GTA, ça se saisit avec le code RS.
 
-14
+15
 00:00:33,087 --> 00:00:35,952
 Retenez-le : RS, comme rentrée scolaire.
 
-15
+16
 00:00:35,952 --> 00:00:39,786
 Et pendant qu'on y est : enfant malade,
 
-16
+17
 00:00:39,786 --> 00:00:41,724
 code deux R quand c'est rémunéré,
 
-17
+18
 00:00:41,724 --> 00:00:44,587
 deux N quand ça ne l'est pas.
 
-18
+19
 00:00:44,587 --> 00:00:44,832
 Vos quatre jours de congé parent, code deux C.
 
-19
+20
 00:00:44,832 --> 00:00:47,660
 Ces droits ne se prennent pas tout seuls.
 
-20
+21
 00:00:47,660 --> 00:00:47,904
 Demandez-les.
 
-21
+22
 00:00:47,904 --> 00:00:50,058
 FO GRDF Fonctions Centrales.
 
-22
+23
 00:00:50,058 --> 00:00:52,920
 Le détail complet est sur notre page Droits familiaux.

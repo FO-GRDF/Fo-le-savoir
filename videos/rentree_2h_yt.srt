@@ -56,20 +56,24 @@ Et pendant qu'on y est : enfant malade,
 
 15
 00:00:39,786 --> 00:00:41,724
-code deux R quand c'est rémunéré, deux N quand ça ne l'est pas.
+code deux R quand c'est rémunéré,
 
 16
-00:00:41,724 --> 00:00:44,832
-Vos quatre jours de congé parent, code deux C.
+00:00:41,724 --> 00:00:44,587
+deux N quand ça ne l'est pas.
 
 17
+00:00:44,587 --> 00:00:44,832
+Vos quatre jours de congé parent, code deux C.
+
+18
 00:00:44,832 --> 00:00:47,904
 Ces droits ne se prennent pas tout seuls. Demandez-les.
 
-18
+19
 00:00:47,904 --> 00:00:50,058
 FO GRDF Fonctions Centrales.
 
-19
+20
 00:00:50,058 --> 00:00:52,920
 Le détail complet est sur notre page Droits familiaux.
