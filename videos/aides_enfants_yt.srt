@@ -43,73 +43,113 @@ mille deux cent soixante-deux euros de plus,
 versés en une fois.
 
 12
-00:00:24,696 --> 00:00:26,516
-Avant douze ans, vous choisissez :
+00:00:24,696 --> 00:00:26,156
+Et puis il y a la santé. Là, une seule date compte :
 
 13
-00:00:26,516 --> 00:00:28,776
-quatre jours de congé parent rémunérés,
+00:00:26,156 --> 00:00:29,976
+les vingt-quatre ans de votre enfant.
 
 14
-00:00:28,776 --> 00:00:34,114
-ou une dotation CESU pour la garde, le ménage,
+00:00:29,976 --> 00:00:39,001
+Avant, il reste votre ayant droit, sans aucune démarche.
 
 15
-00:00:34,114 --> 00:00:37,196
-l'aide aux devoirs.
+00:00:39,001 --> 00:00:41,223
+Après, il doit s'affilier lui-même,
 
 16
-00:00:37,196 --> 00:00:37,440
-Financée à quatre-vingts pour cent par l'employeur.
+00:00:41,223 --> 00:00:42,562
+et la complémentaire Camieg n'est maintenue que si ses
 
 17
-00:00:37,440 --> 00:00:39,245
-Du côté des Activités Sociales : le soutien scolaire,
+00:00:42,562 --> 00:00:42,768
+ressources restent sous dix-huit mille deux cent trente-quatre euros.
 
 18
-00:00:39,245 --> 00:00:42,752
-jusqu'à mille euros en cours individuels,
+00:00:42,768 --> 00:00:47,641
+Et s'il part en apprentissage,
 
 19
-00:00:42,752 --> 00:00:45,067
-deux mille pour les autres dispositifs.
+00:00:47,641 --> 00:00:50,613
+il perd son statut d'ayant droit dès la signature du contrat.
 
 20
-00:00:45,067 --> 00:00:49,426
-L'aide à l'autonomie des jeunes,
+00:00:50,613 --> 00:00:52,613
+Rattachez-le à la CPAM immédiatement. La complémentaire, elle,
 
 21
-00:00:49,426 --> 00:00:52,792
-jusqu'à deux cent dix-sept euros par mois. La petite enfance,
+00:00:52,613 --> 00:00:55,344
+reste ouverte jusqu'à ses vingt-six ans.
 
 22
-00:00:52,792 --> 00:00:53,040
-jusqu'à cinq cents euros par an.
+00:00:55,344 --> 00:00:57,164
+Avant douze ans, vous choisissez :
 
 23
-00:00:53,040 --> 00:00:53,890
-Et le sport.
+00:00:57,164 --> 00:00:59,424
+quatre jours de congé parent rémunérés,
 
 24
-00:00:53,890 --> 00:01:00,996
-Votre CMCAS peut participer à la licence de votre enfant :
+00:00:59,424 --> 00:01:04,762
+ou une dotation CESU pour la garde, le ménage,
 
 25
-00:01:00,996 --> 00:01:01,224
-au judo, au foot, à la danse, à la musique.
+00:01:04,762 --> 00:01:07,844
+l'aide aux devoirs.
 
 26
-00:01:01,224 --> 00:01:05,515
-Mais attention :
+00:01:07,844 --> 00:01:08,088
+Financée à quatre-vingts pour cent par l'employeur.
 
 27
-00:01:05,515 --> 00:01:07,656
-les montants et les âges changent d'une CMCAS à l'autre.
+00:01:08,088 --> 00:01:09,893
+Du côté des Activités Sociales : le soutien scolaire,
 
 28
-00:01:07,656 --> 00:01:09,648
-C'est votre SLVie qui décide. Alors posez-lui la question.
+00:01:09,893 --> 00:01:13,400
+jusqu'à mille euros en cours individuels,
 
 29
-00:01:09,648 --> 00:01:14,640
+00:01:13,400 --> 00:01:15,715
+deux mille pour les autres dispositifs.
+
+30
+00:01:15,715 --> 00:01:20,074
+L'aide à l'autonomie des jeunes,
+
+31
+00:01:20,074 --> 00:01:23,440
+jusqu'à deux cent dix-sept euros par mois. La petite enfance,
+
+32
+00:01:23,440 --> 00:01:23,688
+jusqu'à cinq cents euros par an.
+
+33
+00:01:23,688 --> 00:01:24,538
+Et le sport.
+
+34
+00:01:24,538 --> 00:01:31,644
+Votre CMCAS peut participer à la licence de votre enfant :
+
+35
+00:01:31,644 --> 00:01:31,872
+au judo, au foot, à la danse, à la musique.
+
+36
+00:01:31,872 --> 00:01:36,163
+Mais attention :
+
+37
+00:01:36,163 --> 00:01:38,304
+les montants et les âges changent d'une CMCAS à l'autre.
+
+38
+00:01:38,304 --> 00:01:40,296
+C'est votre SLVie qui décide. Alors posez-lui la question.
+
+39
+00:01:40,296 --> 00:01:45,288
 Cet argent est le vôtre. FO GRDF Fonctions Centrales.
