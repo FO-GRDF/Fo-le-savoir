@@ -120,7 +120,7 @@
     .guide-fede-sommaire{justify-content:center}}
 
   /* ═══ VIDÉOS ═══ */
-  .videos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
   .vcard{background:var(--blanc);border-radius:16px;overflow:hidden;border:1px solid var(--gris-clair);
     box-shadow:0 6px 20px rgba(0,0,0,.06);display:flex;flex-direction:column}
   .vcard video{width:100%;display:block;background:#0b1120;aspect-ratio:16/9}
@@ -555,8 +555,20 @@
           <div class="vmeta"><span class="vtag">1 min 17</span><span class="vtag r">Montants 2026</span><span class="vtag">Sous-titré</span></div>
         </div>
       </article>
+      <article class="vcard">
+        <video controls preload="metadata" poster="videos/sport_cmcas_poster.jpg">
+          <source src="videos/sport_cmcas_yt.mp4" type="video/mp4">
+          <track kind="subtitles" srclang="fr" label="Français" src="videos/sport_cmcas_yt.vtt" default>
+          Votre navigateur ne peut pas lire cette vidéo. <a href="videos/sport_cmcas_yt.mp4">Télécharger l'épisode 3</a>.
+        </video>
+        <div class="vcard-body">
+          <h3>Épisode 3 — Le sport financé par votre CMCAS</h3>
+          <p>L'aide aux activités sportives et culturelles, ce qu'elle couvre, la date limite de dépôt, les 70 disciplines des clubs CMCAS et le Pass'Sport de l'État.</p>
+          <div class="vmeta"><span class="vtag">1 min 03</span><span class="vtag r">Sport &amp; CMCAS</span><span class="vtag">Sous-titré</span></div>
+        </div>
+      </article>
     </div>
-    <p class="vnote">Les deux épisodes sont <strong>sous-titrés en dur</strong> : ils se comprennent entièrement sans le son.<br>Versions verticales pour les stories et les réseaux : <a href="videos/rentree_2h_reel.mp4">épisode 1</a> · <a href="videos/aides_enfants_reel.mp4">épisode 2</a></p>
+    <p class="vnote">Les trois épisodes sont <strong>sous-titrés en dur</strong> : ils se comprennent entièrement sans le son.<br>Versions verticales pour les stories et les réseaux : <a href="videos/rentree_2h_reel.mp4">épisode 1</a> · <a href="videos/aides_enfants_reel.mp4">épisode 2</a> · <a href="videos/sport_cmcas_reel.mp4">épisode 3</a></p>
 
     <!-- ══════ SIMULATEUR ══════ -->
     <h2 class="section-title" id="simulateur">
@@ -736,8 +748,10 @@
     <p class="section-sub">Le droit le moins connu de tous — et celui qui se perd le plus souvent, faute d'avoir posé la question.</p>
     <div class="intro">
       Au-delà des aides de branche, les <strong>Activités Sociales</strong> financent aussi la vie de vos enfants en dehors de l'école : <strong>licence sportive, club de foot ou de judo, école de musique, cours de danse, MJC, médiathèque</strong>. La participation est versée sur présentation de la facture acquittée, souvent modulée selon votre coefficient social.
-      <p style="margin-top:11px">Mais attention — et c'est le point essentiel : <strong>ce n'est pas un barème national</strong>. Chaque CMCAS fixe ses propres règles, et le dossier se dépose auprès de votre <strong>SLVie</strong>. D'une CMCAS à l'autre, on peut passer d'une aide de 25 € à 55 € par enfant, avec des tranches d'âge qui vont de 1 à 18 ans ici, jusqu'à 26 ans ailleurs, et des dates de dépôt qui ne sont jamais les mêmes.</p>
+      <p style="margin-top:11px">Mais attention — et c'est le point essentiel : <strong>ce n'est pas un barème national</strong>. Chaque CMCAS fixe ses propres règles, et le dossier se dépose auprès de votre <strong>SLVie</strong>. D'une CMCAS à l'autre, l'aide va d'une <strong>quinzaine d'euros à 120 € par enfant</strong> — ici un forfait de 30 à 50 € selon le coefficient social, là une prise en charge de 25 % à 80 % de la facture plafonnée à 120 € — avec des tranches d'âge qui s'arrêtent à 18 ans ici, à 25 ou 26 ans ailleurs, et des dates de dépôt qui ne sont jamais les mêmes.</p>
       <p style="margin-top:11px"><strong>Le réflexe à avoir : appelez votre SLVie avant d'inscrire votre enfant</strong>, et gardez la facture acquittée. Certaines CMCAS majorent aussi l'aide quand plusieurs enfants d'une même famille sont inscrits.</p>
+      <p style="margin-top:11px"><strong>Attention à la date.</strong> Beaucoup de CMCAS ferment le dépôt au <strong>31 décembre</strong> — après, le dossier est refusé sans examen. Prévoyez le formulaire de votre CMCAS, l'attestation ou la licence du club, la facture acquittée au nom de l'enfant, et vérifiez que votre RIB et votre avis d'imposition sont à jour sur ccas.fr.</p>
+      <p style="margin-top:11px">Pensez aussi au <strong>Pass'Sport de l'État : 70 €</strong> pour la saison 2026-2027, pour les 6-17 ans allocataires de l'ARS, jusqu'à 20 ans avec l'AEEH, et les étudiants boursiers jusqu'à 28 ans — à faire valoir au moment de l'inscription, avant le 31 décembre 2026.</p>
     </div>
     <div class="fo-callout">
       <div class="fo-callout-icon">!</div>
