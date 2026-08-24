@@ -3,440 +3,380 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Droits familiaux 2026 — Le simulateur FO GRDF Fonctions Centrales</title>
-<meta name="description" content="Récapitulatif interactif des droits familiaux des IEG 2026 : indemnités, aides sociales et congés. Renseignez votre situation, le simulateur FO GRDF Fonctions Centrales génère vos droits.">
-<link rel="icon" type="image/png" href="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png">
+<title>Droits familiaux IEG 2026 — FO GRDF Fonctions Centrales</title>
+<meta name="description" content="Tous les droits familiaux des IEG en 2026 : les 2 heures de rentrée scolaire, les codes GTA (RS, 2R, 2N, 2C), le congé parent, le CESU, les aides des Activités Sociales. Simulateur, comparateur et frise des âges.">
+<link rel="icon" type="image/png" href="img/logo_fo.png">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bleu:         #019cda;
-    --bleu-fonce:   #028bc2;
-    --bleu-tres-fonce: #016a96;
-    --bleu-clair:   #e8f4fb;
-    --navy:         #1A1A2E;
-    --or:           #f7dd5c;
-    --or-fonce:     #d4b829;
-    --vert:         #28b193;
-    --vert-fonce:   #1f8d75;
-    --vert-clair:   #e8f8f4;
-    --rouge:        #ef333e;
-    --rouge-fonce:  #c0303a;
-    --rouge-tres-fonce: #7a0e1c;
-    --rouge-clair:  #fde8ea;
-    --fond:         #F7F5F0;
-    --blanc:        #FFFFFF;
-    --gris:         #6B6B6B;
-    --gris-clair:   #E8E6E1;
-    --texte:        #1A1A2E;
-
-    --a11y-bg:      #FFFFFF;
-    --a11y-dark-txt:#000000;
-    --a11y-accent: #0033A0;
-    --a11y-warn:   #B00020;
+  :root{
+    --bleu:#019cda; --bleu-fonce:#028bc2; --bleu-tres-fonce:#016a96; --bleu-clair:#e8f4fb;
+    --navy:#1A1A2E; --or:#f7dd5c; --or-fonce:#a8880a; --or-clair:#fdf7d9;
+    --vert:#28b193; --vert-fonce:#1f8d75; --vert-clair:#e8f8f4;
+    --rouge:#ef333e; --rouge-fonce:#c0303a; --rouge-tres-fonce:#7a0e1c; --rouge-clair:#fde8ea;
+    --fond:#F7F5F0; --blanc:#FFFFFF; --gris:#6B6B6B; --gris-clair:#E8E6E1; --texte:#1A1A2E;
+    --a11y-bg:#FFFFFF; --a11y-dark-txt:#000000; --a11y-accent:#0033A0; --a11y-warn:#B00020;
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--fond);
-    color: var(--texte);
-    min-height: 100vh;
-    line-height: 1.6;
-  }
-
-  .page { max-width: 980px; margin: 0 auto; padding: 32px 24px 64px; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:78px}
+  body{font-family:'DM Sans',sans-serif;background:var(--fond);color:var(--texte);line-height:1.6}
+  .page{max-width:1060px;margin:0 auto;padding:26px 22px 70px}
+  a{color:var(--bleu-tres-fonce)}
 
   /* ═══ HEADER ═══ */
-  .header {
-    position: relative;
-    background: linear-gradient(135deg, #019cda 0%, #028bc2 100%);
-    border-radius: 20px;
-    padding: 40px 44px 32px;
-    margin-bottom: 28px;
-    overflow: hidden;
-    box-shadow: 0 12px 36px rgba(1,156,218,0.25);
-  }
-  .header::after {
-    content: "";
-    position: absolute;
-    right: -60px; top: -60px;
-    width: 240px; height: 240px;
-    background: radial-gradient(circle, rgba(247,221,92,0.25) 0%, rgba(247,221,92,0) 70%);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-  .header-row { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
-  .logo-link { flex-shrink: 0; display: inline-block; transition: transform 0.25s; }
-  .logo-link:hover { transform: scale(1.05); }
-  .logo-link img {
-    height: clamp(104px, 17vw, 148px);
-    width: auto; display: block;
-    background: #fff; border-radius: 14px; padding: 10px 14px;
-    filter: drop-shadow(0 4px 14px rgba(0,0,0,0.18));
-  }
-  .header-text { flex: 1; min-width: 0; }
-  .badge {
-    display: inline-block;
-    background: var(--or);
-    color: var(--bleu-tres-fonce);
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 2.2px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 40px;
-    margin-bottom: 14px;
-  }
-  .header h1 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(26px, 4.2vw, 42px);
-    font-weight: 900;
-    color: var(--blanc);
-    line-height: 1.12;
-  }
-  .header h1 em { color: var(--or); font-style: italic; }
-  .header .subtitle { margin-top: 12px; font-size: 15px; color: rgba(255,255,255,0.85); font-weight: 300; }
-  .header .update {
-    margin-top: 18px;
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 30px; padding: 6px 16px;
-    font-size: 12px; color: rgba(255,255,255,0.95);
-  }
-  .dot { width: 7px; height: 7px; background: var(--or); border-radius: 50%; display: inline-block; }
+  .header{position:relative;background:linear-gradient(135deg,#019cda 0%,#016a96 100%);
+    border-radius:22px;padding:38px 42px 32px;margin-bottom:18px;overflow:hidden;
+    box-shadow:0 14px 40px rgba(1,156,218,.26)}
+  .header::after{content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;
+    background:radial-gradient(circle,rgba(247,221,92,.28) 0%,rgba(247,221,92,0) 70%);border-radius:50%}
+  .header-row{display:flex;align-items:center;gap:26px;flex-wrap:wrap;position:relative}
+  .logo-link{flex-shrink:0}
+  .logo-link img{height:clamp(88px,14vw,124px);width:auto;display:block;background:#fff;
+    border-radius:14px;padding:9px 13px;filter:drop-shadow(0 4px 14px rgba(0,0,0,.2))}
+  .header-text{flex:1;min-width:240px}
+  .badge{display:inline-block;background:var(--or);color:var(--bleu-tres-fonce);font-weight:700;
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:40px;margin-bottom:12px}
+  .header h1{font-family:'Fraunces',serif;font-size:clamp(27px,4.3vw,44px);font-weight:900;color:#fff;line-height:1.1}
+  .header h1 em{color:var(--or);font-style:italic}
+  .header .subtitle{margin-top:11px;font-size:15px;color:rgba(255,255,255,.88);font-weight:300;max-width:62ch}
+  .header .update{margin-top:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.32);border-radius:30px;padding:6px 16px;font-size:12px;color:#fff}
+  .dot{width:7px;height:7px;background:var(--or);border-radius:50%;display:inline-block}
 
-  /* ═══ INTRO ═══ */
-  .intro {
-    background: var(--blanc);
-    border-radius: 16px;
-    padding: 28px 32px;
-    margin-bottom: 28px;
-    border-left: 5px solid var(--bleu);
-    font-size: 15.5px; line-height: 1.7;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-  }
-  .intro strong { color: var(--bleu-fonce); }
+  /* ═══ NAV ANCRES ═══ */
+  .navbar{position:sticky;top:0;z-index:60;background:rgba(247,245,240,.94);backdrop-filter:blur(9px);
+    border-bottom:1px solid var(--gris-clair);margin:0 -22px 22px;padding:9px 22px}
+  .navbar-in{max-width:1016px;margin:0 auto;display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin}
+  .navbar a{flex-shrink:0;font-size:13px;font-weight:600;text-decoration:none;color:var(--bleu-tres-fonce);
+    background:var(--blanc);border:1px solid var(--gris-clair);border-radius:30px;padding:7px 14px;transition:.16s}
+  .navbar a:hover{background:var(--bleu);color:#fff;border-color:var(--bleu)}
 
-  /* ═══ TITRES DE SECTION ═══ */
-  .section-title {
-    font-family: 'Fraunces', serif;
-    font-size: 25px; font-weight: 700;
-    margin: 40px 0 18px; color: var(--texte);
-    display: flex; align-items: center; gap: 12px;
-  }
-  .section-title .icon {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 40px; height: 40px;
-    background: var(--bleu); color: var(--blanc);
-    border-radius: 11px; flex-shrink: 0;
-  }
-  .section-title .icon.green { background: var(--vert); }
-  .section-sub { color: var(--gris); font-size: 14.5px; margin: -8px 0 20px; }
+  /* ═══ BLOCS GÉNÉRIQUES ═══ */
+  .section-title{font-family:'Fraunces',serif;font-size:25px;font-weight:700;margin:44px 0 6px;
+    display:flex;align-items:center;gap:12px;scroll-margin-top:78px}
+  .section-title .icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;
+    background:var(--bleu);color:#fff;border-radius:11px;flex-shrink:0}
+  .section-title .icon.green{background:var(--vert)} .section-title .icon.red{background:var(--rouge)}
+  .section-title .icon.gold{background:var(--or);color:var(--navy)}
+  .section-sub{color:var(--gris);font-size:14.5px;margin:0 0 18px}
+  .intro{background:var(--blanc);border-radius:16px;padding:26px 30px;margin-bottom:8px;
+    border-left:5px solid var(--bleu);font-size:15.5px;line-height:1.7;box-shadow:0 4px 16px rgba(0,0,0,.04)}
+  .intro strong{color:var(--bleu-fonce)}
 
-  /* ═══════════════ SIMULATEUR ═══════════════ */
-  .simulateur {
-    background: var(--blanc);
-    border-radius: 20px; padding: 0;
-    margin-bottom: 16px;
-    box-shadow: 0 10px 40px rgba(1,156,218,0.14);
-    overflow: hidden;
-    border: 1px solid var(--gris-clair);
-  }
-  .sim-head {
-    background: linear-gradient(135deg, #019cda 0%, #016a96 100%);
-    padding: 22px 30px; color: var(--blanc);
-    display: flex; align-items: center; gap: 14px;
-  }
-  .sim-head .sim-pin {
-    width: 44px; height: 44px;
-    background: var(--or); border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--bleu-tres-fonce); flex-shrink: 0;
-  }
-  .sim-head h2 { font-family: 'Fraunces', serif; font-size: 21px; font-weight: 800; line-height: 1.15; }
-  .sim-head p { font-size: 13px; color: rgba(255,255,255,0.88); font-weight: 300; }
+  /* ═══ BLOC RENTRÉE (héros) ═══ */
+  .rentree{background:linear-gradient(140deg,#7a0e1c 0%,#c0303a 55%,#ef333e 100%);border-radius:22px;
+    padding:0;overflow:hidden;margin-bottom:26px;box-shadow:0 14px 40px rgba(192,48,58,.3)}
+  .rentree-top{padding:30px 34px 26px;color:#fff;display:flex;gap:28px;flex-wrap:wrap;align-items:center}
+  .rentree-hours{flex-shrink:0;text-align:center;background:rgba(255,255,255,.13);border:2px solid rgba(247,221,92,.6);
+    border-radius:18px;padding:18px 26px;min-width:150px}
+  .rentree-hours b{display:block;font-family:'Fraunces',serif;font-size:56px;line-height:1;color:var(--or);font-weight:900}
+  .rentree-hours span{font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.9)}
+  .rentree-txt{flex:1;min-width:250px}
+  .rentree-txt h2{font-family:'Fraunces',serif;font-size:clamp(22px,3.4vw,32px);font-weight:900;line-height:1.15;margin-bottom:9px}
+  .rentree-txt p{font-size:15px;color:rgba(255,255,255,.93);line-height:1.6}
+  .rentree-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:12px;
+    padding:0 34px 26px}
+  .rfact{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:13px;
+    padding:13px 15px;color:#fff;display:flex;gap:11px;align-items:flex-start}
+  .rfact .rf-ic{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--or);color:var(--rouge-tres-fonce);
+    display:inline-flex;align-items:center;justify-content:center}
+  .rfact b{display:block;font-size:14.5px;line-height:1.3}
+  .rfact span{font-size:12.5px;color:rgba(255,255,255,.82);line-height:1.45}
+  .rentree-code{margin:0 34px 30px;background:var(--or);color:var(--rouge-tres-fonce);border-radius:14px;
+    padding:15px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .rentree-code .big{font-family:'Fraunces',serif;font-size:34px;font-weight:900;letter-spacing:2px;
+    background:var(--rouge-tres-fonce);color:var(--or);border-radius:11px;padding:5px 18px}
+  .rentree-code p{font-size:14.5px;font-weight:600;flex:1;min-width:200px}
 
-  .sim-body { padding: 28px 30px; }
-  .sim-step-label {
-    font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--bleu-fonce); margin-bottom: 12px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .sim-step-label .num {
-    width: 22px; height: 22px; border-radius: 50%;
-    background: var(--bleu); color: var(--blanc);
-    display: inline-flex; align-items: center; justify-content: center; font-size: 12px;
-  }
-  .sim-block { margin-bottom: 26px; }
+  /* ═══ VIDÉOS ═══ */
+  .videos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .vcard{background:var(--blanc);border-radius:16px;overflow:hidden;border:1px solid var(--gris-clair);
+    box-shadow:0 6px 20px rgba(0,0,0,.06);display:flex;flex-direction:column}
+  .vcard video{width:100%;display:block;background:#0b1120;aspect-ratio:16/9}
+  .vcard-body{padding:16px 20px 20px}
+  .vcard h3{font-family:'Fraunces',serif;font-size:17.5px;color:var(--bleu-fonce);margin-bottom:5px}
+  .vcard p{font-size:13.5px;color:var(--texte);line-height:1.55}
+  .vcard .vmeta{margin-top:11px;display:flex;gap:8px;flex-wrap:wrap}
+  .vtag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:3px 10px;
+    border-radius:20px;background:var(--bleu-clair);color:var(--bleu-tres-fonce)}
+  .vtag.r{background:var(--rouge-clair);color:var(--rouge-tres-fonce)}
+  .vnote{font-size:12.5px;color:var(--gris);margin-top:12px;text-align:center}
 
-  .choices { display: flex; flex-wrap: wrap; gap: 10px; }
-  .choice {
-    flex: 1 1 auto; min-width: 130px;
-    border: 2px solid var(--gris-clair); background: var(--fond);
-    border-radius: 12px; padding: 14px 16px; cursor: pointer;
-    transition: all 0.18s; text-align: center;
-    font-weight: 600; font-size: 14.5px; color: var(--texte);
-    display: flex; flex-direction: column; align-items: center; gap: 6px; user-select: none;
-  }
-  .choice .ic { color: var(--bleu); display: flex; }
-  .choice:hover { border-color: var(--bleu); transform: translateY(-2px); }
-  .choice[aria-pressed="true"] {
-    border-color: var(--bleu); background: var(--bleu); color: var(--blanc);
-    box-shadow: 0 6px 18px rgba(1,156,218,0.3);
-  }
-  .choice[aria-pressed="true"] .ic { color: var(--or); }
+  /* ═══ SIMULATEUR ═══ */
+  .simulateur{background:var(--blanc);border-radius:20px;margin-bottom:14px;overflow:hidden;
+    border:1px solid var(--gris-clair);box-shadow:0 10px 40px rgba(1,156,218,.13)}
+  .sim-head{background:linear-gradient(135deg,#019cda 0%,#016a96 100%);padding:20px 28px;color:#fff;
+    display:flex;align-items:center;gap:14px}
+  .sim-head .sim-pin{width:44px;height:44px;background:var(--or);border-radius:12px;display:flex;
+    align-items:center;justify-content:center;color:var(--bleu-tres-fonce);flex-shrink:0}
+  .sim-head h2{font-family:'Fraunces',serif;font-size:21px;font-weight:800;line-height:1.15}
+  .sim-head p{font-size:12.5px;color:rgba(255,255,255,.88);font-weight:300}
+  .sim-body{padding:26px 28px}
+  .sim-step-label{font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--bleu-fonce);margin-bottom:11px;display:flex;align-items:center;gap:8px}
+  .sim-step-label .num{width:22px;height:22px;border-radius:50%;background:var(--bleu);color:#fff;
+    display:inline-flex;align-items:center;justify-content:center;font-size:12px}
+  .sim-block{margin-bottom:24px}
+  .choices{display:flex;flex-wrap:wrap;gap:9px}
+  .choice{flex:1 1 auto;min-width:126px;border:2px solid var(--gris-clair);background:var(--fond);
+    border-radius:12px;padding:13px 15px;cursor:pointer;transition:.16s;text-align:center;font-weight:600;
+    font-size:14.5px;color:var(--texte);display:flex;flex-direction:column;align-items:center;gap:6px;user-select:none}
+  .choice .ic{color:var(--bleu);display:flex}
+  .choice:hover{border-color:var(--bleu);transform:translateY(-2px)}
+  .choice[aria-pressed="true"]{border-color:var(--bleu);background:var(--bleu);color:#fff;box-shadow:0 6px 18px rgba(1,156,218,.3)}
+  .choice[aria-pressed="true"] .ic{color:var(--or)}
+  .toggles{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .toggle{border:2px solid var(--gris-clair);background:var(--fond);border-radius:12px;padding:12px 14px;
+    cursor:pointer;transition:.16s;display:flex;align-items:center;gap:11px;font-size:14px;font-weight:500;user-select:none;text-align:left}
+  .toggle .tk{width:22px;height:22px;border-radius:6px;border:2px solid var(--gris);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;transition:.16s}
+  .toggle .tk svg{opacity:0}
+  .toggle:hover{border-color:var(--bleu)}
+  .toggle[aria-pressed="true"]{border-color:var(--bleu);background:var(--bleu-clair)}
+  .toggle[aria-pressed="true"] .tk{background:var(--bleu);border-color:var(--bleu);color:#fff}
+  .toggle[aria-pressed="true"] .tk svg{opacity:1}
+  .sim-hint{font-size:12.5px;color:var(--gris);margin-top:8px}
 
-  .toggles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .toggle {
-    border: 2px solid var(--gris-clair); background: var(--fond);
-    border-radius: 12px; padding: 13px 15px; cursor: pointer;
-    transition: all 0.18s; display: flex; align-items: center; gap: 11px;
-    font-size: 14px; font-weight: 500; user-select: none;
-  }
-  .toggle .tk {
-    width: 22px; height: 22px; border-radius: 6px;
-    border: 2px solid var(--gris); flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center; transition: all 0.18s;
-  }
-  .toggle .tk svg { opacity: 0; transition: opacity 0.15s; }
-  .toggle:hover { border-color: var(--bleu); }
-  .toggle[aria-pressed="true"] { border-color: var(--bleu); background: var(--bleu-clair); }
-  .toggle[aria-pressed="true"] .tk { background: var(--bleu); border-color: var(--bleu); color: var(--blanc); }
+  /* enfants */
+  .kids{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+  .kid{display:inline-flex;align-items:center;gap:9px;background:var(--bleu-clair);border:2px solid var(--bleu);
+    border-radius:12px;padding:8px 10px 8px 14px;font-weight:600;font-size:14px;color:var(--bleu-tres-fonce)}
+  .kid input{width:62px;border:1px solid var(--bleu);border-radius:8px;padding:5px 7px;font-family:inherit;
+    font-size:14px;font-weight:700;text-align:center;color:var(--bleu-tres-fonce);background:#fff}
+  .kid button{border:none;background:var(--rouge);color:#fff;width:24px;height:24px;border-radius:50%;
+    cursor:pointer;font-size:15px;line-height:1;display:inline-flex;align-items:center;justify-content:center}
+  .kid-add{border:2px dashed var(--bleu);background:transparent;color:var(--bleu-fonce);border-radius:12px;
+    padding:11px 18px;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;transition:.16s}
+  .kid-add:hover{background:var(--bleu-clair)}
 
-  .sim-hint { font-size: 12.5px; color: var(--gris); margin-top: 8px; }
+  .sim-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:2px}
+  .sim-btn{background:var(--bleu);color:#fff;border:none;border-radius:12px;padding:14px 25px;
+    font-family:'DM Sans',sans-serif;font-size:15.5px;font-weight:700;cursor:pointer;transition:.2s;
+    display:inline-flex;align-items:center;gap:9px}
+  .sim-btn:hover{background:var(--bleu-tres-fonce);transform:translateY(-2px);box-shadow:0 8px 22px rgba(1,156,218,.32)}
+  .sim-btn.ghost{background:transparent;color:var(--bleu-fonce);border:2px solid var(--gris-clair)}
+  .sim-btn.ghost:hover{background:var(--fond);box-shadow:none;border-color:var(--bleu)}
 
-  .sim-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
-  .sim-btn {
-    background: var(--bleu); color: var(--blanc); border: none;
-    border-radius: 12px; padding: 15px 26px;
-    font-family: 'DM Sans', sans-serif; font-size: 15.5px; font-weight: 700;
-    cursor: pointer; transition: all 0.2s;
-    display: inline-flex; align-items: center; gap: 9px;
-  }
-  .sim-btn:hover { background: var(--bleu-tres-fonce); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(1,156,218,0.32); }
-  .sim-btn.ghost { background: transparent; color: var(--bleu-fonce); border: 2px solid var(--gris-clair); }
-  .sim-btn.ghost:hover { background: var(--fond); box-shadow: none; border-color: var(--bleu); }
+  .sim-results[hidden]{display:none}
+  .results-banner{background:linear-gradient(135deg,var(--bleu) 0%,var(--vert) 100%);color:#fff;
+    border-radius:16px;padding:20px 24px;margin:20px 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .results-banner .rb-count{font-family:'Fraunces',serif;font-size:44px;font-weight:900;line-height:1}
+  .results-banner .rb-text{flex:1;min-width:190px}
+  .results-banner .rb-text strong{font-size:17px}
+  .results-banner .rb-text p{font-size:12.5px;color:rgba(255,255,255,.93);margin-top:3px}
+  .result-group-title{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--bleu-tres-fonce);
+    margin:22px 0 11px;display:flex;align-items:center;gap:9px}
+  .result-group-title.green{color:var(--vert-fonce)}
+  .result-group-title .gic{width:30px;height:30px;border-radius:8px;background:var(--bleu-clair);color:var(--bleu);
+    display:inline-flex;align-items:center;justify-content:center}
+  .result-group-title.green .gic{background:var(--vert-clair);color:var(--vert-fonce)}
 
-  /* ═══ RÉSULTATS ═══ */
-  .sim-results { margin-top: 8px; }
-  .sim-results[hidden] { display: none; }
-  .results-banner {
-    background: linear-gradient(135deg, var(--bleu) 0%, var(--vert) 100%);
-    color: var(--blanc); border-radius: 16px; padding: 22px 26px; margin-bottom: 22px;
-    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
-  }
-  .results-banner .rb-count { font-family: 'Fraunces', serif; font-size: 44px; font-weight: 900; line-height: 1; flex-shrink: 0; }
-  .results-banner .rb-text { flex: 1; min-width: 180px; }
-  .results-banner .rb-text strong { font-size: 17px; }
-  .results-banner .rb-text p { font-size: 13px; color: rgba(255,255,255,0.92); margin-top: 3px; }
+  .rcard{background:var(--blanc);border:1px solid var(--gris-clair);border-left:5px solid var(--bleu);
+    border-radius:12px;padding:15px 17px;margin-bottom:10px;opacity:0;transform:translateY(11px);animation:pop .42s forwards}
+  .rcard.cong{border-left-color:var(--vert)} .rcard.as{border-left-color:var(--or-fonce)}
+  .rcard.camieg{border-left-color:var(--rouge)}
+  @keyframes pop{to{opacity:1;transform:translateY(0)}}
+  .rc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:13px;flex-wrap:wrap}
+  .rc-title{font-family:'Fraunces',serif;font-size:16.5px;font-weight:700;flex:1;min-width:160px}
+  .rc-amount{font-weight:700;font-size:14px;background:var(--bleu-clair);color:var(--bleu-tres-fonce);
+    padding:5px 12px;border-radius:30px;white-space:nowrap}
+  .rcard.cong .rc-amount{background:var(--vert-clair);color:var(--vert-fonce)}
+  .rcard.as .rc-amount{background:var(--or-clair);color:var(--or-fonce)}
+  .rcard.camieg .rc-amount{background:var(--rouge-clair);color:var(--rouge-tres-fonce)}
+  .rc-desc{font-size:13.5px;margin-top:8px;line-height:1.55}
+  .rc-do{font-size:13px;margin-top:9px;background:var(--fond);border-radius:9px;padding:9px 12px;
+    border-left:3px solid var(--or);line-height:1.5}
+  .rc-do b{color:var(--or-fonce)}
+  .rc-ref{font-size:11.5px;color:var(--gris);margin-top:8px;font-style:italic}
+  .rc-tags{margin-top:9px;display:flex;gap:6px;flex-wrap:wrap}
+  .rc-tag{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;padding:2px 9px;
+    border-radius:20px;background:var(--bleu-clair);color:var(--bleu-fonce)}
+  .rc-tag.gta{background:var(--navy);color:var(--or);letter-spacing:1.2px}
+  .rc-tag.who{background:var(--gris-clair);color:var(--gris)}
 
-  .result-group-title {
-    font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700;
-    color: var(--bleu-tres-fonce); margin: 22px 0 12px;
-    display: flex; align-items: center; gap: 9px;
-  }
-  .result-group-title.green { color: var(--vert-fonce); }
-  .result-group-title .gic {
-    width: 30px; height: 30px; border-radius: 8px;
-    background: var(--bleu-clair); color: var(--bleu);
-    display: inline-flex; align-items: center; justify-content: center;
-  }
-  .result-group-title.green .gic { background: var(--vert-clair); color: var(--vert-fonce); }
+  /* ═══ FRISE DES ÂGES ═══ */
+  .frise{background:var(--blanc);border-radius:18px;padding:24px 26px;border:1px solid var(--gris-clair);
+    box-shadow:0 6px 20px rgba(0,0,0,.05)}
+  .frise-scale{display:flex;font-size:11.5px;font-weight:700;color:var(--gris);margin-bottom:6px;padding-left:212px}
+  .frise-scale span{flex:1;text-align:left}
+  .frow{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+  .frow-lab{width:202px;flex-shrink:0;font-size:13px;font-weight:600;line-height:1.25}
+  .frow-lab small{display:block;font-weight:400;color:var(--gris);font-size:11px}
+  .frow-bar{flex:1;height:26px;background:var(--fond);border-radius:7px;position:relative;overflow:hidden}
+  .frow-fill{position:absolute;top:0;bottom:0;border-radius:7px;display:flex;align-items:center;
+    padding:0 9px;font-size:11.5px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}
+  .frise-legend{margin-top:14px;display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--gris)}
+  .frise-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
 
-  .result-card {
-    background: var(--blanc);
-    border: 1px solid var(--gris-clair);
-    border-left: 5px solid var(--bleu);
-    border-radius: 12px; padding: 16px 18px; margin-bottom: 11px;
-    opacity: 0; transform: translateY(12px); animation: pop 0.45s forwards;
-  }
-  .result-card.cong { border-left-color: var(--vert); }
-  @keyframes pop { to { opacity: 1; transform: translateY(0); } }
-  .rc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; flex-wrap: wrap; }
-  .rc-title { font-family: 'Fraunces', serif; font-size: 16.5px; font-weight: 700; color: var(--texte); flex: 1; min-width: 160px; }
-  .rc-amount {
-    font-weight: 700; font-size: 14px;
-    background: var(--bleu-clair); color: var(--bleu-tres-fonce);
-    padding: 5px 12px; border-radius: 30px; white-space: nowrap;
-  }
-  .result-card.cong .rc-amount { background: var(--vert-clair); color: var(--vert-fonce); }
-  .rc-desc { font-size: 13.5px; color: var(--texte); margin-top: 9px; line-height: 1.55; }
-  .rc-ref { font-size: 11.5px; color: var(--gris); margin-top: 8px; font-style: italic; }
-  .rc-tag {
-    display: inline-block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px;
-    padding: 2px 9px; border-radius: 20px; margin-top: 9px;
-    background: var(--bleu-clair); color: var(--bleu-fonce);
-  }
-  .rc-tag.perso { background: #fff4d6; color: var(--or-fonce); }
+  /* ═══ COMPARATEUR ═══ */
+  .compar{background:var(--blanc);border-radius:18px;padding:24px 26px;border:1px solid var(--gris-clair);
+    box-shadow:0 6px 20px rgba(0,0,0,.05)}
+  .cmp-row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:18px}
+  .cmp-f{flex:1;min-width:172px}
+  .cmp-f label{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+    color:var(--bleu-fonce);margin-bottom:6px}
+  .cmp-f select,.cmp-f input{width:100%;border:2px solid var(--gris-clair);border-radius:10px;padding:11px 12px;
+    font-family:inherit;font-size:14.5px;background:var(--fond);color:var(--texte)}
+  .cmp-f select:focus,.cmp-f input:focus{outline:none;border-color:var(--bleu)}
+  .cmp-out{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .cmp-card{border-radius:14px;padding:18px 20px;border:2px solid var(--gris-clair);background:var(--fond)}
+  .cmp-card.win{border-color:var(--vert);background:var(--vert-clair)}
+  .cmp-card h4{font-family:'Fraunces',serif;font-size:16px;margin-bottom:4px;color:var(--bleu-tres-fonce)}
+  .cmp-card .cv{font-family:'Fraunces',serif;font-size:32px;font-weight:900;color:var(--navy);line-height:1.1}
+  .cmp-card .cd{font-size:12.5px;color:var(--gris);margin-top:6px;line-height:1.5}
+  .cmp-note{margin-top:14px;font-size:12.5px;color:var(--gris);line-height:1.6}
 
-  /* ═══ CARTES STATIQUES ═══ */
-  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  .card {
-    background: var(--blanc); border-radius: 14px; padding: 22px 24px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
-    border-top: 3px solid var(--bleu);
-  }
-  .card.cong { border-top-color: var(--vert); }
-  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(1,156,218,0.14); }
-  .card .card-icon { display: inline-flex; color: var(--bleu); margin-bottom: 10px; }
-  .card.cong .card-icon { color: var(--vert); }
-  .card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--bleu-fonce); margin-bottom: 6px; }
-  .card.cong h3 { color: var(--vert-fonce); }
-  .card .card-amount { font-weight: 700; color: var(--navy); font-size: 14.5px; margin-bottom: 6px; }
-  .card p { font-size: 13.5px; line-height: 1.55; color: var(--texte); }
-  .card .card-ref { font-size: 11px; color: var(--gris); font-style: italic; margin-top: 8px; }
+  /* ═══ TABLEAU CODES ═══ */
+  .codes-wrap{background:var(--blanc);border-radius:18px;border:1px solid var(--gris-clair);overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,.05)}
+  .codes-search{padding:16px 20px;border-bottom:1px solid var(--gris-clair);background:var(--fond)}
+  .codes-search input{width:100%;border:2px solid var(--gris-clair);border-radius:10px;padding:11px 14px;
+    font-family:inherit;font-size:14.5px;background:#fff}
+  .codes-search input:focus{outline:none;border-color:var(--bleu)}
+  .codes-tbl{width:100%;border-collapse:collapse;font-size:14px}
+  .codes-tbl th{text-align:left;background:var(--navy);color:var(--or);font-size:11.5px;letter-spacing:1.2px;
+    text-transform:uppercase;padding:11px 16px;font-weight:700}
+  .codes-tbl td{padding:12px 16px;border-bottom:1px solid var(--gris-clair);vertical-align:top}
+  .codes-tbl tr:last-child td{border-bottom:none}
+  .codes-tbl tr:hover td{background:var(--bleu-clair)}
+  .gta{display:inline-block;font-family:'Fraunces',serif;font-weight:900;font-size:17px;letter-spacing:1.5px;
+    background:var(--or);color:var(--navy);border-radius:8px;padding:3px 12px;min-width:52px;text-align:center}
+  .codes-tbl .c2{font-weight:600} .codes-tbl .c3{font-size:13px;color:var(--gris)}
+  .codes-empty{padding:24px;text-align:center;color:var(--gris);font-size:14px}
 
-  /* ═══ ENCART FO (signature rouge identitaire) ═══ */
-  .fo-callout {
-    background: var(--rouge-clair);
-    border-left: 4px solid var(--rouge);
-    border-radius: 8px; padding: 14px 16px; margin: 22px 0;
-    display: flex; gap: 12px; align-items: flex-start;
-  }
-  .fo-callout-icon {
-    flex-shrink: 0; width: 24px; height: 24px;
-    background: var(--rouge); color: var(--blanc);
-    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 14px;
-  }
-  .fo-callout-title { font-weight: 700; color: var(--rouge-tres-fonce); font-size: 14px; margin-bottom: 4px; }
-  .fo-callout-body p { font-size: 13.5px; line-height: 1.6; color: var(--texte); }
+  /* ═══ CATALOGUE ═══ */
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+  .filt{border:2px solid var(--gris-clair);background:var(--blanc);border-radius:30px;padding:8px 16px;
+    font-family:inherit;font-size:13.5px;font-weight:600;color:var(--texte);cursor:pointer;transition:.16s}
+  .filt:hover{border-color:var(--bleu)}
+  .filt[aria-pressed="true"]{background:var(--bleu);border-color:var(--bleu);color:#fff}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{background:var(--blanc);border-radius:14px;padding:20px 22px;box-shadow:0 4px 14px rgba(0,0,0,.05);
+    transition:.2s;border-top:3px solid var(--bleu)}
+  .card.cong{border-top-color:var(--vert)} .card.as{border-top-color:var(--or)} .card.camieg{border-top-color:var(--rouge)}
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(1,156,218,.14)}
+  .card h3{font-family:'Fraunces',serif;font-size:16.5px;font-weight:700;color:var(--bleu-fonce);margin-bottom:5px}
+  .card.cong h3{color:var(--vert-fonce)} .card.as h3{color:var(--or-fonce)} .card.camieg h3{color:var(--rouge-tres-fonce)}
+  .card .card-amount{font-weight:700;color:var(--navy);font-size:14.5px;margin-bottom:6px}
+  .card p{font-size:13.5px;line-height:1.55}
+  .card .card-ref{font-size:11px;color:var(--gris);font-style:italic;margin-top:8px}
+  .card .gta-mini{display:inline-block;font-weight:900;font-size:12px;letter-spacing:1.2px;background:var(--navy);
+    color:var(--or);border-radius:6px;padding:2px 9px;margin-bottom:8px}
+
+  /* ═══ ENCARTS ═══ */
+  .fo-callout{background:var(--rouge-clair);border-left:4px solid var(--rouge);border-radius:8px;
+    padding:15px 17px;margin:22px 0;display:flex;gap:12px;align-items:flex-start}
+  .fo-callout.gold{background:var(--or-clair);border-left-color:var(--or-fonce)}
+  .fo-callout-icon{flex-shrink:0;width:24px;height:24px;background:var(--rouge);color:#fff;border-radius:50%;
+    display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+  .fo-callout.gold .fo-callout-icon{background:var(--or-fonce)}
+  .fo-callout-title{font-weight:700;color:var(--rouge-tres-fonce);font-size:14px;margin-bottom:4px}
+  .fo-callout.gold .fo-callout-title{color:var(--or-fonce)}
+  .fo-callout-body p{font-size:13.5px;line-height:1.6}
+  .fo-callout-body p+p{margin-top:7px}
 
   /* ═══ FAQ ═══ */
-  .faq details {
-    background: var(--blanc); border-radius: 12px; margin-bottom: 10px;
-    padding: 14px 20px; border-left: 3px solid var(--bleu);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-  .faq summary {
-    font-family: 'Fraunces', serif; font-size: 16px; font-weight: 700;
-    color: var(--bleu-tres-fonce); cursor: pointer; padding: 4px 0; list-style: none;
-  }
-  .faq summary::before {
-    content: '▶'; display: inline-block; margin-right: 10px;
-    color: var(--bleu); font-size: 11px; transition: transform 0.2s;
-  }
-  .faq details[open] summary::before { transform: rotate(90deg); }
-  .faq details p { margin-top: 10px; font-size: 14px; line-height: 1.65; color: var(--texte); }
+  .faq details{background:var(--blanc);border-radius:12px;margin-bottom:9px;padding:13px 19px;
+    border-left:3px solid var(--bleu);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  .faq summary{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--bleu-tres-fonce);
+    cursor:pointer;padding:4px 0;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::before{content:'▶';display:inline-block;margin-right:10px;color:var(--bleu);font-size:11px;transition:.2s}
+  .faq details[open] summary::before{transform:rotate(90deg)}
+  .faq details p{margin-top:9px;font-size:14px;line-height:1.65}
+  .faq details p+p{margin-top:8px}
 
-  /* ═══ CARTE CONTACT (identité FO rouge) ═══ */
-  .fo-contact-card {
-    background: linear-gradient(135deg, var(--rouge-fonce) 0%, var(--rouge-tres-fonce) 100%);
-    border-radius: 16px; padding: 22px 26px; margin-top: 36px; color: var(--blanc);
-    display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
-  }
-  .fo-contact-card .fo-logo-wrap {
-    flex-shrink: 0; background: var(--blanc); border-radius: 14px;
-    padding: 8px 12px; width: 116px; height: 92px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .fo-contact-card .fo-logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
-  .fo-contact-card .fo-msg { flex: 1; min-width: 200px; }
-  .fo-contact-card .fo-msg-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; margin-bottom: 4px; }
-  .fo-contact-card .fo-msg-body { font-size: 13px; color: rgba(255,255,255,0.88); line-height: 1.5; }
-  .fo-contact-card .fo-cta-btn {
-    background: var(--blanc); color: var(--rouge-tres-fonce);
-    border-radius: 10px; padding: 10px 18px; font-weight: 700; font-size: 14px;
-    text-decoration: none; display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .fo-contact-card .fo-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+  /* ═══ CONTACT / FOOTER ═══ */
+  .fo-contact-card{background:linear-gradient(135deg,var(--rouge-fonce) 0%,var(--rouge-tres-fonce) 100%);
+    border-radius:16px;padding:22px 26px;margin-top:38px;color:#fff;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .fo-contact-card .fo-logo-wrap{flex-shrink:0;background:#fff;border-radius:14px;padding:8px 12px;
+    width:112px;height:88px;display:flex;align-items:center;justify-content:center}
+  .fo-contact-card .fo-logo-wrap img{width:100%;height:100%;object-fit:contain}
+  .fo-contact-card .fo-msg{flex:1;min-width:200px}
+  .fo-contact-card .fo-msg-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin-bottom:4px}
+  .fo-contact-card .fo-msg-body{font-size:13px;color:rgba(255,255,255,.9);line-height:1.5}
+  .fo-cta-btn{background:#fff;color:var(--rouge-tres-fonce);border-radius:10px;padding:10px 18px;font-weight:700;
+    font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:.2s}
+  .fo-cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.26)}
+  .footer{text-align:center;margin-top:30px;padding-top:22px;border-top:1px solid var(--gris-clair);
+    color:var(--gris);font-size:12.5px;line-height:1.65}
+  .footer a{color:var(--bleu-fonce);text-decoration:none;font-weight:600}
+  .footer .addr{font-size:11.5px;margin-top:8px}
+  .sources{font-size:11.5px;color:var(--gris);margin-top:10px;line-height:1.6;max-width:78ch;margin-left:auto;margin-right:auto}
 
-  /* ═══ FOOTER ═══ */
-  .footer {
-    text-align: center; margin-top: 32px; padding-top: 24px;
-    border-top: 1px solid var(--gris-clair);
-    color: var(--gris); font-size: 12.5px; line-height: 1.65;
-  }
-  .footer a { color: var(--bleu-fonce); text-decoration: none; font-weight: 600; }
-  .footer a:hover { text-decoration: underline; }
-  .footer .addr { font-size: 11.5px; margin-top: 8px; color: var(--gris); }
+  .a11y-toggle-bar{display:flex;justify-content:flex-end;margin-bottom:10px;gap:8px}
+  .a11y-toggle{background:var(--blanc);border:2px solid var(--bleu);color:var(--bleu-fonce);border-radius:30px;
+    padding:8px 17px;font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer;transition:.2s;
+    display:inline-flex;align-items:center;gap:8px}
+  .a11y-toggle:hover,.a11y-toggle[aria-pressed="true"]{background:var(--bleu);color:#fff}
+  .skip-link{position:absolute;top:-100px;left:16px;background:var(--or);color:#000;font-weight:700;
+    padding:10px 20px;border-radius:8px;z-index:9999;text-decoration:none;transition:top .2s}
+  .skip-link:focus{top:16px}
 
-  /* ═══ A11Y TOGGLE ═══ */
-  .a11y-toggle-bar { display: flex; justify-content: flex-end; margin-bottom: 12px; }
-  .a11y-toggle {
-    background: var(--blanc); border: 2px solid var(--bleu); color: var(--bleu-fonce);
-    border-radius: 30px; padding: 8px 18px;
-    font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 600;
-    cursor: pointer; transition: all 0.2s;
-    display: inline-flex; align-items: center; gap: 8px;
+  @media(max-width:760px){
+    .page{padding:18px 14px 46px}
+    .navbar{margin:0 -14px 18px;padding:8px 14px}
+    .header{padding:28px 22px 24px;border-radius:16px}
+    .cards,.videos,.cmp-out{grid-template-columns:1fr}
+    .toggles{grid-template-columns:1fr}
+    .sim-body{padding:20px 16px}
+    .rentree-top,.rentree-facts,.rentree-code{padding-left:20px;padding-right:20px}
+    .rentree-code{margin-left:20px;margin-right:20px}
+    .frise-scale{padding-left:0}
+    .frow{flex-direction:column;align-items:stretch;gap:4px;margin-bottom:12px}
+    .frow-lab{width:auto}
+    .fo-contact-card{flex-direction:column;text-align:center}
   }
-  .a11y-toggle:hover, .a11y-toggle[aria-pressed="true"] { background: var(--bleu); color: var(--blanc); }
-
-  .skip-link {
-    position: absolute; top: -100px; left: 16px;
-    background: var(--or); color: #000; font-weight: 700;
-    padding: 10px 20px; border-radius: 8px; z-index: 9999;
-    text-decoration: none; transition: top 0.2s;
-  }
-  .skip-link:focus { top: 16px; }
-
-  /* ═══ RESPONSIVE ═══ */
-  @media (max-width: 720px) {
-    .page { padding: 20px 16px 48px; }
-    .header { padding: 32px 26px 28px; border-radius: 16px; }
-    .cards { grid-template-columns: 1fr; }
-    .toggles { grid-template-columns: 1fr; }
-    .fo-contact-card { flex-direction: column; text-align: center; }
-    .sim-body { padding: 22px 18px; }
-    .sim-head { padding: 18px 20px; }
+  @media print{
+    .navbar,.a11y-toggle-bar,.sim-actions,.filters,.codes-search,.vcard video,.skip-link{display:none!important}
+    body{background:#fff} .page{max-width:none} .card,.rcard{break-inside:avoid}
   }
 
   /* ═══ MODE LECTURE UNIVERSELLE ═══ */
-  body.a11y-mode {
-    background: var(--a11y-bg);
-    font-family: 'Atkinson Hyperlegible', sans-serif !important;
-    font-size: 16px; line-height: 1.85;
-  }
-  body.a11y-mode .header { background: var(--a11y-dark-txt) !important; }
-  body.a11y-mode .header::after { display: none; }
-  body.a11y-mode .header h1, body.a11y-mode .header h1 em { color: var(--a11y-bg) !important; font-style: normal; }
-  body.a11y-mode .header .subtitle, body.a11y-mode .header .update { color: var(--a11y-bg) !important; }
-  body.a11y-mode .badge { background: var(--a11y-bg) !important; color: var(--a11y-dark-txt) !important; }
-  body.a11y-mode .intro { background: var(--a11y-bg); color: var(--a11y-dark-txt); border-left-color: var(--a11y-accent); }
-  body.a11y-mode .intro strong { color: var(--a11y-accent); }
-  body.a11y-mode .section-title { color: var(--a11y-dark-txt); }
-  body.a11y-mode .section-title .icon, body.a11y-mode .section-title .icon.green { background: var(--a11y-dark-txt); color: var(--a11y-bg); }
-  body.a11y-mode .simulateur { border: 2px solid var(--a11y-dark-txt); }
-  body.a11y-mode .sim-head { background: var(--a11y-dark-txt) !important; }
-  body.a11y-mode .sim-head .sim-pin { background: var(--a11y-bg); color: var(--a11y-dark-txt); }
-  body.a11y-mode .sim-step-label { color: var(--a11y-accent); }
-  body.a11y-mode .sim-step-label .num { background: var(--a11y-accent); }
-  body.a11y-mode .choice { background: var(--a11y-bg); border-color: var(--a11y-dark-txt); color: var(--a11y-dark-txt); }
-  body.a11y-mode .choice .ic { color: var(--a11y-accent); }
-  body.a11y-mode .choice[aria-pressed="true"] { background: var(--a11y-accent); color: var(--a11y-bg); }
-  body.a11y-mode .choice[aria-pressed="true"] .ic { color: var(--a11y-bg); }
-  body.a11y-mode .toggle { background: var(--a11y-bg); border-color: var(--a11y-dark-txt); }
-  body.a11y-mode .toggle[aria-pressed="true"] { background: var(--a11y-bg); border-color: var(--a11y-accent); }
-  body.a11y-mode .toggle[aria-pressed="true"] .tk { background: var(--a11y-accent); border-color: var(--a11y-accent); }
-  body.a11y-mode .sim-btn { background: var(--a11y-accent); }
-  body.a11y-mode .sim-btn.ghost { background: var(--a11y-bg); color: var(--a11y-accent); border-color: var(--a11y-accent); }
-  body.a11y-mode .results-banner { background: var(--a11y-accent); }
-  body.a11y-mode .result-card { background: var(--a11y-bg); border: 2px solid var(--a11y-dark-txt); border-left: 5px solid var(--a11y-accent); }
-  body.a11y-mode .result-card.cong { border-left: 5px solid var(--a11y-warn); }
-  body.a11y-mode .rc-amount { background: var(--a11y-bg); color: var(--a11y-accent); border: 1px solid var(--a11y-accent); }
-  body.a11y-mode .result-card.cong .rc-amount { color: var(--a11y-warn); border-color: var(--a11y-warn); }
-  body.a11y-mode .result-group-title, body.a11y-mode .result-group-title.green { color: var(--a11y-dark-txt); }
-  body.a11y-mode .result-group-title .gic { background: var(--a11y-bg); color: var(--a11y-accent); border: 1px solid var(--a11y-accent); }
-  body.a11y-mode .card { background: var(--a11y-bg); border: 2px solid var(--a11y-dark-txt); border-top: 3px solid var(--a11y-dark-txt); }
-  body.a11y-mode .card h3, body.a11y-mode .card.cong h3, body.a11y-mode .card .card-icon, body.a11y-mode .card.cong .card-icon { color: var(--a11y-accent); }
-  body.a11y-mode .card p, body.a11y-mode .card .card-amount { color: var(--a11y-dark-txt); }
-  body.a11y-mode .fo-callout { background: var(--a11y-bg); border-left-color: var(--a11y-warn); border: 2px solid var(--a11y-warn); }
-  body.a11y-mode .fo-callout-icon { background: var(--a11y-warn); color: var(--a11y-bg); }
-  body.a11y-mode .fo-callout-title { color: var(--a11y-warn); }
-  body.a11y-mode .fo-callout-body p { color: var(--a11y-dark-txt); }
-  body.a11y-mode .faq details { background: var(--a11y-bg); border: 2px solid var(--a11y-dark-txt); border-left: 4px solid var(--a11y-accent); }
-  body.a11y-mode .faq summary { color: var(--a11y-accent); }
-  body.a11y-mode .faq details p { color: var(--a11y-dark-txt); }
-  body.a11y-mode .fo-contact-card { background: var(--a11y-dark-txt); color: var(--a11y-bg); }
-  body.a11y-mode .fo-contact-card .fo-cta-btn { background: var(--a11y-bg); color: var(--a11y-dark-txt); border: 2px solid var(--a11y-bg); }
-  body.a11y-mode .footer { color: var(--a11y-dark-txt); }
-  body.a11y-mode .footer a { color: var(--a11y-accent); text-decoration: underline; }
-  body.a11y-mode .a11y-toggle { background: var(--a11y-accent); color: var(--a11y-bg); border-color: var(--a11y-accent); }
+  body.a11y-mode{background:var(--a11y-bg);font-family:'Atkinson Hyperlegible',sans-serif!important;font-size:16px;line-height:1.85}
+  body.a11y-mode .header,body.a11y-mode .sim-head,body.a11y-mode .rentree{background:var(--a11y-dark-txt)!important}
+  body.a11y-mode .header::after{display:none}
+  body.a11y-mode .header h1,body.a11y-mode .header h1 em{color:var(--a11y-bg)!important;font-style:normal}
+  body.a11y-mode .header .subtitle,body.a11y-mode .header .update{color:var(--a11y-bg)!important}
+  body.a11y-mode .badge{background:var(--a11y-bg)!important;color:var(--a11y-dark-txt)!important}
+  body.a11y-mode .navbar{background:var(--a11y-bg)}
+  body.a11y-mode .navbar a{border-color:var(--a11y-dark-txt);color:var(--a11y-accent)}
+  body.a11y-mode .rentree-hours b,body.a11y-mode .rentree-code .big{color:var(--a11y-bg)!important;background:transparent}
+  body.a11y-mode .rentree-code{background:var(--a11y-bg);color:var(--a11y-dark-txt);border:2px solid var(--a11y-dark-txt)}
+  body.a11y-mode .rentree-code .big{color:var(--a11y-dark-txt)!important}
+  body.a11y-mode .rfact .rf-ic{background:var(--a11y-bg);color:var(--a11y-dark-txt)}
+  body.a11y-mode .intro{background:var(--a11y-bg);border-left-color:var(--a11y-accent)}
+  body.a11y-mode .intro strong{color:var(--a11y-accent)}
+  body.a11y-mode .section-title{color:var(--a11y-dark-txt)}
+  body.a11y-mode .section-title .icon{background:var(--a11y-dark-txt)!important;color:var(--a11y-bg)}
+  body.a11y-mode .simulateur,body.a11y-mode .frise,body.a11y-mode .compar,body.a11y-mode .codes-wrap,
+  body.a11y-mode .vcard{border:2px solid var(--a11y-dark-txt)}
+  body.a11y-mode .sim-head .sim-pin{background:var(--a11y-bg);color:var(--a11y-dark-txt)}
+  body.a11y-mode .sim-step-label,body.a11y-mode .cmp-f label{color:var(--a11y-accent)}
+  body.a11y-mode .sim-step-label .num{background:var(--a11y-accent)}
+  body.a11y-mode .choice,body.a11y-mode .toggle,body.a11y-mode .filt{background:var(--a11y-bg);border-color:var(--a11y-dark-txt);color:var(--a11y-dark-txt)}
+  body.a11y-mode .choice[aria-pressed="true"],body.a11y-mode .filt[aria-pressed="true"]{background:var(--a11y-accent);color:var(--a11y-bg)}
+  body.a11y-mode .toggle[aria-pressed="true"]{background:var(--a11y-bg);border-color:var(--a11y-accent)}
+  body.a11y-mode .toggle[aria-pressed="true"] .tk{background:var(--a11y-accent);border-color:var(--a11y-accent)}
+  body.a11y-mode .sim-btn{background:var(--a11y-accent)}
+  body.a11y-mode .sim-btn.ghost{background:var(--a11y-bg);color:var(--a11y-accent);border-color:var(--a11y-accent)}
+  body.a11y-mode .results-banner{background:var(--a11y-accent)}
+  body.a11y-mode .rcard,body.a11y-mode .card{background:var(--a11y-bg);border:2px solid var(--a11y-dark-txt)}
+  body.a11y-mode .rc-amount,body.a11y-mode .rc-tag{background:var(--a11y-bg);color:var(--a11y-accent);border:1px solid var(--a11y-accent)}
+  body.a11y-mode .rc-tag.gta,body.a11y-mode .gta,body.a11y-mode .gta-mini{background:var(--a11y-dark-txt);color:var(--a11y-bg)}
+  body.a11y-mode .card h3,body.a11y-mode .cmp-card h4{color:var(--a11y-accent)}
+  body.a11y-mode .fo-callout{background:var(--a11y-bg);border:2px solid var(--a11y-warn);border-left-color:var(--a11y-warn)}
+  body.a11y-mode .fo-callout-icon{background:var(--a11y-warn);color:var(--a11y-bg)}
+  body.a11y-mode .fo-callout-title{color:var(--a11y-warn)}
+  body.a11y-mode .faq details{background:var(--a11y-bg);border:2px solid var(--a11y-dark-txt);border-left:4px solid var(--a11y-accent)}
+  body.a11y-mode .faq summary{color:var(--a11y-accent)}
+  body.a11y-mode .codes-tbl th{background:var(--a11y-dark-txt);color:var(--a11y-bg)}
+  body.a11y-mode .fo-contact-card{background:var(--a11y-dark-txt)}
+  body.a11y-mode .fo-cta-btn{background:var(--a11y-bg);color:var(--a11y-dark-txt)}
+  body.a11y-mode .footer a{color:var(--a11y-accent);text-decoration:underline}
+  body.a11y-mode .a11y-toggle{background:var(--a11y-accent);color:var(--a11y-bg);border-color:var(--a11y-accent)}
 </style>
+<!-- GoatCounter -->
+<script data-goatcounter="https://fo-grdf.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -446,525 +386,829 @@
 
   <div class="a11y-toggle-bar" role="navigation" aria-label="Options d'accessibilité">
     <button id="a11yToggle" class="a11y-toggle" type="button" aria-pressed="false" onclick="toggleA11y()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-      </svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
       Mode lecture universelle
     </button>
   </div>
 
-  <!-- ═══ HEADER ═══ -->
   <header class="header" role="banner">
     <div class="header-row">
-      <a class="logo-link" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF Fonctions Centrales" aria-label="Contacter FO GRDF Fonctions Centrales par email">
-        <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO GRDF Fonctions Centrales">
+      <a class="logo-link" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" aria-label="Contacter FO GRDF Fonctions Centrales">
+        <img src="img/logo_fo.png" alt="Logo FO GRDF Fonctions Centrales">
       </a>
       <div class="header-text">
         <span class="badge">FO GRDF Fonctions Centrales · Édition 2026</span>
-        <h1>Vos <em>droits familiaux</em> IEG, en un clic</h1>
-        <p class="subtitle">Indemnités, aides sociales et congés des Industries Électriques et Gazières — un simulateur qui génère vos droits selon votre situation.</p>
-        <span class="update"><span class="dot"></span>Mise à jour : juin 2026</span>
+        <h1>Vos <em>droits familiaux</em>, du berceau aux études</h1>
+        <p class="subtitle">Les 2 heures de rentrée scolaire, les codes à saisir dans la GTA, le congé parent, le CESU, les aides des Activités Sociales : tout ce à quoi vous avez droit dans les IEG, et comment le demander.</p>
+        <span class="update"><span class="dot"></span>Mise à jour : août 2026</span>
       </div>
     </div>
   </header>
 
+  <nav class="navbar" aria-label="Sommaire">
+    <div class="navbar-in">
+      <a href="#rentree">Rentrée scolaire</a>
+      <a href="#videos">Vidéos</a>
+      <a href="#simulateur">Mes droits</a>
+      <a href="#frise">Frise des âges</a>
+      <a href="#comparateur">Congé parent ou CESU&nbsp;?</a>
+      <a href="#codes">Codes GTA</a>
+      <a href="#catalogue">Tous les droits</a>
+      <a href="#ccas">Sport &amp; loisirs</a>
+      <a href="#faq">Questions</a>
+    </div>
+  </nav>
+
   <main id="contenu-principal" role="main">
 
-    <div class="intro">
-      Entre le statut national, les accords de branche et le droit commun, les <strong>droits familiaux</strong> des IEG sont nombreux… mais peu connus. Naissance, union, garde d'enfant, études, perte d'autonomie d'un proche : à chaque étape de la vie correspondent des <strong>indemnités, des aides et des congés</strong>. Renseignez votre situation ci-dessous : le <strong>simulateur FO GRDF Fonctions Centrales</strong> affiche immédiatement les droits qui peuvent vous concerner.
-    </div>
+    <!-- ══════ BLOC RENTRÉE ══════ -->
+    <h2 class="section-title" id="rentree">
+      <span class="icon red" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
+      Spécial rentrée scolaire
+    </h2>
+    <p class="section-sub">Le droit le plus simple à faire valoir — et le plus souvent oublié.</p>
 
-    <!-- ═══════════════ SIMULATEUR ═══════════════ -->
-    <section class="simulateur" aria-label="Simulateur de droits familiaux">
-      <div class="sim-head">
-        <div class="sim-pin" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-          </svg>
-        </div>
-        <div>
-          <h2>Le simulateur de mes droits familiaux</h2>
-          <p>Renseignez votre situation — aucune donnée n'est enregistrée, tout se calcule dans votre navigateur.</p>
+    <section class="rentree" aria-label="Autorisation d'absence à l'occasion de la rentrée scolaire">
+      <div class="rentree-top">
+        <div class="rentree-hours"><b>2 h</b><span>autorisées<br>et payées</span></div>
+        <div class="rentree-txt">
+          <h2>Vous pouvez accompagner votre enfant à l'école</h2>
+          <p>Un accord de branche du 31 juillet 2024 a enfin inscrit ce droit noir sur blanc pour <strong>tous les salariés des IEG</strong>. Avant, chaque entreprise faisait comme elle voulait. Aujourd'hui, c'est un droit de branche, à durée indéterminée.</p>
         </div>
       </div>
+      <div class="rentree-facts">
+        <div class="rfact"><span class="rf-ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Jusqu'aux 13 ans</b><span>Enfant en âge scolaire</span></div></div>
+        <div class="rfact"><span class="rf-ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Handicap : sans limite d'âge</b><span>Jusqu'à la fin de la scolarité, sur justificatif AEEH ou notification MDPH</span></div></div>
+        <div class="rfact"><span class="rf-ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Les deux parents</b><span>Si vous travaillez tous les deux aux IEG, chacun y a droit</span></div></div>
+        <div class="rfact"><span class="rf-ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Complétable</b><span>Vous pouvez ajouter du RTT, un congé ou du congé parent si 2 h ne suffisent pas</span></div></div>
+      </div>
+      <div class="rentree-code">
+        <span class="big">RS</span>
+        <p>Le code de collecte à saisir dans la GTA. Demande préalable auprès du manager ; justificatif seulement si la date de rentrée diffère de celle fixée par l'Éducation nationale.</p>
+      </div>
+    </section>
 
+    <!-- ══════ VIDÉOS ══════ -->
+    <h2 class="section-title" id="videos">
+      <span class="icon gold" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span>
+      En vidéo, en deux minutes
+    </h2>
+    <p class="section-sub">À regarder, à partager, à envoyer à un collègue qui ne connaît pas ses droits.</p>
+    <div class="videos">
+      <article class="vcard">
+        <video controls preload="metadata" poster="videos/rentree_2h_poster.jpg">
+          <source src="videos/rentree_2h_yt.mp4" type="video/mp4">
+          Votre navigateur ne peut pas lire cette vidéo. <a href="videos/rentree_2h_yt.mp4">Télécharger l'épisode 1</a>.
+        </video>
+        <div class="vcard-body">
+          <h3>Épisode 1 — Vos 2 heures pour la rentrée</h3>
+          <p>Les 2 heures payées, jusqu'à quel âge, qui y a droit, et les codes GTA à retenir : RS, 2R, 2N, 2C.</p>
+          <div class="vmeta"><span class="vtag">≈ 1 min</span><span class="vtag r">Code RS</span><span class="vtag">Rentrée</span></div>
+        </div>
+      </article>
+      <article class="vcard">
+        <video controls preload="metadata" poster="videos/aides_enfants_poster.jpg">
+          <source src="videos/aides_enfants_yt.mp4" type="video/mp4">
+          Votre navigateur ne peut pas lire cette vidéo. <a href="videos/aides_enfants_yt.mp4">Télécharger l'épisode 2</a>.
+        </video>
+        <div class="vcard-body">
+          <h3>Épisode 2 — Les aides pour vos enfants</h3>
+          <p>Forfait familial, aide aux frais d'études, congé parent ou CESU, aides des Activités Sociales… et le sport financé par votre CMCAS.</p>
+          <div class="vmeta"><span class="vtag">≈ 1 min 20</span><span class="vtag r">Montants 2026</span><span class="vtag">CMCAS</span></div>
+        </div>
+      </article>
+    </div>
+    <p class="vnote">Versions verticales pour les stories et les réseaux : <a href="videos/rentree_2h_reel.mp4">épisode 1</a> · <a href="videos/aides_enfants_reel.mp4">épisode 2</a></p>
+
+    <!-- ══════ SIMULATEUR ══════ -->
+    <h2 class="section-title" id="simulateur">
+      <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+      Quels sont MES droits ?
+    </h2>
+    <p class="section-sub">Renseignez l'âge réel de vos enfants : le simulateur applique les seuils exacts (12, 13, 16, 20, 26 ans) et vous dit ce qui est ouvert, ce qui va s'éteindre, et comment le demander.</p>
+
+    <section class="simulateur" aria-label="Simulateur de droits familiaux">
+      <div class="sim-head">
+        <div class="sim-pin" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <div>
+          <h2>Le simulateur de mes droits familiaux</h2>
+          <p>Aucune donnée n'est enregistrée ni envoyée : tout se calcule dans votre navigateur.</p>
+        </div>
+      </div>
       <div class="sim-body">
-
-        <!-- Étape 1 : statut -->
         <div class="sim-block">
-          <div class="sim-step-label"><span class="num">1</span> Votre situation conjugale</div>
+          <div class="sim-step-label"><span class="num">1</span> Votre situation</div>
           <div class="choices" id="grp-statut" role="group" aria-label="Situation conjugale">
             <button type="button" class="choice" data-val="celibataire" aria-pressed="false">
-              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></svg></span>
-              Célibataire
-            </button>
+              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></svg></span>
+              Célibataire</button>
             <button type="button" class="choice" data-val="union" aria-pressed="false">
-              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
-              Marié(e) / Pacsé(e)
-            </button>
+              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+              Marié(e) / Pacsé(e)</button>
             <button type="button" class="choice" data-val="concubinage" aria-pressed="false">
-              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="16" cy="9" r="2.6"/><path d="M3 20v-1a6 6 0 0 1 12 0v1"/><path d="M15 20v-1a5 5 0 0 1 6-4.9"/></svg></span>
-              En concubinage
-            </button>
+              <span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><circle cx="16" cy="9" r="2.6"/><path d="M3 20v-1a6 6 0 0 1 12 0v1"/><path d="M15 20v-1a5 5 0 0 1 6-4.9"/></svg></span>
+              En concubinage</button>
           </div>
         </div>
 
-        <!-- Étape 2 : enfants -->
         <div class="sim-block">
-          <div class="sim-step-label"><span class="num">2</span> Nombre d'enfants à charge</div>
-          <div class="choices" id="grp-enfants" role="group" aria-label="Nombre d'enfants à charge">
-            <button type="button" class="choice" data-val="0" aria-pressed="false">Aucun</button>
-            <button type="button" class="choice" data-val="1" aria-pressed="false">1 enfant</button>
-            <button type="button" class="choice" data-val="2" aria-pressed="false">2 enfants</button>
-            <button type="button" class="choice" data-val="3" aria-pressed="false">3 et +</button>
-          </div>
-          <p class="sim-hint">Au sens des prestations familiales (enfant à votre charge).</p>
+          <div class="sim-step-label"><span class="num">2</span> Vos enfants <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--gris)">— indiquez leur âge</span></div>
+          <div class="kids" id="kids"></div>
+          <p class="sim-hint">Enfants à votre charge au sens des prestations familiales. Pour un enfant à naître, cochez « naissance ou adoption à venir » ci-dessous.</p>
         </div>
 
-        <!-- Étape 3 : tranches d'âge -->
-        <div class="sim-block" id="block-ages" hidden>
-          <div class="sim-step-label"><span class="num">3</span> Âge de vos enfants <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--gris)">(plusieurs choix possibles)</span></div>
-          <div class="toggles" id="grp-ages" role="group" aria-label="Tranches d'âge des enfants">
-            <button type="button" class="toggle" data-val="petite" aria-pressed="false">
-              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              0 à 3 ans (petite enfance)
-            </button>
-            <button type="button" class="toggle" data-val="enfance" aria-pressed="false">
-              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              3 à 12 ans
-            </button>
-            <button type="button" class="toggle" data-val="ado" aria-pressed="false">
-              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              12 à 16 ans
-            </button>
-            <button type="button" class="toggle" data-val="etudiant" aria-pressed="false">
-              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              Étudiant / 16 à 26 ans
-            </button>
-          </div>
-        </div>
-
-        <!-- Étape 4 : situations particulières -->
         <div class="sim-block">
-          <div class="sim-step-label"><span class="num">4</span> Situations particulières <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--gris)">(facultatif)</span></div>
+          <div class="sim-step-label"><span class="num">3</span> Situations particulières <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--gris)">(facultatif)</span></div>
           <div class="toggles" id="grp-flags" role="group" aria-label="Situations particulières">
-            <button type="button" class="toggle" data-val="grossesse" aria-pressed="false">
-              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              Grossesse / naissance ou adoption à venir
-            </button>
-            <button type="button" class="toggle" data-val="mono" aria-pressed="false">
-              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              Famille monoparentale
-            </button>
-            <button type="button" class="toggle" data-val="handicap" aria-pressed="false">
-              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              Enfant en situation de handicap
-            </button>
-            <button type="button" class="toggle" data-val="aidant" aria-pressed="false">
-              <span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              Proche en perte d'autonomie (aidant)
-            </button>
+            <button type="button" class="toggle" data-val="grossesse" aria-pressed="false"><span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Naissance ou adoption à venir</button>
+            <button type="button" class="toggle" data-val="mono" aria-pressed="false"><span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Famille monoparentale (garde exclusive)</button>
+            <button type="button" class="toggle" data-val="handicap" aria-pressed="false"><span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Enfant en situation de handicap (AEEH / ≥ 50 %)</button>
+            <button type="button" class="toggle" data-val="etudes" aria-pressed="false"><span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Un enfant poursuit des études</button>
+            <button type="button" class="toggle" data-val="boursier" aria-pressed="false"><span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Enfant boursier de l'État</button>
+            <button type="button" class="toggle" data-val="aidant" aria-pressed="false"><span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Proche en perte d'autonomie (aidant)</button>
+            <button type="button" class="toggle" data-val="couple_ieg" aria-pressed="false"><span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Mon conjoint travaille aussi aux IEG</button>
+            <button type="button" class="toggle" data-val="alternee" aria-pressed="false"><span class="tk" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Garde alternée</button>
           </div>
         </div>
 
         <div class="sim-actions">
           <button type="button" class="sim-btn" id="simRun">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            Afficher mes droits
-          </button>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Afficher mes droits</button>
+          <button type="button" class="sim-btn ghost" id="simPrint">Imprimer / PDF</button>
           <button type="button" class="sim-btn ghost" id="simReset">Réinitialiser</button>
         </div>
 
-        <!-- RÉSULTATS -->
         <div class="sim-results" id="simResults" hidden aria-live="polite">
           <div class="results-banner">
             <div class="rb-count" id="rbCount">0</div>
             <div class="rb-text">
               <strong>droits peuvent vous concerner</strong>
-              <p>Estimation pédagogique d'après votre situation. Vérifiez l'éligibilité exacte auprès de vos délégués FO GRDF Fonctions Centrales, de votre CMCAS et de votre employeur.</p>
+              <p>Repère pédagogique établi d'après les textes IEG. L'éligibilité exacte se vérifie auprès de votre employeur, de la CAMIEG et de votre CMCAS — vos délégués FO sont là pour vous aider.</p>
             </div>
           </div>
-          <div id="resIndemnites"></div>
+          <div id="resAlerts"></div>
           <div id="resConges"></div>
+          <div id="resIndemnites"></div>
         </div>
-
       </div>
     </section>
 
-    <p class="section-sub" style="margin-top:16px">Astuce : le simulateur est un repère. Il ne remplace ni un dossier officiel ni le conseil d'un militant FO GRDF Fonctions Centrales.</p>
-
-    <!-- ═══ ENCART FO ═══ -->
     <div class="fo-callout">
       <div class="fo-callout-icon">!</div>
       <div class="fo-callout-body">
-        <div class="fo-callout-title">FO GRDF Fonctions Centrales : des droits à défendre, pas seulement à connaître</div>
-        <p>Plusieurs dispositifs (sursalaire familial, congés « en évolution »…) sont menacés ou en voie d'extinction. FO GRDF Fonctions Centrales revendique le maintien et l'amélioration de l'ensemble des droits familiaux du statut et des accords de branche IEG.</p>
+        <div class="fo-callout-title">Des droits à défendre, pas seulement à connaître</div>
+        <p>Le sursalaire familial s'éteint le 31 décembre 2028. Plusieurs congés sont classés « en évolution ». Un droit qui n'est pas utilisé est un droit qu'on finit par vous retirer : <strong>demandez-les, et faites-les connaître autour de vous</strong>. FO GRDF Fonctions Centrales revendique le maintien et l'amélioration de l'ensemble des droits familiaux du statut et des accords de branche.</p>
       </div>
     </div>
 
-    <!-- ═══ RÉCAP INDEMNITÉS ═══ -->
-    <h2 class="section-title">
-      <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-      Les indemnités &amp; aides
+    <!-- ══════ FRISE ══════ -->
+    <h2 class="section-title" id="frise">
+      <span class="icon green" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="6" y1="8" x2="6" y2="16"/><line x1="12" y1="6" x2="12" y2="18"/><line x1="18" y1="8" x2="18" y2="16"/></svg></span>
+      La frise des âges
     </h2>
-    <p class="section-sub">Statut national, accords de branche, CAMIEG et Activités Sociales (CCAS / CMCAS).</p>
-    <div class="cards" id="cardsIndemnites"></div>
+    <p class="section-sub">Chaque droit a sa date de péremption. Voici, d'un coup d'œil, jusqu'à quel âge de l'enfant chacun reste ouvert.</p>
+    <div class="frise" id="friseBox"></div>
 
-    <!-- ═══ RÉCAP CONGÉS ═══ -->
-    <h2 class="section-title">
-      <span class="icon green" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
-      Les congés &amp; absences
+    <!-- ══════ COMPARATEUR ══════ -->
+    <h2 class="section-title" id="comparateur">
+      <span class="icon gold" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18"/><path d="M5 8l-3 6h6zM19 8l-3 6h6z"/><path d="M5 8h14"/></svg></span>
+      Congé parent ou CESU ?
     </h2>
-    <p class="section-sub">Issus des textes IEG (statut, accords de branche) et du droit commun.</p>
-    <div class="cards" id="cardsConges"></div>
+    <p class="section-sub">Chaque année, avant le 31 octobre, vous choisissez entre les deux. Le choix se reconduit tacitement. Voici de quoi trancher.</p>
+    <div class="compar">
+      <div class="cmp-row">
+        <div class="cmp-f">
+          <label for="cmpAge">Âge de votre plus jeune enfant</label>
+          <input type="number" id="cmpAge" min="0" max="12" step="1" value="5">
+        </div>
+        <div class="cmp-f">
+          <label for="cmpMono">Situation</label>
+          <select id="cmpMono">
+            <option value="0">En couple</option>
+            <option value="1">Famille monoparentale</option>
+          </select>
+        </div>
+        <div class="cmp-f">
+          <label for="cmpSal">Votre salaire journalier brut (€)</label>
+          <input type="number" id="cmpSal" min="0" step="10" value="150">
+        </div>
+      </div>
+      <div class="cmp-out">
+        <div class="cmp-card" id="cmpA">
+          <h4>Congé parent — code 2C</h4>
+          <div class="cv" id="cmpAv">—</div>
+          <div class="cd" id="cmpAd"></div>
+        </div>
+        <div class="cmp-card" id="cmpB">
+          <h4>Dotation CESU</h4>
+          <div class="cv" id="cmpBv">—</div>
+          <div class="cd" id="cmpBd"></div>
+        </div>
+      </div>
+      <p class="cmp-note" id="cmpNote"></p>
+    </div>
 
-    <!-- ═══ FAQ ═══ -->
-    <h2 class="section-title">
-      <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg></span>
-      Questions fréquentes
+    <!-- ══════ CODES GTA ══════ -->
+    <h2 class="section-title" id="codes">
+      <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="9" x2="8" y2="20"/></svg></span>
+      Les codes à saisir dans la GTA
+    </h2>
+    <p class="section-sub">Le bon code, c'est la différence entre une absence payée et une absence qui vous coûte une journée. Cherchez votre situation.</p>
+    <div class="codes-wrap">
+      <div class="codes-search">
+        <input type="search" id="codeSearch" placeholder="Rechercher : rentrée, malade, parent, RS, 2C…" aria-label="Rechercher un code de collecte">
+      </div>
+      <div style="overflow-x:auto">
+        <table class="codes-tbl">
+          <thead><tr><th>Code</th><th>Motif</th><th>Ce qu'il faut savoir</th></tr></thead>
+          <tbody id="codesBody"></tbody>
+        </table>
+      </div>
+      <div class="codes-empty" id="codesEmpty" hidden>Aucun code ne correspond à cette recherche.</div>
+    </div>
+    <div class="fo-callout gold">
+      <div class="fo-callout-icon">i</div>
+      <div class="fo-callout-body">
+        <div class="fo-callout-title">Les codes de collecte peuvent varier</div>
+        <p>Les libellés et codes ci-dessus sont ceux utilisés dans la GTA à GRDF. Si un code n'apparaît pas dans votre outil ou porte un autre intitulé, ne renoncez pas au droit : signalez-le à votre manager, à votre gestionnaire RH — et à vos délégués FO.</p>
+      </div>
+    </div>
+
+    <!-- ══════ CATALOGUE ══════ -->
+    <h2 class="section-title" id="catalogue">
+      <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+      Tous les droits, un par un
+    </h2>
+    <p class="section-sub">Le récapitulatif complet, filtrable. Cliquez sur une famille pour n'afficher que ce qui vous intéresse.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filtrer les droits">
+      <button type="button" class="filt" data-cat="all" aria-pressed="true">Tout afficher</button>
+      <button type="button" class="filt" data-cat="cong" aria-pressed="false">Congés &amp; absences</button>
+      <button type="button" class="filt" data-cat="ind" aria-pressed="false">Indemnités statutaires</button>
+      <button type="button" class="filt" data-cat="as" aria-pressed="false">Activités Sociales</button>
+      <button type="button" class="filt" data-cat="camieg" aria-pressed="false">CAMIEG</button>
+    </div>
+    <div class="cards" id="catalogue"></div>
+
+    <!-- ══════ CCAS / SLVie ══════ -->
+    <h2 class="section-title" id="ccas">
+      <span class="icon green" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3.6 9h16.8M3.6 15h16.8"/></svg></span>
+      Le sport, la musique, la danse : votre CMCAS peut payer une partie
+    </h2>
+    <p class="section-sub">Le droit le moins connu de tous — et celui qui se perd le plus souvent, faute d'avoir posé la question.</p>
+    <div class="intro">
+      Au-delà des aides de branche, les <strong>Activités Sociales</strong> financent aussi la vie de vos enfants en dehors de l'école : <strong>licence sportive, club de foot ou de judo, école de musique, cours de danse, MJC, médiathèque</strong>. La participation est versée sur présentation de la facture acquittée, souvent modulée selon votre coefficient social.
+      <p style="margin-top:11px">Mais attention — et c'est le point essentiel : <strong>ce n'est pas un barème national</strong>. Chaque CMCAS fixe ses propres règles, et le dossier se dépose auprès de votre <strong>SLVie</strong>. D'une CMCAS à l'autre, on peut passer d'une aide de 25 € à 55 € par enfant, avec des tranches d'âge qui vont de 1 à 18 ans ici, jusqu'à 26 ans ailleurs, et des dates de dépôt qui ne sont jamais les mêmes.</p>
+      <p style="margin-top:11px"><strong>Le réflexe à avoir : appelez votre SLVie avant d'inscrire votre enfant</strong>, et gardez la facture acquittée. Certaines CMCAS majorent aussi l'aide quand plusieurs enfants d'une même famille sont inscrits.</p>
+    </div>
+    <div class="fo-callout">
+      <div class="fo-callout-icon">!</div>
+      <div class="fo-callout-body">
+        <div class="fo-callout-title">Cet argent est le vôtre</div>
+        <p>Les Activités Sociales sont financées par le 1 % des recettes de la branche — c'est-à-dire par votre travail. Une aide que personne ne demande n'est pas une économie : c'est une aide perdue, et un argument de plus pour ceux qui veulent réduire l'enveloppe. <strong>Demandez, systématiquement.</strong></p>
+      </div>
+    </div>
+
+    <!-- ══════ FAQ ══════ -->
+    <h2 class="section-title" id="faq">
+      <span class="icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg></span>
+      Les questions qu'on nous pose
     </h2>
     <div class="faq">
       <details>
-        <summary>Mon conjoint travaille aussi dans les IEG : peut-on cumuler ?</summary>
-        <p>Cela dépend du droit. L'indemnité d'union et le CESU de branche sont cumulables au sein d'un couple IEG ; l'indemnité de naissance/adoption et la prime layette ne sont attribuées qu'à un seul des deux parents. Le simulateur signale les principaux cas, mais vérifiez auprès de votre employeur.</p>
+        <summary>Mon manager me dit que les 2 heures de rentrée « ne sont pas obligatoires ». Que répondre ?</summary>
+        <p>Que c'est un droit de branche, issu d'un accord signé le 31 juillet 2024, à durée indéterminée, qui s'applique à toutes les entreprises des IEG. Il n'est pas laissé à l'appréciation de la hiérarchie. Ce qui reste soumis à demande préalable, c'est l'organisation : vous prévenez, on s'organise. Si un refus persiste, prenez contact avec vos délégués FO — c'est exactement le genre de sujet qui se règle vite.</p>
       </details>
       <details>
-        <summary>Sursalaire ou forfait familial : lequel choisir ?</summary>
-        <p>Les deux ne sont pas cumulables. Le sursalaire familial s'éteint au 1er janvier 2029 ; le forfait familial est de 48,64 €/mois et par enfant jusqu'au 20e anniversaire (au 1er janvier 2026), réévalué chaque année. Faites le point avec un militant pour l'option la plus favorable.</p>
+        <summary>Nous travaillons tous les deux aux IEG. Faut-il choisir qui prend les 2 heures ?</summary>
+        <p>Non. Contrairement à d'autres droits familiaux (indemnité de naissance, prime layette, forfait familial) qui ne sont attribués qu'à un seul des deux parents, l'autorisation d'absence de rentrée scolaire est ouverte à <strong>chacun des deux</strong>. Vous pouvez accompagner votre enfant tous les deux.</p>
       </details>
       <details>
-        <summary>Le congé supplémentaire de naissance, c'est quoi de nouveau ?</summary>
-        <p>Issu de la loi de financement de la Sécurité sociale pour 2026, il s'ajoute aux congés existants à partir du 1er juillet 2026 : une période indemnisée d'un ou deux mois, prise simultanément ou en alternance avec l'autre parent, fractionnable en deux périodes d'un mois.</p>
+        <summary>Enfant malade : combien de demi-journées exactement, et lesquelles sont payées ?</summary>
+        <p>Le droit légal est de <strong>6 demi-journées par an</strong> pour un enfant de moins de 16 ans, sur certificat médical. Il passe à <strong>10 demi-journées</strong> si l'enfant a moins d'un an, ou si vous avez au moins trois enfants de moins de 16 ans.</p>
+        <p>Là-dessus, l'accord de branche IEG ajoute quelque chose que le Code du travail ne prévoit pas : <strong>4 de ces demi-journées sont rémunérées</strong> par l'employeur, jusqu'au 12<sup>e</sup> anniversaire du dernier enfant. Concrètement : code <strong>2R</strong> tant que vous êtes dans les 4 rémunérées, code <strong>2N</strong> ensuite.</p>
+      </details>
+      <details>
+        <summary>Congé parent ou CESU : puis-je prendre les deux ?</summary>
+        <p>Non, c'est l'un ou l'autre. Vous exprimez votre choix une fois par an, au plus tard <strong>deux mois avant l'échéance</strong> (soit le 31 octobre), et il se reconduit tacitement tant que vous ne dites rien. Le congé parent, ce sont <strong>4 jours rémunérés</strong> par an (6 si vous êtes en famille monoparentale), pris par demi-journées, non fractionnables en heures et non reportables d'une année sur l'autre. Le CESU, c'est une dotation de chèques cofinancée à 80 % par l'employeur.</p>
+        <p>En revanche, le <strong>« congé parent-enfant handicapé » de 8 jours</strong> s'ajoute aux deux : que vous ayez choisi le congé parent ou le CESU, vous l'avez en plus.</p>
+      </details>
+      <details>
+        <summary>Sursalaire ou forfait familial : lequel garder ?</summary>
+        <p>Les deux ne sont pas cumulables. Le forfait familial est de <strong>48,64 € par mois et par enfant</strong> jusqu'aux 20 ans de l'enfant (montant au 1<sup>er</sup> janvier 2026, réévalué chaque année). Le sursalaire familial, lui, est un dispositif en extinction : il ne subsiste que pour les salariés qui en bénéficiaient déjà et s'arrête définitivement <strong>fin 2028</strong>. Pour les familles nombreuses avec une rémunération élevée, le sursalaire peut encore être plus favorable — faites le calcul avec vos délégués avant de basculer, la bascule est définitive.</p>
+      </details>
+      <details>
+        <summary>Mon enfant entre dans le supérieur : à quoi ai-je droit ?</summary>
+        <p>À l'<strong>aide aux frais d'études</strong> : 113,63 € par mois (montant 2026), pendant 5 années maximum, jusqu'à la fin de l'année scolaire de ses 26 ans. Avant 20 ans, il faut des études post-bac ; après 20 ans, toutes les formations inscrites au RNCP comptent, apprentissage compris. Si votre enfant est <strong>boursier de l'État sur critères sociaux</strong>, s'ajoute une aide forfaitaire de <strong>1 262,57 €</strong>, versée une seule fois pendant toute sa scolarité.</p>
+        <p>En cas de handicap reconnu, la durée passe à 7 années, jusqu'à 28 ans, dans la limite de 84 versements mensuels.</p>
+        <p>Côté Activités Sociales, pensez aussi à l'<strong>aide à l'autonomie des jeunes</strong> et à l'aide à la <strong>CVEC</strong> — elles se cumulent avec l'AFE.</p>
       </details>
       <details>
         <summary>Les montants affichés sont-ils garantis ?</summary>
-        <p>Non : ce sont les références 2026 connues, données à titre pédagogique. Beaucoup d'aides sont sous conditions de ressources et selon le coefficient social. Les montants sont réévalués chaque année. Seuls votre employeur, la CAMIEG et votre CMCAS font foi.</p>
+        <p>Ce sont les références connues pour 2026. Beaucoup d'aides des Activités Sociales sont attribuées <strong>sous conditions de ressources et selon le coefficient social</strong> : les fourchettes indiquées sont des plafonds, pas des montants automatiques. Les barèmes sont réévalués chaque année, en général au 1<sup>er</sup> janvier. Seuls votre employeur, la CAMIEG, la CNIEG et votre CMCAS font foi.</p>
       </details>
       <details>
-        <summary>Où retrouver les textes officiels ?</summary>
-        <p>Les références réglementaires (statut national, PERS., DP, notes, accords de branche, Code du travail) sont consultables sur sgeieg.fr, legifrance.gouv.fr, ccas.fr et camieg.fr. En cas de doute sur l'application d'un texte, contactez vos délégués FO GRDF Fonctions Centrales.</p>
+        <summary>Où trouver les textes officiels ?</summary>
+        <p>Sur <a href="https://www.legifrance.gouv.fr" target="_blank" rel="noopener">legifrance.gouv.fr</a> pour l'accord de branche du 15 décembre 2017 relatif à l'évolution des droits familiaux, ses avenants et l'accord du 31 juillet 2024 sur les autorisations d'absence de rentrée scolaire ; sur <a href="https://www.cnieg.fr" target="_blank" rel="noopener">cnieg.fr</a> pour l'aide aux frais d'études ; sur <a href="https://www.camieg.fr" target="_blank" rel="noopener">camieg.fr</a> pour la prime layette et l'allocation décès ; sur <a href="https://www.ccas.fr" target="_blank" rel="noopener">ccas.fr</a> et le site de votre CMCAS pour les Activités Sociales. Le statut national et les circulaires PERS. sont consultables sur <a href="https://sgeieg.fr" target="_blank" rel="noopener">sgeieg.fr</a>.</p>
       </details>
     </div>
 
   </main>
 
-  <!-- ═══ CARTE CONTACT ═══ -->
   <aside class="fo-contact-card" aria-label="Contact FO GRDF Fonctions Centrales">
-    <div class="fo-logo-wrap">
-      <img src="https://www.destination-prevention.fr/wp-content/uploads/2026/03/Sans-titre-2026-03-24T120947.656.png" alt="Logo FO GRDF Fonctions Centrales">
-    </div>
+    <div class="fo-logo-wrap"><img src="img/logo_fo.png" alt="Logo FO GRDF Fonctions Centrales"></div>
     <div class="fo-msg">
-      <div class="fo-msg-title">Un doute sur un droit familial ? Contactez FO GRDF Fonctions Centrales</div>
-      <div class="fo-msg-body">Vos délégués vous accompagnent sur l'application du statut, des accords de branche et des aides des Activités Sociales propres aux IEG.</div>
+      <div class="fo-msg-title">Un doute, un refus, un droit qu'on vous conteste ?</div>
+      <div class="fo-msg-body">Vos délégués FO GRDF Fonctions Centrales vous accompagnent sur l'application du statut, des accords de branche et des aides des Activités Sociales. Écrivez-nous, on regarde votre situation.</div>
     </div>
     <a class="fo-cta-btn" href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Nous écrire
-    </a>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Nous écrire</a>
   </aside>
 
   <footer class="footer" role="contentinfo">
-    <div>Communication syndicale — <strong>FO GRDF Fonctions Centrales</strong> · Document non opposable · Estimation pédagogique 2026</div>
-    <div class="addr">Vos délégués FO GRDF Fonctions Centrales · <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr">Nous écrire</a></div>
+    <div>Communication syndicale — <strong>FO GRDF Fonctions Centrales</strong> · Document non opposable · Repère pédagogique 2026</div>
+    <div class="addr">Vos délégués FO GRDF Fonctions Centrales · <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr">Nous écrire</a> · Instagram <a href="https://www.instagram.com/fo_grdf/" target="_blank" rel="noopener">@fo_grdf</a></div>
+    <p class="sources">Sources : accord de branche IEG du 15 décembre 2017 relatif à l'évolution des droits familiaux et ses avenants ; accord de branche du 31 juillet 2024 (autorisations d'absence à l'occasion de la rentrée scolaire) ; articles 19, 20, 22 et 26 du Statut national du personnel des IEG ; circulaires PERS. et notes DP ; articles L.1225-16 et suivants et L.3142-16 et suivants du Code du travail ; loi de financement de la Sécurité sociale pour 2026 ; barèmes CNIEG, CAMIEG et CCAS/CMCAS 2026.</p>
   </footer>
 
 </div>
 
 <script>
-  /* ═══ Mode lecture universelle ═══ */
-  function toggleA11y() {
-    const btn = document.getElementById('a11yToggle');
-    const isOn = document.body.classList.toggle('a11y-mode');
-    btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
-    try { localStorage.setItem('fogrdf-a11y', isOn ? '1' : '0'); } catch(e) {}
-  }
-  try {
-    if (localStorage.getItem('fogrdf-a11y') === '1') {
-      document.body.classList.add('a11y-mode');
-      const b = document.getElementById('a11yToggle');
-      if (b) b.setAttribute('aria-pressed', 'true');
-    }
-  } catch(e) {}
+/* ═══ Mode lecture universelle ═══ */
+function toggleA11y(){
+  const b=document.getElementById('a11yToggle');
+  const on=document.body.classList.toggle('a11y-mode');
+  b.setAttribute('aria-pressed',on?'true':'false');
+  try{localStorage.setItem('fogrdf-a11y',on?'1':'0')}catch(e){}
+}
+try{ if(localStorage.getItem('fogrdf-a11y')==='1'){document.body.classList.add('a11y-mode');
+  const b=document.getElementById('a11yToggle'); if(b)b.setAttribute('aria-pressed','true');} }catch(e){}
 
-  /* ═══════════ DONNÉES DROITS FAMILIAUX (IEG 2026) ═══════════ */
-  const S = { statut: null, enfants: null, ages: new Set(), flags: new Set() };
-  const has = (set, v) => set.has(v);
-  const enCouple = s => s.statut === 'union' || s.statut === 'concubinage';
-  const aEnfants = s => (s.enfants||0) > 0;
-  const naissanceContext = s => has(s.flags,'grossesse');
+const esc=t=>(t==null?'':String(t)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
-  const DROITS = [
-    /* ───────── INDEMNITÉS & AIDES ───────── */
-    { type:'ind', tag:'Statut national', title:"Indemnité statutaire d'union",
-      amount:"1 mois de salaire", ref:"Art. 26 du Statut national — plancher NR 160 / plafond NR 300",
-      desc:"Versée une seule fois dans la carrière à l'occasion d'un mariage ou d'un PACS. Cumulable dans un couple IEG.",
-      show:s => s.statut === 'union' },
+/* ═══════════ RÉFÉRENTIEL DES DROITS FAMILIAUX IEG — 2026 ═══════════ */
+/* cat : cong (congés/absences) · ind (indemnités statutaires & branche) · as (Activités Sociales) · camieg
+   age : [min,max] âge de l'enfant pour la frise (null = non lié à l'âge d'un enfant)          */
+const D = [
+/* ─── CONGÉS & ABSENCES ─── */
+{id:'rs', cat:'cong', gta:'RS', age:[0,13], frise:'Rentrée scolaire (2 h)',
+ title:"Autorisation d'absence — rentrée scolaire", amount:"jusqu'à 2 h payées",
+ desc:"Pour accompagner votre enfant le jour de la rentrée. Ouverte à chacun des deux parents lorsqu'ils sont tous les deux salariés des IEG. Sans limite d'âge pour un enfant en situation de handicap, jusqu'à la fin de sa scolarité.",
+ doit:"Demande préalable au manager. Justificatif seulement si la date de rentrée diffère de celle de l'Éducation nationale. Si 2 h ne suffisent pas, complétez avec du RTT, un congé ou du congé parent.",
+ ref:"Accord de branche IEG du 31 juillet 2024", tags:['Accord de branche'],
+ show:s=> s.enfants.some(a=>a<=13) || (s.f.handicap && s.enfants.length>0)},
 
-    { type:'ind', tag:'Statut national', title:"Indemnité statutaire de naissance ou d'adoption",
-      amount:"1 à 1,5 mois de salaire", ref:"Art. 26 du Statut national — plancher NR 160 / plafond NR 300",
-      desc:"1,5 mois de salaire pour le 1er enfant, 1 mois à partir du 2e. Attribuée à un seul des deux parents pour un couple IEG.",
-      show:s => naissanceContext(s) },
+{id:'malade', cat:'cong', gta:'2R / 2N', age:[0,16], frise:'Enfant malade',
+ title:"Congé enfant malade", amount:"6 à 10 demi-journées / an",
+ desc:"Pour un enfant de moins de 16 ans malade ou accidenté, sur certificat médical. 6 demi-journées par an, portées à 10 si l'enfant a moins d'un an ou si vous avez au moins trois enfants de moins de 16 ans. Parmi elles, 4 demi-journées sont rémunérées par l'employeur jusqu'au 12ᵉ anniversaire du dernier enfant.",
+ doit:"Code 2R pour les demi-journées rémunérées, code 2N ensuite. Certificat médical à fournir. Droit ouvert aussi aux agents non statutaires, cumulable au sein d'un couple IEG, maintenu en garde alternée.",
+ ref:"Art. L.1225-61 du Code du travail · Accord de branche du 15 déc. 2017", tags:['Accord de branche','Père et mère'],
+ show:s=> s.enfants.some(a=>a<16)},
 
-    { type:'ind', tag:'CAMIEG', title:"Prime layette",
-      amount:"340 € / enfant", ref:"CAMIEG — montant réévalué chaque année en janvier",
-      desc:"Prime attribuée pour chaque enfant né ou adopté. Attribuée à un seul des deux parents pour un couple IEG.",
-      show:s => naissanceContext(s) },
+{id:'parent', cat:'cong', gta:'2C', age:[0,12], frise:'Congé parent (4 j)',
+ title:"Congé parent", amount:"4 jours rémunérés / an",
+ desc:"Quatre jours par an dévolus aux obligations familiales de garde ou aux obligations scolaires, jusqu'au dernier jour du mois du 12ᵉ anniversaire de votre dernier enfant. Six jours pour les familles monoparentales. Se prend par demi-journées cumulables, non fractionnables en heures.",
+ doit:"Choix annuel entre congé parent et CESU, à exprimer au plus tard deux mois avant l'échéance ; reconduction tacite. Droit de tirage plafonné, non reportable d'une année sur l'autre, proratisé la première et la dernière année.",
+ ref:"Accord de branche du 15 déc. 2017, chap. 1 art. 2.1", tags:['Accord de branche','Au choix : congé OU CESU'],
+ show:s=> s.enfants.some(a=>a<12)},
 
-    { type:'ind', tag:'Statut national', title:"Sursalaire familial",
-      amount:"dès 2,29 € (1 enfant)", ref:"Art. 26 du Statut · Circ. PERS. 320 · Accord du 15 déc. 2017",
-      desc:"Pour 2 enfants et plus : part fixe + part variable sur la rémunération principale (plancher/plafond). Non cumulable avec le forfait familial. Extinction au 1er janvier 2029.",
-      show:s => aEnfants(s) },
+{id:'parent_h', cat:'cong', gta:'—', age:[0,20], frise:'Congé parent-enfant handicapé',
+ title:"Congé parent-enfant handicapé", amount:"+ 8 jours rémunérés / an",
+ desc:"S'ajoute au congé parent OU au CESU — vous l'avez quel que soit votre choix. Ouvert jusqu'aux 20 ans de l'enfant, puis sans limite d'âge tant qu'il est à votre charge.",
+ doit:"Justificatif : perception de l'AEEH ou taux d'incapacité permanente d'au moins 50 %. En dessous de 50 %, le droit peut être examiné sur certificat médical attestant la nécessité de votre présence.",
+ ref:"Accord de branche du 15 déc. 2017, chap. 1 art. 2.3", tags:['Accord de branche','Handicap'],
+ show:s=> s.f.handicap},
 
-    { type:'ind', tag:'Statut national', title:"Forfait familial",
-      amount:"48,64 € / mois / enfant", ref:"Art. 26 du Statut · Accord du 15 déc. 2017 — au 1er janvier 2026",
-      desc:"Par enfant à charge jusqu'au 20e anniversaire, y compris en garde alternée. Non cumulable avec le sursalaire familial. Réévalué chaque année.",
-      show:s => aEnfants(s) },
+{id:'union_c', cat:'cong', gta:'—', age:null,
+ title:"Congés spéciaux familiaux — union", amount:"5 jours",
+ desc:"Pour votre mariage ou votre PACS — contre 4 jours dans le droit commun. Un jour pour le mariage ou le PACS d'un de vos enfants.",
+ doit:"Sur présentation de l'acte. À poser au moment de l'événement.",
+ ref:"Art. 19 du Statut national", tags:['Statut IEG','Mieux que le droit commun'],
+ show:s=> s.statut==='union'},
 
-    { type:'ind', tag:'Activités Sociales', title:"Aide familiale à la petite enfance",
-      amount:"189 € à 500 € / an / enfant", ref:"Activités Sociales — sous conditions de ressources",
-      desc:"Pour un enfant de 3 mois à 3 ans (7 ans si handicap). 189 €→450 € pour un couple, 210 €→500 € pour une famille monoparentale, selon le coefficient social.",
-      show:s => has(s.ages,'petite') || (naissanceContext(s)) },
+{id:'naiss_c', cat:'cong', gta:'—', age:null,
+ title:"Congés spéciaux familiaux — naissance / adoption", amount:"4 jours",
+ desc:"À la naissance de votre enfant ou à son arrivée en vue de son adoption — contre 3 jours dans le droit commun.",
+ doit:"Se cumule avec le congé de paternité et d'accueil de l'enfant.",
+ ref:"Art. 19 du Statut national", tags:['Statut IEG','Mieux que le droit commun'],
+ show:s=> s.f.grossesse},
 
-    { type:'ind', tag:'Accord de branche', title:"CESU de branche",
-      amount:"60 à 120 × SMIC horaire", ref:"Accord du 15 déc. 2017 — 80 % employeur / 20 % salarié",
-      desc:"Pour un enfant de moins de 12 ans : 100× le SMIC horaire (1 mois–3 ans), 60× (3–12 ans), +20× si famille monoparentale. Usage libre (garde, aide ménagère, soutien scolaire).",
-      show:s => has(s.ages,'petite') || has(s.ages,'enfance') },
+{id:'pat', cat:'cong', gta:'—', age:null,
+ title:"Congé de paternité et d'accueil de l'enfant", amount:"25 jours (32 si multiples)",
+ desc:"Ouvert à tout salarié qui accueille un enfant, à prendre dans les 6 mois suivant la naissance. Le salaire est maintenu dans les IEG.",
+ doit:"Prévenir l'employeur au moins un mois avant la date de prise. Fractionnable selon les règles légales.",
+ ref:"Art. L.1225-35 et s. du Code du travail · Art. 22 du Statut", tags:['Réglementaire','Salaire maintenu'],
+ show:s=> s.f.grossesse},
 
-    { type:'ind', tag:'Accord de branche', title:"Aide aux frais d'études (AFE)",
-      amount:"113,63 € / mois", ref:"Accord de branche IEG du 7 mars 2011 et avenants — au 1er janv. 2026",
-      desc:"Versée mensuellement pour un enfant à charge poursuivant des études, jusqu'à ses 25 ans, pendant 5 ans maximum (84 versements au plus). Condition : 1 an d'ancienneté continue dans la branche ; non cumulable avec l'AFE du conjoint. Imposable et soumise aux cotisations, CSG/CRDS, mais cumulable avec les prestations familiales. Boursiers (bourse d'État sur critères sociaux) : aide forfaitaire de 1 262,57 € versée une seule fois par enfant.",
-      show:s => has(s.ages,'etudiant') },
+{id:'mat', cat:'cong', gta:'—', age:null,
+ title:"Congé de maternité", amount:"20 à 28 semaines",
+ desc:"20 semaines (8 avant + 12 après) pour le 1ᵉʳ et le 2ᵉ enfant, 28 semaines (8 + 20) à partir du 3ᵉ. Majoration en cas de naissances multiples. Durées supérieures à celles du droit commun.",
+ doit:"Salaire maintenu. Déclaration de grossesse à transmettre à l'employeur et à la CAMIEG.",
+ ref:"Code du travail · Art. 22 du Statut · Circ. PERS. 81-33 et 95-12", tags:['Réglementaire','Mieux que le droit commun'],
+ show:s=> s.f.grossesse},
 
-    { type:'ind', tag:'Activités Sociales', title:"Aide au soutien scolaire",
-      amount:"jusqu'à 1 000–2 000 € / an", ref:"Activités Sociales — sous conditions de ressources, selon coefficient social",
-      desc:"Pour les enfants de 6 à 26 ans scolarisés. Soutien à domicile ou en ligne, plafond selon le dispositif et par enfant.",
-      show:s => has(s.ages,'enfance') || has(s.ages,'ado') || has(s.ages,'etudiant') },
+{id:'csn', cat:'cong', gta:'—', age:null,
+ title:"Congé supplémentaire de naissance", amount:"1 ou 2 mois indemnisés",
+ desc:"Nouveau droit applicable depuis le 1ᵉʳ juillet 2026, en complément des congés existants : une période indemnisée d'un ou deux mois, prise simultanément ou en alternance avec l'autre parent.",
+ doit:"Fractionnable en deux périodes d'un mois. Renseignez-vous auprès de votre gestionnaire RH sur les modalités mises en place dans l'entreprise.",
+ ref:"Loi de financement de la Sécurité sociale pour 2026", tags:['Nouveau 2026','Réglementaire'],
+ show:s=> s.f.grossesse || s.enfants.some(a=>a<1)},
 
-    { type:'ind', tag:'Activités Sociales', title:"Aide à l'autonomie des jeunes",
-      amount:"24,20 € à 217,80 € / mois", ref:"Activités Sociales — sous conditions de ressources",
-      desc:"Pour les enfants de 20 à 26 ans (18 ans si enfant unique) étudiants, en alternance ou en recherche d'emploi. Cumulable avec l'AFE et l'allocation logement.",
-      show:s => has(s.ages,'etudiant') },
+{id:'enceinte', cat:'cong', gta:'—', age:null,
+ title:"Autorisation d'absence — femme enceinte", amount:"1 h par jour",
+ desc:"À partir du 3ᵉ mois de grossesse. Ces heures peuvent être groupées pour permettre une absence par demi-journée ou par journée complète.",
+ doit:"Sur présentation du certificat de grossesse. À organiser avec le manager.",
+ ref:"Circulaire n° 79-13 (étendue)", tags:['Réglementaire'],
+ show:s=> s.f.grossesse},
 
-    { type:'ind', tag:'Activités Sociales', title:"Contribution à la vie étudiante et de campus",
-      amount:"73,50 € à 105 € / an", ref:"Activités Sociales 2025/2026 — sous conditions de ressources",
-      desc:"Participation à la cotisation obligatoire de vie étudiante pour un enfant de moins de 26 ans en études post-bac. Cumulable avec l'AFE.",
-      show:s => has(s.ages,'etudiant') },
+{id:'allait', cat:'cong', gta:'—', age:[0,1], frise:"Heure d'allaitement",
+ title:"Heure d'allaitement", amount:"1 h / jour pendant 1 an",
+ desc:"Pendant un an à compter de la naissance, la salariée qui allaite dispose d'une heure de pause par jour. Cette absence est rémunérée dans les IEG.",
+ doit:"À organiser avec le manager. Peut être fractionnée en deux fois trente minutes.",
+ ref:"Art. L.1225-30 du Code du travail", tags:['Réglementaire','Rémunéré aux IEG'],
+ show:s=> s.enfants.some(a=>a<1) || s.f.grossesse},
 
-    { type:'ind', tag:'Accord de branche', title:"Plateforme d'aide aux aidants",
-      amount:"Service dédié", ref:"Accord du 15 déc. 2017 · Avenant prévoyance",
-      desc:"Conseil, orientation, écoute psychologique et participation aux frais d'hébergement en cas de congé de proche aidant, de présence parentale ou de solidarité familiale.",
-      show:s => has(s.flags,'aidant') },
+{id:'exam', cat:'cong', gta:'—', age:null,
+ title:"Congé pour examens médicaux", amount:"temps nécessaire",
+ desc:"Pour les examens prénataux et postnataux obligatoires, ou en cas d'assistance médicale à la procréation. La personne avec qui vous vivez bénéficie aussi d'une autorisation d'absence pour trois de ces examens.",
+ doit:"Sur justificatif de convocation ou de rendez-vous.",
+ ref:"Art. L.1225-16 du Code du travail", tags:['Réglementaire'],
+ show:s=> s.f.grossesse},
 
-    { type:'ind', tag:'Activités Sociales', title:"Aide aux bénéficiaires aidants bénévoles",
-      amount:"jusqu'à 2 000 €", ref:"Activités Sociales (CMCAS) — sous conditions de ressources",
-      desc:"Pour les aidants familiaux bénéficiaires de l'action sanitaire et sociale du régime des IEG, selon le coefficient social.",
-      show:s => has(s.flags,'aidant') },
+{id:'ce', cat:'cong', gta:'—', age:null,
+ title:"Congé parental d'éducation", amount:"jusqu'aux 3 ans de l'enfant",
+ desc:"Ou activité à temps partiel de droit pour élever un enfant. Trois ans en cas d'adoption d'un enfant de moins de 3 ans, un an pour l'adoption d'un enfant de 3 à 16 ans.",
+ doit:"Demande à l'employeur au moins un mois avant la fin du congé de maternité, ou deux mois avant le début si demandé plus tard. Validation gratuite pour la retraite dans la limite de 12 trimestres par enfant.",
+ ref:"Art. L.1225-47 et s. du Code du travail · Circ. PERS. 890", tags:['Réglementaire'],
+ show:s=> s.enfants.some(a=>a<3) || s.f.grossesse},
 
-    /* ───────── CONGÉS & ABSENCES ───────── */
-    { type:'cong', tag:'Statut IEG', title:"Congés spéciaux familiaux — Union",
-      amount:"5 jours", ref:"Art. 19 du Statut national",
-      desc:"Pour un mariage ou un PACS (contre 4 jours dans le droit commun). 1 jour pour le mariage/PACS d'un enfant.",
-      show:s => s.statut === 'union' },
+{id:'css8', cat:'cong', gta:'—', age:[0,8], frise:"Congé sans solde -8 ans",
+ title:"Congé sans solde pour élever un enfant de moins de 8 ans", amount:"3 ans renouvelables",
+ desc:"Durée initiale de 3 ans maximum, renouvelable jusqu'au 8ᵉ anniversaire de l'enfant né, adopté ou recueilli.",
+ doit:"Validation gratuite de la période pour la retraite dans la limite de 12 trimestres par enfant (24 pour des jumeaux, 32 pour trois enfants et plus).",
+ ref:"Art. 20 du Statut national · Art. 5 de l'annexe III", tags:['Statut IEG','Sans solde'],
+ show:s=> s.enfants.some(a=>a<8)},
 
-    { type:'cong', tag:'Statut IEG', title:"Congés spéciaux familiaux — Naissance / adoption",
-      amount:"4 jours", ref:"Art. 19 du Statut national",
-      desc:"À l'arrivée d'un enfant en vue de son adoption ou à la naissance (3 jours dans le droit commun).",
-      show:s => naissanceContext(s) },
+{id:'cssh', cat:'cong', gta:'—', age:null,
+ title:"Congé sans solde — accueil d'un enfant handicapé", amount:"3 mois maximum",
+ desc:"Pour recueillir ou avoir recueilli un enfant handicapé de 8 à 20 ans dont le taux d'incapacité est d'au moins 80 %.",
+ doit:"Si le congé est pris à plein temps, l'employeur prend en charge les cotisations salariales et patronales de retraite.",
+ ref:"Art. 20 du Statut national", tags:['Statut IEG','Handicap'],
+ show:s=> s.f.handicap},
 
-    { type:'cong', tag:'Réglementaire', title:"Congé de maternité",
-      amount:"20 à 28 semaines", ref:"Code du travail · Art. 22 du Statut — maintien du salaire",
-      desc:"20 semaines (8+12) pour le 1er et le 2e enfant, 28 semaines (8+20) à partir du 3e. Majoration en cas de naissances multiples.",
-      show:s => naissanceContext(s) },
+{id:'presence', cat:'cong', gta:'—', age:[0,20], frise:'Présence parentale',
+ title:"Congé de présence parentale", amount:"310 jours sur 3 ans",
+ desc:"Pour un enfant victime d'une maladie, d'un accident ou d'un grave handicap rendant indispensable une présence soutenue. Fractionnable sur une période de trois ans.",
+ doit:"Maintien de 100 % du salaire net après déduction de l'AJPP. Validation gratuite pour la retraite jusqu'à 12 trimestres par enfant. Certificat médical détaillé exigé.",
+ ref:"Code du travail · Note DP 04-81 · Art. 5 de l'annexe III du Statut", tags:['En évolution','Handicap'],
+ show:s=> s.f.handicap},
 
-    { type:'cong', tag:'Réglementaire', title:"Congé de paternité et d'accueil de l'enfant",
-      amount:"25 jours (32 si multiples)", ref:"Art. L.1225-35 et s. du Code du travail — maintien du salaire",
-      desc:"À prendre dans les 6 mois suivant la naissance. Ouvert à tout salarié qui accueille un enfant.",
-      show:s => naissanceContext(s) },
+{id:'aidant', cat:'cong', gta:'—', age:null,
+ title:"Congé de proche aidant", amount:"3 mois renouvelables (1 an max)",
+ desc:"Pour assister un proche présentant un handicap ou une perte d'autonomie d'une particulière gravité. Renouvelable dans la limite d'une année sur l'ensemble de la carrière.",
+ doit:"À temps partiel ou fractionné : 100 % de la rémunération principale après déduction de l'AJPA. À temps plein : environ 80 %.",
+ ref:"Art. L.3142-16 et s. du Code du travail · Accord du 15 déc. 2017", tags:['En évolution','Aidant'],
+ show:s=> s.f.aidant},
 
-    { type:'cong', tag:'Réglementaire', title:"Heure d'allaitement",
-      amount:"1 h / jour pendant 1 an", ref:"Art. L.1225-30 du Code du travail",
-      desc:"Une heure de pause par jour pendant un an à compter de la naissance pour la salariée qui allaite. Absence rémunérée dans les IEG.",
-      show:s => naissanceContext(s) },
+{id:'solid', cat:'cong', gta:'—', age:null,
+ title:"Congé de solidarité familiale", amount:"6 mois (3 mois × 2)",
+ desc:"Pour assister un proche souffrant d'une pathologie engageant le pronostic vital ou en phase avancée d'une affection grave et incurable.",
+ doit:"Maintien de 100 % du salaire net après déduction de l'AJAP. Avec l'accord de l'employeur, transformable en temps partiel ou fractionné, sans dépasser 6 mois.",
+ ref:"Art. L.3142-16 et s. du Code du travail · Accord du 15 déc. 2017", tags:['En évolution','Aidant'],
+ show:s=> s.f.aidant},
 
-    { type:'cong', tag:'Réglementaire', title:"Congé pour examens médicaux",
-      amount:"Temps nécessaire", ref:"Art. L.1225-16 du Code du travail",
-      desc:"Pour les examens prénataux/postnataux ou en cas d'AMP. La personne avec qui vous vivez bénéficie aussi d'une absence pour 3 de ces examens.",
-      show:s => naissanceContext(s) },
+{id:'don', cat:'cong', gta:'—', age:[0,20], frise:'Don de jours',
+ title:"Don de jours de repos", amount:"don anonyme et sans contrepartie",
+ desc:"Un collègue peut vous donner des jours de repos si vous avez un enfant de moins de 20 ans atteint d'une maladie, d'un handicap ou victime d'un accident nécessitant une présence soutenue.",
+ doit:"Avec l'accord de l'employeur. Tous types de jours : RTT, récupération, congés annuels — pour les congés annuels, seuls les jours au-delà du 24ᵉ peuvent être donnés.",
+ ref:"Loi 2014-459 · Art. L.1225-65-1 et s. · accord d'entreprise", tags:['Solidarité'],
+ show:s=> s.f.handicap},
 
-    { type:'cong', tag:'Réglementaire', title:"Autorisation d'absence femme enceinte",
-      amount:"1 h / jour", ref:"Circulaire n° 79-13 (étendue)",
-      desc:"À partir du 3e mois de grossesse. Ces heures peuvent être groupées en demi-journées ou journées complètes.",
-      show:s => naissanceContext(s) },
+{id:'deces', cat:'cong', gta:'—', age:null,
+ title:"Congés spéciaux familiaux — décès", amount:"jusqu'à 14 j (+8 j de deuil)",
+ desc:"Conjoint, partenaire de PACS ou concubin : 6 jours. Enfant : 12 jours ouvrables, portés à 14 jours ouvrables + 8 jours de congé de deuil si l'enfant avait moins de 25 ans, quel que soit son âge s'il était lui-même parent. Mère ou père : 4 jours. Grands-parents ou petits-enfants : 2 jours. Frère, sœur, beaux-parents : 3 jours.",
+ doit:"Sur présentation de l'acte de décès. Durées supérieures à celles du droit commun.",
+ ref:"Art. 19 du Statut national", tags:['Statut IEG','Mieux que le droit commun'],
+ show:s=> true},
 
-    { type:'cong', tag:'Réglementaire', title:"Congé supplémentaire de naissance (nouveau)",
-      amount:"1 ou 2 mois indemnisés", ref:"Loi de financement de la Sécurité sociale pour 2026 — dès le 1er juillet 2026",
-      desc:"En complément des congés existants : période indemnisée d'un ou deux mois, prise simultanément ou en alternance avec l'autre parent, fractionnable en deux périodes d'un mois.",
-      show:s => naissanceContext(s) },
+{id:'cet', cat:'cong', gta:'—', age:null,
+ title:"Congé Épargne Temps (CET)", amount:"de 2 mois à 2 ans",
+ desc:"Si vous avez ouvert un CET, vous pouvez mobiliser vos jours épargnés. Certains accords d'entreprise prévoient des dispositions spécifiques en lien avec les événements familiaux.",
+ doit:"Consultez l'accord CET de votre entreprise : les conditions de monétisation et de prise varient.",
+ ref:"Accord CET d'entreprise", tags:['Accord d\'entreprise'],
+ show:s=> true},
 
-    { type:'cong', tag:'Réglementaire', title:"Congé parental d'éducation",
-      amount:"jusqu'aux 3 ans de l'enfant", ref:"Art. L.1225-47 et s. du Code du travail · Circ. PERS. 890",
-      desc:"Ou activité à temps partiel de droit pour élever un enfant. Validation gratuite pour la retraite, dans la limite de 12 trimestres par enfant.",
-      show:s => has(s.ages,'petite') || naissanceContext(s) },
+/* ─── INDEMNITÉS & AIDES DE BRANCHE ─── */
+{id:'forfait', cat:'ind', gta:'—', age:[0,20], frise:'Forfait familial',
+ title:"Forfait familial", amount:"48,64 € / mois / enfant",
+ desc:"Versé chaque mois pour chaque enfant à charge, jusqu'à son 20ᵉ anniversaire. Accordé aussi en garde alternée, y compris en cas de versement d'une pension alimentaire. Montant au 1ᵉʳ janvier 2026, réévalué chaque année.",
+ doit:"Non cumulable avec le sursalaire familial. Dans un couple IEG, un seul bénéficiaire désigné d'un commun accord. Cumulable sous conditions avec le supplément familial de traitement de la fonction publique.",
+ ref:"Art. 26 du Statut national · Accord du 15 déc. 2017", tags:['Statut IEG','Ouvert aux pensionnés'],
+ show:s=> s.enfants.some(a=>a<20)},
 
-    { type:'cong', tag:'Accord de branche', title:"Congé enfant malade",
-      amount:"6 à 10 demi-journées / an", ref:"Accord du 15 déc. 2017 · Art. L.1225-61",
-      desc:"Pour un enfant malade de moins de 16 ans, dont 4 demi-journées rémunérées jusqu'au 12e anniversaire du dernier enfant. Sur justificatif médical.",
-      show:s => has(s.ages,'petite') || has(s.ages,'enfance') || has(s.ages,'ado') },
+{id:'sursalaire', cat:'ind', gta:'—', age:[0,20], frise:'Sursalaire (extinction 2028)',
+ title:"Sursalaire familial", amount:"dès 2,29 € (1 enfant)",
+ desc:"Ancien dispositif, maintenu uniquement pour les salariés qui en bénéficiaient déjà. Pour 2 enfants et plus : part fixe et part variable calculées sur la rémunération principale, avec plancher et plafond.",
+ doit:"Non cumulable avec le forfait familial ni avec le supplément familial de traitement. Extinction définitive au 31 décembre 2028 — faites le calcul avec vos délégués avant toute bascule, elle est définitive.",
+ ref:"Art. 26 du Statut national · Circ. PERS. 320 · Accord du 15 déc. 2017", tags:['En extinction 2028','Statut IEG'],
+ show:s=> s.enfants.length>0},
 
-    { type:'cong', tag:'Accord de branche', title:"Congé parent",
-      amount:"8 demi-journées / an", ref:"Accord du 15 déc. 2017",
-      desc:"Pour un enfant de moins de 12 ans. +8 jours/an pour les parents d'enfant handicapé, +2 jours/an pour les familles monoparentales. Non cumulable avec le CESU de branche.",
-      show:s => has(s.ages,'petite') || has(s.ages,'enfance') },
+{id:'afe', cat:'ind', gta:'—', age:[16,26], frise:"Aide aux frais d'études",
+ title:"Aide aux frais d'études (AFE)", amount:"113,63 € / mois",
+ desc:"Versée mensuellement pour un enfant à charge qui poursuit des études, pendant 5 années maximum, jusqu'à la fin de l'année scolaire de ses 26 ans. Avant 20 ans, il faut des études post-bac ; après 20 ans, toutes les formations inscrites au RNCP, apprentissage et classes préparatoires compris.",
+ doit:"Un an d'ancienneté continue dans la branche. Demande à renouveler chaque année scolaire avec le certificat de scolarité. Non cumulable avec l'AFE du conjoint. En cas de handicap : 7 années, jusqu'à 28 ans, dans la limite de 84 versements.",
+ ref:"Accord de branche IEG du 7 mars 2011 et avenants — barème CNIEG au 1ᵉʳ janv. 2026", tags:['Accord de branche','Études'],
+ show:s=> s.f.etudes || s.enfants.some(a=>a>=16 && a<=26)},
 
-    { type:'cong', tag:'Accord de branche', title:"Autorisation d'absence — rentrée scolaire",
-      amount:"jusqu'à 2 heures rémunérées / an", ref:"Accord de branche IEG du 12 juillet 2024 (se substitue à la note DP 31.133)",
-      desc:"Enfant jusqu'à 13 ans dans l'année civile de la rentrée — sans limite d'âge si handicap (justificatif AEEH ou MDPH), jusqu'au terme de la scolarité. Droit ouvert à CHACUN des deux parents salariés IEG. Sur demande, sous réserve des nécessités de service et après validation managériale. Absence collectée via un code spécifique « rentrée scolaire », cumulable avec une autre demande d'absence ; possibilité aussi de poser un congé (parental, annuel, RTT).",
-      show:s => has(s.ages,'petite') || has(s.ages,'enfance') || has(s.ages,'ado') },
+{id:'afe_b', cat:'ind', gta:'—', age:[16,26],
+ title:"AFE — aide forfaitaire boursiers", amount:"1 262,57 € une seule fois",
+ desc:"Aide forfaitaire versée une seule fois par enfant au cours de sa scolarité, pour les enfants titulaires d'une bourse d'État sur critères sociaux.",
+ doit:"Fournir la notification de bourse. S'ajoute à l'AFE mensuelle.",
+ ref:"Accord de branche IEG du 7 mars 2011 et avenants — barème 2026", tags:['Accord de branche','Boursiers'],
+ show:s=> s.f.boursier},
 
-    { type:'cong', tag:'Statut IEG', title:"Congé sans solde pour élever un enfant de -8 ans",
-      amount:"jusqu'à 3 ans renouvelables", ref:"Art. 20 du Statut · Annexe III",
-      desc:"Durée initiale de 3 ans maximum, renouvelable jusqu'au 8e anniversaire de l'enfant né, adopté ou recueilli.",
-      show:s => has(s.ages,'petite') || has(s.ages,'enfance') },
+{id:'cesu', cat:'ind', gta:'—', age:[0,12], frise:'CESU de branche',
+ title:"CESU de branche", amount:"60 à 120 × le taux horaire de référence",
+ desc:"Dotation annuelle de chèques emploi service universels préfinancés : 100 fois le taux horaire de référence de la naissance aux 3 ans de l'enfant, 60 fois de 3 à 12 ans, avec 20 fois de plus pour les familles monoparentales. Usage libre : garde d'enfant, aide aux devoirs, cours à domicile, ménage, jardinage, petits travaux.",
+ doit:"Cofinancé à 80 % par l'employeur et 20 % par vous. Choix annuel exclusif avec le congé parent, à exprimer avant le 31 octobre. Commande sur cesuieg.domiserve.com. Droits non reportables d'une année sur l'autre.",
+ ref:"Accord de branche du 15 déc. 2017, chap. 1 art. 2.1", tags:['Accord de branche','Au choix : congé OU CESU'],
+ show:s=> s.enfants.some(a=>a<12)},
 
-    { type:'cong', tag:'Droit commun', title:"Don de jours de repos",
-      amount:"Don anonyme", ref:"Loi 2014-459 · Art. L.1225-65-1 et s. · accord d'entreprise",
-      desc:"Pour un enfant de moins de 20 ans à charge atteint d'une maladie, d'un handicap ou victime d'un accident nécessitant une présence soutenue.",
-      show:s => has(s.flags,'handicap') },
+{id:'ind_union', cat:'ind', gta:'—', age:null,
+ title:"Indemnité statutaire d'union", amount:"1 mois de salaire",
+ desc:"Versée à l'occasion d'un mariage ou d'un PACS, une seule fois durant toute la carrière. Plancher NR 160, plafond NR 300.",
+ doit:"Cumulable dans un couple IEG — chacun la perçoit. Ouverte aussi aux pensionnés.",
+ ref:"Art. 26 du Statut national", tags:['Statut IEG','Une fois par carrière'],
+ show:s=> s.statut==='union'},
 
-    { type:'cong', tag:'Statut IEG', title:"Congé sans solde — accueil d'un enfant handicapé",
-      amount:"3 mois maximum", ref:"Art. 20 du Statut national",
-      desc:"Pour recueillir un enfant handicapé de 8 à 20 ans dont le taux d'incapacité est d'au moins 80 %. Prise en charge des cotisations retraite si à plein temps.",
-      show:s => has(s.flags,'handicap') },
+{id:'ind_naiss', cat:'ind', gta:'—', age:null,
+ title:"Indemnité statutaire de naissance ou d'adoption", amount:"1 à 1,5 mois de salaire",
+ desc:"1,5 mois de salaire pour le 1ᵉʳ enfant, 1 mois à partir du 2ᵉ. Plancher NR 160, plafond NR 300.",
+ doit:"Attribuée à un seul des deux parents dans un couple IEG. Ouverte aux pensionnés. À demander auprès de votre gestionnaire RH.",
+ ref:"Art. 26 du Statut national", tags:['Statut IEG'],
+ show:s=> s.f.grossesse},
 
-    { type:'cong', tag:'En évolution', title:"Congé de présence parentale",
-      amount:"310 jours sur 3 ans", ref:"Code du travail · Annexe III du Statut — maintien de 100 % du net après AJPP",
-      desc:"Pour un enfant victime d'une maladie, d'un accident ou d'un grave handicap. Validation gratuite retraite jusqu'à 12 trimestres par enfant.",
-      show:s => has(s.flags,'handicap') },
+/* ─── ACTIVITÉS SOCIALES ─── */
+{id:'afpe', cat:'as', gta:'—', age:[0,3], frise:'Petite enfance (AFPE)',
+ title:"Aide familiale à la petite enfance (AFPE)", amount:"189 € à 500 € / an / enfant",
+ desc:"Pour un enfant de 3 mois à 3 ans — jusqu'à 7 ans en cas de handicap. De 189 à 450 € pour un couple, de 210 à 500 € pour une famille monoparentale, selon le coefficient social.",
+ doit:"Sous conditions de ressources, dans la limite des frais engagés et après déduction du complément de libre choix du mode de garde de la CAF. Dossier auprès de votre CMCAS.",
+ ref:"Activités Sociales — barème 2026", tags:['Activités Sociales','Conditions de ressources'],
+ show:s=> s.enfants.some(a=>a<=3) || s.f.grossesse},
 
-    { type:'cong', tag:'En évolution', title:"Congé de proche aidant",
-      amount:"3 mois renouvelables (1 an max)", ref:"Art. L.3142-16 et s. · Accord du 15 déc. 2017",
-      desc:"Pour assister un proche en situation de handicap ou de perte d'autonomie d'une particulière gravité. Maintien partiel de rémunération après AJPA.",
-      show:s => has(s.flags,'aidant') },
+{id:'soutien', cat:'as', gta:'—', age:[6,26], frise:'Soutien scolaire',
+ title:"Aide au soutien scolaire", amount:"jusqu'à 1 000 € ou 2 000 € / an",
+ desc:"Pour les enfants de 6 à 26 ans scolarisés, ainsi que pour les ouvrants droit et ayants droit conjoints scolarisés, sans limite d'âge (pensionnés compris). Plafond de 1 000 € pour les cours individuels, 2 000 € pour les autres dispositifs, par enfant.",
+ doit:"Deux options : soutien à domicile ou soutien en ligne. Prise en charge de 30 à 100 % selon le coefficient social. Période de référence : 1ᵉʳ septembre au 31 août.",
+ ref:"Activités Sociales — barème 2026", tags:['Activités Sociales','Conditions de ressources'],
+ show:s=> s.enfants.some(a=>a>=6)},
 
-    { type:'cong', tag:'En évolution', title:"Congé de solidarité familiale",
-      amount:"6 mois (3 mois × 2)", ref:"Art. L.3142-16 et s. · Accord du 15 déc. 2017 — maintien de 100 % du net après AJAP",
-      desc:"Pour assister un proche en phase avancée ou terminale d'une affection grave et incurable. Transformable en temps partiel ou fractionné.",
-      show:s => has(s.flags,'aidant') },
+{id:'aaj', cat:'as', gta:'—', age:[18,26], frise:'Autonomie des jeunes',
+ title:"Aide à l'autonomie des jeunes (AAJ)", amount:"24,20 € à 217,80 € / mois",
+ desc:"Pour les enfants de 20 à 26 ans — dès 18 ans s'il s'agit d'un enfant unique — étudiants post-bac, en alternance, ou en recherche d'emploi avant 25 ans. Allocation mensuelle modulée selon le coefficient social.",
+ doit:"Cumulable avec l'allocation logement, la bourse d'enseignement supérieur et l'AFE. Dossier auprès de votre CMCAS.",
+ ref:"Activités Sociales — barème 2026", tags:['Activités Sociales','Cumulable avec l\'AFE'],
+ show:s=> s.enfants.some(a=>a>=18 && a<=26)},
 
-    { type:'cong', tag:'Statut IEG', title:"Congés spéciaux familiaux — Décès",
-      amount:"jusqu'à 14 j (+8 j deuil)", ref:"Art. 19 du Statut national",
-      desc:"Conjoint·e, partenaire de PACS ou concubin·e : 6 jours. Enfant : 12 jours ouvrables, ou 14 jours + 8 jours de deuil pour un enfant de moins de 25 ans. Mère/père : 4 jours.",
-      show:s => enCouple(s) || aEnfants(s) },
+{id:'cvec', cat:'as', gta:'—', age:[18,26], frise:'Aide CVEC',
+ title:"Contribution à la vie étudiante et de campus (CVEC)", amount:"73,50 € à 105 € / an",
+ desc:"Participation au paiement de la contribution obligatoire de vie étudiante, pour un enfant de moins de 26 ans en études post-bac. Modulée selon le coefficient social.",
+ doit:"Les étudiants titulaires d'une bourse d'État en sont exonérés et ne sont donc pas concernés. Cumulable avec l'allocation logement et l'AFE.",
+ ref:"Activités Sociales — barème 2025/2026", tags:['Activités Sociales','Non-boursiers'],
+ show:s=> s.f.etudes && s.enfants.some(a=>a>=18)},
 
-    { type:'cong', tag:'CAMIEG', title:"Allocation décès",
-      amount:"680 €", ref:"CAMIEG — au 1er juillet 2025, réévalué chaque année",
-      desc:"Participation aux frais d'obsèques lors du décès d'un membre de la famille (conjoint, partenaire de PACS, concubin, enfant de 26 ans au plus ou en situation de handicap). À demander dans les 2 ans et un trimestre.",
-      show:s => enCouple(s) || aEnfants(s) }
-  ];
+{id:'sport', cat:'as', gta:'—', age:[1,26], frise:'Sport & culture (CMCAS)',
+ title:"Aide aux activités sportives et culturelles", amount:"variable selon votre CMCAS",
+ desc:"Participation à la licence ou à l'inscription dans un club, une association, une école de musique, de danse ou de chant, une MJC, une médiathèque. Les montants observés vont d'environ 25 à 55 € par enfant, parfois majorés quand plusieurs enfants d'une même famille sont inscrits.",
+ doit:"Ce n'est pas un barème national : chaque CMCAS fixe ses montants, ses tranches d'âge et ses dates de dépôt. Le dossier se dépose auprès de votre SLVie, avec la facture acquittée. Appelez votre SLVie AVANT d'inscrire votre enfant.",
+ ref:"Décision propre à chaque CMCAS — se renseigner auprès de sa SLVie", tags:['Activités Sociales','Dépend de votre SLVie'],
+ show:s=> s.enfants.length>0},
 
-  /* ───────── Cartes récap statiques ───────── */
-  const ICON_IND = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>';
-  const ICON_CONG = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>';
-  function escapeHtml(t){return (t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-  function staticCard(d){
-    const cls = d.type==='cong' ? 'card cong' : 'card';
-    return '<article class="'+cls+'"><span class="card-icon" aria-hidden="true">'+(d.type==='ind'?ICON_IND:ICON_CONG)+'</span>'+
-      '<h3>'+escapeHtml(d.title)+'</h3>'+
-      '<div class="card-amount">'+escapeHtml(d.amount)+'</div>'+
-      '<p>'+escapeHtml(d.desc)+'</p>'+
-      '<div class="card-ref">'+escapeHtml(d.ref)+'</div></article>';
-  }
-  document.getElementById('cardsIndemnites').innerHTML = DROITS.filter(d=>d.type==='ind').map(staticCard).join('');
-  document.getElementById('cardsConges').innerHTML = DROITS.filter(d=>d.type==='cong').map(staticCard).join('');
+{id:'aidants_as', cat:'as', gta:'—', age:null,
+ title:"Aide aux bénéficiaires aidants bénévoles", amount:"jusqu'à 2 000 €",
+ desc:"Les CMCAS proposent une aide aux aidants familiaux bénéficiaires de l'action sanitaire et sociale du régime des IEG, plafonnée selon le coefficient social.",
+ doit:"Sous conditions de ressources. Dossier auprès de votre CMCAS.",
+ ref:"Activités Sociales (CMCAS)", tags:['Activités Sociales','Aidant'],
+ show:s=> s.f.aidant},
 
-  /* ───────── Gestion des sélecteurs ───────── */
-  function bindSingle(groupId, key){
-    document.querySelectorAll('#'+groupId+' .choice').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        document.querySelectorAll('#'+groupId+' .choice').forEach(b=>b.setAttribute('aria-pressed','false'));
-        btn.setAttribute('aria-pressed','true');
-        let v = btn.dataset.val;
-        S[key] = (key==='enfants') ? parseInt(v,10) : v;
-        if(key==='enfants'){
-          const blockAges = document.getElementById('block-ages');
-          if(S.enfants>0){ blockAges.hidden = false; }
-          else { blockAges.hidden = true; document.querySelectorAll('#grp-ages .toggle').forEach(b=>b.setAttribute('aria-pressed','false')); S.ages.clear(); }
-        }
-      });
-    });
-  }
-  function bindMulti(groupId, set){
-    document.querySelectorAll('#'+groupId+' .toggle').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const on = btn.getAttribute('aria-pressed')==='true';
-        btn.setAttribute('aria-pressed', on?'false':'true');
-        if(on) set.delete(btn.dataset.val); else set.add(btn.dataset.val);
-      });
-    });
-  }
-  bindSingle('grp-statut','statut');
-  bindSingle('grp-enfants','enfants');
-  bindMulti('grp-ages', S.ages);
-  bindMulti('grp-flags', S.flags);
+{id:'plateforme', cat:'as', gta:'—', age:null,
+ title:"Plateforme d'aide aux aidants", amount:"service dédié",
+ desc:"Conseil, orientation et écoute psychologique pour les salariés aidants familiaux, avec participation aux frais d'hébergement de l'aidant qui reste au chevet de la personne aidée en cas de congé de proche aidant, de présence parentale ou de solidarité familiale.",
+ doit:"France hexagonale : 09 86 86 00 56. La Réunion : 0262 90 20 20. Antilles-Guyane et Saint-Pierre-et-Miquelon : 0596 60 74 19.",
+ ref:"Accord du 15 déc. 2017 · avenant à l'accord prévoyance", tags:['Accord de branche','Aidant'],
+ show:s=> s.f.aidant},
 
-  /* ───────── Génération des résultats ───────── */
-  function resultCard(d, i){
-    const cls = d.type==='cong' ? 'result-card cong' : 'result-card';
-    const tagCls = d.tag==='Activités Sociales'||d.tag==='CAMIEG' ? 'rc-tag perso' : 'rc-tag';
-    return '<div class="'+cls+'" style="animation-delay:'+(i*60)+'ms">'+
-      '<div class="rc-top"><div class="rc-title">'+escapeHtml(d.title)+'</div>'+
-      '<div class="rc-amount">'+escapeHtml(d.amount)+'</div></div>'+
-      '<div class="rc-desc">'+escapeHtml(d.desc)+'</div>'+
-      '<div class="rc-ref">'+escapeHtml(d.ref)+'</div>'+
-      '<span class="'+tagCls+'">'+escapeHtml(d.tag)+'</span></div>';
-  }
-  function run(){
-    if(!S.statut || S.enfants===null){
-      alert("Renseignez au moins votre situation conjugale et le nombre d'enfants.");
-      return;
-    }
-    const elig = DROITS.filter(d=>{ try { return d.show(S); } catch(e){ return false; } });
-    const inds = elig.filter(d=>d.type==='ind');
-    const congs = elig.filter(d=>d.type==='cong');
+{id:'violences', cat:'as', gta:'—', age:null,
+ title:"Aide aux personnes victimes de violences intrafamiliales", amount:"jusqu'à 1 500 € / an",
+ desc:"Aide financière destinée à soutenir les bénéficiaires victimes de violences intrafamiliales, dans le cadre d'une action en justice. Ouverte aux ouvrants droit actifs ou inactifs, aux victimes et à leurs ayants droit enfants, mineurs ou majeurs.",
+ doit:"Non soumise à conditions de ressources. Dossier auprès de votre CMCAS, en toute confidentialité.",
+ ref:"Activités Sociales", tags:['Activités Sociales','Sans condition de ressources'],
+ show:s=> true},
 
-    const wrapInd = document.getElementById('resIndemnites');
-    const wrapCong = document.getElementById('resConges');
-    wrapInd.innerHTML = '';
-    wrapCong.innerHTML = '';
+/* ─── CAMIEG ─── */
+{id:'layette', cat:'camieg', gta:'—', age:null,
+ title:"Prime layette", amount:"340 € / enfant",
+ desc:"Prime attribuée pour chaque enfant né ou adopté. Montant réévalué chaque année en janvier.",
+ doit:"Attribuée à un seul des deux parents dans un couple IEG. Ouverte aux pensionnés. Demande auprès de la CAMIEG.",
+ ref:"CAMIEG", tags:['CAMIEG'],
+ show:s=> s.f.grossesse || s.enfants.some(a=>a<1)},
 
-    if(inds.length){
-      wrapInd.innerHTML = '<div class="result-group-title"><span class="gic" aria-hidden="true">'+ICON_IND+'</span> Indemnités &amp; aides ('+inds.length+')</div>' + inds.map((d,i)=>resultCard(d,i)).join('');
-    }
-    if(congs.length){
-      wrapCong.innerHTML = '<div class="result-group-title green"><span class="gic" aria-hidden="true">'+ICON_CONG+'</span> Congés &amp; absences ('+congs.length+')</div>' + congs.map((d,i)=>resultCard(d,i)).join('');
-    }
-    if(!elig.length){
-      wrapInd.innerHTML = '<div class="result-card"><div class="rc-title">Aucun droit spécifique détecté</div><div class="rc-desc">Affinez votre situation (âge des enfants, situations particulières). Pensez aussi à l\'allocation décès et aux aides aux personnes victimes de violences intrafamiliales, ouvertes indépendamment de la composition familiale.</div></div>';
-    }
+{id:'deces_all', cat:'camieg', gta:'—', age:null,
+ title:"Allocation décès", amount:"680 €",
+ desc:"Participation aux frais d'obsèques lors du décès d'un membre de la famille : conjoint, partenaire de PACS, concubin, ou enfant de 26 ans au plus — sans limite d'âge en cas de handicap. Montant au 1ᵉʳ juillet 2025, réévalué chaque année.",
+ doit:"À demander dans un délai de 2 ans et un trimestre suivant l'événement. Pas de versement à un tiers.",
+ ref:"CAMIEG", tags:['CAMIEG'],
+ show:s=> true},
+];
 
-    const res = document.getElementById('simResults');
-    res.hidden = false;
-    const target = elig.length;
-    const countEl = document.getElementById('rbCount');
-    let cur = 0;
-    const step = Math.max(1, Math.round(target/18));
-    clearInterval(window.__cnt);
-    window.__cnt = setInterval(()=>{
-      cur += step;
-      if(cur>=target){ cur=target; clearInterval(window.__cnt); }
-      countEl.textContent = cur;
-    }, 35);
+/* ═══════════ CODES GTA ═══════════ */
+const CODES = [
+ ['RS', "Rentrée scolaire", "Jusqu'à 2 h payées, jusqu'aux 13 ans de l'enfant — sans limite d'âge en cas de handicap. Ouvert à chacun des deux parents salariés des IEG."],
+ ['2R', "Enfant malade — rémunéré", "Les 4 premières demi-journées, jusqu'au 12ᵉ anniversaire du dernier enfant. Certificat médical obligatoire."],
+ ['2N', "Enfant malade — non rémunéré", "Les demi-journées au-delà des 4 rémunérées, et toutes les demi-journées pour un enfant de 12 à 16 ans."],
+ ['2C', "Congé parent", "Les 4 jours rémunérés par an (6 en famille monoparentale), pris par demi-journées, jusqu'au 12ᵉ anniversaire du dernier enfant."],
+];
 
-    res.scrollIntoView({behavior:'smooth', block:'start'});
-  }
-  document.getElementById('simRun').addEventListener('click', run);
-  document.getElementById('simReset').addEventListener('click', ()=>{
-    S.statut=null; S.enfants=null; S.ages.clear(); S.flags.clear();
-    document.querySelectorAll('.choice,.toggle').forEach(b=>b.setAttribute('aria-pressed','false'));
-    document.getElementById('block-ages').hidden = true;
-    document.getElementById('simResults').hidden = true;
-    document.querySelector('.simulateur').scrollIntoView({behavior:'smooth', block:'start'});
+/* ═══════════ SIMULATEUR ═══════════ */
+const S = { statut:null, enfants:[], f:{} };
+let kidSeq = 0;
+
+function renderKids(){
+  const box = document.getElementById('kids');
+  box.innerHTML = S.enfants.map((a,i)=>
+    '<span class="kid">Enfant '+(i+1)+
+    ' <input type="number" min="0" max="30" step="1" value="'+a+'" data-i="'+i+'" aria-label="Âge de l\'enfant '+(i+1)+'"> ans'+
+    ' <button type="button" data-del="'+i+'" aria-label="Retirer l\'enfant '+(i+1)+'">×</button></span>'
+  ).join('') + '<button type="button" class="kid-add" id="kidAdd">+ Ajouter un enfant</button>';
+  box.querySelectorAll('input').forEach(inp=>inp.addEventListener('input',e=>{
+    const v=parseInt(e.target.value,10); S.enfants[+e.target.dataset.i]= isNaN(v)?0:Math.max(0,Math.min(30,v));
+  }));
+  box.querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click',e=>{
+    S.enfants.splice(+e.currentTarget.dataset.del,1); renderKids();
+  }));
+  document.getElementById('kidAdd').addEventListener('click',()=>{
+    if(S.enfants.length>=8) return;
+    S.enfants.push(S.enfants.length?8:5); renderKids();
+    const l=document.querySelectorAll('#kids input'); if(l.length) l[l.length-1].focus();
   });
+}
+renderKids();
+
+document.querySelectorAll('#grp-statut .choice').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#grp-statut .choice').forEach(x=>x.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true'); S.statut=b.dataset.val;
+}));
+document.querySelectorAll('#grp-flags .toggle').forEach(b=>b.addEventListener('click',()=>{
+  const on=b.getAttribute('aria-pressed')==='true';
+  b.setAttribute('aria-pressed',on?'false':'true'); S.f[b.dataset.val]=!on;
+}));
+
+const CATLAB={cong:'Congés & absences',ind:'Indemnités & aides de branche',as:'Activités Sociales',camieg:'CAMIEG'};
+const IC_CONG='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>';
+const IC_IND='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>';
+
+function rcard(d,i){
+  const tags = (d.tags||[]).map(t=>'<span class="rc-tag">'+esc(t)+'</span>').join('');
+  const gta  = (d.gta && d.gta!=='—') ? '<span class="rc-tag gta">GTA '+esc(d.gta)+'</span>' : '';
+  return '<div class="rcard '+d.cat+'" style="animation-delay:'+(i*55)+'ms">'+
+    '<div class="rc-top"><div class="rc-title">'+esc(d.title)+'</div><div class="rc-amount">'+esc(d.amount)+'</div></div>'+
+    '<div class="rc-desc">'+esc(d.desc)+'</div>'+
+    (d.doit?'<div class="rc-do"><b>Comment le demander :</b> '+esc(d.doit)+'</div>':'')+
+    '<div class="rc-tags">'+gta+tags+'</div>'+
+    '<div class="rc-ref">'+esc(d.ref)+'</div></div>';
+}
+
+/* alertes contextuelles : ce qui va s'éteindre bientôt */
+function alerts(){
+  const out=[]; const A=S.enfants;
+  A.forEach((a,i)=>{
+    const n='Votre enfant de '+a+' an'+(a>1?'s':'');
+    if(a===12) out.push([n,'Dernière année pour le congé parent (2C), le CESU et les demi-journées enfant malade rémunérées (2R) : le droit s\'éteint le dernier jour du mois de son 12ᵉ anniversaire, s\'il s\'agit de votre dernier enfant.']);
+    if(a===13) out.push([n,'C\'est la dernière rentrée ouvrant droit aux 2 heures (code RS) — sauf situation de handicap, où le droit court jusqu\'à la fin de la scolarité.']);
+    if(a===15) out.push([n,'Le congé enfant malade s\'arrête à ses 16 ans.']);
+    if(a===19) out.push([n,'Le forfait familial s\'arrête à son 20ᵉ anniversaire. Si votre enfant poursuit des études, basculez sur l\'aide aux frais d\'études.']);
+    if(a===25) out.push([n,'L\'aide aux frais d\'études court jusqu\'à la fin de l\'année scolaire de ses 26 ans. Pensez à renouveler la demande.']);
+  });
+  if(S.f.mono && A.some(a=>a<12)) out.push(['Famille monoparentale','Vous avez 2 jours de congé parent en plus (6 au lieu de 4), ou 20 heures de CESU supplémentaires. Justificatif : allocation de soutien familial de la CAF, ou avis fiscal attestant la garde exclusive et la situation de parent isolé.']);
+  if(S.f.couple_ieg) out.push(['Couple IEG','L\'indemnité d\'union, le CESU et le congé enfant malade sont cumulables entre vous deux. En revanche, l\'indemnité de naissance, la prime layette et le forfait familial ne sont versés qu\'à un seul des deux — désignez-le d\'un commun accord.']);
+  if(S.f.alternee) out.push(['Garde alternée','Le forfait familial et le congé enfant malade restent accordés en garde alternée, y compris si vous versez une pension alimentaire. Le congé parent et le CESU aussi.']);
+  return out;
+}
+
+function run(){
+  if(!S.statut){ alert("Renseignez d'abord votre situation conjugale."); return; }
+  const elig = D.filter(d=>{ try{ return d.show(S); }catch(e){ return false; } });
+  const congs = elig.filter(d=>d.cat==='cong');
+  const inds  = elig.filter(d=>d.cat!=='cong');
+
+  const al = alerts();
+  document.getElementById('resAlerts').innerHTML = al.length ?
+    al.map(([t,b])=>'<div class="fo-callout gold"><div class="fo-callout-icon">i</div><div class="fo-callout-body"><div class="fo-callout-title">'+esc(t)+'</div><p>'+esc(b)+'</p></div></div>').join('') : '';
+
+  document.getElementById('resConges').innerHTML = congs.length ?
+    '<div class="result-group-title green"><span class="gic" aria-hidden="true">'+IC_CONG+'</span> Congés &amp; absences ('+congs.length+')</div>'+congs.map(rcard).join('') : '';
+  document.getElementById('resIndemnites').innerHTML = inds.length ?
+    '<div class="result-group-title"><span class="gic" aria-hidden="true">'+IC_IND+'</span> Indemnités &amp; aides ('+inds.length+')</div>'+inds.map(rcard).join('') : '';
+
+  const res=document.getElementById('simResults'); res.hidden=false;
+  const target=elig.length, el=document.getElementById('rbCount');
+  let cur=0; const step=Math.max(1,Math.round(target/18));
+  clearInterval(window.__cnt);
+  window.__cnt=setInterval(()=>{cur+=step; if(cur>=target){cur=target;clearInterval(window.__cnt);} el.textContent=cur;},34);
+  res.scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.getElementById('simRun').addEventListener('click',run);
+document.getElementById('simPrint').addEventListener('click',()=>{ if(document.getElementById('simResults').hidden) run(); setTimeout(()=>window.print(),350); });
+document.getElementById('simReset').addEventListener('click',()=>{
+  S.statut=null; S.enfants=[]; S.f={};
+  document.querySelectorAll('.choice,.toggle').forEach(b=>b.setAttribute('aria-pressed','false'));
+  renderKids(); document.getElementById('simResults').hidden=true;
+  document.querySelector('.simulateur').scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+/* ═══════════ FRISE DES ÂGES ═══════════ */
+(function(){
+  const MAX=26;
+  const COL={cong:'#28b193',ind:'#019cda',as:'#a8880a',camieg:'#ef333e'};
+  const rows = D.filter(d=>d.age && d.frise).sort((a,b)=>a.age[1]-b.age[1] || a.age[0]-b.age[0]);
+  let h='<div class="frise-scale">'+[0,3,6,9,12,15,18,21,24].map(n=>'<span>'+n+' ans</span>').join('')+'</div>';
+  rows.forEach(d=>{
+    const l=Math.max(0,d.age[0])/MAX*100, w=Math.max(3,(Math.min(MAX,d.age[1])-Math.max(0,d.age[0]))/MAX*100);
+    h+='<div class="frow"><div class="frow-lab">'+esc(d.frise)+'<small>'+
+       (d.gta&&d.gta!=='—'?'Code '+esc(d.gta)+' · ':'')+esc(d.amount)+'</small></div>'+
+       '<div class="frow-bar"><div class="frow-fill" style="left:'+l.toFixed(1)+'%;width:'+w.toFixed(1)+'%;background:'+COL[d.cat]+'">'+
+       (d.age[0]>0?d.age[0]+'–':'0–')+d.age[1]+' ans</div></div></div>';
+  });
+  h+='<div class="frise-legend">'+
+     '<span><i style="background:#28b193"></i>Congés &amp; absences</span>'+
+     '<span><i style="background:#019cda"></i>Indemnités &amp; aides de branche</span>'+
+     '<span><i style="background:#a8880a"></i>Activités Sociales</span>'+
+     '<span>Les bornes sont indicatives : plusieurs droits sont prolongés en cas de handicap.</span></div>';
+  document.getElementById('friseBox').innerHTML=h;
+})();
+
+/* ═══════════ COMPARATEUR CONGÉ PARENT / CESU ═══════════ */
+(function(){
+  const TH = 17.52;              // taux horaire de référence CESU (dernier barème publié)
+  const A=document.getElementById('cmpAge'), M=document.getElementById('cmpMono'), SA=document.getElementById('cmpSal');
+  function calc(){
+    const age=Math.max(0,Math.min(12,parseInt(A.value,10)||0));
+    const mono=M.value==='1';
+    const sal=Math.max(0,parseFloat(SA.value)||0);
+    const jours = 4 + (mono?2:0);
+    const valConge = jours*sal;
+    const mult = (age<3?100:60) + (mono?20:0);
+    const dot = mult*TH;
+    const reste = dot*0.20;
+    const net = dot-reste;
+    document.getElementById('cmpAv').textContent = jours+' jours';
+    document.getElementById('cmpAd').innerHTML = 'Soit environ <b>'+valConge.toLocaleString('fr-FR',{maximumFractionDigits:0})+' €</b> de salaire maintenu, si vous les posez tous. Pris par demi-journées, non reportables.';
+    document.getElementById('cmpBv').textContent = Math.round(dot).toLocaleString('fr-FR')+' €';
+    document.getElementById('cmpBd').innerHTML = 'Dotation de '+mult+' × le taux horaire de référence. Vous en financez 20 %, soit <b>'+Math.round(reste).toLocaleString('fr-FR')+' €</b> — l\'employeur prend <b>'+Math.round(net).toLocaleString('fr-FR')+' €</b> à sa charge.';
+    const a=document.getElementById('cmpA'), b=document.getElementById('cmpB');
+    a.classList.toggle('win', valConge>=net); b.classList.toggle('win', net>valConge);
+    document.getElementById('cmpNote').innerHTML =
+      'Comparaison indicative. Le congé parent vous rend du <strong>temps</strong> ; le CESU vous rend du <strong>service</strong> (garde, ménage, aide aux devoirs) mais vous coûte 20 % de la dotation. '+
+      'Le taux horaire de référence est celui du dernier barème publié et est revalorisé chaque 1<sup>er</sup> janvier — vérifiez le montant exact de votre dotation sur cesuieg.domiserve.com. '+
+      'Rappel : le choix s\'exprime <strong>avant le 31 octobre</strong> et se reconduit tacitement. Les droits sont proratisés l\'année de la naissance et l\'année des 12 ans de l\'enfant.';
+  }
+  [A,M,SA].forEach(e=>e.addEventListener('input',calc));
+  calc();
+})();
+
+/* ═══════════ TABLEAU DES CODES ═══════════ */
+(function(){
+  const body=document.getElementById('codesBody'), empty=document.getElementById('codesEmpty'), q=document.getElementById('codeSearch');
+  function draw(filter){
+    const f=(filter||'').trim().toLowerCase();
+    const rows=CODES.filter(r=>!f || r.join(' ').toLowerCase().includes(f));
+    body.innerHTML=rows.map(r=>'<tr><td><span class="gta">'+esc(r[0])+'</span></td><td class="c2">'+esc(r[1])+'</td><td class="c3">'+esc(r[2])+'</td></tr>').join('');
+    empty.hidden=rows.length>0;
+  }
+  q.addEventListener('input',e=>draw(e.target.value));
+  draw('');
+})();
+
+/* ═══════════ CATALOGUE FILTRABLE ═══════════ */
+(function(){
+  const box=document.getElementById('catalogue');
+  function card(d){
+    return '<article class="card '+d.cat+'" data-cat="'+d.cat+'">'+
+      (d.gta&&d.gta!=='—'?'<span class="gta-mini">GTA '+esc(d.gta)+'</span>':'')+
+      '<h3>'+esc(d.title)+'</h3>'+
+      '<div class="card-amount">'+esc(d.amount)+'</div>'+
+      '<p>'+esc(d.desc)+'</p>'+
+      '<div class="card-ref">'+esc(d.ref)+'</div></article>';
+  }
+  box.innerHTML=D.map(card).join('');
+  document.querySelectorAll('#filters .filt').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#filters .filt').forEach(x=>x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+    const c=b.dataset.cat;
+    box.querySelectorAll('.card').forEach(el=>{ el.style.display=(c==='all'||el.dataset.cat===c)?'':'none'; });
+  }));
+})();
 </script>
 
 </body>
