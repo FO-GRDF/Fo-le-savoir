@@ -59,33 +59,65 @@ Dans la GTA, ça se saisit avec le code RS.
 Retenez-le : RS, comme rentrée scolaire.
 
 16
-00:00:35,952 --> 00:00:39,786
-Et pendant qu'on y est : enfant malade,
+00:00:35,952 --> 00:00:38,285
+Une précision pour les cadres au forfait jours :
 
 17
-00:00:39,786 --> 00:00:41,724
-code deux R quand c'est rémunéré,
+00:00:38,285 --> 00:00:43,490
+vous, vous n'avez aucun code à saisir.
 
 18
-00:00:41,724 --> 00:00:44,587
-deux N quand ça ne l'est pas.
+00:00:43,490 --> 00:00:46,843
+Votre temps de travail ne se décompte pas en heures.
 
 19
-00:00:44,587 --> 00:00:44,832
-Vos quatre jours de congé parent, code deux C.
+00:00:46,843 --> 00:00:47,680
+Vous organisez votre journée,
 
 20
-00:00:44,832 --> 00:00:47,660
-Ces droits ne se prennent pas tout seuls.
+00:00:47,680 --> 00:00:47,916
+vous accompagnez votre enfant, et c'est tout.
 
 21
-00:00:47,660 --> 00:00:47,904
-Demandez-les.
+00:00:47,916 --> 00:00:49,013
+Et pendant qu'on y est : enfant malade,
 
 22
-00:00:47,904 --> 00:00:50,058
-FO GRDF Fonctions Centrales.
+00:00:49,013 --> 00:00:52,533
+code 2R quand c'est rémunéré,
 
 23
-00:00:50,058 --> 00:00:52,920
+00:00:52,533 --> 00:00:54,822
+2N quand ça ne l'est pas. Et le congé parent,
+
+24
+00:00:54,822 --> 00:00:57,319
+code 2C : 4 jours par an,
+
+25
+00:00:57,319 --> 00:01:02,629
+6 en famille monoparentale. Mais attention,
+
+26
+00:01:02,629 --> 00:01:04,851
+c'est un choix. Congé parent ou CESU,
+
+27
+00:01:04,851 --> 00:01:07,978
+et ça se décide sur Digit'all RH.
+
+28
+00:01:07,978 --> 00:01:10,667
+Ces droits ne se prennent pas tout seuls.
+
+29
+00:01:10,667 --> 00:01:10,904
+Demandez-les.
+
+30
+00:01:10,904 --> 00:01:13,058
+FO GRDF Fonctions Centrales.
+
+31
+00:01:13,058 --> 00:01:15,920
 Le détail complet est sur notre page Droits familiaux.
