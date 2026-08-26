@@ -1,127 +1,139 @@
 1
-00:00:00,000 --> 00:00:02,038
+00:00:00,000 --> 00:00:02,035
 Vous cherchez un rendez-vous depuis des semaines ?
 
 2
-00:00:02,038 --> 00:00:06,548
+00:00:02,035 --> 00:00:06,548
 Votre couverture supplémentaire maladie comprend
 
 3
-00:00:06,548 --> 00:00:08,939
+00:00:06,548 --> 00:00:07,365
 un service de consultation à distance.
 
 4
-00:00:08,939 --> 00:00:09,143
-Gratuit. Et presque personne ne le sait.
+00:00:07,365 --> 00:00:08,937
+Gratuit.
 
 5
-00:00:09,143 --> 00:00:10,263
-Combien ça coûte ? Rien.
+00:00:08,937 --> 00:00:09,143
+Et presque personne ne le sait.
 
 6
-00:00:10,263 --> 00:00:11,305
-C'est compris dans votre couverture,
+00:00:09,143 --> 00:00:10,251
+Combien ça coûte ? Rien.
 
 7
-00:00:11,305 --> 00:00:14,428
-sans avance de frais,
+00:00:10,251 --> 00:00:13,252
+C'est compris dans votre couverture,
 
 8
-00:00:14,428 --> 00:00:16,901
-et le nombre de consultations n'est pas limité.
+00:00:13,252 --> 00:00:14,424
+sans avance de frais,
 
 9
-00:00:16,901 --> 00:00:18,698
-Un médecin généraliste vous répond 24 h/24, 7 j/7.
+00:00:14,424 --> 00:00:16,901
+et le nombre de consultations n'est pas limité.
 
 10
-00:00:18,698 --> 00:00:21,797
-Un dermatologue, un psychologue,
+00:00:16,901 --> 00:00:21,787
+Un médecin généraliste vous répond 24 h/24, 7 j/7.
 
 11
-00:00:21,797 --> 00:00:27,440
-une sage-femme ou un infirmier, de 8 h à 20 h.
+00:00:21,787 --> 00:00:24,742
+Un dermatologue, un psychologue,
 
 12
-00:00:27,440 --> 00:00:31,896
-Et c'est ouvert à toute la famille.
+00:00:24,742 --> 00:00:29,181
+une sage-femme ou un infirmier, de 8 h à 20 h.
 
 13
-00:00:31,896 --> 00:00:32,675
-Le délai ? Un rappel garanti sous 30 minutes.
+00:00:29,181 --> 00:00:31,896
+Et c'est ouvert à toute la famille.
 
 14
-00:00:32,675 --> 00:00:34,908
-Par téléphone, en visioconférence,
+00:00:31,896 --> 00:00:32,672
+Le délai ?
 
 15
-00:00:34,908 --> 00:00:39,497
-ou par messagerie sécurisée.
+00:00:32,672 --> 00:00:34,907
+Un rappel garanti sous 30 minutes.
 
 16
-00:00:39,497 --> 00:00:40,518
-Vous ouvrez l'application sanergi IEG Ma Santé,
+00:00:34,907 --> 00:00:37,614
+Par téléphone, en visioconférence,
 
 17
-00:00:40,518 --> 00:00:46,896
-vous vous connectez,
+00:00:37,614 --> 00:00:39,497
+ou par messagerie sécurisée.
 
 18
-00:00:46,896 --> 00:00:49,592
-et vous allez dans l'onglet Ma Sphère médicale.
+00:00:39,497 --> 00:00:43,610
+Vous ouvrez l'application sanergi IEG Ma Santé,
 
 19
-00:00:49,592 --> 00:00:52,523
-Depuis un ordinateur, c'est le même service.
+00:00:43,610 --> 00:00:44,635
+vous vous connectez,
 
 20
-00:00:52,523 --> 00:01:00,056
-Sans application : 09 69 32 10 71, appel gratuit.
+00:00:44,635 --> 00:00:49,589
+et vous allez dans l'onglet Ma Sphère médicale.
 
 21
-00:01:00,056 --> 00:01:01,274
-Un bilan de prévention de 30 minutes avec un infirmier.
+00:00:49,589 --> 00:00:52,520
+Depuis un ordinateur, c'est le même service.
 
 22
-00:01:01,274 --> 00:01:04,448
-Des soins à domicile,
+00:00:52,520 --> 00:00:54,314
+Sans application :
 
 23
-00:01:04,448 --> 00:01:11,608
-avec une réponse en moins de 2 h.
+00:00:54,314 --> 00:01:00,056
+09 69 32 10 71, appel gratuit.
 
 24
-00:01:11,608 --> 00:01:11,889
-Et un deuxième avis médical, pris en charge à 100 %.
+00:01:00,056 --> 00:01:04,443
+Un bilan de prévention de 30 minutes avec un infirmier.
 
 25
-00:01:11,889 --> 00:01:15,518
-Un service que vous financez déjà,
+00:01:04,443 --> 00:01:08,048
+Des soins à domicile, avec une réponse en moins de 2 h.
 
 26
-00:01:15,518 --> 00:01:16,969
-et que presque personne n'utilise. Attention :
+00:01:08,048 --> 00:01:11,889
+Et un deuxième avis médical, pris en charge à 100 %.
 
 27
-00:01:16,969 --> 00:01:21,140
-la consultation à distance est prévue
+00:01:11,889 --> 00:01:13,574
+Un service que vous financez déjà,
 
 28
-00:01:21,140 --> 00:01:22,572
-quand votre médecin traitant n'est pas disponible.
+00:01:13,574 --> 00:01:15,513
+et que presque personne n'utilise.
 
 29
-00:01:22,572 --> 00:01:22,834
-Elle ne le remplace pas.
+00:01:15,513 --> 00:01:16,949
+Attention :
 
 30
-00:01:22,834 --> 00:01:23,926
-Installez l'application maintenant,
+00:01:16,949 --> 00:01:18,659
+la consultation à distance est prévue
 
 31
-00:01:23,926 --> 00:01:27,424
-pas le soir où vous en aurez besoin.
+00:01:18,659 --> 00:01:21,137
+quand votre médecin traitant n'est pas disponible.
 
 32
-00:01:27,424 --> 00:01:29,783
+00:01:21,137 --> 00:01:22,834
+Elle ne le remplace pas.
+
+33
+00:01:22,834 --> 00:01:25,646
+Installez l'application maintenant,
+
+34
+00:01:25,646 --> 00:01:27,417
+pas le soir où vous en aurez besoin.
+
+35
+00:01:27,417 --> 00:01:29,783
 Tout le détail est sur notre page.
