@@ -90,6 +90,30 @@
   .rentree-code .rc-forfait b{font-weight:800}
 
   /* ═══ GUIDE FÉDÉRAL ═══ */
+
+  /* ── alerte cadres au forfait jours, en tete de page ── */
+  .cadres{background:linear-gradient(135deg,#16243a 0%,#22344f 100%);border-radius:18px;
+    padding:26px 30px;margin:0 0 30px;color:#fff;box-shadow:0 10px 30px rgba(10,26,45,.22)}
+  .cadres .ck{display:inline-block;background:var(--or);color:#16243a;font-size:11px;font-weight:800;
+    letter-spacing:2px;text-transform:uppercase;padding:5px 13px;border-radius:20px;margin-bottom:12px}
+  .cadres h2{font-family:'Fraunces',serif;font-size:26px;line-height:1.15;color:#fff;margin:0 0 10px}
+  .cadres h2 em{color:var(--or);font-style:normal}
+  .cadres > p{font-size:15px;line-height:1.6;color:rgba(255,255,255,.94);margin:0 0 18px;max-width:70ch}
+  .cadres-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-bottom:18px}
+  .cadres-q{background:rgba(255,255,255,.07);border-left:4px solid var(--rouge);border-radius:10px;padding:13px 15px}
+  .cadres-q b{display:block;font-size:13.5px;color:#ffd7da;font-style:italic;font-weight:600;margin-bottom:7px}
+  .cadres-q span{display:block;font-size:14px;line-height:1.5;color:rgba(255,255,255,.95)}
+  .cadres-q span strong{color:var(--or)}
+  .cadres-art{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+  .cadres-art a{flex:1;min-width:230px;background:rgba(255,255,255,.1);border-radius:10px;padding:11px 14px;
+    text-decoration:none;transition:background .2s}
+  .cadres-art a:hover{background:rgba(255,255,255,.18)}
+  .cadres-art b{display:block;font-size:14px;color:var(--or);margin-bottom:4px}
+  .cadres-art span{display:block;font-size:13px;line-height:1.45;color:rgba(255,255,255,.9)}
+  .cadres-cta{display:inline-flex;align-items:center;gap:9px;background:var(--or);color:#16243a;
+    font-weight:800;font-size:14.5px;padding:12px 22px;border-radius:30px;text-decoration:none;
+    box-shadow:0 6px 18px rgba(247,221,92,.3)}
+  .cadres-cta:hover{filter:brightness(1.06)}
   .guide-fede{background:linear-gradient(135deg,var(--bleu-clair) 0%,var(--blanc) 62%);
     border:1px solid var(--gris-clair);border-left:6px solid var(--bleu);border-radius:18px;
     padding:22px 26px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;
@@ -441,13 +465,14 @@
         <span class="badge">FO GRDF Fonctions Centrales · Édition 2026</span>
         <h1>Vos <em>droits familiaux</em>, du berceau aux études</h1>
         <p class="subtitle">Les 2 heures de rentrée scolaire, les codes à saisir dans la GTA, le congé parent, le CESU, les aides des Activités Sociales : tout ce à quoi vous avez droit dans les IEG, et comment le demander.</p>
-        <span class="update"><span class="dot"></span>Mise à jour : 25 août 2026 · montants CESU 2026 · aide GRDF handicap 800 € · congé supplémentaire de naissance</span>
+        <span class="update"><span class="dot"></span>Mise à jour : 26 août 2026 · nouveau : cadres au forfait jours, ce qu'on ne peut pas vous imposer</span>
       </div>
     </div>
   </header>
 
   <nav class="navbar" aria-label="Sommaire">
     <div class="navbar-in">
+      <a href="#cadres">Cadres forfait jours</a>
       <a href="#rentree">Rentrée scolaire</a>
       <a href="#guide">Guide fédéral</a>
       <a href="#videos">Vidéos</a>
@@ -463,6 +488,46 @@
   </nav>
 
   <main id="contenu-principal" role="main">
+
+
+    <!-- ══════ CADRES AU FORFAIT JOURS ══════ -->
+    <div class="cadres" id="cadres">
+      <span class="ck">Cadres au forfait jours · à lire en premier</span>
+      <h2>On ne peut pas vous imposer <em>de poser un congé</em> pour la rentrée</h2>
+      <p>Votre manager vous réclame une demi-journée, ou une demande d'autorisation, pour accompagner votre
+        enfant le jour de la rentrée ? C'est contraire au principe même du forfait jours. Votre temps de
+        travail n'est pas compté en heures : <strong>une absence de deux heures n'existe pas comme unité
+        décomptable.</strong> Vous prévenez votre manager, vous ne sollicitez rien.</p>
+
+      <div class="cadres-grid">
+        <div class="cadres-q"><b>« Il faut poser une demi-journée. »</b>
+          <span>Mon temps n'est pas décompté en heures — <strong>article L.3121-62</strong>. Deux heures n'existent pas comme unité décomptable : il n'y a rien à poser.</span></div>
+        <div class="cadres-q"><b>« J'attends ta demande d'autorisation. »</b>
+          <span>Le forfait repose sur mon autonomie dans l'organisation de mon emploi du temps — <strong>article L.3121-58</strong>. C'est la condition de validité de ma convention, pas une faveur.</span></div>
+        <div class="cadres-q"><b>« L'accord prévoit une validation managériale. »</b>
+          <span>Pour un salarié décompté en heures, oui. Au forfait jours, elle <strong>ne peut pas valoir autorisation horaire</strong> — elle contredirait la loi. Elle vaut information.</span></div>
+        <div class="cadres-q"><b>« Saisis quand même le code RS. »</b>
+          <span>Le code RS trace une absence décomptée en heures. Mon temps ne l'est pas : <strong>aucune saisie à faire</strong>, et rien n'apparaîtra dans mes soldes.</span></div>
+      </div>
+
+      <div class="cadres-art">
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033003228" target="_blank" rel="noopener noreferrer">
+          <b>Article L.3121-58 du Code du travail</b>
+          <span>Le forfait jours est réservé aux cadres « qui disposent d'une autonomie dans l'organisation de leur emploi du temps ».</span></a>
+        <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033003264" target="_blank" rel="noopener noreferrer">
+          <b>Article L.3121-62 du Code du travail</b>
+          <span>Ils ne sont soumis ni aux durées quotidienne et hebdomadaires maximales, ni à la durée légale hebdomadaire.</span></a>
+      </div>
+
+      <p style="font-size:14px;margin-bottom:18px"><strong style="color:var(--or)">Le risque juridique n'est pas pour vous, il est pour l'employeur.</strong>
+        La Cour de cassation le juge de façon constante : lorsqu'un cadre est en réalité soumis à des horaires
+        imposés, sa convention de forfait est privée d'effet — et les heures supplémentaires redeviennent dues.
+        Un manager qui exige une autorisation horaire fragilise le forfait de son propre agent.</p>
+
+      <a class="cadres-cta" href="Tract_Cadres_Forfait_Jours_FO_GRDF_A4.pdf" target="_blank" rel="noopener" download>
+        Télécharger le tract A4 « Cadres au forfait jours » &#8594;
+      </a>
+    </div>
 
     <!-- ══════ BLOC RENTRÉE ══════ -->
     <h2 class="section-title" id="rentree">
