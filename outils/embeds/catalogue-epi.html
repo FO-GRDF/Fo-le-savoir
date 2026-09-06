@@ -1,0 +1,2178 @@
+<div class="fo-tool fo-tool-catalogue-epi">
+<style>
+.fo-tool-catalogue-epi{
+    --bleu: #019cda;
+    --bleu-fonce: #017fb1;
+    --or: #f7dd5c;
+    --or-clair: #fde8ea;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --rouge-fo: #c0303a;
+    --rouge-fo-fonce: #7a0e1c;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --gris-clair: #E5E5E5;
+    --texte: #1A1A2E;
+    
+    --a11y-bg: #FFFFFF;
+    --a11y-text: #000000;
+    --a11y-blue: #4477AA;
+    --a11y-cyan: #66CCEE;
+    --a11y-green: #228833;
+    --a11y-yellow: #CCBB44;
+    --a11y-red: #EE6677;
+    --a11y-purple: #AA3377;
+  }
+.fo-tool-catalogue-epi *{ margin: 0; padding: 0; box-sizing: border-box; }
+.fo-tool-catalogue-epi{
+    font-family:inherit;
+    background: var(--fond);
+    color: var(--texte);
+    -webkit-font-smoothing: antialiased;
+  }
+.fo-tool-catalogue-epi .page{ max-width: 1280px; margin: 0 auto; padding: 28px 22px 60px; }
+.fo-tool-catalogue-epi .header{
+    background: linear-gradient(135deg, #019cda 0%, #017fb1 60%, #015a82 100%);
+    border-radius: 22px;
+    padding: 36px 40px 32px;
+    margin-bottom: 18px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+.fo-tool-catalogue-epi .header::before{
+    content: "";
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(247,221,92,0.22) 0%, transparent 70%);
+  }
+.fo-tool-catalogue-epi .header .badge{
+    display: inline-block;
+    background: var(--or);
+    color: var(--bleu-fonce);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+.fo-tool-catalogue-epi .header h1{
+    font-family:inherit;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.05;
+    max-width: 760px;
+    letter-spacing: -1px;
+    position: relative;
+    z-index: 1;
+  }
+.fo-tool-catalogue-epi .header h1 em{ color: var(--or); font-style: italic; }
+.fo-tool-catalogue-epi .header .lede{
+    margin-top: 12px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.82);
+    max-width: 660px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+.fo-tool-catalogue-epi .a11y-btn-wrap{ position: fixed; top: 14px; right: 14px; z-index: 1000; }
+.fo-tool-catalogue-epi .a11y-btn{
+    background: var(--blanc);
+    border: 2px solid var(--bleu);
+    color: var(--bleu);
+    border-radius: 28px;
+    padding: 7px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    transition: all 0.2s;
+  }
+.fo-tool-catalogue-epi .a11y-btn:hover{ background: var(--bleu); color: white; }
+.fo-tool-catalogue-epi .a11y-btn svg{ width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+.fo-tool-catalogue-epi .families{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+.fo-tool-catalogue-epi .fam{
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 20px 18px;
+    border: 2px solid transparent;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    position: relative;
+    overflow: hidden;
+  }
+.fo-tool-catalogue-epi .fam:hover{ transform: translateY(-3px); box-shadow: 0 12px 28px rgba(1,156,218,0.18); border-color: var(--bleu); }
+.fo-tool-catalogue-epi .fam.active{ border-color: var(--bleu); background: linear-gradient(180deg, #fff 0%, #f0f9ff 100%); }
+.fo-tool-catalogue-epi .fam-icon{
+    width: 64px; height: 64px;
+    margin: 0 auto 10px;
+    color: var(--bleu);
+  }
+.fo-tool-catalogue-epi .fam-icon svg{ width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.6; }
+.fo-tool-catalogue-epi .fam h3{
+    font-family:inherit;
+    font-size: 18px;
+    color: var(--texte);
+    margin-bottom: 4px;
+  }
+.fo-tool-catalogue-epi .fam .nb{ font-size: 12px; color: var(--bleu); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+.fo-tool-catalogue-epi .info-strip{
+    background: linear-gradient(135deg, var(--rouge-fo) 0%, var(--rouge-fo-fonce) 100%);
+    color: white;
+    border-radius: 16px;
+    padding: 16px 24px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+.fo-tool-catalogue-epi .info-strip::after{
+    content: "FO";
+    position: absolute;
+    right: 12px; bottom: -38px;
+    font-family:inherit;
+    font-size: 130px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.05);
+    line-height: 1;
+  }
+.fo-tool-catalogue-epi .info-strip-ico{
+    width: 38px; height: 38px;
+    background: var(--or);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--rouge-fo-fonce);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+.fo-tool-catalogue-epi .info-strip-ico svg{ width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+.fo-tool-catalogue-epi .info-strip p{
+    font-size: 14.5px;
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+  }
+.fo-tool-catalogue-epi .info-strip strong{ color: var(--or); }
+.fo-tool-catalogue-epi .control-bar{
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+.fo-tool-catalogue-epi .control-row{ display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.fo-tool-catalogue-epi .search-box{ flex: 1; min-width: 220px; position: relative; }
+.fo-tool-catalogue-epi .search-box input{
+    width: 100%;
+    padding: 10px 14px 10px 38px;
+    border: 2px solid var(--gris-clair);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family:inherit;
+  }
+.fo-tool-catalogue-epi .search-box input:focus{ outline: none; border-color: var(--bleu); }
+.fo-tool-catalogue-epi .search-box svg{
+    position: absolute; left: 12px; top: 50%;
+    transform: translateY(-50%);
+    width: 16px; height: 16px;
+    color: var(--gris);
+    stroke: currentColor; fill: none; stroke-width: 2;
+  }
+.fo-tool-catalogue-epi .ctl-btn{
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.15s;
+  }
+.fo-tool-catalogue-epi .ctl-btn.cmp{ background: var(--bleu); color: white; }
+.fo-tool-catalogue-epi .ctl-btn.cmp:disabled{ background: var(--gris-clair); color: var(--gris); cursor: not-allowed; }
+.fo-tool-catalogue-epi .ctl-btn.cmp:not(:disabled):hover{ background: var(--bleu-fonce); }
+.fo-tool-catalogue-epi .ctl-btn.bskt{ background: var(--vert); color: white; }
+.fo-tool-catalogue-epi .ctl-btn.bskt:hover{ background: #1e9c80; }
+.fo-tool-catalogue-epi .ctl-btn .badge-num{
+    background: var(--or);
+    color: var(--bleu-fonce);
+    border-radius: 12px;
+    padding: 1px 8px;
+    font-size: 11px;
+    font-weight: 800;
+  }
+.fo-tool-catalogue-epi .ctl-btn.bskt .badge-num{ background: white; color: var(--vert); }
+.fo-tool-catalogue-epi .ctl-btn svg{ width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+.fo-tool-catalogue-epi .filters-row{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; align-items: flex-end; }
+.fo-tool-catalogue-epi .fg{ display: flex; flex-direction: column; gap: 4px; }
+.fo-tool-catalogue-epi .fg label{
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gris);
+    font-weight: 700;
+  }
+.fo-tool-catalogue-epi .fg select{
+    padding: 7px 30px 7px 11px;
+    border: 1.5px solid var(--gris-clair);
+    border-radius: 8px;
+    font-size: 13px;
+    font-family:inherit;
+    background: white;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23019cda' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 9px center;
+  }
+.fo-tool-catalogue-epi .reset-btn{
+    background: transparent;
+    color: var(--rouge);
+    border: 1.5px solid var(--rouge);
+    border-radius: 8px;
+    padding: 6px 11px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+.fo-tool-catalogue-epi .reset-btn:hover{ background: var(--rouge); color: white; }
+.fo-tool-catalogue-epi .group{
+    margin-bottom: 28px;
+    scroll-margin-top: 100px;
+  }
+.fo-tool-catalogue-epi .group-header{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--bleu);
+  }
+.fo-tool-catalogue-epi .group-header .gh-ico{
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-fonce) 100%);
+    color: white;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+.fo-tool-catalogue-epi .group-header .gh-ico svg{ width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; }
+.fo-tool-catalogue-epi .group-header h2{
+    font-family:inherit;
+    font-size: 24px;
+    color: var(--bleu);
+    flex: 1;
+  }
+.fo-tool-catalogue-epi .group-header .gh-count{
+    background: var(--or);
+    color: var(--bleu-fonce);
+    font-size: 12px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 18px;
+  }
+.fo-tool-catalogue-epi .subgroup{
+    margin-bottom: 18px;
+  }
+.fo-tool-catalogue-epi .subgroup-title{
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gris);
+    font-weight: 800;
+    margin-bottom: 10px;
+    padding-left: 4px;
+  }
+.fo-tool-catalogue-epi .products{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+.fo-tool-catalogue-epi .product{
+    background: var(--blanc);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    border: 1.5px solid rgba(0,0,0,0.04);
+  }
+.fo-tool-catalogue-epi .product:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 18px 36px rgba(1,156,218,0.16);
+  }
+.fo-tool-catalogue-epi .product.selected{ outline: 3px solid var(--or); outline-offset: -3px; }
+.fo-tool-catalogue-epi .product-img{
+    position: relative;
+    background: linear-gradient(135deg, #fafbfc 0%, #f0f4f8 100%);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+  }
+.fo-tool-catalogue-epi .product-img img.real{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.12));
+    mix-blend-mode: multiply;
+  }
+.fo-tool-catalogue-epi .product:hover .product-img img.real{ transform: scale(1.08) rotate(-2deg); }
+.fo-tool-catalogue-epi .tags-tl{
+    position: absolute;
+    top: 10px; left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 3;
+  }
+.fo-tool-catalogue-epi .tag{
+    background: var(--bleu);
+    color: white;
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.18);
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+.fo-tool-catalogue-epi .tag.is{ background: var(--rouge); }
+.fo-tool-catalogue-epi .tag.haut{ background: var(--vert); }
+.fo-tool-catalogue-epi .tag.chim{ background: #8b5cf6; }
+.fo-tool-catalogue-epi .tag.elec{ background: #f59e0b; color: #2d1c00; }
+.fo-tool-catalogue-epi .tag.soud{ background: var(--rouge); }
+.fo-tool-catalogue-epi .tag.froid{ background: #0ea5e9; }
+.fo-tool-catalogue-epi .tag.chaud{ background: linear-gradient(135deg, #f97316 0%, #dc2626 100%); }
+.fo-tool-catalogue-epi .tag.eau{ background: #06b6d4; }
+.fo-tool-catalogue-epi .tag.fem{ background: linear-gradient(135deg,#d946ef,#9333ea); }
+.fo-tool-catalogue-epi .boa-badge{
+    position: absolute;
+    top: 10px; right: 10px;
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    color: #fef3c7;
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 4px 10px 4px 8px;
+    border-radius: 14px;
+    z-index: 3;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+.fo-tool-catalogue-epi .boa-badge::before{
+    content: '';
+    width: 14px; height: 14px;
+    background: radial-gradient(circle at 30% 30%, #fde68a 0%, #f59e0b 60%, #b45309 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1.5px #fef3c7, inset 0 -1px 2px rgba(0,0,0,0.3);
+  }
+.fo-tool-catalogue-epi.a11y-mode .boa-badge{ background: var(--a11y-text); color: var(--a11y-yellow); }
+.fo-tool-catalogue-epi.a11y-mode .boa-badge::before{ background: var(--a11y-yellow); box-shadow: 0 0 0 1.5px var(--a11y-bg); }
+.fo-tool-catalogue-epi .tag.boa{
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    color: #fef3c7;
+  }
+.fo-tool-catalogue-epi .badges-bl{
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    display: flex;
+    gap: 5px;
+    z-index: 3;
+  }
+.fo-tool-catalogue-epi .b-cut,.fo-tool-catalogue-epi .b-clim{
+    background: rgba(255,255,255,0.96);
+    color: var(--texte);
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 9px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+.fo-tool-catalogue-epi .b-cut.cut-l{ background: #e5e5e5; color: #555; }
+.fo-tool-catalogue-epi .b-cut.cut-m{ background: #fff7d6; color: #7a5200; border: 1px solid var(--or); }
+.fo-tool-catalogue-epi .b-cut.cut-h{ background: var(--rouge); color: white; }
+.fo-tool-catalogue-epi .b-cut svg{ width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+.fo-tool-catalogue-epi .b-clim svg{ width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+.fo-tool-catalogue-epi .b-clim.chaud{ background: linear-gradient(135deg,#fed7aa,#f97316); color: #7c2d12; }
+.fo-tool-catalogue-epi .b-clim.froid{ background: #e0f2fe; color: #075985; }
+.fo-tool-catalogue-epi .b-clim.eau{ background: #cffafe; color: #155e75; }
+.fo-tool-catalogue-epi .product-body{
+    padding: 14px 14px 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+.fo-tool-catalogue-epi .product-name{
+    font-family:inherit;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--texte);
+    line-height: 1.15;
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+  }
+.fo-tool-catalogue-epi .product-brand{
+    font-size: 11.5px;
+    color: var(--gris);
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+.fo-tool-catalogue-epi .product-use{
+    font-size: 11.5px;
+    color: #444;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    background: var(--fond);
+    border-radius: 8px;
+    padding: 7px 10px;
+    border-left: 3px solid var(--bleu);
+  }
+.fo-tool-catalogue-epi .product-bottom{
+    margin-top: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+.fo-tool-catalogue-epi .product-price{
+    font-family:inherit;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--bleu);
+    line-height: 1;
+  }
+.fo-tool-catalogue-epi .product-price small{
+    font-family:inherit;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gris);
+  }
+.fo-tool-catalogue-epi .product-actions{
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+  }
+.fo-tool-catalogue-epi .pa-btn{
+    flex: 1;
+    background: var(--fond);
+    border: 1.5px solid transparent;
+    border-radius: 8px;
+    padding: 7px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--bleu);
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 0.2px;
+  }
+.fo-tool-catalogue-epi .pa-btn:hover{ background: var(--bleu); color: white; }
+.fo-tool-catalogue-epi .pa-btn.cmp-tg{ background: white; border-color: var(--gris-clair); color: var(--gris); }
+.fo-tool-catalogue-epi .pa-btn.cmp-tg.active{ background: var(--or); border-color: var(--or); color: var(--bleu-fonce); }
+.fo-tool-catalogue-epi .pa-btn.bskt-tg{ background: var(--vert); color: white; }
+.fo-tool-catalogue-epi .pa-btn.bskt-tg:hover{ background: #1e9c80; }
+.fo-tool-catalogue-epi .pa-btn.bskt-tg.active{ background: var(--or); color: var(--bleu-fonce); }
+.fo-tool-catalogue-epi .empty{
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--gris);
+    font-size: 14px;
+  }
+.fo-tool-catalogue-epi .empty svg{ width: 44px; height: 44px; margin-bottom: 12px; opacity: 0.4; stroke: currentColor; fill: none; stroke-width: 1.5; }
+.fo-tool-catalogue-epi .rights-strip{
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin: 28px 0;
+    border-left: 6px solid var(--rouge-fo);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+.fo-tool-catalogue-epi .rights-strip h2{
+    font-family:inherit;
+    font-size: 22px;
+    color: var(--rouge-fo);
+    margin-bottom: 6px;
+  }
+.fo-tool-catalogue-epi .rights-strip > p{
+    font-size: 13.5px;
+    color: #444;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+.fo-tool-catalogue-epi .rights-mini{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+.fo-tool-catalogue-epi .rm-card{
+    background: var(--fond);
+    border-radius: 12px;
+    padding: 14px 16px;
+    border-top: 3px solid var(--bleu);
+  }
+.fo-tool-catalogue-epi .rm-card:nth-child(2){ border-top-color: var(--or); }
+.fo-tool-catalogue-epi .rm-card:nth-child(3){ border-top-color: var(--rouge); }
+.fo-tool-catalogue-epi .rm-card:nth-child(4){ border-top-color: var(--vert); }
+.fo-tool-catalogue-epi .rm-card h4{
+    font-family:inherit;
+    font-size: 14px;
+    color: var(--bleu);
+    margin-bottom: 6px;
+  }
+.fo-tool-catalogue-epi .rm-card:nth-child(2) h4{ color: #a36200; }
+.fo-tool-catalogue-epi .rm-card:nth-child(3) h4{ color: var(--rouge-fo); }
+.fo-tool-catalogue-epi .rm-card:nth-child(4) h4{ color: #1f7d68; }
+.fo-tool-catalogue-epi .rm-card p{ font-size: 12.5px; color: #333; line-height: 1.55; }
+.fo-tool-catalogue-epi .modal-bg{
+    position: fixed;
+    inset: 0;
+    background: rgba(20,20,40,0.72);
+    backdrop-filter: blur(4px);
+    z-index: 500;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px 14px;
+    overflow-y: auto;
+  }
+.fo-tool-catalogue-epi .modal-bg.open{ display: flex; animation: fadeIn 0.2s; }
+.fo-tool-catalogue-epi .modal{
+    background: var(--blanc);
+    border-radius: 18px;
+    max-width: 820px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    position: relative;
+  }
+.fo-tool-catalogue-epi .modal-close{
+    position: absolute;
+    top: 14px; right: 14px;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 22px;
+    line-height: 1;
+  }
+.fo-tool-catalogue-epi .modal-close:hover{ background: var(--rouge); }
+.fo-tool-catalogue-epi .modal-header{
+    background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-fonce) 100%);
+    color: white;
+    padding: 26px 32px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 22px;
+    align-items: center;
+  }
+.fo-tool-catalogue-epi .modal-header .mh-cat{
+    font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--or); font-weight: 700; margin-bottom: 6px;
+  }
+.fo-tool-catalogue-epi .modal-header h2{
+    font-family:inherit;
+    font-size: 26px;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+  }
+.fo-tool-catalogue-epi .modal-header .mh-brand{ color: rgba(255,255,255,0.78); font-size: 13px; }
+.fo-tool-catalogue-epi .modal-header .mh-price{
+    font-family:inherit;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--or);
+    margin-top: 10px;
+  }
+.fo-tool-catalogue-epi .modal-header .mh-img-wrap{
+    background: linear-gradient(135deg,#fafbfc 0%,#f0f4f8 100%);
+    border-radius: 12px;
+    padding: 12px;
+    aspect-ratio: 1;
+    display: flex; align-items: center; justify-content: center;
+  }
+.fo-tool-catalogue-epi .modal-header .mh-img-wrap img{
+    max-width: 100%; max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.18));
+    mix-blend-mode: multiply;
+  }
+.fo-tool-catalogue-epi .modal-body{ padding: 24px 32px 28px; }
+.fo-tool-catalogue-epi .m-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+.fo-tool-catalogue-epi .m-tag{
+    background: var(--vert-clair);
+    color: #0a4f3a;
+    border: 1px solid var(--vert);
+    border-radius: 14px;
+    padding: 3px 10px;
+    font-size: 11.5px;
+    font-weight: 600;
+  }
+.fo-tool-catalogue-epi .m-tag.cut{ background: #fff7d6; color: #7a5200; border-color: var(--or); }
+.fo-tool-catalogue-epi .m-tag.cut-h{ background: var(--rouge-clair); color: var(--rouge-fo-fonce); border-color: var(--rouge); }
+.fo-tool-catalogue-epi .m-tag.cert{ background: #e0f2fe; color: #075985; border-color: #38bdf8; }
+.fo-tool-catalogue-epi .m-desc{
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+.fo-tool-catalogue-epi .m-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+.fo-tool-catalogue-epi .m-block{
+    background: var(--fond);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+.fo-tool-catalogue-epi .m-block h4{
+    font-family:inherit;
+    font-size: 13px;
+    color: var(--bleu);
+    margin-bottom: 6px;
+    display: flex; align-items: center; gap: 6px;
+  }
+.fo-tool-catalogue-epi .m-block ul{ padding-left: 18px; }
+.fo-tool-catalogue-epi .m-block li{ font-size: 12.5px; color: #333; line-height: 1.55; margin-bottom: 3px; }
+.fo-tool-catalogue-epi .arg-block{
+    background: linear-gradient(135deg, var(--rouge-fo) 0%, var(--rouge-fo-fonce) 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 12px;
+  }
+.fo-tool-catalogue-epi .arg-block h4{
+    font-family:inherit;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--or);
+  }
+.fo-tool-catalogue-epi .arg-text{
+    background: rgba(255,255,255,0.96);
+    color: var(--texte);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 13px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+.fo-tool-catalogue-epi .arg-actions{ display: flex; gap: 8px; flex-wrap: wrap; }
+.fo-tool-catalogue-epi .ab-btn{
+    background: var(--or);
+    color: var(--bleu-fonce);
+    border: none;
+    border-radius: 9px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+  }
+.fo-tool-catalogue-epi .ab-btn.alt{ background: white; color: var(--rouge-fo); }
+.fo-tool-catalogue-epi .ab-btn svg{ width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+.fo-tool-catalogue-epi .m-actions{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.fo-tool-catalogue-epi .m-act-btn{
+    background: var(--vert);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+.fo-tool-catalogue-epi .m-act-btn.alt{ background: white; color: var(--bleu); border: 1.5px solid var(--bleu); }
+.fo-tool-catalogue-epi .m-act-btn svg{ width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+.fo-tool-catalogue-epi .compare-grid{ display: grid; gap: 12px; margin-bottom: 12px; }
+.fo-tool-catalogue-epi .compare-grid[data-cols="2"]{ grid-template-columns: 1fr 1fr; }
+.fo-tool-catalogue-epi .compare-grid[data-cols="3"]{ grid-template-columns: 1fr 1fr 1fr; }
+.fo-tool-catalogue-epi .cc-card{
+    background: var(--fond);
+    border-radius: 12px;
+    padding: 14px;
+    border-top: 4px solid var(--bleu);
+  }
+.fo-tool-catalogue-epi .cc-img{
+    aspect-ratio: 1;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+.fo-tool-catalogue-epi .cc-img img{ max-width: 100%; max-height: 100%; object-fit: contain; }
+.fo-tool-catalogue-epi .cc-card h4{ font-family:inherit; font-size: 14px; color: var(--bleu); margin-bottom: 2px; }
+.fo-tool-catalogue-epi .cc-brand{ font-size: 11px; color: var(--gris); margin-bottom: 6px; font-style: italic; }
+.fo-tool-catalogue-epi .cc-price{ font-family:inherit; font-size: 18px; font-weight: 900; color: var(--bleu); margin-bottom: 8px; }
+.fo-tool-catalogue-epi .cc-pts li{ font-size: 11.5px; color: #333; line-height: 1.45; margin-bottom: 3px; }
+.fo-tool-catalogue-epi .cc-rm{
+    background: transparent; color: var(--rouge);
+    border: 1px solid var(--rouge); border-radius: 7px;
+    padding: 4px 10px; font-size: 11px;
+    cursor: pointer; margin-top: 8px;
+  }
+.fo-tool-catalogue-epi .bskt-item{
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 0; border-bottom: 1px solid var(--gris-clair);
+  }
+.fo-tool-catalogue-epi .bskt-item:last-child{ border-bottom: none; }
+.fo-tool-catalogue-epi .bskt-thumb{
+    width: 50px; height: 50px;
+    background: var(--fond);
+    border-radius: 8px;
+    padding: 4px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+.fo-tool-catalogue-epi .bskt-thumb img{ max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+.fo-tool-catalogue-epi .bskt-info{ flex: 1; min-width: 0; }
+.fo-tool-catalogue-epi .bskt-info .bn{ font-weight: 700; color: var(--texte); font-size: 13.5px; }
+.fo-tool-catalogue-epi .bskt-info .bb{ font-size: 11.5px; color: var(--gris); }
+.fo-tool-catalogue-epi .bskt-price{ font-family:inherit; font-weight: 800; color: var(--bleu); font-size: 15px; flex-shrink: 0; }
+.fo-tool-catalogue-epi .bskt-rm{
+    background: transparent;
+    border: 1.5px solid var(--rouge);
+    color: var(--rouge);
+    border-radius: 7px;
+    padding: 4px 9px;
+    font-size: 11px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+.fo-tool-catalogue-epi .gen-form{
+    background: var(--fond);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-top: 12px;
+  }
+.fo-tool-catalogue-epi .gen-form label{
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gris);
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-top: 12px;
+  }
+.fo-tool-catalogue-epi .gen-form label:first-of-type{ margin-top: 0; }
+.fo-tool-catalogue-epi .gen-form input,.fo-tool-catalogue-epi .gen-form select,.fo-tool-catalogue-epi .gen-form textarea{
+    width: 100%;
+    background: white;
+    border: 1.5px solid var(--gris-clair);
+    border-radius: 8px;
+    padding: 9px 12px;
+    font-size: 13.5px;
+    font-family:inherit;
+    color: var(--texte);
+  }
+.fo-tool-catalogue-epi .gen-form select{ appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23019cda' stroke-width='3' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; padding-right: 32px; }
+.fo-tool-catalogue-epi .gen-form textarea{ min-height: 60px; resize: vertical; }
+.fo-tool-catalogue-epi .gen-form .checkbox-row{
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #333;
+  }
+.fo-tool-catalogue-epi .gen-form .checkbox-row input{ width: auto; margin: 0; }
+.fo-tool-catalogue-epi .pdf-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+  }
+.fo-tool-catalogue-epi .pdf-page{
+    background: var(--blanc);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    cursor: zoom-in;
+    transition: transform 0.2s;
+  }
+.fo-tool-catalogue-epi .pdf-page:hover{ transform: translateY(-2px); }
+.fo-tool-catalogue-epi .pdf-page img{ width: 100%; height: auto; display: block; }
+.fo-tool-catalogue-epi .pdf-page .cap{ padding: 8px 12px; font-size: 11.5px; color: var(--gris); text-align: center; font-weight: 600; }
+.fo-tool-catalogue-epi .fo-contact{
+    background: linear-gradient(135deg, var(--rouge-fo) 0%, var(--rouge-fo-fonce) 100%);
+    border-radius: 18px;
+    padding: 22px 28px;
+    color: white;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+    align-items: center;
+    margin-top: 28px;
+    margin-bottom: 18px;
+  }
+.fo-tool-catalogue-epi .fo-contact img.fo-logo{ height: 64px; border-radius: 10px; background: white; padding: 5px; }
+.fo-tool-catalogue-epi .fo-contact h3{
+    font-family:inherit;
+    font-size: 17px;
+    margin-bottom: 4px;
+    color: var(--or);
+  }
+.fo-tool-catalogue-epi .fo-contact p{ font-size: 13px; color: rgba(255,255,255,0.92); line-height: 1.5; }
+.fo-tool-catalogue-epi .fo-btn{
+    background: var(--or);
+    color: var(--bleu-fonce);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+.fo-tool-catalogue-epi .fo-btn svg{ width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.2; }
+.fo-tool-catalogue-epi footer.footer{ text-align: center; padding: 16px; font-size: 12px; color: var(--gris); line-height: 1.6; }
+.fo-tool-catalogue-epi footer.footer a{ color: var(--bleu); text-decoration: none; font-weight: 600; }
+.fo-tool-catalogue-epi footer.footer img{ height: 48px; opacity: 0.85; margin: 6px 0; }
+.fo-tool-catalogue-epi .a11y-emoji{ display: inline-block; }
+.fo-tool-catalogue-epi .a11y-ico{ display: none; width: 1em; height: 1em; vertical-align: -0.15em; }
+.fo-tool-catalogue-epi.a11y-mode{ background: var(--a11y-bg); color: var(--a11y-text); font-family:inherit; }
+.fo-tool-catalogue-epi.a11y-mode .a11y-emoji{ display: none; }
+.fo-tool-catalogue-epi.a11y-mode .a11y-ico{ display: inline-block; }
+.fo-tool-catalogue-epi.a11y-mode .header{ background: var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .header h1 em{ color: var(--a11y-yellow); }
+.fo-tool-catalogue-epi.a11y-mode .fam{ background: var(--a11y-bg); border-color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .fam.active,.fo-tool-catalogue-epi.a11y-mode .fam:hover{ border-color: var(--a11y-blue); background: var(--a11y-bg); }
+.fo-tool-catalogue-epi.a11y-mode .fam-icon,.fo-tool-catalogue-epi.a11y-mode .fam .nb{ color: var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .fam h3{ color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .info-strip{ background: var(--a11y-purple); }
+.fo-tool-catalogue-epi.a11y-mode .info-strip strong{ color: var(--a11y-yellow); }
+.fo-tool-catalogue-epi.a11y-mode .info-strip-ico{ background: var(--a11y-yellow); color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .control-bar{ background: var(--a11y-bg); border: 2px solid var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .search-box input,.fo-tool-catalogue-epi.a11y-mode .fg select{ border-color: var(--a11y-blue); color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .ctl-btn.cmp{ background: var(--a11y-blue); color: var(--a11y-bg); }
+.fo-tool-catalogue-epi.a11y-mode .ctl-btn.bskt{ background: var(--a11y-green); color: var(--a11y-bg); }
+.fo-tool-catalogue-epi.a11y-mode .reset-btn{ color: var(--a11y-red); border-color: var(--a11y-red); }
+.fo-tool-catalogue-epi.a11y-mode .group-header{ border-bottom-color: var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .group-header .gh-ico{ background: var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .group-header h2{ color: var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .group-header .gh-count{ background: var(--a11y-yellow); color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .product{ background: var(--a11y-bg); border: 2px solid var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .product-name{ color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .product-price{ color: var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .product-use{ background: var(--a11y-bg); color: var(--a11y-text); border-left-color: var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .product-img{ background: var(--a11y-bg); }
+.fo-tool-catalogue-epi.a11y-mode .product-img::before{ display: none; }
+.fo-tool-catalogue-epi.a11y-mode .tag{ background: var(--a11y-blue); color: var(--a11y-bg); }
+.fo-tool-catalogue-epi.a11y-mode .tag.is,.fo-tool-catalogue-epi.a11y-mode .tag.soud{ background: var(--a11y-red); }
+.fo-tool-catalogue-epi.a11y-mode .tag.haut{ background: var(--a11y-green); }
+.fo-tool-catalogue-epi.a11y-mode .tag.chim{ background: var(--a11y-purple); }
+.fo-tool-catalogue-epi.a11y-mode .tag.elec{ background: var(--a11y-yellow); color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .tag.froid,.fo-tool-catalogue-epi.a11y-mode .tag.eau{ background: var(--a11y-cyan); color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .tag.chaud{ background: var(--a11y-red); }
+.fo-tool-catalogue-epi.a11y-mode .tag.fem{ background: var(--a11y-purple); }
+.fo-tool-catalogue-epi.a11y-mode .tier{ background: var(--a11y-text); color: var(--a11y-bg); }
+.fo-tool-catalogue-epi.a11y-mode .tier.premium{ background: var(--a11y-yellow); color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .tier.eco{ background: var(--a11y-green); }
+.fo-tool-catalogue-epi.a11y-mode .b-cut,.fo-tool-catalogue-epi.a11y-mode .b-clim{ background: var(--a11y-bg); color: var(--a11y-text); border: 2px solid var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .b-cut.cut-h{ background: var(--a11y-red); color: var(--a11y-bg); border-color: var(--a11y-red); }
+.fo-tool-catalogue-epi.a11y-mode .b-cut.cut-m{ background: var(--a11y-yellow); color: var(--a11y-text); border-color: var(--a11y-yellow); }
+.fo-tool-catalogue-epi.a11y-mode .pa-btn{ background: var(--a11y-bg); border-color: var(--a11y-blue); color: var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .pa-btn:hover{ background: var(--a11y-blue); color: var(--a11y-bg); }
+.fo-tool-catalogue-epi.a11y-mode .pa-btn.bskt-tg{ background: var(--a11y-green); color: var(--a11y-bg); }
+.fo-tool-catalogue-epi.a11y-mode .pa-btn.bskt-tg.active,.fo-tool-catalogue-epi.a11y-mode .pa-btn.cmp-tg.active{ background: var(--a11y-yellow); color: var(--a11y-text); border-color: var(--a11y-yellow); }
+.fo-tool-catalogue-epi.a11y-mode .rights-strip{ background: var(--a11y-bg); border-left-color: var(--a11y-purple); }
+.fo-tool-catalogue-epi.a11y-mode .rights-strip h2{ color: var(--a11y-purple); }
+.fo-tool-catalogue-epi.a11y-mode .rm-card{ background: var(--a11y-bg); border: 2px solid var(--a11y-text); border-top-color: var(--a11y-blue); border-top-width: 3px; }
+.fo-tool-catalogue-epi.a11y-mode .rm-card h4{ color: var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .rm-card p{ color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .modal{ background: var(--a11y-bg); color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .modal-header{ background: var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .modal-header .mh-cat,.fo-tool-catalogue-epi.a11y-mode .modal-header .mh-price{ color: var(--a11y-yellow); }
+.fo-tool-catalogue-epi.a11y-mode .m-block{ background: var(--a11y-bg); border: 2px solid var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .m-block h4{ color: var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .arg-block{ background: var(--a11y-purple); }
+.fo-tool-catalogue-epi.a11y-mode .arg-text{ background: var(--a11y-bg); color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .ab-btn{ background: var(--a11y-yellow); color: var(--a11y-text); }
+.fo-tool-catalogue-epi.a11y-mode .m-act-btn{ background: var(--a11y-green); color: var(--a11y-bg); }
+.fo-tool-catalogue-epi.a11y-mode .m-tag,.fo-tool-catalogue-epi.a11y-mode .m-tag.cert{ background: var(--a11y-bg); color: var(--a11y-green); border-color: var(--a11y-green); }
+.fo-tool-catalogue-epi.a11y-mode .m-tag.cut,.fo-tool-catalogue-epi.a11y-mode .m-tag.cut-h{ background: var(--a11y-yellow); color: var(--a11y-text); border-color: var(--a11y-yellow); }
+.fo-tool-catalogue-epi.a11y-mode .cc-card{ background: var(--a11y-bg); border: 2px solid var(--a11y-text); border-top: 3px solid var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .cc-card h4,.fo-tool-catalogue-epi.a11y-mode .cc-price{ color: var(--a11y-blue); }
+.fo-tool-catalogue-epi.a11y-mode .fo-contact{ background: var(--a11y-purple); }
+.fo-tool-catalogue-epi.a11y-mode .fo-contact h3{ color: var(--a11y-yellow); }
+.fo-tool-catalogue-epi.a11y-mode .fo-btn{ background: var(--a11y-yellow); color: var(--a11y-text); }
+@keyframes fadeIn{ from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp{
+    from { transform: translate(-50%, 20px); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+  }
+@media (max-width: 720px){.fo-tool-catalogue-epi .page{ padding: 20px 14px 50px; }
+.fo-tool-catalogue-epi .header{ padding: 28px 22px 26px; border-radius: 14px; }
+.fo-tool-catalogue-epi .header h1{ font-size: 28px; }
+.fo-tool-catalogue-epi .families{ grid-template-columns: 1fr 1fr; }
+.fo-tool-catalogue-epi .rights-mini{ grid-template-columns: 1fr 1fr; }
+.fo-tool-catalogue-epi .modal-header{ grid-template-columns: 1fr; padding: 20px 22px; }
+.fo-tool-catalogue-epi .modal-header h2{ font-size: 22px; }
+.fo-tool-catalogue-epi .modal-body{ padding: 22px; }
+.fo-tool-catalogue-epi .m-grid,.fo-tool-catalogue-epi .compare-grid[data-cols="3"],.fo-tool-catalogue-epi .compare-grid[data-cols="2"]{ grid-template-columns: 1fr; }
+.fo-tool-catalogue-epi .fo-contact{ grid-template-columns: 1fr; text-align: center; }
+.fo-tool-catalogue-epi .control-bar{ position: relative; top: auto; }
+.fo-tool-catalogue-epi .products{ grid-template-columns: 1fr 1fr; gap: 12px; }
+.fo-tool-catalogue-epi .product-name{ font-size: 14px; }
+.fo-tool-catalogue-epi .product-price{ font-size: 18px; }
+.fo-tool-catalogue-epi .product-actions{ flex-direction: column; }
+}
+
+.fo-tool-catalogue-epi{min-height:0!important;margin:0!important;padding:0!important;background:transparent!important;color:inherit}
+.fo-tool-catalogue-epi .rotate-banner,.fo-tool-catalogue-epi .skip-link,.fo-tool-catalogue-epi .a11y-toggle-bar,.fo-tool-catalogue-epi .a11y-toggle-wrap,.fo-tool-catalogue-epi .a11y-btn-wrap,.fo-tool-catalogue-epi footer,.fo-tool-catalogue-epi .footer,.fo-tool-catalogue-epi .foot{display:none!important}
+.fo-tool-catalogue-epi .navbar,.fo-tool-catalogue-epi .control-bar{top:80px!important}
+.fo-tool-catalogue-epi .page{max-width:none;margin:0;padding:0}
+.fo-tool-catalogue-epi img{max-width:100%;height:auto}
+</style>
+<!-- BOUTON A11Y -->
+<div class="a11y-btn-wrap">
+  <button id="a11yToggle" class="a11y-btn" type="button" aria-pressed="false" onclick="toggleA11y()" title="Mode lecture universelle">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    <span>Lecture facile</span>
+  </button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <span class="badge">FO Énergie GRDF · Catalogue 2026</span>
+    <h1>Le catalogue <em>EPI</em> du salarié GRDF</h1>
+    <p class="lede">51 équipements de protection à connaître. Choisissez le bon, demandez-le à votre manager, défendez votre santé au travail.</p>
+  </header>
+
+  <!-- BANDEAU FAMILLES -->
+  <div class="families">
+    <div class="fam" data-fam="casque" onclick="goFam('casque')">
+      <div class="fam-icon"><svg viewBox="0 0 64 64"><path d="M10 44c0-12 10-24 22-24s22 12 22 24M6 44h52M14 44v6h36v-6"/></svg></div>
+      <h3>Tête</h3>
+      <div class="nb">8 casques & casquettes</div>
+    </div>
+    <div class="fam" data-fam="oculaire" onclick="goFam('oculaire')">
+      <div class="fam-icon"><svg viewBox="0 0 64 64"><circle cx="18" cy="34" r="10"/><circle cx="46" cy="34" r="10"/><path d="M28 32c2-2 6-2 8 0M8 28l6 2M50 30l6-2"/></svg></div>
+      <h3>Yeux</h3>
+      <div class="nb">9 lunettes & masques</div>
+    </div>
+    <div class="fam" data-fam="gant" onclick="goFam('gant')">
+      <div class="fam-icon"><svg viewBox="0 0 64 64"><path d="M22 56V12c0-2 2-4 4-4s4 2 4 4v16M30 28V8c0-2 2-4 4-4s4 2 4 4v20M38 28V14c0-2 2-4 4-4s4 2 4 4v14M46 28V18c0-2 2-4 4-4s4 2 4 4v22c0 8-6 16-16 16h-12c-4 0-8-2-10-6"/></svg></div>
+      <h3>Mains</h3>
+      <div class="nb">12 gants</div>
+    </div>
+    <div class="fam" data-fam="chaussure" onclick="goFam('chaussure')">
+      <div class="fam-icon">
+        <svg viewBox="0 0 64 64" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Tige de la chaussure -->
+          <path d="M14 8h12v32c0 3 3 6 6 6h20c4 0 6 1 8 3l4 4v6c0 2-2 4-4 4H10c-2 0-4-2-4-4v-4c0-3 2-6 6-6h2V8z"/>
+          <!-- Lacets -->
+          <line x1="14" y1="16" x2="26" y2="16"/>
+          <line x1="14" y1="22" x2="26" y2="22"/>
+          <line x1="14" y1="28" x2="26" y2="28"/>
+          <line x1="14" y1="34" x2="26" y2="34"/>
+          <!-- Embout renforcé (en pointillés visuels) -->
+          <path d="M52 50c2 0 4 0 6 2"/>
+        </svg>
+      </div>
+      <h3>Pieds</h3>
+      <div class="nb">22 chaussures & bottes</div>
+    </div>
+  </div>
+
+  <!-- INFO STRIP FO -->
+  <div class="info-strip">
+    <div class="info-strip-ico">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7v7c0 5.5 3.8 10.7 10 12 6.2-1.3 10-6.5 10-12V7l-10-5z"/></svg>
+    </div>
+    <p><strong>Le moins cher n'est pas le mieux adapté.</strong> La sécurité n'est pas une variable budgétaire. Choisissez l'EPI qui convient à votre métier — la loi vous donne ce droit (Code du travail art. L.4321-1).</p>
+  </div>
+
+  <!-- CONTROL BAR -->
+  <div class="control-bar">
+    <div class="control-row">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="searchInput" placeholder="Rechercher (ex. Jalas, Bollé, gant soudage…)" aria-label="Rechercher un EPI">
+      </div>
+      <button class="ctl-btn cmp" id="compareBtn" disabled onclick="openCompare()" aria-label="Ouvrir le comparateur">
+        <svg viewBox="0 0 24 24"><path d="M9 5H3v14h6M15 5h6v14h-6M9 5v14M15 5v14"/></svg>
+        Comparer <span class="badge-num" id="cmpCount">0</span>
+      </button>
+      <button class="ctl-btn bskt" onclick="openBasket()" aria-label="Ma demande EPI">
+        <svg viewBox="0 0 24 24"><path d="M3 3h2l2.4 12.5a2 2 0 0 0 2 1.5h9.7a2 2 0 0 0 2-1.6L23 6H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+        Ma demande <span class="badge-num" id="basketCount">0</span>
+      </button>
+    </div>
+    <div class="filters-row">
+      <div class="fg">
+        <label>Activité</label>
+        <select id="actFilter">
+          <option value="">Toutes activités</option>
+          <option value="is">IS — Intervention sécurité</option>
+          <option value="soudage">Soudage / brasage</option>
+          <option value="hauteur">Travail en hauteur / charge</option>
+          <option value="clientele">Clientèle</option>
+          <option value="rsf">RSF / terrain</option>
+          <option value="biomethane">Biométhane</option>
+          <option value="chimique">Chimique / mercaptans</option>
+          <option value="electricien">Électricien BT/HTA</option>
+          <option value="froid">Travail au froid</option>
+          <option value="chaud">Travail par temps chaud</option>
+          <option value="eau">Travaux en eau / inondation</option>
+          <option value="manutention">Manutention</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Anti-coupure (gants)</label>
+        <select id="cutFilter">
+          <option value="">Indifférent</option>
+          <option value="cut-l">−  Léger</option>
+          <option value="cut-m">+  Moyen</option>
+          <option value="cut-h">++ Élevé</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Trier</label>
+        <select id="sortBy">
+          <option value="cat">Par famille</option>
+          <option value="prix-asc">Prix croissant</option>
+          <option value="prix-desc">Prix décroissant</option>
+          <option value="nom">Nom A-Z</option>
+        </select>
+      </div>
+      <button class="reset-btn" onclick="resetFilters()">Réinitialiser</button>
+    </div>
+  </div>
+
+  <!-- CONTENU CATALOGUE (généré par JS) -->
+  <div id="catalogue"></div>
+
+  <!-- DROITS FO COMPACT -->
+  <div class="rights-strip">
+    <h2>Si votre manager refuse</h2>
+    <p>Tous les EPI de ce catalogue sont validés par GRDF (DP2S). Un refus pour seul motif de coût n'est pas opposable. Vous avez le droit d'être consulté, de proposer, et de refuser un EPI inadapté.</p>
+    <div class="rights-mini">
+      <div class="rm-card">
+        <h4>1 · Demander par écrit</h4>
+        <p>Email au manager avec l'argumentaire intégré. Bouton « Ma demande » au-dessus.</p>
+      </div>
+      <div class="rm-card">
+        <h4>2 · Saisir la CSSCT</h4>
+        <p>Commission Santé-Sécurité. FO y siège — contactez votre élu FO local.</p>
+      </div>
+      <div class="rm-card">
+        <h4>3 · Médecine du travail</h4>
+        <p>Son avis s'impose. Indispensable si motif médical (TMS, allergies).</p>
+      </div>
+      <div class="rm-card">
+        <h4>4 · Vos représentants FO</h4>
+        <p><strong>Rapprochez-vous de vos représentants FO</strong> en local : ils vous accompagnent et saisissent la DP2S si nécessaire.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGES PDF -->
+  <h2 style="font-family:'Fraunces',serif; font-size:22px; color:var(--bleu); margin:32px 0 10px;">Catalogue officiel — pages source</h2>
+  <p style="font-size:13px; color:var(--gris); margin-bottom:14px;">Les 8 pages du kit de portage GRDF (mai 2026). Cliquez pour zoomer.</p>
+  <div class="pdf-grid" id="pdfGrid"></div>
+
+  <!-- CONTACT FO -->
+  <div class="fo-contact">
+    <img class="fo-logo" src="https://fo-grdf.fr/wp-content/uploads/2026/09/logo-fo-energie-grdf-fc-720.png" alt="FO GRDF">
+    <div>
+      <h3>Une question, un blocage ?</h3>
+      <p><strong>Rapprochez-vous de vos représentants FO</strong> en local. Refus manager, EPI inadapté, accident lié à un équipement défaillant — votre équipe FO de proximité est votre premier appui.</p>
+    </div>
+    <span class="fo-btn" style="cursor:default;">
+      <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
+      Vos élus FO
+    </span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img src="https://fo-grdf.fr/wp-content/uploads/2026/09/logo-fo-energie-grdf-fc-720.png" alt="FO Énergie GRDF"><br>
+    Document syndical FO Énergie GRDF · Catalogue EPI mai 2026 ·
+    <strong>Rapprochez-vous de vos représentants FO</strong> ·
+    <a href="https://www.instagram.com/FO_GRDF" target="_blank" rel="noopener">@FO_GRDF</a>
+  </footer>
+
+</div><!-- /page -->
+
+<!-- MODAL PRODUIT -->
+<div class="modal-bg" id="modalProduct" onclick="if(event.target===this)closeModal('modalProduct')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modalProduct')" aria-label="Fermer">×</button>
+    <div id="modalProductContent"></div>
+  </div>
+</div>
+
+<!-- MODAL COMPARE -->
+<div class="modal-bg" id="modalCompare" onclick="if(event.target===this)closeModal('modalCompare')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modalCompare')">×</button>
+    <div class="modal-header" style="grid-template-columns:1fr;">
+      <div>
+        <div class="mh-cat">Comparateur</div>
+        <h2>Mes EPI côte à côte</h2>
+        <p class="mh-brand">Aidez-vous à choisir entre 2 ou 3 modèles</p>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="compare-grid" id="compareGrid"></div>
+      <p style="font-size:12px; color:var(--gris); margin-top:12px;"><strong>Conseil FO :</strong> un écart de prix se justifie par la durée d'usage, le confort et les certifications — pensez coût total, pas prix d'achat.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL BASKET -->
+<div class="modal-bg" id="modalBasket" onclick="if(event.target===this)closeModal('modalBasket')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modalBasket')">×</button>
+    <div class="modal-header" style="grid-template-columns:1fr; background:linear-gradient(135deg,#28b193 0%,#019cda 100%);">
+      <div>
+        <div class="mh-cat">Ma demande EPI</div>
+        <h2>Envoyer à mon manager</h2>
+        <p class="mh-brand">Un mail prêt-à-l'emploi avec l'argumentaire santé / sécurité / conditions de travail.</p>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div id="basketList"></div>
+      <div class="gen-form">
+        <label for="bName">Votre nom & poste</label>
+        <input type="text" id="bName" placeholder="Ex. Mickaël LOPES — Technicien réseau">
+
+        <label for="bManager">Email de votre manager</label>
+        <input type="email" id="bManager" placeholder="prenom.nom@grdf.fr">
+
+        <label for="bActivity">Votre activité principale</label>
+        <select id="bActivity">
+          <option value="">— Choisir —</option>
+          <option value="IS">IS — Intervention de sécurité</option>
+          <option value="travaux en hauteur ou en charge">Travail en hauteur / charge</option>
+          <option value="soudage et brasage">Soudage / brasage</option>
+          <option value="clientèle">Clientèle / visites</option>
+          <option value="RSF et terrain meuble">RSF / terrain meuble</option>
+          <option value="exploitation biométhane">Biométhane</option>
+          <option value="manutention et travaux divers">Manutention</option>
+          <option value="produits chimiques">Chimique / mercaptans</option>
+          <option value="électrique / consignation">Électrique</option>
+          <option value="travail au froid">Travail au froid</option>
+          <option value="travail par temps chaud">Travail par temps chaud</option>
+          <option value="travaux en eau">Eau / inondations</option>
+        </select>
+
+        <label for="bReason">Élément personnel (optionnel)</label>
+        <textarea id="bReason" placeholder="Ex. antécédent TMS aux pieds, transpiration excessive en été, ampoules récurrentes…"></textarea>
+
+        <div style="margin-top:14px; padding:10px 14px; background:white; border-radius:8px; border-left:3px solid var(--rouge-fo); font-size:12.5px; color:#444;">
+          <strong style="color:var(--rouge-fo);">Conseil FO :</strong> en cas de refus ou de blocage, <strong>rapprochez-vous de vos représentants FO en local</strong> pour relayer la demande.
+        </div>
+      </div>
+
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px;">
+        <a class="m-act-btn" id="basketSendBtn" href="#">
+          <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9 22,2"/></svg>
+          Envoyer à mon manager
+        </a>
+        <button class="m-act-btn alt" onclick="copyBasketMail()">
+          <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copier
+        </button>
+        <button class="m-act-btn alt" style="color:var(--rouge); border-color:var(--rouge);" onclick="clearBasket()">
+          <svg viewBox="0 0 24 24"><polyline points="3,6 5,6 21,6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+          Vider
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CATALOGUE PDF -->
+<div class="modal-bg" id="modalCatalog" onclick="if(event.target===this)closeModal('modalCatalog')">
+  <div class="modal" style="max-width:1100px;">
+    <button class="modal-close" onclick="closeModal('modalCatalog')">×</button>
+    <div id="modalCatalogContent" style="padding:12px;"></div>
+  </div>
+</div>
+
+<script>
+/* ═══════════ DONNÉES ═══════════ */
+/*
+  Référentiel anti-coupure FO (basé sur EN 388:2016 — risques mécaniques) :
+   - cut-l (−)  Léger    Coup test 1-2 / ISO 13997 A-B (≤ 10 N)   → Manutention douce, IS, soudage gaz
+   - cut-m (+)  Moyen    Coup test 3   / ISO 13997 C   (10-15 N)  → Manutention courante avec arêtes
+   - cut-h (++) Élevé    Coup test 4-5 / ISO 13997 D-F (≥ 15 N)   → Verre, tôle, métal coupant
+  Notation EN 388:2016 lue à 6 caractères : abrasion (0-4), coupure-coup (0-5), déchirure (0-4),
+  perforation (0-4), ISO 13997 (A-F), impact (P ou rien).
+  Champ "climate" : chaud (Climate Control), froid, eau
+*/
+const PRODUITS = [
+  /* ━━ TÊTE ━━ */
+  { id:'vistashield', cat:'casque', sub:'Travaux en charge', nom:'VISTASHIELD', marque:'Schuberth', prix:39.95, tier:'eco',
+    activites:['hauteur'], tags:[{c:'haut',l:'Trav. charge'}],
+    use:"Casque léger d'appoint avec visière pour travaux en charge ponctuels.",
+    pour:['Travaux en charge occasionnels','Atelier'],
+    plus:['Léger','Visière incluse','Prix d\'appel'],
+    moins:['Confort basique','Pas de molette'],
+    arg:"Modèle d'entrée. Pour un usage quotidien, je préfère un harnais rotatif (IDRA 2 ou V-GARD 950) qui évite céphalées et tensions cervicales.",
+    cert:['EN 397','EN 50365'] },
+
+  { id:'vgard950', cat:'casque', sub:'Travaux en charge', nom:'V-GARD 950', marque:'MSA', prix:92.75, tier:'premium',
+    activites:['hauteur','is'], tags:[{c:'haut',l:'Trav. charge'},{c:'is',l:'IS'}],
+    use:"Casque intégral avec écran de visage rabattable + harnais 6 points + jugulaire 4 points — la référence IS.",
+    pour:['Intervention de sécurité','Travail en hauteur quotidien'],
+    plus:['Écran de visage intégré','Harnais rotatif 6 points','Jugulaire 4 points','Port quotidien confortable'],
+    moins:['Plus lourd que les modèles simples'],
+    arg:"Pour mon activité quotidienne en IS, le V-GARD 950 offre l'écran de visage et la jugulaire 4 points conformes à EN 397 § 5.2. Surcoût largement amorti sur 4-5 ans d'usage.",
+    cert:['EN 397','EN 50365','EN 12492','EN 166'] },
+
+  { id:'idra2', cat:'casque', sub:'Travaux en charge', nom:'IDRA 2', marque:'Auboueix · France', prix:74.18, tier:'standard',
+    activites:['hauteur','is'], tags:[{c:'haut',l:'Trav. charge'}],
+    use:"Casque français à harnais rotatif et jugulaire 4 points. Excellent compromis IS / hauteur.",
+    pour:['Travaux en charge','IS','Port quotidien'],
+    plus:['Fabrication française','Harnais crémaillère','Jugulaire 4 points','Coque ventilée'],
+    moins:['Écran de visage non fourni'],
+    arg:"L'IDRA 2 offre le confort harnais rotatif et la jugulaire 4 points à un prix raisonnable. Un investissement rentable en confort et sécurité sur 4 ans d'usage.",
+    cert:['EN 397','EN 50365','EN 12492'] },
+
+  { id:'vertex-vizen', cat:'casque', sub:'Travaux en charge', nom:'VERTEX + VIZEN', marque:'Petzl', prix:92.53, tier:'premium',
+    activites:['hauteur','is'], tags:[{c:'haut',l:'Trav. charge'}],
+    use:"La référence Petzl du travail en hauteur. Norme chocs latéraux EN 12492.",
+    pour:['Travail en hauteur fréquent','Accès sur corde'],
+    plus:['Résistance chocs latéraux','Mousses interchangeables','CenterFit','Écran VIZEN anti-buée'],
+    moins:['Plus lourd (455 g)'],
+    arg:"Le VERTEX répond à EN 12492 (chocs latéraux), essentiel pour mes interventions où le risque n'est pas purement vertical. Mousses interchangeables = hygiène cutanée.",
+    cert:['EN 397','EN 12492','EN 50365','EN 166'] },
+
+  { id:'protos', cat:'casque', sub:'Travaux en charge', nom:'PROTOS Integral Industry', marque:'Pfanner', prix:168.07, tier:'premium',
+    activites:['hauteur','soudage','is'], tags:[{c:'haut',l:'Trav. charge'}],
+    use:"Tout-en-un : casque + visière + anti-bruit + protections latérales. Aération brevetée.",
+    pour:['Risques multiples combinés','Soudage en hauteur'],
+    plus:['4 EPI en un','Aération naturelle (-4°C casque)','Modulaire','Durabilité 8-10 ans'],
+    moins:['Prix élevé'],
+    arg:"Le PROTOS remplace 4 EPI distincts (casque + visière + anti-bruit + protections faciales). Acheter ces 4 EPI séparément dépasse 200 €. Durabilité 8-10 ans = le meilleur investissement du catalogue pour activités à risques combinés.",
+    cert:['EN 397','EN 12492','EN 352-3','EN 1731','EN 166'] },
+
+  { id:'casquette-7cm', cat:'casque', sub:'Casquettes coquées', nom:'Casquette coquée 7cm', marque:'Standard', prix:21.90, tier:'eco',
+    activites:['clientele','rsf'], tags:[{c:'',l:'Casquette'}],
+    use:"Casquette légère anti-heurts (norme EN 812). Allure civile pour clientèle.",
+    pour:['Visites clientèle','Maintenance bureautique'],
+    plus:['Très légère','Discrète'],
+    moins:['Anti-heurts uniquement (pas chute d\'objets)'],
+    arg:"Pour mes visites clientèle, la casquette coquée est plus appropriée qu'un casque complet : elle protège des heurts en accès souterrain sans intimider le client.",
+    cert:['EN 812'] },
+
+  { id:'hardcap', cat:'casque', sub:'Casquettes coquées', nom:'Hardcap A1+', marque:'JSP', prix:31.57, tier:'standard',
+    activites:['clientele','rsf'], tags:[{c:'',l:'Casquette'}],
+    use:"Casquette coquée à mousses haute densité. Confort longue durée.",
+    pour:['Clientèle quotidienne','Maintenance en regards'],
+    plus:['Mousses absorbantes haute densité','Molette d\'ajustement','Aération améliorée'],
+    moins:['Anti-heurts uniquement'],
+    arg:"Les mousses haute densité réduisent réellement la transmission des chocs. Pour un usage quotidien, c'est un confort qui évite les céphalées de fin de journée.",
+    cert:['EN 812'] },
+
+  { id:'iris2', cat:'casque', sub:'Casques standards', nom:'IRIS 2', marque:'Auboueix · France', prix:35.43, tier:'standard',
+    activites:['rsf','clientele'], tags:[],
+    use:"Casque standard léger (350 g) pour activités sans risque chute d'objet majeur.",
+    pour:['Visites chantier','Maintenance générale'],
+    plus:['Fabrication française','Léger','Polyvalent'],
+    moins:['Pas pour travaux en charge'],
+    arg:"L'IRIS 2 répond à mes besoins courants. Pour les interventions exposées, je demanderai en complément un casque à jugulaire 4 points.",
+    cert:['EN 397'] },
+
+  /* ━━ YEUX ━━ */
+  { id:'rush2-inc', cat:'oculaire', sub:'Lunettes de sécurité', nom:'Rush 2+ incolore', marque:'Bollé', prix:5.50, tier:'eco',
+    activites:['clientele','rsf','manutention'], tags:[{c:'',l:'Sécurité'}],
+    use:"Lunettes de sécurité ultra-légères (23 g) avec anti-buée Platinum 5× plus durable.",
+    pour:['Port quotidien intérieur','Manipulation outils'],
+    plus:['Anti-buée Platinum durable','Champ panoramique','Légères'],
+    moins:['Pas anti-UV'],
+    arg:"L'anti-buée Platinum dure 5× plus longtemps que les verres standard — moins d'accidents dus à la buée en intervention.",
+    cert:['EN 166','EN 170'] },
+
+  { id:'rush2-fume', cat:'oculaire', sub:'Lunettes solaires', nom:'Rush 2+ Fumé', marque:'Bollé', prix:6.05, tier:'eco',
+    activites:['clientele','rsf'], tags:[{c:'chaud',l:'Solaire'}],
+    use:"Version solaire des Rush 2+. UV catégorie 3 + protection mécanique. Pour travaux extérieurs.",
+    pour:['Chantiers en plein soleil','Conduite VL'],
+    plus:['Filtre UV 99,9%','Légères'],
+    moins:['Pas pour soudage'],
+    arg:"Protection UV + mécanique en une seule paire. Évite de retirer ses lunettes pour mettre des solaires (risque oubli en zone projection).",
+    cert:['EN 166','EN 172'] },
+
+  { id:'rush2-t17', cat:'oculaire', sub:'Brasage / Soudage', nom:'Rush 2+ Teinte 1,7', marque:'Bollé', prix:8.95, tier:'standard',
+    activites:['soudage'], tags:[{c:'soud',l:'Brasage léger'}],
+    use:"Verres teinte 1,7 pour brasage léger et découpe disqueuse.",
+    pour:['Brasage léger','Disqueuse','Allumage chalumeau'],
+    plus:['Confort Rush 2+'],
+    moins:['Insuffisant pour soudage arc'],
+    arg:"Conviennent au brasage léger. Pour l'arc, je demanderai Teinte 3 minimum.",
+    cert:['EN 166','EN 169'] },
+
+  { id:'rush2-t3', cat:'oculaire', sub:'Brasage / Soudage', nom:'Rush 2+ Teinte 3', marque:'Bollé', prix:8.95, tier:'standard',
+    activites:['soudage'], tags:[{c:'soud',l:'Brasage'}],
+    use:"Teinte 3 conforme EN 169 pour le brasage oxy-acétylène standard.",
+    pour:['Brasage standard GRDF','Découpe oxy'],
+    plus:['Conforme EN 169','Confort Rush 2+'],
+    moins:['Pas pour arc intense'],
+    arg:"Les Rush 2+ Teinte 3 sont conformes EN 169 pour le brasage oxy-acétylène standard, qui constitue l'essentiel de mon activité.",
+    cert:['EN 166','EN 169'] },
+
+  { id:'rush2-t5', cat:'oculaire', sub:'Oxycoupage', nom:'Rush 2+ Teinte 5 + kit Oxy', marque:'Bollé', prix:15.31, tier:'premium',
+    activites:['soudage'], tags:[{c:'soud',l:'Oxy'}],
+    use:"Teinte 5 + kit mousse anti-projection + tresse de maintien. Pour oxycoupage.",
+    pour:['Oxycoupage','Travaux prolongés sur métaux chauds'],
+    plus:['Teinte 5 EN 169','Mousse anti-projection latérale','Tresse anti-chute'],
+    moins:['Champ réduit hors soudage'],
+    arg:"Le kit mousse + tresse protège des projections latérales et évite que les lunettes tombent pendant une opération critique. Surcoût de 6 € justifié pour la sécurité oculaire.",
+    cert:['EN 166','EN 169'] },
+
+  { id:'spectrum', cat:'oculaire', sub:'Sur-lunettes', nom:'SPECTRUM', marque:'Bollé', prix:10.95, tier:'standard',
+    activites:['clientele','rsf','manutention'], tags:[{c:'',l:'OTG correctrice'}],
+    use:"Sur-lunettes pour porteurs de lunettes correctrices. Anti-buée. Couvre jusqu'à 145 mm.",
+    pour:['Salariés à la vue','Visites à risque'],
+    plus:['OTG (Over The Glasses)','Pas besoin de monture vue spéciale (économie 250 €+)'],
+    moins:['Champ légèrement réduit'],
+    arg:"Étant porteur de lunettes de vue, les SPECTRUM me donnent une protection EN 166 immédiate sans attendre des correctrices à la vue (250 € + 4-8 semaines).",
+    cert:['EN 166','EN 170'] },
+
+  { id:'super-f', cat:'oculaire', sub:'Sur-lunettes brasage', nom:'SUPER F OTG Teinte 3', marque:'Bollé', prix:10.25, tier:'standard',
+    activites:['soudage'], tags:[{c:'soud',l:'OTG brasage'}],
+    use:"Sur-lunettes Teinte 3 pour soudeurs/braseurs porteurs de lunettes de vue.",
+    pour:['Braseurs à la vue'],
+    plus:['Compatible vue','Teinte 3 EN 169','Mousses latérales'],
+    moins:['Pas pour soudage intense'],
+    arg:"Étant à la vue, les SUPER F OTG évitent l'achat de doubles lunettes vue + brasage.",
+    cert:['EN 166','EN 169'] },
+
+  { id:'flip-up', cat:'oculaire', sub:'Lunettes-masques', nom:'FLIP UP Teinte 5', marque:'Bollé', prix:22.95, tier:'premium',
+    activites:['soudage'], tags:[{c:'soud',l:'Soudage'}],
+    use:"Verre Teinte 5 relevable : passer du soudage à l'inspection sans changer de lunettes.",
+    pour:['Soudage à l\'arc avec contrôles fréquents'],
+    plus:['Verre teinte 5 relevable','Verre intérieur incolore EN 166','Bandeau réglable'],
+    moins:['Plus encombrant'],
+    arg:"Le système relevable supprime le geste 'enlever/remettre' entre chaque cordon — moins de fatigue, moins d'oublis (= risque d'arc électrique sans protection).",
+    cert:['EN 166','EN 169'] },
+
+  { id:'universal', cat:'oculaire', sub:'Lunettes-masques', nom:'UNIVERSAL Teinte 5', marque:'Bollé', prix:21.96, tier:'premium',
+    activites:['soudage'], tags:[{c:'soud',l:'Soudage'}],
+    use:"Lunettes-masques étanches Teinte 5 — joint mousse intégral. Protection projections incandescentes.",
+    pour:['Soudage à l\'arc intensif','Forte projection'],
+    plus:['Joint mousse intégral','Protection latérale 360°'],
+    moins:['Buée possible en humide'],
+    arg:"L'UNIVERSAL est étanche aux meulures incandescentes qui se logent sous des lunettes classiques et causent des brûlures cornéennes.",
+    cert:['EN 166','EN 169'] },
+
+  /* ━━ MAINS ━━ */
+  { id:'tegera255', cat:'gant', sub:'Manutention', nom:'TEGERA 255', marque:'Ejendals', prix:15.80, tier:'standard',
+    activites:['manutention','rsf'], tags:[{c:'',l:'Manutention'}], cut:'cut-m',
+    use:"Gant cuir + Kevlar, dextérité 5/5. EN 388 = 4131A puis 4X41C (TDM) — anti-coupure moyen (+). Pour manutention précise.",
+    pour:['Manutention fine','Préhension précise'],
+    plus:['Cuir Kevlar — anti-coupure C','Dextérité maximale 5/5','Coutures Kevlar renforcées','EN 388:2016 niveau C (TDM)'],
+    moins:['Pas de protection thermique','Pas pour verre/tôle fine (préférer ++)'],
+    arg:"Anti-coupure niveau C (+ Moyen) avec doublure Kevlar : adapté à ma manutention courante avec arêtes vives (tôles fines, ferrailles, pièces d'assemblage).",
+    cert:['EN 388:2016 4131A','TDM Cut C','EN 420'] },
+
+  { id:'perseus', cat:'gant', sub:'Manutention', nom:'PERSEUS', marque:'Ansell', prix:12.09, tier:'standard',
+    activites:['manutention','rsf'], tags:[{c:'',l:'Humide / huileux'}], cut:'cut-l',
+    use:"Gant nitrile micro-mousse. EN 388 = 4121X — anti-coupure léger (−). Excellent grip en milieu humide / huileux.",
+    pour:['Milieu humide','Présence d\'huile'],
+    plus:['Grip sur surfaces grasses','Lavables'],
+    moins:['Anticoupure faible (-)','Pas thermique'],
+    arg:"Le nitrile mousse adhère même mouillé — indispensable dès qu'il y a graisse ou huile sur les pièces.",
+    cert:['EN 388:2016 4121X','EN 420'] },
+
+  { id:'tegera666', cat:'gant', sub:'Manutention', nom:'TEGERA 666', marque:'Ejendals', prix:12.80, tier:'standard',
+    activites:['manutention','rsf'], tags:[{c:'',l:'Polyvalent'}], cut:'cut-m',
+    use:"Gant néoprène anti-coupure. EN 388 = 2X42C — anti-coupure moyen (+). Pour tôlerie et assemblage.",
+    pour:['Manutention générale avec arêtes','Tôlerie fine','Travaux de fabrication / assemblage'],
+    plus:['Anti-coupure niveau C (TDM)','Enduction néoprène paume','Idéal manutention tôles & verre','Durée 3-6 mois'],
+    moins:['Pas pour très humide'],
+    arg:"Le TEGERA 666 est anti-coupure niveau C (EN 388 2X42C) : protection adaptée pour manipuler tôles, verre fin et arêtes vives. C'est mon gant de référence pour la manutention à risque coupure modéré.",
+    cert:['EN 388:2016 2X42C','TDM Cut C','EN 420'] },
+
+  { id:'flexwelder', cat:'gant', sub:'Soudage / IS', nom:'FLEXWELDER', marque:'Tegera', prix:14.90, tier:'standard',
+    activites:['soudage','is'], tags:[{c:'soud',l:'TIG / IS'}], cut:'cut-l',
+    use:"Cuir chèvre fin pour soudage TIG, brasage et IS. EN 388 = 2122X — anti-coupure léger (−). EN 12477 type A.",
+    pour:['Soudage TIG','Brasage','IS sur pièces chaudes'],
+    plus:['Cuir chèvre fin','Doublure anti-feu','Manchette poignet','Coutures Kevlar'],
+    moins:['Pas pour soudure arc intensif','Anticoupure modeste (-)'],
+    arg:"Pour mes travaux d'IS et de brasage TIG, le FLEXWELDER offre la dextérité nécessaire sans sacrifier la protection thermique.",
+    cert:['EN 388 2122X','EN 407 412X4X','EN 12477:A'] },
+
+  { id:'prosoud', cat:'gant', sub:'Soudage / IS', nom:'PROSOUD', marque:'Singer', prix:15.64, tier:'standard',
+    activites:['soudage'], tags:[{c:'soud',l:'Arc MIG/MAG'}], cut:'cut-h',
+    use:"Cuir bovin + doublure Kevlar 5/5. EN 388 = 4X43E — anti-coupure ÉLEVÉ (++). EN 12477:A. Soudage arc + risque coupure majeur.",
+    pour:['Soudage MIG/MAG','Soudage arc','Manipulation pièces chaudes / coupantes','Travaux à risque coupure élevé'],
+    plus:['Anti-coupure niveau E (++) — un des meilleurs du catalogue','Cuir bovin 1.4 mm + doublure Kevlar','Contact 250°C / 15 s (EN 407)','Manchette 15 cm','Coutures Kevlar'],
+    moins:['Dextérité 4/5 (doublure épaisse)'],
+    arg:"Le PROSOUD est noté EN 388 4X43E : anti-coupure niveau E (++ Élevé) grâce à sa doublure Kevlar. C'est le gant à demander pour tout travail combinant soudage et risque de coupure (manipulation de tôles chaudes, déchets de meulage incandescents).",
+    cert:['EN 388:2016 4X43E','TDM Cut E','EN 407 413X4X','EN 12477:A'] },
+
+  { id:'fluotech468', cat:'gant', sub:'Produits chimiques', nom:'FLUOTECH 468', marque:'Mapa', prix:78.90, tier:'premium',
+    activites:['chimique'], tags:[{c:'chim',l:'Chimique Type A'}], cut:'cut-l',
+    use:"Tri-couches néoprène + butyle + fluoroélastomère. Type A EN 374. EN 388 = 4101A — anti-coupure léger (−).",
+    pour:['Mercaptans (THT)','Hydrocarbures','Acides forts','Solvants'],
+    plus:['Type A EN 374','Manchette 38 cm','Résistance perforation'],
+    moins:['Dextérité réduite','Prix élevé'],
+    arg:"Type A EN 374-1 = résiste à 6 produits classés A (vs 3 pour Type B). Les gants nitrile standard sont percés en 10 min par les solvants ; le FLUOTECH protège >30 min — différence vitale en Seveso.",
+    cert:['EN 388','EN 374-1:Type A','EN 374-5'] },
+
+  { id:'nitrile719b', cat:'gant', sub:'Produits chimiques', nom:'NITRILE 719B', marque:'Mapa', prix:10.20, tier:'eco',
+    activites:['chimique','manutention'], tags:[{c:'chim',l:'Chim. léger'}], cut:'cut-l',
+    use:"Nitrile Type B EN 374. EN 388 = 4010 — anti-coupure léger (−). Contact bref avec produits peu agressifs.",
+    pour:['Nettoyage outils','Huiles','Graisses'],
+    plus:['Bon marché','Souples'],
+    moins:['Type B seulement','Résistance limitée aux solvants forts'],
+    arg:"Suffisant pour le nettoyage d'outils. Pour les opérations Seveso (mercaptans), je demanderai du FLUOTECH 468.",
+    cert:['EN 388','EN 374-1:Type B'] },
+
+  { id:'sibille-c0', cat:'gant', sub:'Électricien', nom:'SIBILLE Classe 0', marque:'Catu', prix:21.33, tier:'standard',
+    activites:['electricien'], tags:[{c:'elec',l:'Isolant 1000 V'}],
+    use:"Gants isolants latex Classe 0. Protection jusqu'à 1000 V AC. À porter avec sur-gants.",
+    pour:['Travaux sous tension BT','Consignation','Manœuvres'],
+    plus:['Isolation 1000 V','Latex souple','Norme EN 60903'],
+    moins:['Test diélectrique annuel obligatoire','Latex fragile sans sur-gants'],
+    arg:"EPI réglementaire imposé par UTE C18-510 pour travaux sous tension BT. Toujours associé aux sur-gants GMS pour la protection mécanique.",
+    cert:['EN 60903','IEC 60903','Classe 0 — 1000 V AC'] },
+
+  { id:'surgants', cat:'gant', sub:'Électricien', nom:'Sur-gants GMS/7/ELC', marque:'Catu', prix:6.80, tier:'eco',
+    activites:['electricien'], tags:[{c:'elec',l:'Sur-gants'}], cut:'cut-l',
+    use:"Cuir chrome à porter PAR-DESSUS les gants isolants Sibille. EN 388 = 3122X — anti-coupure léger (−). Indispensable.",
+    pour:['Compléter Sibille C0/C2'],
+    plus:['Renforcement paume','Coutures Kevlar','Préservent le latex'],
+    moins:['Ne se portent jamais seuls'],
+    arg:"Sans sur-gants, le latex Sibille se déchire au premier objet pointu = aucune protection. Indispensables.",
+    cert:['EN 388 2122X','EN 60903 Annexe B'] },
+
+  { id:'sibille-c2', cat:'gant', sub:'Électricien', nom:'SIBILLE Classe 2', marque:'Catu', prix:42.28, tier:'standard',
+    activites:['electricien'], tags:[{c:'elec',l:'Isolant 17 kV'}],
+    use:"Gants isolants HTA jusqu'à 17 000 V AC. Pour travaux sous tension HTA.",
+    pour:['Travaux sous tension HTA','Manœuvres disjoncteur HTA'],
+    plus:['Isolation 17 kV','Conforme HTA'],
+    moins:['Dextérité réduite','Test diélectrique tous les 6 mois'],
+    arg:"Sur HTA, la Classe 0 est totalement insuffisante = arc électrique mortel. La Classe 2 est non négociable, c'est une question de vie.",
+    cert:['EN 60903','IEC 60903','Classe 2 — 17 kV AC'] },
+
+  { id:'canada', cat:'gant', sub:'Sous-gants froid', nom:'CANADA', marque:'Mapa', prix:2.94, tier:'eco',
+    activites:['froid'], tags:[{c:'froid',l:'Sous-gant'}],
+    use:"Sous-gants tricot à porter SOUS le gant de travail. Confort à 0°C / -5°C.",
+    pour:['Travail au froid modéré'],
+    plus:['Très bon marché','Souples','Lavables'],
+    moins:['Protection limitée -5°C'],
+    arg:"Améliorent le confort hivernal sans réduire la dextérité.",
+    cert:['EN 511'] },
+
+  { id:'zpp25', cat:'gant', sub:'Sous-gants froid', nom:'ZPP25', marque:'Singer', prix:3.24, tier:'eco',
+    activites:['froid'], tags:[{c:'froid',l:'Sous-gant'}],
+    use:"Sous-gants fibre thermolite. Pour -10°C et travail prolongé.",
+    pour:['Interventions hivernales prolongées'],
+    plus:['Fibre Thermolite','Mieux isolant','Lavables'],
+    moins:['Légèrement moins fins'],
+    arg:"Pour 30 cts de plus, gain réel d'isolation — préviennent engelures et perte de sensibilité tactile.",
+    cert:['EN 511'] },
+
+  /* ━━ PIEDS — Chaussures basses ━━ */
+  { id:'heckel-ms300', cat:'chaussure', sub:'Chaussures basses', nom:'HECKEL MS 300 LOW', marque:'Heckel', prix:56.85, tier:'eco',
+    activites:['clientele','rsf','biomethane','manutention'], tags:[],
+    use:"Chaussures basses légères, embout composite. Modèle d'entrée pour usages occasionnels.",
+    pour:['Visites clientèle','Intérieur sec'],
+    plus:['Très légères','Embout composite','Conformes S3'],
+    moins:['Confort basique','Pas de protection cheville'],
+    arg:"Modèle d'entrée. Pour mon usage debout quotidien, je préfère un modèle à mousse mémoire (JALAS EXALTER).",
+    cert:['EN ISO 20345 S3'] },
+
+  { id:'heckel-1', cat:'chaussure', sub:'Chaussures basses', nom:'HECKEL 1', marque:'Heckel', prix:74.00, tier:'standard',
+    activites:['clientele','rsf','biomethane','manutention'], tags:[],
+    use:"Cuir grainé hydrofuge. Confort renforcé pour usage quotidien.",
+    pour:['Clientèle quotidienne','RSF léger'],
+    plus:['Cuir hydrofuge','Doublure respirante','Confort EVA'],
+    moins:['Tige courte'],
+    arg:"Cuir hydrofuge qui résiste à la pluie d'intervention. Confort EVA pour les longues journées en clientèle.",
+    cert:['EN ISO 20345 S3'] },
+
+  { id:'jalas-exalter', cat:'chaussure', sub:'Chaussures basses', nom:'JALAS EXALTER', marque:'Jalas · Finlande', prix:110.00, tier:'premium',
+    activites:['clientele','rsf','biomethane','manutention','chaud'], tags:[{c:'chaud',l:'Climate Control'}], climate:'chaud',
+    use:"Sneaker de sécurité. Mousse mémoire de forme, semelle anti-perforation textile, brevet Climate Control respirant.",
+    pour:['Port quotidien longue durée','Pieds sensibles','Antécédents TMS'],
+    plus:['Mousse mémoire de forme','Respirabilité Climate Control','Anti-perforation textile','Semelle SRC'],
+    moins:['Prix élevé','Pas pour terrain boueux'],
+    arg:"Debout 6-8h/jour, l'EXALTER me protège des TMS plantaires et lombaires. La mousse mémoire réduit la fatigue plantaire de 30% sur 8h (étude Jalas-Fraunhofer). R.4321-4 impose un EPI adapté au travailleur.",
+    cert:['EN ISO 20345 S3 SRC'] },
+
+  { id:'jalfairy', cat:'chaussure', sub:'Chaussures basses', nom:'JALLATTE JALFAIRY', marque:'Jallatte · France', prix:73.84, tier:'standard',
+    activites:['clientele','rsf','manutention'], tags:[{c:'fem',l:'Coupe femme'}],
+    use:"Conception spécifique pour pied féminin (anatomie, talon serré, frottements évités).",
+    pour:['Personnel féminin','Clientèle, RSF'],
+    plus:['Coupe femme dédiée','Embout composite','Fabrication française'],
+    moins:['Tailles femme uniquement'],
+    arg:"Les chaussures unisexes sont mal adaptées à la morphologie de mon pied (talon flottant, frottements). R.4321-4 impose un EPI adapté au travailleur. La coupe femme dédiée prévient ampoules et troubles posturaux.",
+    cert:['EN ISO 20345 S3'] },
+
+  { id:'jalroseau', cat:'chaussure', sub:'Chaussures basses', nom:'JALLATTE JALROSEAU', marque:'Jallatte · France', prix:87.09, tier:'premium',
+    activites:['clientele','rsf','manutention'], tags:[],
+    use:"Cuir nubuck. Confort dynamique pour journées longues.",
+    pour:['Port quotidien intensif','Activités variées'],
+    plus:['Cuir nubuck','Mousse confort dynamique','Anti-perforation flexible'],
+    moins:['Prix élevé'],
+    arg:"Confort dynamique en nubuck, idéal pour mes journées longues avec déplacements variés.",
+    cert:['EN ISO 20345 S3 SRC'] },
+
+  /* ━━ Brodequins mi-haute ━━ */
+  { id:'jalas-1598', cat:'chaussure', sub:'Brodequins (IS)', nom:'JALAS 1598 GP', marque:'Jalas · Finlande', prix:108.88, tier:'premium',
+    activites:['is','rsf','biomethane'], tags:[{c:'is',l:'IS'}],
+    use:"Le standard IS finlandais. Tige mi-haute, anti-perforation acier, cuir hydrofuge.",
+    pour:['Intervention de sécurité','Toutes activités','Terrain accidenté'],
+    plus:['Tige mi-haute anti-entorse','Anti-perforation acier','Cuir hydrofuge'],
+    moins:['Plus lourd que basses'],
+    arg:"En IS sur terrain accidenté, les chaussures basses ne protègent pas la cheville (risque majeur d'entorse). Les brodequins JALAS 1598 sont réglementairement plus adaptés (fiche DP2S 'IS').",
+    cert:['EN ISO 20345 S3 SRC'] },
+
+  { id:'jalas-zenit', cat:'chaussure', sub:'Brodequins (IS)', nom:'JALAS ZENIT 2718', marque:'Jalas · Finlande', prix:107.95, tier:'premium',
+    activites:['is','rsf','biomethane'], tags:[{c:'is',l:'IS'}],
+    use:"Brodequin léger (~700 g) à embout aluminium ultraléger.",
+    pour:['IS','Recherche de légèreté'],
+    plus:['Embout alu (40% plus léger)','Très léger','Flexibilité'],
+    moins:['Prix élevé'],
+    arg:"Protection brodequin (cheville) avec le poids d'une chaussure basse. Idéal pour mes longues journées d'IS.",
+    cert:['EN ISO 20345 S3 SRC'] },
+
+  { id:'jalbambou', cat:'chaussure', sub:'Brodequins (IS)', nom:'JALLATTE JALBAMBOU', marque:'Jallatte · France', prix:91.25, tier:'standard',
+    activites:['is','rsf','chaud'], tags:[{c:'chaud',l:'Temps chaud'},{c:'is',l:'IS'}], climate:'chaud',
+    use:"Brodequin fibre bambou : régulation thermique pour les fortes chaleurs estivales.",
+    pour:['Été','Forte sudation','IS estival'],
+    plus:['Fibre bambou régulation T°','Antibactérien naturel','Respirant'],
+    moins:['Moins isolant en hiver'],
+    arg:"La fibre bambou régule la transpiration — essentiel pour mes interventions estivales sans inconfort plantaire.",
+    cert:['EN ISO 20345 S3 SRC'] },
+
+  { id:'mts-constructor', cat:'chaussure', sub:'Brodequins (IS)', nom:'MTS TECH CONSTRUCTOR', marque:'MTS', prix:46.94, tier:'eco',
+    activites:['rsf','manutention'], tags:[],
+    use:"Brodequin simple à embout et semelle anti-perforation acier.",
+    pour:['Usage occasionnel','Stagiaires'],
+    plus:['Prix bas','Anti-perforation acier','S3'],
+    moins:['Confort basique','Durée 12-18 mois'],
+    arg:"OK pour usage occasionnel. Pour mon usage IS quotidien, le JALAS 1598 dure 3-4 ans (TCO inférieur).",
+    cert:['EN ISO 20345 S3'] },
+
+  { id:'heckel-crossroad', cat:'chaussure', sub:'Brodequins (IS)', nom:'HECKEL MACCROSSROAD 3.0 BOA', marque:'Heckel', prix:74.78, tier:'standard',
+    activites:['is','rsf','manutention'], tags:[{c:'is',l:'BOA / IS'}],
+    use:"Brodequin avec système BOA (laçage molette inox) : équipement en 15 secondes.",
+    pour:['IS urgente','Difficultés de laçage'],
+    plus:['Système BOA (15 s)','Serrage uniforme','Sans lacets qui se défont'],
+    moins:['Réparation BOA = SAV'],
+    arg:"Le système BOA permet de m'équiper en 15 secondes en cas d'IS urgente. Serrage uniforme = pas de point de compression.",
+    cert:['EN ISO 20345 S3 SRC'] },
+
+  { id:'jalgrove', cat:'chaussure', sub:'Brodequins (IS)', nom:'JALLATTE JALGROVE', marque:'Jallatte · France', prix:94.90, tier:'standard',
+    activites:['is','rsf'], tags:[{c:'is',l:'IS'}],
+    use:"Brodequin nubuck polyvalent. Doublure thermorégulatrice toutes saisons.",
+    pour:['IS','Activités courantes'],
+    plus:['Nubuck qualité','Doublure thermorégulatrice','Fabrication française'],
+    moins:['Prix moyen-élevé'],
+    arg:"Protection IS efficace, léger et flexible. La doublure thermorégulatrice convient à toutes les saisons.",
+    cert:['EN ISO 20345 S3 SRC'] },
+
+  /* ━━ Brodequins soudeurs ━━ */
+  { id:'jalas-1218w', cat:'chaussure', sub:'Brodequins soudeurs', nom:'JALAS 1218W', marque:'Jalas · Finlande', prix:125.56, tier:'premium',
+    activites:['soudage'], tags:[{c:'soud',l:'Soudeur HRO'}],
+    use:"Brodequin soudeur : languette anti-projection, cuir HRO 200°C, sans œillets métalliques.",
+    pour:['Soudage à l\'arc','Brasage','Oxycoupage'],
+    plus:['Cuir traité 200°C','Languette anti-projection','Sans œillets (pas de point chaud)','Couture Kevlar'],
+    moins:['Lourd (~900 g)'],
+    arg:"Les brodequins standards laissent passer les projections incandescentes par les œillets et la languette. Les 1218W sont conçus 'soudeur' (HRO + sans œillets) — protection que S3 standard n'apporte pas.",
+    cert:['EN ISO 20345 S3 HRO HI WR'] },
+
+  { id:'jalplasma', cat:'chaussure', sub:'Brodequins soudeurs', nom:'JALLATTE JALPLASMA', marque:'Jallatte · France', prix:97.48, tier:'standard',
+    activites:['soudage'], tags:[{c:'soud',l:'Soudeur HRO'}],
+    use:"Brodequin soudeur français. HRO 300°C contact bref, languette anti-projection.",
+    pour:['Soudage industriel','Brasage'],
+    plus:['Languette anti-projection','HRO 300°C contact','Couture Kevlar'],
+    moins:['Lourd'],
+    arg:"Protection thermique soudage sans le surcoût du modèle finlandais.",
+    cert:['EN ISO 20345 S3 HRO'] },
+
+  /* ━━ Rangers ━━ */
+  { id:'jalarcher', cat:'chaussure', sub:'Bottes Rangers', nom:'JALLATTE JALARCHER', marque:'Jallatte · France', prix:97.12, tier:'standard',
+    activites:['is','rsf'], tags:[{c:'is',l:'Rangers'}],
+    use:"Rangers tige haute, protection mollet + cheville. Pour terrain difficile.",
+    pour:['IS terrain instable','Berges','Inondations légères'],
+    plus:['Tige haute 20 cm','Cuir hydrofuge','Anti-perforation'],
+    moins:['Plus chaud que brodequin'],
+    arg:"Mes interventions sur terrain instable nécessitent un soutien mollet et une étanchéité partielle. Les JALARCHER y répondent.",
+    cert:['EN ISO 20345 S3 SRC'] },
+
+  { id:'jalbarad', cat:'chaussure', sub:'Bottes Rangers', nom:'JALLATTE JALBARAD', marque:'Jallatte · France', prix:105.82, tier:'premium',
+    activites:['is','rsf'], tags:[{c:'is',l:'Rangers'}],
+    use:"Rangers nubuck haut confort, mousse talon. Pour port quotidien.",
+    pour:['IS','Port quotidien Rangers'],
+    plus:['Nubuck qualité','Mousse confort','Hydrofuge','Anti-statique'],
+    moins:['Prix élevé'],
+    arg:"Protection Rangers + confort longue durée — essentiel pour mon port quotidien.",
+    cert:['EN ISO 20345 S3 SRC'] },
+
+  { id:'mts-kinley', cat:'chaussure', sub:'Bottes Rangers', nom:'MTS KINLEY', marque:'MTS', prix:79.75, tier:'standard',
+    activites:['is','rsf'], tags:[{c:'is',l:'Rangers'}],
+    use:"Rangers tige haute, bon rapport qualité-prix.",
+    pour:['IS','RSF','Usage régulier'],
+    plus:['Prix accessible','S3 conforme','Tige haute'],
+    moins:['Confort moindre que les modèles renforcés'],
+    arg:"Protection Rangers à prix raisonnable. Bon compromis si l'usage Rangers est ponctuel.",
+    cert:['EN ISO 20345 S3 SRC'] },
+
+  { id:'jalas-1508', cat:'chaussure', sub:'Bottes Rangers', nom:'JALAS 1508 GP', marque:'Jalas · Finlande', prix:114.73, tier:'premium',
+    activites:['is','rsf'], tags:[{c:'is',l:'Rangers Vibram'}],
+    use:"Rangers à semelle Vibram. Adhérence extrême en terrain difficile.",
+    pour:['IS terrain difficile','Toutes saisons'],
+    plus:['Semelle Vibram','Nubuck hydrofuge','Mousse mémoire'],
+    moins:['Prix élevé'],
+    arg:"La semelle Vibram offre une adhérence inégalée en terrain difficile (boue, neige, gravillons). L'EPI le plus adapté aux conditions extrêmes.",
+    cert:['EN ISO 20345 S3 SRC'] },
+
+  /* ━━ Froid ━━ */
+  { id:'heckel-macultimate', cat:'chaussure', sub:'Bottes froid', nom:'HECKEL MACULTIMATE', marque:'Heckel', prix:121.62, tier:'premium',
+    activites:['is','froid','rsf'], tags:[{c:'froid',l:'Primaloft -40°C'}], climate:'froid',
+    use:"Rangers de froid extrême : doublure Primaloft, isolation -40°C, semelle anti-glisse glace.",
+    pour:['Hiver montagne','Gaz détendu (froid)','Interventions hivernales prolongées'],
+    plus:['Isolation Primaloft -40°C','Tige haute hydrofuge','Anti-glisse glace'],
+    moins:['Trop chaud en mi-saison','Prix élevé'],
+    arg:"Mes interventions en zone froide imposent une isolation -40°C. Une botte standard cause engelures et glissades sur glace.",
+    cert:['EN ISO 20345 S3 CI HRO','EN 511'] },
+
+  { id:'mts-iseran', cat:'chaussure', sub:'Bottes froid', nom:'MTS ISERAN', marque:'MTS', prix:59.76, tier:'eco',
+    activites:['froid','rsf'], tags:[{c:'froid',l:'Thinsulate -20°C'}], climate:'froid',
+    use:"Botte de froid Thinsulate, isolation -20°C. Pour usage occasionnel.",
+    pour:['Hiver modéré','Usage occasionnel'],
+    plus:['Thinsulate','Tige haute','Prix abordable'],
+    moins:['Isolation -20°C max'],
+    arg:"OK pour usage occasionnel hivernal. En exposition prolongée au froid intense, je demanderai du Primaloft (MACULTIMATE).",
+    cert:['EN ISO 20345 S3 CI','EN 511'] },
+
+  /* ━━ Caoutchouc / Eau ━━ */
+  { id:'dunlop-snugboot', cat:'chaussure', sub:'Bottes caoutchouc', nom:'DUNLOP SNUGBOOT', marque:'Dunlop', prix:111.70, tier:'premium',
+    activites:['rsf','biomethane','eau'], tags:[{c:'eau',l:'Étanche'}], climate:'eau',
+    use:"Botte caoutchouc Purotex : étanchéité totale + isolation -20°C + légèreté inédite (~750 g).",
+    pour:['Biométhane (humide)','Branchements inondés','Hiver pluvieux'],
+    plus:['Mousse Purotex isolante','Légère','Embout composite','SRC anti-glisse'],
+    moins:['Prix élevé pour caoutchouc'],
+    arg:"Étanchéité totale + confort longue durée — impossible avec une botte caoutchouc classique. Le surcoût est amorti sur 3-4 ans.",
+    cert:['EN ISO 20345 S5 SRC CI'] },
+
+  { id:'dunlop-terrapro', cat:'chaussure', sub:'Bottes caoutchouc', nom:'DUNLOP TERRAPRO', marque:'Dunlop', prix:34.97, tier:'eco',
+    activites:['rsf','eau'], tags:[{c:'eau',l:'Caoutchouc'}], climate:'eau',
+    use:"Botte PVC pour usages ponctuels en milieu humide.",
+    pour:['Dépannage ponctuel','Stagiaires'],
+    plus:['Prix bas','Étanche','Embout acier'],
+    moins:['Lourd','Pas isolant','Inconfort longue durée'],
+    arg:"OK pour usage occasionnel. Pour usage régulier (biométhane), je demanderai les SNUGBOOT.",
+    cert:['EN ISO 20345 S5'] },
+
+  { id:'singer-waders', cat:'chaussure', sub:'Waders', nom:'SINGER WADERS', marque:'Singer', prix:75.49, tier:'standard',
+    activites:['eau'], tags:[{c:'eau',l:'Cuissardes'}], climate:'eau',
+    use:"Combinaison étanche jusqu'à la poitrine. Pour intervention en eau profonde.",
+    pour:['Post-inondation','Regards inondés'],
+    plus:['Étanchéité poitrine','Bottes intégrées','PVC souple'],
+    moins:['Encombrant','Transpiration'],
+    arg:"Pour intervenir en eau > 30 cm, les waders sont la seule protection efficace. Sans elles : risque hypothermie + chute par perte d'équilibre.",
+    cert:['EN 343'] }
+];
+
+/* Familles avec icônes */
+const FAMILIES = {
+  casque: { label:'Tête', ico:'<svg viewBox="0 0 24 24"><path d="M3 18c0-5 4-10 9-10s9 5 9 10M2 18h20M5 18v2h14v-2"/></svg>' },
+  oculaire: { label:'Yeux', ico:'<svg viewBox="0 0 24 24"><circle cx="7" cy="13" r="4"/><circle cx="17" cy="13" r="4"/><path d="M11 12c.5-.5 1.5-.5 2 0M3 11l2 1M19 12l2-1"/></svg>' },
+  gant: { label:'Mains', ico:'<svg viewBox="0 0 24 24"><path d="M8 22V8M8 8V4c0-1 1-2 2-2s2 1 2 2v6M12 10V3c0-1 1-2 2-2s2 1 2 2v7M16 10V5c0-1 1-2 2-2s2 1 2 2v9c0 4-3 8-7 8H7"/></svg>' },
+  chaussure: { label:'Pieds', ico:'<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4v12c0 1 1 2 2 2h7c2 0 3 0 4 1l2 2v2c0 1-1 2-2 2H4c-1 0-2-1-2-2v-2c0-1 1-2 2-2h1V3z"/><line x1="5" y1="6" x2="9" y2="6"/><line x1="5" y1="9" x2="9" y2="9"/><line x1="5" y1="12" x2="9" y2="12"/></svg>' }
+};
+
+const ACT_LABELS = {
+  is:'IS', soudage:'Soudage', hauteur:'Hauteur', clientele:'Clientèle', rsf:'RSF',
+  biomethane:'Biométhane', chimique:'Chimique', electricien:'Électricien',
+  froid:'Froid', chaud:'Temps chaud', eau:'Eau', manutention:'Manutention'
+};
+
+const CUT_LABELS = {
+  'cut-l': { sym:'−', txt:'Léger' },
+  'cut-m': { sym:'+', txt:'Moyen' },
+  'cut-h': { sym:'++', txt:'Élevé' }
+};
+
+/* ═══════════ ÉTAT ═══════════ */
+let compareList = [];
+let basketList_ = [];
+
+/* ═══════════ RENDU PRODUITS ═══════════ */
+function img(p) {
+  return `<img class="real" src="https://fo-grdf.fr/wp-content/uploads/2026/09/epi-${p.id}.jpg" alt="${p.nom}" loading="lazy" onerror="this.style.display='none'">`;
+}
+
+function hasBoa(p) { return /BOA/.test(p.nom) || (p.tags||[]).some(t => t.c === 'boa'); }
+
+function climIco(c) {
+  if (c === 'chaud') return '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="5" y1="5" x2="7" y2="7"/><line x1="17" y1="17" x2="19" y2="19"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="5" y1="19" x2="7" y2="17"/><line x1="17" y1="7" x2="19" y2="5"/></svg>';
+  if (c === 'froid') return '<svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>';
+  if (c === 'eau') return '<svg viewBox="0 0 24 24"><path d="M12 2.5s7 8 7 12.5a7 7 0 0 1-14 0c0-4.5 7-12.5 7-12.5z"/></svg>';
+  return '';
+}
+
+function productCard(p) {
+  const inCmp = compareList.includes(p.id);
+  const inBskt = basketList_.includes(p.id);
+  const tags = (p.tags || []).map(t => `<span class="tag ${t.c}">${t.l}</span>`).join('');
+  const cutBadge = p.cut ? `<span class="b-cut ${p.cut}" title="Anticoupure ${CUT_LABELS[p.cut].txt}">
+    <svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z"/><path d="M3 12l4-4M21 12l-4-4M12 3v4M12 17v4"/></svg>
+    Anti-coupure ${CUT_LABELS[p.cut].sym}
+  </span>` : '';
+  const climBadge = p.climate ? `<span class="b-clim ${p.climate}" title="${p.climate==='chaud'?'Brevet Climate Control — temps chaud':p.climate==='froid'?'Isolation grand froid':'Étanche eau'}">
+    ${climIco(p.climate)} ${p.climate==='chaud'?'Climate ❄':p.climate==='froid'?'Froid':'Eau'}
+  </span>` : '';
+
+  const boaTag = hasBoa(p) ? `<span class="boa-badge" title="Technologie de laçage rapide BOA">BOA</span>` : '';
+  return `
+  <div class="product${inCmp ? ' selected' : ''}" data-id="${p.id}" onclick="openProduct('${p.id}')">
+    <div class="product-img">
+      <div class="tags-tl">${tags}</div>
+      ${boaTag}
+      ${img(p)}
+      <div class="badges-bl">${cutBadge}${climBadge}</div>
+    </div>
+    <div class="product-body">
+      <div class="product-name">${p.nom}</div>
+      <div class="product-brand">${p.marque}</div>
+      <div class="product-use">${p.use}</div>
+      <div class="product-bottom">
+        <div class="product-price">${p.prix.toFixed(2).replace('.', ',')} <small>€</small></div>
+      </div>
+      <div class="product-actions" onclick="event.stopPropagation()">
+        <button class="pa-btn cmp-tg ${inCmp?'active':''}" onclick="toggleCompare('${p.id}'); event.stopPropagation()">${inCmp?'✓':'+ Comparer'}</button>
+        <button class="pa-btn bskt-tg ${inBskt?'active':''}" onclick="toggleBasket('${p.id}'); event.stopPropagation()">${inBskt?'✓ Demandé':'+ Demander'}</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderCatalogue() {
+  const q = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+  const act = document.getElementById('actFilter').value;
+  const cut = document.getElementById('cutFilter').value;
+  const sort = document.getElementById('sortBy').value;
+
+  let list = PRODUITS.filter(p => {
+    if (act && !(p.activites||[]).includes(act)) return false;
+    if (cut && p.cut !== cut) return false;
+    if (q) {
+      const hay = (p.nom + ' ' + p.marque + ' ' + p.sub + ' ' + p.cat + ' ' + p.use).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  if (sort === 'prix-asc') list.sort((a,b) => a.prix - b.prix);
+  else if (sort === 'prix-desc') list.sort((a,b) => b.prix - a.prix);
+  else if (sort === 'nom') list.sort((a,b) => a.nom.localeCompare(b.nom));
+
+  const container = document.getElementById('catalogue');
+  if (!list.length) {
+    container.innerHTML = `<div style="background:white; border-radius:14px; padding:50px 20px; text-align:center; color:var(--gris);">
+      <p style="font-size:15px;">Aucun EPI ne correspond. Essayez d'élargir les filtres.</p>
+    </div>`;
+    return;
+  }
+
+  if (sort === 'cat') {
+    // Grouper par famille puis sous-catégorie
+    const order = ['casque', 'oculaire', 'gant', 'chaussure'];
+    let html = '';
+    order.forEach(famKey => {
+      const famItems = list.filter(p => p.cat === famKey);
+      if (!famItems.length) return;
+      const fam = FAMILIES[famKey];
+      // Sous-groupes
+      const subs = [...new Set(famItems.map(p => p.sub))];
+      html += `<div class="group" id="group-${famKey}">
+        <div class="group-header">
+          <div class="gh-ico">${fam.ico}</div>
+          <h2>${fam.label} — ${fam.label==='Tête'?'casques & casquettes':fam.label==='Yeux'?'lunettes & masques':fam.label==='Mains'?'gants':'chaussures & bottes'}</h2>
+          <span class="gh-count">${famItems.length}</span>
+        </div>`;
+      subs.forEach(sub => {
+        const subItems = famItems.filter(p => p.sub === sub);
+        html += `<div class="subgroup">
+          <div class="subgroup-title">${sub}</div>
+          <div class="products">${subItems.map(productCard).join('')}</div>
+        </div>`;
+      });
+      html += `</div>`;
+    });
+    container.innerHTML = html;
+  } else {
+    container.innerHTML = `<div class="products">${list.map(productCard).join('')}</div>`;
+  }
+}
+
+function goFam(fam) {
+  document.querySelectorAll('.fam').forEach(f => f.classList.remove('active'));
+  document.querySelector(`.fam[data-fam="${fam}"]`).classList.add('active');
+  document.getElementById('sortBy').value = 'cat';
+  renderCatalogue();
+  setTimeout(() => {
+    const target = document.getElementById('group-' + fam);
+    if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 100);
+}
+
+function resetFilters() {
+  document.getElementById('searchInput').value = '';
+  document.getElementById('actFilter').value = '';
+  document.getElementById('cutFilter').value = '';
+  document.getElementById('sortBy').value = 'cat';
+  document.querySelectorAll('.fam').forEach(f => f.classList.remove('active'));
+  renderCatalogue();
+}
+
+/* ═══════════ COMPARATEUR ═══════════ */
+function toggleCompare(id) {
+  const i = compareList.indexOf(id);
+  if (i >= 0) compareList.splice(i, 1);
+  else if (compareList.length < 3) compareList.push(id);
+  else { alert('Maximum 3 produits à comparer'); return; }
+  updateCompareBtn();
+  renderCatalogue();
+}
+function updateCompareBtn() {
+  document.getElementById('cmpCount').textContent = compareList.length;
+  document.getElementById('compareBtn').disabled = compareList.length < 2;
+}
+function openCompare() {
+  if (compareList.length < 2) return;
+  const products = compareList.map(id => PRODUITS.find(p => p.id === id));
+  const grid = document.getElementById('compareGrid');
+  grid.setAttribute('data-cols', compareList.length);
+  grid.innerHTML = products.map(p => `
+    <div class="cc-card">
+      <div class="cc-img">${img(p)}</div>
+      <h4>${p.nom}</h4>
+      <div class="cc-brand">${p.marque}</div>
+      <div class="cc-price">${p.prix.toFixed(2).replace('.', ',')} €</div>
+      <div style="font-size:11.5px; color:#444; line-height:1.5; margin-bottom:8px;">${p.use}</div>
+      <ul class="cc-pts">${p.plus.slice(0,3).map(x => `<li>✓ ${x}</li>`).join('')}</ul>
+      <button class="cc-rm" onclick="toggleCompare('${p.id}'); openCompare()">Retirer</button>
+    </div>
+  `).join('');
+  openModal('modalCompare');
+}
+
+/* ═══════════ MODAL DÉTAILS ═══════════ */
+function openProduct(id) {
+  const p = PRODUITS.find(x => x.id === id);
+  if (!p) return;
+  const inBskt = basketList_.includes(p.id);
+  const inCmp = compareList.includes(p.id);
+  const tagsHtml = `
+    ${(p.tags||[]).map(t => `<span class="m-tag">${t.l}</span>`).join('')}
+    ${p.cut ? `<span class="m-tag ${p.cut==='cut-h'?'cut-h':'cut'}">Anti-coupure ${CUT_LABELS[p.cut].sym} ${CUT_LABELS[p.cut].txt}</span>` : ''}
+    ${p.climate ? `<span class="m-tag cert">${p.climate==='chaud'?'Climate Control — temps chaud':p.climate==='froid'?'Isolation grand froid':'Étanche eau'}</span>` : ''}
+    ${(p.cert||[]).map(c => `<span class="m-tag cert">${c}</span>`).join('')}
+  `;
+  const html = `
+    <div class="modal-header">
+      <div>
+        <div class="mh-cat">${p.sub}${hasBoa(p) ? ' · Technologie BOA' : ''}</div>
+        <h2>${p.nom}</h2>
+        <div class="mh-brand">${p.marque}</div>
+        <div class="mh-price">${p.prix.toFixed(2).replace('.', ',')} €</div>
+      </div>
+      <div class="mh-img-wrap"><img src="https://fo-grdf.fr/wp-content/uploads/2026/09/epi-${p.id}.jpg" alt="${p.nom}" onerror="this.style.display='none'"></div>
+    </div>
+    <div class="modal-body">
+      <div class="m-tags">${tagsHtml}${hasBoa(p) ? '<span class="m-tag" style="background:#1e293b; color:#fef3c7; border-color:#1e293b;">★ Technologie BOA</span>' : ''}</div>
+      <p class="m-desc">${p.use}</p>
+      ${hasBoa(p) ? `<div style="background:linear-gradient(135deg,#0f172a 0%,#334155 100%); color:#fef3c7; border-radius:12px; padding:16px 20px; margin-bottom:16px; display:flex; gap:14px; align-items:center;">
+        <div style="width:46px; height:46px; flex-shrink:0; background:radial-gradient(circle at 30% 30%,#fde68a 0%,#f59e0b 60%,#b45309 100%); border-radius:50%; box-shadow:inset 0 -2px 4px rgba(0,0,0,0.4), 0 0 0 3px rgba(254,243,199,0.3);"></div>
+        <div>
+          <div style="font-family:'Fraunces',serif; font-size:15px; font-weight:700; margin-bottom:3px;">Système BOA Fit System</div>
+          <div style="font-size:12.5px; line-height:1.55; color:rgba(254,243,199,0.85);">Laçage par molette à câbles inox. Serrage uniforme en 2 secondes, pas de lacets à refaire, idéal en intervention urgente ou avec des gants. Réparable via SAV constructeur.</div>
+        </div>
+      </div>` : ''}
+      <div class="m-grid">
+        <div class="m-block">
+          <h4>Pour quelle activité ?</h4>
+          <ul>${p.pour.map(x => `<li>${x}</li>`).join('')}</ul>
+        </div>
+        <div class="m-block">
+          <h4>Points forts</h4>
+          <ul>${p.plus.map(x => `<li>${x}</li>`).join('')}</ul>
+        </div>
+        <div class="m-block">
+          <h4>À savoir</h4>
+          <ul>${p.moins.map(x => `<li>${x}</li>`).join('')}</ul>
+        </div>
+        <div class="m-block">
+          <h4>Activités tags</h4>
+          <p style="font-size:12px; color:#444;">${(p.activites||[]).map(a => ACT_LABELS[a]||a).join(' · ')}</p>
+        </div>
+      </div>
+      <div class="arg-block">
+        <h4>Argumentaire pour votre manager</h4>
+        <div class="arg-text">« ${p.arg} »</div>
+        <div class="arg-actions">
+          <button class="ab-btn" onclick="copyToClipboard(\`${p.arg.replace(/`/g,"'").replace(/"/g,"'")}\`)">
+            <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copier
+          </button>
+          <a class="ab-btn alt" href="mailto:?subject=${encodeURIComponent('Demande EPI · '+p.nom)}&body=${encodeURIComponent('Bonjour,\n\nJe sollicite la commande de l\'EPI suivant : '+p.nom+' ('+p.marque+') — '+p.prix.toFixed(2).replace('.', ',')+' €.\n\n'+p.arg+'\n\nCet EPI est validé par GRDF (DP2S) et présent au catalogue.\n\nCordialement.')}">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            Envoyer par mail
+          </a>
+        </div>
+      </div>
+      <div class="m-actions">
+        <button class="m-act-btn" onclick="toggleBasket('${p.id}'); openProduct('${p.id}')">
+          <svg viewBox="0 0 24 24"><path d="M3 3h2l2.4 12.5a2 2 0 0 0 2 1.5h9.7a2 2 0 0 0 2-1.6L23 6H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+          ${inBskt ? '✓ Retirer de ma demande' : 'Ajouter à ma demande'}
+        </button>
+        <button class="m-act-btn alt" onclick="toggleCompare('${p.id}'); openProduct('${p.id}')">${inCmp ? '✓ Retirer du comparateur' : '+ Comparer'}</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('modalProductContent').innerHTML = html;
+  openModal('modalProduct');
+}
+
+/* ═══════════ PANIER ═══════════ */
+function toggleBasket(id) {
+  const i = basketList_.indexOf(id);
+  if (i >= 0) basketList_.splice(i, 1);
+  else basketList_.push(id);
+  updateBasketBtn();
+  renderCatalogue();
+  if (document.getElementById('modalBasket').classList.contains('open')) renderBasketModal();
+}
+function updateBasketBtn() {
+  document.getElementById('basketCount').textContent = basketList_.length;
+}
+function openBasket() {
+  renderBasketModal();
+  openModal('modalBasket');
+}
+function renderBasketModal() {
+  const list = document.getElementById('basketList');
+  if (!basketList_.length) {
+    list.innerHTML = `<div style="background:var(--fond); border-radius:12px; padding:24px; text-align:center; color:var(--gris);">
+      <p style="font-size:14px;">Aucun EPI dans votre demande.</p>
+      <p style="font-size:12px; margin-top:6px;">Cliquez sur <b style="color:var(--vert);">+ Demander</b> sur les produits qui vous intéressent.</p>
+    </div>`;
+    return;
+  }
+  const products = basketList_.map(id => PRODUITS.find(p => p.id === id)).filter(Boolean);
+  const total = products.reduce((s, p) => s + p.prix, 0);
+  list.innerHTML = `
+    <div style="background:var(--fond); border-radius:12px; padding:14px 18px; margin-bottom:6px;">
+      <div style="font-family:'Fraunces',serif; font-size:16px; color:var(--bleu); margin-bottom:8px;">${products.length} EPI · ${total.toFixed(2).replace('.', ',')} €</div>
+      ${products.map(p => `
+        <div class="bskt-item">
+          <div class="bskt-thumb">${img(p)}</div>
+          <div class="bskt-info">
+            <div class="bn">${p.nom}</div>
+            <div class="bb">${p.marque} · ${p.sub}</div>
+          </div>
+          <div class="bskt-price">${p.prix.toFixed(2).replace('.', ',')} €</div>
+          <button class="bskt-rm" onclick="toggleBasket('${p.id}')">Retirer</button>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  updateBasketMail();
+}
+
+function buildBasketMail() {
+  const name = (document.getElementById('bName').value || '').trim() || '[Votre nom]';
+  const mgr = (document.getElementById('bManager').value || '').trim();
+  const act = document.getElementById('bActivity').value;
+  const reason = (document.getElementById('bReason').value || '').trim();
+  const products = basketList_.map(id => PRODUITS.find(p => p.id === id)).filter(Boolean);
+  if (!products.length) return null;
+  const total = products.reduce((s, p) => s + p.prix, 0);
+  const sujet = `Demande EPI — ${products.length} référence${products.length>1?'s':''}${act ? ' (' + act + ')' : ''}`;
+  let body = `Bonjour,\n\nJe sollicite la commande des EPI suivants pour mon activité${act ? ' de ' + act : ''}, dans le cadre du catalogue GRDF en vigueur :\n\n`;
+  products.forEach((p, i) => {
+    body += `${i+1}. ${p.nom} (${p.marque}) — ${p.prix.toFixed(2).replace('.', ',')} €\n`;
+    body += `   Justification : ${p.arg}\n\n`;
+  });
+  body += `Total estimé : ${total.toFixed(2).replace('.', ',')} € HT\n\n`;
+  body += `─── SANTÉ, SÉCURITÉ ET CONDITIONS DE TRAVAIL ───\n\n`;
+  body += `Ces EPI sont sélectionnés en application de l'article L.4321-1 du Code du travail (EPI appropriés aux risques) et R.4321-4 (adaptés au travailleur). Chaque référence demandée :\n`;
+  body += `• est validée par GRDF (DP2S) et présente au catalogue officiel ;\n`;
+  body += `• est adaptée à mon activité réelle (justification individuelle ci-dessus) ;\n`;
+  body += `• participe à la prévention des accidents et des troubles musculo-squelettiques (TMS) ;\n`;
+  body += `• améliore mes conditions de travail au sens de l'article L.4121-1.\n\n`;
+  if (reason) body += `Élément personnel : ${reason}\n\n`;
+  body += `Je vous remercie de bien vouloir valider cette commande et reste à votre disposition.\n\nCordialement,\n${name}`;
+  return {
+    href: `mailto:${encodeURIComponent(mgr)}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(body)}`,
+    raw: `À : ${mgr || '[email manager]'}\nObjet : ${sujet}\n\n${body}`
+  };
+}
+
+function updateBasketMail() {
+  const m = buildBasketMail();
+  const btn = document.getElementById('basketSendBtn');
+  if (!m) { btn.removeAttribute('href'); return; }
+  btn.href = m.href;
+}
+
+function copyBasketMail() {
+  const m = buildBasketMail();
+  if (!m) { alert('Ajoutez d\'abord des EPI'); return; }
+  copyToClipboard(m.raw);
+}
+
+function clearBasket() {
+  if (basketList_.length === 0) return;
+  if (!confirm('Vider la demande ?')) return;
+  basketList_ = [];
+  updateBasketBtn();
+  renderBasketModal();
+  renderCatalogue();
+}
+
+['bName','bManager','bActivity','bReason'].forEach(id => {
+  document.addEventListener('input', e => { if (e.target.id === id) updateBasketMail(); });
+  document.addEventListener('change', e => { if (e.target.id === id) updateBasketMail(); });
+});
+
+/* ═══════════ PAGES PDF ═══════════ */
+const PDF_PAGES = [
+  { p:8, lbl:'Casques & Casquettes' },
+  { p:9, lbl:'Protections oculaires' },
+  { p:10, lbl:'Gants — Manutention & Soudage' },
+  { p:11, lbl:'Gants — Chimique, Élec, Froid' },
+  { p:12, lbl:'Chaussures basses' },
+  { p:13, lbl:'Brodequins & Soudeurs' },
+  { p:14, lbl:'Rangers' },
+  { p:15, lbl:'Bottes froid, caoutchouc, Waders' }
+];
+function renderPdfPages() {
+  const g = document.getElementById('pdfGrid');
+  g.innerHTML = PDF_PAGES.map(c => `
+    <div class="pdf-page" onclick="zoomCatalog(${c.p}, '${c.lbl}')">
+      <img src="https://fo-grdf.fr/wp-content/uploads/2026/09/epi-cat-${String(c.p).padStart(2,'0')}.jpg" alt="Page ${c.p}" loading="lazy">
+      <div class="cap">Page ${c.p} — ${c.lbl}</div>
+    </div>`).join('');
+}
+function zoomCatalog(p, lbl) {
+  document.getElementById('modalCatalogContent').innerHTML = `
+    <div style="text-align:center;">
+      <img src="https://fo-grdf.fr/wp-content/uploads/2026/09/epi-cat-${String(p).padStart(2,'0')}.jpg" alt="Page ${p}" style="max-width:100%; border-radius:10px;">
+      <div style="font-size:12.5px; color:var(--gris); margin-top:8px;">Page ${p} — ${lbl}</div>
+    </div>`;
+  openModal('modalCatalog');
+}
+
+/* ═══════════ MODAL & UTIL ═══════════ */
+function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') ['modalProduct','modalCompare','modalCatalog','modalBasket'].forEach(closeModal); });
+
+function copyToClipboard(txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt).then(() => showToast('Copié dans le presse-papier'))
+      .catch(() => fallbackCopy(txt));
+  } else fallbackCopy(txt);
+}
+function fallbackCopy(txt) {
+  const ta = document.createElement('textarea');
+  ta.value = txt; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+  showToast('Copié');
+}
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = 'position:fixed; bottom:28px; left:50%; transform:translateX(-50%); background:var(--vert); color:white; padding:11px 22px; border-radius:28px; font-size:13px; font-weight:600; box-shadow:0 8px 24px rgba(0,0,0,0.2); z-index:9999; animation:slideUp 0.3s;';
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2400);
+}
+
+/* ═══════════ A11Y ═══════════ */
+function toggleA11y() {
+  const body = document.body;
+  const btn = document.getElementById('a11yToggle');
+  const on = body.classList.toggle('a11y-mode');
+  if (btn) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  try { localStorage.setItem('fo-a11y', on ? '1' : '0'); } catch(e) {}
+}
+try {
+  if (localStorage.getItem('fo-a11y') === '1') {
+    document.body.classList.add('a11y-mode');
+    const b = document.getElementById('a11yToggle');
+    if (b) b.setAttribute('aria-pressed', 'true');
+  }
+} catch(e) {}
+
+/* ═══════════ ÉCOUTEURS ═══════════ */
+['searchInput','actFilter','cutFilter','sortBy'].forEach(id => {
+  document.getElementById(id).addEventListener('input', renderCatalogue);
+  document.getElementById(id).addEventListener('change', renderCatalogue);
+});
+
+/* ═══════════ INIT ═══════════ */
+renderCatalogue();
+renderPdfPages();
+updateCompareBtn();
+updateBasketBtn();
+</script>
+</div>

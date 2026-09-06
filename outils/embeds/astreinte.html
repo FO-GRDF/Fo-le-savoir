@@ -1,0 +1,999 @@
+<div class="fo-tool fo-tool-astreinte">
+<style>
+.fo-tool-astreinte{
+    --bleu: #019cda;
+    --bleu-clair: #019cda;
+    --or: #f7dd5c;
+    --or-clair: #fde8ea;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --texte: #1A1A2E;
+    --navy: #16243a;
+  }
+.fo-tool-astreinte *{ margin: 0; padding: 0; box-sizing: border-box; }
+.fo-tool-astreinte{
+    font-family:inherit;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+  }
+.fo-tool-astreinte .page{ max-width: 900px; margin: 0 auto; padding: 48px 32px 64px; }
+.fo-tool-astreinte .header{
+    position: relative;
+    background: linear-gradient(135deg, #019cda 0%, #0277a8 100%);
+    border-radius: 20px;
+    padding: 44px 48px 38px;
+    margin-bottom: 36px;
+    overflow: hidden;
+  }
+.fo-tool-astreinte .header::after{
+    content: '\2696';
+    position: absolute; right: 24px; bottom: -28px;
+    font-size: 180px; color: rgba(255,255,255,0.08);
+    pointer-events: none; line-height: 1;
+  }
+.fo-tool-astreinte .badge{
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--or); color: #015a7e;
+    font-weight: 700; font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 40px; margin-bottom: 18px; position: relative; z-index: 1;
+  }
+.fo-tool-astreinte .header h1{
+    font-family:inherit; font-size: 40px; font-weight: 900;
+    color: var(--blanc); line-height: 1.12; position: relative; z-index: 1; max-width: 700px;
+  }
+.fo-tool-astreinte .header h1 em{ color: var(--or); font-style: italic; }
+.fo-tool-astreinte .header .subtitle{
+    margin-top: 14px; font-size: 15.5px; color: rgba(255,255,255,0.88);
+    position: relative; z-index: 1; font-weight: 300; max-width: 660px; line-height: 1.6;
+  }
+.fo-tool-astreinte .header .update{
+    margin-top: 20px; display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 30px; padding: 6px 16px; font-size: 12px; color: rgba(255,255,255,0.9);
+    position: relative; z-index: 1;
+  }
+.fo-tool-astreinte .dot{ width: 7px; height: 7px; background: var(--or); border-radius: 50%; display: inline-block; }
+.fo-tool-astreinte .intro{
+    background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 30px;
+    border-left: 5px solid var(--bleu); font-size: 15.5px; line-height: 1.75; color: #2a2a2a;
+  }
+.fo-tool-astreinte .intro strong{ color: var(--bleu); }
+.fo-tool-astreinte .neutral{
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--vert-clair); border: 1.5px solid var(--vert);
+    border-radius: 14px; padding: 18px 22px; margin-bottom: 32px;
+  }
+.fo-tool-astreinte .neutral .n-ico{ flex-shrink: 0; font-size: 22px; }
+.fo-tool-astreinte .neutral p{ font-size: 13.8px; line-height: 1.65; color: #0e3d22; }
+.fo-tool-astreinte .neutral strong{ color: #0a2e19; }
+.fo-tool-astreinte .section-title{
+    font-family:inherit; font-size: 24px; font-weight: 700; color: var(--bleu);
+    margin: 44px 0 20px; display: flex; align-items: center; gap: 12px;
+  }
+.fo-tool-astreinte .section-title .icon{
+    width: 38px; height: 38px; background: #e6f5fb; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
+  }
+.fo-tool-astreinte .section-intro{ font-size: 14.5px; line-height: 1.7; color: #4a4a46; margin: -8px 0 22px; }
+.fo-tool-astreinte .facts{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 16px; }
+.fo-tool-astreinte .fact{ background: var(--blanc); border-radius: 14px; padding: 20px 16px; text-align: center; border-top: 4px solid var(--bleu); }
+.fo-tool-astreinte .fact .f-num{ font-family:inherit; font-size: 30px; font-weight: 900; color: var(--bleu); line-height: 1; }
+.fo-tool-astreinte .fact .f-lab{ font-size: 12px; color: var(--gris); margin-top: 8px; line-height: 1.45; }
+.fo-tool-astreinte .fact.vert{ border-top-color: var(--vert); }
+.fo-tool-astreinte .fact.vert .f-num{ color: var(--vert); }
+.fo-tool-astreinte .fact.or{ border-top-color: #e0bd00; }
+.fo-tool-astreinte .fact.or .f-num{ color: #b89a00; }
+.fo-tool-astreinte .fact.navy{ border-top-color: var(--navy); }
+.fo-tool-astreinte .fact.navy .f-num{ color: var(--navy); }
+.fo-tool-astreinte .balance-wrap{
+    background: linear-gradient(160deg, #0d2233 0%, #133247 70%, #0a1c2b 100%);
+    border-radius: 22px; padding: 32px 28px 30px; margin-bottom: 18px; color: white;
+    position: relative; overflow: hidden;
+  }
+.fo-tool-astreinte .balance-wrap h3{ font-family:inherit; font-size: 22px; color: var(--or); text-align: center; margin-bottom: 4px; }
+.fo-tool-astreinte .balance-wrap .bw-sub{ text-align: center; font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 22px; }
+.fo-tool-astreinte .scale{ position: relative; height: 230px; margin: 0 auto 10px; max-width: 560px; }
+.fo-tool-astreinte .scale-pillar{ position: absolute; left: 50%; top: 38px; width: 8px; height: 150px; transform: translateX(-50%); background: linear-gradient(var(--or), #c9a400); border-radius: 4px; }
+.fo-tool-astreinte .scale-base{ position: absolute; left: 50%; bottom: 8px; width: 180px; height: 14px; transform: translateX(-50%); background: linear-gradient(var(--or), #c9a400); border-radius: 8px; }
+.fo-tool-astreinte .scale-base::after{ content: ''; position: absolute; left: 50%; top: -10px; width: 60px; height: 14px; transform: translateX(-50%); background: #c9a400; border-radius: 6px 6px 0 0; }
+.fo-tool-astreinte .scale-beam{
+    position: absolute; left: 50%; top: 40px; width: 440px; height: 10px;
+    transform: translateX(-50%) rotate(-7deg); transform-origin: center;
+    background: linear-gradient(var(--or), #c9a400); border-radius: 6px;
+    transition: transform 1.1s cubic-bezier(.34,1.56,.64,1);
+    animation: beamSway 6s ease-in-out 1.5s infinite;
+  }
+.fo-tool-astreinte .scale-beam .pivot{ position: absolute; left: 50%; top: -7px; width: 22px; height: 22px; transform: translateX(-50%); background: var(--or); border-radius: 50%; border: 3px solid #c9a400; }
+@keyframes beamSway{ 0%,100%{ } 25%{ transform: translateX(-50%) rotate(-4deg);} 75%{ transform: translateX(-50%) rotate(-9deg);} }
+.fo-tool-astreinte .pan{ position: absolute; top: 96px; width: 168px; text-align: center; }
+.fo-tool-astreinte .pan .chain{ position: absolute; top: -58px; left: 50%; width: 2px; height: 56px; transform: translateX(-50%); background: rgba(255,255,255,0.4); }
+.fo-tool-astreinte .pan .dish{
+    background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.35);
+    border-radius: 0 0 80px 80px / 0 0 40px 40px; padding: 14px 10px 16px;
+    box-shadow: inset 0 6px 12px rgba(0,0,0,0.2);
+  }
+.fo-tool-astreinte .pan .dish .d-title{ font-weight: 700; font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; }
+.fo-tool-astreinte .pan .dish .d-count{ font-family:inherit; font-size: 34px; font-weight: 900; line-height: 1; margin-top: 4px; }
+.fo-tool-astreinte .pan.left{ left: 8px; }
+.fo-tool-astreinte .pan.left .dish{ background: rgba(40,177,147,0.18); border-color: var(--vert); }
+.fo-tool-astreinte .pan.left .d-title,.fo-tool-astreinte .pan.left .d-count{ color: #7ee0c6; }
+.fo-tool-astreinte .pan.right{ right: 8px; }
+.fo-tool-astreinte .pan.right .dish{ background: rgba(247,221,92,0.14); border-color: var(--or); }
+.fo-tool-astreinte .pan.right .d-title,.fo-tool-astreinte .pan.right .d-count{ color: var(--or); }
+.fo-tool-astreinte .balance-legend{ text-align: center; font-size: 12.5px; color: rgba(255,255,255,0.78); line-height: 1.6; margin-top: 6px; }
+.fo-tool-astreinte .balance-legend b{ color: white; }
+@media (max-width: 560px){.fo-tool-astreinte .scale{ height: 200px; }
+.fo-tool-astreinte .scale-beam{ width: 300px; }
+.fo-tool-astreinte .pan{ width: 132px; }
+.fo-tool-astreinte .pan.left{left:0}
+.fo-tool-astreinte .pan.right{right:0}
+.fo-tool-astreinte .pan .dish .d-count{ font-size: 26px; }
+}
+.fo-tool-astreinte .tabs{ display: flex; gap: 8px; justify-content: center; margin: 28px 0 22px; flex-wrap: wrap; }
+.fo-tool-astreinte .tab-btn{
+    border: 2px solid #e0ddd4; background: white; cursor: pointer;
+    font-family:inherit; font-weight: 700; font-size: 14px;
+    padding: 11px 22px; border-radius: 40px; color: var(--gris); transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+.fo-tool-astreinte .tab-btn .tb-ico{ font-size: 16px; }
+.fo-tool-astreinte .tab-btn.active.vert{ background: var(--vert); border-color: var(--vert); color: white; box-shadow: 0 6px 16px rgba(40,177,147,0.3); }
+.fo-tool-astreinte .tab-btn.active.or{ background: #f0c800; border-color: #f0c800; color: #3a2e00; box-shadow: 0 6px 16px rgba(240,200,0,0.3); }
+.fo-tool-astreinte .tab-panel{ display: none; }
+.fo-tool-astreinte .tab-panel.active{ display: block; animation: fadeUp 0.4s ease; }
+@keyframes fadeUp{ from { opacity: 0; transform: translateY(12px);} to { opacity:1; transform:none;} }
+.fo-tool-astreinte .acc{ display: grid; gap: 12px; }
+.fo-tool-astreinte .acc-item{ background: var(--blanc); border-radius: 14px; overflow: hidden; border: 1px solid #ececec; transition: box-shadow .2s; }
+.fo-tool-astreinte .acc-item:hover{ box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.fo-tool-astreinte .acc-head{
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    padding: 18px 20px; display: flex; align-items: center; gap: 14px;
+    font-family:inherit; font-size: 15px; font-weight: 700; color: var(--texte);
+  }
+.fo-tool-astreinte .acc-tag{ flex-shrink: 0; width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 17px; }
+.fo-tool-astreinte .acc-item.plus .acc-tag{ background: var(--vert-clair); }
+.fo-tool-astreinte .acc-item.minus .acc-tag{ background: #fff6da; }
+.fo-tool-astreinte .acc-head .acc-txt{ flex: 1; line-height: 1.4; }
+.fo-tool-astreinte .acc-head .acc-chevron{ flex-shrink: 0; transition: transform .25s; color: var(--bleu); font-size: 18px; }
+.fo-tool-astreinte .acc-item.open .acc-chevron{ transform: rotate(180deg); }
+.fo-tool-astreinte .acc-body{ max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+.fo-tool-astreinte .acc-item.open .acc-body{ max-height: 600px; }
+.fo-tool-astreinte .acc-body-inner{ padding: 0 20px 20px 68px; font-size: 13.8px; line-height: 1.7; color: #4a4a46; }
+.fo-tool-astreinte .acc-body-inner .chip{ display: inline-block; background: #eef6fb; color: #016a96; font-weight: 700; font-size: 12px; padding: 3px 10px; border-radius: 20px; margin: 4px 6px 0 0; }
+.fo-tool-astreinte .acc-item.minus .acc-body-inner .chip{ background: #fff6da; color: #8a6d00; }
+.fo-tool-astreinte .timeline{ position: relative; padding-left: 28px; margin-top: 6px; }
+.fo-tool-astreinte .timeline::before{ content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--bleu), var(--vert)); border-radius: 2px; }
+.fo-tool-astreinte .tl-item{ position: relative; margin-bottom: 20px; }
+.fo-tool-astreinte .tl-item::before{ content: ''; position: absolute; left: -22px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bleu); border: 2px solid white; box-shadow: 0 0 0 2px var(--bleu); }
+.fo-tool-astreinte .tl-date{ font-size: 11px; font-weight: 700; color: var(--bleu); text-transform: uppercase; letter-spacing: 1px; }
+.fo-tool-astreinte .tl-title{ font-family:inherit; font-size: 15px; color: var(--bleu); margin: 2px 0; }
+.fo-tool-astreinte .tl-desc{ font-size: 13px; color: var(--gris); line-height: 1.55; }
+.fo-tool-astreinte .glossary{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.fo-tool-astreinte .gl{ background: var(--blanc); border-radius: 12px; padding: 14px 16px; border-left: 3px solid var(--bleu); }
+.fo-tool-astreinte .gl dt{ font-weight: 700; font-size: 13.5px; color: var(--bleu); }
+.fo-tool-astreinte .gl dd{ font-size: 12.8px; color: #4a4a46; line-height: 1.55; margin-top: 3px; }
+.fo-tool-astreinte .revend-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fo-tool-astreinte .revend-card{ background: var(--blanc); border-radius: 16px; padding: 22px 24px; border-top: 4px solid var(--bleu); transition: transform .2s, box-shadow .2s; }
+.fo-tool-astreinte .revend-card:hover{ transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.07); }
+.fo-tool-astreinte .revend-card.c2{ border-top-color: var(--vert); }
+.fo-tool-astreinte .revend-card.c3{ border-top-color: #e0bd00; }
+.fo-tool-astreinte .revend-card.c4{ border-top-color: var(--rouge); }
+.fo-tool-astreinte .revend-card.c5{ border-top-color: var(--navy); }
+.fo-tool-astreinte .revend-card h4{ font-family:inherit; font-size: 16px; color: var(--bleu); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.fo-tool-astreinte .revend-card h4 svg{ width: 22px; height: 22px; flex-shrink: 0; }
+.fo-tool-astreinte .revend-card.c2 h4{ color: var(--vert); }
+.fo-tool-astreinte .revend-card.c3 h4{ color: #b89a00; }
+.fo-tool-astreinte .revend-card.c4 h4{ color: var(--rouge); }
+.fo-tool-astreinte .revend-card.c5 h4{ color: var(--navy); }
+.fo-tool-astreinte .revend-card ul{ list-style: none; padding: 0; }
+.fo-tool-astreinte .revend-card li{ font-size: 13px; color: #4a4a46; line-height: 1.55; padding-left: 20px; position: relative; margin-bottom: 8px; }
+.fo-tool-astreinte .revend-card li::before{ content: '\2192'; position: absolute; left: 0; color: var(--bleu); font-weight: 700; }
+.fo-tool-astreinte .revend-card.c2 li::before{ color: var(--vert); }
+.fo-tool-astreinte .revend-card.c3 li::before{ color: #b89a00; }
+.fo-tool-astreinte .revend-card.c4 li::before{ color: var(--rouge); }
+.fo-tool-astreinte .revend-card.c5 li::before{ color: var(--navy); }
+.fo-tool-astreinte .revend-card.wide{ grid-column: 1 / -1; }
+@media (max-width: 640px){.fo-tool-astreinte .revend-grid{ grid-template-columns: 1fr; }
+}
+.fo-tool-astreinte .paliers{ background: var(--blanc); border-radius: 16px; padding: 24px 26px; margin-bottom: 16px; }
+.fo-tool-astreinte .paliers-head{ font-family:inherit; font-size: 15px; color: var(--bleu); margin-bottom: 18px; font-weight: 700; display: flex; align-items: center; gap: 9px; }
+.fo-tool-astreinte .paliers-head svg{ width: 20px; height: 20px; }
+.fo-tool-astreinte .paliers-row{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: end; }
+.fo-tool-astreinte .palier{ background: linear-gradient(180deg, #e6f5fb, #fff); border: 1.5px solid #cfeaf6; border-radius: 12px; padding: 16px 10px; text-align: center; min-height: 100px; display: flex; flex-direction: column; justify-content: flex-end; }
+.fo-tool-astreinte .palier.p2{ min-height: 124px; background: linear-gradient(180deg, #fff4e0, #fff); border-color: #f1d9a8; }
+.fo-tool-astreinte .palier.p3{ min-height: 148px; background: linear-gradient(180deg, #fde8ea, #fff); border-color: #f6c4c8; }
+.fo-tool-astreinte .palier .p-step{ font-family:inherit; font-size: 30px; font-weight: 900; color: var(--bleu); line-height: 1; }
+.fo-tool-astreinte .palier.p2 .p-step{ color: #e08a00; }
+.fo-tool-astreinte .palier.p3 .p-step{ color: var(--rouge); }
+.fo-tool-astreinte .palier .p-day{ font-size: 13.5px; font-weight: 700; color: var(--texte); margin-top: 8px; }
+.fo-tool-astreinte .palier .p-week{ font-size: 11.5px; color: var(--gris); margin-top: 2px; }
+.fo-tool-astreinte .paliers-note{ font-size: 12.8px; color: #4a4a46; margin-top: 16px; line-height: 1.6; padding-left: 22px; position: relative; }
+.fo-tool-astreinte .paliers-note::before{ content: 'i'; position: absolute; left: 0; top: 1px; width: 15px; height: 15px; background: var(--bleu); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-style: normal; }
+.fo-tool-astreinte .paliers-note strong{ color: var(--bleu); }
+@media (max-width: 640px){.fo-tool-astreinte .paliers-row{ grid-template-columns: 1fr; }
+.fo-tool-astreinte .palier,.fo-tool-astreinte .palier.p2,.fo-tool-astreinte .palier.p3{ min-height: 0; }
+}
+.fo-tool-astreinte .focus-callout{ background: linear-gradient(135deg, #16243a 0%, #22344f 100%); border-radius: 18px; padding: 26px 30px; color: #fff; margin-bottom: 16px; position: relative; overflow: hidden; }
+.fo-tool-astreinte .focus-badge{ display: inline-flex; align-items: center; gap: 7px; background: var(--or); color: #16243a; font-weight: 700; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; border-radius: 40px; margin-bottom: 14px; }
+.fo-tool-astreinte .focus-callout h3{ font-family:inherit; font-size: 20px; color: #fff; margin-bottom: 10px; }
+.fo-tool-astreinte .focus-callout p{ font-size: 14.5px; line-height: 1.7; color: rgba(255,255,255,0.88); }
+.fo-tool-astreinte .focus-callout strong{ color: var(--or); }
+.fo-tool-astreinte .vs-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+.fo-tool-astreinte .vs-card{ background: #fff; border-radius: 14px; padding: 20px 22px; border-top: 4px solid var(--bleu); }
+.fo-tool-astreinte .vs-card.b{ border-top-color: var(--navy); }
+.fo-tool-astreinte .vs-card h5{ font-family:inherit; font-size: 15px; color: var(--bleu); margin-bottom: 12px; display:flex; align-items:center; gap:8px; }
+.fo-tool-astreinte .vs-card.b h5{ color: var(--navy); }
+.fo-tool-astreinte .vs-card h5 svg{ width: 20px; height: 20px; }
+.fo-tool-astreinte .vs-card ul{ list-style: none; padding: 0; }
+.fo-tool-astreinte .vs-card li{ font-size: 13px; color: #4a4a46; line-height: 1.5; padding-left: 18px; position: relative; margin-bottom: 8px; }
+.fo-tool-astreinte .vs-card li::before{ content: '•'; position: absolute; left: 3px; color: var(--bleu); font-weight: 700; }
+.fo-tool-astreinte .vs-card.b li::before{ color: var(--navy); }
+@media (max-width: 640px){.fo-tool-astreinte .vs-grid{ grid-template-columns: 1fr; }
+}
+.fo-tool-astreinte .footer{ text-align: center; font-size: 12px; color: var(--gris); padding-top: 26px; border-top: 1px solid #ddd; margin-top: 44px; }
+.fo-tool-astreinte .footer a{ color: var(--bleu); text-decoration: none; }
+.fo-tool-astreinte .footer a:hover{ text-decoration: underline; }
+.fo-tool-astreinte .footer-insta{ margin: 14px 0 10px; font-size: 12.5px; }
+.fo-tool-astreinte .footer-logo img{ height: 64px; object-fit: contain; opacity: 0.9; }
+.fo-tool-astreinte .reveal{ opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.fo-tool-astreinte .reveal.in{ opacity: 1; transform: none; }
+@media (max-width: 640px){.fo-tool-astreinte .facts{ grid-template-columns: 1fr 1fr; }
+.fo-tool-astreinte .glossary{ grid-template-columns: 1fr; }
+.fo-tool-astreinte .header h1{ font-size: 28px; }
+.fo-tool-astreinte .header{ padding: 32px 24px; }
+.fo-tool-astreinte .page{ padding: 24px 16px 48px; }
+.fo-tool-astreinte .acc-body-inner{ padding-left: 20px; }
+}
+.fo-tool-astreinte .rotate-banner{ display: none; position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #019cda, #028bc2); color: white; text-align: center; padding: 10px 16px; font-size: 13px; font-weight: 500; z-index: 9998; gap: 10px; align-items: center; justify-content: center; box-shadow: 0 -3px 12px rgba(0,0,0,0.15); }
+.fo-tool-astreinte .rotate-banner .rb-icon{ font-size: 20px; animation: rb-spin 2s ease-in-out infinite; display: inline-block; }
+@keyframes rb-spin{ 0%{transform:rotate(0deg)} 40%{transform:rotate(90deg)} 60%{transform:rotate(90deg)} 100%{transform:rotate(0deg)} }
+.fo-tool-astreinte .rotate-banner .rb-close{ background: rgba(255,255,255,0.2); border: none; color: white; font-size: 14px; padding: 4px 10px; border-radius: 20px; cursor: pointer; margin-left: 8px; }
+@media (max-width: 768px) and (orientation: portrait){.fo-tool-astreinte .rotate-banner{ display: flex; }
+.fo-tool-astreinte{ padding-bottom: 52px; }
+}
+.fo-tool-astreinte .skip-link{ position: absolute; top: -100px; left: 16px; background: #ffbf00; color: #2C2C29; font-weight: 700; padding: 10px 20px; border-radius: 8px; z-index: 9999; text-decoration: none; transition: top 0.2s; }
+.fo-tool-astreinte .skip-link:focus{ top: 16px; }
+.fo-tool-astreinte .a11y-toggle-bar{ display: flex; justify-content: center; margin: -16px 0 28px; position: relative; z-index: 10; }
+.fo-tool-astreinte .a11y-btn{ display: inline-flex; align-items: center; gap: 8px; background: white; border: 2px solid #ddd; border-radius: 40px; padding: 8px 20px; font-family:inherit; font-size: 12.5px; font-weight: 500; color: #6E6D69; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.fo-tool-astreinte .a11y-btn:hover{ border-color: #019cda; color: #019cda; }
+.fo-tool-astreinte .a11y-btn:focus{ outline: 4px solid #019cda; outline-offset: 3px; }
+.fo-tool-astreinte .a11y-btn .a11y-label-on{ display: none; }
+.fo-tool-astreinte .a11y-btn .a11y-label-off{ display: inline; }
+.fo-tool-astreinte.a11y-mode .a11y-btn{ background: #525250; border-color: #525250; color: white; font-weight: 700; }
+.fo-tool-astreinte.a11y-mode .a11y-btn .a11y-label-on{ display: inline; }
+.fo-tool-astreinte.a11y-mode .a11y-btn .a11y-label-off{ display: none; }
+.fo-tool-astreinte .a11y-ico{ display: none; width: 1.1em; height: 1.1em; vertical-align: -0.18em; flex-shrink: 0; color: currentColor; }
+.fo-tool-astreinte.a11y-mode .a11y-ico{ display: inline; }
+.fo-tool-astreinte.a11y-mode .a11y-emoji{ font-size: 0 !important; line-height: 0 !important; width: 0 !important; display: inline-block; }
+.fo-tool-astreinte.a11y-mode .icon .a11y-ico,.fo-tool-astreinte.a11y-mode .acc-tag .a11y-ico,.fo-tool-astreinte.a11y-mode .tb-ico .a11y-ico,.fo-tool-astreinte.a11y-mode .n-ico .a11y-ico{ width: 1.3em !important; height: 1.3em !important; }
+.fo-tool-astreinte.a11y-mode{
+    --a11y-bg: #FAFAF7; --a11y-surface: #FFFFFF; --a11y-surface2: #F4F3EF;
+    --a11y-border: #E2E0DA; --a11y-border2: #CCCAC4; --a11y-txt1: #2C2C29;
+    --a11y-txt2: #4A4A46; --a11y-txt3: #6E6D69; --a11y-dark: #525250;
+    --a11y-dark-txt: #F8F7F4; --a11y-txt4-dark: #C8C6C0;
+    font-family:inherit; font-size: 17px; line-height: 1.9; letter-spacing: 0.02em; background: #FFFFFF; color: #2C2C29;
+  }
+.fo-tool-astreinte.a11y-mode p,.fo-tool-astreinte.a11y-mode li,.fo-tool-astreinte.a11y-mode dd,.fo-tool-astreinte.a11y-mode .intro,.fo-tool-astreinte.a11y-mode .acc-head,.fo-tool-astreinte.a11y-mode .acc-body-inner,.fo-tool-astreinte.a11y-mode .tl-desc,.fo-tool-astreinte.a11y-mode .f-lab{ font-family:inherit; }
+.fo-tool-astreinte.a11y-mode .header{ background: #525250; border: 3px solid #2C2C29; }
+.fo-tool-astreinte.a11y-mode .header::after{ display: none; }
+.fo-tool-astreinte.a11y-mode .header h1{ color: #FFFFFF !important; font-family:inherit; }
+.fo-tool-astreinte.a11y-mode .header h1 em{ color: #FFFFFF !important; text-decoration: underline; font-style: normal; }
+.fo-tool-astreinte.a11y-mode .header .subtitle{ color: #C8C6C0 !important; }
+.fo-tool-astreinte.a11y-mode .badge{ background: #FFFFFF; color: #2C2C29; border: 2px solid #2C2C29; }
+.fo-tool-astreinte.a11y-mode .header .update{ background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.5); color: #FFFFFF; }
+.fo-tool-astreinte.a11y-mode .dot{ background: #FFFFFF !important; }
+.fo-tool-astreinte.a11y-mode .intro{ background: #FAFAF7; border-left: 6px solid #2C2C29; color: #2C2C29; }
+.fo-tool-astreinte.a11y-mode .intro strong{ color: #2C2C29; text-decoration: underline; }
+.fo-tool-astreinte.a11y-mode .section-title{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .section-title .icon{ background: #E2E0DA !important; border: 2px solid #2C2C29; }
+.fo-tool-astreinte.a11y-mode .section-intro{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .fact{ background: #F4F3EF; border: 1px solid #2C2C29; border-top: 4px solid #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .fact .f-num{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .fact .f-lab{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .neutral{ background: #F4F3EF !important; border: 3px dashed #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .neutral p,.fo-tool-astreinte.a11y-mode .neutral strong{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .balance-wrap{ background: #525250 !important; border: 2px solid #2C2C29; }
+.fo-tool-astreinte.a11y-mode .balance-wrap h3{ color: #FFFFFF !important; text-decoration: underline; }
+.fo-tool-astreinte.a11y-mode .balance-wrap .bw-sub,.fo-tool-astreinte.a11y-mode .balance-legend{ color: #F8F7F4 !important; }
+.fo-tool-astreinte.a11y-mode .balance-legend b{ color: #FFFFFF !important; }
+.fo-tool-astreinte.a11y-mode .scale-beam{ animation: none !important; }
+.fo-tool-astreinte.a11y-mode .pan.left .d-title,.fo-tool-astreinte.a11y-mode .pan.left .d-count,.fo-tool-astreinte.a11y-mode .pan.right .d-title,.fo-tool-astreinte.a11y-mode .pan.right .d-count{ color: #FFFFFF !important; }
+.fo-tool-astreinte.a11y-mode .tab-btn{ background: #FFFFFF; border: 2px solid #2C2C29; color: #2C2C29; }
+.fo-tool-astreinte.a11y-mode .tab-btn.active.vert,.fo-tool-astreinte.a11y-mode .tab-btn.active.or{ background: #2C2C29 !important; color: #FFFFFF !important; box-shadow: none; }
+.fo-tool-astreinte.a11y-mode .acc-item{ background: #FFFFFF; border: 2px solid #2C2C29; }
+.fo-tool-astreinte.a11y-mode .acc-head{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .acc-item.plus .acc-tag{ background: #F4F3EF; border: 1px solid #2C2C29; }
+.fo-tool-astreinte.a11y-mode .acc-item.minus .acc-tag{ background: #F4F3EF; border: 1px dashed #2C2C29; }
+.fo-tool-astreinte.a11y-mode .acc-head .acc-chevron{ color: #2C2C29; }
+.fo-tool-astreinte.a11y-mode .acc-body-inner{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .acc-body-inner .chip{ background: #F4F3EF !important; color: #2C2C29 !important; border: 1px solid #2C2C29; }
+.fo-tool-astreinte.a11y-mode .timeline::before{ background: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .tl-item::before{ background: #FFFFFF !important; border: 2.5px solid #2C2C29 !important; box-shadow: none !important; }
+.fo-tool-astreinte.a11y-mode .tl-title,.fo-tool-astreinte.a11y-mode .tl-date{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .paliers{ background: #FFFFFF !important; border: 2px solid #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .paliers-head{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .palier,.fo-tool-astreinte.a11y-mode .palier.p2,.fo-tool-astreinte.a11y-mode .palier.p3{ background: #F4F3EF !important; border: 1.5px solid #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .palier .p-step,.fo-tool-astreinte.a11y-mode .palier.p2 .p-step,.fo-tool-astreinte.a11y-mode .palier.p3 .p-step{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .palier .p-day,.fo-tool-astreinte.a11y-mode .palier .p-week{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .paliers-note{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .paliers-note::before{ background: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .paliers-note strong{ color: #2C2C29 !important; text-decoration: underline; }
+.fo-tool-astreinte.a11y-mode .focus-callout{ background: #525250 !important; border: 2px solid #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .focus-callout h3{ color: #FFFFFF !important; text-decoration: underline; }
+.fo-tool-astreinte.a11y-mode .focus-callout p{ color: #F8F7F4 !important; }
+.fo-tool-astreinte.a11y-mode .focus-callout strong{ color: #FFFFFF !important; }
+.fo-tool-astreinte.a11y-mode .focus-badge{ background: #FFFFFF; color: #2C2C29; border: 2px solid #2C2C29; }
+.fo-tool-astreinte.a11y-mode .vs-card{ background: #FFFFFF !important; border: 2px solid #2C2C29 !important; border-top: 4px solid #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .vs-card.b{ border-top: 4px dashed #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .vs-card h5{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .vs-card li{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .vs-card li::before{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .revend-card{ background: #FFFFFF !important; border: 2px solid #2C2C29 !important; border-top: 4px solid #2C2C29 !important; box-shadow: none !important; }
+.fo-tool-astreinte.a11y-mode .revend-card h4{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .revend-card li{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .revend-card li::before{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .gl{ background: #FFFFFF; border: 1px solid #2C2C29; border-left: 4px solid #2C2C29; }
+.fo-tool-astreinte.a11y-mode .gl dt{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .gl dd{ color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .footer{ color: #2C2C29 !important; border-top-color: #2C2C29 !important; }
+.fo-tool-astreinte.a11y-mode .footer a{ color: #2C2C29 !important; text-decoration: underline; }
+.fo-tool-astreinte.a11y-mode .reveal{ opacity: 1 !important; transform: none !important; }
+.fo-tool-astreinte.a11y-mode *:focus{ outline: 3px solid #2C2C29 !important; outline-offset: 3px; }
+
+.fo-tool-astreinte{min-height:0!important;margin:0!important;padding:0!important;background:transparent!important;color:inherit}
+.fo-tool-astreinte .rotate-banner,.fo-tool-astreinte .skip-link,.fo-tool-astreinte .a11y-toggle-bar,.fo-tool-astreinte .a11y-toggle-wrap,.fo-tool-astreinte .a11y-btn-wrap,.fo-tool-astreinte footer,.fo-tool-astreinte .footer,.fo-tool-astreinte .foot{display:none!important}
+.fo-tool-astreinte .navbar,.fo-tool-astreinte .control-bar{top:80px!important}
+.fo-tool-astreinte .page{max-width:none;margin:0;padding:0}
+.fo-tool-astreinte img{max-width:100%;height:auto}
+</style>
+<a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+
+<div class="rotate-banner" id="rotateBanner" role="alert" aria-live="polite">
+  <span class="rb-icon" aria-hidden="true">📱</span>
+  Pour une meilleure lecture, tournez votre écran en mode paysage.
+  <button class="rb-close" onclick="dismissRotate()" aria-label="Fermer ce message">✕</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; position:relative; z-index:1;">
+      <div class="badge" aria-label="Décryptage">
+        <span aria-hidden="true">
+          <span class="a11y-emoji">📋</span>
+          <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v4h6V3M8 12h8M8 16h5"/></svg>
+        </span>
+        Décryptage · Communication nationale
+      </div>
+      <img src="https://fo-grdf.fr/wp-content/uploads/2026/09/logo-fo-energie-grdf-fc-720.png"
+           alt="Logo FO Énergie GRDF"
+           style="height:clamp(44px, 8vw, 84px); width:auto; object-fit:contain; display:block; flex-shrink:0; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.2));">
+    </div>
+    <h1>Accord astreinte : <em>ce qu'il contient</em>, ce qui change pour vous</h1>
+    <p class="subtitle">Vous connaissez l'astreinte au quotidien. Mais que prévoit réellement le projet d'accord national qui veut remplacer les accords régionaux de 2013-2014 ? Décryptage factuel : les avancées obtenues et les points encore améliorables.</p>
+    <div class="update">
+      <span class="dot" aria-hidden="true"></span>
+      Projet d'accord national GRDF · Mis à jour juin 2026
+    </div>
+  </header>
+
+  <!-- A11Y TOGGLE -->
+  <div class="a11y-toggle-bar">
+    <button class="a11y-btn" id="a11yToggle" onclick="toggleA11y()" aria-pressed="false" aria-label="Activer le mode lecture universelle">
+      <span class="a11y-icon" aria-hidden="true">
+        <span class="a11y-emoji">👁</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      </span>
+      <span class="a11y-label-off">Mode lecture universelle</span>
+      <span class="a11y-label-on">Désactiver le mode lecture</span>
+    </button>
+  </div>
+
+  <main id="contenu-principal">
+
+    <!-- INTRO -->
+    <div class="intro reveal" role="note">
+      L'astreinte fait partie de votre métier : être joignable, prêt à intervenir hors heures ouvrables pour garantir la <strong>sécurité gaz</strong> et la continuité du service public. Un <strong>projet d'accord national</strong> entend désormais fixer un cadre unique pour toute l'entreprise, en remplacement des anciens accords régionaux. Cette page vous explique, simplement et sans parti pris, <strong>ce que prévoit ce texte</strong> : ce qui progresse, et ce qui mérite encore d'être amélioré.
+    </div>
+
+    <!-- NEUTRAL NOTICE -->
+    <div class="neutral reveal" role="note">
+      <span class="n-ico" aria-hidden="true">
+        <span class="a11y-emoji">⚖️</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 9l9-6 9 6M5 12l7 4.5L19 12M3 18h18"/></svg>
+      </span>
+      <p><strong>Notre approche : être factuel.</strong> Ce document a une vocation d'information. Il ne prend pas position « pour » ou « contre » la signature : il vous donne les éléments objectifs pour comprendre le texte. Notre seul fil conducteur reste la <strong>défense des intérêts des salariés</strong>.</p>
+    </div>
+
+    <!-- KEY FACTS -->
+    <div class="section-title reveal">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">🔑</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3 21 2M16 7l3 3M14 9l3 3"/></svg>
+      </span>
+      L'essentiel en un coup d'œil
+    </div>
+    <div class="facts reveal">
+      <div class="fact"><div class="f-num" data-count="1">1</div><div class="f-lab">accord national unique remplaçant les accords régionaux</div></div>
+      <div class="fact vert"><div class="f-num" data-count="4.3" data-dec="1">4,3</div><div class="f-lab">fois l'IZHA pour les astreintes IS et Renfort (MIZHA)</div></div>
+      <div class="fact or"><div class="f-num" data-count="84" data-suffix="j">84j</div><div class="f-lab">d'astreinte en moyenne par an aujourd'hui (≈ 12 × 7 jours)</div></div>
+      <div class="fact navy"><div class="f-num" data-count="30" data-suffix="j">30j</div><div class="f-lab">de prévenance minimale avant toute modification de planning</div></div>
+    </div>
+
+    <!-- PALIERS DE MAJORATION -->
+    <div class="paliers reveal">
+      <div class="paliers-head">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+        Une indemnité d'astreinte qui augmente avec les occurrences
+      </div>
+      <div class="paliers-row" role="img" aria-label="Trois paliers de majoration : +50% au 106e jour (16e semaine), +100% au 120e jour (18e semaine), +150% au 134e jour (20e semaine).">
+        <div class="palier p1">
+          <div class="p-step">+50 %</div>
+          <div class="p-day">dès le 106ᵉ jour</div>
+          <div class="p-week">16ᵉ semaine d'astreinte</div>
+        </div>
+        <div class="palier p2">
+          <div class="p-step">+100 %</div>
+          <div class="p-day">dès le 120ᵉ jour</div>
+          <div class="p-week">18ᵉ semaine d'astreinte</div>
+        </div>
+        <div class="palier p3">
+          <div class="p-step">+150 %</div>
+          <div class="p-day">dès le 134ᵉ jour</div>
+          <div class="p-week">20ᵉ semaine d'astreinte</div>
+        </div>
+      </div>
+      <p class="paliers-note">À titre de repère, une astreinte représente aujourd'hui <strong>en moyenne 12 × 7 jours (≈ 84 jours) par an</strong>. Les paliers de majoration se déclenchent donc au-delà des situations les plus chargées, pour reconnaître un engagement particulièrement soutenu. La majoration est calculée en fin d'année et versée en début d'année suivante.</p>
+    </div>
+
+    <!-- BALANCE -->
+    <div class="section-title reveal">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">⚖️</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 9l9-6 9 6M5 12l7 4.5L19 12M3 18h18"/></svg>
+      </span>
+      La balance de l'accord
+    </div>
+    <p class="section-intro reveal">Comme dans toute négociation, le projet d'accord comporte des avancées réelles… et des points qui restent à équilibrer. Voici la balance, pesée objectivement.</p>
+
+    <div class="balance-wrap reveal" role="img" aria-label="Balance : d'un côté les avancées obtenues, de l'autre les points encore améliorables. Le texte reste à équilibrer.">
+      <h3>Avancées obtenues ⚖️ Points à améliorer</h3>
+      <p class="bw-sub">Un accord qui avance, mais un équilibre encore à construire.</p>
+      <div class="scale" aria-hidden="true">
+        <div class="scale-beam" id="scaleBeam">
+          <span class="pivot"></span>
+          <div class="pan left">
+            <span class="chain"></span>
+            <div class="dish"><div class="d-title">Avancées</div><div class="d-count" data-count="9" data-suffix="">9</div></div>
+          </div>
+          <div class="pan right">
+            <span class="chain"></span>
+            <div class="dish"><div class="d-title">À améliorer</div><div class="d-count" data-count="5" data-suffix="">5</div></div>
+          </div>
+        </div>
+        <div class="scale-pillar"></div>
+        <div class="scale-base"></div>
+      </div>
+      <p class="balance-legend"><b>9 avancées concrètes</b> obtenues par la négociation, <b>5 points</b> encore à renforcer. Explorez chaque plateau ci-dessous.</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs reveal" role="tablist" aria-label="Filtrer avancées ou points à améliorer">
+      <button class="tab-btn vert active" role="tab" aria-selected="true" onclick="setTab('plus')">
+        <span class="tb-ico" aria-hidden="true"><span class="a11y-emoji">✅</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        Les avancées
+      </button>
+      <button class="tab-btn or" role="tab" aria-selected="false" onclick="setTab('minus')">
+        <span class="tb-ico" aria-hidden="true"><span class="a11y-emoji">🛠️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6z"/></svg></span>
+        Les points à améliorer
+      </button>
+    </div>
+
+    <!-- PANEL PLUS -->
+    <div class="tab-panel active" id="panel-plus" role="tabpanel">
+      <div class="acc">
+
+        <div class="acc-item plus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">💶</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5a3.5 3.5 0 0 0-5 .5 4 4 0 0 0 0 4 3.5 3.5 0 0 0 5 .5M7.5 11h5M7.5 13h5"/></svg></span>
+            <span class="acc-txt">Une revalorisation de l'indemnité de résidence (MIZHA)</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            L'ancienne majoration MSD est remplacée par la <b>Majoration IZHA (MIZHA)</b>. Concrètement, les salariés tenus de résider en ZHA perçoivent davantage&nbsp;:
+            <span class="chip">IS / Renfort : 4,3 × IZHA</span>
+            <span class="chip">ATCE / BEX / Détente : 3,3 × IZHA</span>
+            <span class="chip">le niveau le plus favorable conservé en cas de changement</span>
+          </div></div>
+        </div>
+
+        <div class="acc-item plus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">📈</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg></span>
+            <span class="acc-txt">Une majoration progressive quand les occurrences s'accumulent</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            Au-delà d'un certain nombre de jours d'astreinte dans l'année, l'indemnité d'astreinte est majorée pour reconnaître l'engagement accru&nbsp;:
+            <span class="chip">+50 % dès le 106ᵉ jour (16ᵉ semaine)</span>
+            <span class="chip">+100 % dès le 120ᵉ jour (18ᵉ semaine)</span>
+            <span class="chip">+150 % dès le 134ᵉ jour (20ᵉ semaine)</span>
+            Le calcul est fait en fin d'année et versé en début d'année suivante.
+          </div></div>
+        </div>
+
+        <div class="acc-item plus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">🏅</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></span>
+            <span class="acc-txt">Une reconnaissance par le classement (GF garantis + NR)</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            L'accord garantit un GF minimal par type d'astreinte et des NR à la prise d'astreinte&nbsp;:
+            <span class="chip">IS / Renfort : GF4 minimum</span>
+            <span class="chip">ATCE : GF7 · ACE : GF7</span>
+            <span class="chip">CE : GF9 · Détente : GF5 → GF7 sous 3 ans</span>
+            <span class="chip">Gaz Verts : GF7</span>
+            <span class="chip">+2 NR si déjà GF4 en prenant l'astreinte IS</span>
+            <span class="chip">Avancements hors contingent annuel</span>
+          </div></div>
+        </div>
+
+        <div class="acc-item plus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">🔒</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
+            <span class="acc-txt">L'astreinte réservée aux seuls agents GRDF</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            L'accord inscrit noir sur blanc que l'astreinte est assurée <b>exclusivement par les salariés statutaires</b> de GRDF. Elle ne peut être externalisée ni sous-traitée (à la seule exception historique de la ZEPIG de Pithiviers, via la régie SICAP). Une garantie pour les emplois et le professionnalisme.
+          </div></div>
+        </div>
+
+        <div class="acc-item plus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">🗓️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <span class="acc-txt">Des plannings plus prévisibles</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            Le texte encadre la planification pour permettre de s'organiser&nbsp;:
+            <span class="chip">Plannings établis 6 mois à l'avance (semestre par semestre)</span>
+            <span class="chip">Prévenance minimale de 30 jours pour toute modification</span>
+            <span class="chip">3 semaines de congés garanties l'été dont 10 jours consécutifs</span>
+            <span class="chip">Échange de semaines entre salariés privilégié</span>
+          </div></div>
+        </div>
+
+        <div class="acc-item plus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">🛌</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17v-5a2 2 0 0 1 2-2h12a4 4 0 0 1 4 4v3"/><path d="M2 17h20"/><circle cx="7" cy="10" r="1.5"/></svg></span>
+            <span class="acc-txt">Des temps de repos protégés</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            L'accord rappelle et encadre les repos&nbsp;:
+            <span class="chip">35 h de repos hebdomadaire garanties</span>
+            <span class="chip">Repos quotidien des 11 h</span>
+            <span class="chip">2 semaines d'astreinte consécutives = exceptionnel</span>
+            <span class="chip">Repos programmé dès la sortie d'astreinte pour ne pas dépasser 48 h/semaine</span>
+          </div></div>
+        </div>
+
+        <div class="acc-item plus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">🎓</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 3 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg></span>
+            <span class="acc-txt">Des dispositifs de fin de carrière</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            Pour les salariés de 50 ans et plus ayant au moins 15 ans d'astreinte&nbsp;:
+            <span class="chip">Prime de perte d'astreinte : ×1,5 à ×3 selon l'ancienneté</span>
+            <span class="chip">Prime exceptionnelle mobilité : 5 000 € à 30 000 €</span>
+            <span class="chip">Jours de fin de carrière portés de 18 à 24</span>
+            <span class="chip">Indemnité de fin de carrière transformable en temps</span>
+          </div></div>
+        </div>
+
+        <div class="acc-item plus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">☀️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+            <span class="acc-txt">Une indemnité pour la mission Sécurité Gaz de jour</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            La mission de Sécurité Gaz de jour est désormais reconnue et indemnisée&nbsp;:
+            <span class="chip">12 € par jour de mission</span>
+            <span class="chip">18 € par jour au-delà de 50 missions dans l'année</span>
+            <span class="chip">Planning établi le mois précédent (M-1)</span>
+            <span class="chip">Pas de mission les semaines d'entrée et de sortie d'astreinte</span>
+          </div></div>
+        </div>
+
+        <div class="acc-item plus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">🤝</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13l3 3 5-6"/><path d="M5 21V8l7-5 7 5v13"/></svg></span>
+            <span class="acc-txt">Un dialogue social encadré pour toute évolution</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            Aucune évolution de ZEPIG ou de ZHA ne peut se faire sans process&nbsp;:
+            <span class="chip">Concertation obligatoire avec les organisations syndicales</span>
+            <span class="chip">Information-consultation du CSE après passage en CSSCT</span>
+            <span class="chip">REX obligatoire pour toute expérimentation</span>
+            <span class="chip">Indemnisation de perte d'occurrences en cas de réorganisation</span>
+            <span class="chip">Comité de suivi annuel + Q/R sur l'intranet</span>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PANEL MINUS -->
+    <div class="tab-panel" id="panel-minus" role="tabpanel">
+      <div class="acc">
+
+        <div class="acc-item minus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">💶</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5a3.5 3.5 0 0 0-5 .5 4 4 0 0 0 0 4 3.5 3.5 0 0 0 5 .5M7.5 11h5M7.5 13h5"/></svg></span>
+            <span class="acc-txt">Le montant de la MIZHA reste à apprécier</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            La revalorisation est réelle, mais son montant est à mettre en regard des contraintes concrètes&nbsp;: obligation de résidence, coût du logement dans la ZHA, disponibilité imposée. La question est&nbsp;: cette compensation couvre-t-elle vraiment la sujétion subie&nbsp;?
+            <span class="chip">À apprécier au regard du coût réel du logement</span>
+          </div></div>
+        </div>
+
+        <div class="acc-item minus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">⏱️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg></span>
+            <span class="acc-txt">L'indemnisation des occurrences : un principe acquis, un montant à renforcer</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            Créer une indemnisation des occurrences est une avancée (elle n'existait pas de façon pérenne). Reste la question de son <b>niveau</b>, au regard de la fatigue réellement générée par l'accumulation des semaines d'astreinte.
+            <span class="chip">Principe nouveau et pérenne</span>
+            <span class="chip">Montant à apprécier face à la fatigue accumulée</span>
+          </div></div>
+        </div>
+
+        <div class="acc-item minus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">🔄</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.5 9a9 9 0 0 1 14.8-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15"/></svg></span>
+            <span class="acc-txt">Le cumul astreinte + mission de jour</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            Le texte permet de combiner astreinte (nuits, week-ends) et mission de Sécurité Gaz de jour. Des garde-fous existent (pas la semaine d'entrée/sortie, fin 1 h avant la fin de poste, accord explicite pour prolonger). Le point de vigilance&nbsp;: l'effet cumulé sur la disponibilité globale ressentie.
+            <span class="chip">Garde-fous prévus</span>
+            <span class="chip">Vigilance sur la charge cumulée</span>
+          </div></div>
+        </div>
+
+        <div class="acc-item minus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">📞</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg></span>
+            <span class="acc-txt">La sollicitation possible au dernier moment</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            Pour respecter le repos des 11 h d'un salarié d'astreinte, un autre peut être sollicité <b>le matin même</b> pour assurer la mission de jour. Encadré, mais source d'imprévisibilité. Un point à suivre dans l'application concrète.
+            <span class="chip">Lié au respect du repos des 11 h</span>
+            <span class="chip">Imprévisibilité à surveiller</span>
+          </div></div>
+        </div>
+
+        <div class="acc-item minus">
+          <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+            <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">🏠</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-7h6v7"/></svg></span>
+            <span class="acc-txt">La contrainte de résidence (ZHA) et la vie personnelle</span>
+            <span class="acc-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="acc-body"><div class="acc-body-inner">
+            L'obligation de résider dans la ZHA limite les choix de logement et de vie. L'accord prévoit des protections (déménagement pris en charge, possibilité de dérogation avec maintien de l'indemnité). L'enjeu reste l'impact réel sur l'équilibre vie professionnelle / vie personnelle.
+            <span class="chip">Déménagement pris en charge (article 30 du statut)</span>
+            <span class="chip">Dérogation de ZHA possible</span>
+            <span class="chip">Vigilance sur l'équilibre de vie</span>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- REVENDICATIONS FO -->
+    <div class="section-title reveal">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">✊</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11V7a2 2 0 0 1 4 0M10 11V6a2 2 0 0 1 4 0v5M14 11V7a2 2 0 0 1 4 0v6a7 7 0 0 1-7 7 7 7 0 0 1-7-7v-1a2 2 0 0 1 4 0"/></svg>
+      </span>
+      Les revendications portées par FO
+    </div>
+    <p class="section-intro reveal">Dans l'intérêt des salariés, FO GRDF a déposé une série de propositions pour améliorer le texte. Les négociations se poursuivent ; voici, en transparence, ce que FO continue de demander.</p>
+
+    <div class="revend-grid reveal">
+
+      <div class="revend-card c3">
+        <h4><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5a3.5 3.5 0 0 0-5 .5 4 4 0 0 0 0 4 3.5 3.5 0 0 0 5 .5M7.5 11h5M7.5 13h5"/></svg> Volet financier</h4>
+        <ul>
+          <li>IZHA revalorisée et indexée sur le coût de l'immobilier, harmonisée entre IS, Renfort et ATCE.</li>
+          <li>Prime d'astreinte maintenue dès le 1ᵉʳ jour en cas de départ en formation.</li>
+          <li>Prime d'astreinte maintenue en cas d'accident du travail (avec ou sans arrêt).</li>
+          <li>Octroi d'un repos compensateur monétisable au-delà de 91 jours d'astreinte par an.</li>
+          <li>Prime de panier systématique pour toute sortie entre 22 h et 5 h.</li>
+        </ul>
+      </div>
+
+      <div class="revend-card c2">
+        <h4><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg> Reconnaissance des responsabilités</h4>
+        <ul>
+          <li>Une prise de GF ou de NR dès la prise d'astreinte.</li>
+          <li>ATCE : passage en GF8 ou 2 NR.</li>
+          <li>Renfort : passage en GF6 ou 2 NR.</li>
+          <li>IS : pérennisation du passage en GF4 ou 2 NR.</li>
+          <li>CE, ACE, biométhane et postes : GF supérieur ou 2 NR (minimum collège maîtrise).</li>
+        </ul>
+      </div>
+
+      <div class="revend-card c1">
+        <h4><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-7h6v7"/></svg> Concilier vie privée et astreinte</h4>
+        <ul>
+          <li>Un congé monétisable supplémentaire à partir de 13 occurrences.</li>
+          <li>Maintien de la prime d'astreinte pendant les congés maternité et paternité.</li>
+          <li>Repos avant et après l'astreinte, plutôt que des congés imposés.</li>
+          <li>Respect systématique des 35 h de repos entre deux astreintes.</li>
+        </ul>
+      </div>
+
+      <div class="revend-card c4">
+        <h4><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Conditions d'exercice et sécurité</h4>
+        <ul>
+          <li>Une réelle anticipation des recrutements.</li>
+          <li>Un minimum de 4 salariés par tour d'astreinte.</li>
+        </ul>
+      </div>
+
+      <div class="revend-card c5 wide">
+        <h4><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg> Accompagnement humain</h4>
+        <ul>
+          <li>Un accompagnement renforcé en sortie d'astreinte, avec doublement du capital à partir de 15 années d'astreinte.</li>
+          <li>Maintien de la prime d'astreinte et de l'IZHA pour les femmes enceintes.</li>
+          <li>Un suivi appuyé pour les salariés d'astreinte concernés par un dossier RQTH.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- DECRYPTAGE : comment ça marche -->
+    <div class="section-title reveal">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">🧭</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2 6-6 2 2-6 6-2z"/></svg>
+      </span>
+      Comment fonctionne l'astreinte dans l'accord
+    </div>
+    <p class="section-intro reveal">Le texte décrit précisément l'organisation. Les grandes lignes&nbsp;:</p>
+    <div class="timeline reveal">
+      <div class="tl-item"><div class="tl-date">Le cadre</div><div class="tl-title">Une semaine d'astreinte = un cycle continu</div><div class="tl-desc">Du jeudi (prise de service) au jeudi suivant — comme dans l'organisation précédente. Un cycle hebdomadaire continu, homogène et prévisible pour tous.</div></div>
+      <div class="tl-item"><div class="tl-date">Le territoire</div><div class="tl-title">ZEPIG &amp; ZHA</div><div class="tl-desc">Vous intervenez sur une zone (ZEPIG) et devez résider dans une zone d'habitat (ZHA) pour tenir les délais d'intervention réglementaires.</div></div>
+      <div class="tl-item"><div class="tl-date">Les missions</div><div class="tl-title">IS, Renfort, ATCE, CE, ACE, Détente, Gaz Verts</div><div class="tl-desc">Chaque type d'astreinte est défini, avec un classement (GF) garanti et une indemnité de résidence majorée.</div></div>
+      <div class="tl-item"><div class="tl-date">Le jour</div><div class="tl-title">La mission Sécurité Gaz de jour</div><div class="tl-desc">Pendant les heures ouvrables, une mission spécifique peut être confiée, désormais indemnisée et planifiée à l'avance.</div></div>
+      <div class="tl-item"><div class="tl-date">Le suivi</div><div class="tl-title">Un comité de suivi annuel</div><div class="tl-desc">Bilan national + bilans régionaux chaque année, et un Questions/Réponses tenu à jour sur l'intranet.</div></div>
+    </div>
+
+    <!-- FOCUS CADRES : PERMANENCES DE DIRECTION -->
+    <div class="section-title reveal">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">💼</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </span>
+      Focus cadres : la permanence de Direction
+    </div>
+    <p class="section-intro reveal">Le projet d'accord intègre aussi un chapitre dédié à l'encadrement. Point important à comprendre&nbsp;: une permanence de Direction <strong style="color:var(--bleu)">n'est pas une astreinte</strong>.</p>
+
+    <div class="focus-callout reveal">
+      <div class="focus-badge">★ Réservé à l'encadrement</div>
+      <h3>Une mission de continuité managériale, distincte de l'astreinte</h3>
+      <p>La permanence de Direction consiste, pour un salarié de l'encadrement, à être en mesure — hors heures ouvrables — d'assurer la <strong>continuité de gestion des événements</strong>, la coordination des acteurs et la circulation de l'information. Elle relève de la <strong>PERS 938</strong> et vient en complément des astreintes opérationnelles, sans s'y substituer.</p>
+    </div>
+
+    <div class="vs-grid reveal">
+      <div class="vs-card">
+        <h5><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 9l9-6 9 6M5 12l7 4.5L19 12"/></svg> L'astreinte</h5>
+        <ul>
+          <li>Une <b>sujétion de service</b> : intervenir physiquement dans les plus brefs délais.</li>
+          <li>Obligation de <b>résider dans la ZHA</b> (contrainte d'habitat).</li>
+          <li>Rémunérée par l'indemnité d'astreinte + IZHA / MIZHA.</li>
+        </ul>
+      </div>
+      <div class="vs-card b">
+        <h5><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg> La permanence de Direction</h5>
+        <ul>
+          <li>Une <b>mission de décision et de coordination</b> : être joignable, avec une connexion internet.</li>
+          <li><b>Sans contrainte d'habitat</b> (pas de ZHA imposée).</li>
+          <li>Rémunérée par une <b>indemnité forfaitaire hebdomadaire</b> (PERS 938).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="acc reveal">
+
+      <div class="acc-item plus">
+        <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+          <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">🏢</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></span>
+          <span class="acc-txt">Plusieurs niveaux de permanence</span>
+          <span class="acc-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          <span class="chip">Permanence nationale (équipe dirigeante)</span>
+          <span class="chip">Permanences régionales / territoriales</span>
+          <span class="chip">Permanences métiers (techniques ou transverses)</span>
+          Elles s'inscrivent dans le référentiel interne de gestion des événements significatifs et de crise.
+        </div></div>
+      </div>
+
+      <div class="acc-item plus">
+        <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+          <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">⚖️</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 9l9-6 9 6M5 12l7 4.5L19 12M3 18h18"/></svg></span>
+          <span class="acc-txt">Conditions d'exercice et équilibre de vie</span>
+          <span class="acc-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          L'organisation doit préserver l'équilibre vie professionnelle / vie personnelle et le respect des temps de travail et de repos.
+          <span class="chip">Échange périodique avec le manager (entretien annuel)</span>
+          <span class="chip">Appréciation de la charge induite</span>
+          <span class="chip">Formation et maintien des compétences (gestion de crise)</span>
+          <span class="chip">Note M-RH-14-05 en cas d'événement exceptionnel</span>
+        </div></div>
+      </div>
+
+      <div class="acc-item plus">
+        <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+          <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">💶</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5a3.5 3.5 0 0 0-5 .5 4 4 0 0 0 0 4 3.5 3.5 0 0 0 5 .5M7.5 11h5M7.5 13h5"/></svg></span>
+          <span class="acc-txt">Les indemnités prévues</span>
+          <span class="acc-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          <b>Indemnité forfaitaire hebdomadaire</b> (PERS 938), versée pour le temps réellement assuré, revalorisée chaque année sur le SNB des IEG.
+          <span class="chip">+5 % prévus en 2026 si l'accord de branche sur la grille IEG est validé</span>
+          <br><br>
+          <b>Indemnité de fin de permanence</b> (DP 20-159) en cas de cessation liée à un changement d'emploi&nbsp;: montant égal aux indemnités perçues sur les 12 derniers mois.
+          <span class="chip">Indemnité doublée si la cessation découle d'une réorganisation (accord du 23 juillet 2010)</span>
+        </div></div>
+      </div>
+
+      <div class="acc-item plus">
+        <button class="acc-head" onclick="toggleAcc(this)" aria-expanded="false">
+          <span class="acc-tag" aria-hidden="true"><span class="a11y-emoji">🤝</span><svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13l3 3 5-6"/><path d="M5 21V8l7-5 7 5v13"/></svg></span>
+          <span class="acc-txt">Dialogue social</span>
+          <span class="acc-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="acc-body"><div class="acc-body-inner">
+          Toute évolution des modalités d'organisation des permanences de Direction fait l'objet d'une <b>information-consultation des instances représentatives compétentes</b>.
+        </div></div>
+      </div>
+
+    </div>
+
+    <!-- GLOSSAIRE -->
+    <div class="section-title reveal">
+      <span class="icon" aria-hidden="true">
+        <span class="a11y-emoji">📖</span>
+        <svg aria-hidden="true" focusable="false" class="a11y-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5a2 2 0 0 1 2-2h6v18H4a2 2 0 0 1-2-2zM22 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2z"/></svg>
+      </span>
+      Décoder les sigles
+    </div>
+    <p class="section-intro reveal">Pour s'y retrouver dans le vocabulaire de l'accord.</p>
+    <dl class="glossary reveal">
+      <div class="gl"><dt>ZEPIG</dt><dd>Zone Élémentaire de Premières Interventions Gaz — le territoire couvert par l'astreinte de sécurité gaz.</dd></div>
+      <div class="gl"><dt>ZHA</dt><dd>Zone d'Habitat d'Astreinte — la zone où vous devez résider pour tenir les délais d'intervention.</dd></div>
+      <div class="gl"><dt>IZHA / MIZHA</dt><dd>Indemnité de résidence d'astreinte et sa majoration (remplace l'ancienne MSD).</dd></div>
+      <div class="gl"><dt>IS / Renfort</dt><dd>Intervenant de Sécurité et Intervenant Renfort — les missions de première intervention.</dd></div>
+      <div class="gl"><dt>ATCE</dt><dd>Appui Terrain au Chef d'Exploitation — relais entre le terrain, le BEX et les secours.</dd></div>
+      <div class="gl"><dt>CE / ACE</dt><dd>Chef d'Exploitation et son Assistant — pilotage de la conduite du réseau.</dd></div>
+      <div class="gl"><dt>BEX</dt><dd>Bureau d'Exploitation — pilote la stratégie d'intervention sur un territoire.</dd></div>
+      <div class="gl"><dt>GF / NR</dt><dd>Groupe Fonctionnel et Niveau de Rémunération — les repères de classement et de salaire.</dd></div>
+      <div class="gl"><dt>Permanence de Direction</dt><dd>Mission de continuité managériale (PERS 938) hors heures ouvrables — distincte de l'astreinte, sans contrainte d'habitat.</dd></div>
+    </dl>
+
+    <!-- FOOTER -->
+    <footer class="footer reveal" role="contentinfo">
+      <div class="footer-logo" style="margin-bottom:14px;">
+        <img src="https://fo-grdf.fr/wp-content/uploads/2026/09/logo-fo-energie-grdf-fc-720.png" alt="Logo FO Énergie GRDF">
+      </div>
+      <div class="footer-insta">
+        Suivez-nous sur Instagram : <a href="https://www.instagram.com/FO_GRDF" target="_blank" rel="noopener">@FO_GRDF</a>
+      </div>
+      Communication nationale FO Énergie · Décryptage du projet d'accord astreinte GRDF — Juin 2026 · Document d'information à vocation pédagogique, élaboré dans l'intérêt des salariés. Il ne constitue ni un avis juridique, ni une position sur la signature de l'accord.
+    </footer>
+
+  </main>
+</div><!-- fin .page -->
+
+<script>
+  /* ── Rotation mobile ── */
+  function dismissRotate() {
+    var b = document.getElementById('rotateBanner');
+    if (b) b.style.display = 'none';
+    try { sessionStorage.setItem('fo-rotate-dismissed', '1'); } catch(e) {}
+  }
+  try { if (sessionStorage.getItem('fo-rotate-dismissed') === '1') { var rb = document.getElementById('rotateBanner'); if (rb) rb.style.display = 'none'; } } catch(e) {}
+
+  /* ── Mode lecture universelle ── */
+  function toggleA11y() {
+    var on = document.body.classList.toggle('a11y-mode');
+    var btn = document.getElementById('a11yToggle');
+    if (btn) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    try { localStorage.setItem('fo-a11y', on ? '1' : '0'); } catch(e) {}
+  }
+  try { if (localStorage.getItem('fo-a11y') === '1') { document.body.classList.add('a11y-mode'); var ab = document.getElementById('a11yToggle'); if (ab) ab.setAttribute('aria-pressed','true'); } } catch(e) {}
+
+  /* ── Onglets Avancées / À améliorer ── */
+  function setTab(which) {
+    document.getElementById('panel-plus').classList.toggle('active', which === 'plus');
+    document.getElementById('panel-minus').classList.toggle('active', which === 'minus');
+    var btns = document.querySelectorAll('.tab-btn');
+    btns[0].classList.toggle('active', which === 'plus');
+    btns[0].setAttribute('aria-selected', which === 'plus' ? 'true' : 'false');
+    btns[1].classList.toggle('active', which === 'minus');
+    btns[1].setAttribute('aria-selected', which === 'minus' ? 'true' : 'false');
+    /* incline la balance vers l'onglet choisi */
+    var beam = document.getElementById('scaleBeam');
+    if (beam) { beam.style.animation = 'none'; beam.style.transform = 'translateX(-50%) rotate(' + (which === 'plus' ? -7 : 7) + 'deg)'; }
+  }
+
+  /* ── Accordéons ── */
+  function toggleAcc(btn) {
+    var item = btn.closest('.acc-item');
+    var open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  /* ── Compteurs animés ── */
+  function animateCount(el) {
+    var target = parseFloat(el.getAttribute('data-count'));
+    var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    var dur = 1100, start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var ease = 1 - Math.pow(1 - p, 3);
+      var val = (target * ease).toFixed(dec).replace('.', ',');
+      el.textContent = val + suffix;
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = target.toFixed(dec).replace('.', ',') + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ── Reveal au scroll + déclenche compteurs ── */
+  (function () {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      reveals.forEach(function (r) { r.classList.add('in'); });
+      document.querySelectorAll('[data-count]').forEach(animateCount);
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          e.target.querySelectorAll && e.target.querySelectorAll('[data-count]').forEach(function (c) {
+            if (!c.dataset.done) { c.dataset.done = '1'; animateCount(c); }
+          });
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.18 });
+    reveals.forEach(function (r) { io.observe(r); });
+  })();
+</script>
+</div>

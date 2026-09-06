@@ -1,0 +1,83 @@
+[
+ {
+  "key": "tarif-agent",
+  "src": "saviez_vous_tarif_agent_ane_2026_fo_grdf.html",
+  "size": 99271,
+  "css": 55855,
+  "ext": [],
+  "imgs_left": [],
+  "gh_links": []
+ },
+ {
+  "key": "grille-ieg",
+  "src": "synthese-modernisation-grille-ieg.html",
+  "size": 100946,
+  "css": 39136,
+  "ext": [],
+  "imgs_left": [],
+  "gh_links": []
+ },
+ {
+  "key": "droits-familiaux",
+  "src": "droits_familiaux_2026_fo_grdf.html",
+  "size": 283085,
+  "css": 40707,
+  "ext": [],
+  "imgs_left": [],
+  "gh_links": [
+   "https://fo-grdf.github.io/Fo-le-savoir/videos/aides_enfants_reel.mp4",
+   "https://fo-grdf.github.io/Fo-le-savoir/videos/aides_enfants_yt.mp4",
+   "https://fo-grdf.github.io/Fo-le-savoir/videos/rentree_2h_reel.mp4",
+   "https://fo-grdf.github.io/Fo-le-savoir/videos/rentree_2h_yt.mp4",
+   "https://fo-grdf.github.io/Fo-le-savoir/videos/sport_cmcas_reel.mp4",
+   "https://fo-grdf.github.io/Fo-le-savoir/videos/sport_cmcas_yt.mp4"
+  ]
+ },
+ {
+  "key": "frais-deplacement",
+  "src": "baremes_frais_deplacement_fo_grdf.html",
+  "size": 579015,
+  "css": 21343,
+  "ext": [],
+  "imgs_left": [],
+  "gh_links": []
+ },
+ {
+  "key": "impots-2026",
+  "src": "saviez_vous_impots_2026_fo_grdf.html",
+  "size": 92943,
+  "css": 43868,
+  "ext": [],
+  "imgs_left": [],
+  "gh_links": []
+ },
+ {
+  "key": "astreinte",
+  "src": "astreinte_disponibilite_permanente_fo_grdf.html",
+  "size": 76398,
+  "css": 29784,
+  "ext": [],
+  "imgs_left": [],
+  "gh_links": []
+ },
+ {
+  "key": "catalogue-epi",
+  "src": "guide_epi_2026_fo_grdf.html",
+  "size": 108747,
+  "css": 39373,
+  "ext": [],
+  "imgs_left": [],
+  "gh_links": []
+ },
+ {
+  "key": "consultation-ia-resultats",
+  "src": "resultats_consultation_ia_dsi_fo_grdf.html",
+  "size": 33903,
+  "css": 5596,
+  "ext": [],
+  "imgs_left": [],
+  "gh_links": [
+   "https://fo-grdf.github.io/Fo-le-savoir/consultation_ia_fonctions_centrales_fo_grdf.html"
+  ]
+ }
+]

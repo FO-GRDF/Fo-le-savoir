@@ -1,0 +1,1324 @@
+<div class="fo-tool fo-tool-grille-ieg">
+<style>
+.fo-tool-grille-ieg{
+    --bleu: #019cda;
+    --bleu-clair: #019cda;
+    --or: #f7dd5c;
+    --or-clair: #fde8ea;
+    --vert: #28b193;
+    --vert-clair: #e8f8f4;
+    --rouge: #ef333e;
+    --rouge-clair: #fde8ea;
+    --fond: #F7F5F0;
+    --blanc: #FFFFFF;
+    --gris: #6B6B6B;
+    --texte: #1A1A2E;
+  }
+.fo-tool-grille-ieg *{ margin: 0; padding: 0; box-sizing: border-box; }
+.fo-tool-grille-ieg{
+    font-family:inherit;
+    background: var(--fond);
+    color: var(--texte);
+    min-height: 100vh;
+  }
+.fo-tool-grille-ieg .page{
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+.fo-tool-grille-ieg .header{
+    position: relative;
+    background: linear-gradient(135deg, #019cda 0%, #028bc2 100%);
+    border-radius: 20px;
+    padding: 44px 48px 36px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+.fo-tool-grille-ieg .badge{
+    display: inline-block;
+    background: var(--or);
+    color: var(--bleu);
+    font-family:inherit;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 40px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+.fo-tool-grille-ieg .header h1{
+    font-family:inherit;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--blanc);
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+  }
+.fo-tool-grille-ieg .header h1 em{ color: var(--or); font-style: italic; }
+.fo-tool-grille-ieg .header .subtitle{
+    margin-top: 14px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.72);
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+  }
+.fo-tool-grille-ieg .header .update{
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    position: relative;
+    z-index: 1;
+  }
+.fo-tool-grille-ieg .dot{ width: 7px; height: 7px; background: #4ADE80; border-radius: 50%; display: inline-block; }
+.fo-tool-grille-ieg .intro{
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    border-left: 5px solid var(--bleu-clair);
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #2a2a2a;
+  }
+.fo-tool-grille-ieg .intro strong{ color: var(--bleu); }
+.fo-tool-grille-ieg .section-title{
+    font-family:inherit;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bleu);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+.fo-tool-grille-ieg .section-title .icon{
+    width: 36px; height: 36px;
+    background: var(--or-clair);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+.fo-tool-grille-ieg .cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+.fo-tool-grille-ieg .card{
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+.fo-tool-grille-ieg .card:hover{ transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,59,111,0.1); }
+.fo-tool-grille-ieg .card .card-icon{ font-size: 28px; margin-bottom: 12px; display: block; }
+.fo-tool-grille-ieg .card h3{ font-family:inherit; font-size: 17px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+.fo-tool-grille-ieg .card p{ font-size: 13.5px; color: var(--gris); line-height: 1.65; }
+.fo-tool-grille-ieg .card.highlight{ background: var(--bleu); color: white; }
+.fo-tool-grille-ieg .card.highlight h3{ color: var(--or); }
+.fo-tool-grille-ieg .card.highlight p{ color: rgba(255,255,255,0.78); }
+.fo-tool-grille-ieg .alert{
+    background: var(--or-clair);
+    border: 1.5px solid var(--or);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+.fo-tool-grille-ieg .alert .alert-icon{ font-size: 24px; flex-shrink: 0; }
+.fo-tool-grille-ieg .alert p{ font-size: 14px; line-height: 1.7; color: #5a4000; }
+.fo-tool-grille-ieg .alert strong{ color: #3a2800; }
+.fo-tool-grille-ieg .alert.green{ background: var(--vert-clair); border-color: var(--vert); }
+.fo-tool-grille-ieg .alert.green p{ color: #0e3d22; }
+.fo-tool-grille-ieg .alert.green strong{ color: #0a2e19; }
+.fo-tool-grille-ieg .stat-box{
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 20px;
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+.fo-tool-grille-ieg .stat-box .stat-main{ flex-shrink: 0; text-align: center; }
+.fo-tool-grille-ieg .stat-box .stat-val{ font-family:inherit; font-size: 52px; font-weight: 900; color: var(--or); line-height: 1; }
+.fo-tool-grille-ieg .stat-box .stat-label{ font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+.fo-tool-grille-ieg .stat-box .stat-desc{ font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.7; }
+.fo-tool-grille-ieg .stat-box .stat-desc strong{ color: white; }
+.fo-tool-grille-ieg .placement-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+.fo-tool-grille-ieg .place-card{
+    background: var(--blanc);
+    border-radius: 16px;
+    padding: 22px 18px;
+    border-top: 4px solid var(--bleu-clair);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+.fo-tool-grille-ieg .place-card:hover{ transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,59,111,0.1); }
+.fo-tool-grille-ieg .place-card.default{ border-top-color: var(--gris); }
+.fo-tool-grille-ieg .place-card .place-icon{ font-size: 28px; margin-bottom: 10px; display: block; }
+.fo-tool-grille-ieg .place-card h3{ font-family:inherit; font-size: 15px; font-weight: 700; color: var(--bleu); margin-bottom: 8px; }
+.fo-tool-grille-ieg .place-card p{ font-size: 12.5px; color: var(--gris); line-height: 1.6; }
+.fo-tool-grille-ieg .place-card .tag{ display: inline-block; margin-top: 10px; font-size: 11px; padding: 3px 10px; border-radius: 20px; background: var(--or-clair); color: #7a5200; font-weight: 500; }
+.fo-tool-grille-ieg .place-card .tag.blue{ background: #e6f5fb; color: #017fb1; }
+.fo-tool-grille-ieg .place-card .tag.green{ background: var(--vert-clair); color: #0e3d22; }
+.fo-tool-grille-ieg .place-card .tag.grey{ background: #f0f0f0; color: #555; }
+.fo-tool-grille-ieg .ba-section{ background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+.fo-tool-grille-ieg .fiscal-compare{ display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; }
+.fo-tool-grille-ieg .fc-col{ border-radius: 14px; padding: 20px; border-top: 4px solid; }
+.fo-tool-grille-ieg .fc-col.placement{ background: var(--vert-clair); border-top-color: var(--vert); }
+.fo-tool-grille-ieg .fc-col.paiement{ background: #FFF3D6; border-top-color: var(--or); }
+.fo-tool-grille-ieg .fc-col h4{ font-family:inherit; font-size: 15px; color: var(--bleu); margin-bottom: 10px; }
+.fo-tool-grille-ieg .fc-col ul{ list-style: none; padding: 0; }
+.fo-tool-grille-ieg .fc-col ul li{ font-size: 12.5px; color: #333; line-height: 1.65; padding-left: 18px; position: relative; margin-bottom: 6px; }
+.fo-tool-grille-ieg .fc-col ul li::before{ content: '✓'; position: absolute; left: 0; color: var(--vert); font-weight: 700; }
+.fo-tool-grille-ieg .fc-col.paiement ul li::before{ color: #a36200; }
+.fo-tool-grille-ieg .fc-col .fc-highlight{ margin-top: 12px; background: rgba(255,255,255,0.7); border-radius: 8px; padding: 8px 12px; font-size: 12px; line-height: 1.5; }
+.fo-tool-grille-ieg .calc-box{
+    background: linear-gradient(135deg, #019cda 0%, #28b193 100%);
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin-bottom: 32px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+.fo-tool-grille-ieg .calc-box::after{ content: '€'; position: absolute; right: -10px; top: -30px; font-family:inherit; font-size: 200px; font-weight: 900; color: rgba(255,255,255,0.05); pointer-events: none; line-height: 1; }
+.fo-tool-grille-ieg .calc-box h3{ font-family:inherit; font-size: 22px; color: var(--or); margin-bottom: 6px; position: relative; z-index: 1; }
+.fo-tool-grille-ieg .calc-box .calc-sub{ font-size: 13.5px; color: rgba(255,255,255,0.85); margin-bottom: 20px; line-height: 1.6; position: relative; z-index: 1; }
+.fo-tool-grille-ieg .calc-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+.fo-tool-grille-ieg .calc-field{ background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 12px 14px; }
+.fo-tool-grille-ieg .calc-field label{ font-size: 11px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; display: block; margin-bottom: 6px; }
+.fo-tool-grille-ieg .calc-field input,.fo-tool-grille-ieg .calc-field select{
+    width: 100%;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-family:inherit;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--bleu);
+  }
+.fo-tool-grille-ieg .calc-field input:focus,.fo-tool-grille-ieg .calc-field select:focus{ outline: 2px solid var(--or); outline-offset: 1px; }
+.fo-tool-grille-ieg .calc-results{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 12px;
+    position: relative;
+    z-index: 1;
+  }
+.fo-tool-grille-ieg .calc-res{ background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; padding: 16px 18px; }
+.fo-tool-grille-ieg .calc-res.before{ border-left: 4px solid rgba(255,255,255,0.3); }
+.fo-tool-grille-ieg .calc-res.after{ border-left: 4px solid var(--or); background: rgba(247,221,92,0.12); }
+.fo-tool-grille-ieg .calc-res .cr-label{ font-size: 11px; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 1px; }
+.fo-tool-grille-ieg .calc-res .cr-amount{ font-family:inherit; font-size: 28px; font-weight: 900; color: var(--or); margin-top: 4px; line-height: 1.1; }
+.fo-tool-grille-ieg .calc-res.before .cr-amount{ color: white; }
+.fo-tool-grille-ieg .calc-res .cr-detail{ font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 8px; line-height: 1.55; }
+.fo-tool-grille-ieg .calc-delta{
+    background: linear-gradient(135deg, #ffffff 0%, #f8f5e8 100%);
+    color: #1A1A2E;
+    border: 1px solid rgba(247,221,92,0.55);
+    border-left: 5px solid var(--or);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-top: 16px;
+    font-family:inherit;
+    font-size: 13.5px;
+    line-height: 1.65;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  }
+.fo-tool-grille-ieg .calc-delta strong{ color: #003b6f; font-weight: 700; }
+.fo-tool-grille-ieg .calc-delta .cd-head{ display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.fo-tool-grille-ieg .calc-delta .cd-icon{ font-size: 22px; }
+.fo-tool-grille-ieg .calc-delta .cd-title{ font-family:inherit; font-weight: 900; font-size: 15.5px; color: #003b6f; flex: 1; min-width: 200px; }
+.fo-tool-grille-ieg .calc-delta .cd-pill{ background: var(--bleu); color: #fff; font-weight: 700; font-size: 13px; font-family:inherit; padding: 4px 12px; border-radius: 24px; letter-spacing: 0.5px; }
+.fo-tool-grille-ieg .calc-delta .cd-numbers{ display: flex; align-items: center; gap: 10px; margin: 10px 0 12px; flex-wrap: wrap; }
+.fo-tool-grille-ieg .calc-delta .cd-num{ flex: 1; min-width: 130px; background: #fff; border-radius: 10px; padding: 10px 14px; border: 1px solid rgba(0,0,0,0.06); display: flex; flex-direction: column; }
+.fo-tool-grille-ieg .calc-delta .cd-num-old{ border-left: 3px solid rgba(0,0,0,0.18); }
+.fo-tool-grille-ieg .calc-delta .cd-num-new{ border-left: 3px solid var(--or); background: #fffbef; }
+.fo-tool-grille-ieg .calc-delta .cd-num-lbl{ font-size: 10.5px; color: #6b6b6b; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 3px; }
+.fo-tool-grille-ieg .calc-delta .cd-num-val{ font-family:inherit; font-weight: 900; font-size: 22px; color: #003b6f; line-height: 1.1; }
+.fo-tool-grille-ieg .calc-delta .cd-num-new .cd-num-val{ color: #7a5200; }
+.fo-tool-grille-ieg .calc-delta .cd-arrow{ font-family:inherit; font-size: 22px; color: var(--or); font-weight: 900; flex-shrink: 0; }
+.fo-tool-grille-ieg .calc-delta .cd-line{ font-size: 13.5px; color: #1A1A2E; margin: 4px 0; }
+.fo-tool-grille-ieg .calc-delta .cd-line strong{ color: #003b6f; }
+.fo-tool-grille-ieg .calc-delta .cd-note{ font-size: 12.5px; color: #4a4a46; line-height: 1.55; margin-top: 6px; padding-top: 8px; border-top: 1px dashed rgba(0,0,0,0.1); }
+.fo-tool-grille-ieg .calc-delta .cd-note strong{ color: #003b6f; }
+@media (max-width: 600px){.fo-tool-grille-ieg .calc-delta .cd-numbers{ flex-direction: column; }
+.fo-tool-grille-ieg .calc-delta .cd-arrow{ transform: rotate(90deg); }
+}
+.fo-tool-grille-ieg .calc-future{
+    margin-top: 18px;
+    background: rgba(255,255,255,0.08);
+    border: 1px dashed rgba(255,255,255,0.25);
+    border-radius: 12px;
+    padding: 16px 18px;
+    position: relative;
+    z-index: 1;
+  }
+.fo-tool-grille-ieg .calc-future h4{ font-family:inherit; font-size: 14px; color: var(--or); margin-bottom: 10px; }
+.fo-tool-grille-ieg .calc-future .cf-row{ display: grid; grid-template-columns: 1.6fr 1fr; gap: 8px; padding: 6px 0; border-bottom: 1px dashed rgba(255,255,255,0.15); font-size: 12.5px; color: rgba(255,255,255,0.85); }
+.fo-tool-grille-ieg .calc-future .cf-row:last-child{ border-bottom: none; }
+.fo-tool-grille-ieg .calc-future .cf-row strong{ color: var(--or); font-family:inherit; font-size: 14px; }
+.fo-tool-grille-ieg .calc-note{
+    margin-top: 14px;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+  }
+.fo-tool-grille-ieg .calendar-section{ background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+.fo-tool-grille-ieg .timeline{ position: relative; padding-left: 28px; }
+.fo-tool-grille-ieg .timeline::before{ content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--bleu-clair), var(--or)); border-radius: 2px; }
+.fo-tool-grille-ieg .tl-item{ position: relative; margin-bottom: 22px; }
+.fo-tool-grille-ieg .tl-item::before{ content: ''; position: absolute; left: -22px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--bleu-clair); border: 2px solid white; box-shadow: 0 0 0 2px var(--bleu-clair); }
+.fo-tool-grille-ieg .tl-item.active::before{ background: var(--or); box-shadow: 0 0 0 2px var(--or); }
+.fo-tool-grille-ieg .tl-date{ font-size: 11px; font-weight: 500; color: var(--bleu-clair); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+.fo-tool-grille-ieg .tl-item.active .tl-date{ color: var(--or); }
+.fo-tool-grille-ieg .tl-title{ font-family:inherit; font-size: 15px; color: var(--bleu); margin-bottom: 3px; }
+.fo-tool-grille-ieg .tl-desc{ font-size: 13px; color: var(--gris); line-height: 1.55; }
+.fo-tool-grille-ieg table{ width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.fo-tool-grille-ieg thead tr{ background: var(--bleu); color: white; }
+.fo-tool-grille-ieg thead th{ padding: 12px 14px; text-align: left; font-weight: 500; font-size: 12px; letter-spacing: 0.5px; }
+.fo-tool-grille-ieg tbody tr:nth-child(even){ background: var(--fond); }
+.fo-tool-grille-ieg tbody td{ padding: 11px 14px; border-bottom: 1px solid #eee; color: #2a2a2a; }
+.fo-tool-grille-ieg tbody tr.highlight-new{ background: var(--vert-clair) !important; }
+.fo-tool-grille-ieg tbody tr.highlight-new td{ font-weight: 600; }
+.fo-tool-grille-ieg .pill{ display: inline-block; padding: 2px 8px; border-radius: 30px; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; }
+.fo-tool-grille-ieg .pill.green{ background: var(--vert-clair); color: #0a2e19; }
+.fo-tool-grille-ieg .pill.blue{ background: #e6f5fb; color: #017fb1; }
+.fo-tool-grille-ieg .pill.or{ background: var(--or-clair); color: #7a5200; }
+.fo-tool-grille-ieg .table-wrap{ background: var(--blanc); border-radius: 16px; padding: 18px 22px 22px; margin-bottom: 32px; overflow-x: auto; }
+.fo-tool-grille-ieg .table-wrap .section-title{ margin-bottom: 14px; }
+.fo-tool-grille-ieg .faq{ background: var(--blanc); border-radius: 16px; padding: 28px 32px; margin-bottom: 32px; }
+.fo-tool-grille-ieg details{ background: var(--fond); border-radius: 10px; padding: 14px 16px; margin: 8px 0; border-left: 3px solid var(--bleu-clair); }
+.fo-tool-grille-ieg details summary{ cursor: pointer; font-family:inherit; font-weight: 700; font-size: 14.5px; color: var(--bleu); }
+.fo-tool-grille-ieg details[open] summary{ margin-bottom: 8px; }
+.fo-tool-grille-ieg details p{ font-size: 13.5px; color: #444; line-height: 1.65; }
+.fo-tool-grille-ieg details strong{ color: var(--bleu); }
+.fo-tool-grille-ieg .footer{ text-align: center; font-size: 12px; color: var(--gris); padding-top: 24px; border-top: 1px solid #ddd; }
+@media (max-width: 600px){.fo-tool-grille-ieg .cards,.fo-tool-grille-ieg .placement-grid,.fo-tool-grille-ieg .fiscal-compare,.fo-tool-grille-ieg .calc-form,.fo-tool-grille-ieg .calc-results{ grid-template-columns: 1fr; }
+.fo-tool-grille-ieg .stat-box{ flex-direction: column; text-align: center; }
+.fo-tool-grille-ieg .header h1{ font-size: 30px; }
+.fo-tool-grille-ieg .header{ padding: 32px 24px; }
+.fo-tool-grille-ieg .page{ padding: 24px 16px 48px; }
+}
+.fo-tool-grille-ieg .fo-section{ background: var(--blanc); border-radius: 16px; padding: 32px; margin-bottom: 32px; border-top: 4px solid #c0303a; }
+.fo-tool-grille-ieg .fo-section .section-title{ color: #7a0e1c; margin-bottom: 8px; }
+.fo-tool-grille-ieg .fo-section .section-title .icon{ background: #fde8ea; color: #7a0e1c; }
+.fo-tool-grille-ieg .fo-section .fo-section-sub{ font-size: 14px; color: var(--gris); line-height: 1.7; margin-bottom: 24px; }
+.fo-tool-grille-ieg .fo-section .fo-section-sub strong{ color: #7a0e1c; }
+.fo-tool-grille-ieg .fo-name{ color: #c0303a; font-weight: 900; letter-spacing: 0.3px; }
+.fo-tool-grille-ieg .fo-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.fo-tool-grille-ieg .fo-item{ background: var(--fond); border-radius: 14px; padding: 20px 22px; border-left: 4px solid #c0303a; transition: box-shadow .2s; }
+.fo-tool-grille-ieg .fo-item:hover{ box-shadow: 0 8px 24px rgba(192,48,58,0.08); }
+.fo-tool-grille-ieg .fo-item h4{ font-family:inherit; font-size: 16px; color: var(--bleu); font-weight: 700; margin-bottom: 6px; line-height: 1.3; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.fo-tool-grille-ieg .fo-item h4 .fo-emoji{ font-size: 18px; }
+.fo-tool-grille-ieg .fo-item h4 .fo-tag{ font-family:inherit; font-size: 9.5px; font-weight: 700; letter-spacing: 1px; background: #c0303a; color: #fff; padding: 3px 9px; border-radius: 30px; text-transform: uppercase; }
+.fo-tool-grille-ieg .fo-item > p.fo-summary{ font-size: 13px; color: #4a4a46; line-height: 1.65; margin: 0 0 12px; }
+.fo-tool-grille-ieg .fo-item > p.fo-summary strong{ color: var(--texte); }
+.fo-tool-grille-ieg .fo-three{ display: flex; flex-direction: column; gap: 8px; }
+.fo-tool-grille-ieg .fo-line{ display: flex; gap: 10px; align-items: flex-start; font-size: 12.5px; line-height: 1.6; padding: 10px 12px; border-radius: 10px; }
+.fo-tool-grille-ieg .fo-line .fo-pill{ flex-shrink: 0; font-weight: 800; font-size: 10px; letter-spacing: 0.6px; padding: 4px 9px; border-radius: 20px; text-transform: uppercase; min-width: 92px; text-align: center; line-height: 1.3; }
+.fo-tool-grille-ieg .fo-line.line-projet{ background: #eef4f8; }
+.fo-tool-grille-ieg .fo-line.line-projet .fo-pill{ background: #d6e4ed; color: #1a4a6b; }
+.fo-tool-grille-ieg .fo-line.line-projet .fo-line-body{ color: #2a3a48; }
+.fo-tool-grille-ieg .fo-line.line-fo{ background: #fde8ea; border: 1px solid rgba(192,48,58,0.25); }
+.fo-tool-grille-ieg .fo-line.line-fo .fo-pill{ background: #c0303a; color: #fff; }
+.fo-tool-grille-ieg .fo-line.line-fo .fo-line-body{ color: #5a1219; }
+.fo-tool-grille-ieg .fo-line.line-fo .fo-line-body strong{ color: #7a0e1c; }
+.fo-tool-grille-ieg .fo-line.line-impact{ background: #fff7d6; border: 1px solid rgba(247,221,92,0.6); }
+.fo-tool-grille-ieg .fo-line.line-impact .fo-pill{ background: var(--or); color: #5a4000; }
+.fo-tool-grille-ieg .fo-line.line-impact .fo-line-body{ color: #5a4000; font-weight: 500; }
+.fo-tool-grille-ieg .fo-line.line-impact .fo-line-body strong{ color: #3a2800; font-weight: 800; }
+.fo-tool-grille-ieg .fo-conclusion{ margin-top: 22px; padding: 18px 22px; background: linear-gradient(135deg, #019cda 0%, #028bc2 100%); border-radius: 12px; color: #fff; font-size: 13.5px; line-height: 1.7; }
+.fo-tool-grille-ieg .fo-conclusion strong{ color: var(--or); }
+.fo-tool-grille-ieg .fo-conclusion .fo-name{ color: #fff; text-decoration: underline; text-decoration-color: var(--or); text-decoration-thickness: 2px; }
+.fo-tool-grille-ieg .fo-callout{ background: #fde8ea; border: 1px solid rgba(192,48,58,0.25); border-left: 4px solid #c0303a; border-radius: 10px; padding: 12px 16px; margin: 14px 0 0; display: flex; gap: 12px; align-items: flex-start; }
+.fo-tool-grille-ieg .fo-callout .fo-callout-icon{ flex-shrink: 0; width: 26px; height: 26px; background: #c0303a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; font-weight: 700; }
+.fo-tool-grille-ieg .fo-callout .fo-callout-body{ flex: 1; }
+.fo-tool-grille-ieg .fo-callout .fo-callout-title{ font-family:inherit; font-size: 13.5px; font-weight: 700; color: #7a0e1c; margin-bottom: 3px; }
+.fo-tool-grille-ieg .fo-callout p{ font-size: 13px; color: #5a1219; line-height: 1.6; margin: 0; }
+.fo-tool-grille-ieg .fo-callout strong{ color: #7a0e1c; }
+@media (max-width: 720px){.fo-tool-grille-ieg .fo-grid{ grid-template-columns: 1fr; }
+}
+.fo-tool-grille-ieg.a11y-mode{
+    --a11y-bg:        #FAFAF7;
+    --a11y-surface:   #FFFFFF;
+    --a11y-surface2:  #F4F3EF;
+    --a11y-border:    #E2E0DA;
+    --a11y-border2:   #CCCAC4;
+    --a11y-txt1:      #2C2C29;
+    --a11y-txt2:      #4A4A46;
+    --a11y-txt3:      #6E6D69;
+    --a11y-dark:      #525250;
+    --a11y-dark-txt:  #F8F7F4;
+    --a11y-txt4-dark:  #C8C6C0;
+  }
+.fo-tool-grille-ieg .a11y-toggle-bar{ display: flex; justify-content: center; margin: -20px 0 28px; position: relative; z-index: 10; }
+.fo-tool-grille-ieg .a11y-btn{
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white; border: 2px solid #ddd; border-radius: 40px;
+    padding: 8px 20px; font-family:inherit; font-size: 12.5px;
+    font-weight: 500; color: #444; cursor: pointer; transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+.fo-tool-grille-ieg .a11y-btn:hover{ border-color: #019cda; color: #019cda; box-shadow: 0 4px 14px rgba(1,156,218,0.15); }
+.fo-tool-grille-ieg .a11y-btn:focus{ outline: 4px solid #019cda; outline-offset: 3px; }
+.fo-tool-grille-ieg .a11y-btn .a11y-label-on{ display: none; }
+.fo-tool-grille-ieg.a11y-mode .a11y-btn{ background: var(--a11y-dark); border-color: var(--a11y-dark); color: var(--a11y-dark-txt); font-weight: 700; }
+.fo-tool-grille-ieg.a11y-mode .a11y-btn .a11y-label-on{ display: inline; }
+.fo-tool-grille-ieg.a11y-mode .a11y-btn .a11y-label-off{ display: none; }
+.fo-tool-grille-ieg.a11y-mode{ background: var(--a11y-bg); font-family:inherit; font-size: 16px; line-height: 1.85; }
+.fo-tool-grille-ieg.a11y-mode .header{ background: var(--a11y-dark) !important; }
+.fo-tool-grille-ieg.a11y-mode .header h1,.fo-tool-grille-ieg.a11y-mode .header h1 em{ color: var(--a11y-dark-txt) !important; font-style: normal; font-family:inherit; }
+.fo-tool-grille-ieg.a11y-mode .header .subtitle{ color: var(--a11y-txt4-dark) !important; }
+.fo-tool-grille-ieg.a11y-mode .badge{ background: var(--a11y-surface2) !important; color: var(--a11y-txt2) !important; border: 1.5px solid var(--a11y-border2) !important; }
+.fo-tool-grille-ieg.a11y-mode .header .update{ background: rgba(255,255,255,0.08) !important; border-color: rgba(255,255,255,0.2) !important; color: var(--a11y-txt4-dark) !important; }
+.fo-tool-grille-ieg.a11y-mode .dot{ background: var(--a11y-txt4-dark) !important; }
+.fo-tool-grille-ieg.a11y-mode .intro{ background: var(--a11y-surface) !important; border-left: 5px solid var(--a11y-dark) !important; color: var(--a11y-txt2) !important; }
+.fo-tool-grille-ieg.a11y-mode .intro strong{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .section-title{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .section-title .icon{ background: var(--a11y-surface2) !important; border: 1.5px solid var(--a11y-border2) !important; }
+.fo-tool-grille-ieg.a11y-mode .card,.fo-tool-grille-ieg.a11y-mode .place-card,.fo-tool-grille-ieg.a11y-mode .calendar-section,.fo-tool-grille-ieg.a11y-mode .ba-section,.fo-tool-grille-ieg.a11y-mode .table-wrap,.fo-tool-grille-ieg.a11y-mode .faq{ background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; box-shadow: none !important; }
+.fo-tool-grille-ieg.a11y-mode .card h3,.fo-tool-grille-ieg.a11y-mode .place-card h3,.fo-tool-grille-ieg.a11y-mode .fc-col h4,.fo-tool-grille-ieg.a11y-mode .tl-title{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .card p,.fo-tool-grille-ieg.a11y-mode .place-card p,.fo-tool-grille-ieg.a11y-mode .tl-desc,.fo-tool-grille-ieg.a11y-mode details p{ color: var(--a11y-txt3) !important; }
+.fo-tool-grille-ieg.a11y-mode .card.highlight{ background: var(--a11y-dark) !important; }
+.fo-tool-grille-ieg.a11y-mode .card.highlight h3{ color: var(--a11y-dark-txt) !important; }
+.fo-tool-grille-ieg.a11y-mode .card.highlight p{ color: var(--a11y-txt4-dark) !important; }
+.fo-tool-grille-ieg.a11y-mode .stat-box,.fo-tool-grille-ieg.a11y-mode .calc-box{ background: var(--a11y-dark) !important; }
+.fo-tool-grille-ieg.a11y-mode .stat-box .stat-val,.fo-tool-grille-ieg.a11y-mode .calc-box h3,.fo-tool-grille-ieg.a11y-mode .calc-res .cr-amount,.fo-tool-grille-ieg.a11y-mode .calc-future .cf-row strong,.fo-tool-grille-ieg.a11y-mode .calc-future h4{ color: var(--a11y-dark-txt) !important; }
+.fo-tool-grille-ieg.a11y-mode .calc-delta{ background: var(--a11y-surface) !important; color: var(--a11y-txt1) !important; border: 2px solid var(--a11y-border2) !important; border-left: 5px solid var(--a11y-txt1) !important; box-shadow: none !important; }
+.fo-tool-grille-ieg.a11y-mode .calc-delta strong,.fo-tool-grille-ieg.a11y-mode .calc-delta .cd-title,.fo-tool-grille-ieg.a11y-mode .calc-delta .cd-line strong,.fo-tool-grille-ieg.a11y-mode .calc-delta .cd-note strong,.fo-tool-grille-ieg.a11y-mode .calc-delta .cd-num-val,.fo-tool-grille-ieg.a11y-mode .calc-delta .cd-num-new .cd-num-val{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .calc-delta .cd-pill{ background: var(--a11y-txt1) !important; color: var(--a11y-bg) !important; }
+.fo-tool-grille-ieg.a11y-mode .calc-delta .cd-num,.fo-tool-grille-ieg.a11y-mode .calc-delta .cd-num-new{ background: var(--a11y-surface2) !important; border: 1px solid var(--a11y-border) !important; border-left: 3px solid var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .calc-delta .cd-num-lbl,.fo-tool-grille-ieg.a11y-mode .calc-delta .cd-line,.fo-tool-grille-ieg.a11y-mode .calc-delta .cd-note{ color: var(--a11y-txt2) !important; }
+.fo-tool-grille-ieg.a11y-mode .calc-delta .cd-arrow{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .alert{ background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; border-left: 5px solid var(--a11y-txt2) !important; }
+.fo-tool-grille-ieg.a11y-mode .alert p{ color: var(--a11y-txt2) !important; }
+.fo-tool-grille-ieg.a11y-mode .alert strong{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .fc-col{ background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; border-top: 4px solid var(--a11y-txt2) !important; }
+.fo-tool-grille-ieg.a11y-mode .fc-col.paiement{ background: var(--a11y-surface2) !important; border-top: 4px dashed var(--a11y-txt2) !important; }
+.fo-tool-grille-ieg.a11y-mode .fc-col h4{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .fc-col ul li{ color: var(--a11y-txt2) !important; }
+.fo-tool-grille-ieg.a11y-mode .fc-col ul li::before{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .timeline::before{ background: var(--a11y-border2) !important; }
+.fo-tool-grille-ieg.a11y-mode .tl-item::before{ background: var(--a11y-surface) !important; border: 2.5px solid var(--a11y-txt2) !important; box-shadow: none !important; }
+.fo-tool-grille-ieg.a11y-mode .tl-item.active::before{ background: var(--a11y-txt1) !important; border-color: var(--a11y-txt1) !important; box-shadow: 0 0 0 3px var(--a11y-surface), 0 0 0 5px var(--a11y-txt2) !important; }
+.fo-tool-grille-ieg.a11y-mode .tl-date{ color: var(--a11y-txt3) !important; font-weight: 600 !important; }
+.fo-tool-grille-ieg.a11y-mode .tl-item.active .tl-date{ color: var(--a11y-txt1) !important; font-weight: 700 !important; }
+.fo-tool-grille-ieg.a11y-mode table thead tr{ background: var(--a11y-dark) !important; }
+.fo-tool-grille-ieg.a11y-mode table thead th{ color: var(--a11y-dark-txt) !important; }
+.fo-tool-grille-ieg.a11y-mode table tbody td{ color: var(--a11y-txt2) !important; border-bottom-color: var(--a11y-border) !important; }
+.fo-tool-grille-ieg.a11y-mode table tbody tr:nth-child(even){ background: var(--a11y-surface2) !important; }
+.fo-tool-grille-ieg.a11y-mode table tbody tr.highlight-new{ background: var(--a11y-surface2) !important; border-left: 4px solid var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode details{ background: var(--a11y-surface2) !important; border-left: 3px solid var(--a11y-txt2) !important; }
+.fo-tool-grille-ieg.a11y-mode details summary{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode details strong{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .pill{ background: var(--a11y-surface2) !important; color: var(--a11y-txt2) !important; border: 1px solid var(--a11y-border2) !important; }
+.fo-tool-grille-ieg.a11y-mode .footer{ color: var(--a11y-txt3) !important; }
+.fo-tool-grille-ieg.a11y-mode *:focus{ outline: 3px solid var(--a11y-txt1) !important; outline-offset: 3px !important; box-shadow: 0 0 0 5px rgba(28,28,26,0.15) !important; }
+.fo-tool-grille-ieg .skip-link{ position: absolute; top: -100px; left: 16px; background: #ffbf00; color: #000; font-weight: 700; padding: 10px 20px; border-radius: 8px; z-index: 9999; text-decoration: none; transition: top 0.2s; }
+.fo-tool-grille-ieg .skip-link:focus{ top: 16px; }
+.fo-tool-grille-ieg .logo-link-wrap{ position: relative; display: inline-block; }
+.fo-tool-grille-ieg .logo-link-wrap .logo-tooltip{
+    visibility: hidden; opacity: 0;
+    background: rgba(0,0,0,0.82); color: #fff; font-size: 11.5px; font-family:inherit;
+    white-space: nowrap; padding: 6px 12px; border-radius: 8px;
+    position: absolute; bottom: calc(100% + 10px); right: 0;
+    pointer-events: none; transition: opacity 0.2s, visibility 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+.fo-tool-grille-ieg .logo-link-wrap .logo-tooltip::after{
+    content: ''; position: absolute; top: 100%; right: 14px;
+    border: 6px solid transparent; border-top-color: rgba(0,0,0,0.82);
+  }
+.fo-tool-grille-ieg .logo-link-wrap:hover .logo-tooltip,.fo-tool-grille-ieg .logo-link-wrap:focus-within .logo-tooltip{ visibility: visible; opacity: 1; }
+.fo-tool-grille-ieg .logo-link-wrap img{ transition: transform 0.25s, filter 0.25s; cursor: pointer; filter: drop-shadow(0 2px 8px rgba(247,221,92,0.2)); }
+.fo-tool-grille-ieg .logo-link-wrap:hover img{ transform: scale(1.06); filter: drop-shadow(0 4px 14px rgba(247,221,92,0.5)); }
+.fo-tool-grille-ieg .fo-contact-card{
+    background: linear-gradient(135deg, #c0303a 0%, #9e1a28 60%, #7a0e1c 100%);
+    border-radius: 16px; padding: 18px 24px; margin-bottom: 32px;
+    display: flex; align-items: center; gap: 20px; position: relative; overflow: hidden;
+  }
+.fo-tool-grille-ieg .fo-contact-card::before{
+    content: '✉'; position: absolute; right: -8px; top: -16px;
+    font-size: 100px; color: rgba(255,255,255,0.08); pointer-events: none; line-height: 1;
+  }
+.fo-tool-grille-ieg .fo-contact-card .fo-logo-wrap{ flex-shrink: 0; }
+.fo-tool-grille-ieg .fo-contact-card .fo-logo-wrap img{
+    height: 44px; object-fit: contain; transition: transform 0.25s; cursor: pointer; display: block;
+    background: white; border-radius: 8px; padding: 5px 8px;
+  }
+.fo-tool-grille-ieg .fo-contact-card .fo-logo-wrap img:hover{ transform: scale(1.07); }
+.fo-tool-grille-ieg .fo-contact-card .fo-body{ flex: 1; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.fo-tool-grille-ieg .fo-contact-card .fo-text{ flex: 1; min-width: 180px; }
+.fo-tool-grille-ieg .fo-contact-card h3{ font-family:inherit; font-size: 15px; color: #ffffff; margin-bottom: 4px; }
+.fo-tool-grille-ieg .fo-contact-card p{ font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.55; margin: 0; }
+.fo-tool-grille-ieg .fo-mailto-btn{
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white; color: #1a1a1a; font-weight: 700; font-size: 12px;
+    padding: 9px 18px; border-radius: 40px; text-decoration: none;
+    white-space: nowrap; flex-shrink: 0; transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  }
+.fo-tool-grille-ieg .fo-mailto-btn:hover{ transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); background: #f5f5f5; }
+.fo-tool-grille-ieg.a11y-mode .fo-contact-card{ background: #1a1a1a; border: 3px solid #555; }
+.fo-tool-grille-ieg.a11y-mode .fo-contact-card h3{ color: #fff !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-contact-card p{ color: #ccc !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-mailto-btn{ background: #fff; color: #000 !important; border: 2px solid #000; }
+.fo-tool-grille-ieg .rotate-banner{
+    display: none; position: fixed; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(135deg, #019cda, #028bc2); color: white; text-align: center;
+    padding: 10px 16px; font-family:inherit; font-size: 13px; font-weight: 500;
+    z-index: 9998; gap: 10px; align-items: center; justify-content: center;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.15);
+  }
+.fo-tool-grille-ieg .rotate-banner .rb-icon{ font-size: 20px; animation: rb-spin 2s ease-in-out infinite; display: inline-block; }
+@keyframes rb-spin{ 0%{transform:rotate(0)} 40%{transform:rotate(90deg)} 60%{transform:rotate(90deg)} 100%{transform:rotate(0)} }
+.fo-tool-grille-ieg .rotate-banner .rb-close{
+    background: rgba(255,255,255,0.2); border: none; color: white; font-size: 14px;
+    padding: 4px 10px; border-radius: 20px; cursor: pointer; margin-left: 8px; font-family:inherit;
+  }
+@media (max-width: 768px) and (orientation: portrait){.fo-tool-grille-ieg .rotate-banner{ display: flex; }
+.fo-tool-grille-ieg{ padding-bottom: 52px; }
+}
+.fo-tool-grille-ieg.a11y-mode .fo-section{ background: var(--a11y-surface) !important; border-top: 4px solid var(--a11y-txt1) !important; box-shadow: none !important; border: 1px solid var(--a11y-border) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-section .section-title,.fo-tool-grille-ieg.a11y-mode .fo-section .fo-section-sub strong{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-section .section-title .icon{ background: var(--a11y-surface2) !important; color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-section .fo-section-sub{ color: var(--a11y-txt2) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-name{ color: var(--a11y-txt1) !important; text-decoration: underline; text-decoration-thickness: 2px; }
+.fo-tool-grille-ieg.a11y-mode .fo-item{ background: var(--a11y-surface2) !important; border-left: 4px solid var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-item h4{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-item h4 .fo-tag{ background: var(--a11y-txt1) !important; color: var(--a11y-bg) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-item > p.fo-summary,.fo-tool-grille-ieg.a11y-mode .fo-item > p.fo-summary strong{ color: var(--a11y-txt2) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-line{ background: var(--a11y-surface) !important; border: 1px solid var(--a11y-border) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-line .fo-pill{ background: var(--a11y-txt1) !important; color: var(--a11y-bg) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-line .fo-line-body,.fo-tool-grille-ieg.a11y-mode .fo-line .fo-line-body strong{ color: var(--a11y-txt2) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-conclusion{ background: var(--a11y-dark) !important; color: var(--a11y-dark-txt) !important; border: 1px solid var(--a11y-border2) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-conclusion strong{ color: var(--a11y-dark-txt) !important; text-decoration: underline; }
+.fo-tool-grille-ieg.a11y-mode .fo-callout{ background: var(--a11y-surface2) !important; border: 2px solid var(--a11y-border2) !important; border-left: 4px solid var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-callout .fo-callout-icon{ background: var(--a11y-txt1) !important; color: var(--a11y-bg) !important; }
+.fo-tool-grille-ieg.a11y-mode .fo-callout .fo-callout-title,.fo-tool-grille-ieg.a11y-mode .fo-callout p,.fo-tool-grille-ieg.a11y-mode .fo-callout strong{ color: var(--a11y-txt1) !important; }
+.fo-tool-grille-ieg .card.highlight .fo-callout{ color: #5a1219; }
+.fo-tool-grille-ieg .card.highlight .fo-callout p,.fo-tool-grille-ieg .card.highlight .fo-callout .fo-callout-title{ color: #5a1219; }
+.fo-tool-grille-ieg .card.highlight .fo-callout p strong,.fo-tool-grille-ieg .card.highlight .fo-callout .fo-callout-title{ color: #7a0e1c; }
+.fo-tool-grille-ieg .card.highlight .fo-callout strong{ color: #7a0e1c; }
+.fo-tool-grille-ieg.a11y-mode .card.highlight .fo-callout p,.fo-tool-grille-ieg.a11y-mode .card.highlight .fo-callout .fo-callout-title,.fo-tool-grille-ieg.a11y-mode .card.highlight .fo-callout strong{ color: var(--a11y-txt1) !important; }
+
+.fo-tool-grille-ieg{min-height:0!important;margin:0!important;padding:0!important;background:transparent!important;color:inherit}
+.fo-tool-grille-ieg .rotate-banner,.fo-tool-grille-ieg .skip-link,.fo-tool-grille-ieg .a11y-toggle-bar,.fo-tool-grille-ieg .a11y-toggle-wrap,.fo-tool-grille-ieg .a11y-btn-wrap,.fo-tool-grille-ieg footer,.fo-tool-grille-ieg .footer,.fo-tool-grille-ieg .foot{display:none!important}
+.fo-tool-grille-ieg .navbar,.fo-tool-grille-ieg .control-bar{top:80px!important}
+.fo-tool-grille-ieg .page{max-width:none;margin:0;padding:0}
+.fo-tool-grille-ieg img{max-width:100%;height:auto}
+</style>
+<div class="rotate-banner" id="rotateBanner" role="status" aria-live="polite">
+  <span class="rb-icon" aria-hidden="true">📱</span>
+  <span>Tournez votre téléphone pour une meilleure lecture</span>
+  <button class="rb-close" onclick="dismissRotate()" aria-label="Fermer ce message">✕</button>
+</div>
+<a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+<div class="page" role="main">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; position:relative; z-index:1;">
+      <div class="badge" style="margin-bottom:0;">✦ Le Saviez-Vous ?</div>
+      <span class="logo-link-wrap">
+        <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email">
+          <img src="https://fo-grdf.fr/wp-content/uploads/2026/09/logo-fo-energie-grdf-fc-720.png" alt="Logo FO Énergie GRDF — cliquez pour nous écrire" style="height:clamp(44px, 8vw, 90px); width:auto; object-fit:contain; display:block; flex-shrink:0;">
+        </a>
+        <span class="logo-tooltip">✉️ Écrire à FO GRDF</span>
+      </span>
+    </div>
+
+    <h1 style="color:white;">Modernisation de la <em>grille de rémunération</em> IEG</h1>
+    <p class="subtitle">Comprendre l'accord de branche et calculer l'impact concret sur votre paie : avant / après, étape par étape</p>
+    <div class="update"><span class="dot"></span> Projet final d'accord de branche IEG · Calculette intégrée</div>
+  </div>
+
+  <!-- BOUTON ACCESSIBILITÉ -->
+  <div class="a11y-toggle-bar" role="navigation" aria-label="Options d'accessibilité">
+    <button class="a11y-btn" id="a11yToggle" onclick="toggleA11y()" aria-pressed="false" title="Activer le mode lecture universelle">
+      <span class="a11y-icon" aria-hidden="true">◐</span>
+      <span class="a11y-label-off">Mode lecture universelle</span>
+      <span class="a11y-label-on">✓ Mode lecture universelle actif — Revenir au mode standard</span>
+    </button>
+  </div>
+
+  <div id="contenu-principal">
+
+  <!-- INTRO -->
+  <div class="intro">
+    La négociation sur la grille de rémunération est terminée. <strong>FO Énergie</strong> vous synthétise les principales dispositions de l'accord proposé à la signature.
+  </div>
+
+  <!-- CARTES PRINCIPAUX CHANGEMENTS -->
+  <div class="section-title"><span class="icon">⚙️</span> Les 4 piliers de la réforme</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-icon">⏳</span>
+      <h3>Échelons d'ancienneté</h3>
+      <p>Renumérotation des échelons (1 à 12), nouvel échelon à <strong>3 ans</strong>, deux nouveaux échelons à <strong>37 et 40 ans</strong>. Réduction d'1 an du temps de passage à 25 et 29 ans d'ancienneté.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">📊</span>
+      <h3>Coefficients hiérarchiques</h3>
+      <p>Les coefficients sont relevés de <strong>+ 9 %</strong> en contrepartie de la réindexation des coefficients d'ancienneté. La rémunération est <strong>préservée à l'identique</strong> au moment du basculement.</p>
+      <div class="fo-callout"><div class="fo-callout-icon">!</div><div class="fo-callout-body"><div class="fo-callout-title">FO : effet neutre, pas un gain</div><p>Le + 9 % sur le coefficient hiérarchique <strong>compense exactement</strong> la division par 1,09 du coefficient d'ancienneté. Aucune augmentation à la transposition.</p></div></div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🛡️</span>
+      <h3>Salaire minimum SMIC + 2 %</h3>
+      <p>Mise en place d'un <strong>plancher de branche</strong> automatique : le bas de la grille reste en permanence à <strong>2 % au-dessus du SMIC</strong>, à chaque revalorisation.</p>
+      <div class="fo-callout"><div class="fo-callout-icon">!</div><div class="fo-callout-body"><div class="fo-callout-title">FO : SMIC + 2 % ≠ vraie protection</div><p>Quand le SMIC rattrape la ligne basse, elle est <strong>supprimée</strong>. La grille continue de s'écraser. <strong>Revendication FO : SMIC + 20 %.</strong></p></div></div>
+    </div>
+    <div class="card highlight">
+      <span class="card-icon">📈</span>
+      <h3>Revalorisation + 1,8 %</h3>
+      <p>3 étapes : <strong>+ 0,6 %</strong> sur la grille au 1ᵉʳ juillet 2027, puis <strong>+ 0,6 %</strong> individuel au 1ᵉʳ juillet 2028, puis <strong>+ 0,6 %</strong> au 1ᵉʳ juillet 2029. Indépendant des négociations annuelles SNB.</p>
+      <div class="fo-callout"><div class="fo-callout-icon">!</div><div class="fo-callout-body"><div class="fo-callout-title">FO : signal trop faible</div><p>+ 1,8 % étalé sur 3 ans pour accompagner une <strong>transformation majeure</strong> de la rémunération de branche. Très en-deçà de l'effort demandé aux salariés.</p></div></div>
+    </div>
+  </div>
+
+  <!-- CALCULETTE -->
+  <div class="section-title"><span class="icon">🧮</span> Calculette : ma rémunération avant / après</div>
+  <div class="calc-box">
+    <h3>Comparez votre paie : ancienne grille vs. nouvelle grille</h3>
+    <p class="calc-sub">Renseignez votre situation pour estimer votre rémunération principale mensuelle brute (hors 13<sup>e</sup> mois et compléments). La comparaison <em>« avant / après »</em> est faite <strong>à ancienneté égale</strong> (effet pur de la nouvelle grille). La projection dans le temps en bas tient compte, elle, de l'évolution de votre ancienneté à chaque jalon. Formule statutaire : <strong>R = SNB × (1 + mr) × K/100 × A</strong>.</p>
+
+    <div class="calc-form">
+      <div class="calc-field">
+        <label for="nr">Mon NR actuel</label>
+        <select id="nr"></select>
+      </div>
+      <div class="calc-field">
+        <label for="ancMode">Mon ancienneté — saisie</label>
+        <select id="ancMode">
+          <option value="years" selected>En nombre d'années</option>
+          <option value="date">Par date d'entrée IEG</option>
+        </select>
+      </div>
+      <div class="calc-field" id="ancYearsField">
+        <label for="anc">Ancienneté (années)</label>
+        <input id="anc" type="number" min="0" max="45" step="1" value="10">
+      </div>
+      <div class="calc-field" id="ancDateField" style="display:none;">
+        <label for="ancDate">Date d'entrée dans les IEG</label>
+        <input id="ancDate" type="date" value="2016-05-01">
+        <div id="ancDateInfo" style="font-size:11px; color:rgba(255,255,255,0.65); margin-top:6px; line-height:1.4;">—</div>
+      </div>
+      <div class="calc-field">
+        <label for="mr">Majoration résidentielle</label>
+        <select id="mr">
+          <option value="1.24">24 %</option>
+          <option value="1.245">24,5 %</option>
+          <option value="1.25" selected>25 %</option>
+        </select>
+      </div>
+      <div class="calc-field">
+        <label for="snb">SNB (€) — barème FO 2026</label>
+        <input id="snb" type="number" min="500" max="700" step="0.01" value="543.18">
+      </div>
+    </div>
+
+    <div class="calc-results">
+      <div class="calc-res before">
+        <div class="cr-label">Avant — grille actuelle</div>
+        <div class="cr-amount" id="oldAmount">—</div>
+        <div class="cr-detail" id="oldDetails"></div>
+      </div>
+      <div class="calc-res after">
+        <div class="cr-label">Après — nouvelle grille</div>
+        <div class="cr-amount" id="newAmount">—</div>
+        <div class="cr-detail" id="newDetails"></div>
+      </div>
+    </div>
+
+    <div class="calc-delta" id="delta">—</div>
+
+    <div class="calc-future">
+      <h4>📅 Évolution de votre paie au fil des étapes</h4>
+      <p style="font-size:12px; color:rgba(255,255,255,0.65); margin-bottom:10px; line-height:1.5;">Le tableau ci-dessous projette votre salaire mensuel à chaque jalon de l'accord, en tenant compte automatiquement de votre <strong>progression d'ancienneté</strong> (passage d'échelons) et de la revalorisation grille (+ 1,8 %).</p>
+      <div class="cf-row" style="font-weight:700; border-bottom:1px solid rgba(255,255,255,0.25); grid-template-columns: 1.1fr 1fr 0.9fr 1fr;">
+        <div>Échéance</div><div>Ancienneté · Échelon</div><div style="text-align:center;">Évolution</div><div style="text-align:right;">Salaire mensuel</div>
+      </div>
+      <div class="cf-row" id="row-now" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr;"><div>Aujourd'hui</div><div id="anc-now">—</div><div style="text-align:center;" id="evo-now">référence</div><div style="text-align:right;"><strong id="s-now">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr;"><div>1ᵉʳ oct. 2026<br><span style="font-size:11px;opacity:0.7;">Planchers (Maîtrise + 10 %, Cadres + 2,4 %), SMIC + 2 %</span></div><div id="anc-26oct">—</div><div style="text-align:center;" id="evo-26oct">—</div><div style="text-align:right;"><strong id="s-26oct">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr;"><div>1ᵉʳ janv. 2027<br><span style="font-size:11px;opacity:0.7;">Astreintes + 9 %, échelons 37 / 40 ans</span></div><div id="anc-27jan">—</div><div style="text-align:center;" id="evo-27jan">—</div><div style="text-align:right;"><strong id="s-27jan">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr;"><div>1ᵉʳ juil. 2027<br><span style="font-size:11px;opacity:0.7;">+ 0,6 % grille (étape 1)</span></div><div id="anc-27jul">—</div><div style="text-align:center;" id="evo-27jul">—</div><div style="text-align:right;"><strong id="s-27jul">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr; background:rgba(247,221,92,0.08);"><div><strong>1ᵉʳ janv. 2028</strong><br><span style="font-size:11px;opacity:0.7;">Bascule sur la nouvelle grille</span></div><div id="anc-28jan">—</div><div style="text-align:center;" id="evo-28jan">—</div><div style="text-align:right;"><strong id="s-28jan">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr;"><div>1ᵉʳ juil. 2028<br><span style="font-size:11px;opacity:0.7;">+ 0,6 % individuel (étape 2)</span></div><div id="anc-28jul">—</div><div style="text-align:center;" id="evo-28jul">—</div><div style="text-align:right;"><strong id="s-28jul">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr;"><div>1ᵉʳ juil. 2029<br><span style="font-size:11px;opacity:0.7;">+ 0,6 % individuel (étape 3 · cumul + 1,8 %)</span></div><div id="anc-29jul">—</div><div style="text-align:center;" id="evo-29jul">—</div><div style="text-align:right;"><strong id="s-29jul">—</strong></div></div>
+      <div class="cf-row" style="grid-template-columns: 1.1fr 1fr 0.9fr 1fr; border-bottom:none; padding-top:10px;"><div style="font-size:11.5px; opacity:0.7;">Hypothèse : SNB et MR constants. Astreintes et primes hors calcul.</div><div></div><div></div><div></div></div>
+    </div>
+
+    <p class="calc-note">⚠️ Estimation pédagogique sur la base des coefficients officiels en annexe de l'accord. Hors 13<sup>e</sup> mois, primes et accords d'entreprise. Une calculette officielle de branche sera mise à disposition.</p>
+  </div>
+
+  <!-- AVANT / APRÈS DÉTAILLÉ -->
+  <div class="ba-section">
+    <div class="section-title" style="margin-bottom:8px;"><span class="icon">↔️</span> Ce qui change concrètement</div>
+    <p style="font-size:14px; color:var(--gris); margin-bottom:20px; line-height:1.65;">Vue synthétique des principaux changements entre l'ancien et le nouveau système de rémunération de la branche des IEG.</p>
+
+    <div class="fiscal-compare">
+      <div class="fc-col paiement">
+        <h4>📕 AVANT — système actuel</h4>
+        <ul>
+          <li>Échelons d'ancienneté <strong>de 4 à 12</strong></li>
+          <li>1ᵉʳ échelon (4) avec déjà <strong>+ 9 % de majoration</strong></li>
+          <li>Pas d'échelon avant 6 ans d'ancienneté</li>
+          <li><strong>Pas d'échelon</strong> au-delà de 34 ans</li>
+          <li>Évolution ancienneté max : <strong>+ 22 %</strong></li>
+          <li>Plafonds : NR 160 / 240 / 370</li>
+          <li>Référentiel par <strong>NR</strong></li>
+        </ul>
+      </div>
+      <div class="fc-col placement">
+        <h4>📗 APRÈS — nouvel accord</h4>
+        <ul>
+          <li>Échelons renumérotés <strong>1 à 12</strong> (lisibles)</li>
+          <li>Échelon 1 = base, A = 1,000 (zéro majoration)</li>
+          <li>Nouvel échelon dès <strong>3 ans</strong> d'ancienneté</li>
+          <li><strong>2 nouveaux échelons</strong> à 37 et 40 ans</li>
+          <li>Évolution ancienneté max : <strong>+ 25 %</strong></li>
+          <li>Plafonds rehaussés de <strong>+ 10 %</strong></li>
+          <li>Coefficient hiérarchique direct, plus de NR</li>
+        </ul>
+        <div class="fc-highlight" style="background:rgba(40,177,147,0.1); border-radius:8px; padding:8px 12px; margin-top:10px; font-size:12px;">
+          💡 <strong>Garantie :</strong> aucune perte de salaire à la transposition. La rémunération est préservée à l'identique le 1ᵉʳ janvier 2028, puis + 1,8 % se rajoutent en 3 étapes.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLE ÉCHELONS ANCIENNETÉ -->
+  <div class="table-wrap">
+    <div class="section-title"><span class="icon">📋</span> Nouvelle grille des échelons d'ancienneté</div>
+    <p style="font-size:13.5px; color:var(--gris); margin-bottom:14px; line-height:1.65;">Les coefficients d'ancienneté sont divisés par 1,09 et les coefficients hiérarchiques sont relevés de + 9 %. La progression entre 2 échelons reste identique.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Ancienneté</th>
+          <th>Ancien échelon</th>
+          <th>Coef. ancien (A)</th>
+          <th>Nouvel échelon</th>
+          <th>Coef. nouveau (A)</th>
+          <th>Évolution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>0 an (embauche)</td><td>4</td><td>1,090</td><td><strong>1</strong></td><td><strong>1,000</strong></td><td>—</td></tr>
+        <tr class="highlight-new"><td>3 ans</td><td>—</td><td>—</td><td><strong>2</strong> <span class="pill green">nouveau</span></td><td><strong>1,020</strong></td><td>+ 2,0 %</td></tr>
+        <tr><td>6 ans</td><td>5</td><td>1,120</td><td>3</td><td>1,037</td><td>+ 1,7 %</td></tr>
+        <tr><td>9,5 ans <span class="pill or">−0,5 an</span></td><td>6</td><td>1,150</td><td>4</td><td>1,055</td><td>+ 1,7 %</td></tr>
+        <tr><td>13 ans <span class="pill or">−1 an</span></td><td>7</td><td>1,180</td><td>5</td><td>1,083</td><td>+ 2,7 %</td></tr>
+        <tr><td>17 ans <span class="pill or">−1 an</span></td><td>8</td><td>1,220</td><td>6</td><td>1,119</td><td>+ 3,3 %</td></tr>
+        <tr><td>21 ans <span class="pill or">−1 an</span></td><td>9</td><td>1,260</td><td>7</td><td>1,156</td><td>+ 3,3 %</td></tr>
+        <tr><td>25 ans <span class="pill or">−1 an</span></td><td>10</td><td>1,300</td><td>8</td><td>1,193</td><td>+ 3,2 %</td></tr>
+        <tr><td>29 ans <span class="pill or">−1 an</span></td><td>11</td><td>1,315</td><td>9</td><td>1,206</td><td>+ 1,1 %</td></tr>
+        <tr><td>33 ans <span class="pill or">−1 an</span></td><td>12</td><td>1,330</td><td>10</td><td>1,220</td><td>+ 1,2 %</td></tr>
+        <tr class="highlight-new"><td>37 ans</td><td>—</td><td>—</td><td><strong>11</strong> <span class="pill green">nouveau</span></td><td><strong>1,235</strong></td><td>+ 1,2 %</td></tr>
+        <tr class="highlight-new"><td>40 ans</td><td>—</td><td>—</td><td><strong>12</strong> <span class="pill green">nouveau</span></td><td><strong>1,250</strong></td><td>+ 1,2 %</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3 OPTIONS / FOCUS -->
+  <div class="section-title"><span class="icon">🎯</span> Les 3 leviers de progression salariale</div>
+  <div class="placement-grid">
+    <div class="place-card">
+      <span class="place-icon">⏱️</span>
+      <h3>Ancienneté</h3>
+      <p>Passage automatique aux nouveaux échelons selon votre durée dans l'IEG. <strong>+ 25 %</strong> sur une carrière complète (vs 22 % aujourd'hui).</p>
+      <span class="tag green">Automatique</span>
+    </div>
+    <div class="place-card">
+      <span class="place-icon">⬆️</span>
+      <h3>Augmentation individuelle</h3>
+      <p>Passage à un coefficient hiérarchique supérieur, avec un <strong>plancher de + 2 %</strong>. Examen prioritaire après 4 ans sans AI.</p>
+      <div class="fo-callout" style="margin-top:10px;"><div class="fo-callout-icon">!</div><div class="fo-callout-body"><div class="fo-callout-title">FO : reconnaissance en baisse</div><p><strong>Ancien NR (+ 4,6 %)</strong> → <strong>demi-NR (+ 2,3 %)</strong> → <strong>+ 2 %</strong> aujourd'hui. <strong>Revendication <span class="fo-name">FO</span> : 2,5 %.</strong></p></div></div>
+      <span class="tag blue">Au mérite</span>
+    </div>
+    <div class="place-card">
+      <span class="place-icon">🚀</span>
+      <h3>Promotion (changement de GF)</h3>
+      <p>Passage dans un Groupe Fonctionnel supérieur, avec une augmentation de <strong>4,6 %</strong> (ou plus si nécessaire pour atteindre le plancher du nouveau GF). C'est une moyenne de la grille actuelle. Celle-ci peut être favorable pour des salariés jusqu'au NR 110 grille actuelle, mais ensuite la prise actuelle de 2 NR en passage de GF ferait perdre jusqu'à 1 % d'évolution salariale (NR 235 à 245 actuel). Mesure principalement défavorable du NR 110 au NR 285.</p>
+      <span class="tag">Évolution carrière</span>
+    </div>
+  </div>
+
+  <!-- TABLE PLANCHERS PLAFONDS -->
+  <div class="table-wrap">
+    <div class="section-title"><span class="icon">⬆️</span> Planchers et plafonds revalorisés</div>
+    <p style="font-size:13.5px; color:var(--gris); margin-bottom:14px; line-height:1.65;">Les fourchettes de rémunération sont élargies dans chaque collège : plus de marge de progression sans changer de collège.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Collège</th>
+          <th>Plancher avant</th>
+          <th>Plancher après</th>
+          <th>Plafond avant</th>
+          <th>Plafond après</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Exécution</strong></td><td>NR 50</td><td>SMIC + 2 % garanti</td><td>NR 160 (405,2)</td><td>NR 180 (485,73) <span class="pill green">+ 10 %</span></td></tr>
+        <tr><td><strong>Maîtrise</strong></td><td>NR 60 (259,4)</td><td>311,31 <span class="pill green">+ 10 %</span></td><td>NR 240 (598,5)</td><td>NR 260 (719,47) <span class="pill green">+ 10 %</span></td></tr>
+        <tr><td><strong>Cadres</strong></td><td>NR 160 (405,2)</td><td>452,44 <span class="pill green">+ 2,4 %</span></td><td>NR 370 (1 040)</td><td>NR 390 (1 247,88) <span class="pill green">+ 10 %</span></td></tr>
+        <tr><td><strong>Cadres Supérieurs</strong></td><td>—</td><td>—</td><td>KB</td><td>MB <span class="pill green">+ 10 %</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TABLE EMBAUCHE -->
+  <div class="table-wrap">
+    <div class="section-title"><span class="icon">🎓</span> Minima d'embauche par diplôme</div>
+    <p style="font-size:13.5px; color:var(--gris); margin-bottom:14px; line-height:1.65;">Applicables au 1ᵉʳ janvier 2027. Coefficients hiérarchiques minimaux par niveau de diplôme.</p>
+    <table>
+      <thead><tr><th>Diplôme</th><th>Coefficient min.</th><th>Équivalent NR</th></tr></thead>
+      <tbody>
+        <tr><td>Sans diplôme</td><td>272,61</td><td>NR 50</td></tr>
+        <tr><td>CAP / BEP / Titre pro niveau 3</td><td>277,79</td><td>NR 55</td></tr>
+        <tr><td>Bac / BP / Brevet de tech / Titre pro niveau 4</td><td>282,88</td><td>NR 60</td></tr>
+        <tr><td>Bac+2 (Titre pro niveau 5)</td><td>311,31</td><td>NR 85</td></tr>
+        <tr><td>Bac+2 (BTS, DUT)</td><td>325,02</td><td>NR 95</td></tr>
+        <tr><td>Bac+3 (Titre pro niveau 6)</td><td>346,84</td><td>NR 110</td></tr>
+        <tr><td>Bac+3 / Bac+4 (Licence, BUT…)</td><td>364,58</td><td>NR 120</td></tr>
+        <tr><td>Bac+5 — Groupe III</td><td>452,44</td><td>NR 165</td></tr>
+        <tr><td>Bac+5 — Groupe II</td><td>462,97</td><td>NR 170</td></tr>
+        <tr><td>Bac+5 — Groupe I</td><td>509,11</td><td>NR 190</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- CALENDRIER -->
+  <div class="calendar-section">
+    <div class="section-title" style="margin-bottom:20px;"><span class="icon">📅</span> Calendrier de mise en œuvre</div>
+    <div class="timeline">
+      <div class="tl-item active">
+        <div class="tl-date">📍 1ᵉʳ octobre 2026</div>
+        <div class="tl-title">Salaire minimum SMIC + 2 % et revalorisation des planchers / plafonds</div>
+        <div class="tl-desc">Mise en place du plancher branche, revalorisation des planchers Maîtrise (+ 10 %) et Cadres (+ 2,4 %), et plafonds des collèges et Cadres Supérieurs (+ 10 %).</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">⚡ 1ᵉʳ janvier 2027</div>
+        <div class="tl-title">Astreintes + 9 % et nouveaux échelons fin de carrière</div>
+        <div class="tl-desc">Revalorisation des astreintes, création des échelons à 37 et 40 ans (repositionnement automatique des salariés concernés), nouveaux minima d'embauche.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">📈 1ᵉʳ juillet 2027</div>
+        <div class="tl-title">Étape 1 : + 0,6 % sur la grille</div>
+        <div class="tl-desc">Première augmentation des coefficients hiérarchiques de la grille (1ʳᵉ étape de la revalorisation + 1,8 %).</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">🚀 1ᵉʳ janvier 2028</div>
+        <div class="tl-title">Bascule sur la nouvelle grille</div>
+        <div class="tl-desc">Mise en œuvre de la nouvelle grille des échelons d'ancienneté (1 à 12), nouveaux coefficients hiérarchiques (+ 9 %), valorisation expérience hors IEG à l'embauche.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">📈 1ᵉʳ juillet 2028</div>
+        <div class="tl-title">Étape 2 : + 0,6 % individuel</div>
+        <div class="tl-desc">Augmentation des coefficients hiérarchiques individuels de tous les salariés.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">🏁 1ᵉʳ juillet 2029</div>
+        <div class="tl-title">Étape 3 : + 0,6 % individuel (solde)</div>
+        <div class="tl-desc">Versement du solde de la revalorisation, atteignant + 1,8 % cumulés sur la grille.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DÉCRYPTAGE FO -->
+  <section class="fo-section" aria-labelledby="fo-section-title">
+    <div class="section-title" id="fo-section-title"><span class="icon">✊</span> Le décryptage <span class="fo-name">FO</span> — <em style="color:#c0303a;font-style:italic;">ce qui ne va pas</em> pour les salariés</div>
+    <p class="fo-section-sub">L'accord modernise la grille mais reste <strong>très en-deçà</strong> des revendications portées par <span class="fo-name">FO</span> Énergie pendant toute la négociation. Pour chaque sujet, voici ce que prévoit le projet, ce que <span class="fo-name">FO</span> demande, et <strong>ce que cela représente concrètement pour vous</strong>.</p>
+
+    <div class="fo-grid">
+
+      <div class="fo-item">
+        <h4><span class="fo-emoji">🛡️</span> Salaire minimum SMIC + 2 % <span class="fo-tag">limite</span></h4>
+        <p class="fo-summary">Le mécanisme paraît protecteur, mais quand le SMIC rattrape la ligne minimale, cette ligne est <strong>supprimée</strong> et tous les salariés concernés sont propulsés au coefficient supérieur. La grille continue de <strong>s'écraser par le bas</strong>.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Plancher = SMIC × 1,02 (≈ 1 838 € en 2025). Quand le SMIC monte, la ligne basse disparaît mécaniquement.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande <strong>SMIC + 20 %</strong> (≈ 2 162 € en 2025), c'est-à-dire un <strong>vrai écart</strong> entre le minimum de branche et le SMIC légal — c'est ce qui empêche la grille IEG de se confondre avec le salaire minimum interprofessionnel.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body"><strong>≈ 324 € de manque à gagner mensuel</strong> pour les salariés payés au plancher de branche — et un mécanisme qui ne protégera plus rien dans 5 ou 10 ans.</div></div>
+        </div>
+      </div>
+
+      <div class="fo-item">
+        <h4><span class="fo-emoji">📈</span> Revalorisation + 1,8 % en 3 fois <span class="fo-tag">insuffisant</span></h4>
+        <p class="fo-summary">+ 0,6 % le 1ᵉʳ juillet 2027, 2028 et 2029. C'est l'unique mesure d'accompagnement « salaire » d'une refonte structurelle de la grille de branche.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">+ 1,8 % cumulés étalés sur 3 ans, soit l'équivalent d'<strong>une seule année d'inflation modérée</strong>.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande une revalorisation <strong>forte et immédiate</strong>, à la hauteur de l'effort demandé aux salariés et au management qui doivent s'approprier un nouveau référentiel de rémunération.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Sur un salaire de <strong>3 000 € mensuels</strong>, l'accord apporte au final <strong>+ 54 €</strong> en 2029. Une revalorisation de 5 % aurait apporté <strong>+ 150 €</strong> — soit <strong>~ + 96 € / mois supplémentaires</strong>.</div></div>
+        </div>
+      </div>
+
+      <div class="fo-item">
+        <h4><span class="fo-emoji">⬆️</span> Augmentation individuelle min. 2 % <span class="fo-tag">en baisse continue</span></h4>
+        <p class="fo-summary">Le minimum d'AI est ramené à 2 %, alors que la grille de 1982 prévoyait + 4,6 %. Chaque accord successif a réduit l'outil de reconnaissance individuelle.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">AI = passage à un coefficient supérieur, plancher conventionnel <strong>+ 2 %</strong>. Soit ≈ 60 € sur un salaire de 3 000 €.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande un minimum d'AI à <strong>2,5 %</strong> et le retour à un <strong>vrai outil de reconnaissance</strong>. Historique de la dévalorisation : <strong>ancien NR (+ 4,6 %) en 1982</strong> → <strong>demi-NR (+ 2,3 %)</strong> → <strong>+ 2 % aujourd'hui</strong>. La reconnaissance individuelle a été divisée par <strong>plus de 2</strong> en 40 ans.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Sur une carrière de 40 ans, en moyenne <strong>10 AI</strong> à 0,5 % d'écart : <strong>≈ 5 % de salaire en moins</strong> en fin de carrière, soit <strong>~ 150 € / mois</strong> sur un salaire de 3 000 €.</div></div>
+        </div>
+      </div>
+
+      <div class="fo-item">
+        <h4><span class="fo-emoji">📊</span> Granularité 0,1 % / ~1 500 lignes <span class="fo-tag">illusoire</span></h4>
+        <p class="fo-summary">La grille passerait à près de 1 500 lignes pour permettre des AI plus régulières. Dans les faits : casse-tête managérial, pas de plafond à la reconnaissance, aucun contrôle sur la justification des écarts.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Pas de 0,1 % entre coefficients. Promesse de « reconnaître plus souvent ». <strong>Aucun garde-fou.</strong></div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande un <strong>dispositif de contrôle social opposable</strong> : justification écrite des écarts, plafonnement, transparence des écarts entre salariés à mêmes responsabilités.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Risque concret : la promesse de « plus souvent » devient « <strong>au choix du manager</strong> », sans recours possible si vous n'êtes pas servi.</div></div>
+        </div>
+      </div>
+
+      <div class="fo-item">
+        <h4><span class="fo-emoji">🏢</span> AG d'entreprise (max 150 % du SNB) <span class="fo-tag">risque</span></h4>
+        <p class="fo-summary">Les entreprises pourront accorder des augmentations générales jusqu'à 150 % de la hausse du SNB. Effet pratique : concurrence salariale entre EDF, ENEDIS, RTE, ENGIE, GRDF, NATRAN.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Si SNB + 0,3 %, AG d'entreprise jusqu'à + 0,45 %. Aucun engagement ferme ni en valeur, ni dans le temps.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande des <strong>garanties chiffrées et durables au niveau de la branche</strong> — pas un dispositif facultatif qui fragmente le statut commun et met les entreprises en concurrence sur la rémunération.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Selon votre entreprise, votre rémunération évoluera <strong>différemment à statut équivalent</strong>. La solidarité de branche s'effrite.</div></div>
+        </div>
+      </div>
+
+      <div class="fo-item">
+        <h4><span class="fo-emoji">⏳</span> Échelons : + 25 % sur la carrière <span class="fo-tag">en-deçà</span></h4>
+        <p class="fo-summary">L'évolution maximum passe de + 22 % (sur 34 ans) à + 25 % (sur 40 ans). Mais 7 700 salariés sont déjà au plafond actuel — pour eux, aucun gain avant les nouveaux échelons à 37 ou 40 ans.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Coefficient ancienneté max = 1,250 (à 40 ans). Soit + 25 % sur le salaire de base.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande <strong>+ 30 % sur la carrière</strong>, un <strong>échelon 5 plus accessible</strong>, et des <strong>pourcentages plus forts en fin de carrière</strong> (impact direct sur la pension de retraite, que celle-ci soit calculée sur la rémunération des 6 derniers mois ou sur les 25 meilleures années pour nos embauchés à compter du 1<sup>er</sup> septembre 2023).</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Sur un salaire d'embauche à 2 000 €, l'écart en fin de carrière est de <strong>+ 100 € / mois</strong> entre la proposition employeur (+ 25 %) et la demande <span class="fo-name">FO</span> (+ 30 %). Sur 20 ans de retraite : <strong>~ 24 000 € de pension cumulée</strong>.</div></div>
+        </div>
+      </div>
+
+      <div class="fo-item">
+        <h4><span class="fo-emoji">⬆️</span> Plafonds + 10 % <span class="fo-tag">peu de bénéficiaires</span></h4>
+        <p class="fo-summary">660 agents concernés par le relèvement des plafonds, dont 94 % de cadres ou cadres supérieurs. Pour Exécution et Maîtrise courante, l'effet est nul.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">NR 160 → NR 180 (Exéc.), NR 240 → NR 260 (Maît.), NR 370 → NR 390 (Cadres). Bénéficiaires effectifs : ≈ 660 cadres / cadres sup'.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande une mesure <strong>réellement universelle</strong>, profitant <strong>aussi aux collèges Exécution et Maîtrise</strong> qui constituent l'essentiel des effectifs et qui subissent depuis 40 ans le tassement de la grille.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Si vous êtes en collège Exécution ou Maîtrise <strong>en milieu de grille</strong>, le relèvement des plafonds <strong>ne change rien</strong> pour vous.</div></div>
+        </div>
+      </div>
+
+      <div class="fo-item">
+        <h4><span class="fo-emoji">📐</span> Plancher Maîtrise + 10 %, Cadres + 2,4 % <span class="fo-tag">tassement non corrigé</span></h4>
+        <p class="fo-summary">Le rehaussement des planchers atténue à peine le tassement constaté depuis des années. Conséquence directe : les <strong>GF 3-4-5 et 7-8</strong> se retrouvent au <strong>même niveau plancher</strong>.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Plancher Maîtrise + 10 %, plancher Cadres + 2,4 %. Le bond pour Cadres est minime.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande la <strong>restauration des écarts significatifs entre groupes fonctionnels</strong> : un GF 7 doit gagner sensiblement plus qu'un GF 5, sinon la promotion n'a plus de sens financier.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Promotion vers un GF supérieur = <strong>moins de gain financier</strong> qu'avant, alors que les responsabilités, elles, n'ont pas baissé.</div></div>
+        </div>
+      </div>
+
+      <div class="fo-item">
+        <h4><span class="fo-emoji">🎓</span> Minima d'embauche par diplôme <span class="fo-tag">à géométrie variable</span></h4>
+        <p class="fo-summary">Les minima d'embauche sont calés sur le plancher du collège correspondant. Mais les entreprises pourront <strong>les dépasser librement</strong>.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Minima fixés (ex. Bac+5 = 452,44 = NR 165 × 1,09), mais entreprises libres de proposer plus selon « critères ». Aucun encadrement maxi.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande le <strong>retour des écarts garantis entre niveaux de diplôme</strong> et un <strong>encadrement mini/maxi</strong>. L'écart BTS / CAP est passé de <strong>12 NR en 1995 à 7 NR aujourd'hui</strong> : la valeur du diplôme s'érode.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">À <strong>diplôme égal</strong>, vous serez payé <strong>différemment selon l'entreprise et la région</strong>. Et un Bac+2 vendu plus cher pour cause de pénurie locale écrasera la valeur de votre Bac+3.</div></div>
+        </div>
+      </div>
+
+      <div class="fo-item">
+        <h4><span class="fo-emoji">🆕</span> Expérience pro à l'embauche <span class="fo-tag"><span class="fo-name">FO</span> seule opposée</span></h4>
+        <p class="fo-summary">L'expérience hors IEG sera valorisée par l'<strong>échelon</strong> à l'embauche. <span class="fo-name">FO</span> est la <strong>seule organisation</strong> à s'y être opposée.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">13–16 ans d'expérience externe = embauche directe à l'<strong>échelon 7</strong>. Expérience « proche ou similaire », appréciée par l'employeur. <strong>Aucune transparence garantie.</strong></div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande le maintien de la <strong>PERS 914</strong> existante (qui suffit). Si dispositif il y a, qu'il soit <strong>encadré, transparent et équitable</strong>. Valoriser au même niveau une expérience externe et une expérience IEG, c'est dire que <strong>l'expérience IEG ne vaut pas plus</strong> qu'une autre.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Si vous avez <strong>fait votre carrière dans les IEG</strong>, vous pouvez vous retrouver au même échelon qu'un nouveau venu sans connaissance du métier ni du statut. Et la décision se prend sans recours.</div></div>
+        </div>
+      </div>
+
+      <div class="fo-item">
+        <h4><span class="fo-emoji">🛂</span> Contrôle social affaibli <span class="fo-tag">reporté en CSP</span></h4>
+        <p class="fo-summary">Tout le suivi est renvoyé aux Commissions Secondaires du Personnel — donc « au bon vouloir des employeurs et de leurs pratiques locales ».</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Pour les AI : seul le coef + le % de hausse seront communiqués. Pour les embauches expérience pro : <strong>aucune garantie</strong> sur les éléments factuels.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> a revendiqué <strong>jusqu'au bout un contrôle social fort, opposable, au niveau de la branche</strong> — avec une clause de revoyure resserrée et des mécanismes correcteurs si dérive constatée.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Contestation d'une AI ou d'un échelon d'embauche = <strong>recours quasi impossible</strong>. Les écarts de pratique entre entreprises ne pourront pas être corrigés.</div></div>
+        </div>
+      </div>
+
+      <div class="fo-item">
+        <h4><span class="fo-emoji">🔁</span> Clause de rendez-vous triennale <span class="fo-tag">vigilance</span></h4>
+        <p class="fo-summary">Les RDV de suivi passent de 5 à 3 ans (avancée). Mais le contenu reste limité, et aucun mécanisme correcteur automatique n'est prévu en cas de dérive.</p>
+        <div class="fo-three">
+          <div class="fo-line line-projet"><span class="fo-pill">Projet</span><div class="fo-line-body">Suivi tous les 3 ans : volume des AI dans EDF SA / ENEDIS / RTE / ENGIE / GRDF / NATRAN, articulation SMIC + 2 %, minima d'embauche.</div></div>
+          <div class="fo-line line-fo"><span class="fo-pill">Demande <span class="fo-name">FO</span></span><div class="fo-line-body"><span class="fo-name">FO</span> demande un <strong>mécanisme correcteur engageant</strong> : si la dérive est constatée, l'accord prévoit automatiquement une mesure de rattrapage chiffrée. Pas un simple bilan d'étape.</div></div>
+          <div class="fo-line line-impact"><span class="fo-pill">Pour vous</span><div class="fo-line-body">Tant qu'aucun mécanisme correcteur n'est inscrit dans le marbre, <strong>une nouvelle négociation</strong> sera nécessaire pour corriger toute dérive — avec le rapport de force du moment.</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="fo-conclusion">
+      <strong>En synthèse :</strong> l'accord apporte des avancées (échelons 37 / 40 ans, transposition neutre, astreintes + 9 %), mais <strong>laisse intacts</strong> les mécanismes qui tassent la grille depuis 40 ans. <span class="fo-name">FO</span> Énergie continue de porter une grille <strong>réellement protectrice du bas, expansive en milieu et fin de carrière</strong>, avec un <strong>contrôle social effectif</strong>. La signature de l'accord est en cours de consultation auprès des syndicats <span class="fo-name">FO</span>.
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <div class="section-title" style="margin-bottom:14px;"><span class="icon">❓</span> Questions fréquentes</div>
+
+    <details>
+      <summary>Vais-je perdre du salaire avec la nouvelle grille ?</summary>
+      <p><strong>Non.</strong> Le mécanisme est neutre par construction au moment de la transposition. Quand on divise les coefficients d'ancienneté par 1,09, on multiplie en parallèle les coefficients hiérarchiques par 1,09. Vous touchez donc exactement le même salaire le 1ᵉʳ janvier 2028 que le 31 décembre 2027. La revalorisation de + 1,8 % s'ajoute ensuite, en 3 étapes.</p>
+    </details>
+
+    <details>
+      <summary>Pourquoi simplifier la numérotation des échelons (4-12 → 1-12) ?</summary>
+      <p>Pour rendre la grille plus lisible. Le nouvel <strong>échelon 1</strong> a un coefficient ancienneté de 1,000 (= rémunération « brute » du coefficient hiérarchique sans majoration). Cela permet d'afficher clairement le salaire de base d'embauche, sans intégrer une majoration cachée comme c'est le cas aujourd'hui (l'échelon 4 démarrait déjà à + 9 %).</p>
+    </details>
+
+    <details>
+      <summary>Concrètement, je gagne quoi ?</summary>
+      <p><strong>+ 1,8 %</strong> de revalorisation grille étalée sur 2027-2029. Selon votre situation : un <strong>nouvel échelon ancienneté à 3, 37 ou 40 ans</strong> ; un plafond de collège plus haut qui ouvre des marges de progression sans changer de groupe ; une astreinte revalorisée de + 9 %. Si vous êtes proche du plancher du collège Maîtrise (+ 10 %) ou Cadres (+ 2,4 %).</p>
+    </details>
+
+    <details>
+      <summary>Les NR seraient-ils toujours d'actualité ?</summary>
+      <p>Les NR (Niveaux de Rémunération) <strong>disparaissent</strong> au profit du coefficient hiérarchique direct. Pendant la transition, et pour les textes existants, une <strong>table de correspondance</strong> est annexée à l'accord. Sur les bordereaux RH, le coefficient hiérarchique remplacera le NR.</p>
+    </details>
+
+    <details>
+      <summary>Que devient l'augmentation individuelle ?</summary>
+      <p>Toute augmentation individuelle = passage à un coefficient hiérarchique supérieur. <strong>Minimum 2 %</strong> (plancher conventionnel). Les salariés sans augmentation individuelle depuis ≥ 4 ans seront examinés en priorité au 1ᵉʳ janvier de chaque année.</p>
+    </details>
+
+    <details>
+      <summary>Pourquoi la position FO est-elle critique sur cet accord ?</summary>
+      <p>Hormis une revalorisation de <strong>1,8 % étalée sur trois ans</strong>, les mesures prévues par l'accord <strong>ne profiteraient qu'à 20 % d'entre nous</strong>. La révision de la grille ne corrige pas le tassement observé, les avancements individuels continuent de diminuer, et les dispositions relatives au contrôle social ne sont pas non plus de nature à nous rassurer.</p>
+      <p>Nous défendons une grille de rémunération <strong>véritablement protectrice et dynamique</strong>. Malgré certaines avancées proposées par les employeurs, cet objectif essentiel n'est pas atteint. La consultation de nos syndicats est actuellement en cours.</p>
+    </details>
+
+  </div>
+
+  <!-- CARTE CONTACT FO -->
+  <div class="fo-contact-card">
+    <div class="fo-logo-wrap">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF">
+        <img src="https://fo-grdf.fr/wp-content/uploads/2026/09/logo-fo-energie-grdf-fc-720.png" alt="FO Énergie GRDF">
+      </a>
+    </div>
+    <div class="fo-body">
+      <div class="fo-text">
+        <h3>✉️ Une question sur la nouvelle grille ? Contactez FO GRDF</h3>
+        <p>Nos délégués nationaux sont là pour vous accompagner sur l'application de l'accord, votre situation personnelle et vos perspectives d'évolution.</p>
+      </div>
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" class="fo-mailto-btn">
+        <span class="btn-icon">✉️</span>
+        Nous écrire
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div style="display:flex; justify-content:center; align-items:center; gap:24px; margin-bottom:16px; flex-wrap:wrap;">
+      <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" title="Écrire à FO GRDF" aria-label="Contacter FO GRDF par email"><img src="https://fo-grdf.fr/wp-content/uploads/2026/09/logo-fo-energie-grdf-fc-720.png" alt="Logo FO Énergie GRDF" style="height:70px; object-fit:contain; opacity:0.85; transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'"></a>
+    </div>
+    Synthèse pédagogique du projet final d'accord de branche relatif à la modernisation de la grille de rémunération des IEG · Document non opposable · Pour tout renseignement : <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" aria-label="Envoyer un email à FO GRDF">syndicat-fo_grdf-delegations-nationales@grdf.fr</a>
+  </div>
+
+  </div><!-- fin contenu-principal -->
+
+</div><!-- fin page -->
+
+<script>
+  /* ROTATE BANNER */
+  function dismissRotate() {
+    const b = document.getElementById('rotateBanner');
+    if (b) b.style.display = 'none';
+    try { sessionStorage.setItem('fo-rotate-dismissed', '1'); } catch(e) {}
+  }
+  try {
+    if (sessionStorage.getItem('fo-rotate-dismissed') === '1') {
+      const b = document.getElementById('rotateBanner');
+      if (b) b.style.display = 'none';
+    }
+  } catch(e) {}
+
+  /* MODE A11Y */
+  function toggleA11y() {
+    const btn = document.getElementById('a11yToggle');
+    const isOn = document.body.classList.toggle('a11y-mode');
+    btn.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+    try { localStorage.setItem('fo-a11y', isOn ? '1' : '0'); } catch(e) {}
+  }
+  try {
+    if (localStorage.getItem('fo-a11y') === '1') {
+      document.body.classList.add('a11y-mode');
+      const btn = document.getElementById('a11yToggle');
+      if (btn) btn.setAttribute('aria-pressed', 'true');
+    }
+  } catch(e) {}
+
+  /* CALCULETTE */
+  const NR_TABLE = [{"nr":"030","old":232.2,"new":272.61},{"nr":"035","old":236.5,"new":272.61},{"nr":"040","old":240.9,"new":272.61},{"nr":"045","old":245.5,"new":272.61},{"nr":"050","old":250.1,"new":272.61},{"nr":"055","old":254.7,"new":277.79},{"nr":"060","old":259.4,"new":282.88},{"nr":"065","old":264.4,"new":288.26},{"nr":"070","old":269.7,"new":294.11},{"nr":"075","old":274.6,"new":299.41},{"nr":"080","old":279.3,"new":304.58},{"nr":"085","old":285.5,"new":311.31},{"nr":"090","old":291.7,"new":317.95},{"nr":"095","old":297.9,"new":325.02},{"nr":"100","old":304.3,"new":331.88},{"nr":"105","old":311.1,"new":339.3},{"nr":"110","old":318.1,"new":346.84},{"nr":"115","old":325.7,"new":355.23},{"nr":"120","old":334.4,"new":364.58},{"nr":"125","old":342.5,"new":373.46},{"nr":"130","old":350.6,"new":382.15},{"nr":"135","old":359,"new":391.43},{"nr":"140","old":367.6,"new":400.92},{"nr":"145","old":376.5,"new":410.65},{"nr":"150","old":385.5,"new":420.61},{"nr":"155","old":394.5,"new":430.39},{"nr":"160","old":405.2,"new":441.71},{"nr":"165","old":414.7,"new":452.44},{"nr":"170","old":424.6,"new":462.97},{"nr":"175","old":434.8,"new":474.2},{"nr":"180","old":445.3,"new":485.73},{"nr":"185","old":455.9,"new":497.03},{"nr":"190","old":466.9,"new":509.11},{"nr":"195","old":478.1,"new":521.48},{"nr":"200","old":489.6,"new":534.14},{"nr":"205","old":501.5,"new":547.1},{"nr":"210","old":513.9,"new":560.37},{"nr":"215","old":526.5,"new":573.98},{"nr":"220","old":539.4,"new":588.52},{"nr":"225","old":552.9,"new":602.8},{"nr":"230","old":566.5,"new":618.05},{"nr":"235","old":580.6,"new":633.07},{"nr":"240","old":598.5,"new":652.99},{"nr":"245","old":613.2,"new":668.83},{"nr":"250","old":628.3,"new":685.08},{"nr":"255","old":643.9,"new":702.4},{"nr":"260","old":659.8,"new":719.47},{"nr":"265","old":676.2,"new":737.66},{"nr":"270","old":692.9,"new":755.57},{"nr":"275","old":709.9,"new":773.92},{"nr":"280","old":727.5,"new":793.5},{"nr":"285","old":744,"new":811.13},{"nr":"290","old":760.7,"new":829.17},{"nr":"295","old":777.6,"new":847.61},{"nr":"300","old":794.9,"new":866.44},{"nr":"305","old":812.6,"new":886.6},{"nr":"310","old":830.7,"new":906.31},{"nr":"315","old":849.3,"new":926.46},{"nr":"320","old":868.5,"new":947.06},{"nr":"325","old":887.4,"new":968.11},{"nr":"330","old":906.7,"new":988.64},{"nr":"340","old":929,"new":1012.65},{"nr":"350","old":949.6,"new":1035.16},{"nr":"355","old":971.4,"new":1059.23},{"nr":"360","old":993.8,"new":1083.85},{"nr":"365","old":1016.7,"new":1109.06},{"nr":"370","old":1040,"new":1133.72},{"nr":"CA","old":842.9,"new":919.08},{"nr":"CB","old":862.1,"new":940.45},{"nr":"DA","old":881.8,"new":961.36},{"nr":"DB","old":901.4,"new":982.73},{"nr":"EA","old":921.6,"new":1004.59},{"nr":"FA","old":951.5,"new":1037.23},{"nr":"GA","old":980.5,"new":1068.8},{"nr":"HA","old":1010.6,"new":1102.44},{"nr":"HB","old":1033.8,"new":1126.94},{"nr":"IA","old":1057.6,"new":1153.14},{"nr":"IB","old":1081.9,"new":1179.96},{"nr":"JA","old":1106.9,"new":1207.39},{"nr":"JB","old":1132.3,"new":1234.24},{"nr":"KA","old":1158.4,"new":1247.88},{"nr":"KB","old":1185,"new":1247.88}];
+
+  /* Grille des échelons d'ancienneté en vigueur (barème FO Énergie au 1er janvier 2026) */
+  const OLD_ECH = [
+    {min:0,  max:6,  ech:4,  A:1.090, label:"Échelon 4"},
+    {min:6,  max:10, ech:5,  A:1.120, label:"Échelon 5"},
+    {min:10, max:14, ech:6,  A:1.150, label:"Échelon 6"},
+    {min:14, max:18, ech:7,  A:1.180, label:"Échelon 7"},
+    {min:18, max:22, ech:8,  A:1.220, label:"Échelon 8"},
+    {min:22, max:26, ech:9,  A:1.260, label:"Échelon 9"},
+    {min:26, max:30, ech:10, A:1.300, label:"Échelon 10"},
+    {min:30, max:34, ech:11, A:1.315, label:"Échelon 11"},
+    {min:34, max:99, ech:12, A:1.330, label:"Échelon 12"}
+  ];
+  const NEW_ECH = [
+    {min:0,  max:3,    ech:1,  A:1.000, label:"Échelon 1"},
+    {min:3,  max:6,    ech:2,  A:1.020, label:"Échelon 2"},
+    {min:6,  max:9.5,  ech:3,  A:1.037, label:"Échelon 3"},
+    {min:9.5,max:13,   ech:4,  A:1.055, label:"Échelon 4"},
+    {min:13, max:17,   ech:5,  A:1.083, label:"Échelon 5"},
+    {min:17, max:21,   ech:6,  A:1.119, label:"Échelon 6"},
+    {min:21, max:25,   ech:7,  A:1.156, label:"Échelon 7"},
+    {min:25, max:29,   ech:8,  A:1.193, label:"Échelon 8"},
+    {min:29, max:33,   ech:9,  A:1.206, label:"Échelon 9"},
+    {min:33, max:37,   ech:10, A:1.220, label:"Échelon 10"},
+    {min:37, max:40,   ech:11, A:1.235, label:"Échelon 11"},
+    {min:40, max:99,   ech:12, A:1.250, label:"Échelon 12"}
+  ];
+
+  function findEch(years, table){
+    for (const e of table){ if (years >= e.min && years < e.max) return e; }
+    return table[table.length-1];
+  }
+  function computeSalary(SNB, MR, K, A){ return SNB * MR * (K/100) * A; }
+  function fmt(n){ return n.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' €'; }
+  function pct(n){ return (n>=0?'+':'') + n.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' %'; }
+
+  const nrSelect = document.getElementById('nr');
+  NR_TABLE.forEach(e => {
+    const o = document.createElement('option');
+    o.value = e.nr; o.textContent = `NR ${e.nr}`;
+    nrSelect.appendChild(o);
+  });
+  nrSelect.value = "140";
+
+  // Dates clés (référence : aujourd'hui = date courante du navigateur)
+  const NOW = new Date();
+  const D_26OCT = new Date(2026,9,1);   // 1 oct 2026
+  const D_27JAN = new Date(2027,0,1);
+  const D_27JUL = new Date(2027,6,1);
+  const D_28JAN = new Date(2028,0,1);   // bascule
+  const D_28JUL = new Date(2028,6,1);
+  const D_29JUL = new Date(2029,6,1);
+  function yearsBetween(d1,d2){ return (d2-d1)/(365.25*86400000); }
+
+  function lineEch(table, ancStart, dateNow, dateTarget){
+    const delta = Math.max(0, yearsBetween(dateNow, dateTarget));
+    const ancAt = ancStart + delta;
+    const e = findEch(ancAt, table);
+    return { ancAt, e };
+  }
+
+  /* Calcule l'ancienneté en années à partir des champs (selon le mode choisi) */
+  function getAncienneteYears(){
+    const mode = document.getElementById('ancMode').value;
+    if (mode === 'date'){
+      const d = document.getElementById('ancDate').value;
+      if (!d) return 0;
+      const entryDate = new Date(d);
+      if (isNaN(entryDate.getTime())) return 0;
+      const yrs = Math.max(0, yearsBetween(entryDate, NOW));
+      const info = document.getElementById('ancDateInfo');
+      const dispYears = Math.floor(yrs);
+      const dispMonths = Math.floor((yrs - dispYears) * 12);
+      if (info) info.textContent = `Soit ${yrs.toLocaleString('fr-FR',{maximumFractionDigits:1})} ans (${dispYears} an${dispYears>1?'s':''} et ${dispMonths} mois) au ${NOW.toLocaleDateString('fr-FR')}.`;
+      return yrs;
+    }
+    return Math.max(0, parseFloat(document.getElementById('anc').value) || 0);
+  }
+
+  /* Bascule l'affichage des champs selon le mode années / date */
+  function toggleAncMode(){
+    const mode = document.getElementById('ancMode').value;
+    document.getElementById('ancYearsField').style.display = (mode === 'years') ? '' : 'none';
+    document.getElementById('ancDateField').style.display  = (mode === 'date')  ? '' : 'none';
+    /* Synchronisation : si on bascule vers "date", on déduit la date à partir des années saisies. Si on bascule vers "années", on déduit les années à partir de la date. */
+    if (mode === 'date'){
+      const yrs = parseFloat(document.getElementById('anc').value) || 0;
+      const ms = yrs * 365.25 * 86400000;
+      const d = new Date(NOW.getTime() - ms);
+      document.getElementById('ancDate').value = d.toISOString().slice(0,10);
+    } else {
+      const dStr = document.getElementById('ancDate').value;
+      if (dStr){
+        const d = new Date(dStr);
+        if (!isNaN(d.getTime())){
+          const yrs = Math.max(0, yearsBetween(d, NOW));
+          document.getElementById('anc').value = Math.round(yrs);
+        }
+      }
+    }
+  }
+
+  function update(){
+    const nr  = nrSelect.value;
+    const ancStart = getAncienneteYears();
+    const MR  = parseFloat(document.getElementById('mr').value);
+    const SNB = parseFloat(document.getElementById('snb').value);
+
+    const row = NR_TABLE.find(x => x.nr === nr);
+    const ko = row.old, kn = row.new;
+    const eo = findEch(ancStart, OLD_ECH);
+    const en = findEch(ancStart, NEW_ECH);
+    const sOld = computeSalary(SNB, MR, ko, eo.A);
+    const sNew = computeSalary(SNB, MR, kn, en.A);
+
+    document.getElementById('oldAmount').textContent = fmt(sOld);
+    document.getElementById('newAmount').textContent = fmt(sNew);
+    document.getElementById('oldDetails').innerHTML  = `Coef. hiérarchique <strong>${ko.toLocaleString('fr-FR')}</strong> &middot; ${eo.label} (A = ${eo.A.toLocaleString('fr-FR',{minimumFractionDigits:3})})`;
+    document.getElementById('newDetails').innerHTML  = `Coef. hiérarchique <strong>${kn.toLocaleString('fr-FR')}</strong> &middot; ${en.label} (A = ${en.A.toLocaleString('fr-FR',{minimumFractionDigits:3})})`;
+
+    const diffEur = sNew - sOld;
+    const diffPct = sOld>0 ? (sNew/sOld - 1) * 100 : 0;
+    const deltaEl = document.getElementById('delta');
+    let txt;
+    function fmtAnc(a){ return a.toLocaleString('fr-FR',{maximumFractionDigits:1}); }
+    if (Math.abs(diffEur) < 0.5){
+      txt = `<div class="cd-head"><span class="cd-icon">⚖️</span><span class="cd-title">Comparaison à ancienneté égale</span></div>
+        <p class="cd-line">À <strong>${fmtAnc(ancStart)} ans</strong> dans les deux grilles, le salaire est <strong>identique</strong>.</p>
+        <p class="cd-note">La transposition est neutre par construction. La progression réelle suit les étapes de revalorisation (cf. tableau ci-dessous).</p>`;
+    } else if (diffEur > 0){
+      txt = `<div class="cd-head"><span class="cd-icon">✅</span><span class="cd-title">Comparaison à ancienneté égale</span><span class="cd-pill">+ ${pct(diffPct)}</span></div>
+        <div class="cd-numbers">
+          <div class="cd-num cd-num-old"><span class="cd-num-lbl">Ancienne grille</span><span class="cd-num-val">${fmt(sOld)}</span></div>
+          <div class="cd-arrow">→</div>
+          <div class="cd-num cd-num-new"><span class="cd-num-lbl">Nouvelle grille</span><span class="cd-num-val">${fmt(sNew)}</span></div>
+        </div>
+        <p class="cd-line"><strong>+ ${fmt(diffEur)} / mois</strong> à <strong>${fmtAnc(ancStart)} ans</strong> d'ancienneté.</p>
+        <p class="cd-note">Cet écart vient de la <strong>réduction d'1 an du seuil d'échelon</strong> : à ${fmtAnc(ancStart)} ans, vous accédez plus tôt à un échelon équivalent. Le gain est encaissé dès le franchissement du seuil — la transposition au 1ᵉʳ janv. 2028 reste, elle, neutre (cf. tableau ci-dessous).</p>`;
+    } else {
+      txt = `<div class="cd-head"><span class="cd-icon">ℹ️</span><span class="cd-title">Comparaison à ancienneté égale</span></div>
+        <p class="cd-line">Écart : ${fmt(diffEur)} (${pct(diffPct)}) à <strong>${fmtAnc(ancStart)} ans</strong>.</p>
+        <p class="cd-note">L'accord garantit qu'<strong>aucun salarié ne peut voir sa rémunération diminuer du fait de la transposition</strong>. Un écart négatif ici provient des arrondis pédagogiques.</p>`;
+    }
+    deltaEl.innerHTML = txt;
+
+    /* ===== Timeline : projection de paie aux dates clés ===== */
+    function ancFmt(a){ return a.toLocaleString('fr-FR',{minimumFractionDigits:1,maximumFractionDigits:1}) + ' ans'; }
+    function deltaTxt(s, ref){
+      if (!ref) return 'référence';
+      const d = s - ref;
+      if (Math.abs(d) < 0.5) return '=';
+      const p = (s/ref - 1) * 100;
+      const sign = d>=0 ? '+' : '';
+      return sign + d.toLocaleString('fr-FR',{minimumFractionDigits:0,maximumFractionDigits:0}) + ' € (' + sign + p.toLocaleString('fr-FR',{minimumFractionDigits:1,maximumFractionDigits:1}) + ' %)';
+    }
+
+    // Aujourd'hui : ancienne grille
+    const tNow  = lineEch(OLD_ECH, ancStart, NOW, NOW);
+    const sNow  = computeSalary(SNB, MR, ko, tNow.e.A);
+
+    // Avant bascule : on reste sur l'ancienne grille (échelons 4-12)
+    const t26   = lineEch(OLD_ECH, ancStart, NOW, D_26OCT);
+    const s26   = computeSalary(SNB, MR, ko, t26.e.A);
+
+    const t27a  = lineEch(OLD_ECH, ancStart, NOW, D_27JAN);
+    const s27a  = computeSalary(SNB, MR, ko, t27a.e.A);
+
+    // 1er juil 2027 : +0,6 % sur la grille (coef hiérarchique × 1,006)
+    const t27b  = lineEch(OLD_ECH, ancStart, NOW, D_27JUL);
+    const s27b  = computeSalary(SNB, MR, ko * 1.006, t27b.e.A);
+
+    // 1er janv 2028 : bascule nouvelle grille — neutre par construction
+    // K nouveau intègre déjà +9% ; à cette date, +0,6 % grille (étape 1) déjà appliqué via ko*1.006 = kn*1.006/1.09 = kn*(1.006)... on conserve K_new × 1.006/1.09 ? Non, la transposition est neutre : K_new × A_new ≈ K_old × A_old. On utilise donc K_new × 1.006 (étape 1 déjà intégrée le 1er juil 2027) pour produire le même salaire mécanique.
+    const t28a  = lineEch(NEW_ECH, ancStart, NOW, D_28JAN);
+    const s28a  = computeSalary(SNB, MR, kn * 1.006, t28a.e.A);
+
+    // 1er juil 2028 : +0,6 % individuel (étape 2)
+    const t28b  = lineEch(NEW_ECH, ancStart, NOW, D_28JUL);
+    const s28b  = computeSalary(SNB, MR, kn * 1.012, t28b.e.A);
+
+    // 1er juil 2029 : +0,6 % individuel (étape 3 · cumul +1,8 %)
+    const t29   = lineEch(NEW_ECH, ancStart, NOW, D_29JUL);
+    const s29   = computeSalary(SNB, MR, kn * 1.018, t29.e.A);
+
+    document.getElementById('anc-now').textContent  = ancFmt(tNow.ancAt) + ' · ' + tNow.e.label;
+    document.getElementById('s-now').textContent    = fmt(sNow);
+    document.getElementById('evo-now').textContent  = 'référence';
+
+    document.getElementById('anc-26oct').textContent= ancFmt(t26.ancAt) + ' · ' + t26.e.label;
+    document.getElementById('s-26oct').textContent  = fmt(s26);
+    document.getElementById('evo-26oct').textContent= deltaTxt(s26, sNow);
+
+    document.getElementById('anc-27jan').textContent= ancFmt(t27a.ancAt) + ' · ' + t27a.e.label;
+    document.getElementById('s-27jan').textContent  = fmt(s27a);
+    document.getElementById('evo-27jan').textContent= deltaTxt(s27a, sNow);
+
+    document.getElementById('anc-27jul').textContent= ancFmt(t27b.ancAt) + ' · ' + t27b.e.label;
+    document.getElementById('s-27jul').textContent  = fmt(s27b);
+    document.getElementById('evo-27jul').textContent= deltaTxt(s27b, sNow);
+
+    document.getElementById('anc-28jan').textContent= ancFmt(t28a.ancAt) + ' · ' + t28a.e.label;
+    document.getElementById('s-28jan').textContent  = fmt(s28a);
+    document.getElementById('evo-28jan').textContent= deltaTxt(s28a, sNow);
+
+    document.getElementById('anc-28jul').textContent= ancFmt(t28b.ancAt) + ' · ' + t28b.e.label;
+    document.getElementById('s-28jul').textContent  = fmt(s28b);
+    document.getElementById('evo-28jul').textContent= deltaTxt(s28b, sNow);
+
+    document.getElementById('anc-29jul').textContent= ancFmt(t29.ancAt) + ' · ' + t29.e.label;
+    document.getElementById('s-29jul').textContent  = fmt(s29);
+    document.getElementById('evo-29jul').textContent= deltaTxt(s29, sNow);
+  }
+  ['nr','anc','mr','snb','ancDate'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', update);
+  });
+  document.getElementById('ancMode').addEventListener('change', () => { toggleAncMode(); update(); });
+  /* Initialisation : on calcule la date d'entrée par défaut à partir des 10 ans saisis */
+  toggleAncMode();
+  /* Re-bascule pour rester sur le mode années par défaut tout en synchronisant la date */
+  document.getElementById('ancMode').value = 'years';
+  toggleAncMode();
+  update();
+</script>
+</div>
