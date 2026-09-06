@@ -1,0 +1,91 @@
+<div id="fo-a11y" class="fo-a11y" data-nosnippet>
+<style>
+.fo-a11y{position:fixed;left:16px;bottom:16px;z-index:99990;font-family:inherit;color:#16243A}
+.fo-a11y-btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;background:#16243A;color:#fff;font:600 .9rem/1 inherit;padding:11px 16px 11px 12px;cursor:pointer;box-shadow:0 10px 24px -12px rgba(22,36,58,.7);transition:transform .2s,box-shadow .2s}
+.fo-a11y-btn:hover,.fo-a11y-btn:focus-visible{transform:translateY(-2px);box-shadow:0 14px 28px -12px rgba(22,36,58,.8)}
+.fo-a11y-btn:focus-visible,.fo-a11y-panel :focus-visible{outline:3px solid #019CDA;outline-offset:2px}
+.fo-a11y-btn svg{width:22px;height:22px;flex:none}
+@media (max-width:700px){.fo-a11y-btn{padding:12px}.fo-a11y-btn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+.fo-a11y-panel{position:absolute;left:0;bottom:calc(100% + 10px);width:min(340px,calc(100vw - 32px));background:#fff;border:1px solid #C9D1DB;border-radius:16px;box-shadow:0 24px 60px -24px rgba(22,36,58,.45);padding:16px 16px 12px}
+.fo-a11y-panel[hidden]{display:none}
+.fo-a11y-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px}
+.fo-a11y-head h2{font-size:1.05rem;margin:0;line-height:1.2}
+.fo-a11y-close{border:0;background:#F3F6F9;color:#16243A;width:34px;height:34px;border-radius:50%;font-size:1.3rem;line-height:1;cursor:pointer}
+.fo-a11y-close:hover{background:#E6F5FC}
+.fo-a11y-intro{font-size:.8rem;color:#4A5568;margin:0 0 10px}
+.fo-a11y-opt{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-top:1px solid #EEF1F5;cursor:pointer}
+.fo-a11y-opt input{appearance:none;-webkit-appearance:none;flex:none;width:40px;height:22px;border-radius:999px;background:#C9D1DB;position:relative;margin:2px 0 0;cursor:pointer;transition:background .2s}
+.fo-a11y-opt input::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s}
+.fo-a11y-opt input:checked{background:#16243A}
+.fo-a11y-opt input:checked::after{transform:translateX(18px)}
+.fo-a11y-opt b{display:block;font-size:.92rem;line-height:1.25}
+.fo-a11y-opt small{display:block;font-size:.76rem;color:#4A5568;line-height:1.35;margin-top:2px}
+.fo-a11y-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #EEF1F5;padding-top:10px;margin-top:2px}
+.fo-a11y-reset{border:1.5px solid #16243A;background:#fff;color:#16243A;border-radius:999px;padding:7px 12px;font:600 .8rem/1 inherit;cursor:pointer}
+.fo-a11y-reset:hover{background:#16243A;color:#fff}
+.fo-a11y-foot small{font-size:.72rem;color:#4A5568}
+@media print{.fo-a11y{display:none}}
+
+/* Contraste renforcé : les accents FO passent en teintes foncées (rapport de contraste >= 7:1 sur blanc) */
+html.fo-a11y-contrast,html.fo-a11y-contrast body{--wp--preset--color--fo-bleu:#0A527A;--wp--preset--color--fo-vert:#0D5C4D;--wp--preset--color--fo-rouge:#A6111B;--fo-bleu:#0A527A;--fo-vert:#0D5C4D;--fo-rouge:#A6111B}
+html.fo-a11y-contrast .fo-gradient-text{background:none;-webkit-background-clip:initial;background-clip:initial;color:#0A527A;-webkit-text-fill-color:#0A527A}
+html.fo-a11y-contrast .fo-badge-bleu{background:#0A527A}
+html.fo-a11y-contrast .fo-badge-vert{background:#0D5C4D}
+html.fo-a11y-contrast .fo-badge-rouge{background:#A6111B}
+html.fo-a11y-contrast .fo-badge-or{background:#fff;color:#16243A;box-shadow:inset 0 0 0 2px #16243A}
+html.fo-a11y-contrast .is-style-outline .wp-block-button__link:hover{background-color:#16243A!important}
+html.fo-a11y-contrast .wp-element-button:hover,html.fo-a11y-contrast .wp-block-button__link:hover{box-shadow:0 10px 24px -10px rgba(22,36,58,.6)}
+html.fo-a11y-contrast .fo-rubriques li a:hover{border-color:#16243A;color:#16243A}
+html.fo-a11y-contrast .fo-ring img{box-shadow:0 0 0 4px #fff,0 0 0 7px #16243A}
+html.fo-a11y-contrast .fo-carte{--bleu:#0A527A;--vert:#0D5C4D;--rouge:#A6111B}
+html.fo-a11y-contrast .fo-carte .site{fill-opacity:.95}
+html.fo-a11y-contrast .fo-calc .out .hi b{color:#0A527A}
+html.fo-a11y-contrast .fo-a11y-btn:focus-visible,html.fo-a11y-contrast .fo-a11y-panel :focus-visible{outline-color:#16243A}
+html.fo-a11y-contrast a:not(.wp-block-button__link):not(.wp-element-button){text-decoration:underline;text-underline-offset:.15em}
+html.fo-a11y-contrast .has-fo-bleu-clair-background-color,html.fo-a11y-contrast .has-fo-vert-clair-background-color{box-shadow:inset 0 0 0 1.5px #16243A}
+/* Texte plus grand */
+html.fo-a11y-bigtext{font-size:118%}
+/* Liens soulignés */
+html.fo-a11y-links a:not(.wp-block-button__link):not(.wp-element-button){text-decoration:underline!important;text-underline-offset:.15em;text-decoration-thickness:from-font}
+/* Espacement (dyslexie) */
+html.fo-a11y-spacing body{letter-spacing:.035em;word-spacing:.14em}
+html.fo-a11y-spacing p,html.fo-a11y-spacing li{line-height:1.85!important;margin-bottom:1.1em}
+/* Réduire les animations */
+html.fo-a11y-motion *,html.fo-a11y-motion *::before,html.fo-a11y-motion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html.fo-a11y-motion .fo-reveal{opacity:1!important;transform:none!important}
+</style>
+<button type="button" class="fo-a11y-btn" id="fo-a11y-btn" aria-expanded="false" aria-controls="fo-a11y-panel" title="Options d'accessibilité">
+<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="6.6" r="1.6" fill="currentColor"/><path d="M6.5 9.4c3.7 1 7.3 1 11 0M12 10.3v3.6m0 0-2.6 5.2M12 13.9l2.6 5.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span>Accessibilité</span>
+</button>
+<div id="fo-a11y-panel" class="fo-a11y-panel" role="dialog" aria-labelledby="fo-a11y-title" hidden>
+<div class="fo-a11y-head"><h2 id="fo-a11y-title">Accessibilité</h2><button type="button" class="fo-a11y-close" aria-label="Fermer les options d'accessibilité">&times;</button></div>
+<p class="fo-a11y-intro">Vos réglages sont conservés sur cet appareil, sans compte ni suivi.</p>
+<label class="fo-a11y-opt"><input type="checkbox" data-a11y="contrast"><span><b>Contraste renforcé</b><small>Textes et boutons en couleurs foncées. Conseillé si vous êtes daltonien ou si les couleurs claires vous fatiguent.</small></span></label>
+<label class="fo-a11y-opt"><input type="checkbox" data-a11y="bigtext"><span><b>Texte plus grand</b><small>Agrandit tous les textes de 18 %.</small></span></label>
+<label class="fo-a11y-opt"><input type="checkbox" data-a11y="links"><span><b>Liens soulignés</b><small>Repère chaque lien autrement que par sa couleur.</small></span></label>
+<label class="fo-a11y-opt"><input type="checkbox" data-a11y="spacing"><span><b>Texte aéré</b><small>Espace les lettres, les mots et les lignes (lecture facilitée, dyslexie).</small></span></label>
+<label class="fo-a11y-opt"><input type="checkbox" data-a11y="motion"><span><b>Moins d'animations</b><small>Supprime les effets de mouvement.</small></span></label>
+<div class="fo-a11y-foot"><small>Un problème d'accès ? <a href="/contact/">Écrivez-nous</a>.</small><button type="button" class="fo-a11y-reset">Réinitialiser</button></div>
+</div>
+<script>
+(function(){
+var KEY='fo-a11y',root=document.documentElement,wrap=document.getElementById('fo-a11y');
+if(!wrap)return;
+var btn=wrap.querySelector('#fo-a11y-btn'),panel=wrap.querySelector('#fo-a11y-panel'),closeBtn=wrap.querySelector('.fo-a11y-close'),reset=wrap.querySelector('.fo-a11y-reset'),boxes=wrap.querySelectorAll('input[data-a11y]');
+var state={};
+try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){state={};}
+function apply(){boxes.forEach(function(b){var k=b.getAttribute('data-a11y'),on=!!state[k];b.checked=on;root.classList.toggle('fo-a11y-'+k,on);});}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function open(){panel.hidden=false;btn.setAttribute('aria-expanded','true');var f=panel.querySelector('input');f&&f.focus();document.addEventListener('keydown',onKey);document.addEventListener('click',onDoc,true);}
+function close(){panel.hidden=true;btn.setAttribute('aria-expanded','false');document.removeEventListener('keydown',onKey);document.removeEventListener('click',onDoc,true);}
+function onKey(e){if(e.key==='Escape'){close();btn.focus();}}
+function onDoc(e){if(!wrap.contains(e.target))close();}
+btn.addEventListener('click',function(){panel.hidden?open():close();});
+closeBtn.addEventListener('click',function(){close();btn.focus();});
+boxes.forEach(function(b){b.addEventListener('change',function(){state[b.getAttribute('data-a11y')]=b.checked;save();apply();});});
+reset.addEventListener('click',function(){state={};save();apply();});
+apply();
+})();
+</script>
+</div>
