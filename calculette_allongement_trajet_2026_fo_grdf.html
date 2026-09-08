@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Allongement de temps de trajet : la calculette · FO GRDF Fonctions Centrales</title>
-<meta name="description" content="Votre site déménage ? Estimez votre indemnité d'allongement de temps de trajet et de frais supplémentaires de transport : transports en commun, vélo ou marche, voiture, avec la variable du travail à distance.">
+<meta name="description" content="Votre site déménage ? Estimez votre indemnité d'allongement de temps de trajet et de frais supplémentaires de transport : transports en commun, vélo ou marche, voiture, avec la variable du travail à distance et votre taux horaire calculé sur la grille des IEG 2026.">
 <link rel="icon" type="image/png" href="img/logo_fo.png">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -69,7 +69,6 @@ body.a11y-mode .field label{font-weight:700}
 .essentiel ul{list-style:none;margin:0}
 .essentiel li{position:relative;padding-left:24px;margin-bottom:9px;font-size:15.5px}
 .essentiel li:before{content:"";position:absolute;left:4px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--vert)}
-.essentiel li strong{font-weight:700}
 
 .geste{background:#e8f4fd;border-left:5px solid var(--bleu);border-radius:14px;padding:22px 26px;margin-bottom:30px}
 .geste h3{font-family:'Fraunces',serif;font-size:19px;color:#026b96;margin-bottom:10px}
@@ -79,6 +78,10 @@ body.a11y-mode .field label{font-weight:700}
 .alerte{background:var(--rouge-clair);border-left:5px solid var(--rouge);border-radius:12px;padding:18px 22px;margin:18px 0;font-size:14.5px}
 .alerte strong{color:#b4222c}
 .info{background:var(--or-clair);border-left:5px solid #e0b500;border-radius:12px;padding:16px 20px;margin:16px 0;font-size:14px}
+.lexique{background:var(--fond);border:1.5px dashed #c9c5bb;border-radius:12px;padding:18px 22px;margin:18px 0;font-size:14.5px}
+.lexique h4{font-family:'Fraunces',serif;font-size:17px;margin-bottom:8px;color:var(--navy)}
+.lexique p+p{margin-top:9px}
+.lexique .villes{font-size:13.5px;color:#3a3a48;background:var(--blanc);border-radius:8px;padding:10px 12px}
 
 /* FORMULAIRE */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
@@ -92,6 +95,7 @@ body.a11y-mode .field label{font-weight:700}
 .step-num{flex:none;width:28px;height:28px;border-radius:50%;background:var(--bleu);color:#fff;display:grid;
   place-items:center;font-weight:700;font-size:14px}
 .step-lab{font-family:'Fraunces',serif;font-size:18px;font-weight:700}
+.step-intro{font-size:14px;color:var(--gris);margin:0 0 16px;max-width:770px}
 .sep{height:1px;background:var(--bord);margin:26px 0}
 
 .modes{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
@@ -110,8 +114,7 @@ body.a11y-mode .field label{font-weight:700}
 .res-top .lab{font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.9}
 .res-top .big{font-family:'Fraunces',serif;font-size:clamp(32px,6vw,46px);font-weight:900;line-height:1.05;margin-top:4px}
 .res-top .sub{font-size:14px;opacity:.92;margin-top:8px}
-.res-choix{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0}
-.res-choix{border-top:1px solid var(--bord)}
+.res-choix{border-top:1px solid var(--bord);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .res-choix>div{padding:20px 24px}
 .res-choix>div+div{border-left:1px solid var(--bord)}
 .res-choix .k{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gris)}
@@ -128,7 +131,6 @@ table th:last-child{border-radius:0 10px 0 0}
 table td{padding:10px 14px;border-bottom:1px solid #f0ece6;vertical-align:top}
 table td.num,table th.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 table tr.total td{font-weight:700;background:var(--fond);border-bottom:none}
-table tr.muted td{color:var(--gris)}
 .calc-line{font-family:'DM Sans',monospace;font-size:13.5px;color:var(--gris);padding:3px 0}
 .calc-line b{color:var(--texte)}
 
@@ -159,6 +161,7 @@ details.src{background:var(--blanc);border:1.5px solid var(--bord);border-radius
 details.src summary{cursor:pointer;font-weight:700;font-size:14.5px}
 details.src[open] summary{margin-bottom:10px}
 details.src p,details.src li{font-size:14px;color:#3a3a48}
+details.src p+p{margin-top:9px}
 details.src ul{margin-left:20px}
 
 .verdict{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
@@ -185,7 +188,7 @@ footer a{color:var(--bleu)}
   .page{padding:22px 16px 48px}
   .header{padding:26px 22px}
   .header-logo{height:82px}
-  .res-choix div+div{border-left:none}
+  .res-choix>div+div{border-left:none}
   .mode-btn{min-width:100%}
 }
 @media print{
@@ -212,8 +215,8 @@ footer a{color:var(--bleu)}
     <img class="header-logo" src="img/logo_fo.png" alt="Logo FO Énergie GRDF Fonctions Centrales">
     <div><span class="badge">FO GRDF · Fonctions Centrales</span></div>
     <h1>Votre site déménage&nbsp;? <em>Calculez ce que vaut</em> votre allongement de trajet.</h1>
-    <p class="subtitle">Temps de trajet, kilomètres, abonnement de transport, péages, jours de travail à distance : la calculette applique les règles que la RH utilise, et vous montre chaque ligne du calcul. Une estimation à vérifier avant de signer quoi que ce soit.</p>
-    <div class="badge-date">Calculette FO · septembre 2026</div>
+    <p class="subtitle">Temps de trajet, kilomètres, abonnement de transport, péages, jours de travail à distance : la calculette applique les règles que la RH utilise, calcule votre taux horaire sur la grille des IEG en vigueur, et vous montre chaque ligne du calcul.</p>
+    <div class="badge-date">Calculette FO · grille au 1ᵉʳ janvier 2026</div>
   </header>
 
   <div class="essentiel">
@@ -239,7 +242,7 @@ footer a{color:var(--bleu)}
 
   <h2 class="section-title h-anchor" id="calculette">
     <span class="a11y-emoji">&#128290;</span>
-    <svg class="a11y-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11"/><line x1="12" y1="11" x2="12" y2="11"/><line x1="16" y1="11" x2="16" y2="11"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+    <svg class="a11y-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
     La calculette
   </h2>
   <p class="section-sub">Une estimation, pas une décision de paie. Les montants dépendent de temps de trajet mesurés par l'employeur et d'un nombre de jours qui varie selon votre aménagement du temps de travail : les deux se discutent.</p>
@@ -259,23 +262,31 @@ footer a{color:var(--bleu)}
         <span class="hint">Domicile vers le nouveau lieu de travail.</span>
       </div>
       <div class="field">
-        <label for="zAncien">Zone de l'ancien lieu</label>
+        <label for="zAncien">Zone de l'ancien lieu de travail</label>
         <select id="zAncien">
-          <option value="hors" selected>Hors ICFS (cas général)</option>
-          <option value="icfs">Agglomération ICFS</option>
+          <option value="hors" selected>Hors zone ICFS (le cas le plus courant)</option>
+          <option value="icfs">Zone ICFS (Lyon, Marseille, Lille, Bordeaux, etc.)</option>
           <option value="rp">Région parisienne</option>
         </select>
-        <span class="hint">Fixe la franchise : 15 min hors ICFS, 30 min ailleurs.</span>
+        <span class="hint">Fixe la franchise retirée du calcul : 15 min hors zone ICFS, 30 min en zone ICFS et en région parisienne.</span>
       </div>
       <div class="field">
-        <label for="zNouveau">Zone du nouveau lieu</label>
+        <label for="zNouveau">Zone du nouveau lieu de travail</label>
         <select id="zNouveau">
-          <option value="hors" selected>Hors ICFS (cas général)</option>
-          <option value="icfs">Agglomération ICFS</option>
+          <option value="hors" selected>Hors zone ICFS (le cas le plus courant)</option>
+          <option value="icfs">Zone ICFS (Lyon, Marseille, Lille, Bordeaux, etc.)</option>
           <option value="rp">Région parisienne</option>
         </select>
-        <span class="hint">Fixe le plafond : 40 min hors ICFS, 60 min ailleurs.</span>
+        <span class="hint">Fixe le plafond du nouveau trajet : 40 min hors zone ICFS, 60 min en zone ICFS et en région parisienne.</span>
       </div>
+    </div>
+
+    <div class="lexique">
+      <h4>ICFS, qu'est-ce que c'est&nbsp;?</h4>
+      <p><strong>ICFS veut dire « indemnité compensatoire de frais spéciaux ».</strong> C'est une indemnité créée par la circulaire N. 69-85 du 2 octobre 1969, versée aux agents dont le <strong>lieu de travail</strong> se situe dans certaines grandes agglomérations, parce qu'il y coûte plus cher de se déplacer qu'ailleurs. Elle n'a rien à voir avec l'allongement de trajet : ici, elle sert seulement à désigner une <strong>zone géographique</strong>.</p>
+      <p class="villes">Agglomérations visées à l'origine : <strong>Marseille, Lyon, Lille</strong>, puis <strong>Bordeaux, Toulouse, Nantes, Nice, Rouen, Toulon, Strasbourg, Grenoble et Saint-Étienne</strong>, la liste précise des communes étant annexée à la circulaire. Cette liste a été retouchée depuis (circulaire N. 88-24 du 6 décembre 1988) : faites confirmer la vôtre par la RH.</p>
+      <p>Ce qui compte pour votre calcul, c'est <strong>où se trouve le site</strong>, pas le fait que vous touchiez personnellement l'indemnité. Certains agents en sont exclus (transport payé par l'entreprise, logement de fonction, carte d'abonnement) alors que leur site reste bien en zone ICFS. Dans le fichier de la RH, c'est une simple case « Oui ou Non » <strong>saisie à la main</strong>, une pour l'ancien site et une pour le nouveau : demandez laquelle a été cochée, elle change le résultat.</p>
+      <p>Être en zone ICFS n'est d'ailleurs pas seulement un désavantage : la franchise passe de 15 à 30 minutes, donc vous perdez davantage au départ, mais le plafond passe de 40 à 60 minutes, donc vous êtes indemnisé plus loin. Au total, le maximum indemnisé est de <strong>30 minutes par trajet en zone ICFS et en région parisienne, contre 25 minutes ailleurs</strong>.</p>
     </div>
 
     <div class="sep"></div>
@@ -298,23 +309,9 @@ footer a{color:var(--bleu)}
           <input type="number" id="kmNouveau" min="0" step="0.1" value="21.8">
         </div>
         <div class="field">
-          <label for="bareme">Barème kilométrique</label>
-          <select id="bareme">
-            <option value="0.370">3 CV et moins : 0,370 €/km</option>
-            <option value="0.407">4 CV : 0,407 €/km</option>
-            <option value="0.427" selected>5 CV : 0,427 €/km (base de l'accord)</option>
-            <option value="0.447">6 CV : 0,447 €/km</option>
-            <option value="0.470">7 CV et plus : 0,470 €/km</option>
-          </select>
-          <span class="hint">L'accord de 2010 fixe la base à 5 CV et à la tranche au-delà de 20 000 km, quelle que soit votre voiture. Les autres lignes sont là pour comparer.</span>
-        </div>
-        <div class="field">
-          <label for="elec">Véhicule électrique</label>
-          <select id="elec">
-            <option value="1" selected>Non, ou majoration non appliquée</option>
-            <option value="1.2">Oui, avec la majoration de 20 %</option>
-          </select>
-          <span class="hint">Le barème fiscal majore de 20 % les véhicules électriques. La RH ne l'applique pas à ce jour : à revendiquer.</span>
+          <label for="bareme">Barème kilométrique (€/km)</label>
+          <input type="number" id="bareme" min="0" step="0.001" value="0.427">
+          <span class="hint">Valeur imposée par l'accord : <strong>5 CV fiscaux, tranche au-delà de 20 000 km</strong>. Elle est la même pour tous, quelle que soit votre voiture. À actualiser si le barème fiscal change.</span>
         </div>
         <div class="field">
           <label for="peageMode">Péages</label>
@@ -364,30 +361,35 @@ footer a{color:var(--bleu)}
 
     <div class="sep"></div>
 
-    <div class="step"><div class="step-num">3</div><div class="step-lab">Votre taux horaire</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-lab">Votre taux horaire, d'après la grille des IEG</div></div>
+    <p class="step-intro">Le temps de trajet est payé à votre taux horaire, calculé sur la grille de la branche : <strong>salaire national de base × (1 + majoration résidentielle) × NR ÷ 100 × coefficient d'échelon</strong>, le tout divisé par 164,67 heures (base 38 h). Ce taux est ensuite plafonné à celui d'un agent au NR 100, échelon 4. <strong>Si vous ne connaissez plus votre NR, votre échelon ou votre majoration résidentielle, rapprochez-vous de votre bulletin de salaire : les trois y figurent.</strong></p>
     <div class="grid">
       <div class="field">
-        <label for="txMode">Point de départ</label>
-        <select id="txMode">
-          <option value="salaire" selected>À partir de mon salaire de base</option>
-          <option value="direct">Je connais mon taux horaire</option>
-        </select>
-      </div>
-      <div class="field" id="f-salaire">
-        <label for="salaire">Salaire de base mensuel (€)</label>
-        <input type="number" id="salaire" min="0" step="10" value="2354.2">
-        <span class="hint">Divisé par 164,67 heures (base 38 h) pour obtenir le taux horaire.</span>
-      </div>
-      <div class="field" id="f-txdirect" style="display:none">
-        <label for="txDirect">Mon taux horaire (€)</label>
-        <input type="number" id="txDirect" min="0" step="0.01" value="13.68">
+        <label for="nr">Mon NR</label>
+        <select id="nr"></select>
+        <span class="hint">Votre niveau de rémunération, ligne « NR » du bulletin. Les repères en lettres concernent les cadres supérieurs.</span>
       </div>
       <div class="field">
-        <label for="txPlafond">Plafond NR 100 échelon 4 (€/h)</label>
-        <input type="number" id="txPlafond" min="0" step="0.01" value="13.68">
-        <span class="hint">Valeur relevée sur un dossier RH de 2024. À actualiser avec le SNB en vigueur.</span>
+        <label for="ech">Mon échelon d'ancienneté</label>
+        <select id="ech"></select>
+        <span class="hint">De l'échelon 4 (à l'embauche) à l'échelon 12. L'ancienneté correspondante est rappelée entre parenthèses.</span>
+      </div>
+      <div class="field">
+        <label for="mr">Majoration résidentielle</label>
+        <select id="mr">
+          <option value="0.24">24 %</option>
+          <option value="0.245">24,5 %</option>
+          <option value="0.25" selected>25 %</option>
+        </select>
+        <span class="hint">Elle dépend de votre commune de travail et figure sur votre bulletin.</span>
+      </div>
+      <div class="field">
+        <label for="snb">Salaire national de base (€)</label>
+        <input type="number" id="snb" min="0" step="0.01" value="543.10">
+        <span class="hint">Barème FO Énergie au 1ᵉʳ janvier 2026. À actualiser après chaque négociation de branche.</span>
       </div>
     </div>
+    <div class="info" id="salaireCalc"></div>
 
     <div class="sep"></div>
 
@@ -435,7 +437,7 @@ footer a{color:var(--bleu)}
     <svg class="a11y-ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
     Trois situations, trois résultats
   </h2>
-  <p class="section-sub">Mêmes 25 minutes de trajet en plus, même salaire, même aménagement A2 sans travail à distance. Seul le mode de déplacement change. Cliquez pour charger la situation dans la calculette.</p>
+  <p class="section-sub">Même trajet allongé de 25 minutes, même NR, même échelon, même aménagement A2 sans travail à distance. Seul le mode de déplacement change. Cliquez pour charger la situation dans la calculette.</p>
   <div class="simu-row" id="simus"></div>
   <div class="info" id="simu-note"></div>
 
@@ -459,7 +461,7 @@ footer a{color:var(--bleu)}
   <div class="pt">
     <span class="tag tag-vigilance">À vérifier</span>
     <h4>Le nombre de jours retenu n'est pas le même partout</h4>
-    <p>La note RHM-14/19 publie un tableau (604 jours pour un A2 sur 3 ans). Sur un dossier réel de 2024 que nous avons pu examiner, la RH a retenu 574,5 jours pour un A2 sans travail à distance, soit 30 jours de moins, environ 5 % de l'indemnité. Demandez le détail du calcul de vos jours, et faites-le corriger.</p>
+    <p>La note RHM-14/19 publie un tableau (604 jours pour un A2 sur 3 ans). Sur un dossier réel de mars 2026 que nous avons pu examiner, la RH a retenu 574,5 jours pour un A2 sans travail à distance, soit 30 jours de moins, environ 5 % de l'indemnité. Demandez le détail du calcul de vos jours, et faites-le corriger.</p>
   </div>
   <div class="pt">
     <span class="tag tag-vigilance">À vérifier</span>
@@ -467,9 +469,9 @@ footer a{color:var(--bleu)}
     <p>Chaque jour à distance retire un aller-retour du calcul. Un jour par semaine, c'est environ 20 % de l'indemnité de temps et de kilomètres en moins. Ce n'est pas vous qui avez décidé de déplacer le site : le travail à distance ne devrait pas servir à financer la réorganisation. En revanche, votre abonnement de transport en commun ne baisse pas : cette partie ne doit pas être proratisée.</p>
   </div>
   <div class="pt">
-    <span class="tag tag-arg">Argument</span>
-    <h4>Cinq chevaux fiscaux pour tout le monde, et pas de majoration électrique</h4>
-    <p>L'accord fixe la base à 5 CV, tranche au-delà de 20 000 km, soit 0,427 €/km : celui qui roule en 7 CV n'est pas mieux traité, mais surtout la majoration de 20 % que le barème fiscal prévoit pour les véhicules électriques n'est pas appliquée. Un agent qui a acheté une voiture électrique pour aller travailler plus loin est donc indemnisé moins bien que ce que prévoit le barème auquel l'accord renvoie.</p>
+    <span class="tag tag-arg">À savoir</span>
+    <h4>Un taux horaire plafonné au bas de la grille, et le même barème pour toutes les voitures</h4>
+    <p>Le taux horaire est plafonné à celui d'un agent au NR 100 à l'échelon 4, c'est-à-dire tout en bas de la grille : la très grande majorité des agents est donc payée en dessous de son vrai taux horaire, et ce plafond n'est pas revu pendant les 3 ans. Côté kilomètres, l'accord fixe la base à 5 CV fiscaux, tranche au-delà de 20 000 km : celui qui roule en grosse cylindrée n'est pas mieux indemnisé, celui qui roule en petite voiture n'est pas moins bien traité.</p>
   </div>
   <div class="pt">
     <span class="tag tag-vigilance">Votre choix</span>
@@ -498,12 +500,22 @@ footer a{color:var(--bleu)}
       </table>
     </div>
     <p class="calc-line" style="margin-top:14px">Temps supplémentaire indemnisé = <b>min(nouveau trajet ; plafond)</b> moins <b>max(ancien trajet ; franchise)</b></p>
-    <p class="calc-line">Indemnité journalière de temps = <b>taux horaire</b> × <b>temps supplémentaire</b> × <b>2 trajets</b></p>
-    <p class="calc-line">Indemnité journalière kilométrique = <b>barème</b> × <b>kilomètres en plus (aller)</b> × <b>2 trajets</b></p>
+    <p class="calc-line">Salaire de base = <b>SNB × (1 + majoration résidentielle) × NR ÷ 100 × coefficient d'échelon</b></p>
+    <p class="calc-line">Taux horaire = <b>salaire de base ÷ 164,67 h</b>, plafonné à celui du NR 100 échelon 4</p>
+    <p class="calc-line">Indemnité journalière de temps = <b>taux horaire retenu</b> × <b>temps supplémentaire</b> × <b>2 trajets</b></p>
+    <p class="calc-line">Indemnité journalière kilométrique = <b>0,427 €/km</b> × <b>kilomètres en plus (aller)</b> × <b>2 trajets</b></p>
     <p class="calc-line">Capital sur 3 ans = <b>indemnité journalière</b> × <b>nombre de jours indemnisés</b>, versé en deux fois</p>
     <p class="calc-line">Équivalent mensuel = <b>capital ÷ 36 mois</b></p>
     <p class="calc-line">Transports en commun = <b>(nouvel abonnement moins ancien) × part restant à votre charge</b>, chaque mois</p>
   </div>
+
+  <details class="src">
+    <summary>La grille des salaires utilisée pour le taux horaire</summary>
+    <p>Formule statutaire, inchangée : <strong>salaire = SNB × (1 + majoration résidentielle) × NR ÷ 100 × coefficient d'échelon</strong>. Les textes de référence sont la convention du 31 mars 1982 et les accords de branche du 24 février 2006 et du 29 octobre 2008.</p>
+    <p>Valeurs retenues ici : <strong>SNB de 543,10 €</strong> (barème FO Énergie au 1ᵉʳ janvier 2026), coefficients de NR et d'échelon de la <strong>grille actuellement en vigueur</strong>, avec des échelons numérotés de 4 à 12 (coefficient 1,090 à l'embauche, jusqu'à 1,330 à partir de 34 ans d'ancienneté).</p>
+    <p>Le projet d'accord de modernisation de la grille (renumérotation des échelons de 1 à 12, coefficients hiérarchiques relevés de 9 %, bascule annoncée au 1ᵉʳ janvier 2028) <strong>n'est pas appliqué ici</strong> : FO Énergie a fait usage de son droit d'opposition et les négociations ont repris. Le jour où une nouvelle grille entrera en vigueur, il faudra reprendre ces coefficients.</p>
+    <p><strong>Contrôle</strong> : avec ces valeurs, le plafond reconstitué du NR 100 échelon 4 tombe à <strong>deux millièmes d'euro près</strong> sur le taux horaire plafond qu'un export nominatif de la RH affichait en mars 2026, et l'indemnité totale de ce dossier à <strong>deux centimes près sur trois ans</strong>. La formule et les coefficients sont donc les bons. Le petit écart qui reste vient des coefficients publiés avec une seule décimale.</p>
+  </details>
 
   <details class="src">
     <summary>Les textes qui fondent ce droit</summary>
@@ -512,9 +524,10 @@ footer a{color:var(--bleu)}
       <li><strong>Note DP 31.69 du 31 juillet 1975</strong> : porte à 1 h 30 en région parisienne (40 minutes ailleurs) la durée à partir de laquelle un déménagement est normalement prévu, tout en maintenant à 60 minutes le plafond retenu pour le calcul.</li>
       <li><strong>Note DP 31-167</strong> : étend le dispositif aux salariés obligés d'utiliser leur véhicule personnel, faute de transports en commun ou lorsque leur usage est manifestement inadapté.</li>
       <li><strong>Note DP 31.13 du 7 juin 1971</strong> : en versement mensuel, les indemnités ne sont dues que pour les jours de travail effectif. Il s'agit d'un remboursement de frais, pas d'un complément de rémunération.</li>
+      <li><strong>Circulaire N. 69-85 du 2 octobre 1969</strong> : crée l'indemnité compensatoire de frais spéciaux (ICFS) et annexe la liste des communes des agglomérations concernées, celles qui définissent la « zone ICFS » utilisée par le calcul de l'allongement de trajet.</li>
       <li><strong>Accords « réorganisation » ERDF et GrDF du 23 juillet 2010</strong> et leur référentiel national du 27 juillet 2010 : tableau des franchises et des temps maximum, taux horaire du NR d'un agent à l'échelon 4 plafonné au NR 100, base kilométrique de 5 CV au-delà de 20 000 km, nombre de jours au prorata du tableau de service, versement mensuel sur 3 ans ou capital en deux fois.</li>
       <li><strong>Note d'information ERDF-GrDF-NOI-RHM-14/19 V2 du 19 décembre 2014</strong> : harmonise les pratiques, confirme la franchise plancher et le plafond, la formule de l'indemnité journalière, la base de 690 jours pour 3 ans (230 jours par an moins les jours de repos) et le tableau par aménagement du temps de travail.</li>
-      <li><strong>Article 6 B de l'annexe IV du code général des impôts</strong> : barème kilométrique. Au-delà de 20 000 km, 0,370 € (3 CV et moins), 0,407 € (4 CV), 0,427 € (5 CV), 0,447 € (6 CV), 0,470 € (7 CV et plus) par kilomètre, avec une majoration de 20 % pour les véhicules électriques.</li>
+      <li><strong>Article 6 B de l'annexe IV du code général des impôts</strong> : barème kilométrique. La seule ligne que l'accord retienne est celle des <strong>5 CV au-delà de 20 000 km, soit 0,427 € par kilomètre</strong>.</li>
       <li><strong>Article 30 du statut national des IEG et circulaire Pers 212</strong> : cadre statutaire des mesures applicables en cas de mobilité ou de réorganisation.</li>
     </ul>
   </details>
@@ -525,26 +538,29 @@ footer a{color:var(--bleu)}
       <table>
         <thead><tr><th>Affirmation</th><th>Source</th><th>Récence</th><th>Verdict</th></tr></thead>
         <tbody>
-          <tr><td>Franchises 15 et 30 min, plafonds 40 et 60 min, maxima 25 et 30 min</td><td>Référentiel national accords ERDF-GrDF, p. 9 et note RHM-14/19 V2, p. 2 et 3</td><td>27/07/2010 et 19/12/2014</td><td><span class="verdict v-ok">vérifié</span></td></tr>
+          <tr><td>Franchises 15 et 30 min, plafonds 40 et 60 min, maxima 25 et 30 min</td><td>Référentiel national des accords ERDF-GrDF, p. 9 et note RHM-14/19 V2, p. 2 et 3</td><td>27/07/2010 et 19/12/2014</td><td><span class="verdict v-ok">vérifié</span></td></tr>
           <tr><td>Indemnité journalière = taux horaire × temps supplémentaire × 2 trajets</td><td>Note RHM-14/19 V2, encadré p. 3</td><td>19/12/2014</td><td><span class="verdict v-ok">vérifié</span></td></tr>
-          <tr><td>Taux horaire plafonné au NR 100 échelon 4</td><td>Référentiel p. 9 et note RHM-14/19 p. 3</td><td>2010 et 2014</td><td><span class="verdict v-ok">vérifié</span></td></tr>
+          <tr><td>Taux horaire plafonné au NR 100 échelon 4, non revu pendant 3 ans</td><td>Référentiel p. 9 et note RHM-14/19 p. 3</td><td>2010 et 2014</td><td><span class="verdict v-ok">vérifié</span></td></tr>
           <tr><td>Base 690 jours pour 3 ans, soit 230 jours par an moins les jours de repos</td><td>Note RHM-14/19 V2, p. 4 et 5</td><td>19/12/2014</td><td><span class="verdict v-ok">vérifié</span></td></tr>
           <tr><td>Base kilométrique 5 CV, tranche au-delà de 20 000 km</td><td>Référentiel national, p. 9</td><td>27/07/2010</td><td><span class="verdict v-ok">vérifié</span></td></tr>
-          <tr><td>Barème 5 CV au-delà de 20 000 km = 0,427 €/km, majoration électrique 20 %</td><td>Article 6 B annexe IV du CGI, version en vigueur depuis le 8 avril 2023 (arrêté du 27 mars 2023)</td><td>consulté le 08/09/2026</td><td><span class="verdict v-ok">vérifié</span></td></tr>
-          <tr><td>Taux horaire = salaire de base ÷ 164,67 h, plafond 13,68 €/h</td><td>Reconstitué depuis un export RH nominatif de 2024 (projet acheminement)</td><td>2024</td><td><span class="verdict v-warn">à confirmer</span></td></tr>
-          <tr><td>574,5 jours retenus pour un A2 sans travail à distance</td><td>Même export RH, à comparer aux 604 jours du tableau de la note</td><td>2024</td><td><span class="verdict v-warn">écart constaté</span></td></tr>
-          <tr><td>Prorata du travail à distance sur les jours de présence</td><td>Colonne « nombre de jours pour calcul en fonction de l'ATT et du TAD » de l'export RH, méthode non publiée</td><td>2024</td><td><span class="verdict v-int">interprétation</span></td></tr>
-          <tr><td>Transports en commun indemnisés après déduction des 50 % pris en charge</td><td>Note de bas de tableau de l'export RH</td><td>2024</td><td><span class="verdict v-warn">à confirmer</span></td></tr>
-          <tr><td>Péages indemnisés sur justificatif, par trajet</td><td>Colonnes « frais de péage » de l'export RH et feuille de calcul RH de 2014</td><td>2014 et 2024</td><td><span class="verdict v-warn">à confirmer</span></td></tr>
+          <tr><td>Barème 5 CV au-delà de 20 000 km = 0,427 €/km</td><td>Article 6 B de l'annexe IV du CGI, version en vigueur depuis le 8 avril 2023 (arrêté du 27 mars 2023)</td><td>consulté le 08/09/2026</td><td><span class="verdict v-ok">vérifié</span></td></tr>
+          <tr><td>ICFS = indemnité compensatoire de frais spéciaux, agglomérations concernées</td><td>Circulaire N. 69-85 du 2 octobre 1969 et son annexe (liste de communes, recensement INSEE 1968)</td><td>02/10/1969</td><td><span class="verdict v-ok">vérifié</span></td></tr>
+          <tr><td>Liste des agglomérations ICFS à jour aujourd'hui</td><td>Retouchée par la circulaire N. 88-24 du 6 décembre 1988, dont nous n'avons pas le texte</td><td>06/12/1988</td><td><span class="verdict v-warn">à confirmer</span></td></tr>
+          <tr><td>Formule du salaire et coefficients de la grille en vigueur</td><td>Convention du 31 mars 1982, accords de branche des 24/02/2006 et 29/10/2008 ; coefficients de NR, d'échelon et SNB du barème FO Énergie</td><td>1ᵉʳ janvier 2026</td><td><span class="verdict v-ok">vérifié</span></td></tr>
+          <tr><td>Taux horaire = salaire de base ÷ 164,67 h (base 38 h)</td><td>Reconstitué depuis un export RH nominatif du projet acheminement</td><td>26/03/2026</td><td><span class="verdict v-warn">à confirmer</span></td></tr>
+          <tr><td>574,5 jours retenus pour un A2 sans travail à distance</td><td>Même export RH, à comparer aux 604 jours du tableau de la note</td><td>26/03/2026</td><td><span class="verdict v-warn">écart constaté</span></td></tr>
+          <tr><td>Prorata du travail à distance sur les jours de présence</td><td>Colonne « nombre de jours pour calcul en fonction de l'ATT et du TAD » de l'export RH, méthode non publiée</td><td>26/03/2026</td><td><span class="verdict v-int">interprétation</span></td></tr>
+          <tr><td>Transports en commun indemnisés après déduction des 50 % pris en charge</td><td>Note de bas de tableau de l'export RH</td><td>26/03/2026</td><td><span class="verdict v-warn">à confirmer</span></td></tr>
+          <tr><td>Péages indemnisés sur justificatif, par trajet</td><td>Colonnes « frais de péage » de l'export RH et feuille de calcul RH de 2014</td><td>2014 et 2026</td><td><span class="verdict v-warn">à confirmer</span></td></tr>
         </tbody>
       </table>
     </div>
-    <p style="margin-top:12px;font-size:14px;color:#3a3a48">Les règles marquées « vérifié » ont été relues dans le texte lui-même, et le barème kilométrique directement dans la version en vigueur sur Légifrance. Les lignes « à confirmer » viennent d'un dossier RH réel, donc de la pratique et non d'un texte : c'est utile pour vérifier un calcul, ce n'est pas opposable en tant que règle. Les notes internes N 70-49, DP 31.69, DP 31-167 et DP 31.13 ne sont pas publiées sur Légifrance : elles se vérifient dans le corpus interne des IEG.</p>
+    <p style="margin-top:12px;font-size:14px;color:#3a3a48">Les règles marquées « vérifié » ont été relues dans le texte lui-même, et le barème kilométrique directement dans la version en vigueur sur Légifrance. Les lignes « à confirmer » viennent d'un dossier RH réel, donc de la pratique et non d'un texte : c'est utile pour vérifier un calcul, ce n'est pas opposable en tant que règle. Les notes internes N 70-49, DP 31.69, DP 31-167, DP 31.13 et N. 69-85 ne sont pas publiées sur Légifrance : elles se vérifient dans le corpus interne des IEG.</p>
   </details>
 
   <details class="src">
     <summary>Deux méthodes de calcul se croisent dans les documents</summary>
-    <p>La feuille de calcul RH de 2014 raisonne en année : temps supplémentaire × 202 jours × 2 trajets, montant annuel, puis multiplié par 3. Elle applique en outre au taux horaire un rapport 151,67 ÷ 164,67, qui ramène un taux calculé sur 38 heures à une base 35 heures et fait perdre environ 8 %. L'export RH de 2024 ne l'applique plus : il retient directement le plus faible du taux de l'agent et du plafond. Sur un même dossier, l'écart n'est pas neutre. Si votre fiche de calcul mentionne ce rapport, demandez sur quel texte il repose.</p>
+    <p>La feuille de calcul RH de 2014 raisonne en année : temps supplémentaire × 202 jours × 2 trajets, montant annuel, puis multiplié par 3. Elle applique en outre au taux horaire un rapport 151,67 ÷ 164,67, qui ramène un taux calculé sur 38 heures à une base 35 heures et fait perdre environ 8 %. L'export RH de mars 2026 ne l'applique plus : il retient directement le plus faible du taux de l'agent et du plafond. Sur un même dossier, l'écart n'est pas neutre. Si votre fiche de calcul mentionne ce rapport, demandez sur quel texte il repose.</p>
   </details>
 
   <div class="contact-card">
@@ -562,7 +578,7 @@ footer a{color:var(--bleu)}
   <footer>
     <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr" aria-label="Contacter FO GRDF par email"><img class="foot-logo" src="img/logo_fo.png" alt="Logo FO Énergie GRDF Fonctions Centrales"></a><br>
     Document d'information syndicale FO Énergie GRDF Fonctions Centrales · Calculette d'allongement de temps de trajet, septembre 2026<br>
-    Sources : accords « réorganisation » ERDF-GrDF du 23 juillet 2010 et référentiel du 27 juillet 2010, note ERDF-GrDF-NOI-RHM-14/19 V2 du 19 décembre 2014, article 6 B de l'annexe IV du CGI.<br>
+    Sources : accords « réorganisation » ERDF-GrDF du 23 juillet 2010 et référentiel du 27 juillet 2010, note ERDF-GrDF-NOI-RHM-14/19 V2 du 19 décembre 2014, circulaire N. 69-85 du 2 octobre 1969, article 6 B de l'annexe IV du CGI, grille des salaires IEG au 1ᵉʳ janvier 2026.<br>
     Estimation indicative, sans valeur d'engagement de l'employeur. Pour tout renseignement : <a href="mailto:syndicat-fo_grdf-delegations-nationales@grdf.fr">syndicat-fo_grdf-delegations-nationales@grdf.fr</a> · Instagram <a href="https://www.instagram.com/fo_grdf/">@fo_grdf</a>
   </footer>
 
@@ -571,21 +587,60 @@ footer a{color:var(--bleu)}
 <script id="engine">
 /* ══ MOTEUR DE CALCUL ══ Aucune dépendance au DOM : testable tel quel. */
 var ZONES = {
-  rp:   {nom:'région parisienne',      franchise:30, plafond:60, max:30, seuilDemenagement:90},
-  icfs: {nom:'agglomération ICFS',     franchise:30, plafond:60, max:30, seuilDemenagement:60},
-  hors: {nom:'hors ICFS',              franchise:15, plafond:40, max:25, seuilDemenagement:40}
+  rp:   {nom:'région parisienne',  franchise:30, plafond:60, max:30, seuilDemenagement:90},
+  icfs: {nom:'zone ICFS',          franchise:30, plafond:60, max:30, seuilDemenagement:60},
+  hors: {nom:'zone hors ICFS',     franchise:15, plafond:40, max:25, seuilDemenagement:40}
 };
 var ATT = {
-  A1:   {lib:'A1',                        jours:621,   sem:4.5},
-  A2:   {lib:'A2',                        jours:604,   sem:4.375},
-  A3:   {lib:'A3',                        jours:587,   sem:4.25},
-  AIA:  {lib:'AIA',                       jours:621,   sem:4.5},
-  FJ:   {lib:'forfait jours 202 j',       jours:606,   sem:4.5},
-  TC32: {lib:'temps choisi 32 h / 4 j',   jours:552,   sem:4},
-  TC3:  {lib:'temps choisi sur 3 jours',  jours:414,   sem:3}
+  A1:   {lib:'A1',                       jours:621, sem:4.5},
+  A2:   {lib:'A2',                       jours:604, sem:4.375},
+  A3:   {lib:'A3',                       jours:587, sem:4.25},
+  AIA:  {lib:'AIA',                      jours:621, sem:4.5},
+  FJ:   {lib:'forfait jours 202 j',      jours:606, sem:4.5},
+  TC32: {lib:'temps choisi 32 h / 4 j',  jours:552, sem:4},
+  TC3:  {lib:'temps choisi sur 3 jours', jours:414, sem:3}
 };
+/* Coefficients hiérarchiques (K) de la grille IEG en vigueur */
+var NR_K = {
+  '030':232.2,'035':236.5,'040':240.9,'045':245.5,'050':250.1,'055':254.7,'060':259.4,'065':264.4,
+  '070':269.7,'075':274.6,'080':279.3,'085':285.5,'090':291.7,'095':297.9,'100':304.3,'105':311.1,
+  '110':318.1,'115':325.7,'120':334.4,'125':342.5,'130':350.6,'135':359,'140':367.6,'145':376.5,
+  '150':385.5,'155':394.5,'160':405.2,'165':414.7,'170':424.6,'175':434.8,'180':445.3,'185':455.9,
+  '190':466.9,'195':478.1,'200':489.6,'205':501.5,'210':513.9,'215':526.5,'220':539.4,'225':552.9,
+  '230':566.5,'235':580.6,'240':598.5,'245':613.2,'250':628.3,'255':643.9,'260':659.8,'265':676.2,
+  '270':692.9,'275':709.9,'280':727.5,'285':744,'290':760.7,'295':777.6,'300':794.9,'305':812.6,
+  '310':830.7,'315':849.3,'320':868.5,'325':887.4,'330':906.7,'340':929,'350':949.6,'355':971.4,
+  '360':993.8,'365':1016.7,'370':1040,
+  'CA':842.9,'CB':862.1,'DA':881.8,'DB':901.4,'EA':921.6,'FA':951.5,'GA':980.5,'HA':1010.6,
+  'HB':1033.8,'IA':1057.6,'IB':1081.9,'JA':1106.9,'JB':1132.3,'KA':1158.4,'KB':1185
+};
+/* Coefficients d'échelon (A) et ancienneté d'accès, grille en vigueur */
+var ECHELONS = [
+  {ech:4,  A:1.090, anc:"à l'embauche"},
+  {ech:5,  A:1.120, anc:"6 ans"},
+  {ech:6,  A:1.150, anc:"10 ans"},
+  {ech:7,  A:1.180, anc:"14 ans"},
+  {ech:8,  A:1.220, anc:"18 ans"},
+  {ech:9,  A:1.260, anc:"22 ans"},
+  {ech:10, A:1.300, anc:"26 ans"},
+  {ech:11, A:1.315, anc:"30 ans"},
+  {ech:12, A:1.330, anc:"34 ans et plus"}
+];
+/* Ordre d'affichage : les clefs numériques canoniques passeraient devant « 030 » dans un objet */
+var NR_ORDRE = ['030','035','040','045','050','055','060','065','070','075','080','085','090','095',
+  '100','105','110','115','120','125','130','135','140','145','150','155','160','165','170','175','180',
+  '185','190','195','200','205','210','215','220','225','230','235','240','245','250','255','260','265',
+  '270','275','280','285','290','295','300','305','310','315','320','325','330','340','350','355','360',
+  '365','370','CA','CB','DA','DB','EA','FA','GA','HA','HB','IA','IB','JA','JB','KA','KB'];
 var HEURES_MOIS_38H = 164.67; /* 38 h x 52 / 12 */
 var MOIS = 36;
+var NR_PLAFOND = '100', ECH_PLAFOND = 1.090;
+
+function coefEchelon(ech){
+  for (var i = 0; i < ECHELONS.length; i++) { if (ECHELONS[i].ech === ech) return ECHELONS[i].A; }
+  return ECHELONS[0].A;
+}
+function salaireDeBase(snb, mr, K, A){ return snb * (1 + mr) * (K / 100) * A; }
 
 function calculer(e){
   var zA = ZONES[e.zAncien] || ZONES.hors;
@@ -598,10 +653,15 @@ function calculer(e){
   diff = Math.min(diff, zN.max);
   var diffSansFranchise = Math.max(0, Math.min(e.tNouveau, zN.plafond) - e.tAncien);
 
-  /* 2. Taux horaire */
-  var txBrut = (e.txMode === 'direct') ? e.txDirect : (e.salaire / HEURES_MOIS_38H);
-  var tx = Math.min(txBrut, e.txPlafond);
-  var plafonne = txBrut > e.txPlafond + 1e-9;
+  /* 2. Taux horaire, grille IEG */
+  var K = NR_K[e.nr] || NR_K['100'];
+  var A = coefEchelon(e.ech);
+  var salaire = salaireDeBase(e.snb, e.mr, K, A);
+  var txBrut = salaire / HEURES_MOIS_38H;
+  var salairePlafond = salaireDeBase(e.snb, e.mr, NR_K[NR_PLAFOND], ECH_PLAFOND);
+  var txPlafond = salairePlafond / HEURES_MOIS_38H;
+  var tx = Math.min(txBrut, txPlafond);
+  var plafonne = txBrut > txPlafond + 1e-9;
 
   /* 3. Jours indemnisés sur 3 ans */
   var jours, joursSansTad, att = ATT[e.att];
@@ -618,7 +678,7 @@ function calculer(e){
   var ijKm = 0, ijPeage = 0, mensuelPeageDirect = 0, dKm = 0;
   if (e.mode === 'auto') {
     dKm = Math.max(0, e.kmNouveau - e.kmAncien);
-    ijKm = e.bareme * e.elec * dKm * 2;
+    ijKm = e.bareme * dKm * 2;
     var dPeage = Math.max(0, e.peageApres - e.peageAvant);
     if (e.peageMode === 'mois') { mensuelPeageDirect = dPeage; }
     else { ijPeage = dPeage * 2; }
@@ -635,7 +695,7 @@ function calculer(e){
   var capTC    = mensuelTC * MOIS;
   var capital  = capTemps + capKm + capPeage + capTC;
 
-  /* 6. Contrefactuels, pour chiffrer ce que coûtent la franchise et le travail à distance */
+  /* 6. Contrefactuels : ce que coûtent la franchise et le travail à distance */
   var capTempsSansFranchise = tx * (diffSansFranchise / 60) * 2 * jours;
   var perteFranchise = Math.max(0, capTempsSansFranchise - capTemps);
   var capSansTad = (ijTemps + ijKm + (e.peageMode === 'mois' ? 0 : ijPeage)) * joursSansTad
@@ -647,9 +707,10 @@ function calculer(e){
     ancienRetenu: ancienRetenu, nouveauRetenu: nouveauRetenu,
     franchiseActive: e.tAncien < zA.franchise,
     plafondActif: e.tNouveau > zN.plafond,
-    maxActif: (nouveauRetenu - ancienRetenu) > zN.max,
     audelaDemenagement: e.tNouveau > zN.seuilDemenagement,
-    diff: diff, tx: tx, txBrut: txBrut, plafonne: plafonne,
+    diff: diff,
+    K: K, A: A, salaire: salaire, txBrut: txBrut,
+    salairePlafond: salairePlafond, txPlafond: txPlafond, tx: tx, plafonne: plafonne,
     jours: jours, joursSansTad: joursSansTad,
     dKm: dKm,
     ijTemps: ijTemps, ijKm: ijKm, ijPeage: ijPeage,
@@ -662,7 +723,10 @@ function calculer(e){
     perteFranchise: perteFranchise, perteTad: perteTad
   };
 }
-if (typeof module !== 'undefined') { module.exports = {calculer:calculer, ZONES:ZONES, ATT:ATT}; }
+if (typeof module !== 'undefined') {
+  module.exports = {calculer:calculer, ZONES:ZONES, ATT:ATT, NR_K:NR_K, NR_ORDRE:NR_ORDRE,
+    ECHELONS:ECHELONS, salaireDeBase:salaireDeBase};
+}
 </script>
 
 <script>
@@ -674,16 +738,31 @@ function eur(v){ return v.toLocaleString('fr-FR',{minimumFractionDigits:2,maximu
 function eur0(v){ return v.toLocaleString('fr-FR',{minimumFractionDigits:0,maximumFractionDigits:0}) + ' €'; }
 function mn(v){ return v.toLocaleString('fr-FR',{maximumFractionDigits:1}) + ' min'; }
 function nb(v){ return v.toLocaleString('fr-FR',{maximumFractionDigits:1}); }
+function nb3(v){ return v.toLocaleString('fr-FR',{minimumFractionDigits:3,maximumFractionDigits:3}); }
+
+function remplirSelects(){
+  var h = '';
+  for (var i = 0; i < NR_ORDRE.length; i++) {
+    var k = NR_ORDRE[i];
+    h += '<option value="' + k + '"' + (k === '110' ? ' selected' : '') + '>NR ' + k + '</option>';
+  }
+  $('nr').innerHTML = h;
+  h = '';
+  for (var i = 0; i < ECHELONS.length; i++) {
+    h += '<option value="' + ECHELONS[i].ech + '"' + (ECHELONS[i].ech === 4 ? ' selected' : '') + '>Échelon '
+       + ECHELONS[i].ech + ' (' + ECHELONS[i].anc + ')</option>';
+  }
+  $('ech').innerHTML = h;
+}
 
 function lire(){
   return {
     mode: MODE,
     tAncien: num('tAncien'), tNouveau: num('tNouveau'),
     zAncien: $('zAncien').value, zNouveau: $('zNouveau').value,
-    txMode: $('txMode').value, salaire: num('salaire'), txDirect: num('txDirect'), txPlafond: num('txPlafond'),
+    nr: $('nr').value, ech: parseInt($('ech').value, 10), mr: parseFloat($('mr').value), snb: num('snb'),
     att: $('att').value, tad: num('tad'), jLibre: num('jLibre'),
-    kmAncien: num('kmAncien'), kmNouveau: num('kmNouveau'),
-    bareme: parseFloat($('bareme').value), elec: parseFloat($('elec').value),
+    kmAncien: num('kmAncien'), kmNouveau: num('kmNouveau'), bareme: num('bareme'),
     peageMode: $('peageMode').value, peageAvant: num('peageAvant'), peageApres: num('peageApres'),
     aboAvant: num('aboAvant'), aboApres: num('aboApres'), pecEmp: parseFloat($('pecEmp').value)
   };
@@ -700,15 +779,20 @@ function setMode(m){
 }
 
 function rendre(){
-  $('f-salaire').style.display  = ($('txMode').value === 'salaire') ? '' : 'none';
-  $('f-txdirect').style.display = ($('txMode').value === 'direct')  ? '' : 'none';
   var libre = ($('att').value === 'LIBRE');
   $('f-jlibre').style.display = libre ? '' : 'none';
   $('tad').disabled = libre;
 
   var e = lire(), r = calculer(e);
-  var h = '';
 
+  $('salaireCalc').innerHTML = 'Avec le NR ' + e.nr + ' (coefficient ' + nb(r.K) + '), l\'échelon ' + e.ech
+    + ' (coefficient ' + nb3(r.A) + ') et ' + (e.mr * 100).toLocaleString('fr-FR') + ' % de majoration résidentielle : '
+    + '<strong>salaire de base de ' + eur(r.salaire) + '</strong> par mois, soit un taux horaire de <strong>'
+    + eur(r.txBrut) + '</strong>. Le plafond (NR 100, échelon 4) est de <strong>' + eur(r.txPlafond)
+    + '</strong>, donc le taux retenu pour l\'indemnité est de <strong>' + eur(r.tx) + '</strong>. '
+    + 'Comparez ce salaire de base avec votre bulletin : s\'il ne correspond pas, corrigez le NR ou l\'échelon.';
+
+  var h = '';
   h += '<div class="res-card">';
   h += '<div class="res-top' + (r.capital <= 0 ? ' zero' : '') + '">';
   if (r.capital <= 0) {
@@ -734,7 +818,6 @@ function rendre(){
 
   h += '<div class="res-detail">';
 
-  /* Alertes de lecture */
   if (r.franchiseActive) {
     h += '<div class="alerte"><strong>Franchise appliquée.</strong> Votre ancien trajet de ' + mn(e.tAncien)
        + ' est compté pour ' + mn(r.ancienRetenu) + ', le minimum en ' + r.zoneAncien.nom + '.'
@@ -750,8 +833,8 @@ function rendre(){
        + ' minutes en ' + r.zoneNouveau.nom + '). Le refus de déménager se défend : parlez-en à vos représentants avant tout entretien.</div>';
   }
   if (r.plafonne) {
-    h += '<div class="info">Votre taux horaire de ' + eur(r.txBrut) + ' est ramené au plafond de ' + eur(e.txPlafond)
-       + ' (NR 100 échelon 4). Ce plafond n\'est pas revu pendant les 3 ans de versement.</div>';
+    h += '<div class="info">Votre taux horaire de ' + eur(r.txBrut) + ' est ramené au plafond de ' + eur(r.txPlafond)
+       + ' (NR 100, échelon 4). Ce plafond n\'est pas revu pendant les 3 ans de versement.</div>';
   }
   if (e.tad > 0 && !libre && r.perteTad > 0) {
     h += '<div class="alerte"><strong>Travail à distance.</strong> ' + (e.tad > 1 ? 'Vos ' + nb(e.tad) + ' jours' : nb(e.tad) + ' jour')
@@ -759,7 +842,6 @@ function rendre(){
        + ' à ' + nb(r.jours) + ', soit <strong>' + eur(r.perteTad) + '</strong> de moins sur les 3 ans.</div>';
   }
 
-  /* Détail */
   h += '<div class="table-wrap" style="margin-top:14px"><table><thead><tr>'
      + '<th>Ligne du calcul</th><th class="num">Par jour</th><th class="num">Par mois</th><th class="num">Capital 3 ans</th>'
      + '</tr></thead><tbody>';
@@ -777,15 +859,17 @@ function rendre(){
      + eur(r.mensuel) + '</td><td class="num">' + eur(r.capital) + '</td></tr>';
   h += '</tbody></table></div>';
 
-  /* Le calcul en clair */
   h += '<div style="margin-top:16px">';
+  h += '<p class="calc-line">Taux horaire : ' + eur(e.snb) + ' × ' + (1 + e.mr).toLocaleString('fr-FR')
+     + ' × ' + nb(r.K) + ' ÷ 100 × ' + nb3(r.A) + ' = ' + eur(r.salaire) + ' ÷ 164,67 h = <b>'
+     + eur(r.txBrut) + '</b>' + (r.plafonne ? ', ramené au plafond de <b>' + eur(r.txPlafond) + '</b>' : '') + '</p>';
   h += '<p class="calc-line">Temps : min(' + mn(e.tNouveau) + ' ; plafond ' + r.zoneNouveau.plafond + ') moins max('
      + mn(e.tAncien) + ' ; franchise ' + r.zoneAncien.franchise + ') = <b>' + mn(r.diff) + '</b> par trajet simple</p>';
   h += '<p class="calc-line">Indemnité de temps : ' + eur(r.tx) + ' × ' + mn(r.diff) + ' ÷ 60 × 2 trajets = <b>'
      + eur(r.ijTemps) + '</b> par jour</p>';
   if (MODE === 'auto') {
     h += '<p class="calc-line">Kilomètres : (' + nb(e.kmNouveau) + ' km moins ' + nb(e.kmAncien) + ' km) × '
-       + (e.bareme * e.elec).toLocaleString('fr-FR',{maximumFractionDigits:4}) + ' €/km × 2 trajets = <b>'
+       + e.bareme.toLocaleString('fr-FR',{maximumFractionDigits:4}) + ' €/km × 2 trajets = <b>'
        + eur(r.ijKm) + '</b> par jour</p>';
   }
   if (MODE === 'tc') {
@@ -803,27 +887,30 @@ function rendre(){
 }
 
 function ligne(lib, j, m, c){
-  return '<tr><td>' + lib + '</td><td class="num">' + (j > 0 ? eur(j) : '<span style="color:#9a9a9a">au mois</span>') + '</td><td class="num">'
+  return '<tr><td>' + lib + '</td><td class="num">'
+       + (j > 0 ? eur(j) : '<span style="color:#9a9a9a">au mois</span>') + '</td><td class="num">'
        + eur(m) + '</td><td class="num">' + eur(c) + '</td></tr>';
 }
 
 /* ══ TROIS SITUATIONS TYPES ══ */
+var COMMUN = {tAncien:20, tNouveau:45, zAncien:'hors', zNouveau:'hors',
+  nr:'110', ech:4, mr:0.25, snb:543.10, att:'A2', tad:0, jLibre:0,
+  kmAncien:0, kmNouveau:0, bareme:0.427, peageMode:'trajet', peageAvant:0, peageApres:0,
+  aboAvant:0, aboApres:0, pecEmp:0.5};
+function situ(o){ var e = {}; for (var k in COMMUN) e[k] = COMMUN[k]; for (var j in o) e[j] = o[j]; return e; }
 var SITUATIONS = [
-  { titre:'Transports en commun', who:'Nadia, agent en A2, passe de 20 à 45 minutes de trajet. Son abonnement mensuel passe de 75 à 132 €.',
-    detail:[['Trajet','20 min → 45 min'],['Abonnement','75 € → 132 €/mois']],
-    e:{mode:'tc',tAncien:20,tNouveau:45,zAncien:'hors',zNouveau:'hors',txMode:'salaire',salaire:2354.2,txDirect:0,txPlafond:13.68,
-       att:'A2',tad:0,jLibre:0,kmAncien:0,kmNouveau:0,bareme:0.427,elec:1,peageMode:'trajet',peageAvant:0,peageApres:0,
-       aboAvant:75,aboApres:132,pecEmp:0.5} },
-  { titre:'Vélo, trottinette, à pied', who:'Karim, agent en A2, passe de 20 à 45 minutes de trajet. Aucun frais indemnisé, seul le temps compte.',
-    detail:[['Trajet','20 min → 45 min'],['Frais','aucun']],
-    e:{mode:'doux',tAncien:20,tNouveau:45,zAncien:'hors',zNouveau:'hors',txMode:'salaire',salaire:2354.2,txDirect:0,txPlafond:13.68,
-       att:'A2',tad:0,jLibre:0,kmAncien:0,kmNouveau:0,bareme:0.427,elec:1,peageMode:'trajet',peageAvant:0,peageApres:0,
-       aboAvant:0,aboApres:0,pecEmp:0.5} },
-  { titre:'Voiture personnelle', who:'Sylvie, agent en A2, passe de 20 à 45 minutes de trajet, et de 12 à 38 km par trajet.',
-    detail:[['Trajet','20 min → 45 min'],['Distance','12 km → 38 km']],
-    e:{mode:'auto',tAncien:20,tNouveau:45,zAncien:'hors',zNouveau:'hors',txMode:'salaire',salaire:2354.2,txDirect:0,txPlafond:13.68,
-       att:'A2',tad:0,jLibre:0,kmAncien:12,kmNouveau:38,bareme:0.427,elec:1,peageMode:'trajet',peageAvant:0,peageApres:0,
-       aboAvant:0,aboApres:0,pecEmp:0.5} }
+  { titre:'Transports en commun',
+    who:'Nadia, NR 110 échelon 4 en A2, passe de 20 à 45 minutes de trajet. Son abonnement mensuel passe de 75 à 132 €.',
+    detail:[['Trajet','20 min &rarr; 45 min'],['Abonnement','75 € &rarr; 132 €/mois']],
+    e: situ({mode:'tc', aboAvant:75, aboApres:132}) },
+  { titre:'Vélo, trottinette, à pied',
+    who:'Karim, NR 110 échelon 4 en A2, passe de 20 à 45 minutes de trajet. Aucun frais indemnisé, seul le temps compte.',
+    detail:[['Trajet','20 min &rarr; 45 min'],['Frais','aucun']],
+    e: situ({mode:'doux'}) },
+  { titre:'Voiture personnelle',
+    who:'Sylvie, NR 110 échelon 4 en A2, passe de 20 à 45 minutes de trajet, et de 12 à 38 km par trajet.',
+    detail:[['Trajet','20 min &rarr; 45 min'],['Distance','12 km &rarr; 38 km']],
+    e: situ({mode:'auto', kmAncien:12, kmNouveau:38}) }
 ];
 
 function rendreSituations(){
@@ -841,23 +928,23 @@ function rendreSituations(){
   }
   $('simus').innerHTML = html;
 
-  var a = calculer(SITUATIONS[0].e).capital, b = calculer(SITUATIONS[1].e).capital, c = calculer(SITUATIONS[2].e).capital;
-  var dd = calculer(SITUATIONS[1].e);
-  $('simu-note').innerHTML = 'Pour le même allongement, l\'écart va de ' + eur0(b) + ' à pied ou à vélo à '
-    + eur0(c) + ' en voiture, en passant par ' + eur0(a) + ' en transports en commun. Le temps est indemnisé pareil pour tous : '
-    + eur0(b) + '. Et notez le plafond au passage : sur les 25 minutes de trajet en plus, seules ' + mn(dd.diff)
+  var a = calculer(SITUATIONS[0].e), b = calculer(SITUATIONS[1].e), c = calculer(SITUATIONS[2].e);
+  $('simu-note').innerHTML = 'Pour le même allongement, l\'écart va de ' + eur0(b.capital)
+    + ' à pied ou à vélo à ' + eur0(c.capital) + ' en voiture, en passant par ' + eur0(a.capital)
+    + ' en transports en commun. Le temps est indemnisé pareil pour tous : ' + eur0(b.capital)
+    + '. Et notez le plafond au passage : sur les 25 minutes de trajet en plus, seules ' + mn(b.diff)
     + ' sont indemnisées, parce que le nouveau trajet de 45 minutes n\'est retenu qu\'à hauteur de 40. '
-    + 'Tout le reste vient des frais, et les frais ne se supposent pas, ils se justifient : gardez vos abonnements, vos factures de péage et le relevé de vos kilomètres.';
+    + 'Tout le reste vient des frais, et les frais ne se supposent pas, ils se justifient : gardez vos abonnements, '
+    + 'vos factures de péage et le relevé de vos kilomètres.';
 }
 
 function charger(i){
   var e = SITUATIONS[i].e;
   $('tAncien').value = e.tAncien; $('tNouveau').value = e.tNouveau;
   $('zAncien').value = e.zAncien; $('zNouveau').value = e.zNouveau;
-  $('txMode').value = e.txMode; $('salaire').value = e.salaire; $('txPlafond').value = e.txPlafond;
+  $('nr').value = e.nr; $('ech').value = e.ech; $('mr').value = e.mr; $('snb').value = e.snb;
   $('att').value = e.att; $('tad').value = e.tad;
-  $('kmAncien').value = e.kmAncien; $('kmNouveau').value = e.kmNouveau;
-  $('bareme').value = e.bareme.toFixed(3); $('elec').value = e.elec;
+  $('kmAncien').value = e.kmAncien; $('kmNouveau').value = e.kmNouveau; $('bareme').value = e.bareme;
   $('peageMode').value = e.peageMode; $('peageAvant').value = e.peageAvant; $('peageApres').value = e.peageApres;
   $('aboAvant').value = e.aboAvant; $('aboApres').value = e.aboApres; $('pecEmp').value = e.pecEmp;
   setMode(e.mode);
@@ -881,8 +968,9 @@ try {
 
 /* ══ DÉMARRAGE ══ */
 (function(){
-  var ids = ['tAncien','tNouveau','zAncien','zNouveau','txMode','salaire','txDirect','txPlafond','att','tad','jLibre',
-             'kmAncien','kmNouveau','bareme','elec','peageMode','peageAvant','peageApres','aboAvant','aboApres','pecEmp'];
+  remplirSelects();
+  var ids = ['tAncien','tNouveau','zAncien','zNouveau','nr','ech','mr','snb','att','tad','jLibre',
+             'kmAncien','kmNouveau','bareme','peageMode','peageAvant','peageApres','aboAvant','aboApres','pecEmp'];
   for (var i = 0; i < ids.length; i++) {
     var el = $(ids[i]);
     if (el) { el.addEventListener('input', rendre); el.addEventListener('change', rendre); }
