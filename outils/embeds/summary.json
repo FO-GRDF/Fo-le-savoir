@@ -20,15 +20,14 @@
  {
   "key": "droits-familiaux",
   "src": "droits_familiaux_2026_fo_grdf.html",
-  "size": 283085,
-  "css": 40707,
+  "size": 126113,
+  "css": 42215,
   "ext": [],
   "imgs_left": [],
   "gh_links": [
    "https://fo-grdf.github.io/Fo-le-savoir/videos/aides_enfants_reel.mp4",
    "https://fo-grdf.github.io/Fo-le-savoir/videos/aides_enfants_yt.mp4",
    "https://fo-grdf.github.io/Fo-le-savoir/videos/rentree_2h_reel.mp4",
-   "https://fo-grdf.github.io/Fo-le-savoir/videos/rentree_2h_yt.mp4",
    "https://fo-grdf.github.io/Fo-le-savoir/videos/sport_cmcas_reel.mp4",
    "https://fo-grdf.github.io/Fo-le-savoir/videos/sport_cmcas_yt.mp4"
   ]
@@ -79,5 +78,14 @@
   "gh_links": [
    "https://fo-grdf.github.io/Fo-le-savoir/consultation_ia_fonctions_centrales_fo_grdf.html"
   ]
+ },
+ {
+  "key": "calculette-trajet",
+  "src": "calculette_allongement_trajet_2026_fo_grdf.html",
+  "size": 69041,
+  "css": 15791,
+  "ext": [],
+  "imgs_left": [],
+  "gh_links": []
  }
 ]

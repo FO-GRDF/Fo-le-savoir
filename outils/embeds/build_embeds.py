@@ -98,6 +98,7 @@ def build(key,fname):
           '\n{SC} .page{{max-width:none;margin:0;padding:0}}'
           '\n{SC} img{{max-width:100%;height:auto}}').format(SC=SC)
     body=re.search(r'<body[^>]*>(.*)</body>',s,re.S).group(1)
+    body=re.sub(r'<div class="fo-moved-banner"[\s\S]*?</div>\s*','',body,count=1)
     body=re.sub(r'<script[^>]*goatcounter[^>]*>\s*</script>','',body)
     body=re.sub(r'<script[^>]*gc\.zgo\.at[^>]*>\s*</script>','',body)
     body=re.sub(r'<link[^>]*fonts\.googleapis[^>]*>','',body)
