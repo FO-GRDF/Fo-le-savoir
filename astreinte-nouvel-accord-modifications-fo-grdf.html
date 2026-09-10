@@ -84,14 +84,15 @@
 
   /* ═══ BANNIÈRE "QUI COTISE DÉCIDE" ═══ */
   .decide {
-    background: linear-gradient(135deg, #16243a 0%, #22344f 100%);
+    background: linear-gradient(120deg, #017fb1 0%, #019cda 55%, #28b193 100%);
     border-radius: 20px; padding: 34px 36px; margin-bottom: 30px; color: #fff;
     position: relative; overflow: hidden; text-align: center;
   }
   .decide::after { content: none; display: none; }
-  .decide .slog { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 900; color: var(--or); line-height: 1.1; position: relative; z-index: 1; }
-  .decide p { font-size: 14.5px; line-height: 1.7; color: rgba(255,255,255,0.92); margin-top: 12px; max-width: 640px; margin-left: auto; margin-right: auto; position: relative; z-index: 1; }
-  .decide strong { color: var(--or); }
+  .decide .slog { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 900; color: #fff; line-height: 1.1; position: relative; z-index: 1; text-shadow: 0 2px 10px rgba(0,40,60,0.28); }
+  .decide .drule { width: 64px; height: 4px; background: var(--or); border-radius: 3px; margin: 14px auto 0; position: relative; z-index: 1; }
+  .decide p { font-size: 14.5px; line-height: 1.7; color: #fff; text-shadow: 0 1px 6px rgba(0,40,60,0.22); margin-top: 12px; max-width: 640px; margin-left: auto; margin-right: auto; position: relative; z-index: 1; }
+  .decide strong { color: #fff; font-weight: 700; }
 
   /* ═══ HERO PHOTO ═══ */
   .hero-photo { position: relative; border-radius: 18px; overflow: hidden; margin-bottom: 30px; min-height: 240px; background: linear-gradient(120deg,#017fb1,#019cda 55%,#28b193); box-shadow: 0 12px 30px rgba(1,60,90,0.15); }
@@ -303,7 +304,8 @@
   body.a11y-mode .intro strong { color: #2C2C29; text-decoration: underline; }
   body.a11y-mode .decide { background: #525250 !important; border: 2px solid #2C2C29; }
   body.a11y-mode .decide::after { display: none; }
-  body.a11y-mode .decide .slog { color: #FFFFFF !important; text-decoration: underline; }
+  body.a11y-mode .decide .slog { color: #FFFFFF !important; text-decoration: underline; text-shadow: none !important; }
+  body.a11y-mode .decide p { text-shadow: none !important; }
   body.a11y-mode .decide p, body.a11y-mode .decide strong { color: #F8F7F4 !important; }
   body.a11y-mode .section-title { color: #2C2C29 !important; }
   body.a11y-mode .section-title .icon { background: #E2E0DA !important; border: 2px solid #2C2C29; }
@@ -435,6 +437,7 @@ La consultation est close. Vous avez été des centaines à peser le pour et le 
     <!-- QUI COTISE DÉCIDE -->
     <div class="decide reveal sa" id="s-decide" role="note">
       <div class="slog">Qui cotise décide.</div>
+      <div class="drule" aria-hidden="true"></div>
       <p>Nous l'avions écrit avant la consultation, nous le tenons après : c'est <strong>votre engagement</strong> qui fait notre force, et c'est <strong>votre avis</strong> qui a décidé. <strong>FO a signé parce que la majorité des adhérents consultés a demandé la signature.</strong> Actifs et retraités, vous restez ceux qui décident.</p>
     </div>
 
