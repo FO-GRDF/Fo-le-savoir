@@ -80,6 +80,19 @@
   ]
  },
  {
+  "key": "cour-des-comptes",
+  "src": "saviez_vous_rapport_cour_comptes_edf_2026_fo_grdf.html",
+  "size": 117240,
+  "css": 60702,
+  "ext": [],
+  "imgs_left": [],
+  "gh_links": [
+   "https://fo-grdf.github.io/Fo-le-savoir/videos/tarif_agent_reel.mp4",
+   "https://fo-grdf.github.io/Fo-le-savoir/videos/tarif_agent_yt.mp4",
+   "https://fo-grdf.github.io/Fo-le-savoir/videos/tarif_agent_yt.srt"
+  ]
+ },
+ {
   "key": "calculette-trajet",
   "src": "calculette_allongement_trajet_2026_fo_grdf.html",
   "size": 69041,
