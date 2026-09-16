@@ -111,6 +111,15 @@ def build(key,fname):
         if 'cdnjs.cloudflare.com' not in e:
             body=re.sub(r'<script[^>]*src="'+re.escape(e)+r'"[^>]*>\s*</script>','',body)
     body=rewrite_assets(body)
+    # WordPress (convert_chars) transforme les & isoles en &#038; a l'affichage, y compris dans les <script> :
+    # '&&' devient '&#038;&#038;' et le script ne se charge plus. On encode donc chaque script inline en base64.
+    import base64
+    def b64script(m):
+        attrs=m.group(1); code=m.group(2)
+        if 'src=' in attrs or not code.strip(): return m.group(0)
+        b=base64.b64encode(code.encode('utf-8')).decode('ascii')
+        return '<script>eval(new TextDecoder().decode(Uint8Array.from(atob("%s"),function(c){return c.charCodeAt(0)})))</script>' % b
+    body=re.sub(r'<script([^>]*)>([\s\S]*?)</script>',b64script,body)
     head=re.search(r'<head>(.*?)</head>',s,re.S).group(1)
     headscripts=''.join(t for t in re.findall(r'<script[^>]*src="https://cdnjs\.cloudflare\.com[^"]*"[^>]*>\s*</script>',head))
     out='<div class="fo-tool fo-tool-%s">\n%s<style>\n%s\n</style>\n%s\n</div>' % (key,headscripts+'\n' if headscripts else '',css,body.strip())
