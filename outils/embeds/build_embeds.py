@@ -14,6 +14,7 @@ TOOLS={
  'catalogue-epi':'guide_epi_2026_fo_grdf.html',
  'consultation-ia-resultats':'resultats_consultation_ia_dsi_fo_grdf.html',
  'cour-des-comptes':'saviez_vous_rapport_cour_comptes_edf_2026_fo_grdf.html',
+    'astreinte-accord':'astreinte-nouvel-accord-modifications-fo-grdf.html',
     'calculette-trajet':'calculette_allongement_trajet_2026_fo_grdf.html',
 }
 FONT_RE=re.compile(r'Fraunces|DM Sans|Atkinson Hyperlegible|DM\+Sans|Atkinson\+Hyperlegible')
